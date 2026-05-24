@@ -6,13 +6,13 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'Archipel Formation — Certifications IT aux Caraïbes' },
+      { title: 'GALACTUS Digital — Certifications IT aux Caraïbes' },
       {
         name: 'description',
         content:
-          "Archipel Formation propose l'ensemble des cours officiels éditeurs IT en intra et inter-entreprise aux Caraïbes. Certifications Microsoft, Cisco, AWS, CompTIA, VMware et plus.",
+          "GALACTUS Digital propose l'ensemble des cours officiels éditeurs IT en intra et inter-entreprise aux Caraïbes. Certifications Microsoft, Cisco, AWS, CompTIA, VMware et plus.",
       },
-      { name: 'og:title', content: 'Archipel Formation — Certifications IT aux Caraïbes' },
+      { name: 'og:title', content: 'GALACTUS Digital — Certifications IT aux Caraïbes' },
       { name: 'theme-color', content: '#0C1A30' },
     ],
     links: [

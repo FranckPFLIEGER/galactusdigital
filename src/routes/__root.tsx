@@ -6,7 +6,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'GALACTUS Digital — Certifications IT aux Caraïbes' },
+      { title: ' t GALACTUS Digital — Certifications IT aux Caraïbes' },
       {
         name: 'description',
         content:

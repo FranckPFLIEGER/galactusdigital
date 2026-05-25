@@ -56,7 +56,7 @@ export function ContactCTA() {
             <div className="contact-detail-icon">
               <MapPin size={16} color="white" />
             </div>
-            <span>Guadeloupe · Martinique · Guyane</span>
+            <span>Guadeloupe · Martinique · Saint Martin · Saint Barthélemy · Guyane · Réunion · France Héxagonale</span>
           </div>
         </div>
       </div>

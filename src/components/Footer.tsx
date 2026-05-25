@@ -90,7 +90,7 @@ export function Footer() {
 
           <div className="footer-legal">
             <a href="#accueil">Mentions légales</a>
-            <span>·</span>
+            <span> · </span>
             <a href="#accueil">
               Politique de confidentialité
             </a>

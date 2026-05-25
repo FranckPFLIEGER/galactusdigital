@@ -1,6 +1,6 @@
-# Archipel Formation
+# GALACTUS Digital
 
-Site vitrine pour **Archipel Formation**, organisme de formation certifiée IT aux Caraïbes. Le site présente l'offre de formations officielles éditeurs (Microsoft, Cisco, AWS, CompTIA, VMware, EC-Council, ITIL, PMI) en modalités intra et inter-entreprise, avec une couverture de 11 territoires caribéens.
+Site vitrine pour **GALACTUS Digital**, organisme de formation certifiée IT aux Caraïbes. Le site présente l'offre de formations officielles éditeurs (Microsoft, Cisco, AWS, CompTIA, VMware, EC-Council, ITIL, PMI) en modalités intra et inter-entreprise, avec une couverture de 11 territoires caribéens.
 
 ## Technologies
 

@@ -52,7 +52,7 @@ export function About() {
               L'ingénierie de formation<br />certifiée IT, notre cœur de métier
             </h2>
             <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}>
-              Archipel Formation est né d'une conviction : les professionnels des Caraïbes méritent
+              GALACTUS Digital est né d'une conviction : les professionnels des Caraïbes méritent
               d'accéder aux mêmes certifications IT de niveau mondial que leurs homologues en Europe
               ou en Amérique du Nord. Forts de plus de 12 ans d'expérience et d'un réseau
               d'experts certifiés à l'échelle internationale, nous avons bâti une offre complète,

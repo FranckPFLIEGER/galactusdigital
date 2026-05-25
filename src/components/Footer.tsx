@@ -53,7 +53,7 @@ export function Footer() {
 
             {/* Logo Qualiopi */}
             <img
-              src="/qualopi.png"
+              src="/qualopi.jpg"
               alt="Certification Qualiopi"
               className="qualiopi-logo"
               loading="lazy"

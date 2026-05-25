@@ -1,10 +1,10 @@
 import { useIntersection } from '../hooks/useIntersection'
 
 const stats = [
-  { number: '+12', suffix: ' ans', label: "d'expertise reconnue" },
+  { number: '+20', suffix: ' ans', label: "d'expertise reconnue" },
   { number: '47',  suffix: '',     label: 'experts internationaux' },
   { number: '+180',suffix: '',     label: 'cours officiels éditeurs' },
-  { number: '11',  suffix: '',     label: 'territoires aux Caraïbes' },
+  { number: '6',  suffix: '',     label: 'territoires ultramarins' },
 ]
 
 export function Stats() {

@@ -49,7 +49,7 @@ export function Footer() {
 
             {/* LOGO QUALIOPI */}
             <img
-              src="/qualopi.png"
+              src="/public/qualopi.png"
               alt="Certification Qualiopi"
               style={{
                 width: '220px',

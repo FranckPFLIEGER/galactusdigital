@@ -37,7 +37,7 @@ export function Footer() {
         <div className="footer-top">
           <div>
             <div className="footer-brand">
-              Archipel Formation
+              GALACTUS Digital
               <span>Certifications IT · Caraïbes</span>
             </div>
             <p className="footer-tagline">

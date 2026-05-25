@@ -15,14 +15,14 @@ const floatingBadges = [
     bg: 'rgba(255,153,0,0.18)',
     label: 'IPv6 Forum',
     sub: 'CLF-C02 · SAA-C03',
-    icon: '☁',
+    icon: '🌐',
   },
   {
     cls: 'badge-c',
     color: '#1BA0D7',
     bg: 'rgba(27,160,215,0.18)',
     label: 'Cisco',
-    sub: 'CCNA · CCNP · CyberOps',
+    sub: 'CCNA · CCNP · Automation · CyberOps',
     icon: '⬡',
   },
   {

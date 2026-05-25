@@ -25,8 +25,7 @@ const reasons = [
 
 const territories = [
   'Guadeloupe', 'Martinique', 'Guyane', 'Saint-Martin',
-  'Saint-Barthélemy', 'Haïti', 'République Dominicaine',
-  'Jamaïque', 'Trinidad & Tobago', 'Barbade', 'Sainte-Lucie',
+  'Saint-Barthélemy', 'France Hexagonale',
 ]
 
 export function WhyUs() {

@@ -27,10 +27,8 @@ const points = [
 const certPrograms = [
   { name: 'Microsoft Azure & M365', meta: 'Official' },
   { name: 'Cisco CCNA / CCNP', meta: 'Official' },
-  { name: 'AWS Solutions Architect', meta: 'Official' },
+  { name: 'IPv6 Forum', meta: 'Official' },
   { name: 'CompTIA Security+', meta: 'Official' },
-  { name: 'ITIL 4 Foundation', meta: 'Official' },
-  { name: 'VMware by Broadcom', meta: 'Official' },
   { name: 'EC-Council CEH', meta: 'Official' },
   { name: 'PMP / PMI', meta: 'Official' },
 ]
@@ -54,7 +52,7 @@ export function About() {
             <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}>
               GALACTUS Digital est né d'une conviction : les professionnels des Caraïbes méritent
               d'accéder aux mêmes certifications IT de niveau mondial que leurs homologues en Europe
-              ou en Amérique du Nord. Forts de plus de 12 ans d'expérience et d'un réseau
+              ou en Amérique du Nord. Forts de plus de 20 ans d'expérience et d'un réseau
               d'experts certifiés à l'échelle internationale, nous avons bâti une offre complète,
               rigoureuse et adaptée aux réalités du marché caribéen.
             </p>

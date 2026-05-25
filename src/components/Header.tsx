@@ -23,7 +23,7 @@ export function Header() {
     <header className={`site-nav${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-inner">
         <a href="#" className="nav-logo">
-          Archipel Formation
+          GALACTUS Digital
           <span>Certifications IT · Caraïbes</span>
         </a>
 

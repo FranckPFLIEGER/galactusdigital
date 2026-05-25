@@ -42,7 +42,7 @@ export function Footer() {
             </div>
             <p className="footer-tagline">
               L'ingénierie de formation certifiée IT aux Caraïbes.
-              Formateurs experts, cours officiels éditeurs, présence sur 11 territoires.
+              Formateurs experts, cours officiels éditeurs, présence sur 7 territoires.
             </p>
           </div>
 

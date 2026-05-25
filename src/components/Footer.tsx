@@ -13,7 +13,7 @@
     links: [
       { label: 'Microsoft', href: '#certifications' },
       { label: 'Cisco', href: '#certifications' },
-      { label: 'IPv6', href: '#certifications' },
+      { label: 'IPv6 Forum', href: '#certifications' },
       { label: 'CompTIA', href: '#certifications' },
     ],
   },

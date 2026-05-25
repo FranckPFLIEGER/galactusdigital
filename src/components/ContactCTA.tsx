@@ -40,8 +40,8 @@ export function ContactCTA() {
             <div className="contact-detail-icon">
               <Mail size={16} color="white" />
             </div>
-            <a href="mailto:contact@archipel-formation.com">
-              contact@archipel-formation.com
+            <a href="mailto:galactusdigital@gmail.com">
+              galactusdigital@gmail.com
             </a>
           </div>
 
@@ -49,7 +49,7 @@ export function ContactCTA() {
             <div className="contact-detail-icon">
               <Phone size={16} color="white" />
             </div>
-            <a href="tel:+5900596000000">+590 596 00 00 00</a>
+            <a href="tel:+33781074746">+33 07 81 07 47 46</a>
           </div>
 
           <div className="contact-detail">

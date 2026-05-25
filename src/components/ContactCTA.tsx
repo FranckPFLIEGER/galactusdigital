@@ -27,7 +27,7 @@ export function ContactCTA() {
 
         <div className={`reveal${isVisible ? ' visible' : ''} delay-3`}>
           <a
-            href="mailto:contact@archipel-formation.com"
+            href="mailto:galactusdigital@gmail.com"
             className="btn-gold"
             style={{ fontSize: '0.88rem' }}
           >

@@ -13,7 +13,7 @@ const floatingBadges = [
     cls: 'badge-b',
     color: '#FF9900',
     bg: 'rgba(255,153,0,0.18)',
-    label: 'Amazon Web Services',
+    label: 'IPv6 Forum',
     sub: 'CLF-C02 · SAA-C03',
     icon: '☁',
   },

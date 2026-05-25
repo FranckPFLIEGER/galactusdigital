@@ -45,7 +45,9 @@ export function Footer() {
               Formateurs experts, cours officiels éditeurs, présence sur 7 territoires.
             </p>
           </div>
-
+          <div>
+          QUALIOPI
+          </div>
           {navCols.map(col => (
             <div key={col.title}>
               <div className="footer-col-title">{col.title}</div>

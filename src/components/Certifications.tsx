@@ -16,8 +16,8 @@ const publishers = [
     certs: 'CCNA · CCNP · CyberOps · DevNet',
   },
   {
-    name: 'Amazon Web Services',
-    icon: '☁',
+    name: 'IPv6 Forum',
+    icon: '🌐',
     color: '#FF9900',
     bg: 'rgba(255,153,0,0.1)',
     certs: 'CLF-C02 · SAA-C03 · SCS-C02',
@@ -30,25 +30,11 @@ const publishers = [
     certs: 'A+ · Network+ · Security+ · CySA+',
   },
   {
-    name: 'VMware by Broadcom',
-    icon: '◉',
-    color: '#607078',
-    bg: 'rgba(96,112,120,0.1)',
-    certs: 'VCP-DCV · VCP-NV · VCAP',
-  },
-  {
     name: 'EC-Council',
     icon: '⚑',
     color: '#1A3A6B',
     bg: 'rgba(26,58,107,0.1)',
     certs: 'CEH · CPENT · C|EH Master',
-  },
-  {
-    name: 'ITIL 4 / Axelos',
-    icon: '◫',
-    color: '#6B2F8E',
-    bg: 'rgba(107,47,142,0.1)',
-    certs: 'Foundation · Practitioner · Strategic',
   },
   {
     name: 'PMI',

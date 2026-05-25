@@ -13,7 +13,7 @@ const publishers = [
     icon: '⬡',
     color: '#1BA0D7',
     bg: 'rgba(27,160,215,0.1)',
-    certs: 'CCNA · CCNP · CyberOps · DevNet',
+    certs: 'CCNA · CCNP · Automation · CyberOps',
   },
   {
     name: 'IPv6 Forum',
@@ -27,7 +27,7 @@ const publishers = [
     icon: '◈',
     color: '#C00',
     bg: 'rgba(200,0,0,0.1)',
-    certs: 'A+ · Network+ · Security+ · CySA+',
+    certs: 'A+ · Network+ · Security+',
   },
   {
     name: 'EC-Council',

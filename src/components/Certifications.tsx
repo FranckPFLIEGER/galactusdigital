@@ -20,7 +20,7 @@ const publishers = [
     icon: '🌐',
     color: '#FF9900',
     bg: 'rgba(255,153,0,0.1)',
-    certs: 'CLF-C02 · SAA-C03 · SCS-C02',
+    certs: 'Certified Network Engineer',
   },
   {
     name: 'CompTIA',

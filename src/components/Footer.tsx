@@ -34,9 +34,12 @@ export function Footer() {
   return (
     <footer className="site-footer">
       <div className="footer-inner">
+        
         <div className="footer-top">
           
-          <div>
+          {/* Bloc Logo + Description */}
+          <div className="footer-brand-section">
+            
             <div className="footer-brand">
               GALACTUS Digital
               <span>Certifications IT · Caraïbes</span>
@@ -44,29 +47,33 @@ export function Footer() {
 
             <p className="footer-tagline">
               L'ingénierie de formation certifiée IT aux Caraïbes.
-              Formateurs experts, cours officiels éditeurs, présence sur 7 territoires.
+              Formateurs experts, cours officiels éditeurs,
+              présence sur 7 territoires.
             </p>
 
-            {/* LOGO QUALIOPI */}
+            {/* Logo Qualiopi */}
             <img
-              src="/public/qualopi.png"
+              src="/qualopi.png"
               alt="Certification Qualiopi"
-              style={{
-                width: '220px',
-                marginTop: '20px',
-                borderRadius: '8px',
-              }}
+              className="qualiopi-logo"
+              loading="lazy"
             />
           </div>
 
-          {navCols.map(col => (
+          {/* Colonnes navigation */}
+          {navCols.map((col) => (
             <div key={col.title}>
-              <div className="footer-col-title">{col.title}</div>
+              
+              <h4 className="footer-col-title">
+                {col.title}
+              </h4>
 
               <ul className="footer-links">
-                {col.links.map(link => (
+                {col.links.map((link) => (
                   <li key={link.label}>
-                    <a href={link.href}>{link.label}</a>
+                    <a href={link.href}>
+                      {link.label}
+                    </a>
                   </li>
                 ))}
               </ul>
@@ -74,14 +81,20 @@ export function Footer() {
           ))}
         </div>
 
+        {/* Bas footer */}
         <div className="footer-bottom">
-          <span>© {year} GALACTUS Digital. Tous droits réservés.</span>
-
+          
           <span>
-            <a href="#accueil">Mentions légales</a>
-            {' · '}
-            <a href="#accueil">Politique de confidentialité</a>
+            © {year} GALACTUS Digital. Tous droits réservés.
           </span>
+
+          <div className="footer-legal">
+            <a href="#accueil">Mentions légales</a>
+            <span>·</span>
+            <a href="#accueil">
+              Politique de confidentialité
+            </a>
+          </div>
         </div>
       </div>
     </footer>

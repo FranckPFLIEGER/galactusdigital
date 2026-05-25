@@ -13,7 +13,7 @@ const navCols = [
     links: [
       { label: 'Microsoft', href: '#certifications' },
       { label: 'Cisco', href: '#certifications' },
-      { label: 'AWS', href: '#certifications' },
+      { label: 'IPv6', href: '#certifications' },
       { label: 'CompTIA', href: '#certifications' },
     ],
   },
@@ -61,7 +61,7 @@ export function Footer() {
         </div>
 
         <div className="footer-bottom">
-          <span>© {year} Archipel Formation. Tous droits réservés.</span>
+          <span>© {year} GALACTUS Digital. Tous droits réservés.</span>
           <span>
             <a href="#accueil">Mentions légales</a>
             {' · '}

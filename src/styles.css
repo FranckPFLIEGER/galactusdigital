@@ -3,15 +3,8 @@
 
 /* ═══════════════════════════════════════════════════════
    CHARTE GRAPHIQUE GALACTUS DIGITAL 2020
-   ───────────────────────────────────────────────────────
-   Couleurs officielles :
-     Noir   #1D1D1B  PANTONE Process Black C
-     Gris   #BBBBBB  PANTONE Cool Gray 4C
-     Rouge  #E41F26  PANTONE P 48-8C
-   Polices :
-     Titres  → Barlow Condensed (substitut web Agency FB)
-     Corps   → Nunito (substitut web Avenir Book)
-   Élément graphique : double ligne horizontale rouge
+   Noir #1D1D1B · Gris #BBBBBB · Rouge #E41F26
+   Titres : Barlow Condensed · Corps : Nunito
 ═══════════════════════════════════════════════════════ */
 
 :root {
@@ -19,19 +12,16 @@
   --g-gray   : #BBBBBB;
   --g-red    : #E41F26;
   --g-white  : #FFFFFF;
-  --g-black2 : #111110;   /* fond très sombre pour footer */
-
+  --g-black2 : #111110;
   --g-red-75 : rgba(228,31,38,0.75);
   --g-red-50 : rgba(228,31,38,0.50);
   --g-red-25 : rgba(228,31,38,0.25);
-
   --font-title : 'Barlow Condensed', 'Agency FB', sans-serif;
   --font-body  : 'Nunito', 'Avenir', Arial, sans-serif;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
-
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -41,7 +31,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-/* ─── Keyframes ──────────────────────────────────────── */
+/* ─── Keyframes ─────────────────────────────────────── */
 @keyframes float-a {
   0%, 100% { transform: translateY(0px) rotate(0deg); }
   50%       { transform: translateY(-10px) rotate(1deg); }
@@ -76,27 +66,24 @@ body {
   100% { box-shadow: 0 0 0 0 rgba(228,31,38,0); }
 }
 
-/* ─── Reveal utility ─────────────────────────────────── */
+/* ─── Reveal utility ────────────────────────────────── */
 .reveal         { opacity: 0; }
 .reveal.visible { animation: fadeUp 0.7s ease-out forwards; }
 .reveal-left    { opacity: 0; }
 .reveal-left.visible  { animation: fadeLeft 0.7s ease-out forwards; }
 .reveal-scale   { opacity: 0; }
 .reveal-scale.visible { animation: scaleUp 0.65s ease-out forwards; }
-
 .delay-1 { animation-delay: 0.1s !important; }
 .delay-2 { animation-delay: 0.2s !important; }
 .delay-3 { animation-delay: 0.3s !important; }
 .delay-4 { animation-delay: 0.4s !important; }
 .delay-5 { animation-delay: 0.5s !important; }
 
-/* ─── Typographie ────────────────────────────────────── */
+/* ─── Typographie ───────────────────────────────────── */
 .font-title { font-family: var(--font-title); }
 .font-body  { font-family: var(--font-body); }
 
-/* ─── Boutons ────────────────────────────────────────── */
-
-/* Bouton principal : rouge Galactus */
+/* ─── Boutons ───────────────────────────────────────── */
 .btn-red {
   display: inline-flex;
   align-items: center;
@@ -119,8 +106,6 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 10px 24px rgba(228,31,38,0.28);
 }
-
-/* Bouton contour blanc (sur fonds sombres) */
 .btn-ghost {
   display: inline-flex;
   align-items: center;
@@ -143,8 +128,6 @@ body {
   color: var(--g-white);
   background: rgba(228,31,38,0.08);
 }
-
-/* Bouton noir (sur fonds clairs) */
 .btn-black {
   display: inline-flex;
   align-items: center;
@@ -167,7 +150,7 @@ body {
   transform: translateY(-2px);
 }
 
-/* ─── NAVIGATION ─────────────────────────────────────── */
+/* ─── NAVIGATION ────────────────────────────────────── */
 .site-nav {
   position: fixed;
   top: 0; left: 0; right: 0;
@@ -195,7 +178,6 @@ body {
   display: flex;
   align-items: center;
   text-decoration: none;
-  /* espace de sécurité charte = hauteur X des caractères */
   padding: 4px;
 }
 .nav-links {
@@ -223,8 +205,6 @@ body {
   white-space: nowrap;
 }
 .nav-link-item:hover { color: var(--g-red); }
-
-/* Dropdown */
 .nav-dropdown {
   position: absolute;
   top: 100%;
@@ -252,13 +232,7 @@ body {
   color: var(--g-white);
   background: rgba(228,31,38,0.10);
 }
-
-/* CTA nav */
-.nav-cta-btn {
-  flex-shrink: 0;
-}
-
-/* Mobile */
+.nav-cta-btn { flex-shrink: 0; }
 .nav-mobile-btn {
   display: none;
   background: none;
@@ -298,14 +272,12 @@ body {
   color: var(--g-gray);
   padding-left: 0.75rem;
 }
-
 @media (max-width: 900px) {
   .nav-links, .nav-cta-btn { display: none; }
   .nav-mobile-btn { display: flex; }
 }
 
-/* ─── Règle rouge (élément graphique charte) ─────────── */
-/* Usage : <div class="g-rule"></div>                     */
+/* ─── Règle rouge (élément graphique charte) ────────── */
 .g-rule {
   display: flex;
   align-items: center;
@@ -326,11 +298,10 @@ body {
   height: 1.5px;
   background: var(--g-red-50);
 }
-/* Variante animée */
 .g-rule-anim { opacity: 0; }
 .g-rule-anim.visible { animation: fadeLeft 0.5s ease-out 0.15s forwards; }
 
-/* ─── Commun sections ────────────────────────────────── */
+/* ─── Commun sections ───────────────────────────────── */
 .section-inner {
   max-width: 1280px;
   margin: 0 auto;
@@ -348,7 +319,7 @@ body {
 }
 .section-h2 {
   font-family: var(--font-title);
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);  /* ✓ réduit */
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1.15;
@@ -358,7 +329,7 @@ body {
 }
 .section-h2-light {
   font-family: var(--font-title);
-  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);  /* ✓ réduit */
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1.15;
@@ -378,7 +349,7 @@ body {
   color: rgba(255,255,255,0.62);
 }
 
-/* ─── HERO ───────────────────────────────────────────── */
+/* ─── HERO ──────────────────────────────────────────── */
 .hero {
   min-height: 100vh;
   background: var(--g-black);
@@ -394,7 +365,6 @@ body {
   background-size: 32px 32px;
   pointer-events: none;
 }
-/* Accent rouge en bas à droite */
 .hero-gradient {
   position: absolute;
   inset: 0;
@@ -436,7 +406,7 @@ body {
 }
 .hero-h1 {
   font-family: var(--font-title);
-  font-size: clamp(2.8rem, 5.5vw, 4.4rem);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);    /* ✓ réduit */
   font-weight: 700;
   letter-spacing: 0.04em;
   line-height: 1.1;
@@ -476,8 +446,6 @@ body {
   height: 1px;
   background: rgba(255,255,255,0.18);
 }
-
-/* Hero visual panel */
 .hero-visual { position: relative; height: 480px; }
 .hero-panel {
   width: 100%;
@@ -506,8 +474,6 @@ body {
   background: radial-gradient(circle, rgba(228,31,38,0.12) 0%, transparent 70%);
   border-radius: 50%;
 }
-
-/* Cert badge cards */
 .cert-badge {
   position: absolute;
   background: rgba(29,29,27,0.85);
@@ -548,7 +514,6 @@ body {
 .badge-b { top: 36%;   left: -28px;  animation: float-b 4.5s ease-in-out infinite 0.8s; }
 .badge-c { bottom: 28%;right: -24px; animation: float-c 5.5s ease-in-out infinite 0.4s; }
 .badge-d { bottom: 8%; left: 12%;   animation: float-a 4s ease-in-out infinite 1.2s; }
-
 .hero-center-badge {
   position: absolute;
   top: 50%; left: 50%;
@@ -561,13 +526,12 @@ body {
   justify-content: center;
   animation: red-pulse 2.5s ease-in-out infinite;
 }
-
 @media (max-width: 900px) {
   .hero-inner { grid-template-columns: 1fr; padding: 7rem 1.5rem 4rem; gap: 3rem; }
   .hero-visual { height: 340px; }
 }
 
-/* ─── STATS ──────────────────────────────────────────── */
+/* ─── STATS ─────────────────────────────────────────── */
 .stats-bar {
   background: var(--g-white);
   border-top: 1px solid rgba(187,187,187,0.40);
@@ -617,7 +581,7 @@ body {
   .stat-item:nth-child(2)::after { display: none; }
 }
 
-/* ─── ABOUT ──────────────────────────────────────────── */
+/* ─── ABOUT ─────────────────────────────────────────── */
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -728,7 +692,7 @@ body {
   .about-grid { grid-template-columns: 1fr; gap: 3rem; }
 }
 
-/* ─── SERVICES ───────────────────────────────────────── */
+/* ─── SERVICES ──────────────────────────────────────── */
 .services-section {
   background: var(--g-black);
   position: relative;
@@ -743,7 +707,7 @@ body {
 .services-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2px;        /* joints serrés façon grille technique */
+  gap: 2px;
   margin-top: 3rem;
   border: 2px solid var(--g-red);
 }
@@ -755,7 +719,6 @@ body {
   position: relative;
   overflow: hidden;
 }
-/* Ligne rouge en haut au hover */
 .service-card::before {
   content: '';
   position: absolute;
@@ -777,7 +740,7 @@ body {
 }
 .service-title {
   font-family: var(--font-title);
-  font-size: 1.5rem;
+  font-size: 1.4rem;                         /* ✓ réduit */
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
@@ -810,7 +773,7 @@ body {
   .services-grid { grid-template-columns: 1fr; }
 }
 
-/* ─── CERTIFICATIONS ─────────────────────────────────── */
+/* ─── CERTIFICATIONS ────────────────────────────────── */
 .certs-section { background: var(--g-white); }
 .publishers-grid {
   display: grid;
@@ -860,7 +823,7 @@ body {
 @media (max-width: 860px) { .publishers-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 500px)  { .publishers-grid { grid-template-columns: 1fr 1fr; } }
 
-/* ─── WHY US ─────────────────────────────────────────── */
+/* ─── WHY US ────────────────────────────────────────── */
 .whyus-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -916,7 +879,7 @@ body {
 .whyus-quote {
   position: relative; z-index: 1;
   font-family: var(--font-title);
-  font-size: 1.55rem;
+  font-size: 1.4rem;                         /* ✓ réduit */
   font-weight: 400;
   letter-spacing: 0.04em;
   line-height: 1.5;
@@ -925,7 +888,7 @@ body {
 }
 .whyus-quote::before {
   content: '"';
-  font-size: 5rem;
+  font-size: 4rem;
   line-height: 0.5;
   color: var(--g-red);
   opacity: 0.5;
@@ -958,7 +921,7 @@ body {
 }
 @media (max-width: 860px) { .whyus-grid { grid-template-columns: 1fr; gap: 3rem; } }
 
-/* ─── CONTACT CTA ────────────────────────────────────── */
+/* ─── CONTACT CTA ───────────────────────────────────── */
 .contact-section {
   background: var(--g-black);
   position: relative;
@@ -970,7 +933,6 @@ body {
   background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px);
   background-size: 28px 28px;
 }
-/* Double ligne décorative rouge (élément graphique charte) */
 .contact-deco {
   position: absolute;
   top: 0; left: 0; right: 0;
@@ -979,27 +941,28 @@ body {
   opacity: 0.15;
 }
 .contact-inner {
-  max-width: 900px;
+  max-width: 760px;                          /* ✓ réduit (était 900px) */
   margin: 0 auto;
-  padding: 6rem 2rem;
+  padding: 5rem 2rem;                        /* ✓ réduit (était 6rem) */
   text-align: center;
   position: relative;
   z-index: 1;
 }
 .contact-h2 {
   font-family: var(--font-title);
-  font-size: clamp(2rem, 4vw, 3.4rem);
+  font-size: clamp(1.6rem, 2.8vw, 2.4rem);  /* ✓ réduit (était 3.4rem max) */
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--g-white);
   margin: 0 0 1rem;
+  line-height: 1.15;
 }
 .contact-sub {
-  font-size: 1rem;
+  font-size: 0.95rem;                        /* ✓ légèrement réduit */
   line-height: 1.75;
   color: rgba(255,255,255,0.60);
-  max-width: 560px;
+  max-width: 520px;
   margin: 0 auto 2.5rem;
 }
 .contact-details {
@@ -1033,7 +996,7 @@ body {
   flex-shrink: 0;
 }
 
-/* ─── FOOTER ─────────────────────────────────────────── */
+/* ─── FOOTER ────────────────────────────────────────── */
 .site-footer {
   background: var(--g-black2);
   padding: 3.5rem 2rem 2rem;
@@ -1102,6 +1065,5 @@ body {
 }
 .footer-bottom a { color: inherit; text-decoration: none; }
 .footer-bottom a:hover { color: var(--g-red); }
-
 @media (max-width: 860px) { .footer-top { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 500px)  { .footer-top { grid-template-columns: 1fr; gap: 2rem; } }

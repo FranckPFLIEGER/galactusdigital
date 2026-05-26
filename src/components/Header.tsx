@@ -3,7 +3,19 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 
 const navLinks = [
   {
-    label: 'Formations',
+    label: 'Éditeurs Officiels',
+    href: '#certifications',
+    children: [
+      { label: 'Microsoft', href: '#certifications' },
+      { label: 'Cisco', href: '#certifications' },
+      { label: 'CompTIA', href: '#certifications' },
+      { label: 'IPv6 Forum', href: '#certifications' },
+      { label: 'EC-Council', href: '#certifications' },
+      { label: 'PMI', href: '#certifications' },
+    ]
+  },
+  {
+    label: 'Services',
     href: '#services',
     children: [
       { label: 'Intra-Entreprise', href: '#services' },
@@ -12,19 +24,8 @@ const navLinks = [
     ]
   },
   {
-    label: 'Certifications',
-    href: '#certifications',
-    children: [
-      { label: 'Microsoft', href: '#certifications' },
-      { label: 'Cisco', href: '#certifications' },
-      { label: 'CompTIA', href: '#certifications' },
-      { label: 'IPv6 Forum', href: '#certifications' },
-      { label: 'Passer une certification', href: '/certifications/passer' },
-    ]
-  },
-  {
     label: 'Financement',
-    href: '/financement',
+    href: '#contact',
     children: [
       { label: 'CPF', href: '/financement/cpf' },
       { label: 'OPCO', href: '/financement/opco' },
@@ -32,9 +33,7 @@ const navLinks = [
     ]
   },
   { label: 'Expertise', href: '#expertise' },
-  { label: 'Services', href: '#services' },
   { label: 'Pourquoi Nous', href: '#pourquoi' },
-  { label: 'Qui sommes-nous', href: '#expertise' },
   { label: 'Contact', href: '#contact' },
 ]
 
@@ -84,7 +83,7 @@ export function Header() {
             ))}
           </ul>
         </nav>
-        <a href="/contact" className="btn-gold nav-cta-btn" style={{ padding: '0.6rem 1.4rem', fontSize: '0.78rem' }}>
+        <a href="#contact" className="btn-gold nav-cta-btn" style={{ padding: '0.6rem 1.4rem', fontSize: '0.78rem' }}>
           Nous Contacter
         </a>
         <button
@@ -113,7 +112,7 @@ export function Header() {
             )}
           </div>
         ))}
-        <a href="/contact" className="btn-gold" style={{ marginTop: '0.75rem', display: 'inline-flex', justifyContent: 'center' }}>
+        <a href="#contact" className="btn-gold" style={{ marginTop: '0.75rem', display: 'inline-flex', justifyContent: 'center' }}>
           Nous Contacter
         </a>
       </div>

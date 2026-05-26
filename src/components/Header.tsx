@@ -4,30 +4,22 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 const navLinks = [
   {
     label: 'Formations',
-    href: '/formations',
+    href: '#services',
     children: [
-      { label: 'Microsoft', href: '/formations/microsoft' },
-      { label: 'Cisco', href: '/formations/cisco' },
-      { label: 'AWS', href: '/formations/aws' },
-      { label: 'CompTIA', href: '/formations/comptia' },
-      { label: 'VMware', href: '/formations/vmware' },
+      { label: 'Intra-Entreprise', href: '#services' },
+      { label: 'Inter-Entreprise', href: '#services' },
+      { label: 'Calendrier des sessions', href: '/calendrier' },
     ]
   },
   {
     label: 'Certifications',
-    href: '/certifications',
+    href: '#certifications',
     children: [
+      { label: 'Microsoft', href: '#certifications' },
+      { label: 'Cisco', href: '#certifications' },
+      { label: 'CompTIA', href: '#certifications' },
+      { label: 'IPv6 Forum', href: '#certifications' },
       { label: 'Passer une certification', href: '/certifications/passer' },
-      { label: 'Calendrier', href: '/certifications/calendrier' },
-    ]
-  },
-  {
-    label: 'Solutions',
-    href: '/solutions',
-    children: [
-      { label: 'Intra-entreprise', href: '/solutions/intra' },
-      { label: 'Inter-entreprise', href: '/solutions/inter' },
-      { label: 'Formation à distance', href: '/solutions/distance' },
     ]
   },
   {
@@ -39,8 +31,8 @@ const navLinks = [
       { label: 'Plan de formation', href: '/financement/plan' },
     ]
   },
-  { label: 'Qui sommes-nous', href: '/about' },
-  { label: 'Contact', href: '/contact' },
+  { label: 'Qui sommes-nous', href: '#expertise' },
+  { label: 'Contact', href: '#contact' },
 ]
 
 export function Header() {

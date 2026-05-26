@@ -3,9 +3,7 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 
 // ═══════════════════════════════════════════════════════
 // CHARTE GRAPHIQUE GALACTUS DIGITAL 2020
-// Couleurs : #1D1D1B (noir) · #BBBBBB (gris) · #E41F26 (rouge)
-// Polices  : Barlow Condensed (titres) · Nunito (corps)
-// Logo     : icône officielle ICONE.png (fond transparent)
+// Couleurs : #1D1D1B · #BBBBBB · #E41F26
 // ═══════════════════════════════════════════════════════
 
 const navLinks = [
@@ -49,34 +47,20 @@ const navLinks = [
   },
   { label: 'Expertise',     href: '#expertise' },
   { label: 'Pourquoi Nous', href: '#pourquoi' },
-  { label: 'Contact',       href: '#contact' },
+  // ✓ "Contact" supprimé — remplacé par le bouton CTA uniquement
 ]
 
-// ── Logo officiel ────────────────────────────────────────
-// Placez galactus-icon.png (fond transparent) dans /public/images/
-// Le fichier PNG est fourni séparément (galactus-icon.png)
-function GalactusLogo({ dark = false }: { dark?: boolean }) {
-  const textColor   = dark ? '#FFFFFF' : '#FFFFFF' // toujours blanc sur nav sombre
-  const accentColor = '#E41F26'
-
+// ── Logo : icône PNG + wordmark SVG ─────────────────────
+function GalactusLogo() {
   return (
     <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-
-      {/* Icône officielle (PNG fond transparent) */}
+      {/* Icône officielle fond transparent */}
       <img
-        src="../galactus-icon.png"
-        alt=""
-        aria-hidden="true"
-        style={{
-          height: '48px',
-          width:  '48px',
-          objectFit: 'contain',
-          display: 'block',
-          flexShrink: 0,
-        }}
+        src="/galactus-icon.png"
+        alt="Galactus Digital"
+        style={{ height: '48px', width: '48px', objectFit: 'contain', display: 'block', flexShrink: 0 }}
       />
-
-      {/* Wordmark + double ligne rouge + DIGITAL */}
+      {/* Wordmark SVG */}
       <svg
         xmlns="http://www.w3.org/2000/svg"
         viewBox="0 0 158 52"
@@ -84,36 +68,24 @@ function GalactusLogo({ dark = false }: { dark?: boolean }) {
         aria-hidden="true"
         style={{ display: 'block', overflow: 'visible' }}
       >
-        {/* GALACTUS */}
-        <text
-          x="0" y="28"
-          fontFamily="'Barlow Condensed', 'Agency FB', sans-serif"
-          fontWeight="700"
-          fontSize="28"
-          fill={textColor}
-          letterSpacing="2"
-        >GALACTUS</text>
-
+        <text x="0" y="28"
+          fontFamily="'Barlow Condensed','Agency FB',sans-serif"
+          fontWeight="700" fontSize="28" fill="#FFFFFF" letterSpacing="2">
+          GALACTUS
+        </text>
         {/* Double ligne rouge — élément graphique charte */}
-        <line x1="0"   y1="34" x2="158" y2="34" stroke={accentColor} strokeWidth="2.5" />
-        <line x1="0"   y1="39" x2="158" y2="39" stroke={accentColor} strokeWidth="1" opacity="0.5" />
-
-        {/* DIGITAL */}
-        <text
-          x="79" y="50"
-          fontFamily="'Barlow Condensed', 'Agency FB', sans-serif"
-          fontWeight="400"
-          fontSize="10"
-          fill={accentColor}
-          letterSpacing="5"
-          textAnchor="middle"
-        >Digital</text>
+        <line x1="0" y1="34" x2="158" y2="34" stroke="#E41F26" strokeWidth="2.5" />
+        <line x1="0" y1="39" x2="158" y2="39" stroke="#E41F26" strokeWidth="1" opacity="0.5" />
+        <text x="79" y="50"
+          fontFamily="'Barlow Condensed','Agency FB',sans-serif"
+          fontWeight="400" fontSize="10" fill="#E41F26" letterSpacing="5" textAnchor="middle">
+          DIGITAL
+        </text>
       </svg>
     </div>
   )
 }
 
-// ── Header ───────────────────────────────────────────────
 export function Header() {
   const [scrolled,     setScrolled]     = useState(false)
   const [mobileOpen,   setMobileOpen]   = useState(false)
@@ -129,7 +101,7 @@ export function Header() {
     <header className={`site-nav${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-inner">
 
-        {/* Logo officiel */}
+        {/* Logo seul — sans texte en double */}
         <a href="/" className="nav-logo" aria-label="Galactus Digital — Accueil">
           <GalactusLogo />
         </a>
@@ -148,7 +120,6 @@ export function Header() {
                   {link.label}
                   {link.children && <ChevronDown size={12} style={{ marginLeft: '3px' }} />}
                 </a>
-
                 {link.children && openDropdown === link.label && (
                   <ul className="nav-dropdown" role="menu">
                     {link.children.map(child => (
@@ -165,7 +136,7 @@ export function Header() {
           </ul>
         </nav>
 
-        {/* CTA rouge — conforme charte (remplace btn-gold) */}
+        {/* Bouton CTA rouge */}
         <a href="#contact" className="btn-red nav-cta-btn"
           style={{ padding: '0.6rem 1.4rem', fontSize: '0.78rem' }}>
           Nous Contacter
@@ -178,9 +149,7 @@ export function Header() {
           aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
           aria-expanded={mobileOpen}
         >
-          {mobileOpen
-            ? <X    size={22} color="#E41F26" />
-            : <Menu size={22} color="#FFFFFF" />}
+          {mobileOpen ? <X size={22} color="#E41F26" /> : <Menu size={22} color="#FFFFFF" />}
         </button>
       </div>
 
@@ -192,23 +161,16 @@ export function Header() {
               {link.label}
             </a>
             {link.children?.map(child => (
-              <a
-                key={child.label}
-                href={child.href}
-                className="sub-link"
-                onClick={() => setMobileOpen(false)}
-              >
+              <a key={child.label} href={child.href} className="sub-link"
+                onClick={() => setMobileOpen(false)}>
                 {child.label}
               </a>
             ))}
           </div>
         ))}
-        <a
-          href="#contact"
-          className="btn-red"
+        <a href="#contact" className="btn-red"
           style={{ marginTop: '1rem', justifyContent: 'center' }}
-          onClick={() => setMobileOpen(false)}
-        >
+          onClick={() => setMobileOpen(false)}>
           Nous Contacter
         </a>
       </div>

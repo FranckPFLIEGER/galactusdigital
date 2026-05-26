@@ -9,7 +9,7 @@ const reasons = [
   {
     num: '02',
     title: 'Couverture unique aux Caraïbes',
-    desc: 'Présents sur 11 territoires, nous sommes le seul organisme capable de déployer des formations officielles à cette échelle dans la région caribéenne.',
+    desc: 'Présents sur 7 territoires, nous sommes le seul organisme capable de déployer des formations officielles à cette échelle dans la région caribéenne.',
   },
   {
     num: '03',

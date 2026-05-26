@@ -50,7 +50,7 @@ function GalactusLogo() {
     <img
       src="/galactus-icon.png"
       alt="Galactus Digital"
-      style={{ height: '52px', objectFit: 'contain', display: 'block' }}
+      style={{ height: '60px', objectFit: 'contain', display: 'block' }}
     />
   )
 }

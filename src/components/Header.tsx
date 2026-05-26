@@ -64,7 +64,7 @@ function GalactusLogo({ dark = false }: { dark?: boolean }) {
 
       {/* Icône officielle (PNG fond transparent) */}
       <img
-        src="../images/galactus-icon.png"
+        src="/images/galactus-icon.png"
         alt=""
         aria-hidden="true"
         style={{

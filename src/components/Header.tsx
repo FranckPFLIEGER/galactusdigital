@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 
 const navLinks = [
   {
-    label: 'Formations',
+    label: 'Services',
     href: '#services',
     children: [
       { label: 'Intra-Entreprise', href: '#services' },
@@ -12,13 +12,15 @@ const navLinks = [
     ]
   },
   {
-    label: 'Certifications',
+    label: 'Éditeurs Officiels',
     href: '#certifications',
     children: [
       { label: 'Microsoft', href: '#certifications' },
       { label: 'Cisco', href: '#certifications' },
       { label: 'CompTIA', href: '#certifications' },
       { label: 'IPv6 Forum', href: '#certifications' },
+      { label: 'EC-Council', href: '#certifications' },
+      { label: 'PMI', href: '#certifications' },
       { label: 'Passer une certification', href: '/certifications/passer' },
     ]
   },
@@ -32,9 +34,7 @@ const navLinks = [
     ]
   },
   { label: 'Expertise', href: '#expertise' },
-  { label: 'Services', href: '#services' },
   { label: 'Pourquoi Nous', href: '#pourquoi' },
-  { label: 'Qui sommes-nous', href: '#expertise' },
   { label: 'Contact', href: '#contact' },
 ]
 

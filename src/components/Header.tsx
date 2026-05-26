@@ -3,7 +3,7 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 
 const navLinks = [
   {
-    label: 'Éditeurs Officiels',
+    label: 'Formations',
     href: '#certifications',
     children: [
       { label: 'Microsoft', href: '#certifications' },
@@ -12,6 +12,14 @@ const navLinks = [
       { label: 'IPv6 Forum', href: '#certifications' },
       { label: 'EC-Council', href: '#certifications' },
       { label: 'PMI', href: '#certifications' },
+    ]
+  },
+  {
+    label: 'Certifications',
+    href: '#certifications',
+    children: [
+      { label: 'Passer une certification', href: '/certifications/passer' },
+      { label: 'Certifications IT', href: '/certifications' },
     ]
   },
   {
@@ -59,19 +67,19 @@ export function Header() {
           <ul className="nav-links">
             {navLinks.map(link => (
               <li
-                key={link.href}
+                key={link.label}
                 className="nav-item"
-                onMouseEnter={() => link.children && setOpenDropdown(link.href)}
+                onMouseEnter={() => link.children && setOpenDropdown(link.label)}
                 onMouseLeave={() => setOpenDropdown(null)}
               >
                 <a href={link.href} className="nav-link-item">
                   {link.label}
                   {link.children && <ChevronDown size={14} style={{ marginLeft: '4px' }} />}
                 </a>
-                {link.children && openDropdown === link.href && (
+                {link.children && openDropdown === link.label && (
                   <ul className="nav-dropdown">
                     {link.children.map(child => (
-                      <li key={child.href}>
+                      <li key={child.label}>
                         <a href={child.href} className="nav-dropdown-item">
                           {child.label}
                         </a>
@@ -96,14 +104,14 @@ export function Header() {
       </div>
       <div className={`nav-mobile-menu${mobileOpen ? ' open' : ''}`}>
         {navLinks.map(link => (
-          <div key={link.href}>
+          <div key={link.label}>
             <a href={link.href} onClick={() => setMobileOpen(false)}>
               {link.label}
             </a>
             {link.children && (
               <div style={{ paddingLeft: '1rem' }}>
                 {link.children.map(child => (
-                  <a key={child.href} href={child.href} onClick={() => setMobileOpen(false)}
+                  <a key={child.label} href={child.href} onClick={() => setMobileOpen(false)}
                     style={{ fontSize: '0.85rem', opacity: 0.8 }}>
                     {child.label}
                   </a>

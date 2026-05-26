@@ -79,14 +79,6 @@ export function Hero() {
               Demander un devis
             </a>
           </div>
-
-          <div
-            className="hero-scroll"
-            style={{ animation: 'fadeUp 0.7s ease-out 0.5s both' }}
-          >
-            <span className="hero-scroll-line" />
-            Découvrir
-          </div>
         </div>
 
         {/* Right: Visual */}

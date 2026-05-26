@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Menu, X, ChevronDown } from 'lucide-react'
 
-// ═══════════════════════════════════════════════════════
-// CHARTE GRAPHIQUE GALACTUS DIGITAL 2020
-// Couleurs : #1D1D1B · #BBBBBB · #E41F26
-// ═══════════════════════════════════════════════════════
-
 const navLinks = [
   {
     label: 'Formations',
@@ -47,42 +42,16 @@ const navLinks = [
   },
   { label: 'Expertise',     href: '#expertise' },
   { label: 'Pourquoi Nous', href: '#pourquoi' },
-  // ✓ "Contact" supprimé — remplacé par le bouton CTA uniquement
 ]
 
-// ── Logo : icône PNG + wordmark SVG ─────────────────────
+// ── Logo : PNG complet (contient déjà icône + GALACTUS + DIGITAL)
 function GalactusLogo() {
   return (
-    <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-      {/* Icône officielle fond transparent */}
-      <img
-        src="/galactus-icon.png"
-        alt="Galactus Digital"
-        style={{ height: '48px', width: '48px', objectFit: 'contain', display: 'block', flexShrink: 0 }}
-      />
-      {/* Wordmark SVG */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 158 52"
-        height="44"
-        aria-hidden="true"
-        style={{ display: 'block', overflow: 'visible' }}
-      >
-        <text x="0" y="28"
-          fontFamily="'Barlow Condensed','Agency FB',sans-serif"
-          fontWeight="700" fontSize="28" fill="#FFFFFF" letterSpacing="2">
-          GALACTUS
-        </text>
-        {/* Double ligne rouge — élément graphique charte */}
-        <line x1="0" y1="34" x2="158" y2="34" stroke="#E41F26" strokeWidth="2.5" />
-        <line x1="0" y1="39" x2="158" y2="39" stroke="#E41F26" strokeWidth="1" opacity="0.5" />
-        <text x="79" y="50"
-          fontFamily="'Barlow Condensed','Agency FB',sans-serif"
-          fontWeight="400" fontSize="10" fill="#E41F26" letterSpacing="5" textAnchor="middle">
-          DIGITAL
-        </text>
-      </svg>
-    </div>
+    <img
+      src="/galactus-icon.png"
+      alt="Galactus Digital"
+      style={{ height: '52px', objectFit: 'contain', display: 'block' }}
+    />
   )
 }
 
@@ -101,12 +70,10 @@ export function Header() {
     <header className={`site-nav${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-inner">
 
-        {/* Logo seul — sans texte en double */}
         <a href="/" className="nav-logo" aria-label="Galactus Digital — Accueil">
           <GalactusLogo />
         </a>
 
-        {/* Navigation desktop */}
         <nav aria-label="Navigation principale">
           <ul className="nav-links">
             {navLinks.map(link => (
@@ -136,13 +103,11 @@ export function Header() {
           </ul>
         </nav>
 
-        {/* Bouton CTA rouge */}
         <a href="#contact" className="btn-red nav-cta-btn"
           style={{ padding: '0.6rem 1.4rem', fontSize: '0.78rem' }}>
           Nous Contacter
         </a>
 
-        {/* Burger mobile */}
         <button
           className="nav-mobile-btn"
           onClick={() => setMobileOpen(o => !o)}
@@ -153,7 +118,6 @@ export function Header() {
         </button>
       </div>
 
-      {/* Menu mobile */}
       <div className={`nav-mobile-menu${mobileOpen ? ' open' : ''}`} aria-hidden={!mobileOpen}>
         {navLinks.map(link => (
           <div key={link.label}>

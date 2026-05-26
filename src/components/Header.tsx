@@ -31,6 +31,9 @@ const navLinks = [
       { label: 'Plan de formation', href: '/financement/plan' },
     ]
   },
+  { label: 'Expertise', href: '#expertise' },
+  { label: 'Services', href: '#services' },
+  { label: 'Pourquoi Nous', href: '#pourquoi' },
   { label: 'Qui sommes-nous', href: '#expertise' },
   { label: 'Contact', href: '#contact' },
 ]

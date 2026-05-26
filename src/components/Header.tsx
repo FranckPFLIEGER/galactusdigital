@@ -107,7 +107,7 @@ function GalactusLogo({ dark = false }: { dark?: boolean }) {
           fill={accentColor}
           letterSpacing="5"
           textAnchor="middle"
-        >DIGITAL</text>
+        >Digital</text>
       </svg>
     </div>
   )

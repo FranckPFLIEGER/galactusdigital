@@ -37,6 +37,7 @@ export function Footer() {
 
           <div className="footer-brand-section">
 
+            {/* ✓ Logo identique au header */}
             <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.25rem' }}>
               <div style={{
                 fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
@@ -51,24 +52,24 @@ export function Footer() {
                 GALACTUS
               </div>
               <div style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr auto 1fr',
+                display: 'flex',
                 alignItems: 'center',
                 gap: '5px',
+                justifyContent: 'center',
               }}>
-                <div style={{ height: '2px', background: '#E41F26' }} />
+                <div style={{ width: '28px', height: '2px', background: '#E41F26' }} />
                 <span style={{
                   fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
                   fontWeight: 400,
-                  fontSize: '0.65rem',
-                  letterSpacing: '0.25em',
+                  fontSize: '0.60rem',
+                  letterSpacing: '0.28em',
                   textTransform: 'uppercase',
                   color: '#E41F26',
                   whiteSpace: 'nowrap',
                 }}>
                   DIGITAL
                 </span>
-                <div style={{ height: '2px', background: '#E41F26' }} />
+                <div style={{ width: '28px', height: '2px', background: '#E41F26' }} />
               </div>
             </a>
 
@@ -78,17 +79,16 @@ export function Footer() {
               présence sur 7 territoires.
             </p>
 
-            {/* ✓ Qualiopi taille naturelle */}
+            {/* ✓ Qualiopi original sans transformation */}
             <div style={{
               background: '#FFFFFF',
               padding: '0.75rem 1rem',
               display: 'inline-block',
-              width: 'fit-content',
             }}>
               <img
                 src="/qualiopi.jpg"
-                alt="Certification Qualiopi — Processus certifié République Française"
-                style={{ height: '80px', width: 'auto', display: 'block' }}
+                alt="Certification Qualiopi"
+                style={{ height: '60px', width: 'auto', display: 'block' }}
                 loading="lazy"
               />
             </div>

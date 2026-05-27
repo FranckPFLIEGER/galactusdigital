@@ -4,13 +4,13 @@ const stats = [
   { number: '+20', suffix: ' ans', label: "d'expertise reconnue" },
   { number: '47',  suffix: '',     label: 'experts internationaux' },
   { number: '+180',suffix: '',     label: 'cours officiels éditeurs' },
-  { number: '6',  suffix: '',     label: 'territoires ultramarins' },
+  { number: '6',   suffix: '',     label: 'territoires ultramarins' },
 ]
 
 export function Stats() {
   const { ref, isVisible } = useIntersection()
-
   return (
+    // ✓ Fond noir conforme charte — plus de rupture blanc/noir
     <section className="stats-bar" ref={ref}>
       <div className="stats-inner">
         {stats.map((s, i) => (

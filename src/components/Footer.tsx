@@ -37,8 +37,8 @@ export function Footer() {
 
           <div className="footer-brand-section">
 
-            {/* ✓ Logo identique au header */}
-            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.25rem' }}>
+            {/* Logo GALACTUS */}
+            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', marginBottom: '1.25rem', display: 'block', width: 'fit-content' }}>
               <div style={{
                 fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
                 fontWeight: 700,
@@ -47,17 +47,18 @@ export function Footer() {
                 textTransform: 'uppercase',
                 color: '#FFFFFF',
                 lineHeight: 1,
-                marginBottom: '3px',
+                marginBottom: '4px',
+                textAlign: 'center',
               }}>
                 GALACTUS
               </div>
               <div style={{
                 display: 'flex',
                 alignItems: 'center',
-                gap: '5px',
                 justifyContent: 'center',
+                gap: '6px',
               }}>
-                <div style={{ width: '28px', height: '2px', background: '#E41F26' }} />
+                <div style={{ width: '28px', height: '2px', background: '#E41F26', flexShrink: 0 }} />
                 <span style={{
                   fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
                   fontWeight: 400,
@@ -69,7 +70,7 @@ export function Footer() {
                 }}>
                   DIGITAL
                 </span>
-                <div style={{ width: '28px', height: '2px', background: '#E41F26' }} />
+                <div style={{ width: '28px', height: '2px', background: '#E41F26', flexShrink: 0 }} />
               </div>
             </a>
 
@@ -79,16 +80,11 @@ export function Footer() {
               présence sur 7 territoires.
             </p>
 
-            {/* ✓ Qualiopi original sans transformation */}
-            <div style={{
-              background: '#FFFFFF',
-              padding: '0.75rem 1rem',
-              display: 'inline-block',
-            }}>
+            {/* ✓ Qualiopi — image telle quelle, pas de style imposé */}
+            <div style={{ background: '#FFFFFF', padding: '0.75rem', display: 'inline-block' }}>
               <img
                 src="/qualiopi.jpg"
                 alt="Certification Qualiopi"
-                style={{ height: '60px', width: 'auto', display: 'block' }}
                 loading="lazy"
               />
             </div>

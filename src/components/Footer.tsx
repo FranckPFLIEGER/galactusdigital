@@ -37,64 +37,25 @@ export function Footer() {
 
           <div className="footer-brand-section">
 
-            <a href="/" aria-label="Galactus Digital — Accueil">
-              <img
-                src="/galactus-icon.png"
-                alt="Galactus Digital"
-                style={{
-                  height: '52px',
-                  objectFit: 'contain',
-                  display: 'block',
-                  marginBottom: '1rem',
-                }}
-              />
-            </a>
-
-            <p className="footer-tagline">
-              L'ingénierie de formation certifiée IT aux Caraïbes.
-              Formateurs experts, cours officiels éditeurs,
-              présence sur 7 territoires.
-            </p>
-
-            <div className="qualiopi-block">
-              <img
-                src="/qualiopi.jpg"
-                alt="Certification Qualiopi — Processus certifié"
-                className="qualiopi-logo"
-                loading="lazy"
-              />
-              <p className="qualiopi-text">
-                Certification qualité délivrée au titre des actions de formation.
-              </p>
-            </div>
-
-          </div>
-
-          {navCols.map(col => (
-            <div key={col.title}>
-              <h4 className="footer-col-title">{col.title}</h4>
-              <ul className="footer-links">
-                {col.links.map(link => (
-                  <li key={link.label}>
-                    <a href={link.href}>{link.label}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-        </div>
-
-        <div className="footer-bottom">
-          <span>© {year} GALACTUS Digital. Tous droits réservés.</span>
-          <div style={{ display: 'flex', gap: '1rem' }}>
-            <a href="#accueil">Mentions légales</a>
-            <span>·</span>
-            <a href="#accueil">Politique de confidentialité</a>
-          </div>
-        </div>
-
-      </div>
-    </footer>
-  )
-}
+            {/* ✓ Texte à la place du logo — lisible et propre */}
+            <a href="/" aria-label="Galactus Digital — Accueil" style={{ textDecoration: 'none' }}>
+              <div style={{
+                fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
+                fontWeight: 700,
+                fontSize: '1.8rem',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color: '#FFFFFF',
+                lineHeight: 1,
+                marginBottom: '0.25rem',
+              }}>
+                GALACTUS
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '6px',
+                marginBottom: '1rem',
+              }}>
+                <div style={{ width: '32px', height: '2px', background: '#E41F26' }} />
+                <div style={{

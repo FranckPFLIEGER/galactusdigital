@@ -58,7 +58,7 @@ export function Footer() {
 
             <div className="qualiopi-block">
               <img
-                src="/qualiopi.png"
+                src="/qualiopi.jpg"
                 alt="Certification Qualiopi — Processus certifié"
                 className="qualiopi-logo"
                 loading="lazy"

@@ -5,10 +5,10 @@ const services = [
   {
     icon: <Building2 size={22} color="white" />,
     title: 'Formation Intra-Entreprise',
-    desc: 'Sessions organisées directement au sein de vos locaux, conçues sur mesure pour vos équipes et adaptées à vos objectifs métiers spécifiques.',
+    desc: "Sessions organisées directement au sein de vos locaux, conçues sur mesure pour vos équipes et adaptées à vos objectifs métiers spécifiques.",
     features: [
       'Programme entièrement personnalisé selon vos besoins',
-      'Formateur dédié, expert certifié de l\'éditeur',
+      "Formateur dédié, expert certifié de l'éditeur",
       'Flexibilité calendaire et logistique',
       'Suivi post-formation et accompagnement aux examens',
       'Groupes de 4 à 15 participants',
@@ -17,11 +17,11 @@ const services = [
   {
     icon: <Users2 size={22} color="white" />,
     title: 'Formation Inter-Entreprise',
-    desc: 'Rejoignez nos sessions ouvertes planifiées tout au long de l\'année. Un format favorisant les échanges entre professionnels de secteurs variés.',
+    desc: "Rejoignez nos sessions ouvertes planifiées tout au long de l'année. Un format favorisant les échanges entre professionnels de secteurs variés.",
     features: [
       'Calendrier annuel disponible sur demande',
       'Accès à nos centres de formation aux Caraïbes',
-      'Partage d\'expériences entre participants',
+      "Partage d'expériences entre participants",
       'Préparation intensive aux examens officiels',
       'Financement via OPCO ou aides régionales',
     ],
@@ -30,16 +30,16 @@ const services = [
 
 export function Services() {
   const { ref, isVisible } = useIntersection()
-
   return (
     <section className="services-section" id="services" ref={ref}>
       <div className="services-bg" />
       <div className="section-inner">
-        <span className={`section-label reveal${isVisible ? ' visible' : ''}`}
-          style={{ color: 'var(--gold-light)' }}>
+
+        {/* ✓ Label rouge conforme charte */}
+        <span className={`section-label reveal${isVisible ? ' visible' : ''}`}>
           Nos Services
         </span>
-        <div className={`gold-rule${isVisible ? ' visible' : ''}`} />
+        <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
         <h2 className={`section-h2-light reveal${isVisible ? ' visible' : ''} delay-1`}>
           Deux modalités pour<br />accompagner votre montée en compétences
         </h2>
@@ -49,19 +49,22 @@ export function Services() {
           notre ingénierie pédagogique à votre contexte et vos contraintes.
         </p>
 
+        {/* ✓ Cards séparées avec bordure gauche rouge, plus de boîte englobante */}
         <div className="services-grid">
           {services.map((s, i) => (
             <div
               key={s.title}
               className={`service-card reveal${isVisible ? ' visible' : ''} delay-${i + 3}`}
             >
+              {/* ✓ Icône réduite 48×48 */}
               <div className="service-icon">{s.icon}</div>
               <h3 className="service-title">{s.title}</h3>
               <p className="service-desc">{s.desc}</p>
               <ul className="service-features">
                 {s.features.map(f => (
                   <li key={f} className="service-feature">
-                    <CheckCircle2 size={13} color="var(--teal-light)" className="service-feature-dot" style={{ flexShrink: 0 }} />
+                    {/* ✓ Point rouge charte à la place du teal */}
+                    <span className="service-feature-dot" />
                     {f}
                   </li>
                 ))}
@@ -69,6 +72,7 @@ export function Services() {
             </div>
           ))}
         </div>
+
       </div>
     </section>
   )

@@ -53,7 +53,7 @@ export function Footer() {
             {/* ✓ Qualiopi sur fond sombre — pas de bloc blanc */}
             <div className="qualiopi-block">
               <img
-                src="/qualiopi.jpg"
+                src="/qualiopi.png"
                 alt="Certification Qualiopi — Processus certifié"
                 className="qualiopi-logo"
                 loading="lazy"

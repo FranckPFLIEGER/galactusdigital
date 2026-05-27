@@ -35,10 +35,8 @@ export function Footer() {
       <div className="footer-inner">
         <div className="footer-top">
 
-          {/* Logo + tagline + Qualiopi */}
           <div className="footer-brand-section">
 
-            {/* ✓ Logo Galactus sans fond */}
             <a href="/" aria-label="Galactus Digital — Accueil">
               <img
                 src="/galactus-icon.png"
@@ -58,7 +56,6 @@ export function Footer() {
               présence sur 7 territoires.
             </p>
 
-            {/* ✓ Qualiopi PNG fond transparent — filtre blanc */}
             <div className="qualiopi-block">
               <img
                 src="/qualiopi.png"
@@ -73,7 +70,6 @@ export function Footer() {
 
           </div>
 
-          {/* Colonnes navigation */}
           {navCols.map(col => (
             <div key={col.title}>
               <h4 className="footer-col-title">{col.title}</h4>
@@ -89,7 +85,6 @@ export function Footer() {
 
         </div>
 
-        {/* Bas footer */}
         <div className="footer-bottom">
           <span>© {year} GALACTUS Digital. Tous droits réservés.</span>
           <div style={{ display: 'flex', gap: '1rem' }}>

@@ -37,44 +37,40 @@ export function Footer() {
 
           <div className="footer-brand-section">
 
-            {/* ✓ Texte GALACTUS DIGITAL */}
-            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none' }}>
-  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1.25rem' }}>
-    <div style={{
-      fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
-      fontWeight: 700,
-      fontSize: '2rem',
-      letterSpacing: '0.08em',
-      textTransform: 'uppercase',
-      color: '#FFFFFF',
-      lineHeight: 1,
-      marginBottom: '3px',
-    }}>
-      GALACTUS
-    </div>
-    <div style={{
-      display: 'flex',
-      alignItems: 'center',
-      gap: '5px',
-      width: '100%',
-      justifyContent: 'center',
-    }}>
-      <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
-      <span style={{
-        fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
-        fontWeight: 400,
-        fontSize: '0.65rem',
-        letterSpacing: '0.25em',
-        textTransform: 'uppercase',
-        color: '#E41F26',
-        whiteSpace: 'nowrap',
-      }}>
-        DIGITAL
-      </span>
-      <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
-    </div>
-  </div>
-</a>
+            {/* ✓ Logo GALACTUS — barres alignées sur la largeur du texte */}
+            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', display: 'table', marginBottom: '1.25rem' }}>
+              <div style={{
+                fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
+                fontWeight: 700,
+                fontSize: '2rem',
+                letterSpacing: '0.08em',
+                textTransform: 'uppercase',
+                color: '#FFFFFF',
+                lineHeight: 1,
+                marginBottom: '3px',
+              }}>
+                GALACTUS
+              </div>
+              <div style={{
+                display: 'flex',
+                alignItems: 'center',
+                gap: '5px',
+              }}>
+                <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
+                <span style={{
+                  fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
+                  fontWeight: 400,
+                  fontSize: '0.65rem',
+                  letterSpacing: '0.25em',
+                  textTransform: 'uppercase',
+                  color: '#E41F26',
+                  whiteSpace: 'nowrap',
+                }}>
+                  DIGITAL
+                </span>
+                <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
+              </div>
+            </a>
 
             <p className="footer-tagline">
               L'ingénierie de formation certifiée IT aux Caraïbes.
@@ -82,7 +78,7 @@ export function Footer() {
               présence sur 7 territoires.
             </p>
 
-            {/* ✓ Qualiopi taille naturelle — charte respectée */}
+            {/* ✓ Qualiopi — taille naturelle respectée */}
             <div style={{
               background: '#FFFFFF',
               padding: '0.75rem 1rem',
@@ -92,6 +88,7 @@ export function Footer() {
                 src="/qualiopi.jpg"
                 alt="Certification Qualiopi — Processus certifié République Française"
                 style={{
+                  width: '100%',
                   display: 'block',
                 }}
                 loading="lazy"

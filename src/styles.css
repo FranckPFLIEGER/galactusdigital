@@ -719,18 +719,25 @@ a { color: inherit; }
   margin: 0 0 1.5rem; max-width: 260px;
 }
 .qualiopi-block {
-  background: rgba(255,255,255,0.06); border: 1px solid rgba(228,31,38,0.20);
-  padding: 1rem 1.25rem; max-width: 240px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(228,31,38,0.20);
+  padding: 1rem 1.25rem;
+  max-width: 240px;
 }
+
 .qualiopi-logo {
-  height: 40px; object-fit: contain; display: block;
+  height: 40px;
+  object-fit: contain;
+  display: block;
   filter: brightness(0) invert(1);
   margin-bottom: 0.5rem;
 }
-.qualiopi-text { font-size: 0.72rem; color: rgba(255,255,255,0.50); line-height: 1.5; margin: 0; }
-.footer-col-title {
-  font-family: var(--font-title); font-size: 0.70rem; font-weight: 700;
-  letter-spacing: 0.16em; text-transform: uppercase; color: var(--g-red); margin-bottom: 1.25rem;
+
+.qualiopi-text {
+  font-size: 0.72rem;
+  color: rgba(255,255,255,0.50);
+  line-height: 1.5;
+  margin: 0;
 }
 .footer-links { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
 .footer-links a {

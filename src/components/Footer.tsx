@@ -37,7 +37,6 @@ export function Footer() {
 
           <div className="footer-brand-section">
 
-            {/* ✓ Logo GALACTUS — barres limitées à la largeur du texte */}
             <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.25rem' }}>
               <div style={{
                 fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
@@ -79,16 +78,17 @@ export function Footer() {
               présence sur 7 territoires.
             </p>
 
-            {/* ✓ Qualiopi taille naturelle — charte respectée */}
+            {/* ✓ Qualiopi taille naturelle */}
             <div style={{
               background: '#FFFFFF',
               padding: '0.75rem 1rem',
               display: 'inline-block',
+              width: 'fit-content',
             }}>
               <img
                 src="/qualiopi.jpg"
                 alt="Certification Qualiopi — Processus certifié République Française"
-                style={{ width: '100%', display: 'block' }}
+                style={{ height: '80px', width: 'auto', display: 'block' }}
                 loading="lazy"
               />
             </div>

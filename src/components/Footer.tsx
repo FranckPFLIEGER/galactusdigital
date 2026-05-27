@@ -83,13 +83,11 @@ export function Footer() {
               background: '#FFFFFF',
               padding: '0.75rem 1rem',
               display: 'inline-block',
-              maxWidth: '220px',
             }}>
               <img
                 src="/qualiopi.jpg"
                 alt="Certification Qualiopi — Processus certifié République Française"
                 style={{
-                  width: '100%',
                   display: 'block',
                 }}
                 loading="lazy"

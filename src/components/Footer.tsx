@@ -39,38 +39,42 @@ export function Footer() {
 
             {/* ✓ Texte GALACTUS DIGITAL */}
             <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none' }}>
-              <div style={{
-                fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
-                fontWeight: 700,
-                fontSize: '2rem',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: '#FFFFFF',
-                lineHeight: 1,
-                marginBottom: '0.2rem',
-              }}>
-                GALACTUS
-              </div>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '6px',
-                marginBottom: '1.25rem',
-              }}>
-                <div style={{ width: '32px', height: '2px', background: '#E41F26' }} />
-                <span style={{
-                  fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '0.70rem',
-                  letterSpacing: '0.28em',
-                  textTransform: 'uppercase',
-                  color: '#E41F26',
-                }}>
-                  DIGITAL
-                </span>
-                <div style={{ width: '32px', height: '2px', background: '#E41F26' }} />
-              </div>
-            </a>
+  <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', marginBottom: '1.25rem' }}>
+    <div style={{
+      fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
+      fontWeight: 700,
+      fontSize: '2rem',
+      letterSpacing: '0.08em',
+      textTransform: 'uppercase',
+      color: '#FFFFFF',
+      lineHeight: 1,
+      marginBottom: '3px',
+    }}>
+      GALACTUS
+    </div>
+    <div style={{
+      display: 'flex',
+      alignItems: 'center',
+      gap: '5px',
+      width: '100%',
+      justifyContent: 'center',
+    }}>
+      <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
+      <span style={{
+        fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
+        fontWeight: 400,
+        fontSize: '0.65rem',
+        letterSpacing: '0.25em',
+        textTransform: 'uppercase',
+        color: '#E41F26',
+        whiteSpace: 'nowrap',
+      }}>
+        DIGITAL
+      </span>
+      <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
+    </div>
+  </div>
+</a>
 
             <p className="footer-tagline">
               L'ingénierie de formation certifiée IT aux Caraïbes.

@@ -35,22 +35,30 @@ export function Footer() {
       <div className="footer-inner">
         <div className="footer-top">
 
-          {/* ✓ Logo PNG officiel + tagline + Qualiopi sur fond sombre */}
+          {/* Logo + tagline + Qualiopi */}
           <div className="footer-brand-section">
+
+            {/* ✓ Logo Galactus sans fond */}
             <a href="/" aria-label="Galactus Digital — Accueil">
               <img
                 src="/galactus-icon.png"
                 alt="Galactus Digital"
-                style={{ height: '56px', objectFit: 'contain', display: 'block', marginBottom: '1rem' }}
+                style={{
+                  height: '52px',
+                  objectFit: 'contain',
+                  display: 'block',
+                  marginBottom: '1rem',
+                }}
               />
             </a>
+
             <p className="footer-tagline">
               L'ingénierie de formation certifiée IT aux Caraïbes.
               Formateurs experts, cours officiels éditeurs,
               présence sur 7 territoires.
             </p>
 
-            {/* ✓ Qualiopi sur fond sombre — pas de bloc blanc */}
+            {/* ✓ Qualiopi PNG fond transparent — filtre blanc */}
             <div className="qualiopi-block">
               <img
                 src="/qualiopi.png"
@@ -62,6 +70,7 @@ export function Footer() {
                 Certification qualité délivrée au titre des actions de formation.
               </p>
             </div>
+
           </div>
 
           {/* Colonnes navigation */}

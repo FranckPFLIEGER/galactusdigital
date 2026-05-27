@@ -46,7 +46,7 @@ const navLinks = [
 
 function GalactusLogo() {
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+    <div style={{ display: 'inline-block' }}>
       <div style={{
         fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
         fontWeight: 700,
@@ -60,25 +60,24 @@ function GalactusLogo() {
         GALACTUS
       </div>
       <div style={{
-        display: 'flex',
+        display: 'grid',
+        gridTemplateColumns: '1fr auto 1fr',
         alignItems: 'center',
         gap: '5px',
-        width: '100%',
-        justifyContent: 'center',
       }}>
-        <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
+        <div style={{ height: '2px', background: '#E41F26' }} />
         <span style={{
           fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
           fontWeight: 400,
           fontSize: '0.58rem',
-          letterSpacing: '0.20em',
+          letterSpacing: '0.22em',
           textTransform: 'uppercase',
           color: '#E41F26',
           whiteSpace: 'nowrap',
         }}>
           DIGITAL
         </span>
-        <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
+        <div style={{ height: '2px', background: '#E41F26' }} />
       </div>
     </div>
   )

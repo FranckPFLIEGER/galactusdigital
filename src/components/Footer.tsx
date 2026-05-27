@@ -37,17 +37,17 @@ export function Footer() {
 
           <div className="footer-brand-section">
 
-            {/* ✓ Texte à la place du logo — lisible et propre */}
-            <a href="/" aria-label="Galactus Digital — Accueil" style={{ textDecoration: 'none' }}>
+            {/* Logo texte GALACTUS DIGITAL */}
+            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none' }}>
               <div style={{
                 fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
                 fontWeight: 700,
-                fontSize: '1.8rem',
+                fontSize: '2rem',
                 letterSpacing: '0.08em',
                 textTransform: 'uppercase',
                 color: '#FFFFFF',
                 lineHeight: 1,
-                marginBottom: '0.25rem',
+                marginBottom: '0.2rem',
               }}>
                 GALACTUS
               </div>
@@ -55,19 +55,19 @@ export function Footer() {
                 display: 'flex',
                 alignItems: 'center',
                 gap: '6px',
-                marginBottom: '1rem',
+                marginBottom: '1.25rem',
               }}>
                 <div style={{ width: '32px', height: '2px', background: '#E41F26' }} />
-                <div style={{
+                <span style={{
                   fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
                   fontWeight: 400,
-                  fontSize: '0.72rem',
-                  letterSpacing: '0.25em',
+                  fontSize: '0.70rem',
+                  letterSpacing: '0.28em',
                   textTransform: 'uppercase',
                   color: '#E41F26',
                 }}>
                   DIGITAL
-                </div>
+                </span>
                 <div style={{ width: '32px', height: '2px', background: '#E41F26' }} />
               </div>
             </a>
@@ -78,17 +78,21 @@ export function Footer() {
               présence sur 7 territoires.
             </p>
 
-            {/* ✓ Qualiopi sur fond blanc — obligation légale */}
+            {/* Qualiopi sur fond blanc — obligation légale charte Qualiopi */}
             <div style={{
               background: '#FFFFFF',
               padding: '0.75rem 1rem',
-              maxWidth: '200px',
               display: 'inline-block',
+              maxWidth: '200px',
             }}>
               <img
                 src="/qualiopi.jpg"
-                alt="Certification Qualiopi — Processus certifié"
-                style={{ height: '36px', objectFit: 'contain', display: 'block' }}
+                alt="Certification Qualiopi — Processus certifié République Française"
+                style={{
+                  height: '38px',
+                  objectFit: 'contain',
+                  display: 'block',
+                }}
                 loading="lazy"
               />
             </div>

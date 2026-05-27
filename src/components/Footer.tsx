@@ -28,6 +28,53 @@ const navCols = [
   },
 ]
 
+function GalactusLogo() {
+  return (
+    <svg
+      width="160"
+      height="52"
+      viewBox="0 0 160 52"
+      xmlns="http://www.w3.org/2000/svg"
+      aria-label="Galactus Digital"
+    >
+      {/* GALACTUS */}
+      <text
+        x="0"
+        y="36"
+        fontFamily="'Barlow Condensed', 'Agency FB', sans-serif"
+        fontWeight="700"
+        fontSize="36"
+        letterSpacing="3"
+        textAnchor="start"
+        fill="#FFFFFF"
+        textTransform="uppercase"
+      >
+        GALACTUS
+      </text>
+
+      {/* Ligne gauche */}
+      <line x1="0" y1="46" x2="52" y2="46" stroke="#E41F26" strokeWidth="2" />
+
+      {/* DIGITAL */}
+      <text
+        x="80"
+        y="50"
+        fontFamily="'Barlow Condensed', 'Agency FB', sans-serif"
+        fontWeight="400"
+        fontSize="9"
+        letterSpacing="4"
+        textAnchor="middle"
+        fill="#E41F26"
+      >
+        DIGITAL
+      </text>
+
+      {/* Ligne droite */}
+      <line x1="108" y1="46" x2="160" y2="46" stroke="#E41F26" strokeWidth="2" />
+    </svg>
+  )
+}
+
 export function Footer() {
   const year = new Date().getFullYear()
   return (
@@ -37,39 +84,8 @@ export function Footer() {
 
           <div className="footer-brand-section">
 
-            {/* ✓ Logo avec largeur fixe = largeur exacte de GALACTUS */}
-            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', marginBottom: '1.25rem', display: 'inline-block', width: '148px' }}>
-              <div style={{
-                fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
-                fontWeight: 700,
-                fontSize: '2rem',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: '#FFFFFF',
-                lineHeight: 1,
-                marginBottom: '4px',
-              }}>
-                GALACTUS
-              </div>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '5px',
-              }}>
-                <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
-                <span style={{
-                  fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '0.60rem',
-                  letterSpacing: '0.28em',
-                  textTransform: 'uppercase',
-                  color: '#E41F26',
-                  whiteSpace: 'nowrap',
-                }}>
-                  DIGITAL
-                </span>
-                <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
-              </div>
+            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', marginBottom: '1.25rem', display: 'inline-block' }}>
+              <GalactusLogo />
             </a>
 
             <p className="footer-tagline">
@@ -78,7 +94,6 @@ export function Footer() {
               présence sur 7 territoires.
             </p>
 
-            {/* Qualiopi telle quelle */}
             <div style={{ background: '#FFFFFF', padding: '0.75rem', display: 'inline-block' }}>
               <img src="/qualiopi.jpg" alt="Certification Qualiopi" loading="lazy" />
             </div>

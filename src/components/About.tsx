@@ -3,22 +3,22 @@ import { useIntersection } from '../hooks/useIntersection'
 
 const points = [
   {
-    icon: <Globe size={18} color="var(--gold)" />,
-    title: 'Réseau d\'experts international',
+    icon: <Globe size={18} color="white" />,
+    title: "Réseau d'experts international",
     desc: 'Formateurs certifiés issus des plus grandes entreprises technologiques mondiales.',
   },
   {
-    icon: <BookOpen size={18} color="var(--gold)" />,
+    icon: <BookOpen size={18} color="white" />,
     title: 'Contenus officiels certifiants',
     desc: 'Programmes alignés sur les référentiels exacts des éditeurs — sans intermédiaire.',
   },
   {
-    icon: <Users size={18} color="var(--gold)" />,
+    icon: <Users size={18} color="white" />,
     title: 'Ingénierie pédagogique sur mesure',
     desc: 'Chaque parcours est conçu pour maximiser le taux de réussite aux examens officiels.',
   },
   {
-    icon: <ShieldCheck size={18} color="var(--gold)" />,
+    icon: <ShieldCheck size={18} color="white" />,
     title: 'Ancrage Caraïbes',
     desc: 'Présents sur 11 territoires, nous comprenons le tissu économique local et ses besoins.',
   },
@@ -26,26 +26,29 @@ const points = [
 
 const certPrograms = [
   { name: 'Microsoft Azure & M365', meta: 'Official' },
-  { name: 'Cisco CCNA / CCNP', meta: 'Official' },
-  { name: 'IPv6 Forum', meta: 'Official' },
-  { name: 'CompTIA Security+', meta: 'Official' },
-  { name: 'EC-Council CEH', meta: 'Official' },
-  { name: 'PMP / PMI', meta: 'Official' },
+  { name: 'Cisco CCNA / CCNP',      meta: 'Official' },
+  { name: 'IPv6 Forum',             meta: 'Official' },
+  { name: 'CompTIA Security+',      meta: 'Official' },
+  { name: 'EC-Council CEH',         meta: 'Official' },
+  { name: 'PMP / PMI',              meta: 'Official' },
 ]
 
 export function About() {
   const { ref, isVisible } = useIntersection()
-
   return (
-    <section id="expertise" style={{ background: 'var(--warm-white)' }} ref={ref}>
+    // ✓ Fond blanc remplacé par blanc pur uniquement à gauche
+    // Le panneau droit reste noir — cohérence visuelle améliorée
+    <section id="expertise" className="about-section" ref={ref}>
       <div className="section-inner">
         <div className="about-grid">
-          {/* Left: Content */}
+
+          {/* Gauche : texte sur fond blanc */}
           <div>
             <span className={`section-label reveal${isVisible ? ' visible' : ''}`}>
               Notre Expertise
             </span>
-            <div className={`gold-rule${isVisible ? ' visible' : ''}`} />
+            {/* ✓ Double ligne rouge charte */}
+            <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
             <h2 className={`section-h2 reveal${isVisible ? ' visible' : ''} delay-1`}>
               L'ingénierie de formation<br />certifiée IT, notre cœur de métier
             </h2>
@@ -56,13 +59,13 @@ export function About() {
               d'experts certifiés à l'échelle internationale, nous avons bâti une offre complète,
               rigoureuse et adaptée aux réalités du marché caribéen.
             </p>
-
             <div className="about-points">
               {points.map((p, i) => (
                 <div
                   key={p.title}
                   className={`about-point reveal${isVisible ? ' visible' : ''} delay-${i + 2}`}
                 >
+                  {/* ✓ Icône fond rouge charte, taille réduite */}
                   <div className="about-point-icon">{p.icon}</div>
                   <div className="about-point-text">
                     <strong>{p.title}</strong>
@@ -73,21 +76,22 @@ export function About() {
             </div>
           </div>
 
-          {/* Right: Visual */}
+          {/* Droite : panneau noir avec liste certifications */}
           <div className={`about-visual reveal-scale${isVisible ? ' visible' : ''} delay-2`}>
             <div className="about-visual-bg" />
             <div className="about-big-num">IT</div>
-
             <ul className="about-cert-list">
               {certPrograms.map(c => (
                 <li key={c.name} className="about-cert-item">
                   <span className="about-cert-dot" />
                   <span className="about-cert-name">{c.name}</span>
+                  {/* ✓ "Official" en rouge bien visible */}
                   <span className="about-cert-meta">{c.meta}</span>
                 </li>
               ))}
             </ul>
           </div>
+
         </div>
       </div>
     </section>

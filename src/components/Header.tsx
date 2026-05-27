@@ -44,14 +44,40 @@ const navLinks = [
   { label: 'Pourquoi Nous', href: '#pourquoi' },
 ]
 
-// ── Logo : PNG complet (contient déjà icône + GALACTUS + DIGITAL)
 function GalactusLogo() {
   return (
-    <img
-      src="/galactus-icon.png"
-      alt="Galactus Digital"
-      style={{ height: '60px', objectFit: 'contain', display: 'block' }}
-    />
+    <div>
+      <div style={{
+        fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
+        fontWeight: 700,
+        fontSize: '1.6rem',
+        letterSpacing: '0.08em',
+        textTransform: 'uppercase',
+        color: '#FFFFFF',
+        lineHeight: 1,
+        marginBottom: '0.15rem',
+      }}>
+        GALACTUS
+      </div>
+      <div style={{
+        display: 'flex',
+        alignItems: 'center',
+        gap: '5px',
+      }}>
+        <div style={{ width: '24px', height: '2px', background: '#E41F26' }} />
+        <span style={{
+          fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
+          fontWeight: 400,
+          fontSize: '0.60rem',
+          letterSpacing: '0.25em',
+          textTransform: 'uppercase',
+          color: '#E41F26',
+        }}>
+          DIGITAL
+        </span>
+        <div style={{ width: '24px', height: '2px', background: '#E41F26' }} />
+      </div>
+    </div>
   )
 }
 

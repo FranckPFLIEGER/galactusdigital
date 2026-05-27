@@ -37,85 +37,22 @@ export function Footer() {
 
           <div className="footer-brand-section">
 
-            {/* Logo GALACTUS */}
-            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', marginBottom: '1.25rem', display: 'block', width: 'fit-content' }}>
-              <div style={{
-                fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
-                fontWeight: 700,
-                fontSize: '2rem',
-                letterSpacing: '0.08em',
-                textTransform: 'uppercase',
-                color: '#FFFFFF',
-                lineHeight: 1,
-                marginBottom: '4px',
-                textAlign: 'center',
-              }}>
-                GALACTUS
-              </div>
-              <div style={{
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
-                gap: '6px',
-              }}>
-                <div style={{ width: '28px', height: '2px', background: '#E41F26', flexShrink: 0 }} />
-                <span style={{
+            {/* ✓ Logo — barres alignées exactement sur GALACTUS */}
+            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', marginBottom: '1.25rem', display: 'inline-block' }}>
+              <div style={{ position: 'relative' }}>
+                {/* GALACTUS */}
+                <div style={{
                   fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
-                  fontWeight: 400,
-                  fontSize: '0.60rem',
-                  letterSpacing: '0.28em',
+                  fontWeight: 700,
+                  fontSize: '2rem',
+                  letterSpacing: '0.08em',
                   textTransform: 'uppercase',
-                  color: '#E41F26',
-                  whiteSpace: 'nowrap',
+                  color: '#FFFFFF',
+                  lineHeight: 1,
+                  marginBottom: '4px',
                 }}>
-                  DIGITAL
-                </span>
-                <div style={{ width: '28px', height: '2px', background: '#E41F26', flexShrink: 0 }} />
-              </div>
-            </a>
-
-            <p className="footer-tagline">
-              L'ingénierie de formation certifiée IT aux Caraïbes.
-              Formateurs experts, cours officiels éditeurs,
-              présence sur 7 territoires.
-            </p>
-
-            {/* ✓ Qualiopi — image telle quelle, pas de style imposé */}
-            <div style={{ background: '#FFFFFF', padding: '0.75rem', display: 'inline-block' }}>
-              <img
-                src="/qualiopi.jpg"
-                alt="Certification Qualiopi"
-                loading="lazy"
-              />
-            </div>
-
-          </div>
-
-          {navCols.map(col => (
-            <div key={col.title}>
-              <h4 className="footer-col-title">{col.title}</h4>
-              <ul className="footer-links">
-                {col.links.map(link => (
-                  <li key={link.label}>
-                    <a href={link.href}>{link.label}</a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-
-        </div>
-
-        <div className="footer-bottom">
-          <span>© {year} GALACTUS Digital. Tous droits réservés.</span>
-          <div style={{ display: 'flex', gap: '1rem' }}>
-            <a href="#accueil">Mentions légales</a>
-            <span>·</span>
-            <a href="#accueil">Politique de confidentialité</a>
-          </div>
-        </div>
-
-      </div>
-    </footer>
-  )
-}
+                  GALACTUS
+                </div>
+                {/* DIGITAL centré avec barres qui s'adaptent */}
+                <div style={{
+                  display: 'flex',

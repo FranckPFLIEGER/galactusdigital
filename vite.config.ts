@@ -13,21 +13,12 @@ export default defineConfig({
   ],
   build: {
     chunkSizeWarningLimit: 600,
-    rollupOptions: {
-      output: {
-        manualChunks: {
-          'react-vendor':  ['react', 'react-dom'],
-          'router-vendor': ['@tanstack/react-router'],
-          'icons':         ['lucide-react'],
-        },
-      },
-    },
     minify: 'esbuild',
     sourcemap: false,
     cssMinify: true,
     target: 'es2020',
   },
   optimizeDeps: {
-    include: ['react', 'react-dom', 'lucide-react'],
+    include: ['lucide-react'],
   },
 })

@@ -56,3 +56,64 @@ export function Footer() {
                 {/* DIGITAL centré avec barres qui s'adaptent */}
                 <div style={{
                   display: 'flex',
+                  alignItems: 'center',
+                  gap: '6px',
+                }}>
+                  <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
+                  <span style={{
+                    fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
+                    fontWeight: 400,
+                    fontSize: '0.60rem',
+                    letterSpacing: '0.28em',
+                    textTransform: 'uppercase',
+                    color: '#E41F26',
+                    whiteSpace: 'nowrap',
+                  }}>
+                    DIGITAL
+                  </span>
+                  <div style={{ flex: 1, height: '2px', background: '#E41F26' }} />
+                </div>
+              </div>
+            </a>
+
+            <p className="footer-tagline">
+              L'ingénierie de formation certifiée IT aux Caraïbes.
+              Formateurs experts, cours officiels éditeurs,
+              présence sur 7 territoires.
+            </p>
+
+            {/* Qualiopi telle quelle */}
+            <div style={{ background: '#FFFFFF', padding: '0.75rem', display: 'inline-block' }}>
+              <img src="/qualiopi.jpg" alt="Certification Qualiopi" loading="lazy" />
+            </div>
+
+          </div>
+
+          {navCols.map(col => (
+            <div key={col.title}>
+              <h4 className="footer-col-title">{col.title}</h4>
+              <ul className="footer-links">
+                {col.links.map(link => (
+                  <li key={link.label}>
+                    <a href={link.href}>{link.label}</a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+
+        </div>
+
+        <div className="footer-bottom">
+          <span>© {year} GALACTUS Digital. Tous droits réservés.</span>
+          <div style={{ display: 'flex', gap: '1rem' }}>
+            <a href="#accueil">Mentions légales</a>
+            <span>·</span>
+            <a href="#accueil">Politique de confidentialité</a>
+          </div>
+        </div>
+
+      </div>
+    </footer>
+  )
+}

@@ -6,14 +6,14 @@ const articles = [
     title: 'IPv6 Hall of Fame 2025',
     desc: "Franck PFLIEGER intègre le IPv6 Hall of Fame 2025 — une reconnaissance mondiale pour son engagement dans le développement de l'IPv6 aux Caraïbes.",
     tag: 'Distinction',
-    image: '/awards/hof-2025.png',
+    image: null,
   },
   {
     date: 'Septembre 2025',
     title: 'Rapport IPv6 Council Martinique',
     desc: "Publication du rapport d'activité du IPv6 Council Martinique, dont GALACTUS Digital est membre actif via l'association ASPIK.",
     tag: 'Rapport',
-    image: '/actu/ipv6-martinique.png',
+    image: null,
   },
   {
     date: 'Avril 2025',

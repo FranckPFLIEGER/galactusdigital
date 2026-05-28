@@ -42,7 +42,7 @@ const awards = [
     icon: <Star size={24} color="white" />,
     year: '2023 — 2024',
     title: 'Advisor Board Member',
-    org: 'Organisme IT international',
+    org: 'Cisco Networking Academy',
     desc: "Membre du conseil consultatif international — reconnaissance de l'expertise stratégique de GALACTUS Digital dans l'écosystème IT.",
     image: null,
     highlight: false,

@@ -13,28 +13,28 @@ const awards = [
   },
   {
     icon: <Star size={24} color="white" />,
-    year: '2024',
+    year: '2021',
     title: 'Above and Beyond Instructor',
-    org: 'Éditeur IT officiel',
+    org: 'Cisco Networking Academy',
     desc: "Récompense décernée aux formateurs qui dépassent les standards habituels d'excellence dans la formation certifiante.",
     image: null,
     highlight: false,
   },
   {
     icon: <Award size={24} color="white" />,
-    year: '2024',
+    year: '2022',
     title: 'Instructor 15 Years of Service',
-    org: 'Éditeur IT officiel',
-    desc: "15 ans de service reconnus par un éditeur IT mondial — un gage d'expertise et de fidélité aux standards de formation officiels.",
+    org: 'Cisco Networking Academy',
+    desc: "15 ans de participation active et de service dédié à la Cisco Networking Academy — un gage d'expertise reconnue officiellement.",
     image: null,
     highlight: false,
   },
   {
     icon: <Award size={24} color="white" />,
-    year: '2024',
+    year: '2015',
     title: 'Instructor 10 Years of Service',
-    org: 'Éditeur IT officiel',
-    desc: "Distinction pour 10 années d'engagement continu dans la formation certifiante officielle.",
+    org: 'Cisco Networking Academy',
+    desc: "10 ans de participation active et de service dédié à la Cisco Networking Academy — reconnaissance d'un engagement continu dans la formation certifiante.",
     image: null,
     highlight: false,
   },
@@ -91,4 +91,3 @@ export function AwardsSection() {
     </section>
   )
 }
-

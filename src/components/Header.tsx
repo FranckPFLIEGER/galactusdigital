@@ -40,8 +40,16 @@ const navLinks = [
       { label: 'Plan de formation', href: '/financement/plan' },
     ],
   },
-  { label: 'Expertise',     href: '#expertise' },
-  { label: 'Pourquoi Nous', href: '#pourquoi' },
+  { label: 'Expertise', href: '#expertise' },
+  {
+    label: 'Pourquoi Nous',
+    href: '#pourquoi',
+    children: [
+      { label: 'Ils nous font confiance', href: '#clients' },
+      { label: 'Nos résultats',           href: '#resultats' },
+      { label: 'Nos reconnaissances',     href: '#awards' },
+    ],
+  },
 ]
 
 function GalactusLogo() {
@@ -56,6 +64,7 @@ function GalactusLogo() {
         color: '#FFFFFF',
         lineHeight: 1,
         marginBottom: '3px',
+        whiteSpace: 'nowrap',
       }}>
         GALACTUS
       </div>

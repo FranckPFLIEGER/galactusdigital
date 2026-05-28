@@ -9,6 +9,15 @@ const clients = [
   { file: '016.jpg' }, { file: '017.jpg' }, { file: '018.jpg' },
   { file: '019.jpg' }, { file: '020.jpg' }, { file: '021.jpg' },
   { file: '022.jpg' }, { file: '023.jpg' }, { file: '024.jpg' },
+  { file: '025.jpg' }, { file: '026.jpg' }, { file: '027.jpg' },
+  { file: '028.jpg' }, { file: '029.jpg' }, { file: '030.jpg' },
+  { file: '031.jpg' }, { file: '032.jpg' }, { file: '033.jpg' },
+  { file: '034.jpg' }, { file: '035.jpg' }, { file: '036.jpg' },
+  { file: '037.jpg' }, { file: '038.jpg' }, { file: '039.jpg' },
+  { file: '040.jpg' }, { file: '041.jpg' }, { file: '042.jpg' },
+  { file: '043.jpg' }, { file: '044.jpg' }, { file: '045.jpg' },
+  { file: '046.jpg' }, { file: '047.jpg' }, { file: '048.jpg' },
+  { file: '049.jpg' }, { file: '050.jpg' },
 ]
 
 export function Clients() {
@@ -47,4 +56,3 @@ export function Clients() {
     </section>
   )
 }
-

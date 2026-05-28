@@ -5,7 +5,7 @@ const clients = [
   { file: '004.jpg' }, { file: '005.jpg' }, { file: '006.jpg' },
   { file: '007.jpg' }, { file: '008.jpg' }, { file: '009.jpg' },
   { file: '010.jpg' }, { file: '011.jpg' }, { file: '012.jpg' },
-  { file: '013.jpg' }, { file: '014.jpg' }, { file: '015.jpg' },
+  { file: '013.jpg' }, { file: '014.jpg' }, { file: '015.png' },
   { file: '016.jpg' }, { file: '017.jpg' }, { file: '018.jpg' },
   { file: '019.jpg' }, { file: '020.jpg' }, { file: '021.jpg' },
   { file: '022.jpg' }, { file: '023.jpg' }, { file: '024.jpg' },

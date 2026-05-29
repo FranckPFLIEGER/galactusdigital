@@ -1,31 +1,58 @@
 import { useIntersection } from '../hooks/useIntersection'
-import { Globe, Users, Heart, Leaf, Star } from 'lucide-react'
+import { Globe, Users, Leaf, BookOpen, Heart } from 'lucide-react'
 
 const pillars = [
   {
-    icon: <Globe size={24} color="white" />,
-    title: 'Inclusion numérique',
-    desc: 'Rendre les certifications IT mondiales accessibles aux professionnels des territoires ultramarins, souvent exclus des grandes formations métropolitaines. Chaque Caraïbéen mérite les mêmes opportunités numériques.',
+    icon: <Heart size={24} color="white" />,
+    title: 'Femmes & Égalité des chances',
+    items: [
+      'Partenaire Cisco Networking Academy — programme mondial reconnu pour l\'accès des femmes aux métiers IT',
+      'Formations flexibles (distanciel, à son rythme) pour concilier vie professionnelle, familiale et formation',
+      'Les certifications IT permettent aux femmes de se mettre à égalité dans un univers très majoritairement masculin',
+      'Financement CPF/OPCO accessible à toutes sans discrimination',
+      'Encouragement actif des femmes en reconversion vers les métiers du numérique aux Caraïbes',
+    ],
   },
   {
     icon: <Users size={24} color="white" />,
+    title: 'Inclusion & Accessibilité',
+    items: [
+      'Certifications IT mondiales accessibles aux professionnels ultramarins, souvent exclus des grandes formations métropolitaines',
+      'Financement CPF/OPCO dans les DOM — aucune barrière financière à la formation',
+      'Accompagnement des personnes en reconversion professionnelle et en situation de handicap',
+      'Mêmes certifications, même niveau d\'exigence qu\'en Europe ou en Amérique du Nord',
+      'Aucune discrimination dans l\'accès — même accompagnement pour tous',
+    ],
+  },
+  {
+    icon: <Globe size={24} color="white" />,
     title: 'Ancrage territorial',
-    desc: 'Présents sur 7 territoires, nous contribuons directement au développement économique local. Nos formateurs sont des experts de terrain qui comprennent les réalités caribéennes.',
-  },
-  {
-    icon: <Heart size={24} color="white" />,
-    title: 'Égalité des chances',
-    desc: 'Les mêmes certifications mondiales, au même niveau d\'exigence qu\'en Europe ou en Amérique du Nord. Nous refusons le numérique à deux vitesses.',
-  },
-  {
-    icon: <Star size={24} color="white" />,
-    title: 'Formation durable',
-    desc: 'Des parcours conçus pour maximiser la réussite et l\'employabilité à long terme. Former pour certifier, certifier pour transformer — chaque apprenant repart avec une compétence reconnue mondialement.',
+    items: [
+      'Formateurs locaux certifiés — priorité aux experts caribéens plutôt qu\'aux intervenants métropolitains déplacés',
+      'Présents sur 7 territoires — contribution directe au développement économique local',
+      'Partenariats avec les acteurs économiques et institutionnels des DOM',
+      'Compréhension des réalités du marché caribéen par nos équipes terrain',
+    ],
   },
   {
     icon: <Leaf size={24} color="white" />,
-    title: 'Numérique responsable',
-    desc: 'Sensibiliser aux enjeux éthiques et environnementaux du numérique dans nos formations. Préparer une génération de professionnels IT conscients de leur impact sur la société.',
+    title: 'Numérique écoresponsable',
+    items: [
+      '100% supports digitaux — zéro impression papier dans nos formations',
+      'Formations en distanciel favorisées pour réduire les déplacements et l\'empreinte carbone',
+      'Sensibilisation aux enjeux environnementaux du numérique intégrée dans nos parcours',
+      'Équipements numériques reconditionnés privilégiés dans notre organisation',
+    ],
+  },
+  {
+    icon: <BookOpen size={24} color="white" />,
+    title: 'Veille & Transmission — ASPIK',
+    items: [
+      'Via l\'association ASPIK, nos apprenants peuvent participer à des sessions de veille IT ouvertes à tous',
+      'Rester connecté aux dernières innovations numériques après la certification',
+      'Réseau d\'alumni caribéens partageant leurs expériences et opportunités',
+      'Contribution active au développement de la culture numérique aux Caraïbes',
+    ],
   },
 ]
 
@@ -58,12 +85,18 @@ export function RSE() {
             >
               <div className="rse-icon">{p.icon}</div>
               <h3 className="rse-title">{p.title}</h3>
-              <p className="rse-desc">{p.desc}</p>
+              <ul className="rse-items">
+                {p.items.map((item, j) => (
+                  <li key={j} className="rse-item">
+                    <div className="rse-item-dot" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           ))}
         </div>
 
-        {/* Citation RSE */}
         <div className={`rse-commitment reveal${isVisible ? ' visible' : ''} delay-6`}>
           <div className="rse-commitment-inner">
             <p className="rse-commitment-text">
@@ -79,4 +112,3 @@ export function RSE() {
     </section>
   )
 }
-

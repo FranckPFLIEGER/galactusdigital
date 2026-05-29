@@ -99,17 +99,7 @@ function MapCanvas() {
     const france = territories[0]
     const [fx, fy] = mercator(france.lon, france.lat)
 
-    territories.slice(1).forEach(t => {
-      const [tx, ty] = mercator(t.lon, t.lat)
-      ctx.beginPath()
-      ctx.moveTo(fx, fy)
-      ctx.lineTo(tx, ty)
-      ctx.strokeStyle = 'rgba(228,31,38,0.45)'
-      ctx.lineWidth = 1.2
-      ctx.setLineDash([5, 6])
-      ctx.stroke()
-      ctx.setLineDash([])
-    })
+   // Pas de lignes de connexion
 
     // Points des 7 territoires
     territories.forEach(t => {

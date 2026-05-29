@@ -8,7 +8,7 @@ const awards = [
     title: 'IPv6 Hall of Fame',
     org: 'IPv6 Forum International',
     desc: "Intégration au IPv6 Hall of Fame mondial — distinction décernée aux personnalités ayant le plus contribué au déploiement de l'IPv6 dans le monde.",
-    image: '/awards/hof-2025.png',
+    image: '/awards/Hall6fFAME.png',
     highlight: true,
   },
   {

@@ -30,35 +30,40 @@ export function President() {
         </span>
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
 
-        <div className="president-grid">
-          <div className={`president-quote reveal${isVisible ? ' visible' : ''} delay-1`}>
-            <div className="president-quote-mark">"</div>
-            <blockquote className="president-text">
-              Innover, c'est réduire l'écart du présent avec le futur, c'est aider le présent
-              à ne jamais avoir de doute sur son rôle de futur… passé !
-              <br /><br />
-              La vitesse à laquelle nous innovons dans le numérique change en profondeur
-              et de façon de plus en plus rapproché, les bases de notre société.
-              <br /><br />
-              Refuser l'innovation c'est prendre le risque de s'isoler dans un monde inconnu
-              et c'est d'autant plus vrai dans notre « insularité ».
-              <br /><br />
-              Nous ne prétendons pas aider les humains à comprendre tout de ces nouveaux mondes
-              qui se dessinent au fur et à mesure des innovations numériques.
-              <br /><br />
-              Mais nous tentons de réduire à notre juste mesure l'appréhension de l'écart
-              de notre présent avec le futur, en formant une génération apte à évoluer
-              à chaque nouvelle innovation lié au numérique en s'appuyant sur les acteurs
-              de notre révolution numérique à savoir les éditeurs.
-            </blockquote>
-            <div className="president-signature">
-              <div className="president-signature-line" />
-              <div>
-                <div className="president-name">Franck PFLIEGER</div>
-                <div className="president-title">Fondateur & Président — GALACTUS Digital</div>
-              </div>
-            </div>
-          </div>
+ <div className="president-grid">
+  <div className={`president-quote reveal${isVisible ? ' visible' : ''} delay-1`}>
+    <div className="president-quote-mark">"</div>
+
+    <blockquote className="president-text">
+      Innover, c’est réduire l’écart entre le présent et le futur, jusqu’à les rendre indissociables. Le futur ne s’oppose pas au présent : il s’y construit.
+      <br /><br />
+
+      La vitesse de l’innovation numérique transforme en profondeur, et de façon toujours plus rapprochée, les fondations mêmes de notre société.
+      <br /><br />
+
+      Refuser l’innovation, c’est prendre le risque de l’isolement. C’est devenir étranger à un monde en mouvement permanent — une réalité amplifiée par notre condition d’« insularité » contemporaine.
+      <br /><br />
+
+      Nous ne prétendons pas détenir toutes les réponses aux mondes qui émergent au rythme des révolutions numériques.
+      <br /><br />
+
+      Mais nous agissons pour réduire, à notre juste mesure, l’écart entre compréhension et transformation.
+      <br />
+      Nous rendons l’innovation plus lisible, plus accessible, plus opérable.
+      <br /><br />
+
+      Former, aujourd’hui, signifie préparer une génération capable d’évoluer avec chaque rupture technologique, en s’appuyant sur les acteurs de cette révolution numérique : les éditeurs.
+    </blockquote>
+
+    <div className="president-signature">
+      <div className="president-signature-line" />
+      <div>
+        <div className="president-name">Franck PFLIEGER</div>
+        <div className="president-title">Fondateur & Président — GALACTUS Digital</div>
+      </div>
+    </div>
+  </div>
+</div>
 
           <div className={`president-values reveal${isVisible ? ' visible' : ''} delay-2`}>
             {values.map((v, i) => (

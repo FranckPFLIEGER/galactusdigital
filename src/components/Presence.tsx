@@ -3,8 +3,8 @@ import { useEffect, useRef, useCallback } from 'react'
 
 const territories = [
   { name: 'France Hexagonale', code: 'FR',  desc: 'Siège administratif',     lon:   2.2137, lat:  46.2276 },
-  { name: 'Guadeloupe',        code: 'GP',  desc: 'Siège régional Caraïbes', lon: -61.5510, lat:  16.2650 },
-  { name: 'Martinique',        code: 'MQ',  desc: 'Centre de formation',      lon: -61.0240, lat:  14.6410 },
+  { name: 'Guadeloupe',        code: 'GP',  desc: 'Présence active', lon: -61.5510, lat:  16.2650 },
+  { name: 'Martinique',        code: 'MQ',  desc: 'Siège régional Caraïbes',      lon: -61.0240, lat:  14.6410 },
   { name: 'Guyane',            code: 'GF',  desc: 'Présence active',          lon: -53.1258, lat:   3.9339 },
   { name: 'Saint-Martin',      code: 'SXM', desc: 'Présence active',          lon: -63.0523, lat:  18.0708 },
   { name: 'Saint-Barthélemy',  code: 'BL',  desc: 'Présence active',          lon: -62.8333, lat:  17.9000 },

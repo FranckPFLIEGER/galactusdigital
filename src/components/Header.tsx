@@ -42,12 +42,18 @@ const navLinks = [
   },
   { label: 'Expertise', href: '#expertise' },
   {
-    label: 'Pourquoi Nous',
-    href: '#pourquoi',
+    label: 'Qui Sommes-Nous',
+    href: '#president',
     children: [
+      { label: 'Mot du Président',        href: '#president' },
+      { label: 'Nos Chiffres',            href: '#stats' },
+      { label: 'Notre Présence',          href: '#presence' },
+      { label: 'Pourquoi Nous Choisir',   href: '#pourquoi' },
       { label: 'Ils nous font confiance', href: '#clients' },
-      { label: 'Nos résultats',           href: '#resultats' },
-      { label: 'Nos reconnaissances',     href: '#awards' },
+      { label: 'Nos Résultats',           href: '#resultats' },
+      { label: 'Nos Partenaires',         href: '#partenaires' },
+      { label: 'Nos Reconnaissances',     href: '#awards' },
+      { label: 'Notre Engagement RSE',    href: '#rse' },
     ],
   },
 ]

@@ -1,8 +1,8 @@
 import { useIntersection } from '../hooks/useIntersection'
 
 const territories = [
-  { name: 'Guadeloupe',       code: 'GP', desc: 'Siège régional Caraïbes',  x: 245, y: 310 },
-  { name: 'Martinique',       code: 'MQ', desc: 'Centre de formation',       x: 252, y: 325 },
+  { name: 'Guadeloupe',       code: 'GP', desc: 'Présence active',  x: 245, y: 310 },
+  { name: 'Martinique',       code: 'MQ', desc: 'Siège régional Caraïbes',       x: 252, y: 325 },
   { name: 'Guyane',           code: 'GF', desc: 'Présence active',           x: 265, y: 345 },
   { name: 'Saint-Martin',     code: 'SXM',desc: 'Présence active',           x: 238, y: 300 },
   { name: 'Saint-Barthélemy', code: 'BL', desc: 'Présence active',           x: 242, y: 304 },

@@ -34,12 +34,9 @@ function MapCanvas() {
     if (!ctx) return
 
     ctx.clearRect(0, 0, W, H)
-
-    // Fond
     ctx.fillStyle = '#111110'
     ctx.fillRect(0, 0, W, H)
 
-    // Grille
     const lats = [-60, -30, 0, 30, 60]
     lats.forEach(lat => {
       const [, y] = mercator(0, lat)
@@ -48,8 +45,7 @@ function MapCanvas() {
       ctx.lineTo(W, y)
       ctx.strokeStyle = lat === 0 ? 'rgba(228,31,38,0.20)' : 'rgba(255,255,255,0.05)'
       ctx.lineWidth = lat === 0 ? 1 : 0.5
-      if (lat === 0) ctx.setLineDash([6, 8])
-      else ctx.setLineDash([2, 10])
+      ctx.setLineDash(lat === 0 ? [6, 8] : [2, 10])
       ctx.stroke()
       ctx.setLineDash([])
     })
@@ -65,16 +61,13 @@ function MapCanvas() {
       ctx.stroke()
     })
 
-    // Dessiner les pays GeoJSON
     const features = geoData.features || []
     features.forEach((feature: any) => {
       const geom = feature.geometry
       if (!geom) return
-
       ctx.fillStyle = 'rgba(255,255,255,0.13)'
       ctx.strokeStyle = 'rgba(255,255,255,0.28)'
       ctx.lineWidth = 0.5
-
       const drawPolygon = (coords: number[][][]) => {
         coords.forEach(ring => {
           ctx.beginPath()
@@ -88,72 +81,42 @@ function MapCanvas() {
           ctx.stroke()
         })
       }
-
       if (geom.type === 'Polygon') drawPolygon(geom.coordinates)
       else if (geom.type === 'MultiPolygon') {
         geom.coordinates.forEach((poly: number[][][]) => drawPolygon(poly))
       }
     })
 
-    // Lignes France → territoires
-    const france = territories[0]
-    const [fx, fy] = mercator(france.lon, france.lat)
-
-   // Pas de lignes de connexion
-
-    // Points des 7 territoires
     territories.forEach(t => {
       const [x, y] = mercator(t.lon, t.lat)
-
-      // Halo externe
       ctx.beginPath()
       ctx.arc(x, y, 12, 0, Math.PI * 2)
       ctx.fillStyle = 'rgba(228,31,38,0.15)'
       ctx.fill()
-
-      // Halo intermédiaire
       ctx.beginPath()
       ctx.arc(x, y, 7, 0, Math.PI * 2)
       ctx.fillStyle = 'rgba(228,31,38,0.38)'
       ctx.fill()
-
-      // Point rouge
       ctx.beginPath()
       ctx.arc(x, y, 4.5, 0, Math.PI * 2)
       ctx.fillStyle = '#E41F26'
       ctx.fill()
-
-      // Centre blanc
       ctx.beginPath()
       ctx.arc(x, y, 1.8, 0, Math.PI * 2)
       ctx.fillStyle = 'white'
       ctx.fill()
-
-      // Label code
       ctx.font = "bold 9px 'Barlow Condensed', sans-serif"
       ctx.fillStyle = 'rgba(255,255,255,0.92)'
       ctx.textAlign = 'center'
       ctx.fillText(t.code, x, y - 13)
     })
-
   }, [])
 
   useEffect(() => {
-    // Charger GeoJSON Natural Earth (domaine public)
     fetch('https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_land.geojson')
       .then(r => r.json())
       .then(data => draw(data))
-      .catch(() => {
-        // Fallback si fetch bloqué
-        const canvas = canvasRef.current
-        if (!canvas) return
-        const ctx = canvas.getContext('2d')
-        if (!ctx) return
-        ctx.fillStyle = '#111110'
-        ctx.fillRect(0, 0, W, H)
-        // Dessiner quand même les points
-        draw({ features: [] })
-      })
+      .catch(() => draw({ features: [] }))
   }, [draw])
 
   return (
@@ -168,7 +131,6 @@ function MapCanvas() {
 
 export function Presence() {
   const { ref, isVisible } = useIntersection()
-
   return (
     <section className="presence-section" id="presence" ref={ref}>
       <div className="section-inner">
@@ -185,7 +147,6 @@ export function Presence() {
           des formations officielles sur 7 territoires ultramarins.
         </p>
 
-        {/* Grille territoires */}
         <div className="presence-grid">
           {territories.map((t, i) => (
             <div key={t.name}
@@ -198,17 +159,13 @@ export function Presence() {
           ))}
         </div>
 
-        {/* Carte monde */}
         <div className={`presence-map reveal${isVisible ? ' visible' : ''} delay-5`}>
           <div className="presence-map-header">
             <div className="presence-map-label">Zone d'intervention mondiale</div>
           </div>
-
           <div className="presence-map-svg-wrapper">
             <MapCanvas />
           </div>
-
-          {/* Stats */}
           <div className="presence-map-stats">
             <div className="presence-stat">
               <span className="presence-stat-num">7</span>
@@ -225,7 +182,6 @@ export function Presence() {
               <span className="presence-stat-label">océans</span>
             </div>
           </div>
-
           <p className="presence-map-quote">
             "Présents là où les autres ne vont pas,
             pour ceux qui méritent les mêmes opportunités."

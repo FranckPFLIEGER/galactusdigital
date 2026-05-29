@@ -8,7 +8,7 @@ const partners = [
     level: 'Academy Partner',
   },
   {
-    file: 'microsoft-partner.jpg',
+    file: 'logoblanc.jpg',
     name: 'Microsoft',
     desc: 'Silver Partner — formations Azure, M365, Security, Power Platform',
     level: 'Silver Partner',

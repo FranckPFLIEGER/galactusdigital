@@ -1,4 +1,23 @@
 import { useIntersection } from '../hooks/useIntersection'
+import { Target, Globe, BookOpen } from 'lucide-react'
+
+const values = [
+  {
+    icon: <Target size={22} color="white" />,
+    title: 'Notre mission',
+    desc: 'Réduire l\'écart numérique entre les Caraïbes et le reste du monde, en formant aux certifications IT de niveau mondial.',
+  },
+  {
+    icon: <Globe size={22} color="white" />,
+    title: 'Notre conviction',
+    desc: 'Les professionnels ultramarins méritent les mêmes certifications que leurs homologues en Europe ou en Amérique du Nord.',
+  },
+  {
+    icon: <BookOpen size={22} color="white" />,
+    title: 'Notre engagement',
+    desc: 'S\'appuyer sur les éditeurs officiels pour garantir des formations certifiantes reconnues mondialement.',
+  },
+]
 
 export function President() {
   const { ref, isVisible } = useIntersection()
@@ -12,7 +31,6 @@ export function President() {
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
 
         <div className="president-grid">
-          {/* Citation */}
           <div className={`president-quote reveal${isVisible ? ' visible' : ''} delay-1`}>
             <div className="president-quote-mark">"</div>
             <blockquote className="president-text">
@@ -42,42 +60,21 @@ export function President() {
             </div>
           </div>
 
-          {/* Valeurs */}
           <div className={`president-values reveal${isVisible ? ' visible' : ''} delay-2`}>
-            <div className="president-value-card">
-              <div className="president-value-icon">🎯</div>
-              <div>
-                <div className="president-value-title">Notre mission</div>
-                <div className="president-value-desc">
-                  Réduire l'écart numérique entre les Caraïbes et le reste du monde,
-                  en formant aux certifications IT de niveau mondial.
+            {values.map((v, i) => (
+              <div key={v.title} className="president-value-card" style={{ animationDelay: `${0.1 * i + 0.3}s` }}>
+                <div className="president-value-icon-wrap">
+                  {v.icon}
+                </div>
+                <div>
+                  <div className="president-value-title">{v.title}</div>
+                  <div className="president-value-desc">{v.desc}</div>
                 </div>
               </div>
-            </div>
-            <div className="president-value-card">
-              <div className="president-value-icon">🌍</div>
-              <div>
-                <div className="president-value-title">Notre conviction</div>
-                <div className="president-value-desc">
-                  Les professionnels ultramarins méritent les mêmes certifications
-                  que leurs homologues en Europe ou en Amérique du Nord.
-                </div>
-              </div>
-            </div>
-            <div className="president-value-card">
-              <div className="president-value-icon">🏆</div>
-              <div>
-                <div className="president-value-title">Notre engagement</div>
-                <div className="president-value-desc">
-                  S'appuyer sur les éditeurs officiels pour garantir
-                  des formations certifiantes reconnues mondialement.
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   )
 }
-

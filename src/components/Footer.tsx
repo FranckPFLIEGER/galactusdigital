@@ -120,7 +120,7 @@ export function Footer() {
           <div style={{ display: 'flex', gap: '1rem' }}>
             <a href="#accueil">Mentions légales</a>
             <span>·</span>
-            <a href="#accueil">Politique de confidentialité</a>
+            <a href="#accueil">Protection des données</a>
           </div>
         </div>
 

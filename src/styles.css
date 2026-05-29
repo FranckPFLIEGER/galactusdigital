@@ -469,3 +469,74 @@ a { color: inherit; }
 .rse-commitment-author { font-family: var(--font-title); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--g-red); }
 @media (max-width: 860px) { .rse-grid { grid-template-columns: repeat(2,1fr); } }
 @media (max-width: 560px) { .rse-grid { grid-template-columns: 1fr; } }
+
+/* ─── PRESIDENT ─────────────────────────────────────── */
+.president-section { background: var(--g-black); position: relative; overflow: hidden; }
+.president-section::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 32px 32px; pointer-events: none; }
+.president-grid { display: grid; grid-template-columns: 1.4fr 1fr; gap: 4rem; align-items: start; }
+.president-quote { position: relative; }
+.president-quote-mark { font-family: var(--font-title); font-size: 8rem; line-height: 0.6; color: var(--g-red); opacity: 0.4; margin-bottom: 1.5rem; display: block; }
+.president-text { font-family: var(--font-body); font-size: 1rem; line-height: 1.9; color: rgba(255,255,255,0.80); margin: 0 0 2rem; font-style: normal; }
+.president-signature { display: flex; align-items: center; gap: 1.25rem; }
+.president-signature-line { width: 3px; height: 48px; background: var(--g-red); flex-shrink: 0; }
+.president-name { font-family: var(--font-title); font-size: 1.1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--g-white); }
+.president-title { font-family: var(--font-title); font-size: 0.72rem; letter-spacing: 0.10em; text-transform: uppercase; color: var(--g-red); margin-top: 0.2rem; }
+.president-values { display: flex; flex-direction: column; gap: 1.25rem; padding-top: 1rem; }
+.president-value-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); border-left: 3px solid var(--g-red); padding: 1.25rem; display: flex; gap: 1rem; align-items: flex-start; transition: background var(--transition-fast); border-radius: 0; }
+.president-value-card:hover { background: rgba(255,255,255,0.07); }
+.president-value-icon-wrap { width: 40px; height: 40px; background: var(--g-red); display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+.president-value-title { font-family: var(--font-title); font-size: 0.90rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--g-white); margin-bottom: 0.35rem; }
+.president-value-desc { font-size: 0.84rem; line-height: 1.65; color: rgba(255,255,255,0.55); margin: 0; }
+@media (max-width: 860px) { .president-grid { grid-template-columns: 1fr; gap: 3rem; } }
+
+/* ─── PRESENCE ──────────────────────────────────────── */
+.presence-section { background: var(--g-white); }
+.presence-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1rem; margin-bottom: 3rem; }
+.presence-card { background: var(--g-white); border: 1px solid rgba(187,187,187,0.4); padding: 1.5rem 1.25rem; text-align: center; transition: border-color var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast); }
+.presence-card:hover { border-color: var(--g-red); transform: translateY(-3px); box-shadow: 0 8px 24px rgba(228,31,38,0.08); }
+.presence-code { font-family: var(--font-title); font-size: 1.8rem; font-weight: 700; color: var(--g-black); line-height: 1; margin-bottom: 0.5rem; letter-spacing: 0.04em; }
+.presence-name { font-family: var(--font-title); font-size: 0.80rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--g-black); margin-bottom: 0.3rem; }
+.presence-desc { font-size: 0.75rem; color: var(--g-gray); letter-spacing: 0.04em; }
+.presence-map { background: var(--g-black); border-left: 4px solid var(--g-red); padding: 2rem 2.5rem; }
+.presence-map-header { margin-bottom: 1rem; }
+.presence-map-label { font-family: var(--font-title); font-size: 0.70rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--g-red); }
+.presence-map-svg-wrapper { margin: 1rem 0; border: 1px solid rgba(255,255,255,0.06); }
+.presence-map-stats { display: flex; align-items: center; gap: 3rem; flex-wrap: wrap; margin: 1.5rem 0 1rem; }
+.presence-stat { text-align: center; }
+.presence-stat-num { display: block; font-family: var(--font-title); font-size: 2.8rem; font-weight: 700; color: var(--g-red); line-height: 1; }
+.presence-stat-label { font-family: var(--font-title); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--g-gray); margin-top: 0.25rem; }
+.presence-stat-divider { width: 1px; height: 50px; background: rgba(228,31,38,0.25); }
+.presence-map-quote { font-family: var(--font-title); font-size: 1.1rem; font-style: italic; color: rgba(255,255,255,0.70); margin: 0; line-height: 1.6; }
+@media (max-width: 860px) { .presence-grid { grid-template-columns: repeat(2,1fr); } .presence-map { padding: 1.5rem; } .presence-map-stats { gap: 1.5rem; } }
+@media (max-width: 480px) { .presence-grid { grid-template-columns: 1fr 1fr; } }
+
+/* ─── PARTNERS ──────────────────────────────────────── */
+.partners-section { background: var(--g-offwhite); }
+.partners-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2rem; margin-top: 1rem; }
+.partner-card { background: var(--g-white); border: 1px solid rgba(187,187,187,0.4); padding: 2.5rem 2rem; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 1rem; transition: border-color var(--transition-fast), box-shadow var(--transition-fast), transform var(--transition-fast); }
+.partner-card:hover { border-color: var(--g-red); box-shadow: 0 8px 24px rgba(228,31,38,0.10); transform: translateY(-3px); }
+.partner-logo-wrapper { width: 160px; height: 100px; display: flex; align-items: center; justify-content: center; }
+.partner-logo { max-width: 100%; max-height: 100%; object-fit: contain; }
+.partner-level { font-family: var(--font-title); font-size: 0.65rem; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; color: var(--g-white); background: var(--g-red); padding: 0.2rem 0.75rem; }
+.partner-name { font-family: var(--font-title); font-size: 1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--g-black); }
+.partner-desc { font-size: 0.84rem; line-height: 1.65; color: var(--g-gray); margin: 0; }
+@media (max-width: 720px) { .partners-grid { grid-template-columns: 1fr; } }
+
+/* ─── RSE ───────────────────────────────────────────── */
+.rse-section { background: var(--g-black); position: relative; overflow: hidden; }
+.rse-section::before { content: ''; position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 32px 32px; pointer-events: none; }
+.rse-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-bottom: 3rem; }
+.rse-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.06); border-top: 3px solid var(--g-red); padding: 2rem 1.75rem; transition: background var(--transition-normal), transform var(--transition-normal); }
+.rse-card:hover { background: rgba(255,255,255,0.06); transform: translateY(-3px); }
+.rse-icon { width: 44px; height: 44px; background: var(--g-red); display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem; }
+.rse-title { font-family: var(--font-title); font-size: 1rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--g-white); margin: 0 0 1rem; }
+.rse-items { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.65rem; }
+.rse-item { display: flex; align-items: flex-start; gap: 0.65rem; }
+.rse-item-dot { width: 6px; height: 6px; background: var(--g-red); flex-shrink: 0; margin-top: 6px; }
+.rse-item span { font-size: 0.83rem; line-height: 1.65; color: rgba(255,255,255,0.55); }
+.rse-commitment { border-top: 1px solid rgba(228,31,38,0.20); padding-top: 2.5rem; }
+.rse-commitment-inner { max-width: 680px; margin: 0 auto; text-align: center; }
+.rse-commitment-text { font-family: var(--font-title); font-size: 1.2rem; font-style: italic; color: rgba(255,255,255,0.80); line-height: 1.7; margin: 0 0 1rem; }
+.rse-commitment-author { font-family: var(--font-title); font-size: 0.75rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--g-red); }
+@media (max-width: 860px) { .rse-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 560px) { .rse-grid { grid-template-columns: 1fr; } }

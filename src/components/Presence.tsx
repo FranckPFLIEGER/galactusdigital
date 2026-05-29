@@ -1,22 +1,184 @@
 import { useIntersection } from '../hooks/useIntersection'
-import { ComposableMap, Geographies, Geography, Marker, Line } from 'react-simple-maps'
-
-const geoUrl = 'https://cdn.jsdelivr.net/npm/world-atlas@2/countries-110m.json'
+import { useEffect, useRef, useCallback } from 'react'
 
 const territories = [
-  { name: 'France Hexagonale', code: 'FR',  desc: 'Siège administratif',      coordinates: [2.2137,   46.2276] as [number,number] },
-  { name: 'Guadeloupe',        code: 'GP',  desc: 'Siège régional Caraïbes',  coordinates: [-61.5510, 16.2650] as [number,number] },
-  { name: 'Martinique',        code: 'MQ',  desc: 'Centre de formation',       coordinates: [-61.0240, 14.6410] as [number,number] },
-  { name: 'Guyane',            code: 'GF',  desc: 'Présence active',           coordinates: [-53.1258,  3.9339] as [number,number] },
-  { name: 'Saint-Martin',      code: 'SXM', desc: 'Présence active',           coordinates: [-63.0523, 18.0708] as [number,number] },
-  { name: 'Saint-Barthélemy',  code: 'BL',  desc: 'Présence active',           coordinates: [-62.8333, 17.9000] as [number,number] },
-  { name: 'Réunion',           code: 'RE',  desc: 'Présence active',           coordinates: [55.5364, -21.1151] as [number,number] },
+  { name: 'France Hexagonale', code: 'FR',  desc: 'Siège administratif',     lon:   2.2137, lat:  46.2276 },
+  { name: 'Guadeloupe',        code: 'GP',  desc: 'Siège régional Caraïbes', lon: -61.5510, lat:  16.2650 },
+  { name: 'Martinique',        code: 'MQ',  desc: 'Centre de formation',      lon: -61.0240, lat:  14.6410 },
+  { name: 'Guyane',            code: 'GF',  desc: 'Présence active',          lon: -53.1258, lat:   3.9339 },
+  { name: 'Saint-Martin',      code: 'SXM', desc: 'Présence active',          lon: -63.0523, lat:  18.0708 },
+  { name: 'Saint-Barthélemy',  code: 'BL',  desc: 'Présence active',          lon: -62.8333, lat:  17.9000 },
+  { name: 'Réunion',           code: 'RE',  desc: 'Présence active',          lon:  55.5364, lat: -21.1151 },
 ]
 
-const france = territories[0].coordinates
+const W = 960
+const H = 480
+const SCALE = 153
+const CX = W / 2
+const CY = H / 2 + 20
+
+function mercator(lon: number, lat: number): [number, number] {
+  const x = CX + SCALE * (lon * Math.PI / 180)
+  const latR = Math.max(Math.min(lat * Math.PI / 180, 1.484), -1.484)
+  const y = CY - SCALE * Math.log(Math.tan(Math.PI / 4 + latR / 2))
+  return [x, y]
+}
+
+function MapCanvas() {
+  const canvasRef = useRef<HTMLCanvasElement>(null)
+
+  const draw = useCallback((geoData: any) => {
+    const canvas = canvasRef.current
+    if (!canvas) return
+    const ctx = canvas.getContext('2d')
+    if (!ctx) return
+
+    ctx.clearRect(0, 0, W, H)
+
+    // Fond
+    ctx.fillStyle = '#111110'
+    ctx.fillRect(0, 0, W, H)
+
+    // Grille
+    const lats = [-60, -30, 0, 30, 60]
+    lats.forEach(lat => {
+      const [, y] = mercator(0, lat)
+      ctx.beginPath()
+      ctx.moveTo(0, y)
+      ctx.lineTo(W, y)
+      ctx.strokeStyle = lat === 0 ? 'rgba(228,31,38,0.20)' : 'rgba(255,255,255,0.05)'
+      ctx.lineWidth = lat === 0 ? 1 : 0.5
+      if (lat === 0) ctx.setLineDash([6, 8])
+      else ctx.setLineDash([2, 10])
+      ctx.stroke()
+      ctx.setLineDash([])
+    })
+
+    const lons = [-150, -120, -90, -60, -30, 0, 30, 60, 90, 120, 150]
+    lons.forEach(lon => {
+      const [x] = mercator(lon, 0)
+      ctx.beginPath()
+      ctx.moveTo(x, 0)
+      ctx.lineTo(x, H)
+      ctx.strokeStyle = 'rgba(255,255,255,0.04)'
+      ctx.lineWidth = 0.5
+      ctx.stroke()
+    })
+
+    // Dessiner les pays GeoJSON
+    const features = geoData.features || []
+    features.forEach((feature: any) => {
+      const geom = feature.geometry
+      if (!geom) return
+
+      ctx.fillStyle = 'rgba(255,255,255,0.13)'
+      ctx.strokeStyle = 'rgba(255,255,255,0.28)'
+      ctx.lineWidth = 0.5
+
+      const drawPolygon = (coords: number[][][]) => {
+        coords.forEach(ring => {
+          ctx.beginPath()
+          ring.forEach(([lon, lat], i) => {
+            const [x, y] = mercator(lon, lat)
+            if (i === 0) ctx.moveTo(x, y)
+            else ctx.lineTo(x, y)
+          })
+          ctx.closePath()
+          ctx.fill()
+          ctx.stroke()
+        })
+      }
+
+      if (geom.type === 'Polygon') drawPolygon(geom.coordinates)
+      else if (geom.type === 'MultiPolygon') {
+        geom.coordinates.forEach((poly: number[][][]) => drawPolygon(poly))
+      }
+    })
+
+    // Lignes France → territoires
+    const france = territories[0]
+    const [fx, fy] = mercator(france.lon, france.lat)
+
+    territories.slice(1).forEach(t => {
+      const [tx, ty] = mercator(t.lon, t.lat)
+      ctx.beginPath()
+      ctx.moveTo(fx, fy)
+      ctx.lineTo(tx, ty)
+      ctx.strokeStyle = 'rgba(228,31,38,0.45)'
+      ctx.lineWidth = 1.2
+      ctx.setLineDash([5, 6])
+      ctx.stroke()
+      ctx.setLineDash([])
+    })
+
+    // Points des 7 territoires
+    territories.forEach(t => {
+      const [x, y] = mercator(t.lon, t.lat)
+
+      // Halo externe
+      ctx.beginPath()
+      ctx.arc(x, y, 12, 0, Math.PI * 2)
+      ctx.fillStyle = 'rgba(228,31,38,0.15)'
+      ctx.fill()
+
+      // Halo intermédiaire
+      ctx.beginPath()
+      ctx.arc(x, y, 7, 0, Math.PI * 2)
+      ctx.fillStyle = 'rgba(228,31,38,0.38)'
+      ctx.fill()
+
+      // Point rouge
+      ctx.beginPath()
+      ctx.arc(x, y, 4.5, 0, Math.PI * 2)
+      ctx.fillStyle = '#E41F26'
+      ctx.fill()
+
+      // Centre blanc
+      ctx.beginPath()
+      ctx.arc(x, y, 1.8, 0, Math.PI * 2)
+      ctx.fillStyle = 'white'
+      ctx.fill()
+
+      // Label code
+      ctx.font = "bold 9px 'Barlow Condensed', sans-serif"
+      ctx.fillStyle = 'rgba(255,255,255,0.92)'
+      ctx.textAlign = 'center'
+      ctx.fillText(t.code, x, y - 13)
+    })
+
+  }, [])
+
+  useEffect(() => {
+    // Charger GeoJSON Natural Earth (domaine public)
+    fetch('https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_110m_land.geojson')
+      .then(r => r.json())
+      .then(data => draw(data))
+      .catch(() => {
+        // Fallback si fetch bloqué
+        const canvas = canvasRef.current
+        if (!canvas) return
+        const ctx = canvas.getContext('2d')
+        if (!ctx) return
+        ctx.fillStyle = '#111110'
+        ctx.fillRect(0, 0, W, H)
+        // Dessiner quand même les points
+        draw({ features: [] })
+      })
+  }, [draw])
+
+  return (
+    <canvas
+      ref={canvasRef}
+      width={W}
+      height={H}
+      style={{ width: '100%', height: 'auto', display: 'block' }}
+    />
+  )
+}
 
 export function Presence() {
   const { ref, isVisible } = useIntersection()
+
   return (
     <section className="presence-section" id="presence" ref={ref}>
       <div className="section-inner">
@@ -53,72 +215,7 @@ export function Presence() {
           </div>
 
           <div className="presence-map-svg-wrapper">
-            <ComposableMap
-              projection="geoMercator"
-              projectionConfig={{ scale: 160, center: [10, 20] }}
-              style={{ width: '100%', height: 'auto', background: '#111110' }}
-            >
-              {/* Continents Natural Earth */}
-              <Geographies geography={geoUrl}>
-                {({ geographies }) =>
-                  geographies.map((geo) => (
-                    <Geography
-                      key={geo.rsmKey}
-                      geography={geo}
-                      style={{
-                        default: {
-                          fill: 'rgba(255,255,255,0.13)',
-                          stroke: 'rgba(255,255,255,0.25)',
-                          strokeWidth: 0.5,
-                          outline: 'none',
-                        },
-                        hover: {
-                          fill: 'rgba(255,255,255,0.20)',
-                          outline: 'none',
-                        },
-                        pressed: { outline: 'none' },
-                      }}
-                    />
-                  ))
-                }
-              </Geographies>
-
-              {/* Lignes France → territoires */}
-              {territories.slice(1).map((t) => (
-                <Line
-                  key={`line-${t.code}`}
-                  from={france}
-                  to={t.coordinates}
-                  stroke="rgba(228,31,38,0.50)"
-                  strokeWidth={1.2}
-                  strokeLinecap="round"
-                  strokeDasharray="5 6"
-                />
-              ))}
-
-              {/* 7 points avec vraies coordonnées GPS */}
-              {territories.map((t) => (
-                <Marker key={t.code} coordinates={t.coordinates}>
-                  <circle r={14} fill="rgba(228,31,38,0.12)" className="presence-pulse"/>
-                  <circle r={8}  fill="rgba(228,31,38,0.35)"/>
-                  <circle r={5}  fill="#E41F26"/>
-                  <circle r={2}  fill="white"/>
-                  <text
-                    y={-12}
-                    textAnchor="middle"
-                    style={{
-                      fontFamily: "'Barlow Condensed', sans-serif",
-                      fontSize: '8px',
-                      fontWeight: 700,
-                      fill: 'rgba(255,255,255,0.90)',
-                      letterSpacing: '0.08em',
-                    }}
-                  >
-                    {t.code}
-                  </text>
-                </Marker>
-              ))}
-            </ComposableMap>
+            <MapCanvas />
           </div>
 
           {/* Stats */}

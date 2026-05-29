@@ -46,7 +46,6 @@ const navLinks = [
     href: '#president',
     children: [
       { label: 'Mot du Président',        href: '#president' },
-      { label: 'Nos Chiffres',            href: '#stats' },
       { label: 'Notre Présence',          href: '#presence' },
       { label: 'Pourquoi Nous Choisir',   href: '#pourquoi' },
       { label: 'Ils nous font confiance', href: '#clients' },

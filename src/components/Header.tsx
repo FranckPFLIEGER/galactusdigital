@@ -1,58 +1,52 @@
 import { useState, useEffect } from 'react'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown, Linkedin } from 'lucide-react'
 
 const navLinks = [
   {
     label: 'Formations',
     href: '#certifications',
     children: [
-      { label: 'Microsoft',  href: '#certifications' },
-      { label: 'Cisco',      href: '#certifications' },
-      { label: 'CompTIA',    href: '#certifications' },
-      { label: 'IPv6 Forum', href: '#certifications' },
-      { label: 'EC-Council', href: '#certifications' },
-      { label: 'PMI',        href: '#certifications' },
+      { label: 'Microsoft Azure & M365', href: '#certifications' },
+      { label: 'Cisco CCNA / CCNP',      href: '#certifications' },
+      { label: 'IPv6 Forum',             href: '#certifications' },
+      { label: 'CompTIA Security+',      href: '#certifications' },
+      { label: 'EC-Council CEH',         href: '#certifications' },
+      { label: 'PMI / PMP',             href: '#certifications' },
+    ],
+  },
+  {
+    label: 'Solutions',
+    href: '#services',
+    children: [
+      { label: 'Formation en présentiel',      href: '#services' },
+      { label: 'Formation à distance (FOAD)',  href: '/foad' },
+      { label: 'Formation intra-entreprise',   href: '#services' },
+      { label: 'Formation inter-entreprise',   href: '#services' },
     ],
   },
   {
     label: 'Certifications',
     href: '#certifications',
     children: [
-      { label: 'Passer une certification', href: '/certifications/passer' },
-      { label: 'Certifications IT',        href: '/certifications' },
+      { label: 'Passer une certification', href: '/certifications' },
+      { label: 'Calendrier des sessions',  href: '#contact' },
     ],
   },
-  {
-    label: 'Services',
-    href: '#services',
-    children: [
-      { label: 'Intra-Entreprise',        href: '#services' },
-      { label: 'Inter-Entreprise',        href: '#services' },
-      { label: 'Calendrier des sessions', href: '/calendrier' },
-    ],
-  },
-  {
-    label: 'Financement',
-    href: '#contact',
-    children: [
-      { label: 'CPF',               href: '/financement/cpf' },
-      { label: 'OPCO',              href: '/financement/opco' },
-      { label: 'Plan de formation', href: '/financement/plan' },
-    ],
-  },
-  { label: 'Expertise', href: '#expertise' },
+  { label: 'Financements', href: '/financements' },
   {
     label: 'Qui Sommes-Nous',
     href: '#president',
     children: [
       { label: 'Mot du Président',        href: '#president' },
-      { label: 'Notre Présence',          href: '#presence' },
-      { label: 'Pourquoi Nous Choisir',   href: '#pourquoi' },
+      { label: 'Démarche pédagogique',    href: '/demarche-pedagogique' },
+      { label: 'Démarche qualité',        href: '/demarche-qualite' },
+      { label: 'Notre engagement RSE',    href: '#rse' },
+      { label: 'Situation de handicap',   href: '/handicap' },
       { label: 'Ils nous font confiance', href: '#clients' },
-      { label: 'Nos Résultats',           href: '#resultats' },
-      { label: 'Nos Partenaires',         href: '#partenaires' },
-      { label: 'Nos Reconnaissances',     href: '#awards' },
-      { label: 'Notre Engagement RSE',    href: '#rse' },
+      { label: 'Nos résultats',           href: '#resultats' },
+      { label: 'Nos partenaires',         href: '#partenaires' },
+      { label: 'Nos reconnaissances',     href: '#awards' },
+      { label: 'Témoignages',            href: '/temoignages' },
     ],
   },
 ]
@@ -62,35 +56,17 @@ function GalactusLogo() {
     <div style={{ display: 'inline-block' }}>
       <div style={{
         fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
-        fontWeight: 700,
-        fontSize: '1.6rem',
-        letterSpacing: '0.08em',
-        textTransform: 'uppercase',
-        color: '#FFFFFF',
-        lineHeight: 1,
-        marginBottom: '3px',
-        whiteSpace: 'nowrap',
-      }}>
-        GALACTUS
-      </div>
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: '1fr auto 1fr',
-        alignItems: 'center',
-        gap: '5px',
-      }}>
+        fontWeight: 700, fontSize: '1.6rem', letterSpacing: '0.08em',
+        textTransform: 'uppercase', color: '#FFFFFF', lineHeight: 1,
+        marginBottom: '3px', whiteSpace: 'nowrap',
+      }}>GALACTUS</div>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', gap: '5px' }}>
         <div style={{ height: '2px', background: '#E41F26' }} />
         <span style={{
           fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
-          fontWeight: 400,
-          fontSize: '0.58rem',
-          letterSpacing: '0.22em',
-          textTransform: 'uppercase',
-          color: '#E41F26',
-          whiteSpace: 'nowrap',
-        }}>
-          DIGITAL
-        </span>
+          fontWeight: 400, fontSize: '0.58rem', letterSpacing: '0.22em',
+          textTransform: 'uppercase', color: '#E41F26', whiteSpace: 'nowrap',
+        }}>DIGITAL</span>
         <div style={{ height: '2px', background: '#E41F26' }} />
       </div>
     </div>
@@ -111,20 +87,15 @@ export function Header() {
   return (
     <header className={`site-nav${scrolled ? ' scrolled' : ''}`}>
       <div className="nav-inner">
-
         <a href="/" className="nav-logo" aria-label="Galactus Digital — Accueil">
           <GalactusLogo />
         </a>
-
         <nav aria-label="Navigation principale">
           <ul className="nav-links">
             {navLinks.map(link => (
-              <li
-                key={link.label}
-                className="nav-item"
+              <li key={link.label} className="nav-item"
                 onMouseEnter={() => link.children && setOpenDropdown(link.label)}
-                onMouseLeave={() => setOpenDropdown(null)}
-              >
+                onMouseLeave={() => setOpenDropdown(null)}>
                 <a href={link.href} className="nav-link-item">
                   {link.label}
                   {link.children && <ChevronDown size={12} style={{ marginLeft: '3px' }} />}
@@ -133,9 +104,7 @@ export function Header() {
                   <ul className="nav-dropdown" role="menu">
                     {link.children.map(child => (
                       <li key={child.label} role="none">
-                        <a href={child.href} className="nav-dropdown-item" role="menuitem">
-                          {child.label}
-                        </a>
+                        <a href={child.href} className="nav-dropdown-item" role="menuitem">{child.label}</a>
                       </li>
                     ))}
                   </ul>
@@ -144,41 +113,51 @@ export function Header() {
             ))}
           </ul>
         </nav>
-
-        <a href="#contact" className="btn-red nav-cta-btn"
-          style={{ padding: '0.6rem 1.4rem', fontSize: '0.78rem' }}>
-          Nous Contacter
-        </a>
-
-        <button
-          className="nav-mobile-btn"
-          onClick={() => setMobileOpen(o => !o)}
-          aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
-          aria-expanded={mobileOpen}
-        >
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
+          <a href="https://www.linkedin.com/company/119444115/" target="_blank" rel="noopener noreferrer"
+            aria-label="LinkedIn GALACTUS Digital"
+            style={{ color: 'rgba(255,255,255,0.65)', transition: 'color 0.2s' }}
+            onMouseEnter={e => (e.currentTarget.style.color = '#E41F26')}
+            onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}>
+            <Linkedin size={18} />
+          </a>
+          <a href="#contact" className="btn-red nav-cta-btn" style={{ padding: '0.6rem 1.4rem', fontSize: '0.78rem' }}>
+            Nous Contacter
+          </a>
+        </div>
+        <button className="nav-mobile-btn" onClick={() => setMobileOpen(o => !o)}
+          aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={mobileOpen}>
           {mobileOpen ? <X size={22} color="#E41F26" /> : <Menu size={22} color="#FFFFFF" />}
         </button>
+      </div>
+
+      {/* Bandeau déroulant actualités */}
+      <div className="nav-ticker">
+        <div className="nav-ticker-inner">
+          <span>🔴 Prochaine session CCNA — Martinique · Inscription ouverte</span>
+          <span>🏆 IPv6 Hall of Fame 2025 — Franck PFLIEGER distingué mondialement</span>
+          <span>✅ 100% de réussite aux certifications IT 2023-2025 — 518 candidats formés</span>
+          <span>📋 Formations éligibles CPF, OPCO, plan de développement des compétences</span>
+          <span>🔴 Prochaine session CCNA — Martinique · Inscription ouverte</span>
+          <span>🏆 IPv6 Hall of Fame 2025 — Franck PFLIEGER distingué mondialement</span>
+          <span>✅ 100% de réussite aux certifications IT 2023-2025 — 518 candidats formés</span>
+          <span>📋 Formations éligibles CPF, OPCO, plan de développement des compétences</span>
+        </div>
       </div>
 
       <div className={`nav-mobile-menu${mobileOpen ? ' open' : ''}`} aria-hidden={!mobileOpen}>
         {navLinks.map(link => (
           <div key={link.label}>
-            <a href={link.href} onClick={() => setMobileOpen(false)}>
-              {link.label}
-            </a>
+            <a href={link.href} onClick={() => setMobileOpen(false)}>{link.label}</a>
             {link.children?.map(child => (
-              <a key={child.label} href={child.href} className="sub-link"
-                onClick={() => setMobileOpen(false)}>
+              <a key={child.label} href={child.href} className="sub-link" onClick={() => setMobileOpen(false)}>
                 {child.label}
               </a>
             ))}
           </div>
         ))}
-        <a href="#contact" className="btn-red"
-          style={{ marginTop: '1rem', justifyContent: 'center' }}
-          onClick={() => setMobileOpen(false)}>
-          Nous Contacter
-        </a>
+        <a href="#contact" className="btn-red" style={{ marginTop: '1rem', justifyContent: 'center' }}
+          onClick={() => setMobileOpen(false)}>Nous Contacter</a>
       </div>
     </header>
   )

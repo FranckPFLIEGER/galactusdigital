@@ -134,14 +134,8 @@ export function Header() {
       {/* Bandeau déroulant actualités */}
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
-          <span>🔴 Prochaine session CCNA — Martinique · Inscription ouverte</span>
-          <span>🏆 IPv6 Hall of Fame 2025 — Franck PFLIEGER distingué mondialement</span>
-          <span>✅ 100% de réussite aux certifications IT 2023-2025 — 518 candidats formés</span>
-          <span>📋 Formations éligibles CPF, OPCO, plan de développement des compétences</span>
-          <span>🔴 Prochaine session CCNA — Martinique · Inscription ouverte</span>
-          <span>🏆 IPv6 Hall of Fame 2025 — Franck PFLIEGER distingué mondialement</span>
-          <span>✅ 100% de réussite aux certifications IT 2023-2025 — 518 candidats formés</span>
-          <span>📋 Formations éligibles CPF, OPCO, plan de développement des compétences</span>
+          <span>🔴 Bientot nos futures dates d'évènements</span>
+
         </div>
       </div>
 

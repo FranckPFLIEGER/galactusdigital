@@ -18,10 +18,10 @@ const navLinks = [
     label: 'Solutions',
     href: '#services',
     children: [
-      { label: 'Formation en présentiel',     href: '#services' },
+      { label: 'Formation en présentiel',     href: '/presentiel' },
       { label: 'Formation à distance (FOAD)', href: '/foad' },
-      { label: 'Formation intra-entreprise',  href: '#services' },
-      { label: 'Formation inter-entreprise',  href: '#services' },
+      { label: 'Formation intra-entreprise',  href: '/services#intra' },
+      { label: 'Formation inter-entreprise',  href: '/services#inter' },
     ],
   },
   {
@@ -121,12 +121,14 @@ export function Header() {
             onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}>
             <Linkedin size={18} />
           </a>
-          <a href="#contact" className="btn-red nav-cta-btn" style={{ padding: '0.6rem 1.4rem', fontSize: '0.78rem' }}>
+          <a href="#contact" className="btn-red nav-cta-btn"
+            style={{ padding: '0.6rem 1.4rem', fontSize: '0.78rem' }}>
             Nous Contacter
           </a>
         </div>
         <button className="nav-mobile-btn" onClick={() => setMobileOpen(o => !o)}
-          aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={mobileOpen}>
+          aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'}
+          aria-expanded={mobileOpen}>
           {mobileOpen ? <X size={22} color="#E41F26" /> : <Menu size={22} color="#FFFFFF" />}
         </button>
       </div>
@@ -143,14 +145,16 @@ export function Header() {
           <div key={link.label}>
             <a href={link.href} onClick={() => setMobileOpen(false)}>{link.label}</a>
             {link.children?.map(child => (
-              <a key={child.label} href={child.href} className="sub-link" onClick={() => setMobileOpen(false)}>
-                {child.label}
-              </a>
+              <a key={child.label} href={child.href} className="sub-link"
+                onClick={() => setMobileOpen(false)}>{child.label}</a>
             ))}
           </div>
         ))}
-        <a href="#contact" className="btn-red" style={{ marginTop: '1rem', justifyContent: 'center' }}
-          onClick={() => setMobileOpen(false)}>Nous Contacter</a>
+        <a href="#contact" className="btn-red"
+          style={{ marginTop: '1rem', justifyContent: 'center' }}
+          onClick={() => setMobileOpen(false)}>
+          Nous Contacter
+        </a>
       </div>
     </header>
   )

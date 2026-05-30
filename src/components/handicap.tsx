@@ -13,22 +13,20 @@ function HandicapPage() {
       <Header />
       <main style={{ paddingTop: '72px' }}>
 
-        {/* Hero */}
         <section style={{ background: 'var(--g-black)', borderBottom: '3px solid var(--g-red)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>
-              Accessibilité
-            </span>
+            <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>Accessibilité</span>
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,3vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '1rem' }}>
               Situation de handicap &<br />Accessibilité aux formations
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8 }}>
-              GALACTUS Digital s'engage à rendre ses formations accessibles à tous, y compris aux personnes en situation de handicap ou avec des problèmes de santé. Aucun apprenant ne doit être exclu pour des raisons de handicap.
+              GALACTUS Digital s'engage à rendre ses formations accessibles à tous, y compris aux personnes
+              en situation de handicap ou avec des problèmes de santé. Aucun apprenant ne doit être exclu
+              pour des raisons de handicap — que ce soit aux Caraïbes, dans l'Océan Indien ou en France hexagonale.
             </p>
           </div>
         </section>
 
-        {/* Référent handicap */}
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Notre référent handicap</h2>
@@ -50,11 +48,11 @@ function HandicapPage() {
                       </div>
                       07 81 07 47 46
                     </a>
-                    <a href="mailto:galactusdigital@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', fontSize: '0.90rem' }}>
+                    <a href="mailto:president@galactusdigital.com" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'rgba(255,255,255,0.75)', textDecoration: 'none', fontSize: '0.90rem' }}>
                       <div style={{ width: '32px', height: '32px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                         <Mail size={15} color="white" />
                       </div>
-                      galactusdigital@gmail.com
+                      president@galactusdigital.com
                     </a>
                   </div>
                 </div>
@@ -82,9 +80,10 @@ function HandicapPage() {
               </div>
 
               <div>
-                <h3 className="section-h2" style={{ fontSize: '1.2rem' }}>Notre démarche</h3>
+                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1.2rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--g-black)', marginBottom: '1.25rem' }}>Notre démarche</h3>
                 <p style={{ fontSize: '0.92rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
-                  GALACTUS Digital s'attache à permettre l'accès à ses formations à tous les publics, y compris les personnes en situation de handicap ou avec des problèmes de santé.
+                  GALACTUS Digital s'attache à permettre l'accès à ses formations à tous les publics,
+                  que vous soyez aux Caraïbes, dans l'Océan Indien ou en France hexagonale.
                 </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
@@ -108,19 +107,19 @@ function HandicapPage() {
           </div>
         </section>
 
-        {/* Partenaires handicap */}
         <section style={{ background: 'var(--g-black)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">Nos partenaires handicap</h2>
             <div className="g-rule" />
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.62)', marginBottom: '2.5rem', maxWidth: '600px', lineHeight: 1.8 }}>
-              GALACTUS Digital s'appuie sur un réseau de partenaires spécialisés pour accompagner au mieux les personnes en situation de handicap.
+              GALACTUS Digital s'appuie sur un réseau de partenaires spécialisés couvrant les Caraïbes,
+              l'Océan Indien et la France hexagonale.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
               {[
-                { name: 'RHF Martinique — AGEFMA', desc: 'Réseau Handicap Formation Martinique — accompagnement et conseil pour l\'insertion professionnelle des personnes handicapées en Martinique.', zone: 'Martinique' },
-                { name: 'RHF Île-de-France', desc: 'Réseau Handicap Formation IDF — expertise dans l\'accueil et l\'accompagnement des personnes en situation de handicap en formation professionnelle.', zone: 'Île-de-France' },
-                { name: 'AGEFIPH Antilles Guyane', desc: 'Association de Gestion du Fonds pour l\'Insertion Professionnelle des Personnes Handicapées — financement et accompagnement dans les DOM.', zone: 'Antilles-Guyane' },
+                { name: 'RHF Martinique — AGEFMA', desc: 'Réseau Handicap Formation Martinique — accompagnement et conseil pour l\'insertion professionnelle des personnes handicapées en Martinique.', zone: 'Caraïbes — Martinique' },
+                { name: 'RHF Île-de-France', desc: 'Réseau Handicap Formation IDF — expertise dans l\'accueil et l\'accompagnement des personnes en situation de handicap en formation professionnelle.', zone: 'France hexagonale' },
+                { name: 'AGEFIPH Antilles Guyane', desc: 'Association de Gestion du Fonds pour l\'Insertion Professionnelle des Personnes Handicapées — financement et accompagnement dans les DOM.', zone: 'Caraïbes & Guyane' },
               ].map(p => (
                 <div key={p.name} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
@@ -137,19 +136,19 @@ function HandicapPage() {
           </div>
         </section>
 
-        {/* CTA contact */}
         <section style={{ background: 'var(--g-offwhite)', padding: '3rem 2rem', borderTop: '3px solid var(--g-red)' }}>
           <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
             <Heart size={32} color="#E41F26" style={{ marginBottom: '1rem' }} />
             <h2 className="section-h2" style={{ marginBottom: '1rem' }}>Vous avez un besoin spécifique ?</h2>
             <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '2rem' }}>
-              Contactez notre référent handicap avant votre inscription. Nous étudierons ensemble les adaptations nécessaires pour vous permettre de suivre la formation dans les meilleures conditions.
+              Contactez notre référent handicap avant votre inscription. Nous étudierons ensemble
+              les adaptations nécessaires pour vous permettre de suivre la formation dans les meilleures conditions.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red">
                 <Phone size={16} /> Appeler le référent
               </a>
-              <a href="mailto:galactusdigital@gmail.com" className="btn-ghost">
+              <a href="mailto:president@galactusdigital.com" className="btn-ghost">
                 <Mail size={16} /> Envoyer un message
               </a>
             </div>
@@ -161,4 +160,3 @@ function HandicapPage() {
     </>
   )
 }
-

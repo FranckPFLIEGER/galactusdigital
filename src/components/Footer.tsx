@@ -72,9 +72,9 @@ export function Footer() {
             <h4 className="footer-col-title">Contact & Légal</h4>
             <ul className="footer-links">
               <li>
-                <a href="mailto:galactusdigital@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <a href="mailto:president@galactusdigital.com" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <Mail size={14} style={{ flexShrink: 0, color: '#E41F26' }} />
-                  galactusdigital@gmail.com
+                  president@galactusdigital.com
                 </a>
               </li>
               <li>

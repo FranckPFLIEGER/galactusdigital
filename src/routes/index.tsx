@@ -1,3 +1,4 @@
+import '../styles.css'
 import { createFileRoute } from '@tanstack/react-router'
 import { Header }         from '../components/Header'
 import { Hero }           from '../components/Hero'

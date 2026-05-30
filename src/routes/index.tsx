@@ -7,7 +7,6 @@ import { About }          from '../components/About'
 import { Presence }       from '../components/Presence'
 import { Clients }        from '../components/Clients'
 import { Results }        from '../components/Results'
-import { Satisfaction }   from '../components/Satisfaction'
 import { Services }       from '../components/Services'
 import { Certifications } from '../components/Certifications'
 import { WhyUs }          from '../components/WhyUs'
@@ -27,37 +26,43 @@ function HomePage() {
     <>
       <Header />
       <main>
-        {/* 1 — Qui sommes-nous, accroche */}
+        {/* Hero */}
         <Hero />
-        {/* 2 — Nos chiffres clés */}
+
+        {/* Chiffres clés */}
         <Stats />
-        {/* 3 — Mot du Président — notre vision */}
+
+        {/* Qui Sommes-Nous */}
         <President />
-        {/* 4 — Notre expertise métier */}
         <About />
-        {/* 5 — Notre présence sur 7 territoires */}
         <Presence />
-        {/* 6 — Ils nous font confiance */}
+
+        {/* Références & Résultats */}
         <Clients />
-        {/* 7 — Nos résultats — preuve chiffrée */}
         <Results />
-        {/* 8 — Satisfaction apprenants */}
-        <Satisfaction />
-        {/* 9 — Nos services intra/inter */}
+
+        {/* Nos Services */}
         <Services />
-        {/* 10 — Certifications éditeurs officiels */}
+
+        {/* Certifications / Éditeurs */}
         <Certifications />
-        {/* 11 — Pourquoi nous choisir */}
+
+        {/* Pourquoi Nous Choisir */}
         <WhyUs />
-        {/* 12 — Nos partenaires certificateurs */}
+
+        {/* Partenaires */}
         <Partners />
-        {/* 13 — Actualités & Veille IT */}
+
+        {/* Actualités */}
         <News />
-        {/* 14 — Reconnaissances internationales */}
+
+        {/* Awards */}
         <AwardsSection />
-        {/* 15 — Engagement RSE */}
+
+        {/* RSE */}
         <RSE />
-        {/* 16 — Contact */}
+
+        {/* Contact */}
         <ContactCTA />
       </main>
       <Footer />

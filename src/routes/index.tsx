@@ -27,37 +27,21 @@ function HomePage() {
     <>
       <Header />
       <main>
-        {/* 1 — Qui sommes-nous, accroche */}
         <Hero />
-        {/* 2 — Nos chiffres clés */}
         <Stats />
-        {/* 3 — Mot du Président — notre vision */}
         <President />
-        {/* 4 — Notre expertise métier */}
         <About />
-        {/* 5 — Notre présence sur 7 territoires */}
         <Presence />
-        {/* 6 — Ils nous font confiance */}
         <Clients />
-        {/* 7 — Nos résultats — preuve chiffrée */}
         <Results />
-        {/* 8 — Satisfaction apprenants */}
         <Satisfaction />
-        {/* 9 — Nos services intra/inter */}
         <Services />
-        {/* 10 — Certifications éditeurs officiels */}
         <Certifications />
-        {/* 11 — Pourquoi nous choisir */}
         <WhyUs />
-        {/* 12 — Nos partenaires certificateurs */}
         <Partners />
-        {/* 13 — Actualités & Veille IT */}
         <News />
-        {/* 14 — Reconnaissances internationales */}
         <AwardsSection />
-        {/* 15 — Engagement RSE */}
         <RSE />
-        {/* 16 — Contact */}
         <ContactCTA />
       </main>
       <Footer />

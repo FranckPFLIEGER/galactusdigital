@@ -2,13 +2,13 @@ import { useIntersection } from '../hooks/useIntersection'
 import { useEffect, useRef, useCallback } from 'react'
 
 const territories = [
-  { name: 'France Hexagonale', code: 'FR',  desc: 'Siège administratif',     lon:   2.2137, lat:  46.2276 },
-  { name: 'Guadeloupe',        code: 'GP',  desc: 'Siège régional Caraïbes', lon: -61.5510, lat:  16.2650 },
-  { name: 'Martinique',        code: 'MQ',  desc: 'Centre de formation',      lon: -61.0240, lat:  14.6410 },
-  { name: 'Guyane',            code: 'GF',  desc: 'Présence active',          lon: -53.1258, lat:   3.9339 },
-  { name: 'Saint-Martin',      code: 'SXM', desc: 'Présence active',          lon: -63.0523, lat:  18.0708 },
-  { name: 'Saint-Barthélemy',  code: 'BL',  desc: 'Présence active',          lon: -62.8333, lat:  17.9000 },
-  { name: 'Réunion',           code: 'RE',  desc: 'Présence active',          lon:  55.5364, lat: -21.1151 },
+  { name: 'France Hexagonale', code: 'FR',  desc: 'Siège administratif',        lon:   2.2137, lat:  46.2276 },
+  { name: 'Martinique',        code: 'MQ',  desc: 'Siège régional Caraïbes',    lon: -61.0240, lat:  14.6410 },
+  { name: 'Guadeloupe',        code: 'GP',  desc: 'Présence active',             lon: -61.5510, lat:  16.2650 },
+  { name: 'Guyane',            code: 'GF',  desc: 'Présence active',             lon: -53.1258, lat:   3.9339 },
+  { name: 'Saint-Martin',      code: 'SXM', desc: 'Présence active',             lon: -63.0523, lat:  18.0708 },
+  { name: 'Saint-Barthélemy',  code: 'BL',  desc: 'Présence active',             lon: -62.8333, lat:  17.9000 },
+  { name: 'Réunion',           code: 'RE',  desc: 'Présence active',             lon:  55.5364, lat: -21.1151 },
 ]
 
 const W = 960
@@ -135,12 +135,13 @@ export function Presence() {
         </span>
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
         <h2 className={`section-h2 reveal${isVisible ? ' visible' : ''} delay-1`}>
-          Une couverture unique<br />aux Caraïbes et en France
+          Une couverture unique —<br />Caraïbes, Océan Indien et France
         </h2>
         <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '3rem' }}>
-          Seul organisme de formation certifiante IT capable de déployer
-          des formations officielles sur 7 territoires ultramarins.
+          Seul organisme de formation certifiante IT présent à la fois
+          aux Caraïbes, dans l'Océan Indien et en France hexagonale,
+          capable de déployer des formations officielles sur 7 territoires ultramarins.
         </p>
 
         <div className="presence-grid">
@@ -157,7 +158,7 @@ export function Presence() {
 
         <div className={`presence-map reveal${isVisible ? ' visible' : ''} delay-5`}>
           <div className="presence-map-header">
-            <div className="presence-map-label">Zone d'intervention mondiale</div>
+            <div className="presence-map-label">Zone d'intervention — Caraïbes · Océan Indien · France</div>
           </div>
           <div className="presence-map-svg-wrapper">
             <MapCanvas />
@@ -169,12 +170,12 @@ export function Presence() {
             </div>
             <div className="presence-stat-divider" />
             <div className="presence-stat">
-              <span className="presence-stat-num">+4 000</span>
-              <span className="presence-stat-label">km de présence</span>
+              <span className="presence-stat-num">3</span>
+              <span className="presence-stat-label">zones géographiques</span>
             </div>
             <div className="presence-stat-divider" />
             <div className="presence-stat">
-              <span className="presence-stat-num">3</span>
+              <span className="presence-stat-num">2</span>
               <span className="presence-stat-label">océans</span>
             </div>
           </div>

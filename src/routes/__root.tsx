@@ -36,7 +36,7 @@ export const Route = createRootRoute({
           logo: 'https://galactusdigital.com/galactus-icon.png',
           description: 'Organisme de formation certifié Qualiopi spécialisé dans les certifications IT aux Caraïbes.',
           telephone: '+33781074746',
-          email: 'galactusdigital@gmail.com',
+          email: 'president@galactusdigital.com',
           address: {
             '@type': 'PostalAddress',
             streetAddress: '66 avenue des Champs Élysées',

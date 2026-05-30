@@ -1,79 +1,4 @@
-const navCols = [
-  {
-    title: 'Formations',
-    links: [
-      { label: 'Intra-Entreprise',        href: '#services' },
-      { label: 'Inter-Entreprise',        href: '#services' },
-      { label: 'Certifications IT',       href: '#certifications' },
-      { label: 'Calendrier des sessions', href: '#contact' },
-    ],
-  },
-  {
-    title: 'Éditeurs',
-    links: [
-      { label: 'Microsoft',  href: '#certifications' },
-      { label: 'Cisco',      href: '#certifications' },
-      { label: 'IPv6 Forum', href: '#certifications' },
-      { label: 'CompTIA',    href: '#certifications' },
-    ],
-  },
-  {
-    title: 'À Propos',
-    links: [
-      { label: 'Notre Expertise', href: '#expertise' },
-      { label: 'Pourquoi Nous',  href: '#pourquoi' },
-      { label: 'Nos Experts',    href: '#expertise' },
-      { label: 'Contact',        href: '#contact' },
-    ],
-  },
-]
-
-function GalactusLogo() {
-  return (
-    <svg
-      width="160"
-      height="52"
-      viewBox="0 0 160 52"
-      xmlns="http://www.w3.org/2000/svg"
-      aria-label="Galactus Digital"
-    >
-      {/* GALACTUS */}
-      <text
-        x="0"
-        y="36"
-        fontFamily="'Barlow Condensed', 'Agency FB', sans-serif"
-        fontWeight="700"
-        fontSize="36"
-        letterSpacing="3"
-        textAnchor="start"
-        fill="#FFFFFF"
-        textTransform="uppercase"
-      >
-        GALACTUS
-      </text>
-
-      {/* Ligne gauche */}
-      <line x1="0" y1="46" x2="52" y2="46" stroke="#E41F26" strokeWidth="2" />
-
-      {/* DIGITAL */}
-      <text
-        x="80"
-        y="50"
-        fontFamily="'Barlow Condensed', 'Agency FB', sans-serif"
-        fontWeight="400"
-        fontSize="9"
-        letterSpacing="4"
-        textAnchor="middle"
-        fill="#E41F26"
-      >
-        DIGITAL
-      </text>
-
-      {/* Ligne droite */}
-      <line x1="108" y1="46" x2="160" y2="46" stroke="#E41F26" strokeWidth="2" />
-    </svg>
-  )
-}
+import { Linkedin, Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
 
 export function Footer() {
   const year = new Date().getFullYear()
@@ -82,45 +7,154 @@ export function Footer() {
       <div className="footer-inner">
         <div className="footer-top">
 
+          {/* Colonne 1 — Logo + Qualiopi */}
           <div className="footer-brand-section">
-
-            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', marginBottom: '1.25rem', display: 'inline-block' }}>
-              <GalactusLogo />
+            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', marginBottom: '1.25rem', display: 'inline-block', width: 'fit-content' }}>
+              <div style={{ fontFamily: "'Barlow Condensed','Agency FB',sans-serif", fontWeight: 700, fontSize: '2rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#FFFFFF', lineHeight: 1, marginBottom: '3px', whiteSpace: 'nowrap' }}>GALACTUS</div>
+              <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', gap: '5px' }}>
+                <div style={{ height: '2px', background: '#E41F26' }} />
+                <span style={{ fontFamily: "'Barlow Condensed','Agency FB',sans-serif", fontWeight: 400, fontSize: '0.65rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#E41F26', whiteSpace: 'nowrap' }}>DIGITAL</span>
+                <div style={{ height: '2px', background: '#E41F26' }} />
+              </div>
             </a>
 
             <p className="footer-tagline">
-              L'ingénierie de formation certifiée IT aux Caraïbes.
-              Formateurs experts, cours officiels éditeurs,
-              présence sur 7 territoires.
+              L'ingénierie de formation certifiée IT aux Caraïbes. Formateurs experts, cours officiels éditeurs, présence sur 7 territoires.
             </p>
 
-            <div style={{ background: '#FFFFFF', padding: '0.75rem', display: 'inline-block' }}>
-              <img src="/qualiopi.jpg" alt="Certification Qualiopi" loading="lazy" />
+            <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem' }}>
+              <a href="https://www.linkedin.com/company/119444115/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn GALACTUS Digital" className="footer-social-link">
+                <Linkedin size={18} />
+              </a>
             </div>
 
+            {/* Qualiopi — fond blanc obligatoire */}
+            <div style={{ background: '#FFFFFF', padding: '0.75rem 1rem', display: 'inline-block', marginBottom: '0.5rem' }}>
+              <img src="/qualiopi.jpg" alt="Certification Qualiopi — Processus certifié République Française" loading="lazy" />
+            </div>
+            <p style={{ fontSize: '0.70rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.5, maxWidth: '220px' }}>
+              Certification qualité délivrée au titre des actions de formation.<br />
+              ICPF — Accréditation n° 5-0616
+            </p>
           </div>
 
-          {navCols.map(col => (
-            <div key={col.title}>
-              <h4 className="footer-col-title">{col.title}</h4>
-              <ul className="footer-links">
-                {col.links.map(link => (
-                  <li key={link.label}>
-                    <a href={link.href}>{link.label}</a>
-                  </li>
-                ))}
-              </ul>
+          {/* Colonne 2 — À propos */}
+          <div>
+            <h4 className="footer-col-title">À Propos</h4>
+            <ul className="footer-links">
+              <li><a href="#president">Mot du Président</a></li>
+              <li><a href="/demarche-pedagogique">Démarche pédagogique</a></li>
+              <li><a href="/demarche-qualite">Démarche qualité</a></li>
+              <li><a href="#rse">Notre engagement RSE</a></li>
+              <li><a href="/handicap">Situation de handicap</a></li>
+              <li><a href="/temoignages">Témoignages</a></li>
+              <li><a href="/mentions-legales">Mentions légales & CGV</a></li>
+            </ul>
+          </div>
+
+          {/* Colonne 3 — Formations & Solutions */}
+          <div>
+            <h4 className="footer-col-title">Formations & Solutions</h4>
+            <ul className="footer-links">
+              <li><a href="#certifications">Microsoft Azure & M365</a></li>
+              <li><a href="#certifications">Cisco CCNA / CCNP</a></li>
+              <li><a href="#certifications">IPv6 Forum</a></li>
+              <li><a href="#certifications">CompTIA Security+</a></li>
+              <li><a href="#certifications">EC-Council CEH</a></li>
+              <li><a href="/foad">Formation à distance (FOAD)</a></li>
+              <li><a href="/financements">Guide du financement</a></li>
+              <li><a href="#contact">Calendrier des sessions</a></li>
+            </ul>
+          </div>
+
+          {/* Colonne 4 — Contact & Légal */}
+          <div>
+            <h4 className="footer-col-title">Contact & Légal</h4>
+            <ul className="footer-links">
+              <li>
+                <a href="mailto:galactusdigital@gmail.com" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Mail size={14} style={{ flexShrink: 0, color: '#E41F26' }} />
+                  galactusdigital@gmail.com
+                </a>
+              </li>
+              <li>
+                <a href="tel:+33781074746" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                  <Phone size={14} style={{ flexShrink: 0, color: '#E41F26' }} />
+                  +33 07 81 07 47 46
+                </a>
+              </li>
+              <li>
+                <span style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', color: 'rgba(255,255,255,0.45)', fontSize: '0.82rem', lineHeight: 1.5 }}>
+                  <MapPin size={14} style={{ flexShrink: 0, marginTop: '3px', color: '#E41F26' }} />
+                  <span>
+                    <strong style={{ color: 'rgba(255,255,255,0.60)', display: 'block' }}>Siège social</strong>
+                    66 av. des Champs Élysées, 75008 Paris
+                  </span>
+                </span>
+              </li>
+              <li>
+                <span style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', color: 'rgba(255,255,255,0.45)', fontSize: '0.82rem', lineHeight: 1.5 }}>
+                  <MapPin size={14} style={{ flexShrink: 0, marginTop: '3px', color: '#E41F26' }} />
+                  <span>
+                    <strong style={{ color: 'rgba(255,255,255,0.60)', display: 'block' }}>Martinique</strong>
+                    Pointe Madeleine — CAP EST<br />97240 Le François
+                  </span>
+                </span>
+              </li>
+              <li>
+                <span style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', color: 'rgba(255,255,255,0.45)', fontSize: '0.82rem', lineHeight: 1.5 }}>
+                  <MapPin size={14} style={{ flexShrink: 0, marginTop: '3px', color: '#E41F26' }} />
+                  <span>
+                    <strong style={{ color: 'rgba(255,255,255,0.60)', display: 'block' }}>Guadeloupe</strong>
+                    Pointe de la Verdure<br />Gosier 97190
+                  </span>
+                </span>
+              </li>
+            </ul>
+
+            <div className="footer-legal-block">
+              <div className="footer-legal-item">
+                <span className="footer-legal-label">NDA</span>
+                <span className="footer-legal-value">11 75 59933 75</span>
+              </div>
+              <div className="footer-legal-item">
+                <span className="footer-legal-label">SIRET</span>
+                <span className="footer-legal-value">880 430 418 00017</span>
+              </div>
+              <div className="footer-legal-item">
+                <span className="footer-legal-label">Certif.</span>
+                <span className="footer-legal-value">ICPF n° 5-0616</span>
+              </div>
             </div>
-          ))}
+
+            <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+              <a href="/certificat-qualiopi.pdf" target="_blank" rel="noopener noreferrer"
+                style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#E41F26')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>
+                <ExternalLink size={12} /> Certificat Qualiopi PDF
+              </a>
+              <a href="/reglement-interieur.pdf" target="_blank" rel="noopener noreferrer"
+                style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)', textDecoration: 'none' }}
+                onMouseEnter={e => (e.currentTarget.style.color = '#E41F26')}
+                onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.45)')}>
+                <ExternalLink size={12} /> Règlement intérieur PDF
+              </a>
+            </div>
+          </div>
 
         </div>
 
         <div className="footer-bottom">
-          <span>© {year} GALACTUS Digital. Tous droits réservés.</span>
-          <div style={{ display: 'flex', gap: '1rem' }}>
-            <a href="#accueil">Mentions légales</a>
+          <span>© {year} GALACTUS Digital — NDA : 11 75 59933 75 — SIRET : 880 430 418 00017. Tous droits réservés.</span>
+          <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+            <a href="/mentions-legales">Mentions légales</a>
             <span>·</span>
-            <a href="#accueil">Protection des données</a>
+            <a href="/mentions-legales#cgv">CGV</a>
+            <span>·</span>
+            <a href="/mentions-legales#rgpd">Protection des données</a>
+            <span>·</span>
+            <a href="/handicap">Accessibilité</a>
           </div>
         </div>
 

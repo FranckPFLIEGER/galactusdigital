@@ -1,26 +1,24 @@
 import { useIntersection } from '../hooks/useIntersection'
 
 const stats = [
-  { number: '+20', suffix: ' ans', label: "d'expertise reconnue" },
-  { number: '47',  suffix: '',     label: 'experts internationaux' },
-  { number: '+180',suffix: '',     label: 'cours officiels éditeurs' },
-  { number: '6',   suffix: '',     label: 'territoires ultramarins' },
+  { num: '+20', label: "ans d'expérience reconnue" },
+  { num: '131', label: 'stagiaires formés en 2025, dont 131 à distance' },
+  { num: '120', label: 'actions de formation dispensées en 2025' },
+  { num: '518', label: 'stagiaires formés ces 3 dernières années' },
 ]
 
 export function Stats() {
   const { ref, isVisible } = useIntersection()
   return (
-    // ✓ Fond noir conforme charte — plus de rupture blanc/noir
-    <section className="stats-bar" ref={ref}>
+    <section className="stats-bar" id="stats" ref={ref}>
       <div className="stats-inner">
         {stats.map((s, i) => (
           <div
-            key={s.label}
-            className={`stat-item reveal${isVisible ? ' visible' : ''} delay-${i + 1}`}
+            key={i}
+            className={`stat-item reveal${isVisible ? ' visible' : ''}`}
+            style={{ animationDelay: `${0.08 * i}s` }}
           >
-            <div className="stat-number">
-              <span>{s.number}</span>{s.suffix}
-            </div>
+            <div className="stat-number"><span>{s.num}</span></div>
             <div className="stat-label">{s.label}</div>
           </div>
         ))}

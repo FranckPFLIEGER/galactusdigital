@@ -41,7 +41,7 @@ export function ContactCTA() {
             <div className="contact-detail-icon">
               <Mail size={16} color="white" />
             </div>
-            <a href="mailto:galactusdigital@gmail.com">galactusdigital@gmail.com</a>
+            <a href="mailto:president@galactusdigital.com">president@galactusdigital.com</a>
           </div>
 
           <div className="contact-detail">

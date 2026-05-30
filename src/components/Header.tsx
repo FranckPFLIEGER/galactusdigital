@@ -18,10 +18,10 @@ const navLinks = [
     label: 'Solutions',
     href: '#services',
     children: [
-      { label: 'Formation en présentiel',      href: '#services' },
-      { label: 'Formation à distance (FOAD)',  href: '/foad' },
-      { label: 'Formation intra-entreprise',   href: '#services' },
-      { label: 'Formation inter-entreprise',   href: '#services' },
+      { label: 'Formation en présentiel',     href: '#services' },
+      { label: 'Formation à distance (FOAD)', href: '/foad' },
+      { label: 'Formation intra-entreprise',  href: '#services' },
+      { label: 'Formation inter-entreprise',  href: '#services' },
     ],
   },
   {
@@ -46,7 +46,7 @@ const navLinks = [
       { label: 'Nos résultats',           href: '#resultats' },
       { label: 'Nos partenaires',         href: '#partenaires' },
       { label: 'Nos reconnaissances',     href: '#awards' },
-      { label: 'Témoignages',            href: '/temoignages' },
+      { label: 'Témoignages',             href: '/temoignages' },
     ],
   },
 ]
@@ -55,7 +55,7 @@ function GalactusLogo() {
   return (
     <div style={{ display: 'inline-block' }}>
       <div style={{
-        fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
+        fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
         fontWeight: 700, fontSize: '1.6rem', letterSpacing: '0.08em',
         textTransform: 'uppercase', color: '#FFFFFF', lineHeight: 1,
         marginBottom: '3px', whiteSpace: 'nowrap',
@@ -63,7 +63,7 @@ function GalactusLogo() {
       <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', gap: '5px' }}>
         <div style={{ height: '2px', background: '#E41F26' }} />
         <span style={{
-          fontFamily: "'Barlow Condensed', 'Agency FB', sans-serif",
+          fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
           fontWeight: 400, fontSize: '0.58rem', letterSpacing: '0.22em',
           textTransform: 'uppercase', color: '#E41F26', whiteSpace: 'nowrap',
         }}>DIGITAL</span>
@@ -134,8 +134,7 @@ export function Header() {
       {/* Bandeau déroulant actualités */}
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
-          <span>🔴 Bientot nos futures dates d'évènements</span>
-
+         <span>🔴 Bientot nos futures dates d'évènements</span>
         </div>
       </div>
 

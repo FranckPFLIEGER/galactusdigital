@@ -9,26 +9,24 @@ export function Footer() {
 
           {/* Colonne 1 — Logo + Qualiopi */}
           <div className="footer-brand-section">
-            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', marginBottom: '1.25rem', display: 'inline-block', width: 'fit-content' }}>
-              <div style={{ fontFamily: "'Barlow Condensed','Agency FB',sans-serif", fontWeight: 700, fontSize: '2rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#FFFFFF', lineHeight: 1, marginBottom: '3px', whiteSpace: 'nowrap' }}>GALACTUS</div>
+            <a href="/" aria-label="Galactus Digital" style={{ textDecoration: 'none', marginBottom: '1.25rem', display: 'inline-block' }}>
+              <div style={{ fontFamily: "'Barlow Condensed','Agency FB',sans-serif", fontWeight: 700, fontSize: '2rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#FFFFFF', lineHeight: 1, marginBottom: '3px' }}>GALACTUS</div>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', gap: '5px' }}>
                 <div style={{ height: '2px', background: '#E41F26' }} />
                 <span style={{ fontFamily: "'Barlow Condensed','Agency FB',sans-serif", fontWeight: 400, fontSize: '0.65rem', letterSpacing: '0.25em', textTransform: 'uppercase', color: '#E41F26', whiteSpace: 'nowrap' }}>DIGITAL</span>
                 <div style={{ height: '2px', background: '#E41F26' }} />
               </div>
             </a>
-
             <p className="footer-tagline">
-              L'ingénierie de formation certifiée IT aux Caraïbes. Formateurs experts, cours officiels éditeurs, présence sur 7 territoires.
+              L'ingénierie de formation certifiée IT aux Caraïbes et dans l'Océan Indien.
+              Formateurs experts, cours officiels éditeurs, 7 territoires ultramarins.
             </p>
-
             <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1.5rem' }}>
-              <a href="https://www.linkedin.com/company/119444115/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn GALACTUS Digital" className="footer-social-link">
+              <a href="https://www.linkedin.com/company/119444115/" target="_blank" rel="noopener noreferrer"
+                aria-label="LinkedIn GALACTUS Digital" className="footer-social-link">
                 <Linkedin size={18} />
               </a>
             </div>
-
-            {/* Qualiopi — fond blanc obligatoire */}
             <div style={{ background: '#FFFFFF', padding: '0.75rem 1rem', display: 'inline-block', marginBottom: '0.5rem' }}>
               <img src="/qualiopi.jpg" alt="Certification Qualiopi — Processus certifié République Française" loading="lazy" />
             </div>
@@ -72,13 +70,15 @@ export function Footer() {
             <h4 className="footer-col-title">Contact & Légal</h4>
             <ul className="footer-links">
               <li>
-                <a href="mailto:president@galactusdigital.com" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <a href="mailto:president@galactusdigital.com"
+                  style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <Mail size={14} style={{ flexShrink: 0, color: '#E41F26' }} />
                   president@galactusdigital.com
                 </a>
               </li>
               <li>
-                <a href="tel:+33781074746" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                <a href="tel:+33781074746"
+                  style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <Phone size={14} style={{ flexShrink: 0, color: '#E41F26' }} />
                   +33 07 81 07 47 46
                 </a>
@@ -96,7 +96,7 @@ export function Footer() {
                 <span style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', color: 'rgba(255,255,255,0.45)', fontSize: '0.82rem', lineHeight: 1.5 }}>
                   <MapPin size={14} style={{ flexShrink: 0, marginTop: '3px', color: '#E41F26' }} />
                   <span>
-                    <strong style={{ color: 'rgba(255,255,255,0.60)', display: 'block' }}>Martinique</strong>
+                    <strong style={{ color: 'rgba(255,255,255,0.60)', display: 'block' }}>Martinique — Siège régional Caraïbes</strong>
                     Pointe Madeleine — CAP EST<br />97240 Le François
                   </span>
                 </span>
@@ -105,7 +105,7 @@ export function Footer() {
                 <span style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', color: 'rgba(255,255,255,0.45)', fontSize: '0.82rem', lineHeight: 1.5 }}>
                   <MapPin size={14} style={{ flexShrink: 0, marginTop: '3px', color: '#E41F26' }} />
                   <span>
-                    <strong style={{ color: 'rgba(255,255,255,0.60)', display: 'block' }}>Guadeloupe</strong>
+                    <strong style={{ color: 'rgba(255,255,255,0.60)', display: 'block' }}>Guadeloupe — Présence active</strong>
                     Pointe de la Verdure<br />Gosier 97190
                   </span>
                 </span>

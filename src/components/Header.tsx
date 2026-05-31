@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useLocation } from '@tanstack/react-router'
 import { Menu, X, ChevronDown, Linkedin } from 'lucide-react'
 
 const navLinks = [
@@ -74,10 +75,11 @@ function GalactusLogo() {
 }
 
 export function Header() {
-  const [scrolled, setScrolled] = useState(false)
-  const isInternalPage = typeof window !== 'undefined' && window.location.pathname !== '/'
+  const [scrolled,     setScrolled]     = useState(false)
   const [mobileOpen,   setMobileOpen]   = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
+  const location = useLocation()
+  const isInternalPage = location.pathname !== '/'
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 40)
@@ -134,11 +136,9 @@ export function Header() {
         </button>
       </div>
 
-      {/* Bandeau déroulant actualités */}
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
-         <span>🔴 Bientot nos futures dates d'évènements</span>
-
+          <span>🔴 Bientot nos futures dates d'évènements</span>
         </div>
       </div>
 

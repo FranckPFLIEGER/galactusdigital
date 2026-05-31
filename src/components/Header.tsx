@@ -74,7 +74,8 @@ function GalactusLogo() {
 }
 
 export function Header() {
-  const [scrolled,     setScrolled]     = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const isInternalPage = typeof window !== 'undefined' && window.location.pathname !== '/'
   const [mobileOpen,   setMobileOpen]   = useState(false)
   const [openDropdown, setOpenDropdown] = useState<string | null>(null)
 
@@ -85,7 +86,7 @@ export function Header() {
   }, [])
 
   return (
-    <header className={`site-nav${scrolled ? ' scrolled' : ''}`}>
+    <header className={`site-nav${(scrolled || isInternalPage) ? ' scrolled' : ''}`}>
       <div className="nav-inner">
         <a href="/" className="nav-logo" aria-label="Galactus Digital — Accueil">
           <GalactusLogo />
@@ -137,6 +138,7 @@ export function Header() {
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
          <span>🔴 Bientot nos futures dates d'évènements</span>
+
         </div>
       </div>
 

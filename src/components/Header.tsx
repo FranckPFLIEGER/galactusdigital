@@ -30,7 +30,7 @@ const navLinks = [
     href: '/#certifications',
     children: [
       { label: 'Passer une certification', href: '/certifications' },
-      { label: 'Calendrier des sessions',  href: '/#contact' },
+      { label: 'Calendrier des sessions',  href: '/calendrier' },
     ],
   },
   { label: 'Financements', href: '/financements' },

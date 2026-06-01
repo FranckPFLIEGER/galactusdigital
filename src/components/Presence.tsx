@@ -141,7 +141,7 @@ export function Presence() {
           style={{ marginBottom: '3rem' }}>
           Seul organisme de formation certifiante IT présent à la fois
           dans les territoires ultramarins et en France hexagonale,
-          capable de déployer des formations officielles sur 6 territoires ultramarins.
+          capable de déployer des formations officielles sur 6 territoires ultramarins et en France hexagonale.
         </p>
 
         <div className="presence-grid">

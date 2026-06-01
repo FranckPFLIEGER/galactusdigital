@@ -44,8 +44,8 @@ export function Hero() {
           </h1>
           <p className="hero-desc" style={{ animation: 'fadeUp 0.7s ease-out 0.24s both' }}>
             Grâce à notre réseau d'experts internationaux et notre maîtrise de l'ingénierie
-            de formation certifiée, nous proposons l'ensemble des cours officiels éditeurs IT
-            — en intra comme en inter-entreprise — pour accompagner vos équipes
+            de formation certifiante, nous proposons l'ensemble des cours officiels éditeurs IT
+            — en présentiel ou à distance (FOAD) — pour accompagner vos équipes
             vers les certifications les plus reconnues au monde.
           </p>
           <div className="hero-actions" style={{ animation: 'fadeUp 0.7s ease-out 0.36s both' }}>

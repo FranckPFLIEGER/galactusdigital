@@ -4,7 +4,7 @@ import { ArrowRight, Star } from 'lucide-react'
 export function Satisfaction() {
   const { ref, isVisible } = useIntersection()
   return (
-    <section className="satisfaction-section" ref={ref}>
+    <section className="satisfaction-section" id="satisfaction" ref={ref}>
       <div className="section-inner">
         <div className="satisfaction-grid">
 

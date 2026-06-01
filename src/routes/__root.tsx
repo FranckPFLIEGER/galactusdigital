@@ -35,7 +35,7 @@ export const Route = createRootRoute({
       { name: 'geo.placename',       content: 'Guadeloupe, Martinique, Caraïbes, Océan Indien, France' },
       {
         name: 'keywords',
-        content: 'formation IT Caraïbes, certification Cisco CCNA, formation Microsoft Azure, CompTIA, IPv6, Guadeloupe, Martinique, Guyane, Réunion, Qualiopi, organisme de formation certifié, NDA 11 75 59933 75',
+        content: 'formation IT territoires ultramarins, certification Cisco CCNA, formation Microsoft Azure, CompTIA, IPv6, Guadeloupe, Martinique, Guyane, Réunion, Qualiopi, organisme de formation certifié, NDA 11 75 59933 75',
       },
     ],
     links: [

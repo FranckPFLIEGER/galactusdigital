@@ -4,20 +4,20 @@ const articles = [
   {
     date: 'Décembre 2025',
     title: 'IPv6 Hall of Fame 2025',
-    desc: "Franck PFLIEGER intègre le IPv6 Hall of Fame 2025 — une reconnaissance mondiale pour son engagement dans le développement de l'IPv6 aux Caraïbes.",
+    desc: "Franck PFLIEGER intègre le IPv6 Hall of Fame 2025 — une reconnaissance mondiale pour son engagement dans le développement de l'IPv6 dans les territoires ultramarins.",
     tag: 'Distinction',
-    image: null,
+    image: '/awards/hof-2025.png',
   },
   {
     date: 'Septembre 2025',
     title: 'Rapport IPv6 Council Martinique',
     desc: "Publication du rapport d'activité du IPv6 Council Martinique, dont GALACTUS Digital est membre actif via l'association ASPIK.",
     tag: 'Rapport',
-    image: null,
+    image: '/actu/ipv6-martinique.png',
   },
   {
     date: 'Avril 2025',
-    title: 'Métiers du numérique aux Caraïbes',
+    title: 'Métiers du numérique dans les territoires ultramarins',
     desc: "Étude sur les métiers du numérique dans les territoires ultramarins — un contexte dans lequel GALACTUS Digital accompagne la montée en compétences.",
     tag: 'Étude',
     image: null,
@@ -25,7 +25,7 @@ const articles = [
   {
     date: 'Mars 2025',
     title: 'IPv6 Forum — Actualités',
-    desc: "Les dernières actualités du IPv6 Forum international, dont GALACTUS Digital est partenaire officiel pour les Caraïbes.",
+    desc: "Les dernières actualités du IPv6 Forum international, dont GALACTUS Digital est partenaire officiel dans les territoires ultramarins.",
     tag: 'Veille',
     image: null,
   },
@@ -60,7 +60,7 @@ export function News() {
         <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '3rem' }}>
           Via notre association ASPIK, GALACTUS Digital participe activement
-          au développement du numérique aux Caraïbes et rayonne à l'international.
+          au développement du numérique dans les territoires ultramarins et rayonne à l'international.
         </p>
         <div className="news-grid">
           {articles.map((a, i) => (
@@ -85,4 +85,3 @@ export function News() {
     </section>
   )
 }
-

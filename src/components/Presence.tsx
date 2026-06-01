@@ -140,7 +140,7 @@ export function Presence() {
         <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '3rem' }}>
           Seul organisme de formation certifiante IT présent à la fois
-          aux Caraïbes, dans l'Océan Indien et en France hexagonale,
+          dans les territoires ultramarins et en France hexagonale,
           capable de déployer des formations officielles sur 7 territoires ultramarins.
         </p>
 

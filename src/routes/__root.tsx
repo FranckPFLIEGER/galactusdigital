@@ -58,7 +58,7 @@ const jsonLd = {
   name: 'GALACTUS Digital',
   url: 'https://galactusdigital.com',
   logo: 'https://galactusdigital.com/galactus-icon.png',
-  description: "Organisme de formation certifié Qualiopi spécialisé dans les certifications IT aux Caraïbes et dans l'Océan Indien.",
+  description: "Organisme de formation certifié Qualiopi spécialisé dans les certifications IT des territoires ultramarins.",
   telephone: '+33781074746',
   email: 'president@galactusdigital.com',
   address: {

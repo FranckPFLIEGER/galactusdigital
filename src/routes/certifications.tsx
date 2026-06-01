@@ -97,7 +97,7 @@ function CertificationsPage() {
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '780px', lineHeight: 1.8 }}>
               GALACTUS Digital collabore avec l'ensemble des organismes certificateurs IT
               pour proposer à ses apprenants la certification correspondant à leurs besoins —
-              aux Caraïbes, dans l'Océan Indien et en France hexagonale.
+              dans les territoires ultramarins et en France hexagonale.
             </p>
           </div>
         </section>
@@ -154,7 +154,7 @@ function CertificationsPage() {
                 {[
                   'Officialiser vos compétences auprès des employeurs',
                   'Affirmer votre expertise dans un domaine reconnu mondialement',
-                  'Développer votre employabilité aux Caraïbes et au-delà',
+                  'Développer votre employabilité dans les territoires ultramarins et au-delà',
                   'Valoriser et sécuriser votre parcours professionnel',
                   'Financer via le CPF tout ou partie de votre formation',
                 ].map((item, i) => (
@@ -302,4 +302,3 @@ function CertificationsPage() {
     </>
   )
 }
-

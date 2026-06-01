@@ -5,12 +5,12 @@ const values = [
   {
     icon: <Target size={22} color="white" />,
     title: 'Notre mission',
-    desc: 'Réduire l\'écart numérique entre les Caraïbes et le reste du monde, en formant aux certifications IT de niveau mondial.',
+    desc: 'Réduire l\'écart numérique entre les territoires ultramarins et le reste du monde, en formant aux certifications IT de niveau mondial.',
   },
   {
     icon: <Globe size={22} color="white" />,
     title: 'Notre conviction',
-    desc: 'Les professionnels ultramarins méritent les mêmes certifications que leurs homologues en Europe ou en Amérique du Nord.',
+    desc: 'Les professionnels des territoires ultramarins méritent les mêmes certifications que leurs homologues en Europe ou en Amérique du Nord.',
   },
   {
     icon: <BookOpen size={22} color="white" />,
@@ -34,22 +34,17 @@ export function President() {
           <div className={`president-quote reveal${isVisible ? ' visible' : ''} delay-1`}>
             <div className="president-quote-mark">"</div>
             <blockquote className="president-text">
-              Innover, c'est réduire l'écart du présent avec le futur, c'est aider le présent
-              à ne jamais avoir de doute sur son rôle de futur… passé !
+              Innover, c'est réduire l'écart entre le présent et le futur.
+              C'est aider chacun à ne jamais douter de sa place dans le monde qui vient.
               <br /><br />
-              La vitesse à laquelle nous innovons dans le numérique change en profondeur
-              et de façon de plus en plus rapproché, les bases de notre société.
+              Le numérique évolue à une vitesse qui transforme en profondeur les bases
+              de notre société. Refuser cette évolution, c'est prendre le risque de s'isoler
+              — et ce risque est d'autant plus grand dans nos territoires insulaires.
               <br /><br />
-              Refuser l'innovation c'est prendre le risque de s'isoler dans un monde inconnu
-              et c'est d'autant plus vrai dans notre « insularité ».
-              <br /><br />
-              Nous ne prétendons pas aider les humains à comprendre tout de ces nouveaux mondes
-              qui se dessinent au fur et à mesure des innovations numériques.
-              <br /><br />
-              Mais nous tentons de réduire à notre juste mesure l'appréhension de l'écart
-              de notre présent avec le futur, en formant une génération apte à évoluer
-              à chaque nouvelle innovation lié au numérique en s'appuyant sur les acteurs
-              de notre révolution numérique à savoir les éditeurs.
+              Nous ne prétendons pas tout expliquer de ces nouveaux mondes numériques.
+              Mais nous nous engageons, à notre juste mesure, à former une génération
+              capable d'évoluer à chaque nouvelle innovation — en s'appuyant sur ceux
+              qui la font : les éditeurs.
             </blockquote>
             <div className="president-signature">
               <div className="president-signature-line" />
@@ -62,7 +57,8 @@ export function President() {
 
           <div className={`president-values reveal${isVisible ? ' visible' : ''} delay-2`}>
             {values.map((v, i) => (
-              <div key={v.title} className="president-value-card" style={{ animationDelay: `${0.1 * i + 0.3}s` }}>
+              <div key={v.title} className="president-value-card"
+                style={{ animationDelay: `${0.1 * i + 0.3}s` }}>
                 <div className="president-value-icon-wrap">
                   {v.icon}
                 </div>

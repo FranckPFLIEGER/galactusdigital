@@ -8,8 +8,8 @@ const reasons = [
   },
   {
     num: '02',
-    title: 'Couverture unique aux Caraïbes',
-    desc: "Présents sur 7 territoires, nous sommes le seul organisme capable de déployer des formations officielles à cette échelle dans la région caribéenne.",
+    title: 'Couverture unique dans les territoires ultramarins',
+    desc: "Présents sur 7 territoires, nous sommes le seul organisme capable de déployer des formations officielles à cette échelle dans les territoires ultramarins et en France hexagonale.",
   },
   {
     num: '03',
@@ -69,7 +69,7 @@ export function WhyUs() {
               Nous ne formons pas pour former.
               Nous formons pour certifier, et certifier pour transformer.
             </blockquote>
-            <p className="whyus-map-label">Présence aux Caraïbes</p>
+            <p className="whyus-map-label">Présence dans les territoires ultramarins</p>
             {/* ✓ Tags avec bordure rouge visible */}
             <div className="territories">
               {territories.map(t => (

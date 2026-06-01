@@ -69,7 +69,7 @@ export function WhyUs() {
               Nous ne formons pas pour former.
               Nous formons pour certifier, et certifier pour transformer.
             </blockquote>
-            <p className="whyus-map-label">Présence dans les territoires ultramarins</p>
+            <p className="whyus-map-label">Présence dans les territoires ultramarins et en France hexagonale.</p>
             {/* ✓ Tags avec bordure rouge visible */}
             <div className="territories">
               {territories.map(t => (

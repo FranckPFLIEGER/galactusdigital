@@ -45,10 +45,10 @@ const services = [
     icon: <Users2 size={22} color="white" />,
     title: 'Formation Inter-Entreprise',
     href: '/inter',
-    desc: "Rejoignez nos sessions ouvertes planifiées tout au long de l'année aux Caraïbes et en France. Un format favorisant les échanges entre professionnels de secteurs variés.",
+    desc: "Rejoignez nos sessions ouvertes planifiées tout au long de l'année dans les territoires ultramarins et en France. Un format favorisant les échanges entre professionnels de secteurs variés.",
     features: [
       'Calendrier annuel disponible sur demande',
-      'Accès à nos centres de formation aux Caraïbes',
+      'Accès à nos centres de formation dans les territoires ultramarins',
       "Partage d'expériences entre participants",
       'Préparation intensive aux examens officiels',
       'Financement via OPCO ou aides régionales',

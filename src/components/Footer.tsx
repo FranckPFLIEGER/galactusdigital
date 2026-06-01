@@ -16,13 +16,12 @@ export function Footer() {
               <div style={{
                 fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
                 fontWeight: 700,
-                fontSize: '2.2rem',
-                letterSpacing: '0.10em',
+                fontSize: '2rem',
+                letterSpacing: '0.08em',
                 textTransform: 'uppercase',
                 color: '#FFFFFF',
                 lineHeight: 1,
-                marginBottom: '5px',
-                textShadow: '0 0 40px rgba(228,31,38,0.15)',
+                marginBottom: '4px',
               }}>
                 GALACTUS
               </div>
@@ -30,27 +29,23 @@ export function Footer() {
                 display: 'grid',
                 gridTemplateColumns: '1fr auto 1fr',
                 alignItems: 'center',
-                gap: '7px',
+                gap: '5px',
+                width: '100%',
               }}>
-                <div style={{
-                  height: '2px',
-                  background: 'linear-gradient(to right, transparent, #E41F26)',
-                }} />
+                <div style={{ height: '2px', background: '#E41F26' }} />
                 <span style={{
                   fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
-                  fontWeight: 600,
-                  fontSize: '0.62rem',
-                  letterSpacing: '0.30em',
+                  fontWeight: 400,
+                  fontSize: '0.60rem',
+                  letterSpacing: '0.25em',
                   textTransform: 'uppercase',
                   color: '#E41F26',
                   whiteSpace: 'nowrap',
+                  padding: '0 2px',
                 }}>
                   DIGITAL
                 </span>
-                <div style={{
-                  height: '2px',
-                  background: 'linear-gradient(to left, transparent, #E41F26)',
-                }} />
+                <div style={{ height: '2px', background: '#E41F26' }} />
               </div>
             </a>
 
@@ -77,7 +72,7 @@ export function Footer() {
             }}>
               <div style={{
                 background: '#FFFFFF',
-                padding: '0.6rem 0.85rem',
+                padding: '0.75rem 1rem',
                 display: 'inline-block',
                 borderLeft: '3px solid #E41F26',
               }}>
@@ -85,7 +80,7 @@ export function Footer() {
                   src="/qualiopi.jpg"
                   alt="Certification Qualiopi — Processus certifié République Française"
                   loading="lazy"
-                  style={{ display: 'block', maxHeight: '52px', width: 'auto' }}
+                  style={{ display: 'block', height: '70px', width: 'auto' }}
                 />
               </div>
               <p style={{
@@ -127,10 +122,10 @@ export function Footer() {
               <li><a href="/intra">Formation intra-entreprise</a></li>
               <li><a href="/inter">Formation inter-entreprise</a></li>
             </ul>
-            <h4 className="footer-col-title" style={{ marginTop: '1.5rem' }}>À Propos</h4>
+            <h4 className="footer-col-title" style={{ marginTop: '1rem' }}>À Propos</h4>
             <ul className="footer-links">
               <li><a href="/#president">Mot du Président</a></li>
-              <li><a href="/#about">Notre expertise</a></li>
+              <li><a href="/#expertise">Notre expertise</a></li>
               <li><a href="/#presence">Notre présence</a></li>
               <li><a href="/demarche-pedagogique">Démarche pédagogique</a></li>
               <li><a href="/demarche-qualite">Démarche qualité</a></li>

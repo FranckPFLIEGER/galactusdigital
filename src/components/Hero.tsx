@@ -40,7 +40,7 @@ export function Hero() {
             Formation certifiée IT
           </div>
           <h1 className="hero-h1" style={{ animation: 'fadeUp 0.7s ease-out 0.12s both' }}>
-            L'excellence en certifications IT <em>aux Caraïbes</em>
+            L'excellence en certifications IT <em>dans les territoires ultramarins</em>
           </h1>
           <p className="hero-desc" style={{ animation: 'fadeUp 0.7s ease-out 0.24s both' }}>
             Grâce à notre réseau d'experts internationaux et notre maîtrise de l'ingénierie

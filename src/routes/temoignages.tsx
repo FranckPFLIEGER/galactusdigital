@@ -13,7 +13,7 @@ const temoignagesEcrits = [
     entreprise: 'Collectivité territoriale — Martinique',
     formation: 'CCNA Routing & Switching',
     annee: '2024',
-    texte: 'La formation dispensée par Franck PFLIEGER a complètement transformé notre approche des réseaux. La pédagogie est exceptionnelle — concrets, adaptés à notre contexte caribéen, les ateliers pratiques nous ont permis de certifier 100% de notre équipe. Je recommande sans réserve.',
+    texte: 'La formation dispensée par Franck PFLIEGER a complètement transformé notre approche des réseaux. La pédagogie est exceptionnelle — concrets, adaptés à notre contexte ultramarin, les ateliers pratiques nous ont permis de certifier 100% de notre équipe. Je recommande sans réserve.',
     note: '5/5',
   },
   {
@@ -183,5 +183,3 @@ function TemoignagesPage() {
     </>
   )
 }
-
-

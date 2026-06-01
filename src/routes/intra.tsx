@@ -23,7 +23,7 @@ function IntraPage() {
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8 }}>
               Nous intervenons directement dans vos locaux avec un programme conçu sur mesure
               pour vos équipes. Vos collaborateurs se forment sans quitter leur environnement de travail,
-              aux Caraïbes, dans l'Océan Indien ou en France hexagonale.
+              dans les territoires ultramarins et en France hexagonale.
             </p>
           </div>
         </section>
@@ -141,4 +141,3 @@ function IntraPage() {
     </>
   )
 }
-

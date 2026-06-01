@@ -14,8 +14,7 @@ const clients = [
   { file: '031.jpg' }, { file: '032.jpg' }, { file: '033.jpg' },
   { file: '034.jpg' }, { file: '035.jpg' }, { file: '036.jpg' },
   { file: '037.jpg' }, { file: '038.jpg' }, { file: '039.jpg' },
-  { file: '040.jpg' }, { file: '041.jpg' }, { file: '042.jpg' },
-  { file: '043.jpg' }, 
+  { file: '040.jpg' }, { file: '041.jpg' }, 
 ]
 
 export function Clients() {

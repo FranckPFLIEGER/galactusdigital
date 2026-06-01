@@ -128,7 +128,7 @@ export function Header() {
             onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.65)')}>
             <Linkedin size={18} />
           </a>
-          <a href="#contact" className="btn-red nav-cta-btn"
+          <a href="/#contact" className="btn-red nav-cta-btn"
             style={{ padding: '0.6rem 1.4rem', fontSize: '0.78rem' }}>
             Nous Contacter
           </a>
@@ -156,7 +156,7 @@ export function Header() {
             ))}
           </div>
         ))}
-        <a href="#contact" className="btn-red"
+        <a href="/#contact" className="btn-red"
           style={{ marginTop: '1rem', justifyContent: 'center' }}
           onClick={() => setMobileOpen(false)}>
           Nous Contacter

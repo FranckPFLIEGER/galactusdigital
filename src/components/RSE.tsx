@@ -10,7 +10,7 @@ const pillars = [
       'Formations flexibles (distanciel, à son rythme) pour concilier vie professionnelle, familiale et formation',
       'Les certifications IT permettent aux femmes de se mettre à égalité dans un univers très majoritairement masculin',
       'Financement CPF/OPCO accessible à toutes sans discrimination',
-      'Encouragement actif des femmes en reconversion vers les métiers du numérique aux Caraïbes',
+      'Encouragement actif des femmes en reconversion vers les métiers du numérique dans les territoires ultramarins',
     ],
   },
   {
@@ -28,10 +28,10 @@ const pillars = [
     icon: <Globe size={24} color="white" />,
     title: 'Ancrage territorial',
     items: [
-      'Formateurs locaux certifiés — priorité aux experts caribéens plutôt qu\'aux intervenants métropolitains déplacés',
+      'Formateurs locaux certifiés — priorité aux experts locaux et ultramarins plutôt qu\'aux intervenants métropolitains déplacés',
       'Présents sur 7 territoires — contribution directe au développement économique local',
       'Partenariats avec les acteurs économiques et institutionnels des DOM',
-      'Compréhension des réalités du marché caribéen par nos équipes terrain',
+      'Compréhension des réalités du marché ultramarin par nos équipes terrain',
     ],
   },
   {
@@ -51,7 +51,7 @@ const pillars = [
       'Via l\'association ASPIK, nos apprenants peuvent participer à des sessions de veille IT ouvertes à tous',
       'Rester connecté aux dernières innovations numériques après la certification',
       'Réseau d\'alumni caribéens partageant leurs expériences et opportunités',
-      'Contribution active au développement de la culture numérique aux Caraïbes',
+      'Contribution active au développement de la culture numérique dans les territoires ultramarins',
     ],
   },
 ]
@@ -67,7 +67,7 @@ export function RSE() {
         </span>
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
         <h2 className={`section-h2-light reveal${isVisible ? ' visible' : ''} delay-1`}>
-          Notre engagement RSE —<br />Un numérique responsable aux Caraïbes
+          Notre engagement RSE —<br />Un numérique responsable dans les territoires ultramarins
         </h2>
         <p className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '3rem' }}>
@@ -100,7 +100,7 @@ export function RSE() {
         <div className={`rse-commitment reveal${isVisible ? ' visible' : ''} delay-6`}>
           <div className="rse-commitment-inner">
             <p className="rse-commitment-text">
-              "Nous sommes convaincus que réduire la fracture numérique aux Caraïbes,
+              "Nous sommes convaincus que réduire la fracture numérique dans les territoires ultramarins,
               c'est contribuer à l'égalité des chances et au développement durable
               de nos territoires. Chaque certification obtenue est une victoire collective."
             </p>

@@ -12,38 +12,43 @@ export function Footer() {
 
             {/* Logo GALACTUS DIGITAL — trait pleine largeur */}
             <a href="/" aria-label="Galactus Digital — Accueil"
-              style={{ textDecoration: 'none', display: 'block', marginBottom: '1.25rem' }}>
-              <div style={{
-                fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
-                fontWeight: 900,
-                fontSize: '2.2rem',
-                letterSpacing: '0.1em',
-                textTransform: 'uppercase',
-                color: '#FFFFFF',
-                lineHeight: 1,
-              }}>
-                GALACTUS
-              </div>
-              {/* Trait rouge — DIGITAL avec traits courts fixes */}
-              <div style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                marginTop: '5px',
-              }}>
-                <div style={{ width: '28px', height: '1.5px', background: '#E41F26' }} />
-                <span style={{
+              style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.25rem' }}>
+              {/* Conteneur qui mesure la largeur de GALACTUS */}
+              <div style={{ position: 'relative' }}>
+                <div style={{
                   fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
-                  fontWeight: 400,
-                  fontSize: '0.62rem',
-                  letterSpacing: '0.30em',
+                  fontWeight: 900,
+                  fontSize: '2.2rem',
+                  letterSpacing: '0.1em',
                   textTransform: 'uppercase',
-                  color: '#E41F26',
-                  whiteSpace: 'nowrap',
+                  color: '#FFFFFF',
+                  lineHeight: 1,
                 }}>
-                  DIGITAL
-                </span>
-                <div style={{ width: '28px', height: '1.5px', background: '#E41F26' }} />
+                  GALACTUS
+                </div>
+                {/* Trait + DIGITAL aligné exactement sur la largeur de GALACTUS */}
+                <div style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '5px',
+                  marginTop: '5px',
+                  width: '100%',
+                }}>
+                  <div style={{ flex: 1, height: '1.5px', background: '#E41F26' }} />
+                  <span style={{
+                    fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
+                    fontWeight: 400,
+                    fontSize: '0.62rem',
+                    letterSpacing: '0.30em',
+                    textTransform: 'uppercase',
+                    color: '#E41F26',
+                    whiteSpace: 'nowrap',
+                  }}>
+                    DIGITAL
+                  </span>
+                  <div style={{ flex: 1, height: '1.5px', background: '#E41F26' }} />
+                </div>
               </div>
             </a>
 

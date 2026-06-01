@@ -33,13 +33,13 @@ function HomePage() {
         <President />
         <About />
         <Presence />
+        <Services />
+        <Satisfaction />
         <Clients />
         <Results />
-        <Satisfaction />
-        <Services />
         <Certifications />
-        <WhyUs />
         <Partners />
+        <WhyUs />
         <News />
         <AwardsSection />
         <RSE />

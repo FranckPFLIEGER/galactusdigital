@@ -50,7 +50,7 @@ const pillars = [
     items: [
       'Via l\'association ASPIK, nos apprenants peuvent participer à des sessions de veille IT ouvertes à tous',
       'Rester connecté aux dernières innovations numériques après la certification',
-      'Réseau d\'alumni caribéens partageant leurs expériences et opportunités',
+      'Réseau d\'alumni ultramarins partageant leurs expériences et opportunités',
       'Contribution active au développement de la culture numérique dans les territoires ultramarins',
     ],
   },

@@ -55,7 +55,7 @@ function HandicapPage() {
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48' }}>
                   Nous pouvons également compter sur un réseau de partenaires spécialisés
                   pour nous accompagner dans la prise en charge des situations individuelles
-                  aux Caraïbes et en France hexagonale.
+                  dans les territoires ultramarins et en France hexagonale.
                 </p>
               </div>
 

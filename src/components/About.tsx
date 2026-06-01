@@ -20,7 +20,7 @@ const points = [
   {
     icon: <ShieldCheck size={18} color="white" />,
     title: 'Ancrage territorial ultramarin',
-    desc: 'Présents sur 6 territoires ultramarins, nous comprenons le tissu économique local et ses besoins.',
+    desc: 'Présents sur 6 territoires ultramarins et en France hexagonale, nous comprenons le tissu économique local et ses besoins.',
   },
 ]
 

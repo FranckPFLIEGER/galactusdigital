@@ -10,42 +10,40 @@ export function Footer() {
           {/* ── Colonne 1 — Logo + Qualiopi ── */}
           <div className="footer-brand-section">
 
-            {/* Logo GALACTUS DIGITAL — version footer soignée */}
+            {/* Logo GALACTUS DIGITAL — trait aligné */}
             <a href="/" aria-label="Galactus Digital — Accueil"
               style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.25rem' }}>
               <div style={{
                 fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
-                fontWeight: 700,
-                fontSize: '2rem',
-                letterSpacing: '0.08em',
+                fontWeight: 900,
+                fontSize: '2.2rem',
+                letterSpacing: '0.1em',
                 textTransform: 'uppercase',
                 color: '#FFFFFF',
                 lineHeight: 1,
-                marginBottom: '4px',
               }}>
                 GALACTUS
               </div>
               <div style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr auto 1fr',
+                display: 'flex',
                 alignItems: 'center',
-                gap: '5px',
+                gap: '6px',
+                marginTop: '4px',
                 width: '100%',
               }}>
-                <div style={{ height: '2px', background: '#E41F26' }} />
+                <div style={{ flex: 1, height: '1.5px', background: '#E41F26' }} />
                 <span style={{
                   fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
                   fontWeight: 400,
-                  fontSize: '0.60rem',
-                  letterSpacing: '0.25em',
+                  fontSize: '0.62rem',
+                  letterSpacing: '0.30em',
                   textTransform: 'uppercase',
                   color: '#E41F26',
                   whiteSpace: 'nowrap',
-                  padding: '0 2px',
                 }}>
                   DIGITAL
                 </span>
-                <div style={{ height: '2px', background: '#E41F26' }} />
+                <div style={{ flex: 1, height: '1.5px', background: '#E41F26' }} />
               </div>
             </a>
 
@@ -64,32 +62,40 @@ export function Footer() {
               </a>
             </div>
 
-            {/* Qualiopi — logo officiel */}
-            <div style={{ display: 'inline-flex', flexDirection: 'column', gap: '0.6rem' }}>
+            {/* Qualiopi — logo officiel harmonisé */}
+            <div style={{ marginTop: '0.5rem' }}>
               <div style={{
-                background: '#FFFFFF',
-                padding: '0.65rem 1rem',
-                display: 'inline-block',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '0.75rem',
+                background: 'rgba(255,255,255,0.04)',
+                border: '1px solid rgba(228,31,38,0.35)',
                 borderLeft: '3px solid #E41F26',
+                padding: '0.6rem 0.9rem',
               }}>
                 <img
                   src="/qualiopi.jpg"
                   alt="Certification Qualiopi — Processus certifié République Française"
                   loading="lazy"
-                  style={{ display: 'block', height: '68px', width: 'auto' }}
+                  style={{ display: 'block', height: '52px', width: 'auto' }}
                 />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '2px' }}>
+                  <span style={{
+                    fontFamily: "'Barlow Condensed',sans-serif",
+                    fontWeight: 700,
+                    fontSize: '0.70rem',
+                    letterSpacing: '0.12em',
+                    textTransform: 'uppercase',
+                    color: '#FFFFFF',
+                  }}>
+                    Certifié Qualiopi
+                  </span>
+                  <span style={{ fontSize: '0.62rem', color: 'rgba(255,255,255,0.40)', lineHeight: 1.5 }}>
+                    Actions de formation<br />
+                    <span style={{ color: 'rgba(255,255,255,0.55)' }}>ICPF — n° 5-0616</span>
+                  </span>
+                </div>
               </div>
-              <p style={{
-                fontSize: '0.68rem',
-                color: 'rgba(255,255,255,0.32)',
-                lineHeight: 1.6,
-                maxWidth: '220px',
-                margin: 0,
-              }}>
-                Certification qualité délivrée au titre<br />
-                des actions de formation.<br />
-                <span style={{ color: 'rgba(255,255,255,0.45)' }}>ICPF — Accréditation n° 5-0616</span>
-              </p>
             </div>
 
           </div>

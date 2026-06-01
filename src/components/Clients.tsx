@@ -31,7 +31,7 @@ export function Clients() {
           Ils nous font confiance
         </h2>
         <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}>
-          Des entreprises publiques et privées aux Caraïbes et en France hexagonale
+          Des entreprises publiques et privées dans les territoires ultramarins et en France hexagonale
           nous confient la montée en compétences de leurs équipes IT.
         </p>
         <div className="clients-grid">

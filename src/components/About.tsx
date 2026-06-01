@@ -50,14 +50,14 @@ export function About() {
             {/* ✓ Double ligne rouge charte */}
             <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
             <h2 className={`section-h2 reveal${isVisible ? ' visible' : ''} delay-1`}>
-              L'ingénierie de formation<br />certifiée IT, notre cœur de métier
+              L'ingénierie de formation<br />certifiante IT, notre cœur de métier
             </h2>
             <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}>
               GALACTUS Digital est né d'une conviction : les professionnels des territoires ultramarins méritent
               d'accéder aux mêmes certifications IT de niveau mondial que leurs homologues en Europe
               ou en Amérique du Nord. Forts de plus de 20 ans d'expérience et d'un réseau
               d'experts certifiés à l'échelle internationale, nous avons bâti une offre complète,
-              rigoureuse et adaptée aux réalités du marché ultramarin et de l'Océan Indien.
+              rigoureuse et adaptée aux réalités du marché ultramarin.
             </p>
             <div className="about-points">
               {points.map((p, i) => (

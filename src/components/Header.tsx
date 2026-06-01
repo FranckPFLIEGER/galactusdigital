@@ -39,6 +39,8 @@ const navLinks = [
     href: '/#president',
     children: [
       { label: 'Mot du Président',        href: '/#president' },
+      { label: 'Notre expertise',           href: '/#about' },
+      { label: 'Notre présence',            href: '/#presence' },
       { label: 'Démarche pédagogique',    href: '/demarche-pedagogique' },
       { label: 'Démarche qualité',        href: '/demarche-qualite' },
       { label: 'Notre engagement RSE',    href: '/#rse' },

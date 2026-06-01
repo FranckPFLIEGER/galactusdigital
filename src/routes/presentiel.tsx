@@ -73,14 +73,14 @@ function PresentielPage() {
                   badge: 'Siège régional Caraïbes',
                   adresse: 'Pointe Madeleine — CAP EST\n97240 Le François',
                   desc: 'Notre centre régional aux Caraïbes. Toutes nos formations Cisco, Microsoft, CompTIA et IPv6 sont disponibles en présentiel depuis la Martinique.',
-                  tel: '+596 07 81 07 47 46',
+                  tel: '+33 07 81 07 47 46',
                 },
                 {
                   zone: 'Guadeloupe',
                   badge: 'Présence active',
                   adresse: 'Pointe de la Verdure\nGosier 97190',
                   desc: 'Interventions en présentiel en Guadeloupe chez vos équipes ou dans une salle partenaire adaptée à vos besoins.',
-                  tel: '+596 07 81 07 47 46',
+                  tel: '+33 07 81 07 47 46',
                 },
                 {
                   zone: 'Paris — France hexagonale',

@@ -67,14 +67,15 @@ export function Footer() {
             <div style={{
               display: 'inline-block',
               background: '#FFFFFF',
-              padding: '0.75rem 1rem',
+              padding: '0.65rem 0.85rem',
               borderLeft: '3px solid #E41F26',
+              maxWidth: '200px',
             }}>
               <img
                 src="/qualiopi.jpg"
                 alt="Certification Qualiopi — Processus certifié République Française — Actions de formation"
                 loading="lazy"
-                style={{ display: 'block', height: '90px', width: 'auto' }}
+                style={{ display: 'block', width: '100%', height: 'auto' }}
               />
             </div>
 

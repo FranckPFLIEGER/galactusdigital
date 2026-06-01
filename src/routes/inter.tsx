@@ -22,7 +22,7 @@ function InterPage() {
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8 }}>
               Rejoignez nos sessions ouvertes planifiées tout au long de l'année. Un format qui favorise
-              les échanges entre professionnels de secteurs variés, aux Caraïbes, dans l'Océan Indien
+              les échanges entre professionnels de secteurs variés dans les territoires ultramarins
               et en France hexagonale.
             </p>
           </div>
@@ -35,7 +35,7 @@ function InterPage() {
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
-                { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: 'Échangez avec des professionnels d\'horizons différents. Les sessions inter-entreprises sont une opportunité unique de réseautage et de partage d\'expériences dans les Caraïbes et l\'Océan Indien.' },
+                { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: 'Échangez avec des professionnels d\'horizons différents. Les sessions inter-entreprises sont une opportunité unique de réseautage et de partage d\'expériences dans les territoires ultramarins.' },
                 { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: 'Inscrivez-vous à la session qui correspond à vos disponibilités. Plusieurs dates disponibles dans l\'année sur nos différents territoires.' },
                 { icon: <TrendingUp size={24} color="white" />, title: 'Financement facilité', desc: 'Les formations inter-entreprises sont éligibles CPF, OPCO, aides régionales DOM. Nous vous accompagnons dans le montage de votre dossier de financement.' },
               ].map(a => (

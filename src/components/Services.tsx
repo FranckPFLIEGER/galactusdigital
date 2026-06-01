@@ -73,7 +73,7 @@ export function Services() {
         <p className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: 0 }}>
           Que vous représentiez une PME locale ou un grand groupe régional, que vous soyez
-          aux Caraïbes, dans l'Océan Indien ou en France hexagonale, nous adaptons notre
+          dans les territoires ultramarins et en France hexagonale, nous adaptons notre
           ingénierie pédagogique à votre situation.
         </p>
 

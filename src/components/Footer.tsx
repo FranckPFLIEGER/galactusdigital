@@ -24,15 +24,14 @@ export function Footer() {
               }}>
                 GALACTUS
               </div>
-              {/* Trait rouge — DIGITAL centré entre deux lignes */}
+              {/* Trait rouge — DIGITAL avec traits courts fixes */}
               <div style={{
-                display: 'grid',
-                gridTemplateColumns: '1fr auto 1fr',
+                display: 'inline-flex',
                 alignItems: 'center',
                 gap: '6px',
                 marginTop: '5px',
               }}>
-                <div style={{ height: '1.5px', background: '#E41F26' }} />
+                <div style={{ width: '28px', height: '1.5px', background: '#E41F26' }} />
                 <span style={{
                   fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
                   fontWeight: 400,
@@ -44,7 +43,7 @@ export function Footer() {
                 }}>
                   DIGITAL
                 </span>
-                <div style={{ height: '1.5px', background: '#E41F26' }} />
+                <div style={{ width: '28px', height: '1.5px', background: '#E41F26' }} />
               </div>
             </a>
 

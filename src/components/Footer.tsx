@@ -1,5 +1,36 @@
 import { Linkedin, Mail, Phone, MapPin, ExternalLink } from 'lucide-react'
 
+function GalactusLogo() {
+  return (
+    <div style={{ display: 'inline-block' }}>
+      <div style={{
+        fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
+        fontWeight: 700,
+        fontSize: '2.2rem',
+        letterSpacing: '0.08em',
+        textTransform: 'uppercase',
+        color: '#FFFFFF',
+        lineHeight: 1,
+        marginBottom: '3px',
+        whiteSpace: 'nowrap',
+      }}>GALACTUS</div>
+      <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', gap: '5px' }}>
+        <div style={{ height: '2px', background: '#E41F26' }} />
+        <span style={{
+          fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
+          fontWeight: 400,
+          fontSize: '0.58rem',
+          letterSpacing: '0.22em',
+          textTransform: 'uppercase',
+          color: '#E41F26',
+          whiteSpace: 'nowrap',
+        }}>DIGITAL</span>
+        <div style={{ height: '2px', background: '#E41F26' }} />
+      </div>
+    </div>
+  )
+}
+
 export function Footer() {
   const year = new Date().getFullYear()
   return (
@@ -10,46 +41,9 @@ export function Footer() {
           {/* ── Colonne 1 — Logo + Qualiopi ── */}
           <div className="footer-brand-section">
 
-            {/* Logo GALACTUS DIGITAL — trait pleine largeur */}
             <a href="/" aria-label="Galactus Digital — Accueil"
               style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.25rem' }}>
-              {/* Conteneur qui mesure la largeur de GALACTUS */}
-              <div style={{ position: 'relative' }}>
-                <div style={{
-                  fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
-                  fontWeight: 900,
-                  fontSize: '2.2rem',
-                  letterSpacing: '0.1em',
-                  textTransform: 'uppercase',
-                  color: '#FFFFFF',
-                  lineHeight: 1,
-                }}>
-                  GALACTUS
-                </div>
-                {/* Trait + DIGITAL aligné exactement sur la largeur de GALACTUS */}
-                <div style={{
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'space-between',
-                  gap: '5px',
-                  marginTop: '5px',
-                  width: '100%',
-                }}>
-                  <div style={{ flex: 1, height: '1.5px', background: '#E41F26' }} />
-                  <span style={{
-                    fontFamily: "'Barlow Condensed','Agency FB',sans-serif",
-                    fontWeight: 400,
-                    fontSize: '0.62rem',
-                    letterSpacing: '0.30em',
-                    textTransform: 'uppercase',
-                    color: '#E41F26',
-                    whiteSpace: 'nowrap',
-                  }}>
-                    DIGITAL
-                  </span>
-                  <div style={{ flex: 1, height: '1.5px', background: '#E41F26' }} />
-                </div>
-              </div>
+              <GalactusLogo />
             </a>
 
             {/* Tagline */}

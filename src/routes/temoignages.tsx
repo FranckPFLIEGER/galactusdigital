@@ -75,7 +75,7 @@ function TemoignagesPage() {
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8 }}>
               Ils ont choisi GALACTUS Digital pour leurs certifications IT. Voici ce qu'ils en disent —
-              des professionnels des Caraïbes, de l'Océan Indien et de France hexagonale qui ont transformé
+              des professionnels des territoires ultramarins et de France hexagonale qui ont transformé
               leur carrière grâce à une certification officielle éditeur.
             </p>
           </div>
@@ -90,7 +90,7 @@ function TemoignagesPage() {
             <h2 className="section-h2" style={{ marginBottom: '0.5rem' }}>Ils parlent de nous</h2>
             <div className="g-rule" />
             <p style={{ fontSize: '0.95rem', color: '#5a5a58', lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: '600px' }}>
-              GALACTUS Digital et ses formations certifiantes IT aux Caraïbes ont été mis en avant
+              GALACTUS Digital et ses formations certifiantes IT dans les territoires ultramarins ont été mis en avant
               par les médias régionaux. Retrouvez ici nos passages TV et interventions presse.
             </p>
             {/* Placeholder vidéos TV — à remplacer avec les vraies vidéos */}
@@ -104,7 +104,7 @@ function TemoignagesPage() {
                   </div>
                   <div style={{ padding: '1rem 1.25rem' }}>
                     <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '0.25rem' }}>
-                      Reportage TV — Caraïbes {2023 + i - 1}
+                      Reportage TV — Territoires ultramarins {2023 + i - 1}
                     </div>
                     <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)' }}>
                       À venir — uploader votre vidéo

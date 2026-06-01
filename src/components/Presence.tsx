@@ -135,7 +135,7 @@ export function Presence() {
         </span>
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
         <h2 className={`section-h2 reveal${isVisible ? ' visible' : ''} delay-1`}>
-          Une couverture unique —<br />Caraïbes, Océan Indien et France
+          Une couverture unique<br />dans les territoires ultramarins
         </h2>
         <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '3rem' }}>

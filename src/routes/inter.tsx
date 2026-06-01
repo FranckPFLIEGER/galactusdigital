@@ -56,7 +56,7 @@ function InterPage() {
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
               {[
-                { zone: 'Martinique', badge: 'Siège régional Caraïbes', desc: 'Sessions régulières tout au long de l\'année. Centre de formation principal aux Caraïbes. Pointe Madeleine — CAP EST, 97240 Le François.' },
+                { zone: 'Martinique', badge: 'Siège régional Caraïbes', desc: 'Sessions régulières tout au long de l\'année. Centre de formation principal des Caraïbes. Pointe Madeleine — CAP EST, 97240 Le François.' },
                 { zone: 'Guadeloupe', badge: 'Présence active', desc: 'Sessions organisées en Guadeloupe en salle partenaire. Pointe de la Verdure, Gosier 97190.' },
                 { zone: 'Paris — France', badge: 'Siège social', desc: 'Sessions disponibles à Paris et dans les grandes villes de France hexagonale. 66 avenue des Champs Élysées, 75008 Paris.' },
               ].map(l => (
@@ -145,4 +145,3 @@ function InterPage() {
     </>
   )
 }
-

@@ -64,15 +64,11 @@ export function Footer() {
               </a>
             </div>
 
-            {/* Qualiopi — même emplacement, présentation soignée */}
-            <div style={{
-              display: 'inline-flex',
-              flexDirection: 'column',
-              gap: '0.6rem',
-            }}>
+            {/* Qualiopi — logo officiel */}
+            <div style={{ display: 'inline-flex', flexDirection: 'column', gap: '0.6rem' }}>
               <div style={{
                 background: '#FFFFFF',
-                padding: '0.75rem 1rem',
+                padding: '0.65rem 1rem',
                 display: 'inline-block',
                 borderLeft: '3px solid #E41F26',
               }}>
@@ -80,7 +76,7 @@ export function Footer() {
                   src="/qualiopi.jpg"
                   alt="Certification Qualiopi — Processus certifié République Française"
                   loading="lazy"
-                  style={{ display: 'block', height: '70px', width: 'auto' }}
+                  style={{ display: 'block', height: '68px', width: 'auto' }}
                 />
               </div>
               <p style={{
@@ -129,6 +125,7 @@ export function Footer() {
               <li><a href="/#presence">Notre présence</a></li>
               <li><a href="/demarche-pedagogique">Démarche pédagogique</a></li>
               <li><a href="/demarche-qualite">Démarche qualité</a></li>
+              <li><a href="/#satisfaction">Satisfaction &amp; Qualité</a></li>
               <li><a href="/#rse">Notre engagement RSE</a></li>
               <li><a href="/handicap">Accessibilité &amp; Handicap</a></li>
               <li><a href="/temoignages">Témoignages</a></li>

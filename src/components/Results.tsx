@@ -18,7 +18,7 @@ export function Results() {
         </span>
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
         <h2 className={`section-h2-light reveal${isVisible ? ' visible' : ''} delay-1`}>
-          Une performance<br />sans équivalent aux Caraïbes
+          Une performance<br />sans équivalent dans les territoires ultramarins
         </h2>
 
         <div className={`results-notice reveal${isVisible ? ' visible' : ''} delay-2`}>
@@ -84,4 +84,3 @@ export function Results() {
     </section>
   )
 }
-

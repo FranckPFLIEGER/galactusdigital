@@ -19,8 +19,8 @@ const points = [
   },
   {
     icon: <ShieldCheck size={18} color="white" />,
-    title: 'Ancrage Caraïbes',
-    desc: 'Présents sur 7 territoires, nous comprenons le tissu économique local et ses besoins.',
+    title: 'Ancrage territorial ultramarin',
+    desc: 'Présents sur 11 territoires, nous comprenons le tissu économique local et ses besoins.',
   },
 ]
 
@@ -53,11 +53,11 @@ export function About() {
               L'ingénierie de formation<br />certifiée IT, notre cœur de métier
             </h2>
             <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}>
-              GALACTUS Digital est né d'une conviction : les professionnels des Caraïbes méritent
+              GALACTUS Digital est né d'une conviction : les professionnels des territoires ultramarins méritent
               d'accéder aux mêmes certifications IT de niveau mondial que leurs homologues en Europe
               ou en Amérique du Nord. Forts de plus de 20 ans d'expérience et d'un réseau
               d'experts certifiés à l'échelle internationale, nous avons bâti une offre complète,
-              rigoureuse et adaptée aux réalités du marché caribéen.
+              rigoureuse et adaptée aux réalités du marché ultramarin et de l'Océan Indien.
             </p>
             <div className="about-points">
               {points.map((p, i) => (

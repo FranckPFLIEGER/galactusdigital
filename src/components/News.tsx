@@ -48,7 +48,7 @@ const articles = [
 export function News() {
   const { ref, isVisible } = useIntersection()
   return (
-    <section className="news-section" id="actu" ref={ref}>
+    <section className="news-section" id="actualites" ref={ref}>
       <div className="section-inner">
         <span className={`section-label reveal${isVisible ? ' visible' : ''}`}>
           Actualités & Veille IT

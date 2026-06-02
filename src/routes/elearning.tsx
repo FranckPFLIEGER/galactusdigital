@@ -233,56 +233,60 @@ function ElearningPage() {
           </div>
         </section>
 
-        {/* ── Caractéristiques & conformité ── */}
-        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem', borderTop: '1px solid rgba(187,187,187,0.3)' }}>
+        {/* ── Caractéristiques ── */}
+        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <h2 className="section-h2">Caractéristiques</h2>
+            <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                {[
+                  'Parcours individuel ou petit groupe (2 à 6 apprenants)',
+                  'Tuteur certifié éditeur assigné dès le démarrage',
+                  'Accès 24h/24 aux plateformes NetAcad et Microsoft Learn',
+                  'Labs virtuels Cisco Packet Tracer inclus',
+                  'Sandbox Azure pour les parcours Microsoft',
+                  'Suivi documenté de la progression par module',
+                  'Messagerie directe avec le tuteur sous 24h ouvrées',
+                  'Passage de la certification intégré',
+                  'Attestation de formation et relevé de complétion',
+                  'Éligible CPF, OPCO, plan de développement des compétences',
+                ].map((item, i) => (
+                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
+                    <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    {item}
+                  </li>
+                ))}
+              </ul>
               <div>
-                <h2 className="section-h2" style={{ marginBottom: '0.5rem' }}>Caractéristiques</h2>
-                <div className="g-rule" />
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                  {[
-                    'Parcours individuel ou petit groupe (2 à 6 apprenants)',
-                    'Tuteur certifié éditeur assigné dès le démarrage',
-                    'Accès 24h/24 aux plateformes NetAcad et Microsoft Learn',
-                    'Labs virtuels Cisco Packet Tracer inclus',
-                    'Sandbox Azure pour les parcours Microsoft',
-                    'Suivi documenté de la progression par module',
-                    'Messagerie directe avec le tuteur sous 24h ouvrées',
-                    'Passage de la certification intégré',
-                    'Attestation de formation et relevé de complétion',
-                    'Éligible CPF, OPCO, plan de développement des compétences',
-                  ].map((item, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
-                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
                 <DelaisAcces dark={false} />
               </div>
-              <div>
-                <h2 className="section-h2" style={{ marginBottom: '0.5rem' }}>Conformité Qualiopi</h2>
-                <div className="g-rule" />
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  {[
-                    { ref: 'Art. L.6313-1', titre: 'Action de formation à distance', texte: 'L\'e-learning tutoré est reconnu comme action de formation dès lors qu\'un accompagnement individualisé est documenté.' },
-                    { ref: 'Ind. 19 Qualiopi', titre: 'Plateau technique adapté', texte: 'NetAcad et Microsoft Learn constituent le plateau technique officiel. Vérification de la prise en main organisée avant démarrage.' },
-                    { ref: 'Critère 3 Qualiopi', titre: 'Suivi individualisé documenté', texte: 'Un relevé de progression module par module est généré automatiquement par la plateforme et archivé dans le dossier de formation.' },
-                    { ref: 'Circulaire DGEFP 2026', titre: 'Réalité des actions', texte: 'Les bilans de progression constituent la preuve de réalité des actions conformément aux priorités de contrôle 2026-2027.' },
-                  ].map(c => (
-                    <div key={c.ref} style={{ display: 'flex', gap: '1rem', padding: '1rem', background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)' }}>
-                      <div style={{ flexShrink: 0 }}>
-                        <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.6rem', whiteSpace: 'nowrap' }}>{c.ref}</div>
-                      </div>
-                      <div>
-                        <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.82rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.25rem' }}>{c.titre}</div>
-                        <p style={{ fontSize: '0.81rem', lineHeight: 1.6, color: '#5a5a58', margin: 0 }}>{c.texte}</p>
-                      </div>
-                    </div>
-                  ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── Conformité réglementaire ── */}
+        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <h2 className="section-h2">Conformité réglementaire</h2>
+            <div className="g-rule" />
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
+              {[
+                { ref: 'Art. L.6313-1', title: 'Action de formation à distance', desc: 'L\'e-learning tutoré est reconnu comme action de formation au sens du Code du travail dès lors qu\'un accompagnement individualisé est documenté.' },
+                { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique adapté', desc: 'NetAcad et Microsoft Learn constituent le plateau technique officiel certifié. Vérification de la prise en main organisée avant démarrage de chaque parcours.' },
+                { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé documenté', desc: 'Un relevé de progression module par module est généré automatiquement par la plateforme et archivé dans le dossier de formation de l\'apprenant.' },
+                { ref: 'Circulaire DGEFP 2026-2027', title: 'Réalité des actions documentée', desc: 'Les bilans de progression constituent la preuve de réalité des actions conformément aux priorités de contrôle 2026-2027.' },
+              ].map(c => (
+                <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
+                  <div style={{ flexShrink: 0 }}>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.6rem', whiteSpace: 'nowrap' }}>{c.ref}</div>
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.35rem' }}>{c.title}</div>
+                    <p style={{ fontSize: '0.84rem', lineHeight: 1.65, color: '#5a5a58', margin: 0 }}>{c.desc}</p>
+                  </div>
                 </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>

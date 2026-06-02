@@ -15,7 +15,7 @@ const values = [
   {
     icon: <BookOpen size={22} color="white" />,
     title: 'Notre engagement',
-    desc: 'S\'appuyer sur les éditeurs officiels pour garantir des formations certifiantes reconnues mondialement.',
+    desc: 'S\'appuyer sur les éditeurs IT pour garantir des formations certifiantes reconnues mondialement.',
   },
 ]
 

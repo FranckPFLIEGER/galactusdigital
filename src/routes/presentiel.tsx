@@ -88,6 +88,7 @@ function DelaisAcces({ dark = false }: { dark?: boolean }) {
           { label: 'Standard', val: '1 mois après signature du devis et de la convention de formation.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
           { label: 'Inscription minimale', val: 'Les inscriptions sont possibles jusqu\'à 48 heures avant le début de la formation.' },
+          { label: 'Financement CPF', val: 'Délai minimum obligatoire de 11 jours ouvrés entre la date d\'envoi de la proposition et la date de début de la formation.' },
         ].map(d => (
           <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
             <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}

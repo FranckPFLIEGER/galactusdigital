@@ -147,6 +147,32 @@ function PresentielPage() {
           </div>
         </section>
 
+        {/* ── Conformité réglementaire ── */}
+        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <h2 className="section-h2">Conformité réglementaire</h2>
+            <div className="g-rule" />
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
+              {[
+                { ref: 'Art. L.6313-1', title: 'Action de formation en présentiel', desc: 'La formation en présentiel est une action de formation synchrone au sens du Code du travail. Le formateur et les stagiaires se trouvent physiquement dans le même lieu.' },
+                { ref: 'Qualiopi — Ind. 4', title: 'Convocation et règlement intérieur', desc: 'Chaque stagiaire reçoit une convocation précisant les dates, lieux, horaires et le règlement intérieur avant le démarrage de la formation.' },
+                { ref: 'Qualiopi — Ind. 19', title: 'Plateau technique et pédagogique', desc: 'Les équipements, simulateurs (Packet Tracer) et environnements de test sont mis à disposition avant le démarrage. Leur bon fonctionnement est vérifié au préalable.' },
+                { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé', desc: 'Un suivi individualisé est mis en place pour chaque apprenant avec évaluation des acquis à chaque journée de formation et feuilles de présence signées.' },
+              ].map(c => (
+                <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
+                  <div style={{ flexShrink: 0 }}>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.6rem', whiteSpace: 'nowrap' }}>{c.ref}</div>
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.35rem' }}>{c.title}</div>
+                    <p style={{ fontSize: '0.84rem', lineHeight: 1.65, color: '#5a5a58', margin: 0 }}>{c.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ── Lieux ── */}
         <section style={{ background: 'var(--g-black)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>

@@ -19,10 +19,15 @@ const navLinks = [
     label: 'Solutions',
     href: '/#services',
     children: [
+      // ── Modalités pédagogiques (L.6313-1) ──
+      { label: '— Modalités de formation', href: '#', isHeading: true },
       { label: 'Formation en présentiel',     href: '/presentiel' },
       { label: 'Formation à distance (FOAD)', href: '/foad' },
-      { label: 'Formation intra-entreprise',  href: '/intra' },
-      { label: 'Formation inter-entreprise',  href: '/inter' },
+      { label: 'E-learning tutoré',           href: '/elearning' },
+      // ── Formats d'organisation ──
+      { label: '— Formats d\'organisation', href: '#', isHeading: true },
+      { label: 'Intra-entreprise',  href: '/presentiel#intra' },
+      { label: 'Inter-entreprise',  href: '/presentiel#inter' },
     ],
   },
   {
@@ -38,19 +43,19 @@ const navLinks = [
     label: 'Qui Sommes-Nous',
     href: '/#president',
     children: [
-      { label: 'Mot du Président',        href: '/#president' },    // President
-      { label: 'Notre expertise',         href: '/#expertise' },    // About
-      { label: 'Notre présence',          href: '/#presence' },     // Presence
-      { label: 'Nos Solutions',           href: '/#services' },     // Services
-      { label: 'Satisfaction & Qualité',  href: '/#satisfaction' }, // Satisfaction
-      { label: 'Ils nous font confiance', href: '/#clients' },      // Clients
-      { label: 'Nos résultats',           href: '/#resultats' },    // Results
+      { label: 'Mot du Président',        href: '/#president' },
+      { label: 'Notre expertise',         href: '/#expertise' },
+      { label: 'Notre présence',          href: '/#presence' },
+      { label: 'Nos Solutions',           href: '/#services' },
+      { label: 'Satisfaction & Qualité',  href: '/#satisfaction' },
+      { label: 'Ils nous font confiance', href: '/#clients' },
+      { label: 'Nos résultats',           href: '/#resultats' },
       { label: 'Démarche pédagogique',    href: '/demarche-pedagogique' },
       { label: 'Démarche qualité',        href: '/demarche-qualite' },
-      { label: 'Nos partenaires',         href: '/#partenaires' },  // Partners
-      { label: 'Nos reconnaissances',     href: '/#awards' },       // AwardsSection
-      { label: 'Actualités & Veille IT',  href: '/#actualites' },   // News
-      { label: 'Notre engagement RSE',    href: '/#rse' },          // RSE
+      { label: 'Nos partenaires',         href: '/#partenaires' },
+      { label: 'Nos reconnaissances',     href: '/#awards' },
+      { label: 'Actualités & Veille IT',  href: '/#actualites' },
+      { label: 'Notre engagement RSE',    href: '/#rse' },
       { label: 'Témoignages',             href: '/temoignages' },
       { label: 'Situation de handicap',   href: '/handicap' },
     ],
@@ -111,9 +116,26 @@ export function Header() {
                 {link.children && openDropdown === link.label && (
                   <ul className="nav-dropdown" role="menu">
                     {link.children.map(child => (
-                      <li key={child.label} role="none">
-                        <a href={child.href} className="nav-dropdown-item" role="menuitem">{child.label}</a>
-                      </li>
+                      (child as any).isHeading ? (
+                        <li key={child.label} style={{
+                          padding: '0.55rem 1.1rem 0.2rem',
+                          fontSize: '0.60rem',
+                          fontWeight: 700,
+                          letterSpacing: '0.16em',
+                          textTransform: 'uppercase',
+                          color: '#E41F26',
+                          pointerEvents: 'none',
+                          userSelect: 'none',
+                        }}>
+                          {child.label.replace('— ', '')}
+                        </li>
+                      ) : (
+                        <li key={child.label} role="none">
+                          <a href={child.href} className="nav-dropdown-item" role="menuitem">
+                            {child.label}
+                          </a>
+                        </li>
+                      )
                     ))}
                   </ul>
                 )}
@@ -143,7 +165,7 @@ export function Header() {
 
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
-          <span>🔴 Bientot nos futures dates d'évènements</span>
+          <span>🔴 Bientôt nos futures dates d'évènements</span>
         </div>
       </div>
 
@@ -151,10 +173,23 @@ export function Header() {
         {navLinks.map(link => (
           <div key={link.label}>
             <a href={link.href} onClick={() => setMobileOpen(false)}>{link.label}</a>
-            {link.children?.map(child => (
-              <a key={child.label} href={child.href} className="sub-link"
-                onClick={() => setMobileOpen(false)}>{child.label}</a>
-            ))}
+            {link.children?.map(child =>
+              (child as any).isHeading ? (
+                <div key={child.label} style={{
+                  padding: '0.4rem 1rem 0.1rem',
+                  fontSize: '0.60rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.16em',
+                  textTransform: 'uppercase',
+                  color: '#E41F26',
+                }}>
+                  {child.label.replace('— ', '')}
+                </div>
+              ) : (
+                <a key={child.label} href={child.href} className="sub-link"
+                  onClick={() => setMobileOpen(false)}>{child.label}</a>
+              )
+            )}
           </div>
         ))}
         <a href="/#contact" className="btn-red"

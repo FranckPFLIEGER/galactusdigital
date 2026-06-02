@@ -38,20 +38,20 @@ const navLinks = [
     label: 'Qui Sommes-Nous',
     href: '/#president',
     children: [
-      { label: 'Mot du Président',        href: '/#president' },
-      { label: 'Notre expertise',         href: '/#expertise' },
-      { label: 'Notre présence',          href: '/#presence' },
-      { label: 'Nos Solutions',           href: '/#services' },
+      { label: 'Mot du Président',        href: '/#president' },    // President
+      { label: 'Notre expertise',         href: '/#expertise' },    // About
+      { label: 'Notre présence',          href: '/#presence' },     // Presence
+      { label: 'Nos Solutions',           href: '/#services' },     // Services
+      { label: 'Satisfaction & Qualité',  href: '/#satisfaction' }, // Satisfaction
+      { label: 'Ils nous font confiance', href: '/#clients' },      // Clients
+      { label: 'Nos résultats',           href: '/#resultats' },    // Results
       { label: 'Démarche pédagogique',    href: '/demarche-pedagogique' },
       { label: 'Démarche qualité',        href: '/demarche-qualite' },
-      { label: 'Satisfaction',            href: '/#satisfaction' },
-      { label: 'Ils nous font confiance', href: '/#clients' },
-      { label: 'Nos résultats',           href: '/#resultats' },
-      { label: 'Nos partenaires',         href: '/#partenaires' },
-      { label: 'Nos reconnaissances',     href: '/#awards' },
-      { label: 'Actualités & Veille IT',  href: '/#actualites' },
+      { label: 'Nos partenaires',         href: '/#partenaires' },  // Partners
+      { label: 'Nos reconnaissances',     href: '/#awards' },       // AwardsSection
+      { label: 'Actualités & Veille IT',  href: '/#actualites' },   // News
+      { label: 'Notre engagement RSE',    href: '/#rse' },          // RSE
       { label: 'Témoignages',             href: '/temoignages' },
-      { label: 'Notre engagement RSE',    href: '/#rse' },
       { label: 'Situation de handicap',   href: '/handicap' },
     ],
   },

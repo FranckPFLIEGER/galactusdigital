@@ -61,13 +61,15 @@ export function Footer() {
               </a>
             </div>
 
-            {/* Qualiopi — logo officiel taille naturelle, pur */}
-            <img
-              src="/qualiopi.jpg"
-              alt="Certification Qualiopi — Processus certifié République Française — Actions de formation"
-              loading="lazy"
-              style={{ display: 'block', maxWidth: '220px', height: 'auto' }}
-            />
+            {/* Qualiopi — style ENI Service : fond blanc, texte dessous, sans bordure */}
+            <div style={{ display: 'inline-block', background: '#FFFFFF', padding: '1rem 1.2rem', marginTop: '0.5rem' }}>
+              <img
+                src="/qualiopi.jpg"
+                alt="Certification Qualiopi — Processus certifié République Française"
+                loading="lazy"
+                style={{ display: 'block', maxWidth: '180px', height: 'auto' }}
+              />
+            </div>
 
           </div>
 

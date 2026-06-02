@@ -27,16 +27,16 @@ function FormationGrid() {
   return (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginTop: '2rem' }}>
       {FORMATIONS.map(f => (
-        <div key={f.editeur} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', padding: '1.5rem' }}>
+        <div key={f.editeur} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-            <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff' }}>{f.editeur}</div>
+            <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>{f.editeur}</div>
             {f.label && (
               <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>{f.label}</div>
             )}
           </div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {f.formations.map((item, i) => (
-              <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: 'rgba(255,255,255,0.60)' }}>
+              <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
                 <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
                 {item}
               </li>
@@ -64,6 +64,7 @@ function DelaisAcces({ dark = true }: { dark?: boolean }) {
           { label: 'Standard', val: '1 mois après signature du devis et de la convention de formation.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
           { label: 'Inscription minimale', val: 'Les inscriptions sont possibles jusqu\'à 48 heures avant le début de la formation.' },
+          { label: 'Financement CPF', val: 'Délai minimum obligatoire de 11 jours ouvrés entre la date d\'envoi de la proposition et la date de début de la formation.' },
         ].map(d => (
           <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
             <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}
@@ -343,9 +344,9 @@ function FoadPage() {
         </section>
 
         {/* ── Formations disponibles ── */}
-        <section style={{ background: 'var(--g-black)', padding: '4rem 2rem', borderTop: '1px solid rgba(255,255,255,0.06)' }}>
+        <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2-light">Formations disponibles en FOAD</h2>
+            <h2 className="section-h2">Formations disponibles en FOAD</h2>
             <div className="g-rule" />
             <FormationGrid />
           </div>

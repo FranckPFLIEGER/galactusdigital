@@ -6,14 +6,14 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'GALACTUS Digital — Formation certifiée IT aux Caraïbes & Océan Indien' },
+      { title: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         name: 'description',
         content: 'Organisme de formation certifié Qualiopi spécialisé certifications IT — Cisco, Microsoft, CompTIA, IPv6 Forum, EC-Council, PMI. 7 territoires ultramarins. NDA : 11 75 59933 75.',
       },
       { property: 'og:type',        content: 'website' },
       { property: 'og:url',         content: 'https://galactusdigital.com/' },
-      { property: 'og:title',       content: 'GALACTUS Digital — Formation certifiée IT aux Caraïbes & Océan Indien' },
+      { property: 'og:title',       content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         property: 'og:description',
         content: 'Organisme de formation certifié Qualiopi. Certifications Cisco, Microsoft, CompTIA, IPv6 Forum. 100% de réussite. 7 territoires ultramarins.',
@@ -22,7 +22,7 @@ export const Route = createRootRoute({
       { property: 'og:locale',      content: 'fr_FR' },
       { property: 'og:site_name',   content: 'GALACTUS Digital' },
       { name: 'twitter:card',        content: 'summary_large_image' },
-      { name: 'twitter:title',       content: 'GALACTUS Digital — Formation certifiée IT aux Caraïbes & Océan Indien' },
+      { name: 'twitter:title',       content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         name: 'twitter:description',
         content: 'Formations IT officielles aux Caraïbes et Océan Indien. Certifié Qualiopi. Microsoft, Cisco, CompTIA, EC-Council, PMI.',

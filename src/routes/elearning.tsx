@@ -1,11 +1,16 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import { BookOpen, Award, Clock, CheckCircle, Phone, Mail, Zap, BarChart2, UserCheck } from 'lucide-react'
+import {
+  BookOpen, Award, Clock, CheckCircle, Phone, Mail,
+  Zap, BarChart2, UserCheck, AlertCircle,
+} from 'lucide-react'
 
 export const Route = createFileRoute('/elearning')({
   component: ElearningPage,
 })
+
+// ─── Données ──────────────────────────────────────────────────────────────────
 
 const PARCOURS = [
   {
@@ -42,6 +47,36 @@ const NIVEAUX: Record<string, string> = {
   'Avancé':        '#B71C1C',
 }
 
+// ─── Composant DelaisAcces ────────────────────────────────────────────────────
+
+function DelaisAcces({ dark = false }: { dark?: boolean }) {
+  const textColor = dark ? 'rgba(255,255,255,0.70)' : '#4a4a48'
+  const strongColor = dark ? '#fff' : 'var(--g-black)'
+  const bg = dark ? 'rgba(255,255,255,0.03)' : 'var(--g-white)'
+  const border = dark ? '1px solid rgba(255,255,255,0.06)' : '1px solid rgba(187,187,187,0.3)'
+  return (
+    <div style={{ background: bg, border, borderLeft: '4px solid var(--g-red)', padding: '1.25rem 1.5rem', marginTop: '1.5rem' }}>
+      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.6rem' }}>
+        <AlertCircle size={15} color="#E41F26" />
+        <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)' }}>Délais d'accès</span>
+      </div>
+      <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+        {[
+          { label: 'Accès à la plateforme', val: 'Sous 72h après validation administrative.' },
+          { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
+          { label: 'Inscription minimale', val: 'Les inscriptions sont possibles jusqu\'à 48 heures avant le début du parcours.' },
+        ].map(d => (
+          <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
+            <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
+
 function ElearningPage() {
   return (
     <>
@@ -56,64 +91,29 @@ function ElearningPage() {
               Formation E-learning Tutoré
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              Progressez à votre rythme sur les plateformes officielles Cisco NetAcad et Microsoft Learn.
-              Un tuteur certifié vous accompagne tout au long du parcours — disponible par messagerie,
-              avec un suivi individualisé documenté conforme Qualiopi.
+              Progressez à votre rythme sur les plateformes officielles Cisco NetAcad et Microsoft Learn. Un tuteur certifié vous accompagne tout au long du parcours avec un suivi individualisé documenté conforme Qualiopi.
             </p>
-            {/* Badges réglementaires */}
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              {[
-                'Art. L.6313-1 Code du travail',
-                'FOAD asynchrone · Qualiopi',
-                'Qualiopi — Indicateur 19',
-                'NetAcad · Microsoft Learn',
-                'Eligible CPF · OPCO',
-              ].map(b => (
-                <div key={b} style={{ padding: '0.35rem 0.9rem', background: 'rgba(228,31,38,0.10)', border: '1px solid rgba(228,31,38,0.25)', fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>
-                  {b}
-                </div>
+              {['Art. L.6313-1 Code du travail', 'FOAD asynchrone · Qualiopi', 'Qualiopi — Indicateur 19', 'NetAcad · Microsoft Learn', 'Eligible CPF · OPCO'].map(b => (
+                <div key={b} style={{ padding: '0.35rem 0.9rem', background: 'rgba(228,31,38,0.10)', border: '1px solid rgba(228,31,38,0.25)', fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>{b}</div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* ── Avantages ── */}
+        {/* ── Pourquoi l'e-learning tutoré ── */}
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Pourquoi choisir l'e-learning tutoré ?</h2>
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
-                {
-                  icon: <Clock size={24} color="white" />,
-                  title: 'Rythme libre',
-                  desc: 'Vous avancez selon vos disponibilités, sans contrainte d\'horaire. Idéal pour les professionnels en activité dans les territoires ultramarins avec des contraintes opérationnelles fortes.',
-                },
-                {
-                  icon: <UserCheck size={24} color="white" />,
-                  title: 'Tuteur dédié',
-                  desc: 'Un tuteur certifié éditeur vous est assigné pour toute la durée du parcours. Il répond à vos questions, valide vos avancées et vous prépare à la certification officielle.',
-                },
-                {
-                  icon: <Award size={24} color="white" />,
-                  title: 'Certifications officielles',
-                  desc: 'Les parcours sont alignés sur les programmes officiels Cisco et Microsoft. Le passage de la certification est intégré au parcours avec accompagnement à l\'examen.',
-                },
-                {
-                  icon: <Zap size={24} color="white" />,
-                  title: 'Accès immédiat',
-                  desc: 'Démarrage sous 72h après inscription. Les accès aux plateformes NetAcad et Microsoft Learn sont activés dès la validation administrative.',
-                },
-                {
-                  icon: <BarChart2 size={24} color="white" />,
-                  title: 'Suivi de progression',
-                  desc: 'Tableau de bord personnalisé sur chaque plateforme. Votre tuteur suit votre progression module par module et vous alerte si vous décrochez du rythme prévu.',
-                },
-                {
-                  icon: <BookOpen size={24} color="white" />,
-                  title: 'Contenus officiels',
-                  desc: 'Vous accédez aux contenus pédagogiques officiels des éditeurs : labs virtuels Cisco Packet Tracer, sandbox Azure, modules interactifs Microsoft, QCM de validation des acquis.',
-                },
+                { icon: <Clock size={24} color="white" />, title: 'Rythme libre', desc: 'Vous avancez selon vos disponibilités, sans contrainte d\'horaire. Idéal pour les professionnels en activité dans les territoires ultramarins avec des contraintes opérationnelles fortes.' },
+                { icon: <UserCheck size={24} color="white" />, title: 'Tuteur dédié', desc: 'Un tuteur certifié éditeur vous est assigné pour toute la durée du parcours. Il répond à vos questions, valide vos avancées et vous prépare à la certification officielle.' },
+                { icon: <Award size={24} color="white" />, title: 'Certifications officielles', desc: 'Les parcours sont alignés sur les programmes officiels Cisco et Microsoft. Le passage de la certification est intégré au parcours avec accompagnement à l\'examen.' },
+                { icon: <Zap size={24} color="white" />, title: 'Accès rapide', desc: 'Démarrage sous 72h après inscription. Les accès aux plateformes NetAcad et Microsoft Learn sont activés dès la validation administrative.' },
+                { icon: <BarChart2 size={24} color="white" />, title: 'Suivi de progression', desc: 'Tableau de bord personnalisé sur chaque plateforme. Votre tuteur suit votre progression module par module et vous alerte si vous décrochez du rythme prévu.' },
+                { icon: <BookOpen size={24} color="white" />, title: 'Contenus officiels', desc: 'Accès aux contenus pédagogiques officiels des éditeurs : labs virtuels Cisco Packet Tracer, sandbox Azure, modules interactifs Microsoft, QCM de validation des acquis.' },
               ].map(a => (
                 <div key={a.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ width: '44px', height: '44px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>{a.icon}</div>
@@ -125,7 +125,7 @@ function ElearningPage() {
           </div>
         </section>
 
-        {/* ── Différence FOAD / e-learning ── */}
+        {/* ── Comparaison FOAD / e-learning ── */}
         <section style={{ background: 'var(--g-black)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">FOAD synchrone vs E-learning tutoré</h2>
@@ -133,28 +133,12 @@ function ElearningPage() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
               {[
                 {
-                  titre: 'FOAD synchrone',
-                  href: '/foad',
-                  items: [
-                    'Sessions live à horaires fixes sur WEBEX',
-                    'Groupe constitué (inter ou intra)',
-                    'Interaction directe avec le formateur en temps réel',
-                    'Rythme imposé par le calendrier de la session',
-                    'Idéal pour les formations courtes et intensives',
-                  ],
-                  active: false,
+                  titre: 'FOAD synchrone', href: '/foad', active: false,
+                  items: ['Sessions live à horaires fixes sur WEBEX','Groupe constitué (inter ou intra)','Interaction directe avec le formateur en temps réel','Rythme imposé par le calendrier de la session','Idéal pour les formations courtes et intensives'],
                 },
                 {
-                  titre: 'E-learning tutoré',
-                  href: '/elearning',
-                  items: [
-                    'Parcours asynchrone — avancez quand vous voulez',
-                    'Individuel ou petit groupe avec accès autonome',
-                    'Tuteur disponible par messagerie / e-mail',
-                    'Rythme libre dans une fenêtre définie',
-                    'Idéal pour les parcours longue durée (CCNA, AZ-104…)',
-                  ],
-                  active: true,
+                  titre: 'E-learning tutoré', href: '/elearning', active: true,
+                  items: ['Parcours asynchrone — avancez quand vous voulez','Individuel ou petit groupe avec accès autonome','Tuteur disponible par messagerie / e-mail','Rythme libre dans une fenêtre définie','Idéal pour les parcours longue durée (CCNA, AZ-104…)'],
                 },
               ].map(c => (
                 <div key={c.titre} style={{ background: c.active ? 'rgba(228,31,38,0.07)' : 'rgba(255,255,255,0.03)', border: c.active ? '1px solid rgba(228,31,38,0.25)' : '1px solid rgba(255,255,255,0.06)', borderTop: `3px solid ${c.active ? 'var(--g-red)' : 'rgba(255,255,255,0.12)'}`, padding: '2rem' }}>
@@ -181,58 +165,54 @@ function ElearningPage() {
           </div>
         </section>
 
-        {/* ── Parcours disponibles ── */}
-        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2">Parcours disponibles</h2>
-            <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '2rem' }}>
-              {PARCOURS.map(p => (
-                <div key={p.plateforme} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', overflow: 'hidden' }}>
-                  {/* En-tête plateforme */}
-                  <div style={{ background: p.couleur, padding: '1rem 1.5rem', display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff', background: 'rgba(255,255,255,0.20)', padding: '0.2rem 0.6rem' }}>{p.label}</div>
-                  </div>
-                  {/* Formations */}
-                  <div style={{ padding: '0' }}>
-                    {p.formations.map((f, i) => (
-                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.85rem 1.25rem', borderBottom: i < p.formations.length - 1 ? '1px solid rgba(187,187,187,0.20)' : 'none' }}>
-                        <div style={{ flex: 1, fontSize: '0.85rem', color: '#3a3a38', fontWeight: 500 }}>{f.titre}</div>
-                        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexShrink: 0 }}>
-                          <span style={{ fontSize: '0.72rem', color: '#888', background: 'var(--g-offwhite)', padding: '0.15rem 0.5rem', borderRadius: '3px' }}>{f.duree}</span>
-                          <span style={{ fontSize: '0.68rem', fontWeight: 700, color: '#fff', background: NIVEAUX[f.niveau], padding: '0.15rem 0.5rem', borderRadius: '3px', whiteSpace: 'nowrap' }}>{f.niveau}</span>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p style={{ fontSize: '0.82rem', color: '#888', marginTop: '1.25rem', fontStyle: 'italic' }}>
-              * D'autres parcours sont disponibles sur demande (EC-Council CEH, CompTIA, IPv6 Forum, PMI). Contactez-nous pour un programme personnalisé.
-            </p>
-          </div>
-        </section>
-
         {/* ── Comment ça se passe ── */}
-        <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
+        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Comment ça se passe ?</h2>
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
-                { num: '01', title: 'Inscription',         desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement CPF/OPCO monté avec vous.' },
-                { num: '02', title: 'Accès activé',         desc: 'Sous 72h, vous recevez vos accès NetAcad et/ou Microsoft Learn par email. Votre tuteur vous contacte pour un échange de cadrage.' },
-                { num: '03', title: 'Parcours tutoré',      desc: 'Vous avancez à votre rythme. Votre tuteur suit votre progression, répond à vos questions et valide chaque module complété.' },
-                { num: '04', title: 'Certification',        desc: 'En fin de parcours, passage de la certification officielle éditeur. Attestation de formation et de présence remise.' },
+                { num: '01', title: 'Inscription',       desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement CPF/OPCO monté avec vous.' },
+                { num: '02', title: 'Accès activé',       desc: 'Sous 72h, vous recevez vos accès NetAcad et/ou Microsoft Learn. Votre tuteur vous contacte pour un échange de cadrage.' },
+                { num: '03', title: 'Parcours tutoré',    desc: 'Vous avancez à votre rythme. Votre tuteur suit votre progression, répond à vos questions et valide chaque module complété.' },
+                { num: '04', title: 'Certification',      desc: 'Passage de la certification officielle éditeur. Attestation de formation et relevé de complétion remis.' },
               ].map(s => (
-                <div key={s.num} style={{ borderTop: '3px solid var(--g-red)', padding: '1.75rem 1.5rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', borderTop: '3px solid var(--g-red)' }}>
+                <div key={s.num} style={{ border: '1px solid rgba(187,187,187,0.3)', borderTop: '3px solid var(--g-red)', padding: '1.75rem 1.5rem', background: 'var(--g-white)' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.75rem' }}>{s.num}</div>
                   <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.5rem' }}>{s.title}</h3>
                   <p style={{ fontSize: '0.84rem', lineHeight: 1.65, color: '#5a5a58', margin: 0 }}>{s.desc}</p>
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── Parcours disponibles ── */}
+        <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <h2 className="section-h2">Parcours disponibles</h2>
+            <div className="g-rule" />
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem', marginTop: '2rem' }}>
+              {PARCOURS.map(p => (
+                <div key={p.plateforme} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', overflow: 'hidden' }}>
+                  <div style={{ background: p.couleur, padding: '1rem 1.5rem' }}>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff', background: 'rgba(255,255,255,0.20)', padding: '0.2rem 0.6rem', display: 'inline-block' }}>{p.label}</div>
+                  </div>
+                  {p.formations.map((f, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '0.85rem 1.25rem', borderBottom: i < p.formations.length - 1 ? '1px solid rgba(187,187,187,0.20)' : 'none', background: 'var(--g-white)' }}>
+                      <div style={{ flex: 1, fontSize: '0.85rem', color: '#3a3a38', fontWeight: 500 }}>{f.titre}</div>
+                      <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexShrink: 0 }}>
+                        <span style={{ fontSize: '0.72rem', color: '#888', background: 'var(--g-offwhite)', padding: '0.15rem 0.5rem', borderRadius: '3px' }}>{f.duree}</span>
+                        <span style={{ fontSize: '0.68rem', fontWeight: 700, color: '#fff', background: NIVEAUX[f.niveau], padding: '0.15rem 0.5rem', borderRadius: '3px', whiteSpace: 'nowrap' }}>{f.niveau}</span>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ))}
+            </div>
+            <p style={{ fontSize: '0.82rem', color: '#888', marginTop: '1.25rem', fontStyle: 'italic' }}>
+              * D'autres parcours sont disponibles sur demande (EC-Council CEH, CompTIA, IPv6 Forum, PMI). Contactez-nous pour un programme personnalisé.
+            </p>
           </div>
         </section>
 
@@ -254,8 +234,6 @@ function ElearningPage() {
                     'Messagerie directe avec le tuteur sous 24h ouvrées',
                     'Passage de la certification intégré',
                     'Attestation de formation et relevé de complétion',
-                    'Délai d\'accès : 72h après validation administrative',
-                    'Durée de validité des accès : selon le parcours',
                     'Éligible CPF, OPCO, plan de développement des compétences',
                   ].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
@@ -264,14 +242,15 @@ function ElearningPage() {
                     </li>
                   ))}
                 </ul>
+                <DelaisAcces dark={false} />
               </div>
               <div>
                 <h2 className="section-h2" style={{ marginBottom: '0.5rem' }}>Conformité Qualiopi</h2>
                 <div className="g-rule" />
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
-                    { ref: 'Art. L.6313-1', titre: 'Action de formation à distance', texte: 'L\'e-learning tutoré est reconnu comme action de formation au sens du Code du travail dès lors qu\'un accompagnement individualisé est documenté.' },
-                    { ref: 'Ind. 19 Qualiopi', titre: 'Plateau technique adapté', texte: 'NetAcad et Microsoft Learn constituent le plateau technique officiel certifié. Vérification de la prise en main organisée avant démarrage.' },
+                    { ref: 'Art. L.6313-1', titre: 'Action de formation à distance', texte: 'L\'e-learning tutoré est reconnu comme action de formation dès lors qu\'un accompagnement individualisé est documenté.' },
+                    { ref: 'Ind. 19 Qualiopi', titre: 'Plateau technique adapté', texte: 'NetAcad et Microsoft Learn constituent le plateau technique officiel. Vérification de la prise en main organisée avant démarrage.' },
                     { ref: 'Critère 3 Qualiopi', titre: 'Suivi individualisé documenté', texte: 'Un relevé de progression module par module est généré automatiquement par la plateforme et archivé dans le dossier de formation.' },
                     { ref: 'Circulaire DGEFP 2026', titre: 'Réalité des actions', texte: 'Les bilans de progression constituent la preuve de réalité des actions conformément aux priorités de contrôle 2026-2027.' },
                   ].map(c => (
@@ -310,4 +289,3 @@ function ElearningPage() {
     </>
   )
 }
-

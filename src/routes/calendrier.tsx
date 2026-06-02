@@ -1,7 +1,8 @@
+import { useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import { Calendar, MapPin, Phone, Mail, Clock, Users, Info } from 'lucide-react'
+import { MapPin, Phone, Mail, Clock, Users, Info } from 'lucide-react'
 
 export const Route = createFileRoute('/calendrier')({
   component: CalendrierPage,
@@ -15,9 +16,7 @@ const sessions = [
     lieu: 'Pointe Madeleine — CAP EST, Le François',
     modalite: 'Présentiel',
     duree: '5 jours',
-    statut: 'ouvert',
     places: 'Places disponibles',
-    contact: true,
   },
   {
     editeur: 'Cisco',
@@ -26,9 +25,7 @@ const sessions = [
     lieu: 'En ligne via NetAcad & WEBEX',
     modalite: 'FOAD',
     duree: '5 jours',
-    statut: 'ouvert',
     places: 'Places disponibles',
-    contact: true,
   },
   {
     editeur: 'Microsoft',
@@ -37,9 +34,7 @@ const sessions = [
     lieu: 'En ligne via Microsoft Learn & WEBEX',
     modalite: 'FOAD',
     duree: '3 jours',
-    statut: 'ouvert',
     places: 'Places disponibles',
-    contact: true,
   },
   {
     editeur: 'Microsoft',
@@ -48,9 +43,7 @@ const sessions = [
     lieu: 'En ligne via Microsoft Learn & WEBEX',
     modalite: 'FOAD',
     duree: '5 jours',
-    statut: 'ouvert',
     places: 'Places disponibles',
-    contact: true,
   },
   {
     editeur: 'CompTIA',
@@ -59,9 +52,16 @@ const sessions = [
     lieu: 'Pointe Madeleine — CAP EST, Le François',
     modalite: 'Présentiel',
     duree: '5 jours',
-    statut: 'ouvert',
     places: 'Places disponibles',
-    contact: true,
+  },
+  {
+    editeur: 'CompTIA',
+    certification: 'CompTIA Security+ (SY0-701)',
+    territoire: 'Guadeloupe',
+    lieu: 'Pointe de la Verdure, Gosier',
+    modalite: 'Présentiel',
+    duree: '5 jours',
+    places: 'Places disponibles',
   },
   {
     editeur: 'IPv6 Forum',
@@ -70,18 +70,41 @@ const sessions = [
     lieu: 'En ligne via WEBEX',
     modalite: 'FOAD',
     duree: '3 jours',
-    statut: 'ouvert',
     places: 'Places disponibles',
-    contact: true,
+  },
+  {
+    editeur: 'Microsoft',
+    certification: 'Azure AI Fundamentals (AI-900)',
+    territoire: 'Paris',
+    lieu: '66 avenue des Champs Élysées, 75008 Paris',
+    modalite: 'Présentiel',
+    duree: '2 jours',
+    places: 'Places disponibles',
   },
 ]
+
+const FILTRES = ['Tous', 'Présentiel', 'FOAD', 'Martinique', 'Guadeloupe', 'Paris']
 
 const modaliteColors: Record<string, string> = {
   'Présentiel': '#E41F26',
   'FOAD': '#1D1D1B',
 }
 
+function matchFiltre(s: typeof sessions[0], filtre: string): boolean {
+  if (filtre === 'Tous') return true
+  if (filtre === 'Présentiel') return s.modalite === 'Présentiel'
+  if (filtre === 'FOAD') return s.modalite === 'FOAD'
+  if (filtre === 'Martinique') return s.territoire.toLowerCase().includes('martinique')
+  if (filtre === 'Guadeloupe') return s.territoire.toLowerCase().includes('guadeloupe')
+  if (filtre === 'Paris') return s.territoire.toLowerCase().includes('paris')
+  return true
+}
+
 function CalendrierPage() {
+  const [filtre, setFiltre] = useState('Tous')
+
+  const sessionsFiltrees = sessions.filter(s => matchFiltre(s, filtre))
+
   return (
     <>
       <Header />
@@ -125,49 +148,94 @@ function CalendrierPage() {
             <h2 className="section-h2">Sessions disponibles</h2>
             <div className="g-rule" />
 
-            {/* Filtres visuels */}
+            {/* Filtres actifs */}
             <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '2rem', flexWrap: 'wrap' }}>
-              {['Tous', 'Présentiel', 'FOAD', 'Martinique', 'Guadeloupe', 'Paris'].map(f => (
-                <div key={f} style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 600, letterSpacing: '0.10em', textTransform: 'uppercase', padding: '0.4rem 1rem', border: '1px solid rgba(187,187,187,0.5)', color: f === 'Tous' ? '#fff' : '#666', background: f === 'Tous' ? 'var(--g-red)' : 'transparent', cursor: 'pointer' }}>
-                  {f}
-                </div>
-              ))}
+              {FILTRES.map(f => {
+                const actif = filtre === f
+                return (
+                  <button
+                    key={f}
+                    onClick={() => setFiltre(f)}
+                    style={{
+                      fontFamily: 'var(--font-title)',
+                      fontSize: '0.72rem',
+                      fontWeight: 600,
+                      letterSpacing: '0.10em',
+                      textTransform: 'uppercase',
+                      padding: '0.4rem 1rem',
+                      border: actif ? '1px solid var(--g-red)' : '1px solid rgba(187,187,187,0.5)',
+                      color: actif ? '#fff' : '#666',
+                      background: actif ? 'var(--g-red)' : 'transparent',
+                      cursor: 'pointer',
+                      transition: 'all 0.15s ease',
+                    }}
+                    onMouseEnter={e => {
+                      if (!actif) {
+                        e.currentTarget.style.borderColor = 'var(--g-red)'
+                        e.currentTarget.style.color = 'var(--g-red)'
+                      }
+                    }}
+                    onMouseLeave={e => {
+                      if (!actif) {
+                        e.currentTarget.style.borderColor = 'rgba(187,187,187,0.5)'
+                        e.currentTarget.style.color = '#666'
+                      }
+                    }}
+                  >
+                    {f}
+                  </button>
+                )
+              })}
             </div>
 
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-              {sessions.map((s, i) => (
-                <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr auto', gap: '1.5rem', alignItems: 'center', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem 2rem', background: i % 2 === 0 ? 'var(--g-white)' : 'var(--g-offwhite)' }}>
-                  <div>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem', display: 'inline-block', marginBottom: '0.4rem' }}>{s.editeur}</div>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, color: 'var(--g-black)', textTransform: 'uppercase', letterSpacing: '0.04em', lineHeight: 1.3 }}>{s.certification}</div>
-                  </div>
-                  <div>
-                    <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem', fontSize: '0.83rem', color: '#4a4a48', marginBottom: '0.3rem' }}>
-                      <MapPin size={14} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      <span><strong>{s.territoire}</strong><br />{s.lieu}</span>
+            {/* Compteur */}
+            <p style={{ fontSize: '0.80rem', color: '#888', marginBottom: '1.25rem' }}>
+              {sessionsFiltrees.length} session{sessionsFiltrees.length > 1 ? 's' : ''} affichée{sessionsFiltrees.length > 1 ? 's' : ''}
+              {filtre !== 'Tous' ? ` — filtre : ${filtre}` : ''}
+            </p>
+
+            {sessionsFiltrees.length === 0 ? (
+              <div style={{ padding: '3rem 2rem', textAlign: 'center', border: '1px solid rgba(187,187,187,0.3)', background: 'var(--g-offwhite)' }}>
+                <p style={{ fontSize: '0.90rem', color: '#888', margin: 0 }}>
+                  Aucune session disponible pour ce filtre. <a href="mailto:president@galactusdigital.com" style={{ color: 'var(--g-red)' }}>Contactez-nous</a> pour organiser une session sur mesure.
+                </p>
+              </div>
+            ) : (
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                {sessionsFiltrees.map((s, i) => (
+                  <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr auto', gap: '1.5rem', alignItems: 'center', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem 2rem', background: i % 2 === 0 ? 'var(--g-white)' : 'var(--g-offwhite)' }}>
+                    <div>
+                      <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem', display: 'inline-block', marginBottom: '0.4rem' }}>{s.editeur}</div>
+                      <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, color: 'var(--g-black)', textTransform: 'uppercase', letterSpacing: '0.04em', lineHeight: 1.3 }}>{s.certification}</div>
+                    </div>
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.4rem', fontSize: '0.83rem', color: '#4a4a48' }}>
+                        <MapPin size={14} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
+                        <span><strong>{s.territoire}</strong><br />{s.lieu}</span>
+                      </div>
+                    </div>
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.82rem', color: '#4a4a48' }}>
+                        <Clock size={13} color="#E41F26" />
+                        {s.duree}
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.82rem', color: '#4a4a48' }}>
+                        <Users size={13} color="#E41F26" />
+                        {s.places}
+                      </div>
+                      <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#fff', background: modaliteColors[s.modalite] || '#888', padding: '0.15rem 0.55rem', display: 'inline-block', width: 'fit-content' }}>
+                        {s.modalite}
+                      </div>
+                    </div>
+                    <div>
+                      <a href="mailto:president@galactusdigital.com" className="btn-red" style={{ fontSize: '0.72rem', padding: '0.55rem 1.1rem', whiteSpace: 'nowrap' }}>
+                        S'inscrire
+                      </a>
                     </div>
                   </div>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.82rem', color: '#4a4a48' }}>
-                      <Clock size={13} color="#E41F26" />
-                      {s.duree}
-                    </div>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.82rem', color: '#4a4a48' }}>
-                      <Users size={13} color="#E41F26" />
-                      {s.places}
-                    </div>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#fff', background: modaliteColors[s.modalite] || '#888', padding: '0.15rem 0.55rem', display: 'inline-block', width: 'fit-content' }}>
-                      {s.modalite}
-                    </div>
-                  </div>
-                  <div>
-                    <a href="mailto:president@galactusdigital.com" className="btn-red" style={{ fontSize: '0.72rem', padding: '0.55rem 1.1rem', whiteSpace: 'nowrap' }}>
-                      S'inscrire
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+            )}
 
             <p style={{ fontSize: '0.82rem', color: '#888', marginTop: '1.5rem', fontStyle: 'italic', textAlign: 'center' }}>
               * Les dates exactes sont communiquées sur demande et confirmées sur la convocation. D'autres formations sont disponibles sur demande.
@@ -189,7 +257,7 @@ function CalendrierPage() {
                   Vous avez un groupe à former ? Nous organisons une session sur mesure
                   à vos dates, dans vos locaux ou dans nos centres.
                 </p>
-                <a href="/intra" className="btn-ghost" style={{ fontSize: '0.78rem' }}>En savoir plus</a>
+                <a href="/presentiel#intra" className="btn-ghost" style={{ fontSize: '0.78rem' }}>En savoir plus</a>
               </div>
               <div style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                 <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '0.75rem' }}>
@@ -220,7 +288,7 @@ function CalendrierPage() {
               <a href="tel:+33781074746" className="btn-red" style={{ flexShrink: 0 }}>
                 <Phone size={16} /> Nous appeler
               </a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost" style={{ flexShrink: 0, color: 'var(--g-black)', borderColor: 'rgba(29,29,27,0.35)' }}>
+              <a href="mailto:president@galactusdigital.com" className="btn-ghost-dark" style={{ flexShrink: 0 }}>
                 <Mail size={16} /> Nous écrire
               </a>
             </div>
@@ -232,4 +300,3 @@ function CalendrierPage() {
     </>
   )
 }
-

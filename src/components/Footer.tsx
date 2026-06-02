@@ -73,7 +73,7 @@ export function Footer() {
                 src="/qualiopi.jpg"
                 alt="Certification Qualiopi — Processus certifié République Française — Actions de formation"
                 loading="lazy"
-                style={{ display: 'block', width: '100%', height: 'auto' }}
+                //style={{ display: 'block', width: '100%', height: 'auto' }}
               />
             </div>
 

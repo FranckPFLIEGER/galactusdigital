@@ -194,32 +194,6 @@ export function Services() {
           ))}
         </div>
 
-        {/* ── Note Qualiopi ── */}
-        <div
-          className={`reveal${isVisible ? ' visible' : ''} delay-6`}
-          style={{
-            marginTop: '2rem',
-            padding: '1rem 1.5rem',
-            background: 'rgba(228,31,38,0.06)',
-            border: '1px solid rgba(228,31,38,0.18)',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '1rem',
-            flexWrap: 'wrap',
-          }}
-        >
-          <img
-            src="/qualiopi.jpg"
-            alt="Qualiopi"
-            style={{ height: '32px', width: 'auto', opacity: 0.85 }}
-          />
-          <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.6 }}>
-            <strong style={{ color: 'rgba(255,255,255,0.80)' }}>Organisme certifié Qualiopi</strong>
-            {' '}— Nos 3 modalités sont conformes au référentiel national qualité (art. L.6316-1 du Code du travail).
-            Éligibles CPF, OPCO et plan de développement des compétences.
-          </p>
-        </div>
-
       </div>
     </section>
   )

@@ -131,6 +131,17 @@ a { color: inherit; }
   touch-action: manipulation;
 }
 .btn-ghost:hover { border-color: var(--g-red); color: var(--g-white); background: rgba(228,31,38,0.08); }
+.btn-ghost-dark {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  background: transparent; color: var(--g-black);
+  font-family: var(--font-title); font-size: 0.88rem; font-weight: 600;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  padding: 0.85rem 2rem; border: 1px solid rgba(29,29,27,0.35);
+  cursor: pointer; text-decoration: none;
+  transition: border-color var(--transition-fast), color var(--transition-fast), background var(--transition-fast);
+  touch-action: manipulation;
+}
+.btn-ghost-dark:hover { border-color: var(--g-red); color: var(--g-red); background: rgba(228,31,38,0.05); }
 .btn-black {
   display: inline-flex; align-items: center; gap: 0.5rem;
   background: var(--g-black); color: var(--g-white);

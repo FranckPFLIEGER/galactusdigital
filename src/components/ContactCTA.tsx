@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Mail, Phone, MapPin, ArrowRight, CheckCircle, AlertCircle, X } from 'lucide-react'
+import { Mail, Phone, MapPin, ArrowRight, CheckCircle, X } from 'lucide-react'
 import { useIntersection } from '../hooks/useIntersection'
 
-type FormState = 'idle' | 'sending' | 'success' | 'error'
+type FormState = 'idle' | 'success'
 
 export function ContactCTA() {
   const { ref, isVisible } = useIntersection()
@@ -14,43 +14,25 @@ export function ContactCTA() {
     setForm(prev => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  async function handleSubmit(e: React.MouseEvent) {
+  function handleSubmit(e: React.MouseEvent) {
     e.preventDefault()
     if (!form.name || !form.email || !form.message) return
-    setFormState('sending')
 
-    try {
-      // EmailJS — remplace les 3 valeurs ci-dessous par tes clés EmailJS
-      const SERVICE_ID  = 'YOUR_SERVICE_ID'
-      const TEMPLATE_ID = 'YOUR_TEMPLATE_ID'
-      const PUBLIC_KEY  = 'YOUR_PUBLIC_KEY'
+    const subject = encodeURIComponent(`Demande de formation — ${form.name}`)
+    const body = encodeURIComponent(
+      `Nom : ${form.name}\n` +
+      `Email : ${form.email}\n` +
+      (form.phone ? `Téléphone : ${form.phone}\n` : '') +
+      `\n${form.message}`
+    )
 
-      const res = await fetch('https://api.emailjs.com/api/v1.0/email/send', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({
-          service_id:  SERVICE_ID,
-          template_id: TEMPLATE_ID,
-          user_id:     PUBLIC_KEY,
-          template_params: {
-            from_name:    form.name,
-            from_email:   form.email,
-            from_phone:   form.phone,
-            message:      form.message,
-            to_email:     'president@galactusdigital.com',
-          },
-        }),
-      })
+    window.open(
+      `https://mail.google.com/mail/?view=cm&to=president@galactusdigital.com&su=${subject}&body=${body}`,
+      '_blank'
+    )
 
-      if (res.ok) {
-        setFormState('success')
-        setForm({ name: '', email: '', phone: '', message: '' })
-      } else {
-        setFormState('error')
-      }
-    } catch {
-      setFormState('error')
-    }
+    setFormState('success')
+    setForm({ name: '', email: '', phone: '', message: '' })
   }
 
   return (
@@ -93,7 +75,7 @@ export function ContactCTA() {
           </div>
         )}
 
-        {/* Formulaire de contact */}
+        {/* Formulaire */}
         {showForm && (
           <div
             className={`reveal${isVisible ? ' visible' : ''} delay-3`}
@@ -126,10 +108,10 @@ export function ContactCTA() {
               <div style={{ textAlign: 'center', padding: '1.5rem 0' }}>
                 <CheckCircle size={48} color="#E41F26" style={{ margin: '0 auto 1rem' }} />
                 <p style={{ color: '#FFFFFF', fontSize: '1.1rem', fontWeight: 600, marginBottom: '0.5rem' }}>
-                  Message envoyé !
+                  Gmail a été ouvert avec votre message !
                 </p>
                 <p style={{ color: 'rgba(255,255,255,0.55)', fontSize: '0.875rem' }}>
-                  Nous vous répondrons dans les plus brefs délais.
+                  Vérifiez l&apos;onglet Gmail et cliquez sur Envoyer.
                 </p>
                 <button
                   className="btn-red"
@@ -153,76 +135,48 @@ export function ContactCTA() {
                   Nous contacter
                 </h3>
 
-                {/* Erreur */}
-                {formState === 'error' && (
-                  <div style={{
-                    display: 'flex', alignItems: 'center', gap: '0.5rem',
-                    background: 'rgba(228,31,38,0.12)', border: '1px solid rgba(228,31,38,0.4)',
-                    padding: '0.75rem 1rem', marginBottom: '1rem',
-                    color: '#ff6b6b', fontSize: '0.82rem',
-                  }}>
-                    <AlertCircle size={15} />
-                    Erreur d&apos;envoi. Vérifiez votre connexion ou écrivez directement à president@galactusdigital.com
-                  </div>
-                )}
-
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  {/* Nom */}
                   <div>
                     <label style={labelStyle}>Nom complet *</label>
-                    <input
-                      name="name" value={form.name} onChange={handleChange}
-                      placeholder="Jean Dupont"
-                      style={inputStyle}
-                    />
+                    <input name="name" value={form.name} onChange={handleChange}
+                      placeholder="Jean Dupont" style={inputStyle} />
                   </div>
-
-                  {/* Email */}
                   <div>
                     <label style={labelStyle}>Email *</label>
-                    <input
-                      name="email" type="email" value={form.email} onChange={handleChange}
-                      placeholder="jean.dupont@entreprise.com"
-                      style={inputStyle}
-                    />
+                    <input name="email" type="email" value={form.email} onChange={handleChange}
+                      placeholder="jean.dupont@entreprise.com" style={inputStyle} />
                   </div>
-
-                  {/* Téléphone */}
                   <div>
                     <label style={labelStyle}>Téléphone</label>
-                    <input
-                      name="phone" type="tel" value={form.phone} onChange={handleChange}
-                      placeholder="+33 6 00 00 00 00"
-                      style={inputStyle}
-                    />
+                    <input name="phone" type="tel" value={form.phone} onChange={handleChange}
+                      placeholder="+33 6 00 00 00 00" style={inputStyle} />
                   </div>
-
-                  {/* Message */}
                   <div>
                     <label style={labelStyle}>Message *</label>
-                    <textarea
-                      name="message" value={form.message} onChange={handleChange}
+                    <textarea name="message" value={form.message} onChange={handleChange}
                       placeholder="Décrivez votre besoin de formation..."
                       rows={4}
-                      style={{ ...inputStyle, resize: 'vertical', fontFamily: 'inherit' }}
-                    />
+                      style={{ ...inputStyle, resize: 'vertical', fontFamily: 'inherit' }} />
                   </div>
 
-                  {/* Submit */}
                   <button
                     className="btn-red"
                     onClick={handleSubmit}
-                    disabled={formState === 'sending' || !form.name || !form.email || !form.message}
+                    disabled={!form.name || !form.email || !form.message}
                     style={{
                       fontSize: '0.88rem',
-                      cursor: formState === 'sending' ? 'wait' : 'pointer',
+                      cursor: 'pointer',
                       border: 'none',
                       opacity: (!form.name || !form.email || !form.message) ? 0.5 : 1,
                       justifyContent: 'center',
                     }}
                   >
-                    {formState === 'sending' ? 'Envoi en cours...' : <>Envoyer le message <ArrowRight size={15} /></>}
+                    Ouvrir Gmail et envoyer <ArrowRight size={15} />
                   </button>
+
+                  <p style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.30)', textAlign: 'center', margin: 0 }}>
+                    Votre message sera pré-rempli dans Gmail. Il vous suffira de cliquer sur Envoyer.
+                  </p>
                 </div>
               </>
             )}
@@ -273,5 +227,4 @@ const inputStyle: React.CSSProperties = {
   fontSize: '0.875rem',
   outline: 'none',
   boxSizing: 'border-box',
-  transition: 'border-color 0.2s',
 }

@@ -283,7 +283,7 @@ function PresentielPage() {
             {/* CTA inter */}
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Demander le calendrier</a>
+              <a href="mailto:president@galactusdigital.com" className="btn-ghost-dark"><Mail size={16} /> Demander le calendrier</a>
             </div>
           </div>
         </section>

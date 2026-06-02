@@ -62,12 +62,18 @@ export function Footer() {
             </div>
 
             {/* Qualiopi — logo officiel complet sur fond blanc */}
-
+            <div style={{
+              display: 'inline-block',
+              background: '#FFFFFF',
+              padding: '0.65rem 0.85rem',
+              borderLeft: '3px solid #E41F26',
+              maxWidth: '200px',
+            }}>
               <img
                 src="/qualiopi.jpg"
                 alt="Certification Qualiopi — Processus certifié République Française — Actions de formation"
                 loading="lazy"
-                //style={{ display: 'block', width: '100%', height: 'auto' }}
+                style={{ display: 'block', width: '100%', height: 'auto' }}
               />
             </div>
 
@@ -102,18 +108,12 @@ export function Footer() {
               <li><a href="/#president">Mot du Président</a></li>
               <li><a href="/#expertise">Notre expertise</a></li>
               <li><a href="/#presence">Notre présence</a></li>
-              <li><a href="/#services">Nos Solutions</a></li>
               <li><a href="/demarche-pedagogique">Démarche pédagogique</a></li>
               <li><a href="/demarche-qualite">Démarche qualité</a></li>
-              <li><a href="/#satisfaction">Satisfaction</a></li>
-              <li><a href="/#clients">Ils nous font confiance</a></li>
-              <li><a href="/#resultats">Nos résultats</a></li>
-              <li><a href="/#partenaires">Nos partenaires</a></li>
-              <li><a href="/#awards">Nos reconnaissances</a></li>
-              <li><a href="/#actualites">Actualités &amp; Veille IT</a></li>
-              <li><a href="/temoignages">Témoignages</a></li>
+              <li><a href="/#satisfaction">Satisfaction &amp; Qualité</a></li>
               <li><a href="/#rse">Notre engagement RSE</a></li>
               <li><a href="/handicap">Accessibilité &amp; Handicap</a></li>
+              <li><a href="/temoignages">Témoignages</a></li>
             </ul>
           </div>
 

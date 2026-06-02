@@ -49,6 +49,7 @@ const navLinks = [
       { label: 'Nos résultats',           href: '/#resultats' },
       { label: 'Nos partenaires',         href: '/#partenaires' },
       { label: 'Nos reconnaissances',     href: '/#awards' },
+      { label: 'Actualités & Veille IT',  href: '/#actualites' },
       { label: 'Témoignages',             href: '/temoignages' },
       { label: 'Notre engagement RSE',    href: '/#rse' },
       { label: 'Situation de handicap',   href: '/handicap' },

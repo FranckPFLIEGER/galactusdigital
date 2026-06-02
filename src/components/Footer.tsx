@@ -116,6 +116,7 @@ export function Footer() {
               <li><a href="/#resultats">Nos résultats</a></li>
               <li><a href="/#partenaires">Nos partenaires</a></li>
               <li><a href="/#awards">Nos reconnaissances</a></li>
+              <li><a href="/#actualites">Actualités &amp; Veille IT</a></li>
               <li><a href="/temoignages">Témoignages</a></li>
               <li><a href="/#rse">Notre engagement RSE</a></li>
               <li><a href="/handicap">Accessibilité &amp; Handicap</a></li>

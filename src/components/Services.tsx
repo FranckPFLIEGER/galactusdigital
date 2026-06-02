@@ -1,12 +1,15 @@
-import { Building2, Users2, Monitor, MapPin, ArrowRight } from 'lucide-react'
+import { MapPin, Monitor, BookOpen, ArrowRight, Users, Building2 } from 'lucide-react'
 import { useIntersection } from '../hooks/useIntersection'
+
+// ─── Données ──────────────────────────────────────────────────────────────────
 
 const services = [
   {
     icon: <MapPin size={22} color="white" />,
     title: 'Formation en Présentiel',
     href: '/presentiel',
-    desc: "Le formateur intervient directement dans vos locaux ou dans nos centres de formation en Martinique, Guadeloupe et Paris. Immersion totale, ateliers pratiques, interaction directe.",
+    badge: 'Art. L.6313-1',
+    desc: "Un formateur certifié intervient en face-à-face dans nos centres ou directement chez vous. Immersion totale, ateliers pratiques sur équipements réels, taux de certification maximum.",
     features: [
       'Formateur certifié en face-à-face',
       'Ateliers pratiques sur équipements réels',
@@ -14,50 +17,51 @@ const services = [
       'Idéal pour les formations techniques intensives',
       'Groupes de 4 à 15 participants',
     ],
+    formats: [
+      { label: 'Inter-entreprise', href: '/presentiel#inter', icon: <Users size={13} /> },
+      { label: 'Intra-entreprise',  href: '/presentiel#intra',  icon: <Building2 size={13} /> },
+    ],
   },
   {
     icon: <Monitor size={22} color="white" />,
     title: 'Formation à Distance — FOAD',
     href: '/foad',
-    desc: "Suivez nos formations certifiantes depuis n'importe quel territoire. Plateforme NetAcad, sessions live sur WEBEX, accompagnement individualisé à chaque étape.",
+    badge: 'Art. D.6313-3-1',
+    desc: "Suivez nos formations certifiantes depuis n'importe quel territoire. Sessions live sur WEBEX, plateforme NetAcad / Microsoft Learn, accompagnement individualisé documenté.",
     features: [
       'Accessible depuis tous les territoires ultramarins',
       'Sessions live avec le formateur sur WEBEX',
       'Plateforme NetAcad / Microsoft Learn',
-      'Rythme adapté à vos contraintes',
       'Conformité Art. D.6313-3-1 Code du travail',
+      'Feuilles de présence numériques',
+    ],
+    formats: [
+      { label: 'Inter à distance', href: '/foad#inter', icon: <Users size={13} /> },
+      { label: 'Intra à distance',  href: '/foad#intra',  icon: <Building2 size={13} /> },
     ],
   },
   {
-    icon: <Building2 size={22} color="white" />,
-    title: 'Formation Intra-Entreprise',
-    href: '/intra',
-    desc: "Sessions conçues sur mesure pour vos équipes, organisées directement dans vos locaux. Programme adapté à vos outils, vos processus et vos objectifs métiers spécifiques.",
+    icon: <BookOpen size={22} color="white" />,
+    title: 'E-learning Tutoré',
+    href: '/elearning',
+    badge: 'FOAD asynchrone',
+    desc: "Progressez à votre rythme sur NetAcad et Microsoft Learn. Un tuteur certifié vous accompagne module par module, avec un suivi individualisé documenté conforme Qualiopi.",
     features: [
-      'Programme entièrement personnalisé',
-      "Formateur dédié, expert certifié de l'éditeur",
-      'Flexibilité calendaire et logistique',
-      'Suivi post-formation et accompagnement aux examens',
-      'Groupes de 4 à 15 participants',
+      'Parcours asynchrone — rythme libre',
+      'Tuteur certifié éditeur dédié',
+      'NetAcad · Microsoft Learn 24h/24',
+      'Labs virtuels Cisco Packet Tracer inclus',
+      'Accès sous 72h après inscription',
     ],
-  },
-  {
-    icon: <Users2 size={22} color="white" />,
-    title: 'Formation Inter-Entreprise',
-    href: '/inter',
-    desc: "Rejoignez nos sessions ouvertes planifiées tout au long de l'année dans les territoires ultramarins et en France. Un format favorisant les échanges entre professionnels de secteurs variés.",
-    features: [
-      'Calendrier annuel disponible sur demande',
-      'Accès à nos centres de formation dans les territoires ultramarins',
-      "Partage d'expériences entre participants",
-      'Préparation intensive aux examens officiels',
-      'Financement via OPCO ou aides régionales',
-    ],
+    formats: [],
   },
 ]
 
+// ─── Composant ────────────────────────────────────────────────────────────────
+
 export function Services() {
   const { ref, isVisible } = useIntersection()
+
   return (
     <section className="services-section" id="services" ref={ref}>
       <div className="services-bg" />
@@ -68,25 +72,52 @@ export function Services() {
         </span>
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
         <h2 className={`section-h2-light reveal${isVisible ? ' visible' : ''} delay-1`}>
-          4 façons de vous former —<br />selon votre contexte et vos contraintes
+          3 modalités de formation —<br />selon votre contexte et vos contraintes
         </h2>
-        <p className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
-          style={{ marginBottom: 0 }}>
+        <p
+          className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
+          style={{ marginBottom: 0 }}
+        >
           Que vous représentiez une PME locale ou un grand groupe régional, que vous soyez
-          dans les territoires ultramarins et en France hexagonale, nous adaptons notre
-          ingénierie pédagogique à votre situation.
+          dans les territoires ultramarins ou en France hexagonale, nous adaptons notre
+          ingénierie pédagogique à votre situation. Chaque modalité est disponible en
+          format inter-entreprise (sessions ouvertes) ou intra-entreprise (groupe dédié).
         </p>
 
-        <div className="services-grid" style={{ gridTemplateColumns: 'repeat(2,1fr)', marginTop: '3rem' }}>
+        {/* ── Grille 3 cartes ── */}
+        <div
+          className="services-grid"
+          style={{ gridTemplateColumns: 'repeat(3,1fr)', marginTop: '3rem' }}
+        >
           {services.map((s, i) => (
             <div
               key={s.title}
               className={`service-card reveal${isVisible ? ' visible' : ''} delay-${i + 3}`}
               style={{ display: 'flex', flexDirection: 'column' }}
             >
-              <div className="service-icon">{s.icon}</div>
+              {/* Icône + badge réglementaire */}
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.25rem' }}>
+                <div className="service-icon">{s.icon}</div>
+                <div style={{
+                  fontFamily: 'var(--font-title)',
+                  fontSize: '0.60rem',
+                  fontWeight: 700,
+                  letterSpacing: '0.12em',
+                  textTransform: 'uppercase',
+                  color: '#E41F26',
+                  background: 'rgba(228,31,38,0.10)',
+                  border: '1px solid rgba(228,31,38,0.20)',
+                  padding: '0.2rem 0.55rem',
+                  alignSelf: 'flex-start',
+                  whiteSpace: 'nowrap',
+                }}>
+                  {s.badge}
+                </div>
+              </div>
+
               <h3 className="service-title">{s.title}</h3>
               <p className="service-desc">{s.desc}</p>
+
               <ul className="service-features">
                 {s.features.map(f => (
                   <li key={f} className="service-feature">
@@ -95,12 +126,98 @@ export function Services() {
                   </li>
                 ))}
               </ul>
-              <a href={s.href} className="btn-red"
-                style={{ marginTop: 'auto', paddingTop: '1.5rem', fontSize: '0.78rem', padding: '0.65rem 1.4rem', alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: '0.5rem' }}>
+
+              {/* Formats d'organisation (inter / intra) */}
+              {s.formats.length > 0 && (
+                <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
+                  <div style={{
+                    fontFamily: 'var(--font-title)',
+                    fontSize: '0.60rem',
+                    fontWeight: 700,
+                    letterSpacing: '0.14em',
+                    textTransform: 'uppercase',
+                    color: 'rgba(255,255,255,0.35)',
+                    marginBottom: '0.5rem',
+                  }}>
+                    Formats disponibles
+                  </div>
+                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    {s.formats.map(f => (
+                      <a
+                        key={f.label}
+                        href={f.href}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '0.35rem',
+                          fontSize: '0.72rem',
+                          color: 'rgba(255,255,255,0.55)',
+                          background: 'rgba(255,255,255,0.06)',
+                          border: '1px solid rgba(255,255,255,0.10)',
+                          padding: '0.25rem 0.65rem',
+                          textDecoration: 'none',
+                          transition: 'color 0.15s, border-color 0.15s',
+                        }}
+                        onMouseEnter={e => {
+                          e.currentTarget.style.color = '#E41F26'
+                          e.currentTarget.style.borderColor = 'rgba(228,31,38,0.35)'
+                        }}
+                        onMouseLeave={e => {
+                          e.currentTarget.style.color = 'rgba(255,255,255,0.55)'
+                          e.currentTarget.style.borderColor = 'rgba(255,255,255,0.10)'
+                        }}
+                      >
+                        {f.icon} {f.label}
+                      </a>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+              <a
+                href={s.href}
+                className="btn-red"
+                style={{
+                  marginTop: 'auto',
+                  paddingTop: '1.5rem',
+                  fontSize: '0.78rem',
+                  padding: '0.65rem 1.4rem',
+                  alignSelf: 'flex-start',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '0.5rem',
+                }}
+              >
                 En savoir plus <ArrowRight size={14} />
               </a>
             </div>
           ))}
+        </div>
+
+        {/* ── Note Qualiopi ── */}
+        <div
+          className={`reveal${isVisible ? ' visible' : ''} delay-6`}
+          style={{
+            marginTop: '2rem',
+            padding: '1rem 1.5rem',
+            background: 'rgba(228,31,38,0.06)',
+            border: '1px solid rgba(228,31,38,0.18)',
+            display: 'flex',
+            alignItems: 'center',
+            gap: '1rem',
+            flexWrap: 'wrap',
+          }}
+        >
+          <img
+            src="/qualiopi.jpg"
+            alt="Qualiopi"
+            style={{ height: '32px', width: 'auto', opacity: 0.85 }}
+          />
+          <p style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.6 }}>
+            <strong style={{ color: 'rgba(255,255,255,0.80)' }}>Organisme certifié Qualiopi</strong>
+            {' '}— Nos 3 modalités sont conformes au référentiel national qualité (art. L.6316-1 du Code du travail).
+            Éligibles CPF, OPCO et plan de développement des compétences.
+          </p>
         </div>
 
       </div>

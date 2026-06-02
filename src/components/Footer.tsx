@@ -40,18 +40,13 @@ export function Footer() {
 
           {/* ── Colonne 1 — Logo + Qualiopi ── */}
           <div className="footer-brand-section">
-
             <a href="/" aria-label="Galactus Digital — Accueil"
               style={{ textDecoration: 'none', display: 'inline-block', marginBottom: '1.25rem' }}>
               <GalactusLogo />
             </a>
-
-            {/* Tagline */}
             <p className="footer-tagline">
               L'ingénierie de formation certifiante IT<br />des territoires ultramarins.
             </p>
-
-            {/* LinkedIn */}
             <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '2rem' }}>
               <a href="https://www.linkedin.com/company/119444115/"
                 target="_blank" rel="noopener noreferrer"
@@ -60,14 +55,12 @@ export function Footer() {
                 <Linkedin size={18} />
               </a>
             </div>
-
             <img
               src="/qualiopi.jpg"
               alt="Certification Qualiopi — Processus certifié République Française — Actions de formation"
               loading="lazy"
               style={{ display: 'block', maxWidth: '220px', height: 'auto', marginTop: '0.5rem' }}
             />
-
           </div>
 
           {/* ── Colonne 2 — Formations ── */}
@@ -88,13 +81,40 @@ export function Footer() {
           {/* ── Colonne 3 — Solutions + À propos ── */}
           <div>
             <h4 className="footer-col-title">Solutions</h4>
-            <ul className="footer-links">
+            {/* Modalités */}
+            <div style={{
+              fontSize: '0.60rem',
+              fontWeight: 700,
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: '#E41F26',
+              marginBottom: '0.4rem',
+              marginTop: '0.1rem',
+            }}>
+              Modalités
+            </div>
+            <ul className="footer-links" style={{ marginBottom: '0.75rem' }}>
               <li><a href="/presentiel">Formation en présentiel</a></li>
               <li><a href="/foad">Formation à distance (FOAD)</a></li>
-              <li><a href="/intra">Formation intra-entreprise</a></li>
-              <li><a href="/inter">Formation inter-entreprise</a></li>
+              <li><a href="/elearning">E-learning tutoré</a></li>
             </ul>
-            <h4 className="footer-col-title" style={{ marginTop: '1rem' }}>À Propos</h4>
+            {/* Formats */}
+            <div style={{
+              fontSize: '0.60rem',
+              fontWeight: 700,
+              letterSpacing: '0.14em',
+              textTransform: 'uppercase',
+              color: '#E41F26',
+              marginBottom: '0.4rem',
+            }}>
+              Formats
+            </div>
+            <ul className="footer-links" style={{ marginBottom: '1rem' }}>
+              <li><a href="/presentiel#inter">Inter-entreprise</a></li>
+              <li><a href="/presentiel#intra">Intra-entreprise</a></li>
+            </ul>
+
+            <h4 className="footer-col-title" style={{ marginTop: '0.5rem' }}>À Propos</h4>
             <ul className="footer-links">
               <li><a href="/#president">Mot du Président</a></li>
               <li><a href="/#expertise">Notre expertise</a></li>
@@ -155,7 +175,7 @@ export function Footer() {
               </li>
             </ul>
 
-            {/* Bloc légal NDA/SIRET */}
+            {/* Bloc légal */}
             <div className="footer-legal-block">
               <div className="footer-legal-item">
                 <span className="footer-legal-label">NDA</span>

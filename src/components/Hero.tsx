@@ -37,7 +37,7 @@ export function Hero() {
         {/* Gauche : texte */}
         <div>
           <div className="hero-label" style={{ animation: 'fadeUp 0.6s ease-out both' }}>
-            Formation certifiée IT
+            Formation certifiante IT
           </div>
           <h1 className="hero-h1" style={{ animation: 'fadeUp 0.7s ease-out 0.12s both' }}>
             L'excellence en certifications IT <em>dans les territoires ultramarins</em>

@@ -19,12 +19,10 @@ const navLinks = [
     label: 'Solutions',
     href: '/#services',
     children: [
-      // ── Modalités pédagogiques (L.6313-1) ──
       { label: '— Modalités de formation', href: '#', isHeading: true },
       { label: 'Formation en présentiel',     href: '/presentiel' },
       { label: 'Formation à distance (FOAD)', href: '/foad' },
       { label: 'E-learning tutoré',           href: '/elearning' },
-      // ── Formats d'organisation ──
       { label: '— Formats d\'organisation', href: '#', isHeading: true },
       { label: 'Intra-entreprise',  href: '/presentiel#intra' },
       { label: 'Inter-entreprise',  href: '/presentiel#inter' },
@@ -53,8 +51,8 @@ const navLinks = [
       { label: 'Démarche pédagogique',    href: '/demarche-pedagogique' },
       { label: 'Démarche qualité',        href: '/demarche-qualite' },
       { label: 'Nos partenaires',         href: '/#partenaires' },
-      { label: 'Nos reconnaissances',     href: '/#awards' },
       { label: 'Actualités & Veille IT',  href: '/#actualites' },
+      { label: 'Nos reconnaissances',     href: '/#awards' },
       { label: 'Notre engagement RSE',    href: '/#rse' },
       { label: 'Témoignages',             href: '/temoignages' },
       { label: 'Situation de handicap',   href: '/handicap' },

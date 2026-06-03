@@ -10,8 +10,6 @@ export const Route = createFileRoute('/foad')({
   component: FoadPage,
 })
 
-// ─── Données ──────────────────────────────────────────────────────────────────
-
 const FORMATIONS = [
   { editeur: 'Cisco',      label: 'Partenaire n° 3018982', formations: ['CCNA ITN (1/3)', 'CCNA SRWE (2/3)', 'CCNA ENSA (3/3)', 'CCNP Enterprise', 'CyberOps Associate'] },
   { editeur: 'Microsoft',  formations: ['Azure Administrator (AZ-104)', 'Azure Fundamentals (AZ-900)', 'Microsoft 365 Fundamentals', 'Azure AI Fundamentals', 'Security (SC-900)'] },
@@ -20,8 +18,6 @@ const FORMATIONS = [
   { editeur: 'EC-Council', formations: ['Certified Ethical Hacker (CEH)', 'Certified Security Analyst (ECSA)', 'Computer Hacking Forensic Investigator'] },
   { editeur: 'PMI',        formations: ['Project Management Professional (PMP)', 'PMI Agile Certified Practitioner', 'CAPM'] },
 ]
-
-// ─── Composants partagés ──────────────────────────────────────────────────────
 
 function FormationGrid() {
   return (
@@ -63,8 +59,8 @@ function DelaisAcces({ dark = true }: { dark?: boolean }) {
         {[
           { label: 'Standard', val: '1 mois après signature du devis et de la convention de formation.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
-          { label: 'Inscription minimale', val: 'Les inscriptions sont possibles jusqu\'à 48 heures avant le début de la formation.' },
-          { label: 'Financement CPF', val: 'Délai minimum obligatoire de 11 jours ouvrés entre la date d\'envoi de la proposition et la date de début de la formation.' },
+          { label: 'Inscription minimale', val: "Les inscriptions sont possibles jusqu'à 48 heures avant le début de la formation." },
+          { label: 'Financement CPF', val: "Délai minimum obligatoire de 11 jours ouvrés entre la date d'envoi de la proposition et la date de début de la formation." },
         ].map(d => (
           <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
             <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}
@@ -74,8 +70,6 @@ function DelaisAcces({ dark = true }: { dark?: boolean }) {
     </div>
   )
 }
-
-// ─── Page ─────────────────────────────────────────────────────────────────────
 
 function FoadPage() {
   return (
@@ -108,9 +102,9 @@ function FoadPage() {
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
-                { icon: <Monitor size={24} color="white" />, title: 'Plateforme officielle', desc: 'Toutes nos formations FOAD s\'appuient sur Cisco NetAcad ou Microsoft Learn — accessibles 24h/24 depuis n\'importe quel appareil, avec suivi de progression individuel.' },
-                { icon: <Wifi size={24} color="white" />, title: 'Sessions live WEBEX', desc: 'Nos sessions synchrones se déroulent via WEBEX. Partage d\'écran, ateliers pratiques à distance, interactions en temps réel avec le formateur certifié.' },
-                { icon: <Users size={24} color="white" />, title: 'Assistance documentée', desc: 'Conformément à l\'article D.6313-3-1 du Code du travail, une assistance technique et pédagogique est disponible et documentée tout au long du parcours.' },
+                { icon: <Monitor size={24} color="white" />, title: 'Plateforme officielle', desc: "Toutes nos formations FOAD s'appuient sur Cisco NetAcad ou Microsoft Learn — accessibles 24h/24 depuis n'importe quel appareil, avec suivi de progression individuel." },
+                { icon: <Wifi size={24} color="white" />, title: 'Sessions live WEBEX', desc: "Nos sessions synchrones se déroulent via WEBEX. Partage d'écran, ateliers pratiques à distance, interactions en temps réel avec le formateur certifié." },
+                { icon: <Users size={24} color="white" />, title: 'Assistance documentée', desc: "Conformément à l'article D.6313-3-1 du Code du travail, une assistance technique et pédagogique est disponible et documentée tout au long du parcours." },
               ].map(a => (
                 <div key={a.title} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ width: '44px', height: '44px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>{a.icon}</div>
@@ -122,35 +116,7 @@ function FoadPage() {
           </div>
         </section>
 
-        {/* ── Conformité réglementaire ── */}
-        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2">Conformité réglementaire</h2>
-            <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
-              {[
-                { ref: 'Art. D.6313-3-1', title: 'Assistance pédagogique documentée', desc: 'Une assistance technique et pédagogique appropriée est mise en œuvre pour accompagner le bénéficiaire dans le déroulement de son parcours à distance.' },
-                { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique et pédagogique', desc: 'Les outils de formation sont centralisés sur une plateforme digitale (NetAcad + WEBEX). Les apprenants reçoivent une invitation pour vérifier le bon fonctionnement avant démarrage.' },
-                { ref: 'Circulaire DGEFP 2026-2027', title: 'Réalité des actions documentée', desc: 'La réalité de nos actions de formation à distance est attestée par les bilans pédagogiques et les feuilles de présence numériques.' },
-                { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé', desc: 'Un suivi individualisé est mis en place pour chaque apprenant en FOAD, avec évaluation des acquis à chaque module via ateliers pratiques et QCM sur NetAcad.' },
-              ].map(c => (
-                <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
-                  <div style={{ flexShrink: 0 }}>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.6rem', whiteSpace: 'nowrap' }}>{c.ref}</div>
-                  </div>
-                  <div>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.35rem' }}>{c.title}</div>
-                    <p style={{ fontSize: '0.84rem', lineHeight: 1.65, color: '#5a5a58', margin: 0 }}>{c.desc}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ════════════════════════════════════════
-            FORMAT 1 — INTER À DISTANCE
-        ════════════════════════════════════════ */}
+        {/* ── Inter à distance ── */}
         <section id="inter" style={{ background: 'var(--g-black)', padding: '5rem 2rem', scrollMarginTop: '80px' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
@@ -163,11 +129,9 @@ function FoadPage() {
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Rejoignez nos sessions ouvertes planifiées depuis n'importe quel territoire. Le formateur et les participants se retrouvent en ligne sur WEBEX — même format que l'inter présentiel, sans contrainte de déplacement.
             </p>
-
-            {/* Avantages */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
-                { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: 'Échangez avec des professionnels d\'horizons différents depuis tous les territoires. Opportunité unique de réseautage inter-îles.' },
+                { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: "Échangez avec des professionnels d'horizons différents depuis tous les territoires. Opportunité unique de réseautage inter-îles." },
                 { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: 'Inscrivez-vous à la session qui correspond à vos disponibilités. Plusieurs dates disponibles dans l\'année sur tous les territoires.' },
                 { icon: <TrendingUp size={24} color="white" />, title: 'Financement facilité', desc: 'Éligible CPF, OPCO, aides régionales DOM. Nous vous accompagnons dans le montage de votre dossier de financement.' },
               ].map(a => (
@@ -178,27 +142,13 @@ function FoadPage() {
                 </div>
               ))}
             </div>
-
-            {/* Caractéristiques */}
             <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {[
-                    'Groupes de 4 à 12 participants maximum',
-                    'Formateur certifié officiel éditeur',
-                    'Sessions live WEBEX (synchrone)',
-                    'Plateforme NetAcad / Microsoft Learn incluse',
-                    'Supports de cours officiels inclus',
-                    'Feuilles de présence numériques',
-                    'Passage de la certification intégré',
-                    'Attestation de formation et de présence',
-                    'Éligible CPF, OPCO, aides régionales DOM',
-                    'Test de connexion organisé avant démarrage',
-                  ].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Sessions live WEBEX (synchrone)','Plateforme NetAcad / Microsoft Learn incluse','Supports de cours officiels inclus','Feuilles de présence numériques','Passage de la certification intégré','Attestation de formation et de présence','Éligible CPF, OPCO, aides régionales DOM','Test de connexion organisé avant démarrage'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.70)' }}>
-                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      {item}
+                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
                   ))}
                 </ul>
@@ -216,7 +166,6 @@ function FoadPage() {
                 <DelaisAcces dark />
               </div>
             </div>
-
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
               <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Demander le calendrier</a>
@@ -224,9 +173,7 @@ function FoadPage() {
           </div>
         </section>
 
-        {/* ════════════════════════════════════════
-            FORMAT 2 — INTRA À DISTANCE
-        ════════════════════════════════════════ */}
+        {/* ── Intra à distance ── */}
         <section id="intra" style={{ background: 'var(--g-offwhite)', padding: '5rem 2rem', scrollMarginTop: '80px' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
@@ -239,13 +186,11 @@ function FoadPage() {
             <p style={{ fontSize: '0.95rem', color: '#5a5a58', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Un groupe dédié à votre organisation, un programme personnalisé, des sessions live réservées à vos équipes. Toute la flexibilité de l'intra, sans contrainte géographique.
             </p>
-
-            {/* Avantages */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
-                { icon: <Target size={24} color="white" />, title: 'Programme sur mesure', desc: 'Contenu adapté à vos outils, vos processus et vos cas concrets. Pas de formation générique — une ingénierie taillée pour votre organisation.' },
-                { icon: <Settings size={24} color="white" />, title: 'Flexibilité horaire', desc: 'Sessions planifiées selon vos contraintes. Pas de déplacement, pas de logistique. Vos équipes se forment de là où elles sont.' },
-                { icon: <Network size={24} color="white" />, title: 'Tous territoires', desc: 'Réunissez toute votre équipe en ligne, même dispersée sur plusieurs territoires ultramarins. Une session unique pour tous.' },
+                { icon: <Target size={24} color="white" />, title: 'Programme sur mesure', desc: "Contenu adapté à vos outils, vos processus et vos cas concrets. Pas de formation générique — une ingénierie taillée pour votre organisation." },
+                { icon: <Settings size={24} color="white" />, title: 'Flexibilité horaire', desc: "Sessions planifiées selon vos contraintes. Pas de déplacement, pas de logistique. Vos équipes se forment de là où elles sont." },
+                { icon: <Network size={24} color="white" />, title: 'Tous territoires', desc: "Réunissez toute votre équipe en ligne, même dispersée sur plusieurs territoires ultramarins. Une session unique pour tous." },
               ].map(a => (
                 <div key={a.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem', background: 'var(--g-white)' }}>
                   <div style={{ width: '44px', height: '44px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>{a.icon}</div>
@@ -254,8 +199,6 @@ function FoadPage() {
                 </div>
               ))}
             </div>
-
-            {/* Processus */}
             <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#888', marginBottom: '1.5rem' }}>Comment ça se passe ?</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
@@ -271,26 +214,13 @@ function FoadPage() {
                 </div>
               ))}
             </div>
-
-            {/* Caractéristiques */}
             <div style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {[
-                    'Groupes de 4 à 15 participants',
-                    'Formateur certifié dédié à votre groupe',
-                    'Programme entièrement personnalisé',
-                    'Sessions live WEBEX aux horaires de votre choix',
-                    'Supports de cours officiels éditeurs inclus',
-                    'Accès NetAcad / Microsoft Learn inclus',
-                    'Passage de la certification intégré au programme',
-                    'Attestation de formation et de présence',
-                    'Financement via OPCO ou plan de développement des compétences',
-                  ].map((item, i) => (
+                  {['Groupes de 4 à 15 participants','Formateur certifié dédié à votre groupe','Programme entièrement personnalisé','Sessions live WEBEX aux horaires de votre choix','Supports de cours officiels éditeurs inclus','Accès NetAcad / Microsoft Learn inclus','Passage de la certification intégré au programme','Attestation de formation et de présence','Financement via OPCO ou plan de développement des compétences'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
-                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      {item}
+                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
                   ))}
                 </ul>
@@ -303,7 +233,6 @@ function FoadPage() {
                 <DelaisAcces dark={false} />
               </div>
             </div>
-
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
               <a href="mailto:president@galactusdigital.com" className="btn-ghost-dark"><Mail size={16} /> Demander un devis sous 48h</a>
@@ -322,8 +251,7 @@ function FoadPage() {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   {['Un PC personnel ou professionnel (Windows, Mac ou Linux)','Une connexion Internet haut débit stable','Un navigateur web récent (Chrome, Firefox, Edge)','Un micro et une webcam (recommandé)','L\'application WEBEX installée'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87rem', color: 'rgba(255,255,255,0.70)' }}>
-                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      {item}
+                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
                   ))}
                 </ul>
@@ -333,8 +261,7 @@ function FoadPage() {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   {['Invitation et accès à la plateforme NetAcad envoyés par courriel','Test de connexion WEBEX organisé avant la première session','Vérification du bon fonctionnement de l\'ensemble des outils','Support technique disponible en cas de difficulté','Supports de cours accessibles en ligne sur NetAcad'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87rem', color: 'rgba(255,255,255,0.70)' }}>
-                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      {item}
+                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
                   ))}
                 </ul>
@@ -349,6 +276,32 @@ function FoadPage() {
             <h2 className="section-h2">Formations disponibles en FOAD</h2>
             <div className="g-rule" />
             <FormationGrid />
+          </div>
+        </section>
+
+        {/* ── Conformité réglementaire ── */}
+        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <h2 className="section-h2">Conformité réglementaire</h2>
+            <div className="g-rule" />
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
+              {[
+                { ref: 'Art. D.6313-3-1', title: 'Assistance pédagogique documentée', desc: "Une assistance technique et pédagogique appropriée est mise en œuvre pour accompagner le bénéficiaire dans le déroulement de son parcours à distance." },
+                { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique et pédagogique', desc: "Les outils de formation sont centralisés sur une plateforme digitale (NetAcad + WEBEX). Les apprenants reçoivent une invitation pour vérifier le bon fonctionnement avant démarrage." },
+                { ref: 'Circulaire DGEFP 2026-2027', title: 'Réalité des actions documentée', desc: "La réalité de nos actions de formation à distance est attestée par les bilans pédagogiques et les feuilles de présence numériques." },
+                { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé', desc: "Un suivi individualisé est mis en place pour chaque apprenant en FOAD, avec évaluation des acquis à chaque module via ateliers pratiques et QCM sur NetAcad." },
+              ].map(c => (
+                <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
+                  <div style={{ flexShrink: 0 }}>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.6rem', whiteSpace: 'nowrap' }}>{c.ref}</div>
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.35rem' }}>{c.title}</div>
+                    <p style={{ fontSize: '0.84rem', lineHeight: 1.65, color: '#5a5a58', margin: 0 }}>{c.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 

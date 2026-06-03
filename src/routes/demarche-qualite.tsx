@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import { CheckCircle, ExternalLink } from 'lucide-react'
+import { CheckCircle } from 'lucide-react'
 
 export const Route = createFileRoute('/demarche-qualite')({
   component: DemarcheQualitePage,
@@ -27,14 +27,7 @@ function DemarcheQualitePage() {
               Note importante : la présence de ces éléments sur notre site améliore la visibilité publique de notre démarche qualité.
               La conformité Qualiopi se vérifie en audit documentaire complet — elle ne saurait être attestée uniquement par un site web.
             </p>
-            <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', flexWrap: 'wrap' }}>
-              <div style={{ background: '#fff', padding: '0.6rem 1rem', display: 'inline-block' }}>
-                <img src="/qualiopi.jpg" alt="Qualiopi" style={{ height: '40px', width: 'auto', display: 'block' }} />
-              </div>
-              <a href="/certificat-qualiopi.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
-                <ExternalLink size={14} /> Télécharger le certificat PDF
-              </a>
-            </div>
+
           </div>
         </section>
 
@@ -191,4 +184,3 @@ function DemarcheQualitePage() {
     </>
   )
 }
-

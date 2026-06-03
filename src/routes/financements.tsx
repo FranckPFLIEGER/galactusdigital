@@ -55,7 +55,7 @@ function FinancementsPage() {
                     'En cas de prise en charge partielle, le reste est facturé au client',
                   ],
                   cta: 'Nous contacter pour identifier votre OPCO',
-                  href: '#contact',
+                  href: 'mailto:president@galactusdigital.com',
                 },
                 {
                   title: 'Plan de Développement des Compétences',
@@ -68,7 +68,7 @@ function FinancementsPage() {
                     'Convention de formation établie par GALACTUS Digital',
                   ],
                   cta: 'Demander un devis',
-                  href: '#contact',
+                  href: 'mailto:president@galactusdigital.com',
                 },
                 {
                   title: 'France Travail (Pôle Emploi)',
@@ -94,7 +94,7 @@ function FinancementsPage() {
                     'GALACTUS Digital vous oriente vers les bons interlocuteurs',
                   ],
                   cta: 'Nous consulter',
-                  href: '#contact',
+                  href: 'mailto:president@galactusdigital.com',
                 },
                 {
                   title: 'Financement personnel',
@@ -107,7 +107,7 @@ function FinancementsPage() {
                     'Devis gratuit et sans engagement',
                   ],
                   cta: 'Demander un devis',
-                  href: '#contact',
+                  href: 'mailto:president@galactusdigital.com',
                 },
               ].map(f => (
                 <div key={f.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
@@ -141,7 +141,7 @@ function FinancementsPage() {
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Nous écrire</a>
+              <a href="mailto:president@galactusdigital.com" className="btn-red"><Mail size={16} /> Nous écrire</a>
             </div>
           </div>
         </section>
@@ -151,4 +151,3 @@ function FinancementsPage() {
     </>
   )
 }
-

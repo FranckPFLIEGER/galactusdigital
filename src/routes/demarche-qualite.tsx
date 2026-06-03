@@ -47,7 +47,7 @@ function DemarcheQualitePage() {
                 { num: '518', label: 'Candidats formés 2023-2025', sub: 'Périmètre : toutes certifications IT' },
                 { num: '100%', label: 'Taux de réussite', sub: 'Parmi les candidats présentés à l\'examen' },
                 { num: '0', label: 'Abandon / Annulation', sub: 'Sur l\'ensemble des parcours 2023-2025' },
-                { num: '4,5/5', label: 'Note de satisfaction', sub: 'Moyenne des évaluations apprenants 2024' },
+                { num: '4,8/5', label: 'Note de satisfaction', sub: 'Moyenne des évaluations apprenants 2024' },
               ].map(s => (
                 <div key={s.label} style={{ background: 'var(--g-black)', borderTop: '3px solid var(--g-red)', padding: '2rem', textAlign: 'center' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.8rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.5rem' }}>{s.num}</div>

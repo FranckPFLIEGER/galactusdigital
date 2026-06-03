@@ -169,22 +169,6 @@ function HandicapPage() {
           </div>
         </section>
 
-        {/* Qualiopi */}
-        <section style={{ background: 'var(--g-black)', padding: '2.5rem 2rem', borderTop: '3px solid var(--g-red)' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'flex', alignItems: 'center', gap: '2rem', flexWrap: 'wrap' }}>
-            <div style={{ background: '#fff', padding: '0.75rem 1rem', flexShrink: 0 }}>
-              <img src="/qualiopi.jpg" alt="Certification Qualiopi" style={{ height: '60px', width: 'auto' }} />
-            </div>
-            <div>
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#fff', marginBottom: '0.3rem' }}>
-                Certification Qualiopi — ICPF n° 5-0616
-              </div>
-              <div style={{ fontSize: '0.84rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.6 }}>
-                La certification qualité a été délivrée au titre de la catégorie d'action suivante : actions de formation. NDA : 11 75 59933 75
-              </div>
-            </div>
-          </div>
-        </section>
 
       </main>
       <Footer />

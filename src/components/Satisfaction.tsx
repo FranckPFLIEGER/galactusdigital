@@ -39,7 +39,7 @@ export function Satisfaction() {
                 />
               ))}
             </div>
-            <div className="satisfaction-num">4,5/5</div>
+            <div className="satisfaction-num">4,8/5</div>
             <div className="satisfaction-label">
               Note moyenne de satisfaction<br />des apprenants
             </div>

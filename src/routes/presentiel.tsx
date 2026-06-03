@@ -10,8 +10,6 @@ export const Route = createFileRoute('/presentiel')({
   component: PresentielPage,
 })
 
-// ─── Données partagées ────────────────────────────────────────────────────────
-
 const FORMATIONS = [
   { editeur: 'Cisco',      label: 'Partenaire n° 3018982', formations: ['CCNA ITN (1/3)', 'CCNA SRWE (2/3)', 'CCNA ENSA (3/3)', 'CCNP Enterprise', 'CCNP Security'] },
   { editeur: 'Microsoft',  formations: ['Azure Administrator (AZ-104)', 'Azure Fundamentals (AZ-900)', 'Microsoft 365 Fundamentals', 'Azure AI Fundamentals', 'Power Platform'] },
@@ -22,30 +20,10 @@ const FORMATIONS = [
 ]
 
 const LIEUX = [
-  {
-    zone: 'Martinique',
-    badge: 'Siège régional Caraïbes',
-    adresse: 'Pointe Madeleine — CAP EST\n97240 Le François',
-    desc: 'Centre régional principal des Caraïbes. Toutes nos formations Cisco, Microsoft, CompTIA et IPv6 disponibles en présentiel.',
-    tel: '+33 07 81 07 47 46',
-  },
-  {
-    zone: 'Guadeloupe',
-    badge: 'Présence active',
-    adresse: 'Pointe de la Verdure\nGosier 97190',
-    desc: 'Interventions en présentiel chez vos équipes ou en salle partenaire adaptée à vos besoins.',
-    tel: '+33 07 81 07 47 46',
-  },
-  {
-    zone: 'Paris — France hexagonale',
-    badge: 'Siège social',
-    adresse: '66 avenue des Champs Élysées\n75008 Paris',
-    desc: 'Formations en présentiel à Paris et interventions intra-entreprise partout en France hexagonale sur demande.',
-    tel: '+33 07 81 07 47 46',
-  },
+  { zone: 'Martinique', badge: 'Siège régional Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: 'Centre régional principal des Caraïbes. Toutes nos formations Cisco, Microsoft, CompTIA et IPv6 disponibles en présentiel.', tel: '+33 07 81 07 47 46' },
+  { zone: 'Guadeloupe', badge: 'Présence active', adresse: 'Pointe de la Verdure\nGosier 97190', desc: 'Interventions en présentiel chez vos équipes ou en salle partenaire adaptée à vos besoins.', tel: '+33 07 81 07 47 46' },
+  { zone: 'Paris — France hexagonale', badge: 'Siège social', adresse: '66 avenue des Champs Élysées\n75008 Paris', desc: 'Formations en présentiel à Paris et interventions intra-entreprise partout en France hexagonale sur demande.', tel: '+33 07 81 07 47 46' },
 ]
-
-// ─── Sous-composants ──────────────────────────────────────────────────────────
 
 function FormationGrid() {
   return (
@@ -54,15 +32,12 @@ function FormationGrid() {
         <div key={f.editeur} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
             <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>{f.editeur}</div>
-            {f.label && (
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>{f.label}</div>
-            )}
+            {f.label && <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>{f.label}</div>}
           </div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {f.formations.map((item, i) => (
               <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
-                <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
-                {item}
+                <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
               </li>
             ))}
           </ul>
@@ -87,8 +62,8 @@ function DelaisAcces({ dark = false }: { dark?: boolean }) {
         {[
           { label: 'Standard', val: '1 mois après signature du devis et de la convention de formation.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
-          { label: 'Inscription minimale', val: 'Les inscriptions sont possibles jusqu\'à 48 heures avant le début de la formation.' },
-          { label: 'Financement CPF', val: 'Délai minimum obligatoire de 11 jours ouvrés entre la date d\'envoi de la proposition et la date de début de la formation.' },
+          { label: 'Inscription minimale', val: "Les inscriptions sont possibles jusqu'à 48 heures avant le début de la formation." },
+          { label: 'Financement CPF', val: "Délai minimum obligatoire de 11 jours ouvrés entre la date d'envoi de la proposition et la date de début de la formation." },
         ].map(d => (
           <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
             <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}
@@ -98,8 +73,6 @@ function DelaisAcces({ dark = false }: { dark?: boolean }) {
     </div>
   )
 }
-
-// ─── Page ─────────────────────────────────────────────────────────────────────
 
 function PresentielPage() {
   return (
@@ -115,8 +88,7 @@ function PresentielPage() {
               Formation en Présentiel
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              Un formateur certifié intervient en face-à-face dans nos centres ou directement chez vous.
-              Immersion totale, ateliers pratiques sur équipements réels, progression maximale vers la certification.
+              Un formateur certifié intervient en face-à-face dans nos centres ou directement chez vous. Immersion totale, ateliers pratiques sur équipements réels, progression maximale vers la certification.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               {['Art. L.6313-1 Code du travail', 'Qualiopi certifié', 'Eligible CPF · OPCO · PDC', 'Formateur certifié éditeur'].map(b => (
@@ -133,40 +105,14 @@ function PresentielPage() {
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
-                { icon: <Users size={24} color="white" />, title: 'Immersion totale', desc: 'La formation en présentiel favorise la concentration, l\'interaction directe avec le formateur et les échanges entre participants. Idéale pour les formations techniques avec ateliers pratiques intensifs.' },
-                { icon: <CheckCircle size={24} color="white" />, title: 'Accompagnement direct', desc: 'Le formateur adapte son rythme en temps réel selon le niveau du groupe. Les questions trouvent une réponse immédiate, les difficultés sont levées sur le moment.' },
-                { icon: <Clock size={24} color="white" />, title: 'Efficacité pédagogique', desc: 'Les ateliers pratiques sur équipements réels (simulateur Packet Tracer, environnements Microsoft) sont facilités en présentiel. Le taux de certification est maximum.' },
+                { icon: <Users size={24} color="white" />, title: 'Immersion totale', desc: "La formation en présentiel favorise la concentration, l'interaction directe avec le formateur et les échanges entre participants. Idéale pour les formations techniques avec ateliers pratiques intensifs." },
+                { icon: <CheckCircle size={24} color="white" />, title: 'Accompagnement direct', desc: "Le formateur adapte son rythme en temps réel selon le niveau du groupe. Les questions trouvent une réponse immédiate, les difficultés sont levées sur le moment." },
+                { icon: <Clock size={24} color="white" />, title: 'Efficacité pédagogique', desc: "Les ateliers pratiques sur équipements réels (simulateur Packet Tracer, environnements Microsoft) sont facilités en présentiel. Le taux de certification est maximum." },
               ].map(a => (
                 <div key={a.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ width: '44px', height: '44px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>{a.icon}</div>
                   <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.75rem' }}>{a.title}</h3>
                   <p style={{ fontSize: '0.87rem', lineHeight: 1.7, color: '#5a5a58', margin: 0 }}>{a.desc}</p>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
-        {/* ── Conformité réglementaire ── */}
-        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2">Conformité réglementaire</h2>
-            <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
-              {[
-                { ref: 'Art. L.6313-1', title: 'Action de formation en présentiel', desc: 'La formation en présentiel est une action de formation synchrone au sens du Code du travail. Le formateur et les stagiaires se trouvent physiquement dans le même lieu.' },
-                { ref: 'Qualiopi — Ind. 4', title: 'Convocation et règlement intérieur', desc: 'Chaque stagiaire reçoit une convocation précisant les dates, lieux, horaires et le règlement intérieur avant le démarrage de la formation.' },
-                { ref: 'Qualiopi — Ind. 19', title: 'Plateau technique et pédagogique', desc: 'Les équipements, simulateurs (Packet Tracer) et environnements de test sont mis à disposition avant le démarrage. Leur bon fonctionnement est vérifié au préalable.' },
-                { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé', desc: 'Un suivi individualisé est mis en place pour chaque apprenant avec évaluation des acquis à chaque journée de formation et feuilles de présence signées.' },
-              ].map(c => (
-                <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
-                  <div style={{ flexShrink: 0 }}>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.6rem', whiteSpace: 'nowrap' }}>{c.ref}</div>
-                  </div>
-                  <div>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.35rem' }}>{c.title}</div>
-                    <p style={{ fontSize: '0.84rem', lineHeight: 1.65, color: '#5a5a58', margin: 0 }}>{c.desc}</p>
-                  </div>
                 </div>
               ))}
             </div>
@@ -204,9 +150,7 @@ function PresentielPage() {
           </div>
         </section>
 
-        {/* ════════════════════════════════════════
-            FORMAT 1 — INTER-ENTREPRISE
-        ════════════════════════════════════════ */}
+        {/* ── Inter-Entreprise ── */}
         <section id="inter" style={{ background: 'var(--g-offwhite)', padding: '5rem 2rem', scrollMarginTop: '80px' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
@@ -219,11 +163,9 @@ function PresentielPage() {
             <p style={{ fontSize: '0.95rem', color: '#5a5a58', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Rejoignez nos sessions ouvertes planifiées tout au long de l'année. Un format qui favorise les échanges entre professionnels de secteurs variés dans les territoires ultramarins et en France hexagonale.
             </p>
-
-            {/* Avantages */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
-                { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: 'Échangez avec des professionnels d\'horizons différents. Opportunité unique de réseautage et de partage d\'expériences dans les territoires ultramarins.' },
+                { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: "Échangez avec des professionnels d'horizons différents. Opportunité unique de réseautage et de partage d'expériences dans les territoires ultramarins." },
                 { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: 'Inscrivez-vous à la session qui correspond à vos disponibilités. Plusieurs dates disponibles dans l\'année sur nos différents territoires.' },
                 { icon: <TrendingUp size={24} color="white" />, title: 'Financement facilité', desc: 'Les formations inter-entreprises sont éligibles CPF, OPCO, aides régionales DOM. Nous vous accompagnons dans le montage de votre dossier.' },
               ].map(a => (
@@ -234,27 +176,13 @@ function PresentielPage() {
                 </div>
               ))}
             </div>
-
-            {/* Caractéristiques + lieux */}
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', background: 'var(--g-white)', padding: '2.5rem', border: '1px solid rgba(187,187,187,0.3)' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {[
-                    'Groupes de 4 à 12 participants maximum',
-                    'Formateur certifié officiel éditeur',
-                    'Programme officiel certifiant éditeur',
-                    'Sessions en présentiel ou en FOAD selon les dates',
-                    'Supports de cours officiels inclus',
-                    'Accès aux plateformes NetAcad / Microsoft Learn',
-                    'Passage de la certification intégré',
-                    'Attestation de formation et de présence',
-                    'Éligible CPF, OPCO, aides régionales DOM',
-                    'Délai d\'inscription : 2 semaines avant le démarrage',
-                  ].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions en présentiel ou en FOAD selon les dates','Supports de cours officiels inclus','Accès aux plateformes NetAcad / Microsoft Learn','Passage de la certification intégré','Attestation de formation et de présence','Éligible CPF, OPCO, aides régionales DOM',"Délai d'inscription : 2 semaines avant le démarrage"].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
-                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      {item}
+                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
                   ))}
                 </ul>
@@ -262,7 +190,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Sessions & lieux</h3>
                 {[
-                  { zone: 'Martinique', badge: 'Siège régional Caraïbes', desc: 'Sessions régulières tout au long de l\'année. Pointe Madeleine — CAP EST, 97240 Le François.' },
+                  { zone: 'Martinique', badge: 'Siège régional Caraïbes', desc: "Sessions régulières tout au long de l'année. Pointe Madeleine — CAP EST, 97240 Le François." },
                   { zone: 'Guadeloupe', badge: 'Présence active', desc: 'Sessions organisées en salle partenaire. Pointe de la Verdure, Gosier 97190.' },
                   { zone: 'Paris — France', badge: 'Siège social', desc: '66 avenue des Champs Élysées, 75008 Paris. Sessions en régions sur demande.' },
                 ].map(l => (
@@ -285,7 +213,6 @@ function PresentielPage() {
                 <DelaisAcces />
               </div>
             </div>
-
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
               <a href="mailto:president@galactusdigital.com" className="btn-ghost-dark"><Mail size={16} /> Demander le calendrier</a>
@@ -293,9 +220,7 @@ function PresentielPage() {
           </div>
         </section>
 
-        {/* ════════════════════════════════════════
-            FORMAT 2 — INTRA-ENTREPRISE
-        ════════════════════════════════════════ */}
+        {/* ── Intra-Entreprise ── */}
         <section id="intra" style={{ background: 'var(--g-black)', padding: '5rem 2rem', scrollMarginTop: '80px' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
@@ -308,13 +233,11 @@ function PresentielPage() {
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Nous intervenons directement dans vos locaux avec un programme conçu sur mesure pour vos équipes. Vos collaborateurs se forment sans quitter leur environnement de travail — où que vous soyez dans les territoires ultramarins ou en France hexagonale.
             </p>
-
-            {/* Avantages */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
-                { icon: <Target size={24} color="white" />, title: 'Programme sur mesure', desc: 'Le contenu est adapté à vos outils, vos processus et vos objectifs métiers. Pas de formation générique — une ingénierie pédagogique taillée pour votre organisation.' },
-                { icon: <Users size={24} color="white" />, title: 'Cohésion d\'équipe', desc: 'Toute votre équipe progresse ensemble, au même rythme, avec les mêmes références. Idéal pour harmoniser les compétences et créer un langage commun.' },
-                { icon: <Settings size={24} color="white" />, title: 'Flexibilité totale', desc: 'Dates, horaires, lieu — tout s\'adapte à vos contraintes opérationnelles. Nous venons à vous, pas l\'inverse.' },
+                { icon: <Target size={24} color="white" />, title: 'Programme sur mesure', desc: "Le contenu est adapté à vos outils, vos processus et vos objectifs métiers. Pas de formation générique — une ingénierie pédagogique taillée pour votre organisation." },
+                { icon: <Users size={24} color="white" />, title: "Cohésion d'équipe", desc: "Toute votre équipe progresse ensemble, au même rythme, avec les mêmes références. Idéal pour harmoniser les compétences et créer un langage commun." },
+                { icon: <Settings size={24} color="white" />, title: 'Flexibilité totale', desc: "Dates, horaires, lieu — tout s'adapte à vos contraintes opérationnelles. Nous venons à vous, pas l'inverse." },
               ].map(a => (
                 <div key={a.title} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ width: '44px', height: '44px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>{a.icon}</div>
@@ -323,8 +246,6 @@ function PresentielPage() {
                 </div>
               ))}
             </div>
-
-            {/* Processus */}
             <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', marginBottom: '1.5rem' }}>Comment ça se passe ?</h3>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
@@ -340,26 +261,13 @@ function PresentielPage() {
                 </div>
               ))}
             </div>
-
-            {/* Caractéristiques */}
             <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {[
-                    'Groupes de 4 à 15 participants',
-                    'Formateur certifié dédié à votre groupe',
-                    'Programme entièrement personnalisé',
-                    'Formation dans vos locaux ou en salle partenaire',
-                    'Supports de cours officiels éditeurs inclus',
-                    'Accès aux plateformes NetAcad / Microsoft Learn',
-                    'Passage de la certification intégré au programme',
-                    'Attestation de formation et de présence',
-                    'Financement via OPCO ou plan de développement des compétences',
-                  ].map((item, i) => (
+                  {['Groupes de 4 à 15 participants','Formateur certifié dédié à votre groupe','Programme entièrement personnalisé','Formation dans vos locaux ou en salle partenaire','Supports de cours officiels éditeurs inclus','Accès aux plateformes NetAcad / Microsoft Learn','Passage de la certification intégré au programme','Attestation de formation et de présence','Financement via OPCO ou plan de développement des compétences'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.70)' }}>
-                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      {item}
+                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
                   ))}
                 </ul>
@@ -372,7 +280,6 @@ function PresentielPage() {
                 <DelaisAcces dark />
               </div>
             </div>
-
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
               <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Demander un devis sous 48h</a>
@@ -400,8 +307,7 @@ function PresentielPage() {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   {['09h00 — Accueil des participants','09h30 — Démarrage de la formation','11h00 — Pause (15 minutes)','11h15 — Reprise — ateliers pratiques','13h00 — Pause déjeuner (1 heure)','14h00 — Reprise — cas pratiques avancés','15h45 — Pause (15 minutes)','16h00 — Évaluation des acquis du jour','17h30 — Fin de journée'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87rem', color: '#4a4a48' }}>
-                      <div style={{ width: '6px', height: '6px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
-                      {item}
+                      <div style={{ width: '6px', height: '6px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
                     </li>
                   ))}
                 </ul>
@@ -411,12 +317,37 @@ function PresentielPage() {
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                   {['Supports de cours officiels éditeurs','Accès à la plateforme NetAcad (Cisco) ou équivalent','Simulateurs et environnements de test','Matériel pédagogique inclus','Attestation de formation et de présence','Convocation avec règlement intérieur','Passage de la certification éditeur intégré','Accompagnement post-formation si nécessaire'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87rem', color: '#4a4a48' }}>
-                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                      {item}
+                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
                   ))}
                 </ul>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ── Conformité réglementaire ── */}
+        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <h2 className="section-h2">Conformité réglementaire</h2>
+            <div className="g-rule" />
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
+              {[
+                { ref: 'Art. L.6313-1', title: 'Action de formation en présentiel', desc: 'La formation en présentiel est une action de formation synchrone au sens du Code du travail. Le formateur et les stagiaires se trouvent physiquement dans le même lieu.' },
+                { ref: 'Qualiopi — Ind. 4', title: 'Convocation et règlement intérieur', desc: 'Chaque stagiaire reçoit une convocation précisant les dates, lieux, horaires et le règlement intérieur avant le démarrage de la formation.' },
+                { ref: 'Qualiopi — Ind. 19', title: 'Plateau technique et pédagogique', desc: 'Les équipements, simulateurs (Packet Tracer) et environnements de test sont mis à disposition avant le démarrage. Leur bon fonctionnement est vérifié au préalable.' },
+                { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé', desc: 'Un suivi individualisé est mis en place pour chaque apprenant avec évaluation des acquis à chaque journée de formation et feuilles de présence signées.' },
+              ].map(c => (
+                <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
+                  <div style={{ flexShrink: 0 }}>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.6rem', whiteSpace: 'nowrap' }}>{c.ref}</div>
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.35rem' }}>{c.title}</div>
+                    <p style={{ fontSize: '0.84rem', lineHeight: 1.65, color: '#5a5a58', margin: 0 }}>{c.desc}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>

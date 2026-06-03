@@ -123,7 +123,10 @@ function FinancementsPage() {
                       </li>
                     ))}
                   </ul>
-                  <a href={f.href} target={f.href.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer"
+                  <a
+                    href={f.href}
+                    target={f.href.startsWith('http') ? '_blank' : undefined}
+                    rel={f.href.startsWith('http') ? 'noopener noreferrer' : undefined}
                     style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontFamily: 'var(--font-title)', fontSize: '0.75rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--g-red)', textDecoration: 'none' }}>
                     <ArrowRight size={14} /> {f.cta}
                   </a>

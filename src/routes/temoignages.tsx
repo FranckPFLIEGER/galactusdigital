@@ -163,7 +163,7 @@ function TemoignagesPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '2rem', textAlign: 'center' }}>
               {[
-                { num: '4,5/5', label: 'Note satisfaction', sub: 'Moyenne 2024' },
+                { num: '4,8/5', label: 'Note satisfaction', sub: 'Moyenne 2024' },
                 { num: '100%', label: 'Taux de réussite', sub: 'Parmi les présentés' },
                 { num: '518', label: 'Apprenants formés', sub: '3 dernières années' },
                 { num: '7', label: 'Territoires', sub: 'Caraïbes · Océan Indien · France' },

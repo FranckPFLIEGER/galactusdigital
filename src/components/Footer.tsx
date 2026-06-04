@@ -65,69 +65,6 @@ export function Footer() {
       <div className="footer-inner">
 
         {/* ════════════════════════════════════
-            BANDE CATALOGUE — au-dessus des 4 colonnes
-        ════════════════════════════════════ */}
-        <div style={{ borderBottom: '1px solid rgba(255,255,255,0.06)', paddingBottom: '2.5rem', marginBottom: '2.5rem' }}>
-
-          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-            <div>
-              <div style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.22em', textTransform: 'uppercase', color: '#E41F26', marginBottom: '0.2rem' }}>Catalogue complet</div>
-              <div style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.95rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: '#fff' }}>
-                Nos formations certifiantes IT
-              </div>
-            </div>
-            <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center', flexWrap: 'wrap' }}>
-              {[
-                { label: 'Calendrier',   href: '/calendrier' },
-                { label: 'Financements', href: '/financements' },
-                { label: 'Présentiel',   href: '/presentiel' },
-                { label: 'FOAD',         href: '/foad' },
-                { label: 'E-learning',   href: '/elearning' },
-              ].map(l => (
-                <a key={l.label} href={l.href}
-                  style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', padding: '0.3rem 0.7rem', border: '1px solid rgba(255,255,255,0.12)', color: 'rgba(255,255,255,0.45)', textDecoration: 'none', transition: 'all 0.15s' }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = '#E41F26'; e.currentTarget.style.color = '#E41F26' }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(255,255,255,0.12)'; e.currentTarget.style.color = 'rgba(255,255,255,0.45)' }}>
-                  {l.label}
-                </a>
-              ))}
-              <a href="/formations" style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#E41F26', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.25rem', transition: 'opacity 0.15s' }}
-                onMouseEnter={e => (e.currentTarget.style.opacity = '0.7')}
-                onMouseLeave={e => (e.currentTarget.style.opacity = '1')}>
-                Tout le catalogue <ChevronRight size={11} />
-              </a>
-            </div>
-          </div>
-
-          {/* Deux blocs : Cisco | Microsoft */}
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-
-            {/* Cisco */}
-            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderTop: '2px solid #E41F26', padding: '1.25rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', paddingBottom: '0.6rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.28)' }}>Cisco NetAcad</span>
-                <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.56rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#E41F26', background: 'rgba(228,31,38,0.10)', padding: '0.1rem 0.45rem' }}>Partenaire n° 3018982</span>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 1.5rem' }}>
-                {CISCO_FAMILLES.map(f => <FamilleCol key={f} famille={f} />)}
-              </div>
-            </div>
-
-            {/* Microsoft */}
-            <div style={{ background: 'rgba(255,255,255,0.02)', border: '1px solid rgba(255,255,255,0.05)', borderTop: '2px solid #0078D4', padding: '1.25rem' }}>
-              <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1rem', paddingBottom: '0.6rem', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-                <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.28)' }}>Microsoft Learn</span>
-                <span style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.56rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#0078D4', background: 'rgba(0,120,212,0.10)', padding: '0.1rem 0.45rem' }}>Microsoft Partner</span>
-              </div>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0 1.5rem' }}>
-                {MICROSOFT_FAMILLES.map(f => <FamilleCol key={f} famille={f} />)}
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-        {/* ════════════════════════════════════
             4 COLONNES CLASSIQUES (structure originale préservée)
         ════════════════════════════════════ */}
         <div className="footer-top">

@@ -172,12 +172,8 @@ const NAV_LINKS = [
   {
     label: 'Certifications', href: '/certifications',
     children: [
-      { label: '— Certifications GALACTUS Digital', isHeading: true },
-      { label: 'Passer une certification',          href: '/certifications' },
-      { label: '— Certifications IT éditeurs',      isHeading: true },
-      { label: 'Cisco NetAcad',                     href: '/certifications#pearsonvue' },
-      { label: 'Microsoft',                         href: '/certifications#pearsonvue' },
-      { label: 'CompTIA · LPI · OpenEDG',           href: '/certifications#pearsonvue' },
+      { label: 'Passer une certification', href: '/certifications' },
+      { label: 'Certifications IT',        href: '/formations' },
     ],
   },
   { label: 'Calendrier', href: '/calendrier' },

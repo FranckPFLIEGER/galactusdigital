@@ -7,6 +7,8 @@ export const Route = createFileRoute('/financements')({
   component: FinancementsPage,
 })
 
+const GMAIL = 'https://mail.google.com/mail/?view=cm&to=president@galactusdigital.com&su=Demande%20de%20financement%20formation'
+
 function FinancementsPage() {
   return (
     <>
@@ -34,9 +36,8 @@ function FinancementsPage() {
                 {
                   title: 'CPF — Compte Personnel de Formation',
                   tag: 'Particuliers & Salariés',
-                  color: '#E41F26',
                   items: [
-                    'Utilisable par tout salarié ou demandeur d\'emploi',
+                    "Utilisable par tout salarié ou demandeur d'emploi",
                     'Consultez votre solde sur moncompteformation.gouv.fr',
                     'Nos formations certifiantes sont éligibles au CPF',
                     'Démarche 100% en ligne — simple et rapide',
@@ -47,36 +48,33 @@ function FinancementsPage() {
                 {
                   title: 'OPCO — Opérateurs de Compétences',
                   tag: 'Entreprises',
-                  color: '#E41F26',
                   items: [
                     'Prise en charge partielle ou totale selon votre branche',
-                    'L\'accord de financement doit être communiqué avant le démarrage',
+                    "L'accord de financement doit être communiqué avant le démarrage",
                     'GALACTUS Digital établit les documents nécessaires',
                     'En cas de prise en charge partielle, le reste est facturé au client',
                   ],
                   cta: 'Nous contacter pour identifier votre OPCO',
-                  href: 'mailto:president@galactusdigital.com',
+                  href: GMAIL,
                 },
                 {
                   title: 'Plan de Développement des Compétences',
                   tag: 'Entreprises',
-                  color: '#E41F26',
                   items: [
-                    'Financé directement par l\'employeur',
-                    'Intégré dans le plan de formation annuel de l\'entreprise',
+                    "Financé directement par l'employeur",
+                    "Intégré dans le plan de formation annuel de l'entreprise",
                     'Déductible des obligations de participation à la formation',
                     'Convention de formation établie par GALACTUS Digital',
                   ],
                   cta: 'Demander un devis',
-                  href: 'mailto:president@galactusdigital.com',
+                  href: GMAIL,
                 },
                 {
                   title: 'France Travail (Pôle Emploi)',
-                  tag: 'Demandeurs d\'emploi',
-                  color: '#E41F26',
+                  tag: "Demandeurs d'emploi",
                   items: [
                     'AIF — Aide Individuelle à la Formation',
-                    'Financement possible pour les demandeurs d\'emploi',
+                    "Financement possible pour les demandeurs d'emploi",
                     'Dossier à constituer avec votre conseiller France Travail',
                     'GALACTUS Digital vous accompagne dans la constitution du dossier',
                   ],
@@ -86,7 +84,6 @@ function FinancementsPage() {
                 {
                   title: 'Financement Régional & DOM',
                   tag: 'Territoires ultramarins',
-                  color: '#E41F26',
                   items: [
                     'Dispositifs spécifiques aux Antilles, Guyane et Réunion',
                     'Financement AGEFIPH pour les personnes en situation de handicap',
@@ -94,20 +91,19 @@ function FinancementsPage() {
                     'GALACTUS Digital vous oriente vers les bons interlocuteurs',
                   ],
                   cta: 'Nous consulter',
-                  href: 'mailto:president@galactusdigital.com',
+                  href: GMAIL,
                 },
                 {
                   title: 'Financement personnel',
                   tag: 'Particuliers',
-                  color: '#E41F26',
                   items: [
-                    'Paiement à l\'issue de la formation, à réception de facture',
+                    "Paiement à l'issue de la formation, à réception de facture",
                     'TVA non applicable — article 293B du CGI',
                     'Paiement échelonné possible sur demande',
                     'Devis gratuit et sans engagement',
                   ],
                   cta: 'Demander un devis',
-                  href: 'mailto:president@galactusdigital.com',
+                  href: GMAIL,
                 },
               ].map(f => (
                 <div key={f.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
@@ -125,8 +121,8 @@ function FinancementsPage() {
                   </ul>
                   <a
                     href={f.href}
-                    target={f.href.startsWith('http') ? '_blank' : undefined}
-                    rel={f.href.startsWith('http') ? 'noopener noreferrer' : undefined}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontFamily: 'var(--font-title)', fontSize: '0.75rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--g-red)', textDecoration: 'none' }}>
                     <ArrowRight size={14} /> {f.cta}
                   </a>
@@ -144,7 +140,7 @@ function FinancementsPage() {
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-red"><Mail size={16} /> Nous écrire</a>
+              <a href={GMAIL} target="_blank" rel="noopener noreferrer" className="btn-red"><Mail size={16} /> Nous écrire</a>
             </div>
           </div>
         </section>

@@ -45,7 +45,7 @@ export const FAMILLES: Record<string, { label: string; icon: string }> = {
 // ─── Éditeurs ─────────────────────────────────────────────────────────────────
 export const EDITEURS: Record<string, { label: string; badge?: string }> = {
   'Cisco NetAcad': { label: 'Cisco NetAcad', badge: 'Partenaire n° 3018982' },
-  'Microsoft':     { label: 'Microsoft',     badge: 'Microsoft Partner'      },
+  'Microsoft':     { label: 'Microsoft',     badge: 'Partenaire Microsoft n° 4653557' },
 }
 
 // ─────────────────────────────────────────────────────────────────────────────

@@ -1,83 +1,85 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import { Award, CheckCircle, ExternalLink, Phone, Mail, Shield, TrendingUp, Users } from 'lucide-react'
+import {
+  Award, CheckCircle, Phone, Mail, MapPin, Monitor,
+  AlertCircle, Clock, Users, ExternalLink, Shield, Star,
+} from 'lucide-react'
 
 export const Route = createFileRoute('/certifications')({
   component: CertificationsPage,
 })
 
-const certifEditeurs = [
+// ─── Données ──────────────────────────────────────────────────────────────────
+
+const CERTS_GALACTUS = [
   {
-    editeur: 'Cisco',
-    logo: 'CI',
-    partenariat: 'Cisco Networking Academy Partner n° 3018982',
-    organisme: 'Pearson VUE',
-    certifications: [
-      { nom: 'CCNA Routing & Switching', code: '200-301', niveau: 'Associate' },
-      { nom: 'CCNP Enterprise', code: '350-401 ENCOR', niveau: 'Professional' },
-      { nom: 'CyberOps Associate', code: '200-201 CBROPS', niveau: 'Associate' },
-      { nom: 'DevNet Associate', code: '200-901 DEVASC', niveau: 'Associate' },
-    ],
+    code: 'TCP/IP',
+    titre: 'TCP/IP — Mettre en œuvre un réseau local',
+    duree: '1h30', questions: 'QCM + Cas pratiques', score: '700 / 1000',
+    cpf: true, rs: 'RS disponible',
+    desc: 'Valider la maîtrise des fondamentaux réseau TCP/IP en environnement local.',
   },
   {
-    editeur: 'Microsoft',
-    logo: 'MS',
-    partenariat: 'Microsoft Silver Partner',
-    organisme: 'Pearson VUE',
-    certifications: [
-      { nom: 'Microsoft Azure Fundamentals', code: 'AZ-900', niveau: 'Fundamentals' },
-      { nom: 'Microsoft Azure Administrator', code: 'AZ-104', niveau: 'Associate' },
-      { nom: 'Microsoft 365 Fundamentals', code: 'MS-900', niveau: 'Fundamentals' },
-      { nom: 'Microsoft Security Fundamentals', code: 'SC-900', niveau: 'Fundamentals' },
-    ],
+    code: 'Python',
+    titre: 'Python — Apprendre à utiliser le langage',
+    duree: '1h30', questions: 'QCM + Cas pratiques', score: '700 / 1000',
+    cpf: true, rs: 'RS disponible',
+    desc: 'Certifier les compétences Python fondamentales : syntaxe, structures, fonctions.',
   },
   {
-    editeur: 'CompTIA',
-    logo: 'CT',
-    partenariat: 'Partenaire officiel',
-    organisme: 'Pearson VUE / CompTIA',
-    certifications: [
-      { nom: 'CompTIA A+', code: 'Core 1 & Core 2', niveau: 'Foundational' },
-      { nom: 'CompTIA Network+', code: 'N10-009', niveau: 'Core' },
-      { nom: 'CompTIA Security+', code: 'SY0-701', niveau: 'Core' },
-      { nom: 'CompTIA CySA+', code: 'CS0-003', niveau: 'Professional' },
-    ],
+    code: 'Linux',
+    titre: 'Linux — Administrer le système',
+    duree: '1h30', questions: 'QCM + Cas pratiques', score: '700 / 1000',
+    cpf: true, rs: 'RS disponible',
+    desc: 'Valider les compétences d\'administration système Linux en environnement professionnel.',
   },
   {
-    editeur: 'IPv6 Forum',
-    logo: 'IP',
-    partenariat: 'Membre IPv6 Council Martinique — ASPIK',
-    organisme: 'IPv6 Forum',
-    certifications: [
-      { nom: 'IPv6 Certified Network Engineer', code: 'Gold', niveau: 'Engineer' },
-      { nom: 'IPv6 Certified Security Engineer', code: 'Security', niveau: 'Engineer' },
-      { nom: 'IPv6 Fundamentals', code: 'Silver', niveau: 'Fundamentals' },
-    ],
-  },
-  {
-    editeur: 'EC-Council',
-    logo: 'EC',
-    partenariat: 'Partenaire officiel',
-    organisme: 'EC-Council',
-    certifications: [
-      { nom: 'Certified Ethical Hacker', code: 'CEH v13', niveau: 'Professional' },
-      { nom: 'Certified Security Analyst', code: 'ECSA', niveau: 'Professional' },
-      { nom: 'Computer Hacking Forensic Investigator', code: 'CHFI', niveau: 'Professional' },
-    ],
-  },
-  {
-    editeur: 'PMI',
-    logo: 'PM',
-    partenariat: 'Partenaire officiel',
-    organisme: 'PMI',
-    certifications: [
-      { nom: 'Project Management Professional', code: 'PMP', niveau: 'Professional' },
-      { nom: 'Certified Associate in PM', code: 'CAPM', niveau: 'Associate' },
-      { nom: 'PMI Agile Certified Practitioner', code: 'PMI-ACP', niveau: 'Professional' },
-    ],
+    code: 'SQL',
+    titre: 'SQL — Exploiter une base de données relationnelle',
+    duree: '1h30', questions: 'QCM + Cas pratiques', score: '700 / 1000',
+    cpf: true, rs: 'RS disponible',
+    desc: 'Certifier la maîtrise du langage SQL pour l\'interrogation et la gestion de bases de données.',
   },
 ]
+
+const CERTS_PEARSONVUE = [
+  { editeur: 'Cisco', couleur: '#E41F26', badge: 'Partenaire n° 3018982',
+    certifs: ['CCNA 200-301', 'CyberOps Associate 200-201', 'DevNet Associate 200-901', 'CCNP Enterprise', 'CCNP Security'] },
+  { editeur: 'Microsoft', couleur: '#0078D4', badge: 'Partenaire n° 4653557',
+    certifs: ['AZ-900 Azure Fundamentals', 'AZ-104 Azure Administrator', 'SC-900 Security', 'AI-900 Azure AI', 'MS-900 Microsoft 365'] },
+  { editeur: 'IPv6 Forum', couleur: '#16a085', badge: 'Membre actif',
+    certifs: ['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'] },
+  { editeur: 'LPI', couleur: '#FFAD00', badge: '',
+    certifs: ['Linux Essentials 010-160', 'LPIC-1 (101 + 102)', 'LPIC-2 (201 + 202)'] },
+  { editeur: 'OpenEDG', couleur: '#2980b9', badge: 'Python Institute',
+    certifs: ['PCEP 30-02 (Entry)', 'PCAP 31-03 (Associate)', 'PCPP1 (Professional 1)'] },
+]
+
+// ─── Sous-composants ──────────────────────────────────────────────────────────
+
+function SectionTitle({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
+  return (
+    <>
+      <h2 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.2rem,2vw,1.6rem)', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: light ? '#fff' : 'var(--g-black)', margin: '0 0 0.5rem' }}>
+        {children}
+      </h2>
+      <div className="g-rule" />
+    </>
+  )
+}
+
+function StepCard({ num, titre, desc, dark = false }: { num: string; titre: string; desc: string; dark?: boolean }) {
+  return (
+    <div style={{ background: dark ? 'rgba(255,255,255,0.04)' : 'var(--g-white)', border: dark ? '1px solid rgba(255,255,255,0.06)' : '1px solid rgba(187,187,187,0.3)', borderTop: '3px solid var(--g-red)', padding: '1.5rem' }}>
+      <div style={{ fontFamily: 'var(--font-title)', fontSize: '2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.6rem' }}>{num}</div>
+      <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: dark ? '#fff' : 'var(--g-black)', marginBottom: '0.5rem' }}>{titre}</div>
+      <p style={{ fontSize: '0.84rem', lineHeight: 1.65, color: dark ? 'rgba(255,255,255,0.55)' : '#5a5a58', margin: 0 }}>{desc}</p>
+    </div>
+  )
+}
+
+// ─── Page ─────────────────────────────────────────────────────────────────────
 
 function CertificationsPage() {
   return (
@@ -85,214 +87,398 @@ function CertificationsPage() {
       <Header />
       <main style={{ paddingTop: '72px' }}>
 
-        {/* Hero */}
+        {/* ── Hero ── */}
         <section style={{ background: 'var(--g-black)', borderBottom: '3px solid var(--g-red)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>
               Certifications
             </span>
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,3vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '1rem' }}>
-              Vous souhaitez<br />passer une certification ?
+              Passer une certification
             </h1>
-            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '780px', lineHeight: 1.8 }}>
-              GALACTUS Digital collabore avec l'ensemble des organismes certificateurs IT
-              pour proposer à ses apprenants la certification correspondant à leurs besoins —
-              dans les territoires ultramarins et en France hexagonale.
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.75rem' }}>
+              GALACTUS Digital est centre agréé pour les examens de certification Galactus Digital et centre accrédité Pearson VUE pour les certifications Cisco, Microsoft, IPv6 Forum, LPI et OpenEDG.
+              Officialisez vos compétences, affirmez-vous comme expert, développez votre employabilité.
             </p>
+            <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
+              {['Centre agréé Galactus Digital', 'Pearson VUE Authorized Test Center', 'Certifications éligibles CPF', 'Résultats immédiats'].map(b => (
+                <div key={b} style={{ padding: '0.35rem 0.9rem', background: 'rgba(228,31,38,0.10)', border: '1px solid rgba(228,31,38,0.25)', fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>
+                  {b}
+                </div>
+              ))}
+            </div>
           </div>
         </section>
 
-        {/* Pourquoi certifier */}
+        {/* ── Intro — deux types de certification ── */}
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2">Pourquoi passer une certification informatique ?</h2>
-            <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', marginTop: '2rem' }}>
+            <SectionTitle>Les modalités d'un examen de certification informatique</SectionTitle>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', marginTop: '1rem' }}>
 
-              {/* Pour les entreprises */}
-              <div style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2.5rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
+              {/* Galactus Digital */}
+              <div style={{ border: '1px solid rgba(187,187,187,0.35)', borderTop: '4px solid var(--g-red)', padding: '2rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
                   <div style={{ width: '44px', height: '44px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <Users size={22} color="white" />
+                    <Award size={22} color="white" />
                   </div>
-                  <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', margin: 0 }}>
-                    Pour les entreprises
-                  </h3>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.2rem' }}>Pour les examens</div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.95rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--g-black)', lineHeight: 1.2 }}>
+                      Certification GALACTUS Digital
+                    </div>
+                  </div>
                 </div>
-                <p style={{ fontSize: '0.88rem', color: '#5a5a58', lineHeight: 1.7, marginBottom: '1.25rem' }}>
-                  Service Formation, RH, DSI — vos collaborateurs peuvent passer un examen de certification
-                  après leur formation. Vous pouvez ainsi :
-                </p>
-                {[
-                  'Évaluer leur niveau de compétences et d\'expertise',
-                  'Accélérer les évolutions de carrière de vos collaborateurs',
-                  'Augmenter l\'efficacité et l\'employabilité des équipes',
-                  'Optimiser votre budget via le CPF et les OPCO',
-                  'Valoriser le capital humain de votre organisation',
-                ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87rem', color: '#4a4a48', marginBottom: '0.5rem' }}>
-                    <CheckCircle size={15} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                    {item}
-                  </div>
-                ))}
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(228,31,38,0.08)', border: '1px solid rgba(228,31,38,0.20)', padding: '0.3rem 0.75rem', marginBottom: '1.25rem' }}>
+                  <Shield size={12} color="#E41F26" />
+                  <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)' }}>
+                    Certificateur — Centre agréé GALACTUS Digital
+                  </span>
+                </div>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  {[
+                    { icon: <Users size={14} color="#E41F26" />, text: 'Le jour de l\'examen, avec l\'administrateur Certification GALACTUS Digital, vous vous connecterez au portail de certification pour créer votre compte.' },
+                    { icon: <Clock size={14} color="#E41F26" />, text: 'L\'examen est chronométré — 1 à 2 heures selon la certification — sous surveillance d\'un examinateur. Il se présente sous la forme de cas pratiques et de QCM.' },
+                    { icon: <Star size={14} color="#E41F26" />, text: 'À l\'issue de l\'examen, vous accédez directement à vos résultats : un score sur 1 000 points indiquant votre niveau de compétences. Votre certificat et les résultats détaillés vous sont transmis par e-mail quelques jours après.' },
+                    { icon: <Monitor size={14} color="#E41F26" />, text: 'Option surveillance à distance : l\'examen peut être passé depuis chez vous avec une application qui vérifie votre identité, votre environnement, et enregistre webcam, écran et sons pendant l\'examen (coût supplémentaire).' },
+                  ].map((item, i) => (
+                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', padding: '0.85rem 1rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.25)' }}>
+                      <span style={{ flexShrink: 0, marginTop: '2px' }}>{item.icon}</span>
+                      <p style={{ fontSize: '0.83rem', color: '#4a4a48', lineHeight: 1.65, margin: 0 }}>{item.text}</p>
+                    </div>
+                  ))}
+                </div>
+                <div style={{ marginTop: '1.25rem', padding: '0.85rem 1rem', background: 'rgba(228,31,38,0.06)', border: '1px solid rgba(228,31,38,0.15)', display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
+                  <AlertCircle size={14} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <p style={{ fontSize: '0.80rem', color: '#5a5a58', margin: 0, lineHeight: 1.6 }}>
+                    <strong style={{ color: 'var(--g-black)' }}>Certifications éligibles CPF</strong> — Consultez le catalogue des certifications GALACTUS Digital référencées au Répertoire Spécifique (RS) France Compétences pour une prise en charge via votre Compte Personnel de Formation.
+                  </p>
+                </div>
               </div>
 
-              {/* Pour les individus */}
-              <div style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2.5rem' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1.5rem' }}>
-                  <div style={{ width: '44px', height: '44px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
-                    <TrendingUp size={22} color="white" />
+              {/* Pearson VUE */}
+              <div style={{ border: '1px solid rgba(187,187,187,0.35)', borderTop: '4px solid #1D1D1B', padding: '2rem' }}>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', marginBottom: '1rem' }}>
+                  <div style={{ width: '44px', height: '44px', background: 'var(--g-black)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
+                    <Award size={22} color="white" />
                   </div>
-                  <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', margin: 0 }}>
-                    Pour les individus
-                  </h3>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#888', marginBottom: '0.2rem' }}>Pour les examens Microsoft, Cisco…</div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.95rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--g-black)', lineHeight: 1.2 }}>
+                      Pearson VUE Authorized Test Center
+                    </div>
+                  </div>
                 </div>
-                <p style={{ fontSize: '0.88rem', color: '#5a5a58', lineHeight: 1.7, marginBottom: '1.25rem' }}>
-                  En recherche d'emploi, salarié, travailleur indépendant, en reconversion —
-                  passer une certification après votre formation vous permet de :
-                </p>
-                {[
-                  'Officialiser vos compétences auprès des employeurs',
-                  'Affirmer votre expertise dans un domaine reconnu mondialement',
-                  'Développer votre employabilité dans les territoires ultramarins et au-delà',
-                  'Valoriser et sécuriser votre parcours professionnel',
-                  'Financer via le CPF tout ou partie de votre formation',
-                ].map((item, i) => (
-                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87nm', color: '#4a4a48', marginBottom: '0.5rem' }}>
-                    <CheckCircle size={15} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                    {item}
+                <div style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(29,29,27,0.06)', border: '1px solid rgba(29,29,27,0.15)', padding: '0.3rem 0.75rem', marginBottom: '1.25rem' }}>
+                  <Shield size={12} color="var(--g-black)" />
+                  <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-black)' }}>
+                    Certificateur — Pearson VUE
+                  </span>
+                </div>
+
+                {/* OnVUE */}
+                <div style={{ marginBottom: '1.25rem' }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.15rem 0.5rem' }}>Option 1</span>
+                    Examen en ligne avec surveillance (OnVUE)
                   </div>
-                ))}
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.64rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#888', marginBottom: '0.4rem' }}>Avant l'examen</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', marginBottom: '0.85rem' }}>
+                    {[
+                      'Vérifier la compatibilité du système via le test OnVUE',
+                      'Préparer un espace privé, bien éclairé, bureau dégagé',
+                      'Pièce d\'identité valide — nom identique à l\'inscription',
+                    ].map((item, i) => (
+                      <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.82rem', color: '#5a5a58' }}>
+                        <CheckCircle size={13} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.64rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#888', marginBottom: '0.4rem' }}>Le jour de l'examen</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                    {[
+                      'Enregistrement disponible de 30 min avant à 15 min après l\'heure prévue',
+                      'Présentation de la pièce d\'identité + photos du visage et de l\'espace d\'examen',
+                      'Surveillance en temps réel via webcam et microphone',
+                    ].map((item, i) => (
+                      <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.82rem', color: '#5a5a58' }}>
+                        <CheckCircle size={13} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Centre physique */}
+                <div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                    <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-black)', background: 'rgba(29,29,27,0.08)', padding: '0.15rem 0.5rem' }}>Option 2</span>
+                    Examen en centre physique
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.64rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#888', marginBottom: '0.4rem' }}>Avant l'examen</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem', marginBottom: '0.85rem' }}>
+                    {[
+                      'Réserver une place dans un centre agréé via Pearson VUE ou l\'organisme de certification',
+                      'Préparer une pièce d\'identité principale + une secondaire (politique mondiale Pearson VUE)',
+                    ].map((item, i) => (
+                      <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.82rem', color: '#5a5a58' }}>
+                        <CheckCircle size={13} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.64rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#888', marginBottom: '0.4rem' }}>Le jour de l'examen</div>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                    {[
+                      'Arriver au moins 15 minutes avant l\'heure prévue',
+                      'Présentation des pièces d\'identité + photographie + accord de confidentialité',
+                      'Examen surveillé par un administrateur de test agréé',
+                    ].map((item, i) => (
+                      <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.82rem', color: '#5a5a58' }}>
+                        <CheckCircle size={13} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
+                        {item}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+
+                <div style={{ marginTop: '1.25rem', padding: '0.85rem 1rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', display: 'flex', alignItems: 'flex-start', gap: '0.6rem' }}>
+                  <AlertCircle size={14} color="#888" style={{ flexShrink: 0, marginTop: '2px' }} />
+                  <p style={{ fontSize: '0.80rem', color: '#5a5a58', margin: 0, lineHeight: 1.6 }}>
+                    Consulter les directives spécifiques de l'organisme de certification concerné — des exigences supplémentaires peuvent s'appliquer selon l'examen.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Note légale importante */}
-        <section style={{ background: 'var(--g-offwhite)', padding: '2rem' }}>
+        {/* ══════════════════════════════════════════
+            CERTIFICATIONS GALACTUS DIGITAL
+        ══════════════════════════════════════════ */}
+        <section id="galactus" style={{ background: 'var(--g-black)', padding: '4rem 2rem', scrollMarginTop: '80px' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <div style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.4)', borderLeft: '4px solid var(--g-red)', padding: '1.5rem 2rem', display: 'flex', alignItems: 'flex-start', gap: '1rem' }}>
-              <Shield size={22} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
+              <div style={{ width: '4px', height: '48px', background: 'var(--g-red)', flexShrink: 0 }} />
               <div>
-                <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--g-black)', marginBottom: '0.4rem' }}>
-                  Information importante — Certifications éditeurs
-                </div>
-                <p style={{ fontSize: '0.85rem', lineHeight: 1.7, color: '#5a5a58', margin: 0 }}>
-                  Les certifications proposées par GALACTUS Digital sont des <strong>certifications officielles éditeurs</strong> (Cisco, Microsoft, CompTIA, IPv6 Forum, EC-Council, PMI).
-                  Elles sont reconnues mondialement par les professionnels du secteur IT.
-                  Elles ne constituent pas des certifications RNCP ou RS enregistrées au Répertoire National des Certifications Professionnelles et ne sont donc pas qualifiées de "certifications reconnues par l'État" au sens de la réglementation française.
-                  Conformément au Décret n°2025-500 du 6 juin 2025, les intitulés exacts des certifications sont indiqués ci-dessous.
-                </p>
+                <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.2rem' }}>Certifications</div>
+                <h2 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', margin: 0 }}>
+                  Certifications GALACTUS Digital
+                </h2>
               </div>
             </div>
-          </div>
-        </section>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.62)', maxWidth: '720px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+              GALACTUS Digital est centre agréé pour les certifications officielles ENI — référencées au Répertoire Spécifique (RS) de France Compétences et éligibles CPF. Elles valident des compétences techniques précises, avec un score sur 1 000 points et un certificat permanent.
+            </p>
 
-        {/* Certifications par éditeur */}
-        <section style={{ background: 'var(--g-black)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2-light">Nos certifications par éditeur</h2>
-            <div className="g-rule" />
-            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginTop: '2rem' }}>
-              {certifEditeurs.map(e => (
-                <div key={e.editeur} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden' }}>
-                  {/* Header éditeur */}
-                  <div style={{ background: 'rgba(228,31,38,0.10)', borderBottom: '1px solid rgba(228,31,38,0.20)', padding: '1.25rem 2rem', display: 'flex', alignItems: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
-                    <div style={{ width: '48px', height: '48px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', fontFamily: 'var(--font-title)', fontWeight: 700, fontSize: '0.90rem', color: '#fff', letterSpacing: '0.06em', flexShrink: 0 }}>{e.logo}</div>
+            {/* Avantages */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1rem', marginBottom: '3rem' }}>
+              {[
+                { icon: <Star size={20} color="white" />, titre: 'Validité permanente', desc: 'Les certifications GALACTUS Digital sont valables à vie — aucun renouvellement requis.' },
+                { icon: <Shield size={20} color="white" />, titre: 'Éligibles CPF', desc: 'Référencées au Répertoire Spécifique France Compétences — finançables via le CPF.' },
+                { icon: <CheckCircle size={20} color="white" />, titre: 'Résultats immédiats', desc: 'Score sur 1 000 points affiché à la fin de l\'examen. Certificat envoyé par e-mail.' },
+                { icon: <Award size={20} color="white" />, titre: 'Certification officielle', desc: 'Reconnue par les employeurs — attestation numérique partageable sur LinkedIn.' },
+              ].map(a => (
+                <div key={a.titre} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '1.5rem' }}>
+                  <div style={{ width: '40px', height: '40px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>{a.icon}</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.86rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '0.5rem' }}>{a.titre}</div>
+                  <p style={{ fontSize: '0.82rem', lineHeight: 1.6, color: 'rgba(255,255,255,0.52)', margin: 0 }}>{a.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            {/* Grille certifications */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem', marginBottom: '2.5rem' }}>
+              {CERTS_GALACTUS.map(cert => (
+                <div key={cert.code} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.07)', borderLeft: '4px solid var(--g-red)', padding: '1.5rem', display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '0.75rem' }}>
                     <div>
-                      <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff' }}>{e.editeur}</div>
-                      <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.50)', marginTop: '0.2rem' }}>{e.partenariat}</div>
-                    </div>
-                    <div style={{ marginLeft: 'auto', display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.75rem', color: 'rgba(255,255,255,0.45)' }}>
-                      <Award size={14} color="rgba(228,31,38,0.70)" />
-                      Organisme certificateur : <strong style={{ color: 'rgba(255,255,255,0.70)' }}>{e.organisme}</strong>
+                      {cert.cpf && (
+                        <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#27ae60', background: 'rgba(39,174,96,0.12)', padding: '0.15rem 0.5rem', display: 'inline-block', marginBottom: '0.4rem' }}>
+                          Éligible CPF · {cert.rs}
+                        </div>
+                      )}
+                      <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.92rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#fff', lineHeight: 1.25 }}>
+                        {cert.titre}
+                      </div>
                     </div>
                   </div>
-                  {/* Liste certifications */}
-                  <div style={{ padding: '1.25rem 2rem', display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '0.75rem' }}>
-                    {e.certifications.map(c => (
-                      <div key={c.code} style={{ display: 'flex', alignItems: 'center', gap: '1rem', padding: '0.75rem 1rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)' }}>
-                        <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#fff', background: 'rgba(228,31,38,0.30)', padding: '0.15rem 0.5rem', flexShrink: 0, whiteSpace: 'nowrap' }}>{c.code}</div>
-                        <div>
-                          <div style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.80)', fontWeight: 600 }}>{c.nom}</div>
-                          <div style={{ fontSize: '0.70rem', color: 'rgba(255,255,255,0.35)', marginTop: '0.15rem', letterSpacing: '0.06em', textTransform: 'uppercase' }}>{c.niveau}</div>
-                        </div>
+                  <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.52)', lineHeight: 1.6, margin: 0 }}>{cert.desc}</p>
+                  <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    {[
+                      { label: 'Durée', val: cert.duree },
+                      { label: 'Format', val: cert.questions },
+                      { label: 'Score', val: cert.score },
+                    ].map(row => (
+                      <div key={row.label} style={{ background: 'rgba(255,255,255,0.06)', padding: '0.3rem 0.75rem' }}>
+                        <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.1rem' }}>{row.label}</div>
+                        <div style={{ fontSize: '0.80rem', color: '#fff', fontWeight: 600 }}>{row.val}</div>
                       </div>
                     ))}
                   </div>
                 </div>
               ))}
             </div>
+
+            {/* Comment s'inscrire — Galactus */}
+            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '2rem' }}>
+              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1.25rem' }}>
+                Comment passer un examen Certification GALACTUS Digital ?
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1rem' }}>
+                {[
+                  { num: '01', titre: 'Planifier', desc: 'Contactez-nous pour planifier votre examen à votre convenance dans nos centres agréés.' },
+                  { num: '02', titre: 'Connexion', desc: 'Le jour J, l\'administrateur vous connecte au portail de certification pour créer votre compte.' },
+                  { num: '03', titre: 'Examen', desc: 'QCM et cas pratiques — 1 à 2 heures chrono, sous surveillance d\'un examinateur certifié.' },
+                  { num: '04', titre: 'Résultats', desc: 'Score sur 1 000 immédiatement. Certificat et résultats détaillés envoyés par e-mail sous quelques jours.' },
+                ].map(s => (
+                  <div key={s.num} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '2px solid var(--g-red)', padding: '1.25rem' }}>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.8rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.5rem' }}>{s.num}</div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.82rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '0.35rem' }}>{s.titre}</div>
+                    <p style={{ fontSize: '0.80rem', lineHeight: 1.55, color: 'rgba(255,255,255,0.50)', margin: 0 }}>{s.desc}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+
+            <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Planifier mon examen</a>
+              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Consulter les certifications disponibles</a>
+            </div>
           </div>
         </section>
 
-        {/* Modalités passage */}
-        <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
+        {/* ══════════════════════════════════════════
+            CERTIFICATIONS PEARSON VUE
+        ══════════════════════════════════════════ */}
+        <section id="pearsonvue" style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem', scrollMarginTop: '80px' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2">Modalités de passage des examens</h2>
-            <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
-              {[
-                {
-                  titre: 'Pearson VUE',
-                  sous: 'Cisco, Microsoft, CompTIA…',
-                  etapes: [
-                    'Inscription en ligne sur le site Pearson VUE ou via GALACTUS Digital',
-                    'Pièce d\'identité valide obligatoire (nom identique à l\'inscription)',
-                    'Examen en centre agréé : arriver 15 min avant, pièces d\'identité, enregistrement',
-                    'Examen en ligne (OnVUE) : test système préalable, espace calme et dégagé, surveillance webcam',
-                    'Résultats immédiats à l\'écran, certificat numérique sous quelques jours',
-                  ],
-                },
-                {
-                  titre: 'EC-Council',
-                  sous: 'CEH, ECSA, CHFI…',
-                  etapes: [
-                    'Inscription via le portail EC-Council ou par GALACTUS Digital',
-                    'Examen disponible en ligne avec surveillance (ProctorU) ou en centre',
-                    'QCM de 125 questions — durée 4 heures',
-                    'Score minimum requis : 70% selon la certification',
-                    'Certificat numérique officiel EC-Council en cas de réussite',
-                  ],
-                },
-                {
-                  titre: 'PMI',
-                  sous: 'PMP, CAPM, PMI-ACP…',
-                  etapes: [
-                    'Éligibilité à vérifier : heures d\'expérience en gestion de projet requises',
-                    'Candidature en ligne sur pmi.org — délai de validation 5 à 10 jours',
-                    'Examen en centre Pearson VUE ou en ligne avec surveillance',
-                    'PMP : 180 questions — durée 4 heures',
-                    'Certification valable 3 ans — renouvellement par PDUs',
-                  ],
-                },
-              ].map(m => (
-                <div key={m.titre} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.3rem' }}>{m.titre}</div>
-                  <div style={{ fontSize: '0.75rem', color: 'var(--g-red)', fontFamily: 'var(--font-title)', letterSpacing: '0.08em', textTransform: 'uppercase', marginBottom: '1.25rem' }}>{m.sous}</div>
-                  {m.etapes.map((e, i) => (
-                    <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.84rem', color: '#4a4a48', marginBottom: '0.6rem', lineHeight: 1.6 }}>
-                      <div style={{ width: '18px', height: '18px', background: 'var(--g-red)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontSize: '0.60rem', color: '#fff', fontWeight: 700, marginTop: '1px' }}>{i + 1}</div>
-                      {e}
+            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
+              <div style={{ width: '4px', height: '48px', background: 'var(--g-black)', flexShrink: 0 }} />
+              <div>
+                <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: '#888', marginBottom: '0.2rem' }}>Certifications éditeurs</div>
+                <h2 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, color: 'var(--g-black)', textTransform: 'uppercase', letterSpacing: '0.04em', margin: 0 }}>
+                  Certifications Pearson VUE
+                </h2>
+              </div>
+            </div>
+            <p style={{ fontSize: '0.95rem', color: '#5a5a58', maxWidth: '720px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+              GALACTUS Digital est centre accrédité Pearson VUE. Vous pouvez passer chez nous les examens Cisco, Microsoft, IPv6 Forum, LPI et OpenEDG — en présentiel dans nos centres ou en ligne via OnVUE, dans les conditions officielles des éditeurs.
+            </p>
+
+            {/* Grille éditeurs */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginBottom: '3rem' }}>
+              {CERTS_PEARSONVUE.map(editeur => (
+                <div key={editeur.editeur} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', overflow: 'hidden' }}>
+                  <div style={{ background: editeur.couleur, padding: '0.85rem 1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff' }}>
+                      {editeur.editeur}
                     </div>
-                  ))}
+                    {editeur.badge && (
+                      <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#fff', background: 'rgba(255,255,255,0.20)', padding: '0.15rem 0.5rem' }}>
+                        {editeur.badge}
+                      </div>
+                    )}
+                  </div>
+                  <div style={{ padding: '1rem 1.25rem' }}>
+                    {editeur.certifs.map((cert, i) => (
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 0', borderBottom: i < editeur.certifs.length - 1 ? '1px solid rgba(187,187,187,0.18)' : 'none' }}>
+                        <div style={{ width: '5px', height: '5px', background: editeur.couleur, flexShrink: 0 }} />
+                        <span style={{ fontSize: '0.83rem', color: '#4a4a48' }}>{cert}</span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              ))}
+
+              {/* Carte contact Pearson VUE */}
+              <div style={{ background: 'var(--g-black)', border: '1px solid rgba(255,255,255,0.06)', borderTop: `3px solid var(--g-red)`, padding: '1.5rem', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
+                <div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '0.75rem' }}>
+                    Passer votre examen Pearson VUE chez nous
+                  </div>
+                  <p style={{ fontSize: '0.83rem', color: 'rgba(255,255,255,0.55)', lineHeight: 1.65, marginBottom: '1.25rem' }}>
+                    Contactez-nous pour réserver votre créneau d'examen dans l'un de nos centres accrédités en Martinique, Guadeloupe ou Paris.
+                  </p>
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                    {[
+                      { icon: <MapPin size={13} />, text: 'Martinique · Guadeloupe · Paris' },
+                      { icon: <Monitor size={13} />, text: 'OnVUE disponible — examen à domicile' },
+                      { icon: <Clock size={13} />, text: 'Planification sur rendez-vous' },
+                    ].map((item, i) => (
+                      <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.80rem', color: 'rgba(255,255,255,0.55)' }}>
+                        <span style={{ color: 'var(--g-red)', flexShrink: 0 }}>{item.icon}</span>
+                        {item.text}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                <a href="mailto:president@galactusdigital.com" className="btn-red" style={{ marginTop: '1.5rem', justifyContent: 'center', textAlign: 'center' }}>
+                  <Mail size={14} /> Réserver un créneau
+                </a>
+              </div>
+            </div>
+
+            {/* Processus en centre */}
+            <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#888', marginBottom: '1.25rem' }}>
+              Déroulement — Examen en centre physique Pearson VUE
+            </h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1rem' }}>
+              {[
+                { num: '01', titre: 'Inscription', desc: 'Réservez sur Pearson VUE ou contactez-nous. Préparez deux pièces d\'identité conformes à la politique mondiale Pearson VUE.' },
+                { num: '02', titre: 'Arrivée', desc: 'Présentez-vous 15 minutes avant. Présentation des pièces d\'identité et prise de photographie.' },
+                { num: '03', titre: 'Examen', desc: 'Examen sous surveillance d\'un administrateur agréé. Respect strict des règles et procédures Pearson VUE.' },
+                { num: '04', titre: 'Résultats', desc: 'Résultats affichés immédiatement. Certificat officiel éditeur envoyé selon les délais de l\'organisme certificateur.' },
+              ].map(s => (
+                <div key={s.num} style={{ border: '1px solid rgba(187,187,187,0.3)', borderTop: '3px solid var(--g-black)', padding: '1.25rem', background: 'var(--g-white)' }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.8rem', fontWeight: 700, color: 'var(--g-black)', lineHeight: 1, marginBottom: '0.5rem' }}>{s.num}</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.82rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.35rem' }}>{s.titre}</div>
+                  <p style={{ fontSize: '0.80rem', lineHeight: 1.55, color: '#5a5a58', margin: 0 }}>{s.desc}</p>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        {/* CTA */}
+        {/* ── Conformité réglementaire ── */}
+        <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <SectionTitle>Conformité réglementaire</SectionTitle>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
+              {[
+                { ref: 'France Compétences RS', title: 'Certifications référencées', desc: 'Les certifications GALACTUS Digital éligibles CPF sont référencées au Répertoire Spécifique (RS) de France Compétences — finançables via le Compte Personnel de Formation.' },
+                { ref: 'Art. L.6313-1', title: 'Action de formation certifiante', desc: 'Les formations préparatoires aux certifications sont reconnues comme actions de formation certifiantes au sens du Code du travail.' },
+                { ref: 'Qualiopi Ind. 4', title: 'Convocation examen', desc: 'Chaque candidat reçoit une convocation précisant les modalités de l\'examen, le lieu, l\'heure et les pièces à fournir avant le jour J.' },
+                { ref: 'Délai CPF', title: 'Délai obligatoire CPF', desc: 'Pour tout financement via le CPF, un délai minimum obligatoire de 11 jours ouvrés est respecté entre la date d\'envoi de la proposition et la date de début.' },
+              ].map(c => (
+                <div key={c.ref} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
+                  <div style={{ flexShrink: 0 }}>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.6rem', whiteSpace: 'nowrap' }}>{c.ref}</div>
+                  </div>
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.35rem' }}>{c.title}</div>
+                    <p style={{ fontSize: '0.84rem', lineHeight: 1.65, color: '#5a5a58', margin: 0 }}>{c.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── CTA ── */}
         <section style={{ background: 'var(--g-black)', padding: '3rem 2rem', borderTop: '4px solid var(--g-red)' }}>
-          <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 className="section-h2-light" style={{ marginBottom: '1rem' }}>Prêt à vous certifier ?</h2>
-            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.62)', lineHeight: 1.8, marginBottom: '2rem' }}>
-              Contactez-nous pour connaître les prochaines sessions disponibles dans votre territoire
-              et recevoir toutes les informations sur la certification souhaitée.
-            </p>
-            <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-              <a href="/calendrier" className="btn-red"><Award size={16} /> Voir le calendrier</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Nous contacter</a>
+          <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
+            <div>
+              <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Prêt à passer votre certification ?</h2>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
+                Martinique · Guadeloupe · Paris · OnVUE à distance.<br />
+                Contactez-nous pour planifier votre examen sous 48h.
+              </p>
+            </div>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>
+              <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
+              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Planifier mon examen</a>
             </div>
           </div>
         </section>

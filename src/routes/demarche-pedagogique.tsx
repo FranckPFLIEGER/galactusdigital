@@ -25,7 +25,6 @@ function DemarchePedagogiquePage() {
           </div>
         </section>
 
-        {/* Notre approche */}
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Notre approche pédagogique</h2>
@@ -33,7 +32,7 @@ function DemarchePedagogiquePage() {
             <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'start' }}>
               <div>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
-                  Notre ingénierie pédagogique s'appuie sur les programmes officiels des éditeurs IT (Cisco, Microsoft, CompTIA, IPv6 Forum, EC-Council, PMI) et une approche par compétences, vérifiée à chaque étape du parcours.
+                  Notre ingénierie pédagogique s'appuie sur les programmes officiels des éditeurs IT (Cisco NetAcad, Microsoft, IPv6 Forum) et une approche par compétences, vérifiée à chaque étape du parcours.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
                   Chaque formation est conçue sur mesure en fonction des besoins identifiés lors de l'analyse préalable, avec des objectifs pédagogiques définis sous forme de verbes d'action et une progression logique des acquis.
@@ -47,10 +46,10 @@ function DemarchePedagogiquePage() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {[
-                  { icon: <Target size={20} color="white" />, title: 'Objectifs opérationnels', desc: 'Définis sous forme de verbes d\'action, alignés sur les besoins de l\'apprenant et vérifiés tout au long du parcours.' },
-                  { icon: <BookOpen size={20} color="white" />, title: 'Contenus officiels éditeurs', desc: 'Programmes alignés sur les référentiels exacts des éditeurs, sans intermédiaire. Supports Cisco NetAcad, Microsoft Learn, etc.' },
-                  { icon: <CheckCircle size={20} color="white" />, title: 'Évaluation continue', desc: 'QCM, ateliers pratiques et mises en situation à chaque module pour vérifier l\'acquisition des compétences.' },
-                  { icon: <Award size={20} color="white" />, title: 'Certification officielle', desc: 'Passage de l\'examen de certification éditeur intégré dans chaque parcours. 100% de réussite parmi les présentés 2023-2025.' },
+                  { icon: <Target size={20} color="white" />, title: 'Objectifs opérationnels', desc: 'Définis sous forme de verbes d'action, alignés sur les besoins de l'apprenant et vérifiés tout au long du parcours.' },
+                  { icon: <BookOpen size={20} color="white" />, title: 'Contenus officiels éditeurs', desc: 'Programmes alignés sur les référentiels exacts des éditeurs, sans intermédiaire. Supports Cisco NetAcad, Microsoft Learn, IPv6 Forum.' },
+                  { icon: <CheckCircle size={20} color="white" />, title: 'Évaluation continue', desc: 'QCM, ateliers pratiques et mises en situation à chaque module pour vérifier l'acquisition des compétences.' },
+                  { icon: <Award size={20} color="white" />, title: 'Certification officielle', desc: 'Passage de l'examen de certification éditeur intégré dans chaque parcours. 100% de réussite parmi les présentés 2023-2025.' },
                 ].map(item => (
                   <div key={item.title} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '3px solid var(--g-red)', padding: '1.25rem' }}>
                     <div style={{ width: '36px', height: '36px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.icon}</div>
@@ -65,36 +64,22 @@ function DemarchePedagogiquePage() {
           </div>
         </section>
 
-        {/* Processus évaluation */}
         <section style={{ background: 'var(--g-black)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">Processus d'évaluation</h2>
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
               {[
-                {
-                  phase: 'Avant la formation',
-                  color: 'var(--g-red)',
-                  items: ['Évaluation des besoins (entretien + questionnaire)', 'Évaluation des prérequis (entretien + questionnaire)', 'Analyse du profil et des attentes', 'Vérification de l\'équipement pour la FOAD'],
-                },
-                {
-                  phase: 'Pendant la formation',
-                  color: 'var(--g-red)',
-                  items: ['Évaluation des attentes (entretien + questionnaire)', 'Évaluation des acquis (mise en situation + simulateur + QCM)', 'Évaluation de satisfaction "à chaud"', 'Tour de table quotidien', 'Passage de la certification éditeur', 'Attestation de fin de formation'],
-                },
-                {
-                  phase: 'Après la formation',
-                  color: 'var(--g-red)',
-                  items: ['Évaluation pédagogique (bilan)', 'Évaluation du transfert sur le poste de travail', 'Sollicitation "à froid" 2 mois après la formation', 'Relance hiérarchie pour mesurer l\'impact', 'Suivi de l\'insertion professionnelle si applicable'],
-                },
+                { phase: 'Avant la formation', items: ['Évaluation des besoins (entretien + questionnaire)', 'Évaluation des prérequis (entretien + questionnaire)', 'Analyse du profil et des attentes', 'Vérification de l'équipement pour la FOAD'] },
+                { phase: 'Pendant la formation', items: ['Évaluation des attentes (entretien + questionnaire)', 'Évaluation des acquis (mise en situation + simulateur + QCM)', 'Évaluation de satisfaction "à chaud"', 'Tour de table quotidien', 'Passage de la certification éditeur', 'Attestation de fin de formation'] },
+                { phase: 'Après la formation', items: ['Évaluation pédagogique (bilan)', 'Évaluation du transfert sur le poste de travail', 'Sollicitation "à froid" 2 mois après la formation', 'Relance hiérarchie pour mesurer l'impact', 'Suivi de l'insertion professionnelle si applicable'] },
               ].map(p => (
                 <div key={p.phase} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '1.25rem' }}>{p.phase}</h3>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
                     {p.items.map((item, i) => (
                       <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.60)' }}>
-                        <div style={{ width: '6px', height: '6px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
-                        {item}
+                        <div style={{ width: '6px', height: '6px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
                       </li>
                     ))}
                   </ul>
@@ -104,7 +89,6 @@ function DemarchePedagogiquePage() {
           </div>
         </section>
 
-        {/* Modalités pédagogiques */}
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Modalités et méthodes pédagogiques</h2>
@@ -121,8 +105,7 @@ function DemarchePedagogiquePage() {
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                     {m.items.map((item, i) => (
                       <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.85rem', color: '#4a4a48' }}>
-                        <CheckCircle size={14} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                        {item}
+                        <CheckCircle size={14} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                       </li>
                     ))}
                   </ul>
@@ -137,4 +120,3 @@ function DemarchePedagogiquePage() {
     </>
   )
 }
-

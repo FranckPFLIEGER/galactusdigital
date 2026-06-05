@@ -44,8 +44,8 @@ function DemarcheQualitePage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
                 { num: '518',   label: 'Candidats formés 2023-2025',    sub: 'Périmètre : toutes certifications IT' },
-                { num: '100%',  label: 'Taux de réussite',              sub: 'Parmi les candidats présentés à l'examen' },
-                { num: '0',     label: 'Abandon / Annulation',          sub: 'Sur l'ensemble des parcours 2023-2025' },
+                { num: '100%',  label: 'Taux de réussite',              sub: "Parmi les candidats présentés à l'examen" },
+                { num: '0',     label: 'Abandon / Annulation',          sub: "Sur l'ensemble des parcours 2023-2025" },
                 { num: '4,8/5', label: 'Note de satisfaction',          sub: 'Moyenne des évaluations apprenants 2024' },
               ].map(s => (
                 <div key={s.label} style={{ background: 'var(--g-black)', borderTop: '3px solid var(--g-red)', padding: '2rem', textAlign: 'center' }}>
@@ -101,13 +101,13 @@ function DemarcheQualitePage() {
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1.25rem' }}>
               {[
-                { num: '01', title: 'Information du public', desc: 'Diffusion d'informations accessibles, détaillées et vérifiables : prérequis, objectifs, durée, modalités, résultats. Courriel de proposition avec certificat Qualiopi, devis, convention et plan de formation.' },
-                { num: '02', title: 'Identification des objectifs & adaptation', desc: 'Objectifs définis sous forme de verbes d'action dans le plan de formation. Analyse des besoins via questionnaire d'évaluation des attentes. Prise en compte des situations PSH.' },
-                { num: '03', title: 'Adaptation aux publics bénéficiaires', desc: 'Convocation avec règlement intérieur. Évaluation des acquis par ateliers pratiques et QCM (seuil 70%). Mesures de prévention des ruptures de parcours formalisées dans les CGV.' },
-                { num: '04', title: 'Adéquation des moyens', desc: 'Formateur certifié Cisco instructeur depuis plus de 15 ans — CCNP, CCDP. Plateforme NetAcad officielle. WEBEX pour la FOAD. Salles adaptées en présentiel.' },
-                { num: '05', title: 'Qualification des personnels', desc: 'Certifications CCNP et CCDP Cisco. Programme IPD Cisco NetAcad. Vérification annuelle des compétences. Inscription à la communauté des formateurs Cisco NetAcad.' },
-                { num: '06', title: 'Inscription dans l'environnement professionnel', desc: 'Veille réglementaire (CARIF, Centre Inffo, AFDAS, AKTO, Service public). Veille métier (APEC, LinkedIn Cisco). Partenaire Cisco n° 3018982. Partenaire Microsoft n° 4653557. Membre IPv6 Forum. Association ASPIK.' },
-                { num: '07', title: 'Recueil et traitement des appréciations', desc: 'Évaluation apprenants et hiérarchie en fin de formation. Sollicitation à froid 2 mois après. Tableau de suivi : points forts, axes d'amélioration, réclamations, actions correctives.' },
+                { num: '01', title: 'Information du public', desc: "Diffusion d'informations accessibles, détaillées et vérifiables : prérequis, objectifs, durée, modalités, résultats. Courriel de proposition avec certificat Qualiopi, devis, convention et plan de formation." },
+                { num: '02', title: 'Identification des objectifs & adaptation', desc: "Objectifs définis sous forme de verbes d'action dans le plan de formation. Analyse des besoins via questionnaire d'évaluation des attentes. Prise en compte des situations PSH." },
+                { num: '03', title: 'Adaptation aux publics bénéficiaires', desc: "Convocation avec règlement intérieur. Évaluation des acquis par ateliers pratiques et QCM (seuil 70%). Mesures de prévention des ruptures de parcours formalisées dans les CGV." },
+                { num: '04', title: 'Adéquation des moyens', desc: "Formateur certifié Cisco instructeur depuis plus de 15 ans — CCNP, CCDP. Plateforme NetAcad officielle. WEBEX pour la FOAD. Salles adaptées en présentiel." },
+                { num: '05', title: 'Qualification des personnels', desc: "Certifications CCNP et CCDP Cisco. Programme IPD Cisco NetAcad. Vérification annuelle des compétences. Inscription à la communauté des formateurs Cisco NetAcad." },
+                { num: '06', title: "Inscription dans l'environnement professionnel", desc: "Veille réglementaire (CARIF, Centre Inffo, AFDAS, AKTO, Service public). Veille métier (APEC, LinkedIn Cisco). Partenaire Cisco n° 3018982. Partenaire Microsoft n° 4653557. Membre IPv6 Forum. Association ASPIK." },
+                { num: '07', title: 'Recueil et traitement des appréciations', desc: "Évaluation apprenants et hiérarchie en fin de formation. Sollicitation à froid 2 mois après. Tableau de suivi : points forts, axes d'amélioration, réclamations, actions correctives." },
               ].map(c => (
                 <div key={c.num} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', padding: '1.5rem', display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, flexShrink: 0 }}>{c.num}</div>

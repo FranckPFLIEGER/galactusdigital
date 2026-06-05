@@ -4,19 +4,19 @@ const partners = [
   {
     file: 'cisco-academy.png',
     name: 'Cisco Networking Academy',
-    desc: 'Partenaire officiel — formations CCNA, CCNP, CyberOps, Automation',
+    desc: 'Partenaire officiel n° 3018982 — formations CCNA, CyberOps, DevNet, IoT',
     level: 'Academy Partner',
   },
   {
     file: 'microsoft-partner.jpg',
     name: 'Microsoft',
-    desc: 'Silver Partner — formations Azure, M365, Security, Power Platform',
-    level: 'Silver Partner',
+    desc: 'Partenaire officiel n° 4653557 — formations Azure, M365, Security, AI',
+    level: 'Microsoft Partner',
   },
   {
     file: 'ipv6-council.png',
     name: 'IPv6 Council Martinique',
-    desc: 'Membre actif — formations Certified Network Engineer',
+    desc: 'Membre actif — formations IPv6 Certified Network & Security Engineer',
     level: 'Membre actif',
   },
 ]
@@ -33,13 +33,14 @@ export function Partners() {
         <h2 className={`section-h2 reveal${isVisible ? ' visible' : ''} delay-1`}>
           Des partenariats officiels<br />avec les leaders mondiaux
         </h2>
-        <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}
-          style={{ marginBottom: '3rem' }}>
+        <p
+          className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}
+          style={{ marginBottom: '3rem' }}
+        >
           Chaque formation dispensée par GALACTUS Digital est adossée
           à un partenariat officiel avec l'éditeur — garant de l'authenticité
           et de la valeur mondiale de la certification.
         </p>
-
         <div className="partners-grid">
           {partners.map((p, i) => (
             <div
@@ -60,9 +61,7 @@ export function Partners() {
             </div>
           ))}
         </div>
-
       </div>
     </section>
   )
 }
-

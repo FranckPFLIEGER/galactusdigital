@@ -46,10 +46,10 @@ function DemarchePedagogiquePage() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {[
-                  { icon: <Target size={20} color="white" />, title: 'Objectifs opérationnels', desc: 'Définis sous forme de verbes d'action, alignés sur les besoins de l'apprenant et vérifiés tout au long du parcours.' },
+                  { icon: <Target size={20} color="white" />, title: 'Objectifs opérationnels', desc: "Définis sous forme de verbes d'action, alignés sur les besoins de l'apprenant et vérifiés tout au long du parcours." },
                   { icon: <BookOpen size={20} color="white" />, title: 'Contenus officiels éditeurs', desc: 'Programmes alignés sur les référentiels exacts des éditeurs, sans intermédiaire. Supports Cisco NetAcad, Microsoft Learn, IPv6 Forum.' },
-                  { icon: <CheckCircle size={20} color="white" />, title: 'Évaluation continue', desc: 'QCM, ateliers pratiques et mises en situation à chaque module pour vérifier l'acquisition des compétences.' },
-                  { icon: <Award size={20} color="white" />, title: 'Certification officielle', desc: 'Passage de l'examen de certification éditeur intégré dans chaque parcours. 100% de réussite parmi les présentés 2023-2025.' },
+                  { icon: <CheckCircle size={20} color="white" />, title: 'Évaluation continue', desc: "QCM, ateliers pratiques et mises en situation à chaque module pour vérifier l'acquisition des compétences." },
+                  { icon: <Award size={20} color="white" />, title: 'Certification officielle', desc: "Passage de l'examen de certification éditeur intégré dans chaque parcours. 100% de réussite parmi les présentés 2023-2025." },
                 ].map(item => (
                   <div key={item.title} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '3px solid var(--g-red)', padding: '1.25rem' }}>
                     <div style={{ width: '36px', height: '36px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.icon}</div>
@@ -70,9 +70,9 @@ function DemarchePedagogiquePage() {
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
               {[
-                { phase: 'Avant la formation', items: ['Évaluation des besoins (entretien + questionnaire)', 'Évaluation des prérequis (entretien + questionnaire)', 'Analyse du profil et des attentes', 'Vérification de l'équipement pour la FOAD'] },
-                { phase: 'Pendant la formation', items: ['Évaluation des attentes (entretien + questionnaire)', 'Évaluation des acquis (mise en situation + simulateur + QCM)', 'Évaluation de satisfaction "à chaud"', 'Tour de table quotidien', 'Passage de la certification éditeur', 'Attestation de fin de formation'] },
-                { phase: 'Après la formation', items: ['Évaluation pédagogique (bilan)', 'Évaluation du transfert sur le poste de travail', 'Sollicitation "à froid" 2 mois après la formation', 'Relance hiérarchie pour mesurer l'impact', 'Suivi de l'insertion professionnelle si applicable'] },
+                { phase: 'Avant la formation', items: ['Évaluation des besoins (entretien + questionnaire)', 'Évaluation des prérequis (entretien + questionnaire)', 'Analyse du profil et des attentes', "Vérification de l'équipement pour la FOAD"] },
+                { phase: 'Pendant la formation', items: ['Évaluation des attentes (entretien + questionnaire)', "Évaluation des acquis (mise en situation + simulateur + QCM)", 'Évaluation de satisfaction "à chaud"', 'Tour de table quotidien', 'Passage de la certification éditeur', "Attestation de fin de formation"] },
+                { phase: 'Après la formation', items: ['Évaluation pédagogique (bilan)', 'Évaluation du transfert sur le poste de travail', "Sollicitation \"à froid\" 2 mois après la formation", "Relance hiérarchie pour mesurer l'impact", "Suivi de l'insertion professionnelle si applicable"] },
               ].map(p => (
                 <div key={p.phase} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '1.25rem' }}>{p.phase}</h3>
@@ -97,8 +97,8 @@ function DemarchePedagogiquePage() {
               {[
                 { title: 'Méthodes actives', items: ['Exposé, démonstration et atelier pratique', 'Cas pratiques et études de cas', 'Quizz et évaluations interactives', 'Méthode interactive et intuitive'] },
                 { title: 'Outils numériques', items: ['Plateforme Cisco NetAcad (LMS officiel)', 'Simulateur Packet Tracer (Cisco)', 'Outil WEBEX pour la FOAD', 'Supports stagiaires numériques'] },
-                { title: 'Modalités de formation', items: ['Formation en présentiel chez le client', 'Formation à distance (FOAD) via WEBEX', 'Formation hybride (blended learning)', 'Intra-entreprise et inter-entreprise'] },
-                { title: 'Documents remis', items: ['Plan de formation détaillé', 'Convention de formation', 'Convocation avec règlement intérieur', 'Attestation de fin de formation', 'Attestation de présence'] },
+                { title: 'Modalités de formation', items: ["Formation en présentiel chez le client", "Formation à distance (FOAD) via WEBEX", "Formation hybride (blended learning)", "Intra-entreprise et inter-entreprise"] },
+                { title: 'Documents remis', items: ['Plan de formation détaillé', 'Convention de formation', "Convocation avec règlement intérieur", "Attestation de fin de formation", 'Attestation de présence'] },
               ].map(m => (
                 <div key={m.title} style={{ background: '#fff', border: '1px solid rgba(187,187,187,0.4)', padding: '1.75rem' }}>
                   <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>{m.title}</h3>

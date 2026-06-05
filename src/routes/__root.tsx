@@ -9,14 +9,14 @@ export const Route = createRootRoute({
       { title: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         name: 'description',
-        content: 'Organisme certifié Qualiopi. Formations IT certifiantes Cisco, Microsoft, CompTIA. 100% de réussite. 7 territoires ultramarins. NDA : 11 75 59933 75.',
+        content: 'Organisme certifié Qualiopi. Formations IT certifiantes Cisco NetAcad, Microsoft et IPv6 Forum. 100% de réussite. 7 territoires ultramarins. NDA : 11 75 59933 75.',
       },
       { property: 'og:type',        content: 'website' },
       { property: 'og:url',         content: 'https://www.galactusdigital.com/' },
       { property: 'og:title',       content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         property: 'og:description',
-        content: 'Organisme de formation certifié Qualiopi. Certifications Cisco, Microsoft, CompTIA. 100% de réussite. 7 territoires ultramarins.',
+        content: 'Organisme de formation certifié Qualiopi. Certifications Cisco NetAcad, Microsoft et IPv6 Forum. 100% de réussite. 7 territoires ultramarins.',
       },
       { property: 'og:image',       content: 'https://www.galactusdigital.com/galactus-icon.png' },
       { property: 'og:locale',      content: 'fr_FR' },
@@ -25,7 +25,7 @@ export const Route = createRootRoute({
       { name: 'twitter:title',       content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         name: 'twitter:description',
-        content: 'Formations IT officielles aux Caraïbes et Océan Indien. Certifié Qualiopi. Cisco, Microsoft, CompTIA.',
+        content: 'Formations IT officielles aux Caraïbes et Océan Indien. Certifié Qualiopi. Cisco NetAcad, Microsoft, IPv6 Forum.',
       },
       { name: 'twitter:image',       content: 'https://www.galactusdigital.com/galactus-icon.png' },
       { name: 'robots',              content: 'index, follow' },
@@ -35,7 +35,7 @@ export const Route = createRootRoute({
       { name: 'geo.placename',       content: 'Guadeloupe, Martinique, Caraïbes, Océan Indien, France' },
       {
         name: 'keywords',
-        content: 'formation IT territoires ultramarins, certification Cisco CCNA, formation Microsoft Azure, CompTIA, IPv6, Guadeloupe, Martinique, Guyane, Réunion, Qualiopi, organisme de formation certifié, NDA 11 75 59933 75',
+        content: 'formation IT territoires ultramarins, certification Cisco CCNA, formation Microsoft Azure, IPv6 Forum, Guadeloupe, Martinique, Guyane, Réunion, Qualiopi, organisme de formation certifié, NDA 11 75 59933 75',
       },
     ],
     links: [

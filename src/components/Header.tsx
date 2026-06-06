@@ -188,7 +188,6 @@ const NAV_LINKS = [
       { label: 'Satisfaction & Qualité',  href: '/#satisfaction' },
       { label: 'Ils nous font confiance', href: '/#clients' },
       { label: 'Nos résultats',           href: '/#resultats' },
-      { label: 'Éditeurs officiels',       href: '/#partenaires' },
       { label: 'Démarche pédagogique',    href: '/demarche-pedagogique' },
       { label: 'Démarche qualité',        href: '/demarche-qualite' },
       { label: 'Nos partenaires',         href: '/#partenaires' },

@@ -21,9 +21,9 @@ const DATA = {
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris', 'FOAD'],
   description: `Formation d'introduction complète aux réseaux informatiques. Sans prérequis technique, elle couvre les appareils réseau, les médias, les protocoles et la configuration de base. Idéale avant d'attaquer le cursus CCNA ou une spécialisation cybersécurité / IoT.`,
-  objectifs: ["Décrire les composants d"un réseau — appareils, médias, topologies et architectures", "Configurer des équipements réseau Cisco de base via Cisco Packet Tracer", "Expliquer le rôle des protocoles réseau et les couches du modèle TCP/IP", "Configurer manuellement et automatiquement les adresses IP (IPv4 et IPv6)", "Tester et dépanner la connectivité réseau avec ping, traceroute et Packet Tracer", "Décrire les caractéristiques du cloud et de la virtualisation réseau"],
-  public: ["Débutants complets en informatique", "Étudiants BTS / Licence Pro", "Professionnels IT en reconversion", "Prérequis d"entrée pour CCNA ou CyberOps"],
-  prerequis: ["Aucun prérequis technique", "Utilisation basique d"un PC et d"Internet"],
+  objectifs: ["Décrire les composants d'un réseau — appareils, médias, topologies et architectures", "Configurer des équipements réseau Cisco de base via Cisco Packet Tracer", "Expliquer le rôle des protocoles réseau et les couches du modèle TCP/IP", "Configurer manuellement et automatiquement les adresses IP (IPv4 et IPv6)", "Tester et dépanner la connectivité réseau avec ping, traceroute et Packet Tracer", "Décrire les caractéristiques du cloud et de la virtualisation réseau"],
+  public: ["Débutants complets en informatique", "Étudiants BTS / Licence Pro", "Professionnels IT en reconversion", "Prérequis d'entrée pour CCNA ou CyberOps"],
+  prerequis: ["Aucun prérequis technique", "Utilisation basique d'un PC et d'Internet"],
   examen: {
     code: 'Networking Essentials Badge',
     duree: 'Auto-évaluation',
@@ -330,4 +330,3 @@ function FormationPage() {
     </>
   )
 }
-

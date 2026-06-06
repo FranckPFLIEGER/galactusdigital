@@ -23,7 +23,7 @@ function CertificationsPage() {
               Passer une certification
             </h1>
             <p style={{ fontSize: "1rem", color: "rgba(255,255,255,0.65)", maxWidth: "680px", lineHeight: 1.8 }}>
-              GALACTUS Digital collabore avec l'ensemble des organismes certificateurs afin de proposer à ses apprenants la certification correspondant à leurs besoins — en Martinique, Guadeloupe, Paris et à distance.
+              GALACTUS Digital collabore avec l'ensemble des organismes certificateurs afin de proposer à ses apprenants la certification correspondant à leurs besoins — dans les territoires ultramarins et en France hexagonale, en présentiel ou à distance.
             </p>
           </div>
         </section>
@@ -302,7 +302,7 @@ function CertificationsPage() {
                 Prêt à passer votre certification ?
               </h2>
               <p style={{ fontSize: "0.90rem", color: "rgba(255,255,255,0.55)", margin: 0, lineHeight: 1.7 }}>
-                Martinique · Guadeloupe · Paris · OnVUE à distance. Devis sous 48h.
+                Caraïbes · Océan Indien · France hexagonale · OnVUE partout. Devis sous 48h.
               </p>
             </div>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", flexShrink: 0 }}>

@@ -292,7 +292,7 @@ export function Header() {
       {/* Ticker */}
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
-          <span>🔴 Bientôt nos futures dates d'évènements</span>
+          <span>🔴 Site test pas encore en production</span>
         </div>
       </div>
 

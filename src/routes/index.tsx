@@ -10,7 +10,6 @@ import { Clients }        from '../components/Clients'
 import { Results }        from '../components/Results'
 import { Satisfaction }   from '../components/Satisfaction'
 import { Services }       from '../components/Services'
-import { Certifications } from '../components/Certifications'
 import { WhyUs }          from '../components/WhyUs'
 import { Partners }       from '../components/Partners'
 import { News }           from '../components/News'
@@ -37,7 +36,6 @@ function HomePage() {
         <Satisfaction />
         <Clients />
         <Results />
-        <Certifications />
         <Partners />
         <WhyUs />
         <News />

@@ -34,7 +34,7 @@ const DATA = {
     code: 'IoT Big Data & Analytics Badge',
     duree: 'Projet final + QCM',
     langue: 'Français / Anglais',
-    organisme: 'Cisco NetAcad',
+    organisme: 'Cisco Networking Academy',
     format: 'Évaluation continue + projet final',
     score: 'Badge numérique + attestation',
     note: 'Prérequis recommandé avant le Hackathon Playbook (cours 3/3). Cette formation prépare aux rôles IoT Data Engineer et aux certifications data (DP-900, AWS Data Analytics).',

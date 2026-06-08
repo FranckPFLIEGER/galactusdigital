@@ -34,7 +34,7 @@ const DATA = {
     code: 'Data Analytics Essentials Badge',
     duree: 'Évaluation continue',
     langue: 'Français / Anglais',
-    organisme: 'Pearson VUE / OpenEDG',
+    organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: 'Badge de complétion',
     note: 'Cette formation délivre un badge Cisco NetAcad. Elle constitue une base solide avant des certifications data comme DP-900 (Microsoft) ou Google Data Analytics.',

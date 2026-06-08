@@ -5,6 +5,12 @@ import { CheckCircle, Clock, Calendar, Users, MapPin, Phone, Mail, Award, BookOp
 
 export const Route = createFileRoute('/formations/networking-essentials')({
   component: FormationPage,
+  head: () => ({
+    meta: [
+      { title: "Networking Essentials Cisco NetAcad — Formation réseaux | GALACTUS Digital" },
+      { name: "description", content: "Formation Cisco NetAcad Networking Essentials. 35h. Badge certifiant. Fondamentaux réseaux sans prérequis. Présentiel FOAD E-learning. Certifié Qualiopi." },
+    ],
+  }),
 })
 
 const DATA = {

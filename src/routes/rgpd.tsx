@@ -64,8 +64,8 @@ function RgpdPage() {
                   titre: 'Données de gestion des formations',
                   base: 'Exécution du contrat',
                   donnees: 'Nom, prénom, email, téléphone, entreprise, données de parcours de formation, résultats aux évaluations.',
-                  duree: 'Durée nécessaire à l\'appréciation de la formation, puis archivage légal.',
-                  dest: 'GALACTUS Digital, éditeurs certifiant (Cisco, Microsoft, CompTIA, etc.), OPCO le cas échéant.',
+                  duree: '3 ans pour les dossiers pédagogiques (Art. R6352-9 Code du travail). 5 ans pour les pièces comptables.',
+                  dest: 'GALACTUS Digital, éditeurs certifiant (Cisco NetAcad, Microsoft, IPv6 Forum), OPCO le cas échéant.',
                 },
                 {
                   titre: 'Données de satisfaction et d\'amélioration continue',
@@ -165,6 +165,15 @@ function RgpdPage() {
               Ce site est hébergé par <strong>Cloudflare Pages</strong> (États-Unis). Cloudflare est certifié
               Data Privacy Framework (DPF), garantissant un niveau de protection adéquat des données
               transférées vers les États-Unis.
+            </p>
+          <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1rem' }}>
+              Les <strong>polices de caractères</strong> utilisées sur ce site (Barlow Condensed et Nunito)
+              sont chargées via <strong>Google Fonts</strong> (Alphabet Inc., États-Unis). Ce chargement
+              implique la transmission de votre adresse IP aux serveurs de Google afin de servir
+              les fichiers de polices. Google est certifié Data Privacy Framework (DPF) — décision
+              d'adéquation de la Commission européenne du 10 juillet 2023.
+              Pour éviter ce transfert, vous pouvez utiliser un bloqueur de polices tierces ou
+              nous contacter pour activer une version du site avec polices auto-hébergées.
             </p>
             <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1rem' }}>
               La plateforme pédagogique <strong>Cisco NetAcad</strong> est opérée par Cisco Systems (États-Unis),

@@ -34,7 +34,7 @@ const DATA = {
     code: 'IoT Security Badge',
     duree: `Projet d'audit + QCM`,
     langue: 'Français / Anglais',
-    organisme: 'Cisco NetAcad',
+    organisme: 'Cisco Networking Academy',
     format: 'Évaluation continue + projet final',
     score: 'Badge numérique + attestation',
     note: 'Formation avancée complémentaire à CyberOps Associate et Ethical Hacker. Prépare aux certifications sécurité spécialisées IoT et à la certification GICSP (ICS/SCADA Security).',

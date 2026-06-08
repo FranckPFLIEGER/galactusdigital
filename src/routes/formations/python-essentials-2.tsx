@@ -34,7 +34,7 @@ const DATA = {
     code: 'PCAP-31-03',
     duree: '65 minutes',
     langue: 'Français / Anglais',
-    organisme: 'Pearson VUE / OpenEDG',
+    organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: '70 % (700/1000)',
     note: `La certification PCAP est délivrée par l'OpenEDG Python Institute. Elle ouvre la voie à PCPP1 (Professional) et aux certifications DevNet.`,

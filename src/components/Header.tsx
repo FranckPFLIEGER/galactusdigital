@@ -233,7 +233,16 @@ export function Header() {
             <li className="nav-item" style={{ position: 'relative' }}
               onMouseEnter={() => setMegaVisible(true)}
               onMouseLeave={() => setMegaVisible(false)}>
-              <a href="/formations" className="nav-link-item">
+              <a
+                href="/formations"
+                className="nav-link-item"
+                aria-haspopup="true"
+                aria-expanded={megaVisible ? "true" : "false"}
+                onKeyDown={e => {
+                  if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setMegaVisible(v => !v) }
+                  if (e.key === 'Escape') setMegaVisible(false)
+                }}
+              >
                 Formations
                 <ChevronDown size={12} style={{ marginLeft: '3px', transition: 'transform 0.2s', transform: megaVisible ? 'rotate(180deg)' : 'none' }} />
               </a>
@@ -245,12 +254,24 @@ export function Header() {
               <li key={link.label} className="nav-item"
                 onMouseEnter={() => link.children && setDropdown(link.label)}
                 onMouseLeave={() => setDropdown(null)}>
-                <a href={link.href} className="nav-link-item">
+                <a
+                  href={link.href}
+                  className="nav-link-item"
+                  aria-haspopup={link.children ? "true" : undefined}
+                  aria-expanded={link.children ? (dropdown === link.label ? "true" : "false") : undefined}
+                  onKeyDown={e => {
+                    if (link.children && (e.key === 'Enter' || e.key === ' ')) {
+                      e.preventDefault()
+                      setDropdown(prev => prev === link.label ? null : link.label)
+                    }
+                    if (e.key === 'Escape') setDropdown(null)
+                  }}
+                >
                   {link.label}
-                  {link.children && <ChevronDown size={12} style={{ marginLeft: '3px' }} />}
+                  {link.children && <ChevronDown size={12} style={{ marginLeft: '3px', transition: 'transform .2s', transform: dropdown === link.label ? 'rotate(180deg)' : 'none' }} />}
                 </a>
                 {link.children && dropdown === link.label && (
-                  <ul className="nav-dropdown" role="menu">
+                  <ul className="nav-dropdown" role="menu" aria-label={link.label}>
                     {link.children.map((child: any) =>
                       child.isHeading ? (
                         <li key={child.label} style={{ padding: '0.55rem 1.1rem 0.2rem', fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: '#E41F26', pointerEvents: 'none', userSelect: 'none' }}>
@@ -283,7 +304,7 @@ export function Header() {
           </a>
         </div>
 
-        <button className="nav-mobile-btn" onClick={() => setMobileOpen(o => !o)}
+        <button className="nav-mobile-btn" aria-label="Menu principal" aria-expanded={mobileOpen ? "true" : "false"} onClick={() => setMobileOpen(o => !o)}
           aria-label={mobileOpen ? 'Fermer le menu' : 'Ouvrir le menu'} aria-expanded={mobileOpen}>
           {mobileOpen ? <X size={22} color="#E41F26" /> : <Menu size={22} color="#fff" />}
         </button>

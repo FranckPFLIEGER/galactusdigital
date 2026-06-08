@@ -34,7 +34,7 @@ const DATA = {
     code: 'Ethical Hacker Badge',
     duree: 'Évaluation continue',
     langue: 'Français / Anglais',
-    organisme: 'Pearson VUE / OpenEDG',
+    organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: 'Badge + attestation de complétion',
     note: 'Cette formation délivre un badge Cisco NetAcad. Elle constitue une excellente préparation aux certifications EC-Council CEH et OSCP (Offensive Security).',

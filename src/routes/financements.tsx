@@ -22,7 +22,7 @@ function FinancementsPage() {
               Guide du financement<br />de vos formations
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8 }}>
-              Plusieurs dispositifs permettent de financer vos formations GALACTUS Digital. Nos formations sont exonérées de TVA (article 293B du CGI). Nous vous accompagnons dans vos démarches.
+              Plusieurs dispositifs permettent de financer vos formations GALACTUS Digital. Nos formations sont exonérées de TVA (l'article 261-4-4° du CGI). Nous vous accompagnons dans vos démarches.
             </p>
           </div>
         </section>
@@ -98,7 +98,7 @@ function FinancementsPage() {
                   tag: 'Particuliers',
                   items: [
                     "Paiement à l'issue de la formation, à réception de facture",
-                    'TVA non applicable — article 293B du CGI',
+                    'TVA non applicable — l'article 261-4-4° du CGI',
                     'Paiement échelonné possible sur demande',
                     'Devis gratuit et sans engagement',
                   ],

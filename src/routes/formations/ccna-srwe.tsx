@@ -35,8 +35,8 @@ const DATA = {
     { num: '11–13', titre: 'Routes statiques', duree: '12h', contenu: ['Routes statiques IPv4 et IPv6 — types et cas d\'usage', 'Routes statiques par défaut et flottantes (failover)', 'Dépannage des routes statiques avec show ip route', 'TP — Topologie multi-routeurs avec routes statiques'] },
     { num: '14–16', titre: 'Réseau sans fil (WLAN)', duree: '10h', contenu: ['Architecture WLAN — AP autonome et contrôlé (WLC)', 'Standards IEEE 802.11 a/b/g/n/ac/ax et canaux', 'Sécurité WLAN — WPA2, WPA3, 802.1X', 'TP — Configuration WLAN avec WLC Cisco'] },
   ],
-  examen: { code: '200-301 CCNA', duree: '120 minutes', langue: 'Anglais', organisme: 'Pearson VUE', format: 'QCM, drag-and-drop, simulation réseau', score: '825 / 1000', note: 'Ce module est le 2ème des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA.' },
-  methodes: ['Formateur certifié Cisco (instructeur NetAcad officiel)', 'Plateforme Cisco NetAcad 24h/24 — accès pendant et après la formation', 'Travaux pratiques sur Cisco Packet Tracer', 'Quiz de validation des acquis à chaque fin de module', 'Auto-évaluation en début et en fin de formation', 'Supports de cours officiels Cisco inclus', 'Attestation de formation et de présence', 'Passage de l\'examen officiel Pearson VUE intégré'],
+  examen: { code: '200-301 CCNA', duree: '120 minutes', langue: 'Anglais', organisme: 'Cisco Networking Academy', format: 'QCM, drag-and-drop, simulation réseau', score: '825 / 1000', note: 'Ce module est le 2ème des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA.' },
+  methodes: ['Formateur certifié Cisco (instructeur NetAcad officiel)', 'Plateforme Cisco NetAcad 24h/24 — accès pendant et après la formation', 'Travaux pratiques sur Cisco Packet Tracer', 'Quiz de validation des acquis à chaque fin de module', 'Auto-évaluation en début et en fin de formation', 'Supports de cours officiels Cisco inclus', 'Attestation de formation et de présence', 'Passage de l\'examen certifiant Cisco Networking Academy intégré'],
 }
 
 function SectionTitle({ children, light = false }: { children: React.ReactNode; light?: boolean }) {

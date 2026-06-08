@@ -66,7 +66,7 @@ function HandicapPage() {
                     Référent Handicap — GALACTUS Digital
                   </div>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.6rem', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.3rem' }}>
-                    Franck PFLIEGER
+                    Le président
                   </div>
                   <div style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.50)', marginBottom: '2rem', lineHeight: 1.6 }}>
                     Certifié Référent Handicap — DFD Consulting<br />

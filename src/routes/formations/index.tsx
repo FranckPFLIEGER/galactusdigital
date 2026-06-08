@@ -1,9 +1,9 @@
 import { createFileRoute } from "@tanstack/react-router"
 import { useState, useMemo } from "react"
-import { Header } from "../components/Header"
-import { Footer } from "../components/Footer"
-import { FORMATIONS, FAMILLES } from "../data/catalogue"
-import type { Formation } from "../data/catalogue"
+import { Header } from "../../components/Header"
+import { Footer } from "../../components/Footer"
+import { FORMATIONS, FAMILLES } from "../../data/catalogue"
+import type { Formation } from "../../data/catalogue"
 import { ArrowRight, Clock, Award, Phone, Mail, Filter } from "lucide-react"
 
 export const Route = createFileRoute("/formations/")({
@@ -314,4 +314,3 @@ function FormationsPage() {
     </>
   )
 }
-

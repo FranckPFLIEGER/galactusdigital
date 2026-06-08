@@ -34,7 +34,7 @@ const DATA = {
     code: 'IoT Introduction Badge',
     duree: 'Évaluation continue',
     langue: 'Français / Anglais',
-    organisme: 'Cisco NetAcad',
+    organisme: 'Cisco Networking Academy',
     format: 'Évaluation continue + projet final',
     score: 'Badge numérique Cisco',
     note: `Cette formation délivre un badge numérique Cisco partageable sur LinkedIn. Elle constitue le point d'entrée recommandé avant IoT Fundamentals: Connecting Things.`,

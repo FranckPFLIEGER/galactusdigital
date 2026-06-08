@@ -34,7 +34,7 @@ const DATA = {
     code: 'IoT Fundamentals: Connecting Things Badge',
     duree: 'Projet final + QCM',
     langue: 'Français / Anglais',
-    organisme: 'Cisco NetAcad',
+    organisme: 'Cisco Networking Academy',
     format: 'Évaluation continue + projet final',
     score: 'Badge numérique + attestation',
     note: 'Prérequis recommandé avant IoT Fundamentals: Big Data & Analytics (cours 2/3) et le Hackathon Playbook (cours 3/3).',

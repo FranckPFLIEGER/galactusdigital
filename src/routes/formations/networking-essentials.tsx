@@ -34,7 +34,7 @@ const DATA = {
     code: 'Networking Essentials Badge',
     duree: 'Auto-évaluation',
     langue: 'Français / Anglais',
-    organisme: 'Pearson VUE / OpenEDG',
+    organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: 'Badge de complétion',
     note: `Cette formation délivre un badge Cisco NetAcad. Elle constitue la base recommandée avant d'entrer dans le cursus CCNA.`,

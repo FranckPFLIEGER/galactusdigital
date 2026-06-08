@@ -104,7 +104,7 @@ export function RSE() {
               c'est contribuer à l'égalité des chances et au développement durable
               de nos territoires. Chaque certification obtenue est une victoire collective."
             </p>
-            <div className="rse-commitment-author">— Franck PFLIEGER</div>
+            <div className="rse-commitment-author">— Le président, GALACTUS Digital</div>
           </div>
         </div>
 

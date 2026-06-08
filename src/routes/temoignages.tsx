@@ -13,7 +13,7 @@ const temoignagesEcrits = [
     entreprise: 'Collectivité territoriale — Martinique',
     formation: 'CCNA Routing & Switching',
     annee: '2024',
-    texte: 'La formation dispensée par Franck PFLIEGER a complètement transformé notre approche des réseaux. La pédagogie est exceptionnelle — concrets, adaptés à notre contexte ultramarin, les ateliers pratiques nous ont permis de certifier 100% de notre équipe. Je recommande sans réserve.',
+    texte: 'La formation dispensée par le président de GALACTUS Digital a complètement transformé notre approche des réseaux. La pédagogie est exceptionnelle — concrets, adaptés à notre contexte ultramarin, les ateliers pratiques nous ont permis de certifier 100% de notre équipe. Je recommande sans réserve.',
     note: '5/5',
   },
   {
@@ -21,7 +21,7 @@ const temoignagesEcrits = [
     entreprise: 'Entreprise privée — Guadeloupe',
     formation: 'CCNP Enterprise',
     annee: '2024',
-    texte: 'Enfin un organisme qui comprend les enjeux du numérique aux Caraïbes. La formation CCNP était exigeante mais l\'accompagnement de bout en bout a fait toute la différence. Le simulateur Packet Tracer utilisé en cours m\'a permis de pratiquer sans risque avant d\'intervenir sur nos infrastructures réelles.',
+    texte: "Enfin un organisme qui comprend les enjeux du numérique aux Caraïbes. La formation CCNP était exigeante mais l'accompagnement de bout en bout a fait toute la différence. Le simulateur Packet Tracer utilisé en cours m'a permis de pratiquer sans risque avant d'intervenir sur nos infrastructures réelles.",
     note: '5/5',
   },
   {
@@ -29,31 +29,31 @@ const temoignagesEcrits = [
     entreprise: 'Opérateur télécom — Réunion',
     formation: 'IPv6 Forum Certification',
     annee: '2023',
-    texte: 'En tant que femme dans un secteur très masculin, j\'ai trouvé chez GALACTUS Digital une formation qui m\'a mis sur un pied d\'égalité avec mes collègues. La certification IPv6 a été un vrai tremplin dans ma carrière. Merci pour cet accompagnement de qualité.',
+    texte: "En tant que femme dans un secteur très masculin, j'ai trouvé chez GALACTUS Digital une formation qui m'a mis sur un pied d'égalité avec mes collègues. La certification IPv6 a été un vrai tremplin dans ma carrière. Merci pour cet accompagnement de qualité.",
     note: '5/5',
   },
   {
-    nom: 'Directeur des systèmes d\'information',
+    nom: "Directeur des systèmes d'information",
     entreprise: 'Établissement scolaire — Martinique',
     formation: 'Microsoft Azure Administrator',
     annee: '2025',
-    texte: 'Nous avions besoin de former rapidement nos techniciens sur Azure dans le cadre de notre migration cloud. GALACTUS Digital a su adapter le contenu à notre contexte précis et à nos contraintes de connectivité en FOAD. Résultat : 100% de certification au premier passage.',
+    texte: "Nous avions besoin de former rapidement nos techniciens sur Azure dans le cadre de notre migration cloud. GALACTUS Digital a su adapter le contenu à notre contexte précis et à nos contraintes de connectivité en FOAD. Résultat : 100% de certification au premier passage.",
     note: '5/5',
   },
   {
     nom: 'Technicien réseau',
     entreprise: 'Administration publique — Guyane',
-    formation: 'CompTIA Security+',
+    formation: 'CyberOps Associate',
     annee: '2023',
-    texte: 'La formation Security+ m\'a donné toutes les clés pour comprendre et sécuriser nos infrastructures. Le fait que la formation soit disponible à distance depuis la Guyane a été déterminant — nous n\'avons plus à nous déplacer en métropole pour accéder à des formations de ce niveau.',
+    texte: "La formation CyberOps Associate m'a donné toutes les clés pour comprendre et sécuriser nos infrastructures. Le fait que la formation soit disponible à distance depuis la Guyane a été déterminant — nous n'avons plus à nous déplacer en métropole pour accéder à des formations de ce niveau.",
     note: '5/5',
   },
   {
     nom: 'Chef de projet informatique',
     entreprise: 'Secteur privé — Saint-Martin',
-    formation: 'PMI — Project Management Professional',
+    formation: 'Microsoft Azure Administrator (AZ-104)',
     annee: '2024',
-    texte: 'La certification PMP était un objectif que je poursuivais depuis longtemps. Grâce à la méthode de GALACTUS Digital — évaluation des acquis à chaque module, ateliers pratiques, soutien entre les sessions — j\'ai réussi du premier coup. Un organisme vraiment professionnel.',
+    texte: "La certification AZ-104 était un objectif que je poursuivais depuis longtemps. Grâce à la méthode de GALACTUS Digital — évaluation des acquis à chaque module, ateliers pratiques, soutien entre les sessions — j'ai réussi du premier coup. Un organisme vraiment professionnel.",
     note: '5/5',
   },
 ]
@@ -81,7 +81,7 @@ function TemoignagesPage() {
           </div>
         </section>
 
-        {/* Vidéos TV — section */}
+        {/* Vidéos TV */}
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>
@@ -93,11 +93,10 @@ function TemoignagesPage() {
               GALACTUS Digital et ses formations certifiantes IT dans les territoires ultramarins ont été mis en avant
               par les médias régionaux. Retrouvez ici nos passages TV et interventions presse.
             </p>
-            {/* Placeholder vidéos TV — à remplacer avec les vraies vidéos */}
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
               {[1, 2, 3].map(i => (
                 <div key={i} style={{ background: 'var(--g-black)', border: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden' }}>
-                  <div style={{ aspectRatio: '16/9', background: '#1a1a18', display: 'flex', alignItems: 'center', justifyContent: 'center', position: 'relative', cursor: 'pointer' }}>
+                  <div style={{ aspectRatio: '16/9', background: '#1a1a18', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
                     <div style={{ width: '56px', height: '56px', background: 'var(--g-red)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                       <Play size={24} color="white" fill="white" />
                     </div>
@@ -107,15 +106,12 @@ function TemoignagesPage() {
                       Reportage TV — Territoires ultramarins {2023 + i - 1}
                     </div>
                     <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)' }}>
-                      À venir — uploader votre vidéo
+                      À venir — vidéo en cours d'intégration
                     </div>
                   </div>
                 </div>
               ))}
             </div>
-            <p style={{ fontSize: '0.80rem', color: '#888', marginTop: '1.5rem', fontStyle: 'italic' }}>
-              * Les vidéos seront disponibles dès leur ajout dans le projet. Contactez-nous pour toute demande presse.
-            </p>
           </div>
         </section>
 

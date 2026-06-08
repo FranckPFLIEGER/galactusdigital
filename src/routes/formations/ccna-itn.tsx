@@ -131,7 +131,7 @@ const DATA = {
     code:       '200-301 CCNA',
     duree:      '120 minutes',
     langue:     'Anglais',
-    organisme:  'Pearson VUE',
+    organisme:  'Cisco Networking Academy',
     format:     'QCM, drag-and-drop, simulation réseau Cisco',
     score:      '825 / 1000',
     note:       'Ce module est le 1er des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA.',
@@ -147,7 +147,7 @@ const DATA = {
     'Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis',
     'Supports de cours officiels Cisco inclus (version numérique NetAcad)',
     'Attestation de formation et de présence remise à l\'issue du parcours',
-    'Passage de l\'examen officiel Pearson VUE intégré au programme',
+    'Passage de l\'examen certifiant Cisco Networking Academy intégré au programme',
   ],
 }
 

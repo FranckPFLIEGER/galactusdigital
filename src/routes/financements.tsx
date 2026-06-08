@@ -98,7 +98,7 @@ function FinancementsPage() {
                   tag: 'Particuliers',
                   items: [
                     "Paiement à l'issue de la formation, à réception de facture",
-                    'TVA non applicable — l'article 261-4-4° du CGI',
+                    "TVA non applicable — l'article 261-4-4° du CGI",
                     'Paiement échelonné possible sur demande',
                     'Devis gratuit et sans engagement',
                   ],

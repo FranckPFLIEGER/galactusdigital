@@ -121,7 +121,7 @@ function RgpdPage() {
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.70)' }}>
                   <div><strong style={{ color: '#fff' }}>Organisme :</strong> GALACTUS Digital</div>
-                  <div><strong style={{ color: '#fff' }}>Responsable :</strong> Franck PFLIEGER</div>
+                  <div><strong style={{ color: '#fff' }}>Responsable :</strong> Le président</div>
                   <div><strong style={{ color: '#fff' }}>Siège :</strong> 66 avenue des Champs Élysées, 75008 Paris</div>
                   <div><strong style={{ color: '#fff' }}>Email :</strong> <a href="mailto:president@galactusdigital.com" style={{ color: 'var(--g-red)' }}>president@galactusdigital.com</a></div>
                   <div><strong style={{ color: '#fff' }}>Téléphone :</strong> +33 07 81 07 47 46</div>

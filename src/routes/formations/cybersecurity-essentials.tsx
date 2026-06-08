@@ -34,7 +34,7 @@ const DATA = {
     code: 'Cybersecurity Essentials Badge',
     duree: 'Évaluation continue',
     langue: 'Français / Anglais',
-    organisme: 'Pearson VUE / OpenEDG',
+    organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: 'Badge de complétion',
     note: 'Formation préparatoire aux certifications CyberOps Associate (Cisco) et Security+ (CompTIA). Elle délivre un badge Cisco NetAcad.',

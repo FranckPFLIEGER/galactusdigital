@@ -146,7 +146,7 @@ function FoadPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Sessions live WEBEX (synchrone)','Plateforme NetAcad / Microsoft Learn incluse','Supports de cours officiels inclus','Feuilles de présence numériques','Passage de la certification intégré','Attestation de formation et de présence','Éligible CPF, OPCO, aides régionales DOM','Test de connexion organisé avant démarrage'].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Sessions live WEBEX (synchrone)','Plateforme NetAcad / Microsoft Learn incluse','Supports de cours officiels inclus','Feuilles de présence numériques','Passage de la certification intégré','Attestation de formation et de présence','Éligible CPF, OPCO, aides régionales DOM','Test de connexion organisé avant démarrage','Plan de travail individuel remis avant démarrage (Circ. DGEFP 2026)'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.70)' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -289,6 +289,7 @@ function FoadPage() {
                 { ref: 'Art. D.6313-3-1', title: 'Assistance pédagogique documentée', desc: "Une assistance technique et pédagogique appropriée est mise en œuvre pour accompagner le bénéficiaire dans le déroulement de son parcours à distance." },
                 { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique et pédagogique', desc: "Les outils de formation sont centralisés sur une plateforme digitale (NetAcad + WEBEX). Les apprenants reçoivent une invitation pour vérifier le bon fonctionnement avant démarrage." },
                 { ref: 'Circulaire DGEFP 2026-2027', title: 'Réalité des actions documentée', desc: "La réalité de nos actions de formation à distance est attestée par les bilans pédagogiques et les feuilles de présence numériques." },
+                { ref: 'Circ. DGEFP/MOC/2026/30 Art. 3', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de la formation FOAD, conformément à la circulaire DGEFP du 17 février 2026 relative aux priorités de contrôle 2026-2027." },
                 { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé', desc: "Un suivi individualisé est mis en place pour chaque apprenant en FOAD, avec évaluation des acquis à chaque module via ateliers pratiques et QCM sur NetAcad." },
               ].map(c => (
                 <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>

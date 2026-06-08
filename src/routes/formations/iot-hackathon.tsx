@@ -34,7 +34,7 @@ const DATA = {
     code: 'IoT Hackathon Badge',
     duree: 'Présentation jury (30 min)',
     langue: 'Français / Anglais',
-    organisme: 'Cisco NetAcad',
+    organisme: 'Cisco Networking Academy',
     format: 'Évaluation continue + projet final',
     score: 'Badge + attestation projet',
     note: 'Formation culminante du cursus IoT Fundamentals. Le badge obtenu valide la capacité à concevoir et déployer une solution IoT complète — compétence très recherchée sur le marché.',

@@ -49,7 +49,7 @@ export function President() {
             <div className="president-signature">
               <div className="president-signature-line" />
               <div>
-                <div className="president-name">Franck PFLIEGER</div>
+                <div className="president-name">Le président</div>
                 <div className="president-title">Fondateur & Président — GALACTUS Digital</div>
               </div>
             </div>

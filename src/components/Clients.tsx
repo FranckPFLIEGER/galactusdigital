@@ -42,7 +42,7 @@ export function Clients() {
             >
               <img
                 src={`/clients/${c.file}`}
-                alt="Logo client"
+                alt={`Logo partenaire GALACTUS Digital — référence ${String(i + 1).padStart(3, '0')}`}
                 loading="lazy"
                 className="client-logo"
               />

@@ -34,7 +34,7 @@ const DATA = {
     code: '010-160 Linux Essentials',
     duree: '60 minutes',
     langue: 'Français / Anglais',
-    organisme: 'Pearson VUE / OpenEDG',
+    organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: '500 / 800',
     note: 'Certification Linux Essentials délivrée par le LPI (Linux Professional Institute). Elle prépare à LPIC-1 (Linux Administrator) et aux parcours DevNet et cybersécurité.',

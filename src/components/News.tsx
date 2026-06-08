@@ -4,7 +4,7 @@ const articles = [
   {
     date: 'Décembre 2025',
     title: 'IPv6 Hall of Fame 2025',
-    desc: "Franck PFLIEGER intègre le IPv6 Hall of Fame 2025 — une reconnaissance mondiale pour son engagement dans le développement de l'IPv6 dans les territoires ultramarins.",
+    desc: "Le président de GALACTUS Digital intègre le IPv6 Hall of Fame 2025 — une reconnaissance mondiale pour son engagement dans le développement de l'IPv6 dans les territoires ultramarins.",
     tag: 'Distinction',
     image: '/awards/hof-2025.png',
   },

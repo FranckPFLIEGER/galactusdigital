@@ -1,0 +1,17 @@
+# GALACTUS Digital — Cloudflare Workers
+# Référence dashboard : https://dash.cloudflare.com → Workers & Pages → galactusdigital
+
+name            = "galactusdigital"
+compatibility_date  = "2026-06-06"
+compatibility_flags = ["nodejs_compat"]
+
+# TanStack Start génère le worker dans .output/server/
+main = ".output/server/cloudflare-module/index.mjs"
+
+# Assets statiques (images, CSS, JS build)
+[assets]
+directory = ".output/public"
+
+# Variables d'environnement (à remplir si besoin)
+[vars]
+# SITE_URL = "https://galactusdigital.com"

@@ -87,7 +87,7 @@ export function Services() {
         {/* ── Grille 3 cartes ── */}
         <div
           className="services-grid"
-          style={{ gridTemplateColumns: 'repeat(3,1fr)', marginTop: '3rem' }}
+          style={{ marginTop: '3rem' }}
         >
           {services.map((s, i) => (
             <div

@@ -2,46 +2,36 @@ import { useIntersection } from '../hooks/useIntersection'
 
 const articles = [
   {
-    date: 'Décembre 2025',
-    title: 'IPv6 Hall of Fame 2025',
-    desc: "Le président de GALACTUS Digital intègre le IPv6 Hall of Fame 2025 — une reconnaissance mondiale pour son engagement dans le développement de l'IPv6 dans les territoires ultramarins.",
-    tag: 'Distinction',
-    image: '/awards/hof-2025.png',
-  },
-  {
-    date: 'Septembre 2025',
-    title: 'Rapport IPv6 Council Martinique',
-    desc: "Publication du rapport d'activité du IPv6 Council Martinique, dont GALACTUS Digital est membre actif via l'association ASPIK.",
+    date: '2019',
+    title: "Rapport IPv6 Council Martinique",
+    desc: "Rapport d'activité du IPv6 Council Martinique — atelier réunissant les opérateurs télécoms de la Caraïbe française pour accélérer le déploiement de l'IPv6. GALACTUS Digital en est membre actif via l'association ASPIK.",
     tag: 'Rapport',
-    image: '/actu/ipv6-martinique.png',
+    image: '/actu/ipv6-council-report-2019.png',
+    pdf: '/docs/ipv6-council-report-2019.pdf',
   },
   {
-    date: 'Avril 2025',
-    title: 'Métiers du numérique dans les territoires ultramarins',
-    desc: "Étude sur les métiers du numérique dans les territoires ultramarins — un contexte dans lequel GALACTUS Digital accompagne la montée en compétences.",
+    date: 'Juillet 2016',
+    title: "Création du IPv6 Council Martinique",
+    desc: "Communiqué officiel du IPv6 Forum annonçant la fondation du IPv6 Council Martinique, sous la présidence de notre fondateur, en collaboration avec l'écosystème télécom de la Caraïbe française.",
+    tag: 'Communiqué',
+    image: '/actu/ipv6-council-2016.png',
+    pdf: '/docs/ipv6-council-2016.pdf',
+  },
+  {
+    date: '2024',
+    title: "Métiers du numérique dans les territoires ultramarins",
+    desc: "Étude de l'Observatoire Régional de l'Emploi et de la Formation sur les métiers du numérique — un contexte dans lequel GALACTUS Digital accompagne la montée en compétences.",
     tag: 'Étude',
-    image: null,
+    image: '/actu/metiers-numerique.png',
+    pdf: '/docs/metiers-numerique.pdf',
   },
   {
-    date: 'Mars 2025',
-    title: 'IPv6 Forum — Actualités',
-    desc: "Les dernières actualités du IPv6 Forum international, dont GALACTUS Digital est partenaire officiel dans les territoires ultramarins.",
+    date: 'Juin 2019',
+    title: "ARCEP — L'état d'internet en France",
+    desc: "Rapport d'activité de l'ARCEP (Tome 3) sur l'état d'internet en France, incluant la transition vers l'IPv6 — une veille de référence sur les enjeux d'infrastructure réseau.",
     tag: 'Veille',
-    image: null,
-  },
-  {
-    date: 'Mai 2024',
-    title: 'Above and Beyond Instructor',
-    desc: "Distinction décernée pour un engagement exceptionnel dans la formation IT — au-delà des standards habituels.",
-    tag: 'Award',
-    image: null,
-  },
-  {
-    date: '2023 — 2024',
-    title: 'Advisor Board Certificate',
-    desc: "Membre du conseil consultatif d'un organisme IT international — reconnaissance de l'expertise de GALACTUS Digital.",
-    tag: 'Distinction',
-    image: null,
+    image: '/actu/arcep-internet-2019.png',
+    pdf: '/docs/arcep-internet-2019.pdf',
   },
 ]
 
@@ -51,11 +41,11 @@ export function News() {
     <section className="news-section" id="actualites" ref={ref}>
       <div className="section-inner">
         <span className={`section-label reveal${isVisible ? ' visible' : ''}`}>
-          Actualités & Veille IT
+          Actualités &amp; Veille IT
         </span>
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
         <h2 className={`section-h2 reveal${isVisible ? ' visible' : ''} delay-1`}>
-          ASPIK & rayonnement<br />international
+          ASPIK &amp; rayonnement<br />international
         </h2>
         <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '3rem' }}>
@@ -78,6 +68,16 @@ export function News() {
               <div className="news-date">{a.date}</div>
               <h3 className="news-title">{a.title}</h3>
               <p className="news-desc">{a.desc}</p>
+              {a.pdf && (
+                <a
+                  className="news-doc-link"
+                  href={a.pdf}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Consulter le document (PDF) &rarr;
+                </a>
+              )}
             </div>
           ))}
         </div>

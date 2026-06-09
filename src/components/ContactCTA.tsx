@@ -132,7 +132,7 @@ export function ContactCTA() {
   return (
     <section className="contact-section" id="contact" ref={ref}>
       <div className="contact-bg" />
-      <div className="section-inner" style={{ maxWidth: "1100px", padding: "5rem 2rem" }}>
+      <div className="section-inner" style={{ maxWidth: "1100px", padding: "5rem 2rem", position: "relative", zIndex: 1 }}>
 
         <div style={{ display: "grid", gridTemplateColumns: "1fr 380px", gap: "4rem", alignItems: "start" }}>
 

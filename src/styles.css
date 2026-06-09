@@ -257,11 +257,12 @@ a { color: inherit; }
 
 .section-inner { max-width: 1280px; margin: 0 auto; padding: 6rem 2rem; }
 .section-label { display: block; font-family: var(--font-title); font-size: 0.70rem; font-weight: 600; letter-spacing: 0.20em; text-transform: uppercase; color: var(--g-red); margin-bottom: 0.6rem; }
-.section-h2 { font-family: var(--font-title); font-size: clamp(1.5rem, 2.2vw, 2rem); font-weight: 700; letter-spacing: 0.04em; line-height: 1.15; color: var(--g-black); margin: 0 0 1.25rem; text-transform: uppercase; }
-.section-h2-light { font-family: var(--font-title); font-size: clamp(1.5rem, 2.2vw, 2rem); font-weight: 700; letter-spacing: 0.04em; line-height: 1.15; color: var(--g-white); margin: 0 0 1.25rem; text-transform: uppercase; }
+.section-h2 { font-family: var(--font-title); font-size: clamp(1.25rem, 6vw, 2rem); font-weight: 700; letter-spacing: 0.04em; line-height: 1.15; color: var(--g-black); margin: 0 0 1.25rem; text-transform: uppercase; }
+.section-h2-light { font-family: var(--font-title); font-size: clamp(1.25rem, 6vw, 2rem); font-weight: 700; letter-spacing: 0.04em; line-height: 1.15; color: var(--g-white); margin: 0 0 1.25rem; text-transform: uppercase; }
 .section-body { font-size: 0.95rem; line-height: 1.8; color: #4a4a48; max-width: 600px; }
 .section-body-light { font-size: 0.95rem; line-height: 1.8; color: rgba(255,255,255,0.62); }
 @media (max-width: 768px) { .section-inner { padding: 4rem 1.25rem; } }
+@media (max-width: 480px) { .section-inner { padding: 3rem 1rem; } }
 
 .hero { min-height: 100vh; background: var(--g-black); position: relative; overflow: hidden; display: flex; align-items: center; }
 .hero-pattern { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.04) 1px, transparent 1px); background-size: 32px 32px; pointer-events: none; }
@@ -298,7 +299,8 @@ a { color: inherit; }
 .stat-number { font-family: var(--font-title); font-size: 3rem; font-weight: 700; color: var(--g-white); line-height: 1; margin-bottom: 0.4rem; letter-spacing: 0.02em; }
 .stat-number span { color: var(--g-red); }
 .stat-label { font-family: var(--font-title); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--g-gray); }
-@media (max-width: 700px) { .stats-inner { grid-template-columns: repeat(2,1fr); padding: 2rem 1.25rem; } .stat-item:nth-child(2)::after { display: none; } .stat-number { font-size: 2.4rem; } }
+@media (max-width: 700px) { .stats-inner { grid-template-columns: repeat(2,1fr); padding: 2rem 1.25rem; gap: 1.25rem; } .stat-item:nth-child(2)::after { display: none; } .stat-number { font-size: 2.2rem; } }
+@media (max-width: 420px) { .stats-inner { padding: 1.5rem 1rem; gap: 1rem; } .stat-number { font-size: 1.8rem; } .stat-label { font-size: 0.62rem; letter-spacing: 0.06em; } }
 
 .about-section { background: var(--g-white); }
 .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center; }
@@ -352,8 +354,8 @@ a { color: inherit; }
 
 .services-section { background: var(--g-black); position: relative; overflow: hidden; }
 .services-bg { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.025) 1px, transparent 1px); background-size: 32px 32px; pointer-events: none; }
-.services-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-top: 3rem; }
-.service-card { background: rgba(255,255,255,0.02); border-left: 4px solid var(--g-red); border-top: 1px solid rgba(255,255,255,0.06); border-right: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 2.5rem; position: relative; overflow: hidden; transition: background var(--transition-normal), transform var(--transition-normal); }
+.services-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.5rem; margin-top: 3rem; }
+.service-card { background: rgba(255,255,255,0.02); border-left: 4px solid var(--g-red); border-top: 1px solid rgba(255,255,255,0.06); border-right: 1px solid rgba(255,255,255,0.06); border-bottom: 1px solid rgba(255,255,255,0.06); padding: 2.5rem 2rem; position: relative; overflow: hidden; transition: background var(--transition-normal), transform var(--transition-normal); }
 .service-card:hover { background: rgba(255,255,255,0.05); transform: translateY(-3px); }
 .service-icon { width: 48px; height: 48px; background: var(--g-red); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem; }
 .service-title { font-family: var(--font-title); font-size: 1.3rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--g-white); margin: 0 0 0.75rem; }
@@ -361,7 +363,8 @@ a { color: inherit; }
 .service-features { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.55rem; }
 .service-feature { display: flex; align-items: center; gap: 0.65rem; font-size: 0.82rem; color: rgba(255,255,255,0.68); }
 .service-feature-dot { width: 6px; height: 6px; background: var(--g-red); flex-shrink: 0; }
-@media (max-width: 720px) { .services-grid { grid-template-columns: 1fr; } .service-card { padding: 2rem 1.5rem; } }
+@media (max-width: 960px) { .services-grid { grid-template-columns: repeat(2,1fr); } }
+@media (max-width: 620px) { .services-grid { grid-template-columns: 1fr; } .service-card { padding: 1.75rem 1.25rem; } }
 
 .certs-section { background: var(--g-offwhite); }
 .publishers-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1.25rem; margin-top: 3rem; }
@@ -424,6 +427,7 @@ a { color: inherit; }
 .contact-section { background: var(--g-black); position: relative; overflow: hidden; border-top: 4px solid var(--g-red); }
 .contact-bg { position: absolute; inset: 0; background-image: radial-gradient(circle, rgba(255,255,255,0.03) 1px, transparent 1px); background-size: 28px 28px; }
 .contact-inner { max-width: 700px; margin: 0 auto; padding: 5rem 2rem; text-align: center; position: relative; z-index: 1; }
+@media (max-width: 480px) { .contact-inner { padding: 3rem 1rem; } }
 .contact-h2 { font-family: var(--font-title); font-size: clamp(1.5rem, 2.5vw, 2.2rem); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--g-white); margin: 0 0 1rem; line-height: 1.15; }
 .contact-sub { font-size: 0.93rem; line-height: 1.75; color: rgba(255,255,255,0.60); max-width: 500px; margin: 0 auto 2.5rem; }
 .contact-actions { display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; }

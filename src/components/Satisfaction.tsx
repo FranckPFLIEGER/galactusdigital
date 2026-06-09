@@ -9,8 +9,8 @@ export function Satisfaction() {
         <div className="satisfaction-grid">
 
           <div className={`reveal${isVisible ? ' visible' : ''}`}>
-            <span className="section-label">Qualité</span>
-            <div className="g-rule g-rule-anim" />
+            <span className={`section-label reveal${isVisible ? ' visible' : ''}`}>Satisfaction &amp; Qualité</span>
+            <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
             <h2 className="section-h2">
               Votre satisfaction :<br />notre priorité
             </h2>

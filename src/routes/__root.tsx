@@ -95,12 +95,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
-        {/* Cloudflare Web Analytics */}
-        <script
-          defer
-          src="https://static.cloudflareinsights.com/beacon.min.js"
-          data-cf-beacon='{"token": "469461830f314c95be3d0e4847f0c2b6"}'
-        />
       </head>
       <body>
         {children}

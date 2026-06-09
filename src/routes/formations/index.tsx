@@ -94,9 +94,14 @@ function Card({ f }: { f: Formation }) {
 
       {/* prix + CTA */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: ".9rem 1.25rem", borderTop: "1px solid rgba(187,187,187,.20)", marginTop: "auto" }}>
-        <span style={{ fontFamily: "var(--font-title)", fontSize: ".82rem", fontWeight: 700, color: prix ? "var(--g-black)" : "#aaa" }}>
-          {prix ? `${prix.toLocaleString("fr-FR")} € HT` : "Sur demande"}
-        </span>
+        <div style={{ display: "flex", flexDirection: "column", gap: ".15rem" }}>
+          <span style={{ fontFamily: "var(--font-title)", fontSize: ".82rem", fontWeight: 700, color: prix ? "var(--g-black)" : "var(--g-black)" }}>
+            {prix ? `${prix.toLocaleString("fr-FR")} € HT` : "Devis sous 48h"}
+          </span>
+          <span style={{ fontFamily: "var(--font-title)", fontSize: ".58rem", fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: "#27ae60" }}>
+            💶 CPF · OPCO · AIF
+          </span>
+        </div>
         <a href={`/formations/${f.slug}`} style={{ display: "inline-flex", alignItems: "center", gap: ".35rem", fontFamily: "var(--font-title)", fontSize: ".70rem", fontWeight: 700, letterSpacing: ".10em", textTransform: "uppercase", color, textDecoration: "none" }}>
           Voir la fiche <ArrowRight size={12} />
         </a>
@@ -233,6 +238,9 @@ function FormationsPage() {
                   <div style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#E41F26" }}>
                     Partenaire n° 3018982
                   </div>
+                  <div style={{ fontSize: ".72rem", color: "#27ae60", fontWeight: 600, marginTop: ".15rem" }}>
+                    ✓ Finançable CPF / OPCO / AIF
+                  </div>
                   <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: "var(--g-black)", margin: 0 }}>
                     Cisco NetAcad
                   </h2>
@@ -258,6 +266,9 @@ function FormationsPage() {
                 <div>
                   <div style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#0078D4" }}>
                     Partenaire n° 4653557
+                  </div>
+                  <div style={{ fontSize: ".72rem", color: "#27ae60", fontWeight: 600, marginTop: ".15rem" }}>
+                    ✓ Finançable CPF / OPCO / AIF
                   </div>
                   <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: "var(--g-black)", margin: 0 }}>
                     Microsoft Azure & M365

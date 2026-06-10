@@ -37,7 +37,7 @@ const DATA = {
     organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: '825 / 1000',
-    note: 'Certification Cisco DevNet Associate valable 3 ans. Renouvellement par recertification ou examens de spécialisation.',
+    note: '',
   },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",

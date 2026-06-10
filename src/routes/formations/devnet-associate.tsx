@@ -33,7 +33,7 @@ const DATA = {
   examen: {
     code: '200-901 DEVASC',
     duree: '120 minutes',
-    langue: 'Français / Anglais',
+    langue: 'Français',
     organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: '825 / 1000',

@@ -33,7 +33,7 @@ const DATA = {
   examen: {
     code: 'Networking Essentials Final Exam',
     duree: 'Évaluation continue',
-    langue: 'Français / Anglais',
+    langue: 'Français',
     organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: '700 sur 1000',

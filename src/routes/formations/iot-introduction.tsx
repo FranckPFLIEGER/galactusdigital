@@ -31,12 +31,12 @@ const DATA = {
   public: ["Toute personne souhaitant comprendre l'IoT sans prérequis", "Responsables métiers et décideurs IT", "Étudiants découvrant les nouvelles technologies", "Professionnels en reconversion vers les métiers du numérique"],
   prerequis: ["Aucun prérequis technique", "Curiosité pour les technologies numériques", "Utilisation basique d'Internet"],
   examen: {
-    code: 'IoT Introduction Badge',
+    code: 'IoT Introduction',
     duree: 'Évaluation continue',
     langue: 'Français / Anglais',
     organisme: 'Cisco Networking Academy',
-    format: 'Évaluation continue + projet final',
-    score: 'Badge numérique Cisco',
+    format: 'QCM et questions pratiques',
+    score: '700/1000',
     note: ``,
   },
   methodes: [

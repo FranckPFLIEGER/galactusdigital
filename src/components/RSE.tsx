@@ -89,7 +89,7 @@ export function RSE() {
         </span>
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
         <h2 className={`section-h2-light reveal${isVisible ? ' visible' : ''} delay-1`}>
-          Notre engagement RSE —<br />Un numérique responsable, inclusif et ancré dans les territoires
+          Notre engagement RSE —<br />Un numérique responsable, inclusif et ancré dans les territoires ultramarins
         </h2>
         <p className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '2.5rem' }}>

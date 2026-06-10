@@ -177,6 +177,7 @@ function ElearningPage() {
               <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Cisco — Cybersécurité</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>n° 3018982</div>
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                   {['Cybersecurity Essentials (30h)', 'CyberOps Associate (60h)', 'Ethical Hacker (40h)'].map((item, i) => (
@@ -191,6 +192,7 @@ function ElearningPage() {
               <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Cisco — Dev & Data</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>n° 3018982</div>
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                   {["Python Essentials 1 — PCEP (35h)", "Python Essentials 2 — PCAP (40h)", 'DevNet Associate (50h)', 'Linux Essentials (40h)', 'Data Analytics Essentials (30h)'].map((item, i) => (
@@ -205,6 +207,7 @@ function ElearningPage() {
               <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Cisco — IoT</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>n° 3018982</div>
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                   {['IoT — Introduction (25h)', 'IoT — Connecting Things (30h)', 'IoT — Big Data & Analytics (30h)', 'IoT — Security (25h)', 'IoT — Hackathon (20h)'].map((item, i) => (
@@ -234,7 +237,7 @@ function ElearningPage() {
               <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>IPv6 Forum</div>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>Sur demande</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>OPCO · PDC</div>
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
                   {['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'].map((item, i) => (
@@ -245,7 +248,14 @@ function ElearningPage() {
                 </ul>
               </div>
             </div>
-            <p style={{ fontSize: '0.82rem', color: '#888', marginTop: '1.25rem', fontStyle: 'italic' }}>
+
+            <div style={{ marginTop: '1.25rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(228,31,38,0.05)', border: '1px solid rgba(228,31,38,0.15)', padding: '0.9rem 1.1rem' }}>
+              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.12)', padding: '0.2rem 0.55rem', flexShrink: 0, marginTop: '1px' }}>RS</div>
+              <p style={{ fontSize: '0.80rem', color: '#5a5a58', margin: 0, lineHeight: 1.6 }}>
+                <strong>Inscription au Répertoire Spécifique en préparation.</strong> Les formations Cisco NetAcad et Microsoft sont finançables CPF, OPCO et plan de développement des compétences. Les formations IPv6 Forum sont finançables via OPCO et plan de formation (hors CPF dans l'attente de l'inscription au RS).
+              </p>
+            </div>
+            <p style={ fontSize: '0.82rem', color: '#888', marginTop: '1.25rem', fontStyle: 'italic' }>
               * D'autres parcours sont disponibles sur demande. Contactez-nous pour un programme personnalisé.
             </p>
           </div>

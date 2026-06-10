@@ -16,7 +16,7 @@ export const Route = createFileRoute('/formations/ccna-srwe')({
 const DATA = {
   editeur: 'Cisco', famille: 'Cisco NetAcad — CCNA', titre: 'CCNA — Commutation, Routage et Wi-Fi (SRWE)', sousTitre: 'Module 2 sur 3 · Référence officielle : CCNA-SRWE',
   ref: 'CCNA-SRWE-002', niveau: 'Intermédiaire', partenaire: 'Partenaire Cisco n° 3018982', certification: 'Cisco Certified Network Associate (CCNA 200-301)',
-  duree: '70 heures', groupeMin: 4, groupeMax: 12, lieux: ['Martinique', 'Guadeloupe', 'Paris', 'FOAD'],
+  duree: '70 heures', groupeMin: 4, groupeMax: 12, lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Deuxième module du cursus CCNA officiel Cisco, cette formation se concentre sur les technologies de commutation de couche 2, le routage avancé et les réseaux sans fil. Elle couvre les VLAN, STP, EtherChannel, DHCPv4/v6, les routes statiques et la sécurité LAN. Prérequis : avoir validé le module CCNA ITN (module 1).`,
   objectifs: [
     'Configurer les VLAN et le routage inter-VLAN (router-on-a-stick et SVI) en appliquant les meilleures pratiques de sécurité',
@@ -36,7 +36,20 @@ const DATA = {
     { num: '14–16', titre: 'Réseau sans fil (WLAN)', duree: '10h', contenu: ['Architecture WLAN — AP autonome et contrôlé (WLC)', 'Standards IEEE 802.11 a/b/g/n/ac/ax et canaux', 'Sécurité WLAN — WPA2, WPA3, 802.1X', 'TP — Configuration WLAN avec WLC Cisco'] },
   ],
   examen: { code: '200-301 CCNA', duree: '120 minutes', langue: 'Anglais', organisme: 'Cisco Networking Academy', format: 'QCM, drag-and-drop, simulation réseau', score: '825 / 1000', note: 'Ce module est le 2ème des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA.' },
-  methodes: ['Formateur certifié Cisco (instructeur NetAcad officiel)', 'Plateforme Cisco NetAcad 24h/24 — accès pendant et après la formation', 'Travaux pratiques sur Cisco Packet Tracer', 'Quiz de validation des acquis à chaque fin de module', 'Auto-évaluation en début et en fin de formation', 'Supports de cours officiels Cisco inclus', 'Attestation de formation et de présence', 'Passage de l\'examen certifiant Cisco Networking Academy intégré'],
+  methodes: [
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
+    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
+    "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
+    "Quiz de validation des acquis à chaque fin de module sur NetAcad",
+    "Auto-évaluation formative en début et en fin de formation",
+    "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
+    "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
+    "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
+    "Certification Cisco Certified Network Associate (CCNA 200-301) envoyée par mail à l'issue du parcours",
+    "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
+    "Passage de l'examen certifiant Cisco Networking Academy intégré au programme",
+  ],
 }
 
 function SectionTitle({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
@@ -65,7 +78,7 @@ function CcnaSrwePage() {
               {[{ label: `Certification : ${DATA.certification}`, main: true }, { label: `Niveau ${DATA.niveau}` }, { label: `Réf. ${DATA.ref}` }, { label: DATA.partenaire }].map(b => (<div key={b.label} style={{ padding: '0.35rem 0.9rem', background: b.main ? 'rgba(228,31,38,0.15)' : 'rgba(255,255,255,0.07)', border: `1px solid ${b.main ? 'rgba(228,31,38,0.35)' : 'rgba(255,255,255,0.12)'}`, fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: b.main ? 'rgba(255,255,255,0.90)' : 'rgba(255,255,255,0.55)' }}>{b.label}</div>))}
             </div>
             <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
-              {[{ icon: <Clock size={14} />, text: DATA.duree }, { icon: <Calendar size={14} />, text: 'Sur demande' }, { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` }, { icon: <MapPin size={14} />, text: DATA.lieux.join(' · ') }].map((m, i) => (<div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}><span style={{ color: 'var(--g-red)' }}>{m.icon}</span>{m.text}</div>))}
+              {[{ icon: <Clock size={14} />, text: DATA.duree }, { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` }, { icon: <Calendar size={14} />, text: 'Voir calendrier' }].map((m, i) => (<div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}><span style={{ color: 'var(--g-red)' }}>{m.icon}</span>{m.text}</div>))}
             </div>
           </div>
         </section>
@@ -90,14 +103,14 @@ function CcnaSrwePage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <SectionTitle>Objectifs pédagogiques</SectionTitle>
             <p style={{ fontSize: '0.88rem', color: '#888', marginBottom: '1.5rem', fontStyle: 'italic' }}>À l'issue de la formation, les participants seront capables de :</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem' }} className="fiche-objectifs">
               {DATA.objectifs.map((obj, i) => (<div key={i} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '1.5rem', background: 'var(--g-offwhite)' }}><div style={{ width: '32px', height: '32px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}><Network size={16} color="white" /></div><p style={{ fontSize: '0.85rem', color: '#4a4a48', lineHeight: 1.6, margin: 0 }}>{obj}</p></div>))}
             </div>
           </div>
         </section>
 
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }} className="fiche-public">
             <div><SectionTitle>Public concerné</SectionTitle><ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>{DATA.public.map((item, i) => <CheckItem key={i} text={item} />)}</ul></div>
             <div><SectionTitle>Prérequis</SectionTitle><ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>{DATA.prerequis.map((item, i) => <CheckItem key={i} text={item} />)}</ul></div>
           </div>
@@ -119,7 +132,7 @@ function CcnaSrwePage() {
               <div style={{ width: '56px', height: '56px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><Award size={28} color="white" /></div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>{DATA.certification}</div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.75rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(175px,1fr))', gap: '0.75rem' }} className="fiche-exam-grid">
                   {[{ label: 'Code examen', val: DATA.examen.code }, { label: 'Durée', val: DATA.examen.duree }, { label: 'Langue', val: DATA.examen.langue }, { label: 'Organisme', val: DATA.examen.organisme }, { label: 'Format', val: DATA.examen.format }, { label: 'Score minimal', val: DATA.examen.score }].map(row => (<div key={row.label} style={{ padding: '0.75rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.25)' }}><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.25rem' }}>{row.label}</div><div style={{ fontSize: '0.84rem', color: 'var(--g-black)', fontWeight: 600 }}>{row.val}</div></div>))}
                 </div>
                 <div style={{ marginTop: '1rem', padding: '0.75rem 1rem', background: 'rgba(228,31,38,0.06)', border: '1px solid rgba(228,31,38,0.15)' }}><p style={{ fontSize: '0.84rem', color: '#5a5a58', margin: 0, lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>Note importante — </strong>{DATA.examen.note}</p></div>
@@ -131,18 +144,19 @@ function CcnaSrwePage() {
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <SectionTitle>Méthodes pédagogiques</SectionTitle>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }} className="fiche-methodes">
               {DATA.methodes.map((item, i) => (<div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem', padding: '0.75rem 1rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.25)' }}><CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} /><span style={{ fontSize: '0.86rem', color: '#4a4a48', lineHeight: 1.5 }}>{item}</span></div>))}
             </div>
           </div>
         </section>
 
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }} className="fiche-public">
             <div>
               <SectionTitle>Conformité réglementaire</SectionTitle>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {[{ ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail — synchrone en présentiel ou FOAD.' }, { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation avec programme, lieu, horaires et règlement intérieur envoyée avant démarrage.' }, { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + auto-évaluation formateur selon 4 niveaux : non acquis → acquis.' }, { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès NetAcad vérifié avant démarrage. Test Packet Tracer organisé pour la FOAD.' }].map(c => (<div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}><div style={{ flexShrink: 0 }}><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.55rem', whiteSpace: 'nowrap' }}>{c.ref}</div></div><div><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.82rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.2rem' }}>{c.title}</div><p style={{ fontSize: '0.82rem', color: '#5a5a58', margin: 0, lineHeight: 1.55 }}>{c.desc}</p></div></div>))}
+                {[{ ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail — synchrone en présentiel ou FOAD.' }, { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation avec programme, lieu, horaires et règlement intérieur envoyée avant démarrage.' }, { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + auto-évaluation formateur selon 4 niveaux : non acquis → acquis.' },                   { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de la formation FOAD ou e-learning, conformément à la circulaire DGEFP du 17 février 2026." },
+                  { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès NetAcad vérifié avant démarrage. Test Packet Tracer organisé pour la FOAD.' }].map(c => (<div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}><div style={{ flexShrink: 0 }}><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.55rem', whiteSpace: 'nowrap' }}>{c.ref}</div></div><div><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.82rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.2rem' }}>{c.title}</div><p style={{ fontSize: '0.82rem', color: '#5a5a58', margin: 0, lineHeight: 1.55 }}>{c.desc}</p></div></div>))}
               </div>
             </div>
             <div><SectionTitle>Délais d'accès</SectionTitle><DelaisAcces /></div>
@@ -158,6 +172,19 @@ function CcnaSrwePage() {
             </div>
           </div>
         </section>
+        {/* Responsive mobile */}
+        <style>{`
+          @media (max-width: 768px) {
+            .fiche-objectifs { grid-template-columns: 1fr !important; }
+            .fiche-exam-grid { grid-template-columns: 1fr 1fr !important; }
+            .fiche-methodes  { grid-template-columns: 1fr !important; }
+            .fiche-public    { grid-template-columns: 1fr !important; }
+            .fiche-conformite{ grid-template-columns: 1fr !important; }
+          }
+          @media (max-width: 480px) {
+            .fiche-exam-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
       </main>
       <Footer />
     </>

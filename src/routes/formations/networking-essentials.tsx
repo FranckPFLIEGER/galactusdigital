@@ -109,8 +109,7 @@ function FormationPage() {
             <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
-                { icon: <Calendar size={14} />, text: 'Calendrier disponible sur demande' },
-                { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
+                                { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
                 { icon: <Calendar size={14} />, text: 'Voir calendrier' },
               ].map((m, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>

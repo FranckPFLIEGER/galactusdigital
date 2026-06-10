@@ -23,7 +23,7 @@ const FORMATIONS = [
   },
   {
     editeur: 'Cisco — Cybersécurité',
-    label: 'n° 3018982',
+    label: 'Partenaire n° 3018982',
     formations: [
       'Cybersecurity Essentials',
       'CyberOps Associate',
@@ -32,7 +32,7 @@ const FORMATIONS = [
   },
   {
     editeur: 'Cisco — Développement & Data',
-    label: 'n° 3018982',
+    label: 'Partenaire n° 3018982',
     formations: [
       'Python Essentials 1 (PCEP)',
       'Python Essentials 2 (PCAP)',
@@ -43,7 +43,7 @@ const FORMATIONS = [
   },
   {
     editeur: 'Cisco — IoT',
-    label: 'n° 3018982',
+    label: 'Partenaire n° 3018982',
     formations: [
       'IoT — Introduction',
       'IoT — Connecting Things',

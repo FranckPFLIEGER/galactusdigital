@@ -21,33 +21,37 @@ const DATA = {
   ref: 'CYBERESSEN-001',
   niveau: 'Fondamental',
   partenaire: 'Cisco NetAcad',
-  certification: 'Cisco Cybersecurity Essentials Badge',
+  certification: 'Cisco Cybersecurity Essentials',
   duree: '30 heures',
   groupeMin: 4,
   groupeMax: 12,
-  lieux: ['Martinique', 'Guadeloupe', 'Paris', 'FOAD'],
+  lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Formation aux principes fondamentaux de la cybersécurité. Elle couvre la cryptographie, la sécurité des systèmes d'exploitation, la sécurité des réseaux, la gestion des vulnérabilités et les procédures de réponse aux incidents. Idéale avant d'attaquer CyberOps Associate ou le parcours Ethical Hacker.`,
   objectifs: ["Décrire les principes de la cybersécurité — CIA Triad, menaces, vulnérabilités, risques", "Expliquer les mécanismes cryptographiques — chiffrement symétrique/asymétrique, PKI, hachage", "Configurer les mesures de sécurité des systèmes d'exploitation Windows et Linux", "Décrire les technologies de sécurité réseau — firewalls, IDS/IPS, VPN, ACL", "Analyser les vulnérabilités avec des outils d'évaluation basiques", "Appliquer les procédures de réponse aux incidents selon NIST SP 800-61"],
   public: ["Techniciens IT souhaitant acquérir des bases en sécurité", "Étudiants en BTS SIO option SISR", "Professionnels IT avant CyberOps ou Ethical Hacker", "Toute personne intéressée par la cybersécurité"],
   prerequis: ["Networking Essentials ou connaissances TCP/IP basiques", "Utilisation courante de Windows et/ou Linux", "Aucune connaissance en cybersécurité requise"],
   examen: {
-    code: 'Cybersecurity Essentials Badge',
+    code: 'Cybersecurity Essentials Final Exam',
     duree: 'Évaluation continue',
     langue: 'Français / Anglais',
     organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
-    score: 'Badge de complétion',
-    note: 'Formation préparatoire aux certifications CyberOps Associate (Cisco) et Security+ (CompTIA). Elle délivre un badge Cisco NetAcad.',
+    score: '700 sur 1000',
+    note: '',
   },
   methodes: [
-    'Formateur certifié Cisco (instructeur NetAcad officiel)',
-    'Plateforme Cisco NetAcad 24h/24 — accès pendant et après la formation',
-    'Labs virtuels et travaux pratiques intégrés',
-    'Quiz de validation des acquis à chaque fin de module',
-    'Auto-évaluation en début et en fin de formation',
-    'Supports de cours officiels inclus',
-    'Attestation de formation et de présence',
-    "Passage de l'examen officiel intégré",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
+    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
+    "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
+    "Quiz de validation des acquis à chaque fin de module sur NetAcad",
+    "Auto-évaluation formative en début et en fin de formation",
+    "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
+    "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
+    "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
+    "Certification Cisco Cybersecurity Essentials envoyée par mail à l'issue du parcours",
+    "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
+    "Passage de l'examen certifiant Cisco Networking Academy intégré au programme",
   ],
 }
 
@@ -105,7 +109,7 @@ function FormationPage() {
             <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
-                { icon: <Calendar size={14} />, text: 'Sur demande' },
+                { icon: <Calendar size={14} />, text: 'Calendrier disponible sur demande' },
                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
                 { icon: <MapPin size={14} />, text: DATA.lieux.join(' · ') },
               ].map((m, i) => (
@@ -147,7 +151,7 @@ function FormationPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <SectionTitle>Objectifs pédagogiques</SectionTitle>
             <p style={{ fontSize: '0.88rem', color: '#888', marginBottom: '1.5rem', fontStyle: 'italic' }}>À l'issue de la formation, les participants seront capables de :</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem' }} className="fiche-objectifs">
               {DATA.objectifs.map((obj, i) => (
                 <div key={i} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '1.5rem', background: 'var(--g-offwhite)' }}>
                   <div style={{ width: '32px', height: '32px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}><Shield size={16} color="white" /></div>
@@ -159,7 +163,7 @@ function FormationPage() {
         </section>
 
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }} className="fiche-public">
             <div>
               <SectionTitle>Public concerné</SectionTitle>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -259,7 +263,7 @@ function FormationPage() {
               <div style={{ width: '56px', height: '56px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><Award size={28} color="white" /></div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>{DATA.certification}</div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.75rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(175px,1fr))', gap: '0.75rem' }} className="fiche-exam-grid">
                   {[
                     { label: 'Code examen', val: DATA.examen.code },
                     { label: 'Durée', val: DATA.examen.duree },
@@ -285,7 +289,7 @@ function FormationPage() {
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <SectionTitle>Méthodes pédagogiques</SectionTitle>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }} className="fiche-methodes">
               {DATA.methodes.map((item, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem', padding: '0.75rem 1rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.25)' }}>
                   <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
@@ -297,7 +301,7 @@ function FormationPage() {
         </section>
 
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }} className="fiche-public">
             <div>
               <SectionTitle>Conformité réglementaire</SectionTitle>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -305,6 +309,7 @@ function FormationPage() {
                   { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail.' },
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation complète envoyée avant démarrage.' },
                   { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + auto-évaluation selon 4 niveaux.' },
+                                    { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de la formation FOAD ou e-learning, conformément à la circulaire DGEFP du 17 février 2026." },
                   { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès NetAcad vérifié avant démarrage.' },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
@@ -322,7 +327,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h — Martinique · Guadeloupe · Paris · FOAD.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h — Martinique · Guadeloupe · Paris.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
@@ -331,6 +336,19 @@ function FormationPage() {
           </div>
         </section>
 
+        {/* Responsive mobile */}
+        <style>{`
+          @media (max-width: 768px) {
+            .fiche-objectifs { grid-template-columns: 1fr !important; }
+            .fiche-exam-grid { grid-template-columns: 1fr 1fr !important; }
+            .fiche-methodes  { grid-template-columns: 1fr !important; }
+            .fiche-public    { grid-template-columns: 1fr !important; }
+            .fiche-conformite{ grid-template-columns: 1fr !important; }
+          }
+          @media (max-width: 480px) {
+            .fiche-exam-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
       </main>
       <Footer />
     </>

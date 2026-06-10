@@ -31,12 +31,12 @@ const DATA = {
   public: ["Ingénieurs électronique et systèmes embarqués", "Développeurs souhaitant intégrer le réseau", "Administrateurs réseaux s'ouvrant à l'IoT", "Professionnels industrie 4.0 et domotique"],
   prerequis: ["Introduction à l'IoT (IOT-INTRO) recommandé", "Notions de programmation Python ou C", "Connaissance basique des réseaux TCP/IP", "Networking Essentials constitue un plus"],
   examen: {
-    code: 'IoT Fundamentals: Connecting Things Badge',
+    code: 'IoT Fundamentals: Connecting Things',
     duree: 'Projet final + QCM',
     langue: 'Français / Anglais',
     organisme: 'Cisco Networking Academy',
-    format: 'Évaluation continue + projet final',
-    score: 'Badge numérique + attestation',
+    format: 'QCM et questions pratiques',
+    score: '700/1000',
     note: 'Prérequis recommandé avant IoT Fundamentals: Big Data & Analytics (cours 2/3) et le Hackathon Playbook (cours 3/3).',
   },
   methodes: [

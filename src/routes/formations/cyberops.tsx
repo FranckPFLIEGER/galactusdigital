@@ -35,7 +35,7 @@ const DATA = {
     { num: '11–13', titre: 'Analyse des intrusions réseau', duree: '12h', contenu: ['Attaques réseau — DoS, DDoS, man-in-the-middle, ARP poisoning', 'Attaques applicatives — injections SQL, XSS, débordements de tampon', 'Outils d\'attaque réseau — Nmap, Metasploit (perspective défensive)', 'TP — Identification et analyse d\'intrusions réseau'] },
     { num: '14–16', titre: 'Politiques et procédures SOC', duree: '8h', contenu: ['Procédures de réponse aux incidents — NIST SP 800-61, phases d\'intervention', 'Classification des incidents et procédures d\'escalade SOC', 'Conformité et réglementation — RGPD, PCI-DSS, HIPAA', 'TP de synthèse — Simulation d\'investigation complète SOC'] },
   ],
-  examen: { code: '200-201 CBROPS', duree: '120 minutes', langue: 'Anglais', organisme: 'Cisco Networking Academy', format: 'QCM, simulation d\'analyse réseau', score: '750 / 1000', note: 'L\'examen 200-201 CBROPS est indépendant. Un seul examen suffit pour obtenir la certification CyberOps Associate, sans module préalable obligatoire.' },
+  examen: { code: '200-201 CBROPS', duree: '120 minutes', langue: 'Français', organisme: 'Cisco Networking Academy', format: 'QCM, simulation d\'analyse réseau', score: '750 / 1000', note: 'L\'examen 200-201 CBROPS est indépendant. Un seul examen suffit pour obtenir la certification CyberOps Associate, sans module préalable obligatoire.' },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
     "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",

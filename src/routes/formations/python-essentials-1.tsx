@@ -36,7 +36,7 @@ const DATA = {
     langue: 'Français / Anglais',
     organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
-    score: '70 % (700/1000)',
+    score: '700/1000',
     note: `La certification PCEP est délivrée par l'OpenEDG Python Institute. Elle prépare à Python Essentials 2 et à la certification PCAP (Associate Level).`,
   },
   methodes: [

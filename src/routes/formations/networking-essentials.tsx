@@ -32,12 +32,12 @@ const DATA = {
   prerequis: ["Aucun prérequis technique", "Utilisation basique d'un PC et d'Internet"],
   examen: {
     code: 'Networking Essentials Final Exam',
-    duree: 'Auto-évaluation',
+    duree: 'Évaluation continue',
     langue: 'Français / Anglais',
     organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: '700 sur 1000',
-    note: `Cette formation délivre un badge Cisco NetAcad. Elle constitue la base recommandée avant d'entrer dans le cursus CCNA.`,
+    note: ``,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
@@ -49,7 +49,7 @@ const DATA = {
     "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
     "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
-    "Certification Cisco Networking Essentials Badge envoyée par mail à l'issue du parcours",
+    "Certification Cisco Networking Essentials envoyée par mail à l'issue du parcours",
     "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Passage de l'examen certifiant Cisco Networking Academy intégré au programme",
   ],

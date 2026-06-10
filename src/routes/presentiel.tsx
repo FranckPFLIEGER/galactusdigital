@@ -31,7 +31,7 @@ const FORMATIONS = [
     ],
   },
   {
-    editeur: 'Cisco — Développement & Data',
+    editeur: 'Cisco — Dev & Data',
     label: 'Partenaire n° 3018982',
     formations: [
       'Python Essentials 1 (PCEP)',

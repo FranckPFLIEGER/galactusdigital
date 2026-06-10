@@ -31,12 +31,12 @@ const DATA = {
   public: ["Participants ayant validé Connecting Things et/ou Big Data", "Équipes souhaitant concevoir une solution IoT complète", "Entrepreneurs et intrapreneurs en transformation digitale", "Étudiants en fin de cursus IoT"],
   prerequis: ["IoT Fundamentals: Connecting Things validé", "IoT Fundamentals: Big Data & Analytics recommandé", "Travail en équipe de 3 à 5 participants"],
   examen: {
-    code: 'IoT Hackathon Badge',
+    code: 'IoT Hackathon',
     duree: 'Présentation jury (30 min)',
     langue: 'Français / Anglais',
     organisme: 'Cisco Networking Academy',
-    format: 'Évaluation continue + projet final',
-    score: 'Badge + attestation projet',
+    format: 'QCM et questions pratiques',
+    score: '700/1000',
     note: '',
   },
   methodes: [

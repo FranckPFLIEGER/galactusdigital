@@ -348,12 +348,6 @@ function PresentielPage() {
             <h2 className="section-h2">Formations disponibles en présentiel</h2>
             <div className="g-rule" />
             <FormationGrid />
-            <div style={{ marginTop: '1.25rem', display: 'flex', alignItems: 'flex-start', gap: '0.75rem', background: 'rgba(228,31,38,0.05)', border: '1px solid rgba(228,31,38,0.15)', padding: '0.9rem 1.1rem' }}>
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.12)', padding: '0.2rem 0.55rem', flexShrink: 0, marginTop: '1px' }}>RS</div>
-              <p style={{ fontSize: '0.80rem', color: '#5a5a58', margin: 0, lineHeight: 1.6 }}>
-                <strong>Inscription au Répertoire Spécifique en préparation.</strong> Les formations Cisco NetAcad et Microsoft sont finançables CPF, OPCO et plan de développement des compétences. Les formations IPv6 Forum sont finançables via OPCO et plan de formation (hors CPF dans l'attente de l'inscription au RS).
-              </p>
-            </div>
           </div>
         </section>
 

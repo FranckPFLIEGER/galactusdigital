@@ -11,16 +11,68 @@ export const Route = createFileRoute('/presentiel')({
 })
 
 const FORMATIONS = [
-  { editeur: 'Cisco',      label: 'Partenaire n° 3018982', formations: ['CCNA ITN (1/3)', 'CCNA SRWE (2/3)', 'CCNA ENSA (3/3)', 'CCNP Enterprise', 'CCNP Security'] },
-  { editeur: 'Microsoft',  formations: ['Azure Administrator (AZ-104)', 'Azure Fundamentals (AZ-900)', 'Microsoft 365 Fundamentals', 'Azure AI Fundamentals', 'Power Platform'] },
-  { editeur: 'CompTIA',    formations: ['Security+', 'Network+', 'A+', 'CySA+', 'PenTest+'] },
-  { editeur: 'IPv6 Forum', formations: ['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'] },
-  { editeur: 'EC-Council', formations: ['Certified Ethical Hacker (CEH)', 'Certified Security Analyst (ECSA)', 'Computer Hacking Forensic Investigator'] },
-  { editeur: 'PMI',        formations: ['Project Management Professional (PMP)', 'PMI Agile Certified Practitioner', 'CAPM'] },
+  {
+    editeur: 'Cisco — Réseaux',
+    label: 'Partenaire n° 3018982',
+    formations: [
+      'Networking Essentials',
+      'CCNA 1 — Introduction aux réseaux (ITN)',
+      'CCNA 2 — Commutation & routage (SRWE)',
+      'CCNA 3 — Réseaux d\'entreprise (ENSA)',
+    ],
+  },
+  {
+    editeur: 'Cisco — Cybersécurité',
+    formations: [
+      'Cybersecurity Essentials',
+      'CyberOps Associate',
+      'Ethical Hacker',
+    ],
+  },
+  {
+    editeur: 'Cisco — Développement & Data',
+    formations: [
+      'Python Essentials 1 (PCEP)',
+      'Python Essentials 2 (PCAP)',
+      'DevNet Associate',
+      'Linux Essentials',
+      'Data Analytics Essentials',
+    ],
+  },
+  {
+    editeur: 'Cisco — IoT',
+    formations: [
+      'IoT — Introduction',
+      'IoT — Connecting Things',
+      'IoT — Big Data & Analytics',
+      'IoT — Security',
+      'IoT — Hackathon',
+    ],
+  },
+  {
+    editeur: 'Microsoft',
+    label: 'Partenaire n° 4653557',
+    formations: [
+      'AZ-900 Azure Fundamentals',
+      'AZ-104 Azure Administrator',
+      'SC-900 Security Fundamentals',
+      'AI-900 Azure AI Fundamentals',
+      'MS-900 Microsoft 365 Fundamentals',
+    ],
+  },
+  {
+    editeur: 'IPv6 Forum',
+    label: 'Sur demande',
+    formations: [
+      'IPv6 Certified Network Engineer',
+      'IPv6 Certified Security Engineer',
+      'IPv6 Fundamentals',
+    ],
+  },
 ]
 
 const LIEUX = [
-  { zone: 'Martinique', badge: 'Siège régional Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: 'Centre régional principal des Caraïbes. Toutes nos formations Cisco, Microsoft, CompTIA et IPv6 disponibles en présentiel.', tel: '+33 07 81 07 47 46' },
+  { zone: 'Martinique', badge: 'Siège régional Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: 'Centre régional principal des Caraïbes. Toutes nos formations Cisco NetAcad, Microsoft et IPv6 Forum disponibles en présentiel.', tel: '+33 07 81 07 47 46' },
   { zone: 'Guadeloupe', badge: 'Présence active', adresse: 'Pointe de la Verdure\nGosier 97190', desc: 'Interventions en présentiel chez vos équipes ou en salle partenaire adaptée à vos besoins.', tel: '+33 07 81 07 47 46' },
   { zone: 'Paris — France hexagonale', badge: 'Siège social', adresse: '66 avenue des Champs Élysées\n75008 Paris', desc: 'Formations en présentiel à Paris et interventions intra-entreprise partout en France hexagonale sur demande.', tel: '+33 07 81 07 47 46' },
 ]

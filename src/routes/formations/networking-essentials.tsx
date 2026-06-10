@@ -20,7 +20,7 @@ const DATA = {
   sousTitre: 'Introduction aux fondamentaux des réseaux · Référence : NETESS',
   ref: 'NETESS-001',
   niveau: 'Fondamental',
-  partenaire: 'Cisco NetAcad',
+  partenaire: 'Partenaire Cisco n° 3018982',
   certification: 'Cisco Networking Essentials',
   duree: '35 heures',
   groupeMin: 4,

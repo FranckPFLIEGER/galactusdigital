@@ -158,74 +158,92 @@ function ElearningPage() {
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginTop: '2rem' }}>
 
-              {/* Cisco NetAcad */}
+              {/* Cisco Réseaux */}
               <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Cisco</div>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>NetAcad</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Cisco — Réseaux</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>n° 3018982</div>
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  {[
-                    'CCNA 1 — Introduction aux réseaux (70h)',
-                    'CCNA 2 — Routage et commutation (70h)',
-                    'CCNA 3 — Réseaux d\'entreprise (70h)',
-                    'CyberOps Associate (60h)',
-                    'DevNet Associate (50h)',
-                    'Network Security (45h)',
-                  ].map((item, i) => (
+                  {['Networking Essentials (40h)', 'CCNA 1 — ITN (70h)', 'CCNA 2 — SRWE (70h)', 'CCNA 3 — ENSA (70h)'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
-                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
-                      {item}
+                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Microsoft Learn */}
+              {/* Cisco Cybersécurité */}
+              <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Cisco — Cybersécurité</div>
+                </div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  {['Cybersecurity Essentials (30h)', 'CyberOps Associate (60h)', 'Ethical Hacker (40h)'].map((item, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
+                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Cisco Dev & Data */}
+              <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Cisco — Dev & Data</div>
+                </div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  {["Python Essentials 1 — PCEP (35h)", "Python Essentials 2 — PCAP (40h)", 'DevNet Associate (50h)', 'Linux Essentials (40h)', 'Data Analytics Essentials (30h)'].map((item, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
+                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Cisco IoT */}
+              <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Cisco — IoT</div>
+                </div>
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                  {['IoT — Introduction (25h)', 'IoT — Connecting Things (30h)', 'IoT — Big Data & Analytics (30h)', 'IoT — Security (25h)', 'IoT — Hackathon (20h)'].map((item, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
+                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+
+              {/* Microsoft */}
               <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Microsoft</div>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>MS Learn</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>n° 4653557</div>
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  {[
-                    'AZ-900 — Azure Fundamentals (20h)',
-                    'AZ-104 — Azure Administrator (40h)',
-                    'SC-900 — Security Fundamentals (15h)',
-                    'AI-900 — Azure AI Fundamentals (15h)',
-                    'MS-900 — Microsoft 365 Fundamentals (18h)',
-                    'AZ-500 — Azure Security Engineer (35h)',
-                  ].map((item, i) => (
+                  {['AZ-900 Azure Fundamentals (20h)', 'AZ-104 Azure Administrator (40h)', 'SC-900 Security Fundamentals (15h)', 'AI-900 Azure AI Fundamentals (15h)', 'MS-900 Microsoft 365 (18h)'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
-                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
-                      {item}
+                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
                     </li>
                   ))}
                 </ul>
               </div>
 
-              {/* Autres sur demande */}
+              {/* IPv6 Forum */}
               <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Autres</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>IPv6 Forum</div>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>Sur demande</div>
                 </div>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  {[
-                    'CompTIA Security+ · Network+ · A+',
-                    'IPv6 Certified Network Engineer',
-                    'IPv6 Certified Security Engineer',
-                    'EC-Council CEH · ECSA',
-                    'PMI PMP · CAPM · PMI-ACP',
-                  ].map((item, i) => (
+                  {['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
-                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
-                      {item}
+                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
                     </li>
                   ))}
                 </ul>
               </div>
-
             </div>
             <p style={{ fontSize: '0.82rem', color: '#888', marginTop: '1.25rem', fontStyle: 'italic' }}>
               * D'autres parcours sont disponibles sur demande. Contactez-nous pour un programme personnalisé.
@@ -276,7 +294,6 @@ function ElearningPage() {
                 { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique adapté', desc: 'NetAcad et Microsoft Learn constituent le plateau technique officiel certifié. Vérification de la prise en main organisée avant démarrage de chaque parcours.' },
                 { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé documenté', desc: 'Un relevé de progression module par module est généré automatiquement par la plateforme et archivé dans le dossier de formation de l\'apprenant.' },
                 { ref: 'Circulaire DGEFP 2026-2027', title: 'Réalité des actions documentée', desc: 'Les bilans de progression constituent la preuve de réalité des actions conformément aux priorités de contrôle 2026-2027.' },
-                { ref: 'Circ. DGEFP/MOC/2026/30 Art. 3', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage du parcours e-learning, conformément à la circulaire DGEFP du 17 février 2026." },
               ].map(c => (
                 <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
                   <div style={{ flexShrink: 0 }}>

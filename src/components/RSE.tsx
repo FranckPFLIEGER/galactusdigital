@@ -1,76 +1,81 @@
 import { useIntersection } from '../hooks/useIntersection'
-import { Globe, Users, Leaf, BookOpen, Heart, ShieldCheck, ExternalLink } from 'lucide-react'
+import { Globe, Users, Leaf, BookOpen, Heart, ShieldCheck, ExternalLink, ArrowRight } from 'lucide-react'
 
 const pillars = [
   {
+    icon: <ShieldCheck size={24} color="white" />,
+    title: "Handicap & Accessibilité",
+    fc: "Fiche 21 — Vademecum France Compétences 2026",
+    badge: "Procédures documentées — Référent dédié",
+    items: [
+      "Référent Handicap GALACTUS Digital : adaptation systématique des modalités pédagogiques à chaque situation individuelle, dès l'inscription",
+      "Cisco Networking Academy accompagne depuis 2019 les apprenants en situation de handicap — plus de 188 000 personnes ont atteint leurs objectifs via les dispositifs d'accessibilité NetAcad (source : Cisco NetAcad)",
+      "Contenus officiels Cisco conformes aux standards d'accessibilité internationaux — handicaps visuels, auditifs, cognitifs et de mobilité physique pris en compte",
+      "FOAD et e-learning tutoré : solution adaptée pour les apprenants à mobilité réduite ou ne pouvant se déplacer en centre",
+      "Aménagements des évaluations disponibles sur demande — délais supplémentaires, supports adaptés, tiers-temps",
+    ],
+    link: { label: "Notre politique Handicap complète", url: "/handicap" },
+    source: "Cisco Networking Academy — netacad.com/fr/accessibility",
+  },
+  {
+    icon: <Leaf size={24} color="white" />,
+    title: "Transition écologique",
+    fc: "Fiche 22 — Vademecum France Compétences 2026",
+    badge: "Intégré aux référentiels IoT & Data Analytics",
+    items: [
+      "Formations dispensées en Martinique et Guadeloupe : chaque stagiaire évite un aller-retour Paris–Antilles, soit plus d'une tonne de CO₂ par personne (source : calculateur ADEME)",
+      "Modules IoT Introduction, IoT Big Data Analytics et Data Analytics Essentials intègrent nativement les enjeux d'efficacité énergétique, de smart grids et de réduction de l'empreinte numérique",
+      "100% supports digitaux dans l'ensemble de nos formations — zéro impression papier, zéro envoi postal",
+      "Salles de formation louées à la demande en Martinique, Guadeloupe et Paris : aucune consommation énergétique de locaux permanents à notre charge",
+      "FOAD et e-learning tutoré prioritaires pour réduire les déplacements quotidiens des apprenants",
+    ],
+    source: "ADEME — bilan-ges.ademe.fr | Référentiels Cisco IoT & Data Analytics",
+  },
+  {
+    icon: <Globe size={24} color="white" />,
+    title: "Transition numérique",
+    fc: "Fiche 23 — Vademecum France Compétences 2026",
+    badge: "Cœur de métier — 22 formations certifiantes",
+    items: [
+      "100% de notre catalogue est dédié à la montée en compétences numériques : réseaux, cybersécurité, cloud, IoT, IA, Python, DevNet — certifications mondiales Cisco et Microsoft",
+      "Accompagnement des entreprises ultramarines dans leur transformation numérique : de l'infrastructure réseau (CCNA) à l'intelligence artificielle (AI-900)",
+      "Formations IoT et Big Data directement connectées aux enjeux de la transition numérique des territoires — smart cities, capteurs, données massives",
+      "Cybersécurité au premier plan : CyberOps, Ethical Hacker, SC-900 — former des professionnels capables de sécuriser la transition numérique",
+      "DevNet Associate : former les développeurs de l'automatisation réseau, compétence clé de la transformation IT des organisations ultramarines",
+    ],
+  },
+  {
     icon: <Heart size={24} color="white" />,
     title: "Femmes & Égalité des chances",
-    badge: "Programme mondial Cisco",
+    badge: "Programme Connected Girls — Cisco France",
     items: [
-      "Partenaire officiel Cisco Networking Academy — programme Connected Girls 2025 : ateliers gratuits pour initier les lycéennes aux métiers de la tech (IA, cybersécurité, data)",
-      "Women of Cisco France : engagement mondial pour réduire la sous-représentation des femmes dans les filières technologiques",
-      "Formations flexibles — FOAD, e-learning tutoré, rythme adapté — pour concilier vie professionnelle, familiale et montée en compétences IT",
-      "Certifications internationales identiques pour tous : les femmes obtiennent exactement les mêmes titres reconnus qu'en Europe ou en Amérique du Nord",
+      "Cisco France Connected Girls 2025 : programme gratuit sponsorisé par Women of Cisco France — ateliers pour initier les lycéennes aux métiers de la tech (IA, cybersécurité, data)",
+      "Partenaire Cisco Networking Academy — programme mondial reconnu pour l'accès des femmes aux métiers IT",
+      "Formations flexibles (FOAD, e-learning tutoré, rythme adapté) : concilier vie professionnelle, familiale et montée en compétences IT",
+      "Mêmes certifications mondiales pour tous — les femmes obtiennent exactement les mêmes titres reconnus qu'en Europe ou en Amérique du Nord",
       "Financement CPF/OPCO accessible sans discrimination — aucune barrière financière à l'entrée dans les métiers du numérique",
     ],
     link: { label: "Connected Girls 2025 — Cisco France", url: "https://gblogs.cisco.com/fr/rse/inclusion-et-diversite/connected-girls-2025/" },
   },
   {
-    icon: <ShieldCheck size={24} color="white" />,
-    title: "Handicap & Accessibilité numérique",
-    badge: "188 000+ personnes accompagnées",
-    items: [
-      "Cisco Networking Academy accompagne activement les apprenants en situation de handicap depuis 2019 : handicaps visuels, auditifs, cognitifs et de mobilité physique",
-      "Plus de 188 000 personnes en situation de handicap ont atteint leurs objectifs de formation grâce aux dispositifs d'accessibilité Cisco NetAcad",
-      "Référent Handicap GALACTUS Digital dédié — adaptation systématique des modalités pédagogiques à chaque situation individuelle",
-      "E-learning tutoré et FOAD : solution idéale pour les apprenants à mobilité réduite ou ne pouvant se déplacer",
-      "Contenus pédagogiques officiels Cisco conformes aux standards d'accessibilité internationaux (WCAG)",
-    ],
-    link: { label: "Accessibilité Cisco Networking Academy", url: "https://www.netacad.com/fr/accessibility" },
-  },
-  {
     icon: <Users size={24} color="white" />,
-    title: "Inclusion & Ancrage territorial",
-    badge: "7 territoires ultramarins",
+    title: "Ancrage territorial & ASPIK",
+    badge: "7 territoires — Association loi 1901 depuis 2018",
     items: [
-      "Formateurs locaux certifiés — priorité absolue aux experts ultramarins : vous êtes formés par des professionnels qui connaissent votre réalité terrain",
-      "ASPIK (Association Spécialisée dans la Protection Informatique de la Karaïbe) — association partenaire basée à Le François, Martinique, dédiée aux échanges IT et à la cybersécurité aux Caraïbes",
-      "Mêmes certifications mondiales qu'à Paris, New York ou Singapour — sans quitter votre territoire, sans partir en métropole",
-      "Financement CPF/OPCO dans les DOM — aucun frein financier, accompagnement des démarches de A à Z",
-      "Partenariats actifs avec les collectivités, les entreprises et les institutions des territoires ultramarins",
-    ],
-  },
-  {
-    icon: <Leaf size={24} color="white" />,
-    title: "Numérique écoresponsable",
-    badge: "Zéro avion. Zéro papier. Zéro charge fixe.",
-    items: [
-      "Chaque formation dispensée aux Antilles, c'est un billet Paris-Martinique (1 400 kg CO₂) évité — nous amenons l'expertise sur place, pas l'inverse",
-      "Zéro local permanent : GALACTUS Digital loue ses salles à la demande en Martinique, Guadeloupe et Paris — aucune facture d'électricité à demeure, empreinte immobilière nulle",
-      "100% supports digitaux — zéro impression papier, zéro envoi postal dans l'ensemble de nos formations",
-      "FOAD et e-learning tutoré prioritaires pour réduire les déplacements des apprenants au quotidien",
-      "Sensibilisation aux enjeux environnementaux du numérique (impact des datacenters, sobriété numérique) intégrée dans nos parcours IoT et Data Analytics",
-    ],
-  },
-  {
-    icon: <BookOpen size={24} color="white" />,
-    title: "Veille & Transmission — ASPIK",
-    badge: "Association loi 1901 — Le François, Martinique",
-    items: [
-      "ASPIK — 'Association Spécialisée dans la Protection Informatique de la Karaïbe' (ASCPK à l'international) : fondée pour développer la coopération IT et la cybersécurité dans les Caraïbes",
-      "Sessions de veille technologique ouvertes à tous — nos apprenants certifiés restent connectés aux dernières innovations après l'obtention de leur certification",
-      "Réseau d'alumni ultramarins actif : partage d'expériences, d'opportunités professionnelles et de retours terrain entre certifiés des 7 territoires",
-      "Encouragement actif des femmes aux métiers du numérique — axe fondateur inscrit dans les statuts de l'association depuis 2018",
-      "Contribution directe au développement de la culture de cybersécurité dans les territoires ultramarins et caribéens",
+      "ASPIK — Association Spécialisée dans la Protection Informatique de la Karaïbe (ASCPK à l'international) : fondée en 2018 à Le François, Martinique, pour développer la cybersécurité et la coopération IT aux Caraïbes",
+      "Formateurs locaux certifiés en priorité — vous êtes formés par des professionnels qui connaissent votre réalité terrain, votre marché, vos contraintes",
+      "Mêmes certifications mondiales qu'à Paris ou New York — sans quitter votre territoire, sans financer un séjour en métropole",
+      "Sessions de veille IT ouvertes à tous via ASPIK — réseau d'alumni ultramarins, partage d'opportunités et d'expériences entre certifiés des 7 territoires",
+      "Partenariats actifs avec les collectivités, entreprises et institutions des DOM — contribution directe au développement économique local",
     ],
   },
 ]
 
-const stats = [
-  { num: "188 000+", label: "personnes handicapées\nformées via Cisco NetAcad" },
-  { num: "1 400 kg", label: "CO₂ évités par stagiaire\nformé en local vs Paris" },
-  { num: "0 €", label: "de charges fixes\nlocaux loués à la demande" },
-  { num: "2018", label: "création ASPIK\nancrage caribéen" },
+const conformite = [
+  { ref: "F21", label: "Handicap & Accessibilité", ok: true },
+  { ref: "F22", label: "Transition écologique", ok: true },
+  { ref: "F23", label: "Transition numérique", ok: true },
+  { ref: "F10", label: "Informations vérifiables et sourcées", ok: true },
 ]
 
 export function RSE() {
@@ -87,32 +92,43 @@ export function RSE() {
           Notre engagement RSE —<br />Un numérique responsable, inclusif et ancré dans les territoires
         </h2>
         <p className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
-          style={{ marginBottom: '2rem' }}>
+          style={{ marginBottom: '2.5rem' }}>
           Former aux métiers du numérique implique une responsabilité sociale, écologique et éthique.
-          Depuis la création de GALACTUS Digital, chaque décision — pédagogique, logistique,
-          partenariale — est guidée par cette conviction.
+          Notre démarche RSE s'articule autour des trois axes du vademecum France Compétences 2026 —
+          handicap, transition écologique, transition numérique — documentés et intégrés dans nos référentiels.
         </p>
 
-        {/* Stats RSE */}
-        <div className={`reveal${isVisible ? ' visible' : ''} delay-3`}
-          style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1px', background: 'rgba(255,255,255,0.08)', marginBottom: '3.5rem', border: '1px solid rgba(255,255,255,0.08)' }}>
-          {stats.map((s, i) => (
-            <div key={i} style={{ background: 'var(--g-black)', padding: '1.5rem 1.25rem', textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.6rem', fontWeight: 700, color: 'var(--g-red)', letterSpacing: '-0.02em', lineHeight: 1 }}>{s.num}</div>
-              <div style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.45)', marginTop: '0.4rem', lineHeight: 1.5, whiteSpace: 'pre-line', letterSpacing: '0.04em' }}>{s.label}</div>
+        {/* Bandeau conformité France Compétences */}
+        <div className={`reveal${isVisible ? ' visible' : ''} delay-2`}
+          style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '3rem', padding: '1.25rem 1.5rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
+          <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.40)', alignSelf: 'center', marginRight: '0.5rem' }}>
+            Vademecum France Compétences 01/2026
+          </div>
+          {[
+            { ref: 'F21', label: 'Handicap & Accessibilité' },
+            { ref: 'F22', label: 'Transition écologique' },
+            { ref: 'F23', label: 'Transition numérique' },
+            { ref: 'F10', label: 'Informations sourcées' },
+          ].map(item => (
+            <div key={item.ref} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(39,174,96,0.10)', border: '1px solid rgba(39,174,96,0.25)', padding: '4px 10px' }}>
+              <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, color: '#27ae60' }}>{item.ref}</span>
+              <span style={{ fontSize: '0.70rem', color: 'rgba(255,255,255,0.55)' }}>{item.label}</span>
             </div>
           ))}
         </div>
 
         <div className="rse-grid">
           {pillars.map((p, i) => (
-            <div
-              key={p.title}
+            <div key={p.title}
               className={`rse-card reveal${isVisible ? ' visible' : ''}`}
-              style={{ animationDelay: `${0.08 * i + 0.2}s` }}
-            >
+              style={{ animationDelay: `${0.08 * i + 0.2}s` }}>
               <div className="rse-icon">{p.icon}</div>
               <h3 className="rse-title">{p.title}</h3>
+              {p.fc && (
+                <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#27ae60', marginBottom: '0.5rem' }}>
+                  ✓ {p.fc}
+                </div>
+              )}
               {p.badge && (
                 <div style={{ display: 'inline-block', fontFamily: 'var(--font-title)', fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.10)', padding: '3px 8px', marginBottom: '0.85rem' }}>
                   {p.badge}
@@ -126,10 +142,18 @@ export function RSE() {
                   </li>
                 ))}
               </ul>
+              {p.source && (
+                <div style={{ marginTop: '0.75rem', fontSize: '0.65rem', color: 'rgba(255,255,255,0.30)', fontStyle: 'italic', lineHeight: 1.4 }}>
+                  Source : {p.source}
+                </div>
+              )}
               {p.link && (
-                <a href={p.link.url} target="_blank" rel="noopener noreferrer"
+                <a href={p.link.url}
+                  target={p.link.url.startsWith('http') ? '_blank' : undefined}
+                  rel={p.link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
                   style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginTop: '1rem', fontSize: '0.72rem', color: 'var(--g-red)', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.06em' }}>
-                  <ExternalLink size={12} /> {p.link.label}
+                  {p.link.url.startsWith('http') ? <ExternalLink size={12} /> : <ArrowRight size={12} />}
+                  {p.link.label}
                 </a>
               )}
             </div>
@@ -141,19 +165,14 @@ export function RSE() {
             <p className="rse-commitment-text">
               "Réduire la fracture numérique dans les territoires ultramarins, former sur place
               plutôt que d'envoyer les gens en métropole, ouvrir les certifications mondiales
-              à ceux qu'on croyait trop loin pour y accéder — c'est ça, notre mission.
-              Chaque certification obtenue aux Antilles, à la Réunion, en Guyane,
-              c'est une victoire collective pour nos territoires."
+              à ceux qu'on croyait trop loin pour y accéder —
+              c'est notre mission depuis 2018. Chaque certification obtenue aux Antilles,
+              à la Réunion, en Guyane, c'est une victoire collective."
             </p>
             <div className="rse-commitment-author">— Le président, GALACTUS Digital &amp; ASPIK</div>
           </div>
         </div>
 
-        <style>{`
-          @media (max-width: 700px) {
-            #rse .rse-stats { grid-template-columns: repeat(2,1fr) !important; }
-          }
-        `}</style>
       </div>
     </section>
   )

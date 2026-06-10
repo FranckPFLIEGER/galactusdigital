@@ -33,7 +33,7 @@ const DATA = {
   examen: {
     code: 'PCAP-31-03',
     duree: '65 minutes',
-    langue: 'Français / Anglais',
+    langue: 'Français',
     organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: '700/1000',

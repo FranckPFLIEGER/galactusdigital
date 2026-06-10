@@ -35,7 +35,7 @@ const DATA = {
   duree:          '70 heures',
   groupeMin:      4,
   groupeMax:      12,
-  lieux:          ['Martinique', 'Guadeloupe', 'Paris', 'FOAD'],
+  lieux:          ['Martinique', 'Guadeloupe', 'Paris'],
 
   // Description
   description: `Premier module du cursus CCNA officiel Cisco, cette formation pose les bases indispensables des réseaux informatiques. Elle couvre les fondamentaux du modèle OSI, l'adressage IP, les protocoles Ethernet et les premiers concepts de routage. Elle prépare directement à la certification Cisco Certified Network Associate (CCNA 200-301).`,
@@ -139,15 +139,18 @@ const DATA = {
 
   // Méthodes pédagogiques
   methodes: [
-    'Formation dispensée par un formateur certifié Cisco (instructeur NetAcad officiel)',
-    'Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation',
-    'Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)',
-    'Quiz de validation des acquis à chaque fin de module sur NetAcad',
-    'Auto-évaluation formative en début et en fin de formation',
-    'Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis',
-    'Supports de cours officiels Cisco inclus (version numérique NetAcad)',
-    'Attestation de formation et de présence remise à l\'issue du parcours',
-    'Passage de l\'examen certifiant Cisco Networking Academy intégré au programme',
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
+    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
+    "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
+    "Quiz de validation des acquis à chaque fin de module sur NetAcad",
+    "Auto-évaluation formative en début et en fin de formation",
+    "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
+    "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
+    "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
+    "Certification Cisco Certified Network Associate (CCNA 200-301) envoyée par mail à l'issue du parcours",
+    "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
+    "Passage de l'examen certifiant Cisco Networking Academy intégré au programme",
   ],
 }
 
@@ -255,9 +258,9 @@ function CcnaItnPage() {
             <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
-                { icon: <Calendar size={14} />, text: 'Sur demande' },
+                { icon: <Calendar size={14} />, text: 'Calendrier disponible sur demande' },
                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <MapPin size={14} />, text: DATA.lieux.join(' · ') },
+                { icon: <Calendar size={14} />, text: 'Voir calendrier' },
               ].map((m, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>
                   <span style={{ color: 'var(--g-red)' }}>{m.icon}</span>
@@ -316,7 +319,7 @@ function CcnaItnPage() {
             <p style={{ fontSize: '0.88rem', color: '#888', marginBottom: '1.5rem', fontStyle: 'italic' }}>
               À l'issue de la formation, les participants seront capables de :
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem' }} className="fiche-objectifs">
               {DATA.objectifs.map((obj, i) => (
                 <div key={i} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '1.5rem', background: 'var(--g-offwhite)' }}>
                   <div style={{ width: '32px', height: '32px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}>
@@ -331,7 +334,7 @@ function CcnaItnPage() {
 
         {/* ── Public & Prérequis ── */}
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }} className="fiche-public">
             <div>
               <SectionTitle>Public concerné</SectionTitle>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -398,7 +401,7 @@ function CcnaItnPage() {
                 <div style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>
                   {DATA.certification}
                 </div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.75rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(175px,1fr))', gap: '0.75rem' }} className="fiche-exam-grid">
                   {[
                     { label: 'Code examen',  val: DATA.examen.code },
                     { label: 'Durée',        val: DATA.examen.duree },
@@ -427,7 +430,7 @@ function CcnaItnPage() {
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <SectionTitle>Méthodes pédagogiques</SectionTitle>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }} className="fiche-methodes">
               {DATA.methodes.map((item, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem', padding: '0.75rem 1rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.25)' }}>
                   <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
@@ -440,7 +443,7 @@ function CcnaItnPage() {
 
         {/* ── Conformité & Délais ── */}
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }} className="fiche-public">
 
             {/* Conformité */}
             <div>
@@ -450,6 +453,7 @@ function CcnaItnPage() {
                   { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail — synchrone en présentiel ou FOAD.' },
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation avec programme, lieu, horaires et règlement intérieur envoyée avant démarrage.' },
                   { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + auto-évaluation formateur selon 4 niveaux : non acquis → acquis.' },
+                                    { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de la formation FOAD ou e-learning, conformément à la circulaire DGEFP du 17 février 2026." },
                   { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès NetAcad vérifié avant démarrage. Test Packet Tracer organisé pour la FOAD.' },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
@@ -479,7 +483,7 @@ function CcnaItnPage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                Contactez-nous pour connaître les prochaines dates disponibles<br />dans votre territoire et recevoir un devis sous 48h.
+                Devis sous 48h.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>
@@ -489,6 +493,19 @@ function CcnaItnPage() {
           </div>
         </section>
 
+        {/* Responsive mobile */}
+        <style>{`
+          @media (max-width: 768px) {
+            .fiche-objectifs { grid-template-columns: 1fr !important; }
+            .fiche-exam-grid { grid-template-columns: 1fr 1fr !important; }
+            .fiche-methodes  { grid-template-columns: 1fr !important; }
+            .fiche-public    { grid-template-columns: 1fr !important; }
+            .fiche-conformite{ grid-template-columns: 1fr !important; }
+          }
+          @media (max-width: 480px) {
+            .fiche-exam-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
       </main>
       <Footer />
     </>

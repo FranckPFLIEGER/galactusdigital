@@ -16,7 +16,7 @@ export const Route = createFileRoute('/formations/python-essentials-2')({
 const DATA = {
   editeur: 'Cisco NetAcad',
   famille: 'Cisco NetAcad — Programmation',
-  titre: 'Python Essentials 2 — Python Avancé et OOP',
+  titre: 'Python Essentials 2 — Python Avancé',
   sousTitre: 'Certification PCAP · Python Certified Associate Programmer · Référence : PE2',
   ref: 'PE2-001',
   niveau: 'Intermédiaire',
@@ -36,8 +36,8 @@ const DATA = {
     langue: 'Français / Anglais',
     organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
-    score: '70 % (700/1000)',
-    note: `La certification PCAP est délivrée par l'OpenEDG Python Institute. Elle ouvre la voie à PCPP1 (Professional) et aux certifications DevNet.`,
+    score: '700/1000',
+    note: `Examen PCAP-31-0x délivré par l'OpenEDG Python Institute. Après PCAP, la progression naturelle mène à PCPP1 — Certified Professional in Python Programming.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",

@@ -20,12 +20,12 @@ const DATA = {
   sousTitre: `Cours d'introduction — Internet des Objets · Référence : IOT-INTRO`,
   ref: 'IOT-INTRO-001',
   niveau: 'Fondamental',
-  partenaire: 'Cisco NetAcad · Partenaire n° 3018982',
-  certification: 'Cisco IoT Introduction Badge',
+  partenaire: 'Partenaire Cisco n° 3018982',
+  certification: 'Cisco IoT Introduction',
   duree: '20 heures',
   groupeMin: 4,
   groupeMax: 12,
-  lieux: ['Martinique', 'Guadeloupe', 'Paris', 'FOAD'],
+  lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Premier pas dans l'univers de l'Internet des Objets. Cette formation sans prérequis technique explore comment l'IoT transforme les industries, les villes et la société. Elle présente les technologies clés, les opportunités de carrière et les enjeux de sécurité et de données. Idéale pour toute personne souhaitant comprendre la transformation digitale.`,
   objectifs: ["Expliquer ce qu'est l'IoT et comment il transforme les industries et la société", "Identifier les composants d'un système IoT — capteurs, connectivité, cloud, applications", "Décrire les secteurs impactés par l'IoT — santé, agriculture, industrie, villes intelligentes", "Comprendre les enjeux de sécurité et de confidentialité liés à l'IoT", "Identifier les opportunités de carrière dans l'écosystème IoT", "Décrire le rôle des données, de l'IA et de l'automatisation dans l'IoT"],
   public: ["Toute personne souhaitant comprendre l'IoT sans prérequis", "Responsables métiers et décideurs IT", "Étudiants découvrant les nouvelles technologies", "Professionnels en reconversion vers les métiers du numérique"],
@@ -37,17 +37,21 @@ const DATA = {
     organisme: 'Cisco Networking Academy',
     format: 'Évaluation continue + projet final',
     score: 'Badge numérique Cisco',
-    note: `Cette formation délivre un badge numérique Cisco partageable sur LinkedIn. Elle constitue le point d'entrée recommandé avant IoT Fundamentals: Connecting Things.`,
+    note: ``,
   },
   methodes: [
-    'Formateur certifié Cisco (instructeur NetAcad officiel)',
-    'Plateforme Cisco NetAcad 24h/24 — accès pendant et après la formation',
-    'Travaux pratiques sur Cisco Packet Tracer avec simulation IoT',
-    'Labs sur équipements réels (Arduino, Raspberry Pi) selon disponibilité',
-    'Quiz de validation des acquis à chaque fin de module',
-    'Auto-évaluation en début et en fin de formation',
-    'Supports de cours officiels Cisco IoT inclus',
-    'Attestation de formation, de présence et badge numérique Cisco',
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
+    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
+    "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
+    "Quiz de validation des acquis à chaque fin de module sur NetAcad",
+    "Auto-évaluation formative en début et en fin de formation",
+    "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
+    "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
+    "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
+    "Certification Cisco IoT Introduction envoyée par mail à l'issue du parcours",
+    "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
+    "Passage de l'examen certifiant Cisco Networking Academy intégré au programme",
   ],
 }
 
@@ -105,9 +109,8 @@ function FormationPage() {
             <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
-                { icon: <Calendar size={14} />, text: 'Sur demande' },
-                { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <MapPin size={14} />, text: DATA.lieux.join(' · ') },
+                                { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
+                { icon: <Calendar size={14} />, text: 'Voir calendrier' },
               ].map((m, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>
                   <span style={{ color: 'var(--g-red)' }}>{m.icon}</span>{m.text}
@@ -147,7 +150,7 @@ function FormationPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <SectionTitle>Objectifs pédagogiques</SectionTitle>
             <p style={{ fontSize: '0.88rem', color: '#888', marginBottom: '1.5rem', fontStyle: 'italic' }}>À l'issue de la formation, les participants seront capables de :</p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem' }} className="fiche-objectifs">
               {DATA.objectifs.map((obj, i) => (
                 <div key={i} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '1.5rem', background: 'var(--g-offwhite)' }}>
                   <div style={{ width: '32px', height: '32px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}><Wifi size={16} color="white" /></div>
@@ -159,7 +162,7 @@ function FormationPage() {
         </section>
 
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }} className="fiche-public">
             <div>
               <SectionTitle>Public concerné</SectionTitle>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -259,7 +262,7 @@ function FormationPage() {
               <div style={{ width: '56px', height: '56px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><Award size={28} color="white" /></div>
               <div style={{ flex: 1 }}>
                 <div style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>{DATA.certification}</div>
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '0.75rem' }}>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(175px,1fr))', gap: '0.75rem' }} className="fiche-exam-grid">
                   {[
                     { label: 'Code / Référence', val: DATA.examen.code },
                     { label: 'Durée examen', val: DATA.examen.duree },
@@ -285,7 +288,7 @@ function FormationPage() {
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <SectionTitle>Méthodes pédagogiques</SectionTitle>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.65rem' }} className="fiche-methodes">
               {DATA.methodes.map((item, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.65rem', padding: '0.75rem 1rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.25)' }}>
                   <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
@@ -297,7 +300,7 @@ function FormationPage() {
         </section>
 
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }} className="fiche-public">
             <div>
               <SectionTitle>Conformité réglementaire</SectionTitle>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
@@ -305,6 +308,7 @@ function FormationPage() {
                   { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail.' },
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation complète envoyée avant démarrage.' },
                   { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + évaluation projet selon grille critériée.' },
+                                    { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de la formation FOAD ou e-learning, conformément à la circulaire DGEFP du 17 février 2026." },
                   { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès NetAcad et Packet Tracer vérifiés avant démarrage.' },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
@@ -322,7 +326,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h — Martinique · Guadeloupe · Paris · FOAD.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
@@ -331,6 +335,19 @@ function FormationPage() {
           </div>
         </section>
 
+        {/* Responsive mobile */}
+        <style>{`
+          @media (max-width: 768px) {
+            .fiche-objectifs { grid-template-columns: 1fr !important; }
+            .fiche-exam-grid { grid-template-columns: 1fr 1fr !important; }
+            .fiche-methodes  { grid-template-columns: 1fr !important; }
+            .fiche-public    { grid-template-columns: 1fr !important; }
+            .fiche-conformite{ grid-template-columns: 1fr !important; }
+          }
+          @media (max-width: 480px) {
+            .fiche-exam-grid { grid-template-columns: 1fr !important; }
+          }
+        `}</style>
       </main>
       <Footer />
     </>

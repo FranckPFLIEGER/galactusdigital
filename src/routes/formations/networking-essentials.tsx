@@ -8,7 +8,7 @@ export const Route = createFileRoute('/formations/networking-essentials')({
   head: () => ({
     meta: [
       { title: "Networking Essentials Cisco NetAcad — Formation réseaux | GALACTUS Digital" },
-      { name: "description", content: "Formation Cisco NetAcad Networking Essentials. 35h. Badge certifiant. Fondamentaux réseaux sans prérequis. Présentiel FOAD E-learning. Certifié Qualiopi." },
+      { name: "description", content: "Formation Cisco NetAcad Networking Essentials. 35h. Badge certifiant. Fondamentaux réseaux sans prérequis. Présentiel · FOAD · E-learning. Certifié Qualiopi." },
     ],
   }),
 })
@@ -21,7 +21,7 @@ const DATA = {
   ref: 'NETESS-001',
   niveau: 'Fondamental',
   partenaire: 'Cisco NetAcad',
-  certification: 'Cisco Networking Essentials Badge',
+  certification: 'Cisco Networking Essentials',
   duree: '35 heures',
   groupeMin: 4,
   groupeMax: 12,
@@ -31,12 +31,12 @@ const DATA = {
   public: ["Débutants complets en informatique", "Étudiants BTS / Licence Pro", "Professionnels IT en reconversion", "Prérequis d'entrée pour CCNA ou CyberOps"],
   prerequis: ["Aucun prérequis technique", "Utilisation basique d'un PC et d'Internet"],
   examen: {
-    code: 'Networking Essentials Badge',
+    code: 'Networking Essentials Final Exam',
     duree: 'Auto-évaluation',
     langue: 'Français / Anglais',
     organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
-    score: 'Badge de complétion',
+    score: '700 sur 1000',
     note: `Cette formation délivre un badge Cisco NetAcad. Elle constitue la base recommandée avant d'entrer dans le cursus CCNA.`,
   },
   methodes: [
@@ -49,7 +49,7 @@ const DATA = {
     "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
     "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
-    "Badge numérique certifiant remis à l'issue du parcours — vérifiable sur Credly / Cisco NetAcad",
+    "Certification Cisco Networking Essentials Badge envoyée par mail à l'issue du parcours",
     "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Passage de l'examen certifiant Cisco Networking Academy intégré au programme",
   ],
@@ -327,7 +327,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h — Martinique · Guadeloupe · Paris · FOAD.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h — Martinique · Guadeloupe · Paris.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

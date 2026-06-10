@@ -65,7 +65,6 @@ const FORMATIONS = [
   },
   {
     editeur: 'IPv6 Forum',
-    label: 'OPCO · PDC',
     formations: [
       'IPv6 Certified Network Engineer',
       'IPv6 Certified Security Engineer',

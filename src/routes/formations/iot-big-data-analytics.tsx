@@ -31,12 +31,12 @@ const DATA = {
   public: ["Professionnels IoT souhaitant maîtriser la data", "Data analysts s'orientant vers l'IoT industriel", "Ingénieurs ayant validé Connecting Things", "Candidats à des rôles IoT Data Engineer"],
   prerequis: ["IoT Fundamentals: Connecting Things validé", "Python Essentials 1 ou connaissance Python équivalente", "Notions de bases de données SQL"],
   examen: {
-    code: 'IoT Big Data & Analytics Badge',
+    code: 'IoT Big Data & Analytics',
     duree: 'Projet final + QCM',
     langue: 'Français / Anglais',
     organisme: 'Cisco Networking Academy',
-    format: 'Évaluation continue + projet final',
-    score: 'Badge numérique + attestation',
+    format: 'QCM et questions pratiques',
+    score: '700/1000',
     note: 'Prérequis recommandé avant le Hackathon Playbook (cours 3/3). Cette formation prépare aux rôles IoT Data Engineer et aux certifications data (DP-900, AWS Data Analytics).',
   },
   methodes: [

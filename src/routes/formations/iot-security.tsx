@@ -31,12 +31,12 @@ const DATA = {
   public: ["Ingénieurs sécurité travaillant sur des environnements IoT", "Architectes réseau déployant des infrastructures IoT", "Professionnels OT/IT en environnement industriel (ICS/SCADA)", "Candidats préparant des certifications sécurité IoT"],
   prerequis: ["IoT Fundamentals: Connecting Things validé", "CyberOps Associate ou Cybersecurity Essentials recommandé", "Connaissance des réseaux TCP/IP et des protocoles de sécurité"],
   examen: {
-    code: 'IoT Security Badge',
+    code: 'IoT Security',
     duree: `Projet d'audit + QCM`,
     langue: 'Français / Anglais',
     organisme: 'Cisco Networking Academy',
-    format: 'Évaluation continue + projet final',
-    score: 'Badge numérique + attestation',
+    format: 'QCM et questions pratiques',
+    score: '700/1000',
     note: 'Formation avancée complémentaire à CyberOps Associate et Ethical Hacker. Prépare aux certifications sécurité spécialisées IoT et à la certification GICSP (ICS/SCADA Security).',
   },
   methodes: [

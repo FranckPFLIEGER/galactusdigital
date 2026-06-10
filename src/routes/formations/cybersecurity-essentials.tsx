@@ -20,7 +20,7 @@ const DATA = {
   sousTitre: 'Formation aux bases de la cybersécurité · Référence : CYBERESSEN',
   ref: 'CYBERESSEN-001',
   niveau: 'Fondamental',
-  partenaire: 'Cisco NetAcad',
+  partenaire: 'Partenaire Cisco n° 3018982',
   certification: 'Cisco Cybersecurity Essentials',
   duree: '30 heures',
   groupeMin: 4,
@@ -109,9 +109,8 @@ function FormationPage() {
             <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
-                { icon: <Calendar size={14} />, text: 'Calendrier disponible sur demande' },
-                { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <MapPin size={14} />, text: DATA.lieux.join(' · ') },
+                                { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
+                { icon: <Calendar size={14} />, text: 'Voir calendrier' },
               ].map((m, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>
                   <span style={{ color: 'var(--g-red)' }}>{m.icon}</span>{m.text}
@@ -327,7 +326,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h — Martinique · Guadeloupe · Paris.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

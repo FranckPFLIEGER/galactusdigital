@@ -130,7 +130,7 @@ const DATA = {
   examen: {
     code:       '200-301 CCNA',
     duree:      '120 minutes',
-    langue:     'Anglais',
+    langue:     'Français',
     organisme:  'Cisco Networking Academy',
     format:     'QCM, drag-and-drop, simulation réseau Cisco',
     score:      '825 / 1000',

@@ -81,7 +81,7 @@ const LIEUX = [
 
 function FormationGrid() {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginTop: '2rem' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1.25rem', marginTop: '2rem' }}>
       {FORMATIONS.map(f => (
         <div key={f.editeur} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
@@ -157,7 +157,7 @@ function PresentielPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Pourquoi choisir le présentiel ?</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 { icon: <Users size={24} color="white" />, title: 'Immersion totale', desc: "La formation en présentiel favorise la concentration, l'interaction directe avec le formateur et les échanges entre participants. Idéale pour les formations techniques avec ateliers pratiques intensifs." },
                 { icon: <CheckCircle size={24} color="white" />, title: 'Accompagnement direct', desc: "Le formateur adapte son rythme en temps réel selon le niveau du groupe. Les questions trouvent une réponse immédiate, les difficultés sont levées sur le moment." },
@@ -178,7 +178,7 @@ function PresentielPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">Nos lieux de formation</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem' }}>
               {LIEUX.map(l => (
                 <div key={l.zone} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginBottom: '1rem' }}>
@@ -217,7 +217,7 @@ function PresentielPage() {
             <p style={{ fontSize: '0.95rem', color: '#5a5a58', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Rejoignez nos sessions ouvertes planifiées tout au long de l'année. Un format qui favorise les échanges entre professionnels de secteurs variés dans les territoires ultramarins et en France hexagonale.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
                 { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: "Échangez avec des professionnels d'horizons différents. Opportunité unique de réseautage et de partage d'expériences dans les territoires ultramarins." },
                 { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: 'Inscrivez-vous à la session qui correspond à vos disponibilités. Plusieurs dates disponibles dans l\'année sur nos différents territoires.' },
@@ -230,7 +230,7 @@ function PresentielPage() {
                 </div>
               ))}
             </div>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', background: 'var(--g-white)', padding: '2.5rem', border: '1px solid rgba(187,187,187,0.3)' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '2rem', background: 'var(--g-white)', padding: '2.5rem', border: '1px solid rgba(187,187,187,0.3)' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -287,7 +287,7 @@ function PresentielPage() {
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Nous intervenons directement dans vos locaux avec un programme conçu sur mesure pour vos équipes. Vos collaborateurs se forment sans quitter leur environnement de travail — où que vous soyez dans les territoires ultramarins ou en France hexagonale.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
                 { icon: <Target size={24} color="white" />, title: 'Programme sur mesure', desc: "Le contenu est adapté à vos outils, vos processus et vos objectifs métiers. Pas de formation générique — une ingénierie pédagogique taillée pour votre organisation." },
                 { icon: <Users size={24} color="white" />, title: "Cohésion d'équipe", desc: "Toute votre équipe progresse ensemble, au même rythme, avec les mêmes références. Idéal pour harmoniser les compétences et créer un langage commun." },
@@ -301,7 +301,7 @@ function PresentielPage() {
               ))}
             </div>
             <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'rgba(255,255,255,0.5)', marginBottom: '1.5rem' }}>Comment ça se passe ?</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
                 { num: '01', title: 'Audit des besoins', desc: 'Entretien avec votre responsable formation pour identifier les compétences à développer et les certifications visées.' },
                 { num: '02', title: 'Programme personnalisé', desc: 'Nous concevons un programme aligné sur vos objectifs, vos outils et le niveau de vos équipes.' },
@@ -315,7 +315,7 @@ function PresentielPage() {
                 </div>
               ))}
             </div>
-            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '2rem' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -355,7 +355,7 @@ function PresentielPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Organisation pratique</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '2rem' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Déroulement type d'une journée</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
@@ -385,7 +385,7 @@ function PresentielPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Conformité réglementaire</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1rem' }}>
               {[
                 { ref: 'Art. L.6313-1', title: 'Action de formation en présentiel', desc: 'La formation en présentiel est une action de formation synchrone au sens du Code du travail. Le formateur et les stagiaires se trouvent physiquement dans le même lieu.' },
                 { ref: 'Qualiopi — Ind. 4', title: 'Convocation et règlement intérieur', desc: 'Chaque stagiaire reçoit une convocation précisant les dates, lieux, horaires et le règlement intérieur avant le démarrage de la formation.' },
@@ -420,6 +420,17 @@ function PresentielPage() {
           </div>
         </section>
 
+
+        <style>{`
+          @media (max-width: 640px) {
+            main section { padding: 2.5rem 1rem !important; }
+            main section > div { padding-left: 0 !important; padding-right: 0 !important; }
+            .hero-badges { flex-wrap: wrap; }
+          }
+          @media (max-width: 480px) {
+            main section { padding: 2rem 0.75rem !important; }
+          }
+        `}</style>
       </main>
       <Footer />
     </>

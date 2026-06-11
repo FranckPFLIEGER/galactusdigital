@@ -31,7 +31,7 @@ function FinancementsPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Dispositifs de financement</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 {
                   title: 'CPF — Compte Personnel de Formation',
@@ -145,6 +145,15 @@ function FinancementsPage() {
           </div>
         </section>
 
+
+        <style>{`
+          @media (max-width: 640px) {
+            main section { padding: 2.5rem 1rem !important; }
+          }
+          @media (max-width: 480px) {
+            main section { padding: 2rem 0.75rem !important; }
+          }
+        `}</style>
       </main>
       <Footer />
     </>

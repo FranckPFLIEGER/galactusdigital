@@ -70,7 +70,7 @@ function ElearningPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Pourquoi choisir l'e-learning tutoré ?</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 { icon: <Clock size={24} color="white" />, title: 'Rythme libre', desc: 'Vous avancez selon vos disponibilités, sans contrainte d\'horaire. Idéal pour les professionnels en activité dans les territoires ultramarins avec des contraintes opérationnelles fortes.' },
                 { icon: <UserCheck size={24} color="white" />, title: 'Tuteur dédié', desc: 'Un tuteur certifié éditeur vous est assigné pour toute la durée du parcours. Il répond à vos questions, valide vos avancées et vous prépare à la certification officielle.' },
@@ -94,7 +94,7 @@ function ElearningPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">FOAD synchrone vs E-learning tutoré</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1.5rem' }}>
               {[
                 {
                   titre: 'FOAD synchrone', href: '/foad', active: false,
@@ -134,7 +134,7 @@ function ElearningPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Comment ça se passe ?</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 { num: '01', title: 'Inscription',       desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement CPF/OPCO monté avec vous.' },
                 { num: '02', title: 'Accès activé',       desc: 'Sous 72h, vous recevez vos accès NetAcad et/ou Microsoft Learn. Votre tuteur vous contacte pour un échange de cadrage.' },
@@ -156,7 +156,7 @@ function ElearningPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Parcours disponibles</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginTop: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1.25rem', marginTop: '2rem' }}>
 
               {/* Cisco Réseaux */}
               <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
@@ -259,7 +259,7 @@ function ElearningPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Caractéristiques</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '2rem' }}>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {[
                   'Parcours individuel ou petit groupe (2 à 6 apprenants)',
@@ -291,7 +291,7 @@ function ElearningPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Conformité réglementaire</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1rem' }}>
               {[
                 { ref: 'Art. L.6313-1', title: 'Action de formation à distance', desc: 'L\'e-learning tutoré est reconnu comme action de formation au sens du Code du travail dès lors qu\'un accompagnement individualisé est documenté.' },
                 { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique adapté', desc: 'NetAcad et Microsoft Learn constituent le plateau technique officiel certifié. Vérification de la prise en main organisée avant démarrage de chaque parcours.' },
@@ -326,6 +326,17 @@ function ElearningPage() {
           </div>
         </section>
 
+
+        <style>{`
+          @media (max-width: 640px) {
+            main section { padding: 2.5rem 1rem !important; }
+            main section > div { padding-left: 0 !important; padding-right: 0 !important; }
+            .hero-badges { flex-wrap: wrap; }
+          }
+          @media (max-width: 480px) {
+            main section { padding: 2rem 0.75rem !important; }
+          }
+        `}</style>
       </main>
       <Footer />
     </>

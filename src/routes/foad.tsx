@@ -75,7 +75,7 @@ const FORMATIONS = [
 
 function FormationGrid() {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginTop: '2rem' }}>
+    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1.25rem', marginTop: '2rem' }}>
       {FORMATIONS.map(f => (
         <div key={f.editeur} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
@@ -154,7 +154,7 @@ function FoadPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">Pourquoi choisir la FOAD ?</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 { icon: <Monitor size={24} color="white" />, title: 'Plateforme officielle', desc: "Toutes nos formations FOAD s'appuient sur Cisco NetAcad ou Microsoft Learn — accessibles 24h/24 depuis n'importe quel appareil, avec suivi de progression individuel." },
                 { icon: <Wifi size={24} color="white" />, title: 'Sessions live WEBEX', desc: "Nos sessions synchrones se déroulent via WEBEX. Partage d'écran, ateliers pratiques à distance, interactions en temps réel avec le formateur certifié." },
@@ -183,7 +183,7 @@ function FoadPage() {
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Rejoignez nos sessions ouvertes planifiées depuis n'importe quel territoire. Le formateur et les participants se retrouvent en ligne sur WEBEX — même format que l'inter présentiel, sans contrainte de déplacement.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
                 { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: "Échangez avec des professionnels d'horizons différents depuis tous les territoires. Opportunité unique de réseautage inter-îles." },
                 { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: 'Inscrivez-vous à la session qui correspond à vos disponibilités. Plusieurs dates disponibles dans l\'année sur tous les territoires.' },
@@ -196,7 +196,7 @@ function FoadPage() {
                 </div>
               ))}
             </div>
-            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '2rem' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -240,7 +240,7 @@ function FoadPage() {
             <p style={{ fontSize: '0.95rem', color: '#5a5a58', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Un groupe dédié à votre organisation, un programme personnalisé, des sessions live réservées à vos équipes. Toute la flexibilité de l'intra, sans contrainte géographique.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
                 { icon: <Target size={24} color="white" />, title: 'Programme sur mesure', desc: "Contenu adapté à vos outils, vos processus et vos cas concrets. Pas de formation générique — une ingénierie taillée pour votre organisation." },
                 { icon: <Settings size={24} color="white" />, title: 'Flexibilité horaire', desc: "Sessions planifiées selon vos contraintes. Pas de déplacement, pas de logistique. Vos équipes se forment de là où elles sont." },
@@ -254,7 +254,7 @@ function FoadPage() {
               ))}
             </div>
             <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#888', marginBottom: '1.5rem' }}>Comment ça se passe ?</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
                 { num: '01', title: 'Audit des besoins', desc: 'Entretien avec votre responsable formation pour identifier les compétences à développer et les certifications visées.' },
                 { num: '02', title: 'Programme personnalisé', desc: 'Nous concevons un programme adapté à vos outils, vos processus et le niveau de vos équipes.' },
@@ -268,7 +268,7 @@ function FoadPage() {
                 </div>
               ))}
             </div>
-            <div style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '2.5rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '2rem' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -299,7 +299,7 @@ function FoadPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">Prérequis techniques</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '2rem' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Équipement nécessaire</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
@@ -338,7 +338,7 @@ function FoadPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Conformité réglementaire</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1rem' }}>
               {[
                 { ref: 'Art. D.6313-3-1', title: 'Assistance pédagogique documentée', desc: "Une assistance technique et pédagogique appropriée est mise en œuvre pour accompagner le bénéficiaire dans le déroulement de son parcours à distance." },
                 { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique et pédagogique', desc: "Les outils de formation sont centralisés sur une plateforme digitale (NetAcad + WEBEX). Les apprenants reçoivent une invitation pour vérifier le bon fonctionnement avant démarrage." },
@@ -373,6 +373,17 @@ function FoadPage() {
           </div>
         </section>
 
+
+        <style>{`
+          @media (max-width: 640px) {
+            main section { padding: 2.5rem 1rem !important; }
+            main section > div { padding-left: 0 !important; padding-right: 0 !important; }
+            .hero-badges { flex-wrap: wrap; }
+          }
+          @media (max-width: 480px) {
+            main section { padding: 2rem 0.75rem !important; }
+          }
+        `}</style>
       </main>
       <Footer />
     </>

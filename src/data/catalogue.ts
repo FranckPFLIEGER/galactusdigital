@@ -61,11 +61,11 @@ export const FORMATIONS: Formation[] = [
     titreLong: 'Networking Essentials — Fondamentaux des réseaux',
     editeur: 'Cisco NetAcad', famille: 'Réseaux & CCNA',
     niveau: 'Fondamental', duree: '35 heures', dureeJours: 4,
-    certification: 'Cisco Networking Essentials Badge',
-    examCode: 'Badge NetAcad',
+    certification: 'Cisco Networking Essentials Certificat',
+    examCode: 'Certificat Cisco NetAcad',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Introduction complète aux réseaux sans prérequis. Base recommandée avant le cursus CCNA.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
   },
   {
     slug: 'ccna-itn',
@@ -77,7 +77,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Premiers modules du cursus CCNA officiel — OSI, TCP/IP, IPv4, IPv6, CLI Cisco.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 590 },
   },
   {
     slug: 'ccna-srwe',
@@ -89,7 +89,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'VLANs, STP, EtherChannel, DHCP, Wi-Fi 802.11 et routage statique avancé.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 590 },
   },
   {
     slug: 'ccna-ensa',
@@ -101,7 +101,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'OSPF, ACL, NAT, VPN, SDN et automatisation réseau. Dernier module avant l\'examen CCNA.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 590 },
   },
 
   // ── CISCO — Cybersécurité ──────────────────────────────────────────────────
@@ -111,11 +111,11 @@ export const FORMATIONS: Formation[] = [
     titreLong: 'Cybersecurity Essentials — Fondamentaux de la cybersécurité',
     editeur: 'Cisco NetAcad', famille: 'Cybersécurité',
     niveau: 'Fondamental', duree: '30 heures', dureeJours: 4,
-    certification: 'Cisco Cybersecurity Essentials Badge',
-    examCode: 'Badge NetAcad',
+    certification: 'Cisco Cybersecurity Essentials Certificat',
+    examCode: 'Certificat Cisco NetAcad',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'CIA Triad, cryptographie, sécurité OS, firewalls et réponse aux incidents.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
   },
   {
     slug: 'cyberops',
@@ -127,7 +127,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-201 CBROPS',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Formation SOC complète — surveillance réseau, forensique, réponse aux incidents.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 590 },
   },
   {
     slug: 'ethical-hacker',
@@ -135,11 +135,11 @@ export const FORMATIONS: Formation[] = [
     titreLong: 'Ethical Hacker — Tests d\'intrusion et sécurité offensive',
     editeur: 'Cisco NetAcad', famille: 'Cybersécurité',
     niveau: 'Avancé', duree: '30 heures', dureeJours: 4,
-    certification: 'Cisco Ethical Hacker Badge',
-    examCode: 'Badge NetAcad',
+    certification: 'Cisco Ethical Hacker Certificat',
+    examCode: 'Certificat Cisco NetAcad',
     modalites: ['Présentiel', 'FOAD'],
     description: 'Méthodologie pentest, Kali Linux, Nmap, Metasploit, Burp Suite et rapport.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
   },
 
   // ── CISCO — Programmation ─────────────────────────────────────────────────
@@ -153,7 +153,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PCEP-30-02',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Python from scratch — types, boucles, fonctions, collections, fichiers.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 290 },
   },
   {
     slug: 'python-essentials-2',
@@ -165,7 +165,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PCAP-31-03',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'POO, modules, exceptions, générateurs, décorateurs et programmation fonctionnelle.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 290 },
   },
   {
     slug: 'devnet-associate',
@@ -177,7 +177,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-901 DEVASC',
     modalites: ['Présentiel', 'FOAD'],
     description: 'APIs REST, Python réseau, YANG/NETCONF, Ansible et CI/CD pour le réseau.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 590 },
   },
 
   // ── CISCO — IoT ───────────────────────────────────────────────────────────
@@ -187,11 +187,11 @@ export const FORMATIONS: Formation[] = [
     titreLong: 'Introduction à l\'IoT et à la Transformation Digitale',
     editeur: 'Cisco NetAcad', famille: 'IoT',
     niveau: 'Fondamental', duree: '20 heures', dureeJours: 3,
-    certification: 'Cisco IoT Introduction Badge',
-    examCode: 'Badge NetAcad',
+    certification: 'Cisco IoT Introduction Certificat',
+    examCode: 'Certificat Cisco NetAcad',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Comprendre l\'IoT et la transformation digitale sans prérequis technique.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
   },
   {
     slug: 'iot-connecting-things',
@@ -199,11 +199,11 @@ export const FORMATIONS: Formation[] = [
     titreLong: 'IoT Fundamentals — Connecting Things (1/3)',
     editeur: 'Cisco NetAcad', famille: 'IoT',
     niveau: 'Intermédiaire', duree: '70 heures', dureeJours: 9,
-    certification: 'Cisco IoT Connecting Things Badge',
-    examCode: 'Badge NetAcad',
+    certification: 'Cisco IoT Connecting Things Certificat',
+    examCode: 'Certificat Cisco NetAcad',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Arduino, Raspberry Pi, MQTT, protocoles IoT et sécurisation des déploiements.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
   },
   {
     slug: 'iot-big-data-analytics',
@@ -211,11 +211,11 @@ export const FORMATIONS: Formation[] = [
     titreLong: 'IoT Fundamentals — Big Data & Analytics (2/3)',
     editeur: 'Cisco NetAcad', famille: 'IoT',
     niveau: 'Intermédiaire', duree: '70 heures', dureeJours: 9,
-    certification: 'Cisco IoT Big Data & Analytics Badge',
-    examCode: 'Badge NetAcad',
+    certification: 'Cisco IoT Big Data & Analytics Certificat',
+    examCode: 'Certificat Cisco NetAcad',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Collecte, stockage, analyse et visualisation des données IoT avec Python.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
   },
   {
     slug: 'iot-security',
@@ -223,11 +223,11 @@ export const FORMATIONS: Formation[] = [
     titreLong: 'IoT Fundamentals — IoT Security',
     editeur: 'Cisco NetAcad', famille: 'IoT',
     niveau: 'Avancé', duree: '60 heures', dureeJours: 8,
-    certification: 'Cisco IoT Security Badge',
-    examCode: 'Badge NetAcad',
+    certification: 'Cisco IoT Security Certificat',
+    examCode: 'Certificat Cisco NetAcad',
     modalites: ['Présentiel', 'FOAD'],
     description: 'Menaces IoT, cryptographie embarquée, segmentation réseau et audits de sécurité.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
   },
   {
     slug: 'iot-hackathon',
@@ -235,11 +235,11 @@ export const FORMATIONS: Formation[] = [
     titreLong: 'IoT Fundamentals — Hackathon Playbook (3/3)',
     editeur: 'Cisco NetAcad', famille: 'IoT',
     niveau: 'Avancé', duree: '40 heures', dureeJours: 5,
-    certification: 'Cisco IoT Hackathon Badge',
-    examCode: 'Badge NetAcad',
+    certification: 'Cisco IoT Hackathon Certificat',
+    examCode: 'Certificat Cisco NetAcad',
     modalites: ['Présentiel', 'FOAD'],
     description: 'Projet IoT en équipe — design thinking, prototype fonctionnel et pitch jury.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
   },
 
   // ── CISCO — Linux & Open Source ───────────────────────────────────────────
@@ -253,7 +253,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '010-160',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Commandes Linux, gestion des fichiers, utilisateurs, processus et scripts Bash.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 290 },
   },
 
   // ── CISCO — Data & Analytics ──────────────────────────────────────────────
@@ -263,11 +263,11 @@ export const FORMATIONS: Formation[] = [
     titreLong: 'Data Analytics Essentials — Introduction à l\'analyse de données',
     editeur: 'Cisco NetAcad', famille: 'Data & Analytics',
     niveau: 'Fondamental', duree: '30 heures', dureeJours: 4,
-    certification: 'Cisco Data Analytics Essentials Badge',
-    examCode: 'Badge NetAcad',
+    certification: 'Cisco Data Analytics Essentials Certificat',
+    examCode: 'Certificat Cisco NetAcad',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'SQL, Python Pandas, visualisation et storytelling data sans prérequis avancé.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 290 },
   },
 
   // ── MICROSOFT — Azure & Cloud ─────────────────────────────────────────────
@@ -281,7 +281,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AZ-900',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'IaaS, PaaS, SaaS, services Azure principaux, sécurité et tarification cloud.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'az-104',
@@ -293,7 +293,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AZ-104',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Entra ID, stockage, VM, VNet, supervision et gouvernance Azure.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'sc-900',
@@ -305,7 +305,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'SC-900',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Zero Trust, Entra ID, Defender, Purview et conformité réglementaire Microsoft.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'ai-900',
@@ -317,7 +317,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AI-900',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'ML, vision, NLP, IA générative et Azure OpenAI Service.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'ms-900',
@@ -329,7 +329,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'MS-900',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Teams, Exchange, SharePoint, Intune, sécurité M365 et licences.',
-    prix: { presentiel: null, foad: null, elearning: null },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
 ]
 

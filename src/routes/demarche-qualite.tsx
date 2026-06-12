@@ -41,7 +41,7 @@ function DemarcheQualitePage() {
               NDA : 11 75 59933 75 — SIRET : 880 430 418 00017
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
                 { num: '518',   label: 'Candidats formés 2023-2025',    sub: 'Périmètre : toutes certifications IT' },
                 { num: '100%',  label: 'Taux de réussite',              sub: "Parmi les candidats présentés à l'examen" },
@@ -99,7 +99,7 @@ function DemarcheQualitePage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">Notre démarche s'appuie sur les 7 critères Qualiopi</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1.25rem' }}>
               {[
                 { num: '01', title: 'Information du public', desc: "Diffusion d'informations accessibles, détaillées et vérifiables : prérequis, objectifs, durée, modalités, résultats. Courriel de proposition avec certificat Qualiopi, devis, convention et plan de formation." },
                 { num: '02', title: 'Identification des objectifs & adaptation', desc: "Objectifs définis sous forme de verbes d'action dans le plan de formation. Analyse des besoins via questionnaire d'évaluation des attentes. Prise en compte des situations PSH." },
@@ -126,7 +126,7 @@ function DemarcheQualitePage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Amélioration continue — Indicateur 32</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '3rem' }}>
               <div>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
                   À chaque fin de prestation, GALACTUS Digital analyse les résultats pour identifier les points forts

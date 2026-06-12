@@ -32,7 +32,7 @@ function RgpdPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Vos droits sur vos données</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 { icon: <Eye size={22} color="white" />, title: 'Droit d\'accès', desc: 'Vous pouvez à tout moment demander à consulter l\'ensemble des données personnelles que nous détenons vous concernant.' },
                 { icon: <Shield size={22} color="white" />, title: 'Droit de rectification', desc: 'Vous pouvez demander la correction de toute donnée inexacte ou incomplète vous concernant.' },
@@ -114,7 +114,7 @@ function RgpdPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Responsable du traitement & contact</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '3rem' }}>
               <div style={{ background: 'var(--g-black)', borderLeft: '4px solid var(--g-red)', padding: '2rem' }}>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '1.25rem' }}>
                   Responsable du traitement

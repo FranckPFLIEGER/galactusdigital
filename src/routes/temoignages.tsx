@@ -93,7 +93,7 @@ function TemoignagesPage() {
               GALACTUS Digital et ses formations certifiantes IT dans les territoires ultramarins ont été mis en avant
               par les médias régionaux. Retrouvez ici nos passages TV et interventions presse.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem' }}>
               {[1, 2, 3].map(i => (
                 <div key={i} style={{ background: 'var(--g-black)', border: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden' }}>
                   <div style={{ aspectRatio: '16/9', background: '#1a1a18', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
@@ -123,7 +123,7 @@ function TemoignagesPage() {
             </span>
             <h2 className="section-h2" style={{ marginBottom: '0.5rem' }}>Ce qu'ils disent de nous</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               {temoignagesEcrits.map((t, i) => (
                 <div key={i} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '4px solid var(--g-red)', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   <Quote size={28} color="rgba(228,31,38,0.25)" />
@@ -157,7 +157,7 @@ function TemoignagesPage() {
         {/* Stats satisfaction */}
         <section style={{ background: 'var(--g-black)', padding: '3rem 2rem', borderTop: '4px solid var(--g-red)' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '2rem', textAlign: 'center' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: '2rem', textAlign: 'center' }}>
               {[
                 { num: '4,8/5', label: 'Note satisfaction', sub: 'Moyenne 2024' },
                 { num: '100%', label: 'Taux de réussite', sub: 'Parmi les présentés' },

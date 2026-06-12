@@ -35,7 +35,7 @@ const MODALITE_ICON: Record<string, string> = {
 
 function Card({ f }: { f: Formation }) {
   const color = EDITEUR_COLOR[f.editeur] ?? "#E41F26"
-  const prix  = f.prix.presentiel ?? f.prix.foad ?? f.prix.elearning
+  const prix  = f.prix.elearning ?? f.prix.foad ?? f.prix.presentiel
   return (
     <div style={{
       background: "#fff",
@@ -96,11 +96,9 @@ function Card({ f }: { f: Formation }) {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: ".9rem 1.25rem", borderTop: "1px solid rgba(187,187,187,.20)", marginTop: "auto" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: ".15rem" }}>
           <span style={{ fontFamily: "var(--font-title)", fontSize: ".82rem", fontWeight: 700, color: prix ? "var(--g-black)" : "var(--g-black)" }}>
-            {prix ? `${prix.toLocaleString("fr-FR")} € HT` : "Devis sous 48h"}
+            {prix ? `À partir de ${prix.toLocaleString("fr-FR")} € HT` : "Sur devis"}
           </span>
-          <span style={{ fontFamily: "var(--font-title)", fontSize: ".58rem", fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: "#27ae60" }}>
-            💶 CPF · OPCO · AIF
-          </span>
+
         </div>
         <a href={`/formations/${f.slug}`} style={{ display: "inline-flex", alignItems: "center", gap: ".35rem", fontFamily: "var(--font-title)", fontSize: ".70rem", fontWeight: 700, letterSpacing: ".10em", textTransform: "uppercase", color, textDecoration: "none" }}>
           Voir la fiche <ArrowRight size={12} />

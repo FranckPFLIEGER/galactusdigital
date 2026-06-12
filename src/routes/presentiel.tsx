@@ -50,7 +50,6 @@ const FORMATIONS = [
   },
   {
     editeur: 'Microsoft',
-    label: 'Partenaire n° 4653557',
     formations: [
       'AZ-900 Azure Fundamentals',
       'AZ-104 Azure Administrator',

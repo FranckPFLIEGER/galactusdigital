@@ -236,9 +236,6 @@ function FormationsPage() {
                   <div style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#E41F26" }}>
                     Partenaire n° 3018982
                   </div>
-                  <div style={{ fontSize: ".72rem", color: "#27ae60", fontWeight: 600, marginTop: ".15rem" }}>
-                    ✓ Finançable CPF / OPCO / AIF
-                  </div>
                   <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: "var(--g-black)", margin: 0 }}>
                     Cisco NetAcad
                   </h2>
@@ -264,9 +261,6 @@ function FormationsPage() {
                 <div>
                   <div style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#0078D4" }}>
                     Partenaire n° 4653557
-                  </div>
-                  <div style={{ fontSize: ".72rem", color: "#27ae60", fontWeight: 600, marginTop: ".15rem" }}>
-                    ✓ Finançable CPF / OPCO / AIF
                   </div>
                   <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: "var(--g-black)", margin: 0 }}>
                     Microsoft Azure & M365

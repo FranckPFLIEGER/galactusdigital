@@ -77,7 +77,7 @@ export function FormationGrid({ modalite, dark = false }: Props) {
       </div>
 
       {/* ── Grille ── */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1rem' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1rem' }}>
         {visible.map(f => {
           const fCol = FC[f.famille] || '#E41F26'
           const nCol = NC[f.niveau]  || '#888'

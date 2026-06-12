@@ -13,7 +13,6 @@ export const Route = createFileRoute('/presentiel')({
 const FORMATIONS = [
   {
     editeur: 'Cisco — Réseaux',
-    label: 'Partenaire n° 3018982',
     formations: [
       'Networking Essentials',
       'CCNA 1 — Introduction aux réseaux (ITN)',
@@ -23,7 +22,6 @@ const FORMATIONS = [
   },
   {
     editeur: 'Cisco — Cybersécurité',
-    label: 'Partenaire n° 3018982',
     formations: [
       'Cybersecurity Essentials',
       'CyberOps Associate',
@@ -32,7 +30,6 @@ const FORMATIONS = [
   },
   {
     editeur: 'Cisco — Dev & Data',
-    label: 'Partenaire n° 3018982',
     formations: [
       'Python Essentials 1 (PCEP)',
       'Python Essentials 2 (PCAP)',
@@ -43,7 +40,6 @@ const FORMATIONS = [
   },
   {
     editeur: 'Cisco — IoT',
-    label: 'Partenaire n° 3018982',
     formations: [
       'IoT — Introduction',
       'IoT — Connecting Things',

@@ -86,8 +86,8 @@ function DemarcheQualitePage() {
                     <tr key={r.year} style={{ background: i % 2 === 0 ? '#fff' : 'var(--g-offwhite)', borderBottom: '1px solid rgba(187,187,187,0.2)' }}>
                       <td style={{ padding: '0.75rem 1rem', textAlign: 'center', fontWeight: 700, color: 'var(--g-red)', fontFamily: 'var(--font-title)', fontSize: '1rem' }}>{r.year}</td>
                       <td style={{ padding: '0.75rem 1rem', textAlign: 'center', fontWeight: 600 }}>{r.n}</td>
-                      <td style={{ padding: '0.75rem 1rem', textAlign: 'center', color: '#16a34a', fontWeight: 700 }}>{r.ab}</td>
-                      <td style={{ padding: '0.75rem 1rem', textAlign: 'center', color: '#16a34a', fontWeight: 700 }}>{r.an}</td>
+                      <td style={{ padding: '0.75rem 1rem', textAlign: 'center', color: 'var(--g-black)', fontWeight: 700 }}>{r.ab}</td>
+                      <td style={{ padding: '0.75rem 1rem', textAlign: 'center', color: 'var(--g-black)', fontWeight: 700 }}>{r.an}</td>
                       <td style={{ padding: '0.75rem 1rem', textAlign: 'center', color: 'var(--g-red)', fontWeight: 700 }}>{r.s}</td>
                       <td style={{ padding: '0.75rem 1rem', textAlign: 'center' }}>{r.f}</td>
                       <td style={{ padding: '0.75rem 1rem', textAlign: 'center' }}>{r.fo}</td>

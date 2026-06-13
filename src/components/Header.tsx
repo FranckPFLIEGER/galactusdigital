@@ -289,7 +289,6 @@ export function Header() {
           {mobileOpen ? <X size={22} color="#E41F26" /> : <Menu size={22} color="#fff" />}
         </button>
       </div>
-      </div>
 
       {/* ── Menu mobile ── */}
       <div className={`nav-mobile-menu${mobileOpen ? ' open' : ''}`} aria-hidden={!mobileOpen}>

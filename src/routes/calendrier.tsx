@@ -92,8 +92,8 @@ const SESSIONS_PREP: Session[] = PROCHAINES.flatMap(p => {
   return [{ id: `prep__${p.slug}__${p.territoire}__${p.modalite}`.replace(/\s/g,'-'), formation: f, territoire: p.territoire, lieu: p.lieu, modalite: p.modalite, dateLabel: p.dateLabel, placesMax: p.placesMax ?? 12, statut: 'en_preparation' as const }]
 })
 
-const MC: Record<string,{bg:string;color:string}> = { 'Présentiel':{bg:'#E41F26',color:'#fff'}, 'FOAD':{bg:'#1D1D1B',color:'#fff'}, 'E-learning':{bg:'#16a085',color:'#fff'} }
-const NC: Record<string,string> = { 'Fondamental':'#27ae60', 'Intermédiaire':'#e67e22', 'Avancé':'#E41F26' }
+const MC: Record<string,{bg:string;color:string}> = { 'Présentiel':{bg:'#E41F26',color:'#fff'}, 'FOAD':{bg:'#1D1D1B',color:'#fff'}, 'E-learning':{bg:'#5a5a58',color:'#fff'} }
+const NC: Record<string,string> = { 'Fondamental':'#BBBBBB', 'Intermédiaire':'rgba(228,31,38,0.55)', 'Avancé':'#E41F26' }
 
 // ── COMPOSANT GANTT ────────────────────────────────────────────────────────
 function GanttView() {
@@ -147,7 +147,7 @@ function GanttView() {
         {familles.map(([famKey, fam]) => {
           const formsFamille = FORMATIONS.filter(f => f.famille === famKey)
           const hasPlanned = formsFamille.some(f => prepBySlug[f.slug])
-          const editeurColor = formsFamille[0]?.editeur === 'Microsoft' ? '#0078D4' : '#E41F26'
+          const editeurColor = formsFamille[0]?.editeur === 'Microsoft' ? '#1D1D1B' : '#E41F26'
           return (
             <div key={famKey} style={{ display: 'grid', gridTemplateColumns: '180px 1fr', marginBottom: '3px', alignItems: 'center', minHeight: '32px' }}>
               {/* Label famille */}
@@ -216,7 +216,7 @@ function SessionRow({ s, prep = false }: { s: Session; prep?: boolean }) {
   const mc = MC[s.modalite] || { bg: '#888', color: '#fff' }
   const nc = NC[s.formation.niveau] || '#888'
   const prix = s.modalite === 'E-learning' ? s.formation.prix.elearning : s.modalite === 'FOAD' ? s.formation.prix.foad : s.formation.prix.presentiel
-  const editeurColor = s.formation.editeur === 'Microsoft' ? '#0078D4' : '#E41F26'
+  const editeurColor = s.formation.editeur === 'Microsoft' ? '#1D1D1B' : '#E41F26'
   return (
     <div className="session-row"
       style={{ border: prep ? '1px solid rgba(239,159,39,0.35)' : '1px solid rgba(187,187,187,0.28)', borderLeft: `3px solid ${prep ? '#EF9F27' : nc}`, padding: '1.2rem 1.5rem', background: prep ? 'rgba(239,159,39,0.04)' : 'var(--g-white)', transition: 'box-shadow 0.15s' }}

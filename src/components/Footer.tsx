@@ -82,7 +82,9 @@ export function Footer() {
                 <Linkedin size={18} />
               </a>
             </div>
-            <img src="/qualiopi.jpg" alt="Certification Qualiopi — Processus certifié République Française — Actions de formation" loading="lazy" style={{ display: 'block', maxWidth: '220px', height: 'auto', marginTop: '0.5rem' }} />
+            <a href="/certificat-qualiopi.pdf" target="_blank" rel="noopener noreferrer" aria-label="Certificat Qualiopi — ouvrir le PDF" style={{ display: 'inline-block', marginTop: '0.5rem' }}>
+              <img src="/qualiopi.jpg" alt="Certification Qualiopi — Processus certifié République Française — Actions de formation" loading="lazy" style={{ display: 'block', maxWidth: '220px', height: 'auto', transition: 'opacity 0.2s' }} onMouseEnter={e => (e.currentTarget.style.opacity = '0.8')} onMouseLeave={e => (e.currentTarget.style.opacity = '1')} />
+            </a>
           </div>
 
           {/* Col 2 — Formations */}

@@ -45,7 +45,7 @@ export function Hero() {
           <p className="hero-desc" style={{ animation: 'fadeUp 0.7s ease-out 0.24s both' }}>
             Grâce à notre réseau d'experts internationaux et notre maîtrise de l'ingénierie
             de formation certifiante, nous proposons l'ensemble des cours officiels éditeurs IT
-            — en présentiel ou à distance (FOAD) — pour accompagner vos équipes
+            — en présentiel, à distance (FOAD) ou en e-learning tutoré — pour accompagner vos équipes
             vers les certifications les plus reconnues au monde.
           </p>
           <div className="hero-actions" style={{ animation: 'fadeUp 0.7s ease-out 0.36s both' }}>

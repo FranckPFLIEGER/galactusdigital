@@ -9,7 +9,7 @@ const reasons = [
   {
     num: '02',
     title: 'Couverture unique dans les territoires ultramarins',
-    desc: "Présents sur 7 territoires, nous sommes le seul organisme capable de déployer des formations officielles à cette échelle dans les territoires ultramarins et en France hexagonale.",
+    desc: "Présents sur 6 territoires ultramarins et en France hexagonale, nous sommes le seul organisme certifié IT capable de déployer des formations officielles à cette échelle.",
   },
   {
     num: '03',

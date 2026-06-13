@@ -11,12 +11,61 @@ export const Route = createFileRoute('/presentiel')({
 })
 
 const FORMATIONS = [
-  { editeur: 'Cisco',      label: 'Partenaire n° 3018982', formations: ['CCNA ITN (1/3)', 'CCNA SRWE (2/3)', 'CCNA ENSA (3/3)', 'CCNP Enterprise', 'CCNP Security'] },
-  { editeur: 'Microsoft',  formations: ['Azure Administrator (AZ-104)', 'Azure Fundamentals (AZ-900)', 'Microsoft 365 Fundamentals', 'Azure AI Fundamentals', 'Power Platform'] },
-  { editeur: 'CompTIA',    formations: ['Security+', 'Network+', 'A+', 'CySA+', 'PenTest+'] },
-  { editeur: 'IPv6 Forum', formations: ['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'] },
-  { editeur: 'EC-Council', formations: ['Certified Ethical Hacker (CEH)', 'Certified Security Analyst (ECSA)', 'Computer Hacking Forensic Investigator'] },
-  { editeur: 'PMI',        formations: ['Project Management Professional (PMP)', 'PMI Agile Certified Practitioner', 'CAPM'] },
+  {
+    editeur: 'Cisco — Réseaux',
+    formations: [
+      'Networking Essentials',
+      'CCNA 1 — Introduction aux réseaux (ITN)',
+      'CCNA 2 — Commutation & routage (SRWE)',
+      'CCNA 3 — Réseaux d\'entreprise (ENSA)',
+    ],
+  },
+  {
+    editeur: 'Cisco — Cybersécurité',
+    formations: [
+      'Cybersecurity Essentials',
+      'CyberOps Associate',
+      'Ethical Hacker',
+    ],
+  },
+  {
+    editeur: 'Cisco — Dev & Data',
+    formations: [
+      'Python Essentials 1 (PCEP)',
+      'Python Essentials 2 (PCAP)',
+      'DevNet Associate',
+      'Linux Essentials',
+      'Data Analytics Essentials',
+    ],
+  },
+  {
+    editeur: 'Cisco — IoT',
+    formations: [
+      'IoT — Introduction',
+      'IoT — Connecting Things',
+      'IoT — Big Data & Analytics',
+      'IoT — Security',
+      'IoT — Hackathon',
+    ],
+  },
+  {
+    editeur: 'Microsoft',
+    formations: [
+      'AZ-900 Azure Fundamentals',
+      'AZ-104 Azure Administrator',
+      'SC-900 Security Fundamentals',
+      'AI-900 Azure AI Fundamentals',
+      'MS-900 Microsoft 365 Fundamentals',
+    ],
+  },
+  {
+    editeur: 'IPv6 Forum',
+    formations: [
+      'IPv6 Certified Network Engineer',
+      'IPv6 Certified Security Engineer',
+      'IPv6 Fundamentals',
+    ],
+  },
 ]
 
 const LIEUX = [

@@ -44,12 +44,13 @@ export function Hero() {
           </h1>
           <p className="hero-desc" style={{ animation: 'fadeUp 0.7s ease-out 0.24s both' }}>
             Grâce à notre réseau d'experts internationaux et notre maîtrise de l'ingénierie
-            de formation certifiante, nous proposons l'ensemble des cours officiels éditeurs IT
-            — en présentiel, à distance (FOAD) ou en e-learning tutoré — pour accompagner vos équipes
-            vers les certifications les plus reconnues au monde.
+            de formation certifiante, nous proposons les certifications officielles{' '}
+            <strong style={{ color: '#fff' }}>Cisco, Microsoft et IPv6 Forum</strong>
+            {' — en présentiel, à distance (FOAD) ou en e-learning tutoré —'}
+            {' pour vous accompagner vers des certifications reconnues dans plus de 170 pays.'}
           </p>
           <div className="hero-actions" style={{ animation: 'fadeUp 0.7s ease-out 0.36s both' }}>
-            <a href="#services" className="btn-red">
+            <a href="/formations" className="btn-red">
               Découvrir nos formations <ArrowRight size={15} />
             </a>
             <a href="#contact" className="btn-ghost">

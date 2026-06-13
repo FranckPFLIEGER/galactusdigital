@@ -3,14 +3,12 @@ import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import {
   BookOpen, Award, Clock, CheckCircle, Phone, Mail,
-  Zap, BarChart2, UserCheck, AlertCircle,
+  Zap, BarChart2, UserCheck, AlertCircle, Calendar,
 } from 'lucide-react'
 
 export const Route = createFileRoute('/elearning')({
   component: ElearningPage,
 })
-
-// ─── Composant DelaisAcces ────────────────────────────────────────────────────
 
 function DelaisAcces({ dark = false }: { dark?: boolean }) {
   const textColor = dark ? 'rgba(255,255,255,0.70)' : '#4a4a48'
@@ -27,8 +25,8 @@ function DelaisAcces({ dark = false }: { dark?: boolean }) {
         {[
           { label: 'Accès à la plateforme', val: 'Sous 72h après validation administrative.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
-          { label: 'Inscription minimale', val: 'Les inscriptions sont possibles jusqu\'à 48 heures avant le début du parcours.' },
-          { label: 'Financement CPF', val: 'Délai minimum obligatoire de 11 jours ouvrés entre la date d\'envoi de la proposition et la date de début de la formation.' },
+          { label: 'Inscription minimale', val: "Les inscriptions sont possibles jusqu'à 48 heures avant le début du parcours." },
+          { label: 'Financement CPF', val: "Délai minimum obligatoire de 11 jours ouvrés entre la date d'envoi de la proposition et la date de début de la formation." },
         ].map(d => (
           <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
             <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}
@@ -38,8 +36,6 @@ function DelaisAcces({ dark = false }: { dark?: boolean }) {
     </div>
   )
 }
-
-// ─── Page ─────────────────────────────────────────────────────────────────────
 
 function ElearningPage() {
   return (
@@ -68,13 +64,13 @@ function ElearningPage() {
         {/* ── Pourquoi l'e-learning tutoré ── */}
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2">Pourquoi choisir l'e-learning tutoré ?</h2>
+            <h2 className="section-h2">{"Pourquoi choisir l'e-learning tutoré ?"}</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
+            <div className="el-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
-                { icon: <Clock size={24} color="white" />, title: 'Rythme libre', desc: 'Vous avancez selon vos disponibilités, sans contrainte d\'horaire. Idéal pour les professionnels en activité dans les territoires ultramarins avec des contraintes opérationnelles fortes.' },
+                { icon: <Clock size={24} color="white" />, title: 'Rythme libre', desc: "Vous avancez selon vos disponibilités, sans contrainte d'horaire. Idéal pour les professionnels en activité dans les territoires ultramarins avec des contraintes opérationnelles fortes." },
                 { icon: <UserCheck size={24} color="white" />, title: 'Tuteur dédié', desc: 'Un tuteur certifié éditeur vous est assigné pour toute la durée du parcours. Il répond à vos questions, valide vos avancées et vous prépare à la certification officielle.' },
-                { icon: <Award size={24} color="white" />, title: 'Certifications officielles', desc: 'Les parcours sont alignés sur les programmes officiels Cisco et Microsoft. Le passage de la certification est intégré au parcours avec accompagnement à l\'examen.' },
+                { icon: <Award size={24} color="white" />, title: 'Certifications officielles', desc: "Les parcours sont alignés sur les programmes officiels Cisco et Microsoft. Le passage de la certification est intégré au parcours avec accompagnement à l'examen." },
                 { icon: <Zap size={24} color="white" />, title: 'Accès rapide', desc: 'Démarrage sous 72h après inscription. Les accès aux plateformes NetAcad et Microsoft Learn sont activés dès la validation administrative.' },
                 { icon: <BarChart2 size={24} color="white" />, title: 'Suivi de progression', desc: 'Tableau de bord personnalisé sur chaque plateforme. Votre tuteur suit votre progression module par module et vous alerte si vous décrochez du rythme prévu.' },
                 { icon: <BookOpen size={24} color="white" />, title: 'Contenus officiels', desc: 'Accès aux contenus pédagogiques officiels des éditeurs : labs virtuels Cisco Packet Tracer, sandbox Azure, modules interactifs Microsoft, QCM de validation des acquis.' },
@@ -89,12 +85,12 @@ function ElearningPage() {
           </div>
         </section>
 
-        {/* ── Comparaison FOAD / e-learning ── */}
+        {/* ── FOAD vs E-learning ── */}
         <section style={{ background: 'var(--g-black)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">FOAD synchrone vs E-learning tutoré</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
+            <div className="el-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
               {[
                 {
                   titre: 'FOAD synchrone', href: '/foad', active: false,
@@ -134,12 +130,12 @@ function ElearningPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Comment ça se passe ?</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(200px, 100%), 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
+            <div className="el-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
-                { num: '01', title: 'Inscription',       desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement CPF/OPCO monté avec vous.' },
-                { num: '02', title: 'Accès activé',       desc: 'Sous 72h, vous recevez vos accès NetAcad et/ou Microsoft Learn. Votre tuteur vous contacte pour un échange de cadrage.' },
-                { num: '03', title: 'Parcours tutoré',    desc: 'Vous avancez à votre rythme. Votre tuteur suit votre progression, répond à vos questions et valide chaque module complété.' },
-                { num: '04', title: 'Certification',      desc: 'Passage de la certification officielle éditeur. Attestation de formation et relevé de complétion remis.' },
+                { num: '01', title: 'Inscription', desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement CPF/OPCO monté avec vous.' },
+                { num: '02', title: 'Accès activé', desc: 'Sous 72h, vous recevez vos accès NetAcad et/ou Microsoft Learn. Votre tuteur vous contacte pour un échange de cadrage.' },
+                { num: '03', title: 'Parcours tutoré', desc: 'Vous avancez à votre rythme. Votre tuteur suit votre progression, répond à vos questions et valide chaque module complété.' },
+                { num: '04', title: 'Certification', desc: 'Passage de la certification officielle éditeur. Attestation de formation et relevé de complétion remis.' },
               ].map(s => (
                 <div key={s.num} style={{ border: '1px solid rgba(187,187,187,0.3)', borderTop: '3px solid var(--g-red)', padding: '1.75rem 1.5rem', background: 'var(--g-white)' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.75rem' }}>{s.num}</div>
@@ -156,137 +152,85 @@ function ElearningPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Parcours disponibles</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))', gap: '1.25rem', marginTop: '2rem' }}>
-
-              {/* Cisco NetAcad */}
-              <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Cisco</div>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>NetAcad</div>
+            <div className="el-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginTop: '2rem' }}>
+              {[
+                { titre: 'Cisco — Réseaux', items: ['Networking Essentials (40h)', 'CCNA 1 — ITN (70h)', 'CCNA 2 — SRWE (70h)', 'CCNA 3 — ENSA (70h)'] },
+                { titre: 'Cisco — Cybersécurité', items: ['Cybersecurity Essentials (30h)', 'CyberOps Associate (60h)', 'Ethical Hacker (40h)'] },
+                { titre: 'Cisco — Dev & Data', items: ["Python Essentials 1 — PCEP (35h)", "Python Essentials 2 — PCAP (40h)", 'DevNet Associate (50h)', 'Linux Essentials (40h)', 'Data Analytics Essentials (30h)'] },
+                { titre: 'Cisco — IoT', items: ['IoT — Introduction (25h)', 'IoT — Connecting Things (30h)', 'IoT — Big Data & Analytics (30h)', 'IoT — Security (25h)', 'IoT — Hackathon (20h)'] },
+                { titre: 'Microsoft', items: ['AZ-900 Azure Fundamentals (20h)', 'AZ-104 Azure Administrator (40h)', 'SC-900 Security Fundamentals (15h)', 'AI-900 Azure AI Fundamentals (15h)', 'MS-900 Microsoft 365 (18h)'] },
+                { titre: 'IPv6 Forum', items: ['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'] },
+              ].map(f => (
+                <div key={f.titre} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>{f.titre}</div>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
+                    {f.items.map((item, i) => (
+                      <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
+                        <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
+                      </li>
+                    ))}
+                  </ul>
                 </div>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  {[
-                    'CCNA 1 — Introduction aux réseaux (70h)',
-                    'CCNA 2 — Routage et commutation (70h)',
-                    'CCNA 3 — Réseaux d\'entreprise (70h)',
-                    'CyberOps Associate (60h)',
-                    'DevNet Associate (50h)',
-                    'Network Security (45h)',
-                  ].map((item, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
-                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Microsoft Learn */}
-              <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Microsoft</div>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>MS Learn</div>
-                </div>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  {[
-                    'AZ-900 — Azure Fundamentals (20h)',
-                    'AZ-104 — Azure Administrator (40h)',
-                    'SC-900 — Security Fundamentals (15h)',
-                    'AI-900 — Azure AI Fundamentals (15h)',
-                    'MS-900 — Microsoft 365 Fundamentals (18h)',
-                    'AZ-500 — Azure Security Engineer (35h)',
-                  ].map((item, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
-                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
-              {/* Autres sur demande */}
-              <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>Autres</div>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>Voir calendrier</div>
-                </div>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                  {[
-                    'CompTIA Security+ · Network+ · A+',
-                    'IPv6 Certified Network Engineer',
-                    'IPv6 Certified Security Engineer',
-                    'EC-Council CEH · ECSA',
-                    'PMI PMP · CAPM · PMI-ACP',
-                  ].map((item, i) => (
-                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
-                      <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
-                      {item}
-                    </li>
-                  ))}
-                </ul>
-              </div>
-
+              ))}
             </div>
             <p style={{ fontSize: '0.82rem', color: '#888', marginTop: '1.25rem', fontStyle: 'italic' }}>
-              * D'autres parcours sont disponibles — consultez notre <a href="/calendrier" style={{ color: "var(--g-red)", fontWeight: 600, textDecoration: "none" }}>calendrier en ligne</a> ou contactez-nous.
+              * {"D'autres parcours sont disponibles — consultez notre"} <a href="/calendrier" style={{ color: 'var(--g-red)', fontWeight: 600, textDecoration: 'none' }}>calendrier en ligne</a> {" ou contactez-nous."}
             </p>
           </div>
         </section>
 
-        {/* ── Caractéristiques ── */}
+        {/* ── Caractéristiques & Conformité ── */}
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2">Caractéristiques</h2>
-            <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
-              <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
-                {[
-                  'Parcours individuel ou petit groupe (2 à 6 apprenants)',
-                  'Tuteur certifié éditeur assigné dès le démarrage',
-                  'Accès 24h/24 aux plateformes NetAcad et Microsoft Learn',
-                  'Labs virtuels Cisco Packet Tracer inclus',
-                  'Sandbox Azure pour les parcours Microsoft',
-                  'Suivi documenté de la progression par module',
-                  'Messagerie directe avec le tuteur sous 24h ouvrées',
-                  'Passage de la certification intégré',
-                  'Attestation de formation et relevé de complétion',
-                  'Éligible CPF, OPCO, plan de développement des compétences',
-                ].map((item, i) => (
-                  <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
-                    <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
-                    {item}
-                  </li>
-                ))}
-              </ul>
+            <div className="el-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem' }}>
+              {/* Caractéristiques */}
               <div>
+                <h2 className="section-h2" style={{ marginTop: 0 }}>Caractéristiques</h2>
+                <div className="g-rule" />
+                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
+                  {[
+                    'Parcours individuel ou petit groupe (2 à 6 apprenants)',
+                    'Tuteur certifié éditeur assigné dès le démarrage',
+                    'Accès 24h/24 aux plateformes NetAcad et Microsoft Learn',
+                    'Labs virtuels Cisco Packet Tracer inclus',
+                    'Sandbox Azure pour les parcours Microsoft',
+                    'Suivi documenté de la progression par module',
+                    'Messagerie directe avec le tuteur sous 24h ouvrées',
+                    'Passage de la certification intégré',
+                    'Attestation de formation et relevé de complétion',
+                    'Éligible CPF, OPCO, plan de développement des compétences',
+                  ].map((item, i) => (
+                    <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
+                      <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
                 <DelaisAcces dark={false} />
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Conformité réglementaire ── */}
-        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2">Conformité réglementaire</h2>
-            <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))', gap: '1rem' }}>
-              {[
-                { ref: 'Art. L.6313-1', title: 'Action de formation à distance', desc: 'L\'e-learning tutoré est reconnu comme action de formation au sens du Code du travail dès lors qu\'un accompagnement individualisé est documenté.' },
-                { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique adapté', desc: 'NetAcad et Microsoft Learn constituent le plateau technique officiel certifié. Vérification de la prise en main organisée avant démarrage de chaque parcours.' },
-                { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé documenté', desc: 'Un relevé de progression module par module est généré automatiquement par la plateforme et archivé dans le dossier de formation de l\'apprenant.' },
-                { ref: 'Circulaire DGEFP 2026-2027', title: 'Réalité des actions documentée', desc: 'Les bilans de progression constituent la preuve de réalité des actions conformément aux priorités de contrôle 2026-2027.' },
-              ].map(c => (
-                <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
-                  <div style={{ flexShrink: 0 }}>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.6rem', whiteSpace: 'nowrap' }}>{c.ref}</div>
-                  </div>
-                  <div>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.35rem' }}>{c.title}</div>
-                    <p style={{ fontSize: '0.84rem', lineHeight: 1.65, color: '#5a5a58', margin: 0 }}>{c.desc}</p>
-                  </div>
+              {/* Conformité */}
+              <div>
+                <h2 className="section-h2" style={{ marginTop: 0 }}>Conformité réglementaire</h2>
+                <div className="g-rule" />
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                  {[
+                    { ref: 'Art. L.6313-1', title: 'Action de formation à distance', desc: "L'e-learning tutoré est reconnu comme action de formation au sens du Code du travail dès lors qu'un accompagnement individualisé est documenté." },
+                    { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique adapté', desc: 'NetAcad et Microsoft Learn constituent le plateau technique officiel certifié. Vérification de la prise en main organisée avant démarrage de chaque parcours.' },
+                    { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé documenté', desc: "Un relevé de progression module par module est généré automatiquement par la plateforme et archivé dans le dossier de formation de l'apprenant." },
+                    { ref: 'Circulaire DGEFP 2026-2027', title: 'Réalité des actions documentée', desc: "Les bilans de progression constituent la preuve de réalité des actions conformément aux priorités de contrôle 2026-2027." },
+                  ].map(c => (
+                    <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.25rem', display: 'flex', gap: '0.75rem' }}>
+                      <div style={{ flexShrink: 0 }}>
+                        <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.5rem', whiteSpace: 'nowrap' }}>{c.ref}</div>
+                      </div>
+                      <div>
+                        <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--g-black)', marginBottom: '0.25rem' }}>{c.title}</div>
+                        <p style={{ fontSize: '0.82rem', lineHeight: 1.6, color: '#5a5a58', margin: 0 }}>{c.desc}</p>
+                      </div>
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
@@ -300,10 +244,21 @@ function ElearningPage() {
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Demander les parcours disponibles</a>
+              <a href="/calendrier" className="btn-ghost"><Calendar size={16} /> Voir le calendrier</a>
             </div>
           </div>
         </section>
+
+        <style>{`
+          @media (max-width: 900px) {
+            .el-grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+            .el-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+          }
+          @media (max-width: 600px) {
+            .el-grid-3, .el-grid-2, .el-grid-4 { grid-template-columns: 1fr !important; }
+            main section { padding: 2.5rem 1rem !important; }
+          }
+        `}</style>
 
       </main>
       <Footer />

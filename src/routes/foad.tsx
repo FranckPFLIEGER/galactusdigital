@@ -11,30 +11,57 @@ export const Route = createFileRoute('/foad')({
 })
 
 const FORMATIONS = [
-  { editeur: 'Cisco',      label: 'Partenaire n° 3018982', formations: ['CCNA ITN (1/3)', 'CCNA SRWE (2/3)', 'CCNA ENSA (3/3)', 'CCNP Enterprise', 'CyberOps Associate'] },
-  { editeur: 'Microsoft',  formations: ['Azure Administrator (AZ-104)', 'Azure Fundamentals (AZ-900)', 'Microsoft 365 Fundamentals', 'Azure AI Fundamentals', 'Security (SC-900)'] },
-  { editeur: 'CompTIA',    formations: ['Security+', 'Network+', 'A+', 'CySA+', 'PenTest+'] },
-  { editeur: 'IPv6 Forum', formations: ['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'] },
-  { editeur: 'EC-Council', formations: ['Certified Ethical Hacker (CEH)', 'Certified Security Analyst (ECSA)', 'Computer Hacking Forensic Investigator'] },
-  { editeur: 'PMI',        formations: ['Project Management Professional (PMP)', 'PMI Agile Certified Practitioner', 'CAPM'] },
+  {
+    editeur: 'Cisco — Réseaux',
+    formations: [
+      'Networking Essentials',
+      "CCNA 1 — Introduction aux réseaux (ITN)",
+      "CCNA 2 — Commutation & routage (SRWE)",
+      "CCNA 3 — Réseaux d'entreprise (ENSA)",
+    ],
+  },
+  {
+    editeur: 'Cisco — Cybersécurité',
+    formations: ['Cybersecurity Essentials', 'CyberOps Associate', 'Ethical Hacker'],
+  },
+  {
+    editeur: 'Cisco — Dev & Data',
+    formations: [
+      'Python Essentials 1 (PCEP)', 'Python Essentials 2 (PCAP)',
+      'DevNet Associate', 'Linux Essentials', 'Data Analytics Essentials',
+    ],
+  },
+  {
+    editeur: 'Cisco — IoT',
+    formations: [
+      'IoT — Introduction', 'IoT — Connecting Things',
+      'IoT — Big Data & Analytics', 'IoT — Security', 'IoT — Hackathon',
+    ],
+  },
+  {
+    editeur: 'Microsoft',
+    formations: [
+      'AZ-900 Azure Fundamentals', 'AZ-104 Azure Administrator',
+      'SC-900 Security Fundamentals', 'AI-900 Azure AI Fundamentals',
+      'MS-900 Microsoft 365 Fundamentals',
+    ],
+  },
+  {
+    editeur: 'IPv6 Forum',
+    formations: ['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'],
+  },
 ]
 
 function FormationGrid() {
   return (
-    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))', gap: '1.25rem', marginTop: '2rem' }}>
+    <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginTop: '2rem' }}>
       {FORMATIONS.map(f => (
         <div key={f.editeur} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-            <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>{f.editeur}</div>
-            {f.label && (
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem' }}>{f.label}</div>
-            )}
-          </div>
+          <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>{f.editeur}</div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
             {f.formations.map((item, i) => (
               <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
-                <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
-                {item}
+                <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
               </li>
             ))}
           </ul>
@@ -95,12 +122,12 @@ function FoadPage() {
           </div>
         </section>
 
-        {/* ── Pourquoi la FOAD ── */}
+        {/* ── Pourquoi FOAD ── */}
         <section style={{ background: 'var(--g-black)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">Pourquoi choisir la FOAD ?</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))', gap: '1.5rem', marginTop: '2rem' }}>
+            <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 { icon: <Monitor size={24} color="white" />, title: 'Plateforme officielle', desc: "Toutes nos formations FOAD s'appuient sur Cisco NetAcad ou Microsoft Learn — accessibles 24h/24 depuis n'importe quel appareil, avec suivi de progression individuel." },
                 { icon: <Wifi size={24} color="white" />, title: 'Sessions live WEBEX', desc: "Nos sessions synchrones se déroulent via WEBEX. Partage d'écran, ateliers pratiques à distance, interactions en temps réel avec le formateur certifié." },
@@ -117,22 +144,22 @@ function FoadPage() {
         </section>
 
         {/* ── Inter à distance ── */}
-        <section id="inter" style={{ background: 'var(--g-black)', padding: '5rem 2rem', scrollMarginTop: '80px' }}>
+        <section id="inter" style={{ background: 'var(--g-black)', padding: '4rem 2rem', borderTop: '1px solid rgba(255,255,255,0.06)', scrollMarginTop: '80px' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
               <div style={{ width: '4px', height: '48px', background: 'var(--g-red)', flexShrink: 0 }} />
               <div>
-                <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.2rem' }}>Format d'organisation · FOAD</div>
+                <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.2rem' }}>Format · FOAD</div>
                 <h2 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', margin: 0 }}>Inter-Entreprise à distance</h2>
               </div>
             </div>
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Rejoignez nos sessions ouvertes planifiées depuis n'importe quel territoire. Le formateur et les participants se retrouvent en ligne sur WEBEX — même format que l'inter présentiel, sans contrainte de déplacement.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '2.5rem' }}>
               {[
                 { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: "Échangez avec des professionnels d'horizons différents depuis tous les territoires. Opportunité unique de réseautage inter-îles." },
-                { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: 'Inscrivez-vous à la session qui correspond à vos disponibilités. Plusieurs dates disponibles dans l\'année sur tous les territoires.' },
+                { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: "Inscrivez-vous à la session qui correspond à vos disponibilités. Plusieurs dates disponibles dans l'année sur tous les territoires." },
                 { icon: <TrendingUp size={24} color="white" />, title: 'Financement facilité', desc: 'Éligible CPF, OPCO, aides régionales DOM. Nous vous accompagnons dans le montage de votre dossier de financement.' },
               ].map(a => (
                 <div key={a.title} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
@@ -142,7 +169,7 @@ function FoadPage() {
                 </div>
               ))}
             </div>
-            <div style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div className="foad-grid-2" style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -156,11 +183,11 @@ function FoadPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Sessions & disponibilités</h3>
                 <p style={{ fontSize: '0.87rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, marginBottom: '1rem' }}>
-                  Plusieurs sessions planifiées par trimestre. Consultez les prochaines dates sur notre <a href="/calendrier" style={{ color: "var(--g-red)", fontWeight: 600, textDecoration: "none" }}>calendrier en ligne</a>.
+                  Plusieurs sessions planifiées par trimestre sur tous les territoires.
                 </p>
                 <div style={{ background: 'rgba(228,31,38,0.08)', border: '1px solid rgba(228,31,38,0.20)', padding: '0.9rem 1rem' }}>
                   <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.70)', margin: 0, lineHeight: 1.6 }}>
-                    Toutes les sessions sont accessibles depuis tous les territoires ultramarins et en France hexagonale — <a href="/calendrier" style={{ color: "var(--g-red)", fontWeight: 600, textDecoration: "none" }}>voir le calendrier</a>.
+                    Toutes les sessions sont accessibles depuis tous les territoires ultramarins et en France hexagonale. Consultez les prochaines dates sur notre <a href="/calendrier" style={{ color: '#E41F26', fontWeight: 600, textDecoration: 'none' }}>calendrier en ligne</a>.
                   </p>
                 </div>
                 <DelaisAcces dark />
@@ -174,19 +201,19 @@ function FoadPage() {
         </section>
 
         {/* ── Intra à distance ── */}
-        <section id="intra" style={{ background: 'var(--g-offwhite)', padding: '5rem 2rem', scrollMarginTop: '80px' }}>
+        <section id="intra" style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem', scrollMarginTop: '80px' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '2.5rem' }}>
               <div style={{ width: '4px', height: '48px', background: 'var(--g-red)', flexShrink: 0 }} />
               <div>
-                <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.2rem' }}>Format d'organisation · FOAD</div>
+                <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.2rem' }}>Format · FOAD</div>
                 <h2 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, color: 'var(--g-black)', textTransform: 'uppercase', letterSpacing: '0.04em', margin: 0 }}>Intra-Entreprise à distance</h2>
               </div>
             </div>
             <p style={{ fontSize: '0.95rem', color: '#5a5a58', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Un groupe dédié à votre organisation, un programme personnalisé, des sessions live réservées à vos équipes. Toute la flexibilité de l'intra, sans contrainte géographique.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(280px, 100%), 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '2.5rem' }}>
               {[
                 { icon: <Target size={24} color="white" />, title: 'Programme sur mesure', desc: "Contenu adapté à vos outils, vos processus et vos cas concrets. Pas de formation générique — une ingénierie taillée pour votre organisation." },
                 { icon: <Settings size={24} color="white" />, title: 'Flexibilité horaire', desc: "Sessions planifiées selon vos contraintes. Pas de déplacement, pas de logistique. Vos équipes se forment de là où elles sont." },
@@ -200,7 +227,7 @@ function FoadPage() {
               ))}
             </div>
             <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: '#888', marginBottom: '1.5rem' }}>Comment ça se passe ?</h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(200px, 100%), 1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
+            <div className="foad-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginBottom: '2.5rem' }}>
               {[
                 { num: '01', title: 'Audit des besoins', desc: 'Entretien avec votre responsable formation pour identifier les compétences à développer et les certifications visées.' },
                 { num: '02', title: 'Programme personnalisé', desc: 'Nous concevons un programme adapté à vos outils, vos processus et le niveau de vos équipes.' },
@@ -214,7 +241,7 @@ function FoadPage() {
                 </div>
               ))}
             </div>
-            <div style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div className="foad-grid-2" style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '2.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
@@ -245,11 +272,11 @@ function FoadPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">Prérequis techniques</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
+            <div className="foad-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }}>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Équipement nécessaire</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  {['Un PC personnel ou professionnel (Windows, Mac ou Linux)','Une connexion Internet haut débit stable','Un navigateur web récent (Chrome, Firefox, Edge)','Un micro et une webcam (recommandé)','L\'application WEBEX installée'].map((item, i) => (
+                  {['Un PC personnel ou professionnel (Windows, Mac ou Linux)','Une connexion Internet haut débit stable','Un navigateur web récent (Chrome, Firefox, Edge)','Un micro et une webcam (recommandé)',"L'application WEBEX installée"].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87rem', color: 'rgba(255,255,255,0.70)' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -284,7 +311,7 @@ function FoadPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Conformité réglementaire</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(320px, 100%), 1fr))', gap: '1rem' }}>
+            <div className="foad-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
               {[
                 { ref: 'Art. D.6313-3-1', title: 'Assistance pédagogique documentée', desc: "Une assistance technique et pédagogique appropriée est mise en œuvre pour accompagner le bénéficiaire dans le déroulement de son parcours à distance." },
                 { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique et pédagogique', desc: "Les outils de formation sont centralisés sur une plateforme digitale (NetAcad + WEBEX). Les apprenants reçoivent une invitation pour vérifier le bon fonctionnement avant démarrage." },
@@ -305,10 +332,10 @@ function FoadPage() {
           </div>
         </section>
 
-        {/* ── CTA global ── */}
+        {/* ── CTA ── */}
         <section style={{ background: 'var(--g-black)', padding: '3rem 2rem', borderTop: '4px solid var(--g-red)' }}>
           <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
-            <h2 className="section-h2-light" style={{ marginBottom: '1rem' }}>S'inscrire à une formation à distance</h2>
+            <h2 className="section-h2-light" style={{ marginBottom: '1rem' }}>{"S'inscrire à une formation à distance"}</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.62)', lineHeight: 1.8, marginBottom: '2rem' }}>
               Contactez-nous pour connaître les prochaines sessions disponibles ou organiser une session intra dédiée à votre équipe — depuis n'importe quel territoire.
             </p>
@@ -318,6 +345,17 @@ function FoadPage() {
             </div>
           </div>
         </section>
+
+        <style>{`
+          @media (max-width: 900px) {
+            .foad-grid-3 { grid-template-columns: repeat(2, 1fr) !important; }
+            .foad-grid-4 { grid-template-columns: repeat(2, 1fr) !important; }
+          }
+          @media (max-width: 600px) {
+            .foad-grid-3, .foad-grid-2, .foad-grid-4 { grid-template-columns: 1fr !important; }
+            main section { padding: 2.5rem 1rem !important; }
+          }
+        `}</style>
 
       </main>
       <Footer />

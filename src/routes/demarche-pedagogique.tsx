@@ -50,7 +50,7 @@ function DemarchePedagogiquePage() {
                   <p style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', color: 'rgba(255,255,255,0.90)', lineHeight: 1.6, margin: 0, fontStyle: 'italic' }}>
                     "Nous tentons de réduire l'appréhension de l'écart de notre présent avec le futur, en formant une génération apte à évoluer à chaque nouvelle innovation."
                   </p>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--g-red)', marginTop: '0.75rem' }}>— Franck PFLIEGER, Fondateur</div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--g-red)', marginTop: '0.75rem' }}>— Le président, Fondateur</div>
                 </div>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>

@@ -20,7 +20,7 @@ export const Route = createFileRoute('/presentiel')({
 })
 
 const FORMATIONS = [
-  { editeur: 'Cisco',      label: 'Partenaire n° 3018982', formations: ['CCNA ITN (1/3)', 'CCNA SRWE (2/3)', 'CCNA ENSA (3/3)', 'CCNP Enterprise', 'CCNP Security'] },
+  { editeur: 'Cisco', formations: ['CCNA ITN (1/3)', 'CCNA SRWE (2/3)', 'CCNA ENSA (3/3)', 'CCNP Enterprise', 'CCNP Security'] },
   { editeur: 'Microsoft',  formations: ['Azure Administrator (AZ-104)', 'Azure Fundamentals (AZ-900)', 'Microsoft 365 Fundamentals', 'Azure AI Fundamentals', 'Power Platform'] },
   { editeur: 'CompTIA',    formations: ['Security+', 'Network+', 'A+', 'CySA+', 'PenTest+'] },
   { editeur: 'IPv6 Forum', formations: ['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'] },

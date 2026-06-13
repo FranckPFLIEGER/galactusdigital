@@ -117,15 +117,17 @@ export function Footer() {
               <li><a href="/#president">Mot du Président</a></li>
               <li><a href="/#expertise">Notre expertise</a></li>
               <li><a href="/#presence">Notre présence</a></li>
+              <li><a href="/#services">Nos solutions</a></li>
               <li><a href="/#satisfaction">Satisfaction &amp; Qualité</a></li>
               <li><a href="/#clients">Ils nous font confiance</a></li>
               <li><a href="/#resultats">Nos résultats</a></li>
-              <li><a href="/demarche-pedagogique">Démarche pédagogique</a></li>
-              <li><a href="/demarche-qualite">Démarche qualité</a></li>
               <li><a href="/#partenaires">Nos partenaires</a></li>
+              <li><a href="/#pourquoi">Pourquoi Nous Choisir</a></li>
               <li><a href="/#actualites">Actualités &amp; Veille IT</a></li>
               <li><a href="/#awards">Nos reconnaissances</a></li>
               <li><a href="/#rse">Notre engagement RSE</a></li>
+              <li><a href="/demarche-pedagogique">Démarche pédagogique</a></li>
+              <li><a href="/demarche-qualite">Démarche qualité</a></li>
               <li><a href="/temoignages">Témoignages</a></li>
               <li><a href="/handicap">Accessibilité &amp; Handicap</a></li>
             </ul>

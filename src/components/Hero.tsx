@@ -39,9 +39,8 @@ export function Hero() {
       <div className="hero-inner">
 
         <div>
-          {/* Label + prochaine session */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', marginBottom: '1.25rem', flexWrap: 'wrap' }}>
-            <div className="hero-label" style={{ animation: "fadeUp 0.6s ease-out both', margin: 0 }}>
+            <div className="hero-label" style={{ animation: 'fadeUp 0.6s ease-out both', margin: 0 }}>
               Formation certifiante IT
             </div>
             <a href="/calendrier"
@@ -51,19 +50,19 @@ export function Hero() {
             </a>
           </div>
 
-          <h1 className="hero-h1" style={{ animation: "fadeUp 0.7s ease-out 0.12s both' }}>
-            L'excellence en certifications IT{' '}
+          <h1 className="hero-h1" style={{ animation: 'fadeUp 0.7s ease-out 0.12s both' }}>
+            {"L'excellence en certifications IT"}{' '}
             <em>dans les territoires ultramarins</em>
           </h1>
 
-          <p className="hero-desc" style={{ animation: "fadeUp 0.7s ease-out 0.24s both' }}>
+          <p className="hero-desc" style={{ animation: 'fadeUp 0.7s ease-out 0.24s both' }}>
             Seul organisme de formation <strong style={{ color: '#fff' }}>certifié Qualiopi</strong> spécialisé IT dans les DOM-COM.
             Partenaire officiel Cisco NetAcad (n° 3018982) et Microsoft (n° 4653557).{' '}
             <strong style={{ color: '#E41F26' }}>100 % de réussite aux certifications.</strong>{' '}
             Présentiel · FOAD · E-learning — à partir de <strong style={{ color: '#fff' }}>290 € HT</strong>.
           </p>
 
-          <div className="hero-actions" style={{ animation: "fadeUp 0.7s ease-out 0.36s both' }}>
+          <div className="hero-actions" style={{ animation: 'fadeUp 0.7s ease-out 0.36s both' }}>
             <a href="/formations" className="btn-red">
               Voir les 22 formations <ArrowRight size={15} />
             </a>
@@ -72,12 +71,11 @@ export function Hero() {
             </a>
           </div>
 
-          {/* Preuves sociales rapides */}
           <div style={{ display: 'flex', gap: '1.5rem', marginTop: '2rem', flexWrap: 'wrap', animation: 'fadeUp 0.7s ease-out 0.48s both' }}>
             {[
               { val: '100 %', label: 'de réussite' },
               { val: '22',    label: 'certifications' },
-              { val: '6+1',     label: 'territoires ultramarins + Paris' },
+              { val: '6+1',   label: 'territoires + Paris' },
               { val: '+20',   label: "ans d'expérience" },
             ].map(s => (
               <div key={s.label} style={{ textAlign: 'center' }}>
@@ -87,13 +85,13 @@ export function Hero() {
             ))}
           </div>
 
-          <div className="hero-scroll" style={{ animation: "fadeUp 0.7s ease-out 0.6s both' }}>
+          <div className="hero-scroll" style={{ animation: 'fadeUp 0.7s ease-out 0.6s both' }}>
             <div className="hero-scroll-line" />
             Défiler pour en savoir plus
           </div>
         </div>
 
-        <div className="hero-visual" style={{ animation: "fadeIn 1s ease-out 0.3s both' }}>
+        <div className="hero-visual" style={{ animation: 'fadeIn 1s ease-out 0.3s both' }}>
           <div className="hero-panel">
             <div className="hero-panel-grid" />
             <div className="hero-panel-glow" />

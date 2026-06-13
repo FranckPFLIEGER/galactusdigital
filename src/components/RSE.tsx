@@ -110,8 +110,8 @@ export function RSE() {
             { ref: 'F23', label: 'Transition numérique' },
             { ref: 'F10', label: 'Informations sourcées' },
           ].map(item => (
-            <div key={item.ref} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(39,174,96,0.10)', border: '1px solid rgba(39,174,96,0.25)', padding: '4px 10px' }}>
-              <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, color: '#27ae60' }}>{item.ref}</span>
+            <div key={item.ref} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(228,31,38,0.08)', border: '1px solid rgba(228,31,38,0.25)', padding: '4px 10px' }}>
+              <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, color: '#E41F26' }}>{item.ref}</span>
               <span style={{ fontSize: '0.70rem', color: 'rgba(255,255,255,0.55)' }}>{item.label}</span>
             </div>
           ))}
@@ -125,7 +125,7 @@ export function RSE() {
               <div className="rse-icon">{p.icon}</div>
               <h3 className="rse-title">{p.title}</h3>
               {p.fc && (
-                <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#27ae60', marginBottom: '0.5rem' }}>
+                <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 600, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#E41F26', marginBottom: '0.5rem' }}>
                   ✓ {p.fc}
                 </div>
               )}

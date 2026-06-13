@@ -165,8 +165,8 @@ const NAV_LINKS = [
       { label: 'Formation à distance (FOAD)',  href: '/foad' },
       { label: 'E-learning tutoré',            href: '/elearning' },
       { label: "— Formats d'organisation",     isHeading: true },
-      { label: 'Intra-entreprise',             href: '/presentiel#intra' },
       { label: 'Inter-entreprise',             href: '/presentiel#inter' },
+      { label: 'Intra-entreprise',             href: '/presentiel#intra' },
     ],
   },
   {
@@ -289,6 +289,7 @@ export function Header() {
           {mobileOpen ? <X size={22} color="#E41F26" /> : <Menu size={22} color="#fff" />}
         </button>
       </div>
+
 
       {/* ── Menu mobile ── */}
       <div className={`nav-mobile-menu${mobileOpen ? ' open' : ''}`} aria-hidden={!mobileOpen}>

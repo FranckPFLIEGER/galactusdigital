@@ -6,17 +6,17 @@ import { FORMATIONS, getFormationsParFamille, type Modalite, formatPrix } from '
 
 const FC: Record<string, string> = {
   'Réseaux & CCNA':      '#E41F26',
-  'Cybersécurité':       '#c0392b',
-  'Programmation':       '#2980b9',
-  'IoT':                 '#16a085',
-  'Linux & Open Source': '#8e44ad',
-  'Data & Analytics':    '#d35400',
-  'Azure & Cloud':       '#0078D4',
-  'Microsoft 365':       '#0078D4',
+  'Cybersécurité':       '#E41F26',
+  'Programmation':       '#E41F26',
+  'IoT':                 '#E41F26',
+  'Linux & Open Source': '#E41F26',
+  'Data & Analytics':    '#E41F26',
+  'Azure & Cloud':       '#E41F26',
+  'Microsoft 365':       '#E41F26',
 }
 const NC: Record<string, string> = {
-  'Fondamental':   '#27ae60',
-  'Intermédiaire': '#e67e22',
+  'Fondamental':   '#BBBBBB',
+  'Intermédiaire': 'rgba(228,31,38,0.55)',
   'Avancé':        '#E41F26',
 }
 const PAR_FAMILLE = getFormationsParFamille()

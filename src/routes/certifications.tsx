@@ -4,6 +4,15 @@ import { Footer } from '../components/Footer'
 import { CheckCircle, Phone, Mail, Award, Shield, TrendingUp, Users, ExternalLink } from 'lucide-react'
 
 export const Route = createFileRoute('/certifications')({
+  head: () => ({
+    meta: [
+      { title: 'Certifications IT Cisco, Microsoft, Linux — GALACTUS Digital' },
+      { name: 'description', content: 'Passez vos certifications IT officielles Cisco CCNA, Microsoft Azure, Linux LPI. Centre agree Cisco NetAcad n 3018982. Qualiopi.' },
+      { property: 'og:title', content: 'Certifications IT Cisco, Microsoft, Linux — GALACTUS Digital' },
+      { property: 'og:url', content: 'https://galactusdigital.com/certifications' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/certifications' }],
+  }),
   component: CertificationsPage,
 })
 
@@ -49,7 +58,7 @@ function CertificationsPage() {
             </h2>
             <div className="g-rule" />
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", gap: "2rem", marginTop: "0.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem", marginTop: "0.5rem" }}>
 
               {/* Entreprises */}
               <div style={{ background: "var(--g-white)", border: "1px solid rgba(187,187,187,0.35)", borderTop: "4px solid var(--g-black)", padding: "2rem" }}>
@@ -131,7 +140,7 @@ function CertificationsPage() {
             </div>
             <div className="g-rule" />
 
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(280px,1fr))", gap: "2rem", marginTop: "0.5rem" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "2rem", marginTop: "0.5rem" }}>
 
               {/* Bloc Galactus Digital */}
               <div style={{ border: "1px solid rgba(187,187,187,0.35)", borderTop: "4px solid var(--g-red)", padding: "0" }}>

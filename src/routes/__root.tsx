@@ -9,14 +9,14 @@ export const Route = createRootRoute({
       { title: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         name: 'description',
-        content: 'Organisme certifié Qualiopi. Formations IT certifiantes Cisco NetAcad, Microsoft et IPv6 Forum. 100% de réussite. 7 territoires ultramarins. NDA : 11 75 59933 75.',
+        content: 'Organisme certifié Qualiopi. Formations IT certifiantes Cisco NetAcad, Microsoft et IPv6 Forum. 100% de réussite. 6 territoires ultramarins. NDA : 11 75 59933 75.',
       },
       { property: 'og:type',        content: 'website' },
       { property: 'og:url',         content: 'https://www.galactusdigital.com/' },
       { property: 'og:title',       content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         property: 'og:description',
-        content: 'Organisme de formation certifié Qualiopi. Certifications Cisco NetAcad, Microsoft et IPv6 Forum. 100% de réussite. 7 territoires ultramarins.',
+        content: 'Organisme de formation certifié Qualiopi. Certifications Cisco NetAcad, Microsoft et IPv6 Forum. 100% de réussite. 6 territoires ultramarins.',
       },
       { property: 'og:image',       content: 'https://www.galactusdigital.com/galactus-icon.png' },
       { property: 'og:locale',      content: 'fr_FR' },
@@ -39,7 +39,6 @@ export const Route = createRootRoute({
       },
     ],
     links: [
-      { rel: 'canonical', href: 'https://www.galactusdigital.com' },
       { rel: 'icon', type: 'image/png', href: '/galactus-icon.png' },
       { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
       { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },

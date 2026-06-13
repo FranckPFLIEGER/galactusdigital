@@ -291,6 +291,13 @@ export function Header() {
       </div>
 
 
+      {/* Ticker */}
+      <div className="nav-ticker">
+        <div className="nav-ticker-inner">
+          <span>🔴 Site test pas encore en production</span>
+        </div>
+      </div>
+
       {/* ── Menu mobile ── */}
       <div className={`nav-mobile-menu${mobileOpen ? ' open' : ''}`} aria-hidden={!mobileOpen}>
 

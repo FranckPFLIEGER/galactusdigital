@@ -3,13 +3,13 @@ import { FORMATIONS, getFormationsParFamille } from '../data/catalogue'
 
 const FC: Record<string, string> = {
   'Réseaux & CCNA':      '#E41F26',
-  'Cybersécurité':       '#c0392b',
-  'Programmation':       '#2980b9',
-  'IoT':                 '#16a085',
-  'Linux & Open Source': '#8e44ad',
-  'Data & Analytics':    '#d35400',
-  'Azure & Cloud':       '#0078D4',
-  'Microsoft 365':       '#0078D4',
+  'Cybersécurité':       '#E41F26',
+  'Programmation':       '#E41F26',
+  'IoT':                 '#E41F26',
+  'Linux & Open Source': '#E41F26',
+  'Data & Analytics':    '#E41F26',
+  'Azure & Cloud':       '#E41F26',
+  'Microsoft 365':       '#E41F26',
 }
 
 const PAR_FAMILLE = getFormationsParFamille()
@@ -18,12 +18,20 @@ const MICROSOFT_FAMILLES = ['Azure & Cloud', 'Microsoft 365']
 
 function GalactusLogo() {
   return (
-    <div style={{ display: 'inline-block' }}>
-      <div style={{ fontFamily: "'Barlow Condensed','Agency FB',sans-serif", fontWeight: 700, fontSize: '2.2rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#fff', lineHeight: 1, marginBottom: '3px', whiteSpace: 'nowrap' }}>GALACTUS</div>
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', gap: '5px' }}>
-        <div style={{ height: '2px', background: '#E41F26' }} />
-        <span style={{ fontFamily: "'Barlow Condensed','Agency FB',sans-serif", fontWeight: 400, fontSize: '0.58rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#E41F26', whiteSpace: 'nowrap' }}>DIGITAL</span>
-        <div style={{ height: '2px', background: '#E41F26' }} />
+    <div style={{ display: 'flex', alignItems: 'center', gap: '0.7rem' }}>
+      <img
+        src="/galactus-icon-only.png"
+        alt=""
+        aria-hidden="true"
+        style={{ height: '54px', width: 'auto', display: 'block', flexShrink: 0 }}
+      />
+      <div style={{ display: 'inline-block' }}>
+        <div style={{ fontFamily: "'Barlow Condensed','Agency FB',sans-serif", fontWeight: 700, fontSize: '2.2rem', letterSpacing: '0.08em', textTransform: 'uppercase', color: '#fff', lineHeight: 1, marginBottom: '3px', whiteSpace: 'nowrap' }}>GALACTUS</div>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr auto 1fr', alignItems: 'center', gap: '5px' }}>
+          <div style={{ height: '2px', background: '#E41F26' }} />
+          <span style={{ fontFamily: "'Barlow Condensed','Agency FB',sans-serif", fontWeight: 400, fontSize: '0.58rem', letterSpacing: '0.22em', textTransform: 'uppercase', color: '#E41F26', whiteSpace: 'nowrap' }}>DIGITAL</span>
+          <div style={{ height: '2px', background: '#E41F26' }} />
+        </div>
       </div>
     </div>
   )

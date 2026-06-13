@@ -4,6 +4,15 @@ import { Footer } from '../components/Footer'
 import { Phone, Mail, CheckCircle } from 'lucide-react'
 
 export const Route = createFileRoute('/handicap')({
+  head: () => ({
+    meta: [
+      { title: 'Accessibilité & Handicap — GALACTUS Digital' },
+      { name: 'description', content: "GALACTUS Digital s'engage pour l'accessibilité des formations IT. Référent handicap certifié, partenaires RHF, aménagements sur mesure dans les territoires ultramarins." },
+      { property: 'og:title', content: 'Accessibilité & Handicap — GALACTUS Digital' },
+      { property: 'og:url', content: 'https://galactusdigital.com/handicap' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/handicap' }],
+  }),
   component: HandicapPage,
 })
 
@@ -13,7 +22,7 @@ function HandicapPage() {
       <Header />
       <main style={{ paddingTop: '72px' }}>
 
-        {/* Hero */}
+        {/* ── Hero ── */}
         <section style={{ background: 'var(--g-black)', borderBottom: '3px solid var(--g-red)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>
@@ -32,12 +41,12 @@ function HandicapPage() {
           </div>
         </section>
 
-        {/* Accueil PSH */}
+        {/* ── Accueil PSH ── */}
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Accueil des personnes<br />en situation de handicap</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '4rem', alignItems: 'start', marginTop: '1rem' }}>
+            <div className="hcap-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start', marginTop: '1rem' }}>
               <div>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48', marginBottom: '1.5rem' }}>
                   Afin de répondre aux besoins spécifiques de nos stagiaires en situation de handicap,
@@ -59,8 +68,8 @@ function HandicapPage() {
                 </p>
               </div>
 
-              {/* Référent */}
               <div>
+                {/* Référent */}
                 <div style={{ background: 'var(--g-black)', borderLeft: '4px solid var(--g-red)', padding: '2.5rem', marginBottom: '1.5rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '1rem' }}>
                     Référent Handicap — GALACTUS Digital
@@ -88,7 +97,7 @@ function HandicapPage() {
                   </div>
                 </div>
 
-                {/* Partenaires */}
+                {/* Partenaires RHF */}
                 <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.4)', padding: '1.75rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '1rem' }}>
                     Nos partenaires RHF
@@ -112,7 +121,7 @@ function HandicapPage() {
           </div>
         </section>
 
-        {/* CTA contact */}
+        {/* ── CTA contact ── */}
         <section style={{ background: 'var(--g-offwhite)', padding: '3rem 2rem', borderTop: '3px solid var(--g-red)', borderBottom: '3px solid var(--g-red)' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
@@ -129,12 +138,12 @@ function HandicapPage() {
           </div>
         </section>
 
-        {/* Accessibilité numérique */}
+        {/* ── Accessibilité numérique ── */}
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Accessibilité Numérique</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '4rem', alignItems: 'start' }}>
+            <div className="hcap-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'start' }}>
               <div>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48', marginBottom: '1.5rem' }}>
                   Nous attachons une grande importance à l'accessibilité de nos formations et de notre
@@ -157,7 +166,7 @@ function HandicapPage() {
                   'Temps supplémentaire pour les examens sur demande',
                   'Accompagnement renforcé par le formateur',
                   'Pauses adaptées selon les besoins individuels',
-                  'Logiciels d\'assistance compatibles avec nos plateformes',
+                  "Logiciels d'assistance compatibles avec nos plateformes",
                 ].map((item, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', padding: '0.75rem 1rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)' }}>
                     <CheckCircle size={15} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
@@ -169,6 +178,15 @@ function HandicapPage() {
           </div>
         </section>
 
+        <style>{`
+          @media (max-width: 768px) {
+            .hcap-grid-2 { grid-template-columns: 1fr !important; gap: 2rem !important; }
+            main section { padding: 2.5rem 1rem !important; }
+          }
+          @media (max-width: 480px) {
+            main section { padding: 2rem 0.75rem !important; }
+          }
+        `}</style>
 
       </main>
       <Footer />

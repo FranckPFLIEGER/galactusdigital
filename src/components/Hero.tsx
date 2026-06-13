@@ -1,29 +1,29 @@
-import { ArrowRight, Award } from 'lucide-react'
+import { ArrowRight, Award, Cloud, Globe, Network, Terminal } from 'lucide-react'
 
 const floatingBadges = [
   {
     cls: 'badge-a',
     label: 'Microsoft Azure',
     sub: 'AZ-900 · AZ-104 · SC-900 · AI-900',
-    icon: '⊞',
+    Icon: Cloud,
   },
   {
     cls: 'badge-b',
     label: 'IPv6 Forum',
     sub: 'Certified Network Engineer',
-    icon: '🌐',
+    Icon: Globe,
   },
   {
     cls: 'badge-c',
     label: 'Cisco',
     sub: 'CCNA · CyberOps · IoT · DevNet',
-    icon: '⬡',
+    Icon: Network,
   },
   {
     cls: 'badge-d',
     label: 'Linux & Python',
     sub: 'Linux Essentials · PCEP · PCAP',
-    icon: '◈',
+    Icon: Terminal,
   },
 ]
 
@@ -72,7 +72,7 @@ export function Hero() {
             </div>
             {floatingBadges.map(badge => (
               <div key={badge.label} className={`cert-badge ${badge.cls}`}>
-                <div className="cert-badge-icon">{badge.icon}</div>
+                <div className="cert-badge-icon"><badge.Icon size={18} color="white" /></div>
                 <div>
                   <div className="cert-badge-name">{badge.label}</div>
                   <div className="cert-badge-sub">{badge.sub}</div>

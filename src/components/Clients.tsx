@@ -1,3 +1,5 @@
+import { useState } from 'react'
+import { ChevronDown } from 'lucide-react'
 import { useIntersection } from '../hooks/useIntersection'
 
 const clients = [
@@ -19,6 +21,8 @@ const clients = [
 
 export function Clients() {
   const { ref, isVisible } = useIntersection()
+  const [expanded, setExpanded] = useState(false)
+  // On affiche un sous-ensemble par défaut ; le reste est masqué via CSS sur mobile/tablette.
   return (
     <section className="clients-section" id="clients" ref={ref}>
       <div className="section-inner">
@@ -33,7 +37,7 @@ export function Clients() {
           Des entreprises publiques et privées dans les territoires ultramarins et en France hexagonale
           nous confient la montée en compétences de leurs équipes IT.
         </p>
-        <div className="clients-grid">
+        <div className={`clients-grid${expanded ? ' expanded' : ''}`}>
           {clients.map((c, i) => (
             <div
               key={c.file}
@@ -49,6 +53,14 @@ export function Clients() {
             </div>
           ))}
         </div>
+        <button
+          className="clients-toggle"
+          onClick={() => setExpanded(e => !e)}
+          aria-expanded={expanded}
+        >
+          {expanded ? 'Voir moins' : `Voir les ${clients.length} références`}
+          <ChevronDown size={14} style={{ transform: expanded ? 'rotate(180deg)' : 'none', transition: 'transform 0.2s' }} />
+        </button>
       </div>
     </section>
   )

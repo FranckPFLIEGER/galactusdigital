@@ -120,13 +120,13 @@ function MegaMenu({ visible, onClose }: { visible: boolean; onClose: () => void 
                   {f.titre}
                 </div>
                 <div style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                  {f.examCode !== 'Badge NetAcad' ? `${f.examCode} · ` : ''}{f.duree}
+                  {f.examCode !== 'Certificat Cisco NetAcad' ? `${f.examCode} · ` : ''}{f.duree}
                 </div>
               </div>
               {/* Prix si renseigné */}
-              {f.prix.foad !== null && (
+              {f.prix.elearning !== null && (
                 <div style={{ flexShrink: 0, fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.62rem', fontWeight: 700, color: '#E41F26', background: 'rgba(228,31,38,0.10)', padding: '0.1rem 0.4rem', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
-                  dès {f.prix.foad.toLocaleString('fr-FR')} €
+                  dès {f.prix.elearning!.toLocaleString('fr-FR')} €
                 </div>
               )}
             </a>
@@ -165,8 +165,8 @@ const NAV_LINKS = [
       { label: 'Formation à distance (FOAD)',  href: '/foad' },
       { label: 'E-learning tutoré',            href: '/elearning' },
       { label: "— Formats d'organisation",     isHeading: true },
-      { label: 'Inter-entreprise',             href: '/presentiel#inter' },
       { label: 'Intra-entreprise',             href: '/presentiel#intra' },
+      { label: 'Inter-entreprise',             href: '/presentiel#inter' },
     ],
   },
   {
@@ -184,6 +184,7 @@ const NAV_LINKS = [
       { label: 'Mot du Président',        href: '/#president' },
       { label: 'Notre expertise',         href: '/#expertise' },
       { label: 'Notre présence',          href: '/#presence' },
+      { label: 'Pourquoi Nous Choisir',   href: '/#pourquoi' },
       { label: 'Nos solutions',           href: '/#services' },
       { label: 'Satisfaction & Qualité',  href: '/#satisfaction' },
       { label: 'Ils nous font confiance', href: '/#clients' },
@@ -288,12 +289,6 @@ export function Header() {
           {mobileOpen ? <X size={22} color="#E41F26" /> : <Menu size={22} color="#fff" />}
         </button>
       </div>
-
-      {/* Ticker */}
-      <div className="nav-ticker">
-        <div className="nav-ticker-inner">
-          <span>🔴 Site test pas encore en production</span>
-        </div>
       </div>
 
       {/* ── Menu mobile ── */}

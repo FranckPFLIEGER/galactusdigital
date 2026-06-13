@@ -7,20 +7,11 @@ import {
 } from 'lucide-react'
 
 export const Route = createFileRoute('/presentiel')({
-  head: () => ({
-    meta: [
-      { title: 'Formation presentiel IT certifiante — Martinique, Guadeloupe, Paris' },
-      { name: 'description', content: 'Formations certifiantes IT en presentiel dans les DOM-COM. Cisco NetAcad, Microsoft. Formateur certifie editeur. 1790 EUR/personne.' },
-      { property: 'og:title', content: 'Formation presentiel IT certifiante — Martinique, Guadeloupe, Paris' },
-      { property: 'og:url', content: 'https://galactusdigital.com/presentiel' },
-    ],
-    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/presentiel' }],
-  }),
   component: PresentielPage,
 })
 
 const FORMATIONS = [
-  { editeur: 'Cisco', formations: ['CCNA ITN (1/3)', 'CCNA SRWE (2/3)', 'CCNA ENSA (3/3)', 'CCNP Enterprise', 'CCNP Security'] },
+  { editeur: 'Cisco',      label: 'Partenaire n° 3018982', formations: ['CCNA ITN (1/3)', 'CCNA SRWE (2/3)', 'CCNA ENSA (3/3)', 'CCNP Enterprise', 'CCNP Security'] },
   { editeur: 'Microsoft',  formations: ['Azure Administrator (AZ-104)', 'Azure Fundamentals (AZ-900)', 'Microsoft 365 Fundamentals', 'Azure AI Fundamentals', 'Power Platform'] },
   { editeur: 'CompTIA',    formations: ['Security+', 'Network+', 'A+', 'CySA+', 'PenTest+'] },
   { editeur: 'IPv6 Forum', formations: ['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'] },
@@ -216,7 +207,7 @@ function PresentielPage() {
                 ))}
                 <div style={{ background: 'rgba(228,31,38,0.06)', border: '1px solid rgba(228,31,38,0.15)', padding: '0.9rem 1rem', marginTop: '1rem' }}>
                   <p style={{ fontSize: '0.82rem', color: '#4a4a48', margin: 0, lineHeight: 1.6 }}>
-                    <strong>Calendrier des sessions disponible sur demande.</strong> Contactez-nous pour connaître les prochaines dates dans votre territoire.
+                    Consultez les prochaines dates sur notre <a href="/calendrier" style={{ color: "var(--g-red)", fontWeight: 600 }}>calendrier en ligne</a>.
                   </p>
                 </div>
                 <DelaisAcces />
@@ -224,7 +215,7 @@ function PresentielPage() {
             </div>
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost-dark"><Mail size={16} /> Demander le calendrier</a>
+              <a href="/calendrier" className="btn-ghost-dark"><Calendar size={16} /> Voir le calendrier</a>
             </div>
           </div>
         </section>

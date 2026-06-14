@@ -9,7 +9,7 @@ const pillars = [
     badge: "Procédures documentées — Référent dédié",
     items: [
       "Référent Handicap GALACTUS Digital : adaptation systématique des modalités pédagogiques à chaque situation individuelle, dès l'inscription",
-      "Cisco Networking Academy accompagne depuis 2019 les apprenants en situation de handicap — plus de 188 000 personnes ont atteint leurs objectifs via les dispositifs d'accessibilité NetAcad (source : Cisco NetAcad)",
+      "Cisco Networking Academy accompagne depuis 2019 les apprenants en situation de handicap — plus de 188 000 personnes ont atteint leurs objectifs via les dispositifs d'accessibilité NetAcad (source : Cisco Networking Academy)",
       "Contenus officiels Cisco conformes aux standards d'accessibilité internationaux — handicaps visuels, auditifs, cognitifs et de mobilité physique pris en compte",
       "FOAD et e-learning tutoré : solution adaptée pour les apprenants à mobilité réduite ou ne pouvant se déplacer en centre",
       "Aménagements des évaluations disponibles sur demande — délais supplémentaires, supports adaptés, tiers-temps",

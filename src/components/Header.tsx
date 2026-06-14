@@ -131,7 +131,7 @@ function MegaMenu({ visible, onClose }: { visible: boolean; onClose: () => void 
                   {f.titre}
                 </div>
                 <div style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                  {f.examCode !== 'Certificat Cisco NetAcad' ? `${f.examCode} · ` : ''}{f.duree}
+                  {f.examCode !== 'Certificat Cisco Networking Academy' ? `${f.examCode} · ` : ''}{f.duree}
                 </div>
               </div>
               {/* Prix si renseigné */}

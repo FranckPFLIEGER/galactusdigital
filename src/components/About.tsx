@@ -26,9 +26,9 @@ const points = [
 
 const certPrograms = [
   { name: 'Microsoft Azure & M365',          meta: 'n° 4653557' },
-  { name: 'Cisco NetAcad — Réseaux & CCNA',  meta: 'n° 3018982' },
-  { name: 'Cisco NetAcad — Cybersécurité',   meta: 'n° 3018982' },
-  { name: 'Cisco NetAcad — IoT & DevNet',    meta: 'n° 3018982' },
+  { name: 'Cisco Networking Academy — Réseaux & CCNA',  meta: 'n° 3018982' },
+  { name: 'Cisco Networking Academy — Cybersécurité',   meta: 'n° 3018982' },
+  { name: 'Cisco Networking Academy — IoT & DevNet',    meta: 'n° 3018982' },
   { name: 'IPv6 Forum',                      meta: 'Official' },
   { name: 'Linux & Python (LPI / OpenEDG)',  meta: 'Official' },
 ]

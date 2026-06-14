@@ -152,7 +152,7 @@ export function ContactCTA() {
             </p>
 
             {status === "ok" ? (
-              <div style={{ background: "rgba(39,174,96,0.12)", border: "1px solid rgba(39,174,96,0.4)", padding: "2rem", textAlign: "center" }}>
+              <div style={{ background: "rgba(228,31,38,0.10)", border: "1px solid rgba(228,31,38,0.35)", padding: "2rem", textAlign: "center" }}>
                 <CheckCircle size={40} color="#E41F26" style={{ marginBottom: "1rem" }} />
                 <div style={{ fontFamily: "var(--font-title)", fontSize: "1.1rem", fontWeight: 700, color: "#fff", textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: "0.5rem" }}>
                   Message envoyé !

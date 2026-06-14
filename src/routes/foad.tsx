@@ -129,7 +129,7 @@ function FoadPage() {
             <div className="g-rule" />
             <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
-                { icon: <Monitor size={24} color="white" />, title: 'Plateforme officielle', desc: "Toutes nos formations FOAD s'appuient sur Cisco NetAcad ou Microsoft Learn — accessibles 24h/24 depuis n'importe quel appareil, avec suivi de progression individuel." },
+                { icon: <Monitor size={24} color="white" />, title: 'Plateforme officielle', desc: "Toutes nos formations FOAD s'appuient sur Cisco Networking Academy ou Microsoft Learn — accessibles 24h/24 depuis n'importe quel appareil, avec suivi de progression individuel." },
                 { icon: <Wifi size={24} color="white" />, title: 'Sessions live WEBEX', desc: "Nos sessions synchrones se déroulent via WEBEX. Partage d'écran, ateliers pratiques à distance, interactions en temps réel avec le formateur certifié." },
                 { icon: <Users size={24} color="white" />, title: 'Assistance documentée', desc: "Conformément à l'article D.6313-3-1 du Code du travail, une assistance technique et pédagogique est disponible et documentée tout au long du parcours." },
               ].map(a => (

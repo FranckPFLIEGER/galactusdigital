@@ -46,7 +46,7 @@ function DemarcheQualitePage() {
             <div className="g-rule" />
             <p style={{ fontSize: '0.85rem', color: '#5a5a58', marginBottom: '2rem', fontStyle: 'italic', lineHeight: 1.6 }}>
               Données mises à jour au 31 mai 2026 — Périmètre : actions de formation certifiantes IT
-              (Cisco NetAcad, Microsoft Azure/M365, IPv6 Forum) —
+              (Cisco Networking Academy, Microsoft Azure/M365, IPv6 Forum) —
               NDA : 11 75 59933 75 — SIRET : 880 430 418 00017
             </p>
 
@@ -98,7 +98,7 @@ function DemarcheQualitePage() {
               </table>
             </div>
             <p style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.75rem', fontStyle: 'italic', lineHeight: 1.6 }}>
-              * Taux calculé sur les candidats ayant effectivement passé l'examen. Source : attestations de réussite éditeurs (Cisco NetAcad, Microsoft, IPv6 Forum).
+              * Taux calculé sur les candidats ayant effectivement passé l'examen. Source : attestations de réussite éditeurs (Cisco Networking Academy, Microsoft, IPv6 Forum).
             </p>
           </div>
         </section>
@@ -114,7 +114,7 @@ function DemarcheQualitePage() {
                 { num: '02', title: 'Identification des objectifs & adaptation', desc: "Objectifs définis sous forme de verbes d'action dans le plan de formation. Analyse des besoins via questionnaire d'évaluation des attentes. Prise en compte des situations PSH." },
                 { num: '03', title: 'Adaptation aux publics bénéficiaires', desc: "Convocation avec règlement intérieur. Évaluation des acquis par ateliers pratiques et QCM (seuil 70%). Mesures de prévention des ruptures de parcours formalisées dans les CGV." },
                 { num: '04', title: 'Adéquation des moyens', desc: "Formateur certifié Cisco instructeur depuis plus de 15 ans — CCNP, CCDP. Plateforme NetAcad officielle. WEBEX pour la FOAD. Salles adaptées en présentiel." },
-                { num: '05', title: 'Qualification des personnels', desc: "Certifications CCNP et CCDP Cisco. Programme IPD Cisco NetAcad. Vérification annuelle des compétences. Inscription à la communauté des formateurs Cisco NetAcad." },
+                { num: '05', title: 'Qualification des personnels', desc: "Certifications CCNP et CCDP Cisco. Programme IPD Cisco Networking Academy. Vérification annuelle des compétences. Inscription à la communauté des formateurs Cisco Networking Academy." },
                 { num: '06', title: "Inscription dans l'environnement professionnel", desc: "Veille réglementaire (CARIF, Centre Inffo, AFDAS, AKTO, Service public). Veille métier (APEC, LinkedIn Cisco). Partenaire Cisco n° 3018982. Partenaire Microsoft n° 4653557. Membre IPv6 Forum. Association ASPIK." },
                 { num: '07', title: 'Recueil et traitement des appréciations', desc: "Évaluation apprenants et hiérarchie en fin de formation. Sollicitation à froid 2 mois après. Tableau de suivi : points forts, axes d'amélioration, réclamations, actions correctives." },
               ].map(c => (
@@ -149,7 +149,7 @@ function DemarcheQualitePage() {
                     'Cartouche de versioning sur tous les documents',
                     'Mise à jour des procédures selon les évolutions réglementaires',
                     'Newsletters CARIF, Centre Inffo, AFDAS, Service public',
-                    'Webinaires Cisco NetAcad IPD',
+                    'Webinaires Cisco Networking Academy IPD',
                   ].map((item, i) => (
                     <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />

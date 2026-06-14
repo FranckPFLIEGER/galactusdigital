@@ -65,7 +65,7 @@ function RgpdPage() {
                   base: 'Exécution du contrat',
                   donnees: 'Nom, prénom, email, téléphone, entreprise, données de parcours de formation, résultats aux évaluations.',
                   duree: '3 ans pour les dossiers pédagogiques (Art. R6352-9 Code du travail). 5 ans pour les pièces comptables.',
-                  dest: 'GALACTUS Digital, éditeurs certifiant (Cisco NetAcad, Microsoft, IPv6 Forum), OPCO le cas échéant.',
+                  dest: 'GALACTUS Digital, éditeurs certifiant (Cisco Networking Academy, Microsoft, IPv6 Forum), OPCO le cas échéant.',
                 },
                 {
                   titre: 'Données de satisfaction et d\'amélioration continue',
@@ -176,7 +176,7 @@ function RgpdPage() {
               nous contacter pour activer une version du site avec polices auto-hébergées.
             </p>
             <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1rem' }}>
-              La plateforme pédagogique <strong>Cisco NetAcad</strong> est opérée par Cisco Systems (États-Unis),
+              La plateforme pédagogique <strong>Cisco Networking Academy</strong> est opérée par Cisco Systems (États-Unis),
               dont les traitements sont encadrés par des clauses contractuelles types approuvées par la Commission européenne.
             </p>
             <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48' }}>

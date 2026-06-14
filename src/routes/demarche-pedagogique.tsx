@@ -41,7 +41,7 @@ function DemarchePedagogiquePage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '3rem', alignItems: 'start' }}>
               <div>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
-                  Notre ingénierie pédagogique s'appuie sur les programmes officiels des éditeurs IT (Cisco NetAcad, Microsoft, IPv6 Forum) et une approche par compétences, vérifiée à chaque étape du parcours.
+                  Notre ingénierie pédagogique s'appuie sur les programmes officiels des éditeurs IT (Cisco Networking Academy, Microsoft, IPv6 Forum) et une approche par compétences, vérifiée à chaque étape du parcours.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
                   Chaque formation est conçue sur mesure en fonction des besoins identifiés lors de l'analyse préalable, avec des objectifs pédagogiques définis sous forme de verbes d'action et une progression logique des acquis.
@@ -56,7 +56,7 @@ function DemarchePedagogiquePage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {[
                   { icon: <Target size={20} color="white" />, title: 'Objectifs opérationnels', desc: "Définis sous forme de verbes d'action, alignés sur les besoins de l'apprenant et vérifiés tout au long du parcours." },
-                  { icon: <BookOpen size={20} color="white" />, title: 'Contenus officiels éditeurs', desc: 'Programmes alignés sur les référentiels exacts des éditeurs, sans intermédiaire. Supports Cisco NetAcad, Microsoft Learn, IPv6 Forum.' },
+                  { icon: <BookOpen size={20} color="white" />, title: 'Contenus officiels éditeurs', desc: 'Programmes alignés sur les référentiels exacts des éditeurs, sans intermédiaire. Supports Cisco Networking Academy, Microsoft Learn, IPv6 Forum.' },
                   { icon: <CheckCircle size={20} color="white" />, title: 'Évaluation continue', desc: "QCM, ateliers pratiques et mises en situation à chaque module pour vérifier l'acquisition des compétences." },
                   { icon: <Award size={20} color="white" />, title: 'Certification officielle', desc: "Passage de l'examen de certification éditeur intégré dans chaque parcours. 100% de réussite parmi les présentés 2023-2025." },
                 ].map(item => (
@@ -105,7 +105,7 @@ function DemarchePedagogiquePage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '1.5rem' }}>
               {[
                 { title: 'Méthodes actives', items: ['Exposé, démonstration et atelier pratique', 'Cas pratiques et études de cas', 'Quizz et évaluations interactives', 'Méthode interactive et intuitive'] },
-                { title: 'Outils numériques', items: ['Plateforme Cisco NetAcad (LMS officiel)', 'Simulateur Packet Tracer (Cisco)', 'Outil WEBEX pour la FOAD', 'Supports stagiaires numériques'] },
+                { title: 'Outils numériques', items: ['Plateforme Cisco Networking Academy (LMS officiel)', 'Simulateur Packet Tracer (Cisco)', 'Outil WEBEX pour la FOAD', 'Supports stagiaires numériques'] },
                 { title: 'Modalités de formation', items: ["Formation en présentiel chez le client", "Formation à distance (FOAD) via WEBEX", "Formation hybride (blended learning)", "Intra-entreprise et inter-entreprise"] },
                 { title: 'Documents remis', items: ['Plan de formation détaillé', 'Convention de formation', "Convocation avec règlement intérieur", "Attestation de fin de formation", 'Attestation de présence'] },
               ].map(m => (

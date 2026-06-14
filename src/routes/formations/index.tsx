@@ -13,17 +13,17 @@ export const Route = createFileRoute("/formations/")({
 const GMAIL = "https://mail.google.com/mail/?view=cm&to=president@galactusdigital.com&su=Demande%20de%20formation"
 
 const EDITEUR_COLOR: Record<string, string> = {
-  "Cisco NetAcad": "#E41F26",
+  "Cisco Networking Academy": "#E41F26",
   "Microsoft": "#1D1D1B",
 }
 
 const NIVEAU_BG: Record<string, string> = {
-  "Fondamental":   "rgba(22,163,74,.10)",
+  "Fondamental":   "rgba(187,187,187,.18)",
   "Intermédiaire": "rgba(228,31,38,.06)",
   "Avancé":        "rgba(228,31,38,.10)",
 }
 const NIVEAU_COLOR: Record<string, string> = {
-  "Fondamental":   "#16a34a",
+  "Fondamental":   "#8a8a88",
   "Intermédiaire": "#b71c1f",
   "Avancé":        "#E41F26",
 }
@@ -112,7 +112,7 @@ function FormationsPage() {
   const [editeurFilter, setEditeurFilter] = useState<string>("Tout")
   const [familleFilter, setFamilleFilter] = useState<string>("Tout")
 
-  const editeurs = ["Tout", "Cisco NetAcad", "Microsoft"]
+  const editeurs = ["Tout", "Cisco Networking Academy", "Microsoft"]
   const familles = useMemo(() => {
     const base = editeurFilter === "Tout"
       ? FORMATIONS
@@ -129,7 +129,7 @@ function FormationsPage() {
   }, [editeurFilter, familleFilter])
 
   // Groupes pour les ancres footer
-  const cisco     = filtered.filter(f => f.editeur === "Cisco NetAcad")
+  const cisco     = filtered.filter(f => f.editeur === "Cisco Networking Academy")
   const microsoft = filtered.filter(f => f.editeur === "Microsoft")
 
   function selectEditeur(e: string) {
@@ -202,7 +202,7 @@ function FormationsPage() {
               </div>
               {editeurs.map(e => (
                 <button key={e} onClick={() => selectEditeur(e)}
-                  style={editeurFilter === e ? btnActive(e === "Microsoft" ? "#1D1D1B" : e === "Cisco NetAcad" ? "#E41F26" : "#1D1D1B") : { ...btnBase, color: "#555" }}>
+                  style={editeurFilter === e ? btnActive(e === "Microsoft" ? "#1D1D1B" : e === "Cisco Networking Academy" ? "#E41F26" : "#1D1D1B") : { ...btnBase, color: "#555" }}>
                   {e}
                 </button>
               ))}
@@ -237,7 +237,7 @@ function FormationsPage() {
                     Partenaire n° 3018982
                   </div>
                   <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: "var(--g-black)", margin: 0 }}>
-                    Cisco NetAcad
+                    Cisco Networking Academy
                   </h2>
                 </div>
                 <span style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", color: "#fff", background: "#E41F26", padding: ".2rem .7rem", marginLeft: "auto" }}>

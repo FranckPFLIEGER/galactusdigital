@@ -14,7 +14,7 @@ export const Route = createFileRoute('/formations/ccna-srwe')({
 })
 
 const DATA = {
-  editeur: 'Cisco', famille: 'Cisco NetAcad — CCNA', titre: 'CCNA — Commutation, Routage et Wi-Fi (SRWE)', sousTitre: 'Module 2 sur 3 · Référence officielle : CCNA-SRWE',
+  editeur: 'Cisco', famille: 'Cisco Networking Academy — CCNA', titre: 'CCNA — Commutation, Routage et Wi-Fi (SRWE)', sousTitre: 'Module 2 sur 3 · Référence officielle : CCNA-SRWE',
   ref: 'CCNA-SRWE-002', niveau: 'Intermédiaire', partenaire: 'Partenaire Cisco n° 3018982', certification: 'Cisco Certified Network Associate (CCNA 200-301)',
   duree: '70 heures', groupeMin: 4, groupeMax: 12, lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Deuxième module du cursus CCNA officiel Cisco, cette formation se concentre sur les technologies de commutation de couche 2, le routage avancé et les réseaux sans fil. Elle couvre les VLAN, STP, EtherChannel, DHCPv4/v6, les routes statiques et la sécurité LAN. Prérequis : avoir validé le module CCNA ITN (module 1).`,
@@ -37,8 +37,8 @@ const DATA = {
   ],
   examen: { code: '200-301 CCNA', duree: '120 minutes', langue: 'Français', organisme: 'Cisco Networking Academy', format: 'QCM, drag-and-drop, simulation réseau', score: '825 / 1000', note: 'Ce module est le 2ème des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA.' },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

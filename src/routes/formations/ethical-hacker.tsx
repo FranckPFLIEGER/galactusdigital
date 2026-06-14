@@ -7,15 +7,15 @@ export const Route = createFileRoute('/formations/ethical-hacker')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "Ethical Hacker Cisco NetAcad — Cybersécurité offensive | GALACTUS Digital" },
+      { title: "Ethical Hacker Cisco Networking Academy — Cybersécurité offensive | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco Ethical Hacker. 30h. Badge certifiant. Tests intrusion pentest sécurité offensive. Certifié Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco NetAcad',
-  famille: 'Cisco NetAcad — Cybersécurité',
+  editeur: 'Cisco Networking Academy',
+  famille: 'Cisco Networking Academy — Cybersécurité',
   titre: 'Ethical Hacker — Sécurité offensive',
   sousTitre: `Formation aux tests d'intrusion · Référence : ETHHACK`,
   ref: 'ETHHACK-001',
@@ -40,8 +40,8 @@ const DATA = {
     note: '',
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

@@ -14,8 +14,8 @@ export const Route = createFileRoute('/formations/devnet-associate')({
 })
 
 const DATA = {
-  editeur: 'Cisco NetAcad',
-  famille: 'Cisco NetAcad — DevNet',
+  editeur: 'Cisco Networking Academy',
+  famille: 'Cisco Networking Academy — DevNet',
   titre: 'DevNet Associate — Automatisation réseau',
   sousTitre: 'Certification Cisco Certified DevNet Associate · Référence : DEVASC-200-901',
   ref: 'DEVNET-001',
@@ -40,8 +40,8 @@ const DATA = {
     note: '',
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

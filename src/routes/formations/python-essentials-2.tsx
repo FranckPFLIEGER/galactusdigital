@@ -7,15 +7,15 @@ export const Route = createFileRoute('/formations/python-essentials-2')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "Python Essentials 2 Cisco NetAcad — Python avancé | GALACTUS Digital" },
-      { name: "description", content: "Formation Python Essentials 2 Cisco NetAcad. 40h. Certification PCAP OpenEDG. POO modules exceptions fichiers. Qualiopi." },
+      { title: "Python Essentials 2 Cisco Networking Academy — Python avancé | GALACTUS Digital" },
+      { name: "description", content: "Formation Python Essentials 2 Cisco Networking Academy. 40h. Certification PCAP OpenEDG. POO modules exceptions fichiers. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco NetAcad',
-  famille: 'Cisco NetAcad — Programmation',
+  editeur: 'Cisco Networking Academy',
+  famille: 'Cisco Networking Academy — Programmation',
   titre: 'Python Essentials 2 — Python Avancé',
   sousTitre: 'Certification PCAP · Python Certified Associate Programmer · Référence : PE2',
   ref: 'PE2-001',
@@ -40,8 +40,8 @@ const DATA = {
     note: `Examen PCAP-31-0x délivré par l'OpenEDG Python Institute. Après PCAP, la progression naturelle mène à PCPP1 — Certified Professional in Python Programming.`,
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Environnements pratiques Python interactifs sur NetAcad (Jupyter-style, exercices guidés)",
     "Badge numérique PCAP — Python Essentials 2 (OpenEDG / Python Institute) remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

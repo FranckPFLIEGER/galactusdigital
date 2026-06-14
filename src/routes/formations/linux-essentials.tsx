@@ -7,15 +7,15 @@ export const Route = createFileRoute('/formations/linux-essentials')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "Linux Essentials Cisco NetAcad — Certification LPI 010-160 | GALACTUS Digital" },
-      { name: "description", content: "Formation Linux Essentials Cisco NetAcad. 70h. Certification LPI 010-160. CLI systèmes fichiers scripting shell. Qualiopi." },
+      { title: "Linux Essentials Cisco Networking Academy — Certification LPI 010-160 | GALACTUS Digital" },
+      { name: "description", content: "Formation Linux Essentials Cisco Networking Academy. 70h. Certification LPI 010-160. CLI systèmes fichiers scripting shell. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco NetAcad',
-  famille: 'Cisco NetAcad — Linux & Open Source',
+  editeur: 'Cisco Networking Academy',
+  famille: 'Cisco Networking Academy — Linux & Open Source',
   titre: 'NDG Linux Essentials — Introduction à Linux',
   sousTitre: 'Certification Linux Essentials (LPI 010) · Référence : LINUX-ESS',
   ref: 'LINUX-ESS-001',
@@ -26,7 +26,7 @@ const DATA = {
   groupeMin: 4,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Formation d'introduction à Linux et à l'open source en partenariat entre Cisco NetAcad et le Linux Professional Institute (LPI). Elle couvre les commandes fondamentales, la gestion des fichiers, les processus, les permissions et les bases de la sécurité Linux. Prépare à la certification Linux Essentials LPI 010-160.`,
+  description: `Formation d'introduction à Linux et à l'open source en partenariat entre Cisco Networking Academy et le Linux Professional Institute (LPI). Elle couvre les commandes fondamentales, la gestion des fichiers, les processus, les permissions et les bases de la sécurité Linux. Prépare à la certification Linux Essentials LPI 010-160.`,
   objectifs: ["Décrire l'écosystème Linux et open source — distributions, licences, communautés", "Naviguer et manipuler le système de fichiers Linux en ligne de commande", "Gérer les utilisateurs, groupes et permissions Linux (chmod, chown, ACL)", "Administrer les processus Linux — ps, kill, top, cron, systemd", "Configurer le réseau Linux basique — ip, ifconfig, /etc/hosts, DNS", "Écrire des scripts shell Bash simples pour automatiser des tâches"],
   public: ["Débutants complets sur Linux", "Administrateurs Windows s'ouvrant à Linux", "Développeurs souhaitant maîtriser leur environnement", "Prérequis pour CCNA, DevNet ou cybersécurité Linux"],
   prerequis: ["Aucun prérequis technique obligatoire", "Utilisation courante d'un PC (Windows ou macOS)", "Curiosité pour les systèmes open source"],
@@ -40,8 +40,8 @@ const DATA = {
     note: 'Certification Linux Essentials délivrée par le LPI (Linux Professional Institute). Elle prépare à LPIC-1 (Linux Administrator) et aux parcours DevNet et cybersécurité.',
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur terminal Linux — environnements réels et simulateurs NetAcad",
     "Badge numérique Linux Essentials (LPI — Linux Professional Institute) remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

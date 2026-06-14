@@ -14,7 +14,7 @@ export const Route = createFileRoute('/formations/cyberops')({
 })
 
 const DATA = {
-  editeur: 'Cisco', famille: 'Cisco NetAcad — CyberOps', titre: 'CyberOps Associate — Opérations de cybersécurité', sousTitre: 'Certification Cisco CyberOps Associate · Référence : CBROPS-200-201',
+  editeur: 'Cisco', famille: 'Cisco Networking Academy — CyberOps', titre: 'CyberOps Associate — Opérations de cybersécurité', sousTitre: 'Certification Cisco CyberOps Associate · Référence : CBROPS-200-201',
   ref: 'CYBEROPS-001', niveau: 'Intermédiaire', partenaire: 'Partenaire Cisco n° 3018982', certification: 'Cisco Certified CyberOps Associate (200-201 CBROPS)',
   duree: '60 heures', groupeMin: 4, groupeMax: 12, lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Cette formation prépare les analystes en cybersécurité de niveau débutant à travailler dans un Centre d'Opérations de Sécurité (SOC). Elle couvre la surveillance réseau, la détection d'intrusion, l'analyse forensique et la réponse aux incidents. Elle prépare à la certification Cisco Certified CyberOps Associate (200-201 CBROPS).`,
@@ -37,8 +37,8 @@ const DATA = {
   ],
   examen: { code: '200-201 CBROPS', duree: '120 minutes', langue: 'Français', organisme: 'Cisco Networking Academy', format: 'QCM, simulation d\'analyse réseau', score: '750 / 1000', note: 'L\'examen 200-201 CBROPS est indépendant. Un seul examen suffit pour obtenir la certification CyberOps Associate, sans module préalable obligatoire.' },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

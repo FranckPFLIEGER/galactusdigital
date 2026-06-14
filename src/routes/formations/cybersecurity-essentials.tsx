@@ -7,15 +7,15 @@ export const Route = createFileRoute('/formations/cybersecurity-essentials')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "Cybersecurity Essentials Cisco NetAcad | GALACTUS Digital" },
+      { title: "Cybersecurity Essentials Cisco Networking Academy | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco Cybersecurity Essentials. 30h. Badge certifiant. Fondamentaux cybersécurité menaces cryptographie défenses. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco NetAcad',
-  famille: 'Cisco NetAcad — Cybersécurité',
+  editeur: 'Cisco Networking Academy',
+  famille: 'Cisco Networking Academy — Cybersécurité',
   titre: 'Cybersecurity Essentials — Fondamentaux de la cybersécurité',
   sousTitre: 'Formation aux bases de la cybersécurité · Référence : CYBERESSEN',
   ref: 'CYBERESSEN-001',
@@ -40,8 +40,8 @@ const DATA = {
     note: '',
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

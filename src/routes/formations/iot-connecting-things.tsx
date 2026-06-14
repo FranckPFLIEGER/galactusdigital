@@ -14,8 +14,8 @@ export const Route = createFileRoute('/formations/iot-connecting-things')({
 })
 
 const DATA = {
-  editeur: 'Cisco NetAcad',
-  famille: 'Cisco NetAcad — IoT',
+  editeur: 'Cisco Networking Academy',
+  famille: 'Cisco Networking Academy — IoT',
   titre: 'IoT Fundamentals — Connecting Things',
   sousTitre: 'Cours 1/3 du cursus IoT Fundamentals · Référence : IOT-CT',
   ref: 'IOT-CT-001',
@@ -40,8 +40,8 @@ const DATA = {
     note: 'Prérequis recommandé avant IoT Fundamentals: Big Data & Analytics (cours 2/3) et le Hackathon Playbook (cours 3/3).',
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

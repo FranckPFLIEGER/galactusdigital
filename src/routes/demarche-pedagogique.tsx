@@ -38,7 +38,7 @@ function DemarchePedagogiquePage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Notre approche pédagogique</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem', alignItems: 'start' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '3rem', alignItems: 'start' }}>
               <div>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
                   Notre ingénierie pédagogique s'appuie sur les programmes officiels des éditeurs IT (Cisco NetAcad, Microsoft, IPv6 Forum) et une approche par compétences, vérifiée à chaque étape du parcours.
@@ -77,7 +77,7 @@ function DemarchePedagogiquePage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">Processus d'évaluation</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '1.5rem' }}>
               {[
                 { phase: 'Avant la formation', items: ['Évaluation des besoins (entretien + questionnaire)', 'Évaluation des prérequis (entretien + questionnaire)', 'Analyse du profil et des attentes', "Vérification de l'équipement pour la FOAD"] },
                 { phase: 'Pendant la formation', items: ['Évaluation des attentes (entretien + questionnaire)', "Évaluation des acquis (mise en situation + simulateur + QCM)", 'Évaluation de satisfaction "à chaud"', 'Tour de table quotidien', 'Passage de la certification éditeur', "Attestation de fin de formation"] },
@@ -102,7 +102,7 @@ function DemarchePedagogiquePage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Modalités et méthodes pédagogiques</h2>
             <div className="g-rule" />
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1.5rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(260px,1fr))', gap: '1.5rem' }}>
               {[
                 { title: 'Méthodes actives', items: ['Exposé, démonstration et atelier pratique', 'Cas pratiques et études de cas', 'Quizz et évaluations interactives', 'Méthode interactive et intuitive'] },
                 { title: 'Outils numériques', items: ['Plateforme Cisco NetAcad (LMS officiel)', 'Simulateur Packet Tracer (Cisco)', 'Outil WEBEX pour la FOAD', 'Supports stagiaires numériques'] },

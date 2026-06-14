@@ -14,17 +14,17 @@ const GMAIL = "https://mail.google.com/mail/?view=cm&to=president@galactusdigita
 
 const EDITEUR_COLOR: Record<string, string> = {
   "Cisco NetAcad": "#E41F26",
-  "Microsoft": "#0078D4",
+  "Microsoft": "#1D1D1B",
 }
 
 const NIVEAU_BG: Record<string, string> = {
   "Fondamental":   "rgba(22,163,74,.10)",
-  "Intermédiaire": "rgba(0,120,212,.10)",
+  "Intermédiaire": "rgba(228,31,38,.06)",
   "Avancé":        "rgba(228,31,38,.10)",
 }
 const NIVEAU_COLOR: Record<string, string> = {
   "Fondamental":   "#16a34a",
-  "Intermédiaire": "#0078D4",
+  "Intermédiaire": "#b71c1f",
   "Avancé":        "#E41F26",
 }
 const MODALITE_ICON: Record<string, string> = {
@@ -202,7 +202,7 @@ function FormationsPage() {
               </div>
               {editeurs.map(e => (
                 <button key={e} onClick={() => selectEditeur(e)}
-                  style={editeurFilter === e ? btnActive(e === "Microsoft" ? "#0078D4" : e === "Cisco NetAcad" ? "#E41F26" : "#1D1D1B") : { ...btnBase, color: "#555" }}>
+                  style={editeurFilter === e ? btnActive(e === "Microsoft" ? "#1D1D1B" : e === "Cisco NetAcad" ? "#E41F26" : "#1D1D1B") : { ...btnBase, color: "#555" }}>
                   {e}
                 </button>
               ))}
@@ -257,16 +257,16 @@ function FormationsPage() {
           <section id="microsoft" style={{ background: "var(--g-offwhite)", padding: "4rem 2rem" }}>
             <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
               <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: ".5rem" }}>
-                <div style={{ width: "4px", height: "32px", background: "#0078D4" }} />
+                <div style={{ width: "4px", height: "32px", background: "#1D1D1B" }} />
                 <div>
-                  <div style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#0078D4" }}>
+                  <div style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#1D1D1B" }}>
                     Partenaire n° 4653557
                   </div>
                   <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: "var(--g-black)", margin: 0 }}>
                     Microsoft Azure & M365
                   </h2>
                 </div>
-                <span style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", color: "#fff", background: "#0078D4", padding: ".2rem .7rem", marginLeft: "auto" }}>
+                <span style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", color: "#fff", background: "#1D1D1B", padding: ".2rem .7rem", marginLeft: "auto" }}>
                   {microsoft.length} formation{microsoft.length > 1 ? "s" : ""}
                 </span>
               </div>

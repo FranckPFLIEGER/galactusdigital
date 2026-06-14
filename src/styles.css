@@ -103,9 +103,11 @@ a { color: inherit; }
 .delay-5 { animation-delay: 0.40s !important; }
 .delay-6 { animation-delay: 0.48s !important; }
 
-.g-rule { display: flex; align-items: center; gap: 6px; margin: 0.75rem 0 1.5rem; }
-.g-rule::before { content: ''; width: 48px; height: 3px; background: var(--g-red); }
-.g-rule::after  { content: ''; width: 32px; height: 1.5px; background: var(--g-red-50); }
+/* Séparateur « double ligne » — élément graphique officiel de la charte (p.5) :
+   deux barres rouges en dégradé d'opacité 100% -> 50%, l'identité de marque. */
+.g-rule { display: flex; flex-direction: column; gap: 4px; margin: 0.75rem 0 1.5rem; }
+.g-rule::before { content: ''; width: 56px; height: 3px; background: var(--g-red); }
+.g-rule::after  { content: ''; width: 36px; height: 3px; background: var(--g-red-50); }
 .g-rule-anim { opacity: 0; }
 .g-rule-anim.visible { animation: fadeLeft 0.5s cubic-bezier(0.22,1,0.36,1) 0.15s forwards; }
 

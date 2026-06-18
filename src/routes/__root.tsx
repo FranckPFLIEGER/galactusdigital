@@ -86,7 +86,7 @@ const jsonLd = {
     '@type': 'EducationalOccupationalCredential',
     name: 'Certification Qualiopi',
     credentialCategory: 'Actions de formation',
-    recognizedBy: { '@type': 'Organization', name: 'ICPF — Accréditation n° 5-0616' },
+    recognizedBy: { '@type': 'Organization', name: 'Certifopac — Accréditation Cofrac n° 5-0620' },
   },
 }
 

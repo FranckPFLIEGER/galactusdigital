@@ -44,7 +44,7 @@ function MentionsLegalesPage() {
                 <p><strong>Présence active Guadeloupe :</strong> Pointe de la Verdure, Gosier 97190</p>
                 <p><strong>SIRET :</strong> 880 430 418 00017</p>
                 <p><strong>NDA :</strong> 11 75 59933 75</p>
-                <p><strong>Certification Qualiopi :</strong> ICPF — Accréditation n° 5-0616 (portée disponible sur www.cofrac.fr)</p>
+                <p><strong>Certification Qualiopi :</strong> Certifopac — Certificat n° 951711-1 — Accréditation Cofrac n° 5-0620 (portée disponible sur www.cofrac.fr). Valide du 16/09/2024 au 15/09/2027</p>
                 <p><strong>TVA :</strong> Non applicable — Article 261-4-4° du CGI</p>
                 <p><strong>Directeur de publication :</strong> Le président</p>
                 <p><strong>Contact :</strong> president@galactusdigital.com — +33 07 81 07 47 46</p>

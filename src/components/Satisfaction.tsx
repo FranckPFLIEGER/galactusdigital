@@ -54,7 +54,7 @@ export function Satisfaction() {
               textAlign: 'center',
               maxWidth: '220px',
             }}>
-              Certification Qualiopi ICPF — Accréditation n° 5-0616
+              Certification Qualiopi Certifopac — Accréditation Cofrac n° 5-0620
             </div>
           </div>
 

@@ -7,7 +7,7 @@ export const Route = createFileRoute('/demarche-qualite')({
   head: () => ({
     meta: [
       { title: 'Notre demarche qualite Qualiopi — GALACTUS Digital' },
-      { name: 'description', content: 'GALACTUS Digital certifie Qualiopi ICPF n 5-0616. 7 criteres, indicateurs de resultats, satisfaction apprenants. NDA 11 75 59933 75.' },
+      { name: 'description', content: 'GALACTUS Digital certifie Qualiopi Certifopac n 5-0620. 7 criteres, indicateurs de resultats, satisfaction apprenants. NDA 11 75 59933 75.' },
       { property: 'og:title', content: 'Notre demarche qualite Qualiopi — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/demarche-qualite' },
     ],
@@ -29,7 +29,7 @@ function DemarcheQualitePage() {
               Notre démarche qualité
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              GALACTUS Digital est certifié Qualiopi par ICPF (accréditation n° 5-0616) pour les actions de formation.
+              GALACTUS Digital est certifié Qualiopi par Certifopac (accréditation Cofrac n° 5-0620, certificat n° 951711-1) pour les actions de formation.
               Notre démarche s'appuie sur les 7 critères et 32 indicateurs du Référentiel National Qualité.
             </p>
             <p style={{ fontSize: '0.80rem', color: 'rgba(255,255,255,0.40)', fontStyle: 'italic', maxWidth: '680px', lineHeight: 1.7 }}>

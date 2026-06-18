@@ -181,7 +181,7 @@ export function Footer() {
             <div className="footer-legal-block">
               <div className="footer-legal-item"><span className="footer-legal-label">NDA</span><span className="footer-legal-value">11 75 59933 75</span></div>
               <div className="footer-legal-item"><span className="footer-legal-label">SIRET</span><span className="footer-legal-value">880 430 418 00017</span></div>
-              <div className="footer-legal-item"><span className="footer-legal-label">Certif.</span><span className="footer-legal-value">ICPF n° 5-0616</span></div>
+              <div className="footer-legal-item"><span className="footer-legal-label">Certif.</span><span className="footer-legal-value">Certifopac n° 5-0620</span></div>
             </div>
             <div style={{ marginTop: '1rem', display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
               <a href="/certificat-qualiopi.pdf" target="_blank" rel="noopener noreferrer" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.75rem', color: 'rgba(255,255,255,0.40)', textDecoration: 'none' }} onMouseEnter={e => (e.currentTarget.style.color = '#E41F26')} onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.40)')}><ExternalLink size={12} /> Certificat Qualiopi PDF</a>

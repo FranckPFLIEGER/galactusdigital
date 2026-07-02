@@ -90,9 +90,6 @@ export function Footer() {
                 <Linkedin size={18} />
               </a>
             </div>
-            <a href="/certificat-qualiopi.pdf" target="_blank" rel="noopener noreferrer" aria-label="Certificat Qualiopi — ouvrir le PDF" style={{ display: 'inline-block', marginTop: '0.5rem' }}>
-              <img src="/qualiopi.jpg" alt="Certification Qualiopi — Processus certifié République Française — Actions de formation" loading="lazy" style={{ display: 'block', maxWidth: '220px', height: 'auto', transition: 'opacity 0.2s' }} onMouseEnter={e => (e.currentTarget.style.opacity = '0.8')} onMouseLeave={e => (e.currentTarget.style.opacity = '1')} />
-            </a>
           </div>
 
           {/* Col 2 — Formations */}
@@ -100,7 +97,7 @@ export function Footer() {
             <h4 className="footer-col-title">Formations</h4>
             <ul className="footer-links">
               <li><a href="/formations">Tout le catalogue</a></li>
-              <li><a href="/formations#cisco">Cisco Networking Academy</a></li>
+              <li><a href="/formations#cisco">Cisco NetAcad</a></li>
               <li><a href="/formations#microsoft">Microsoft Azure &amp; M365</a></li>
               <li><a href="/certifications">Passer une certification</a></li>
               <li><a href="/calendrier">Calendrier des sessions</a></li>

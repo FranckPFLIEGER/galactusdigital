@@ -2,6 +2,7 @@ import '@/styles.css'
 import { createFileRoute } from '@tanstack/react-router'
 import { Header }         from '@/components/Header'
 import { Hero }           from '@/components/Hero'
+import { QualiopiBanner } from '@/components/QualiopiBanner'
 import { Stats }          from '@/components/Stats'
 import { President }      from '@/components/President'
 import { About }          from '@/components/About'
@@ -28,6 +29,7 @@ function HomePage() {
       <Header />
       <main>
         <Hero />
+        <QualiopiBanner />
         <Stats />
         <President />
         <About />

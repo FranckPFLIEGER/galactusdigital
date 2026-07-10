@@ -2,6 +2,14 @@ import { useIntersection } from '../hooks/useIntersection'
 
 const articles = [
   {
+    date: 'Veille 2024',
+    title: "Big Data et visibilité en ligne",
+    desc: "Ouvrage de référence des Presses des Mines (IMT Mines Alès) dirigé par C. Alcantara, F. Charest et S. Agostinelli. Un enjeu pluridisciplinaire de l'économie numérique : volumétrie, vélocité, variété et valeur des données massives. Une veille de fond sur les mutations du numérique.",
+    tag: 'Veille',
+    image: '/actu/bigdata-visibilite.png',
+    pdf: '/docs/bigdata-visibilite-en-ligne.pdf',
+  },
+  {
     date: '2019',
     title: "Rapport IPv6 Council Martinique",
     desc: "Rapport d'activité du IPv6 Council Martinique — atelier réunissant les opérateurs télécoms de la Caraïbe française pour accélérer le déploiement de l'IPv6. GALACTUS Digital en est membre actif via l'association ASPIK.",

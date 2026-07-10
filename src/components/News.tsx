@@ -4,8 +4,8 @@ const articles = [
   {
     date: 'Presses des Mines · 2018',
     title: "Big Data et visibilité en ligne",
-    desc: "Ouvrage collectif des Presses des Mines (dir. C. Alcantara, F. Charest, S. Agostinelli), issu du colloque international tenu à l'Université des Antilles. Franck PFLIEGER y contribue par un éclairage professionnel sur les technologies du Big Data. Un enjeu pluridisciplinaire de l'économie numérique — informatique, juridique, communication et gestion.",
-    tag: 'Veille',
+    desc: "Ouvrage collectif publié en 2018 aux Presses des Mines (dir. C. Alcantara, F. Charest, S. Agostinelli), issu du colloque international tenu en 2017 à l'Université des Antilles en Martinique. Franck PFLIEGER y apporte un éclairage professionnel sur les technologies du Big Data. Un enjeu pluridisciplinaire de l'économie numérique — informatique, juridique, communication et gestion.",
+    tag: 'Publication',
     image: '/actu/bigdata-visibilite.png',
     link: 'https://www.pressesdesmines.com/produit/big-data-et-visibilite-en-ligne/',
     linkLabel: "Découvrir l'ouvrage (éditeur)",

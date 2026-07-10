@@ -2,12 +2,13 @@ import { useIntersection } from '../hooks/useIntersection'
 
 const articles = [
   {
-    date: 'Veille 2024',
+    date: 'Presses des Mines · 2018',
     title: "Big Data et visibilité en ligne",
-    desc: "Ouvrage de référence des Presses des Mines (IMT Mines Alès) dirigé par C. Alcantara, F. Charest et S. Agostinelli. Un enjeu pluridisciplinaire de l'économie numérique : volumétrie, vélocité, variété et valeur des données massives. Une veille de fond sur les mutations du numérique.",
+    desc: "Ouvrage collectif des Presses des Mines (dir. C. Alcantara, F. Charest, S. Agostinelli), issu du colloque international tenu à l'Université des Antilles. Franck PFLIEGER y contribue par un éclairage professionnel sur les technologies du Big Data. Un enjeu pluridisciplinaire de l'économie numérique — informatique, juridique, communication et gestion.",
     tag: 'Veille',
     image: '/actu/bigdata-visibilite.png',
-    pdf: '/docs/bigdata-visibilite-en-ligne.pdf',
+    link: 'https://www.pressesdesmines.com/produit/big-data-et-visibilite-en-ligne/',
+    linkLabel: "Découvrir l'ouvrage (éditeur)",
   },
   {
     date: '2019',
@@ -84,6 +85,16 @@ export function News() {
                   rel="noopener noreferrer"
                 >
                   Consulter le document (PDF) &rarr;
+                </a>
+              )}
+              {a.link && (
+                <a
+                  className="news-doc-link"
+                  href={a.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {a.linkLabel || 'En savoir plus'} &rarr;
                 </a>
               )}
             </div>

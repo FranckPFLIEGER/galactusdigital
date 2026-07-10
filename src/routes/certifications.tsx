@@ -187,11 +187,11 @@ function CertificationsPage() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", letterSpacing: "0.18em", textTransform: "uppercase", color: "var(--g-red)" }}>DIGITAL</div>
                     </div>
                   </div>
-                  <a href="https://certifications.galactusdigital.com" target="_blank" rel="noopener noreferrer"
+                  <a href="/certifications-rs"
                     style={{ display: "inline-flex", alignItems: "center", gap: "0.5rem", background: "var(--g-red)", color: "#fff", fontFamily: "var(--font-title)", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", padding: "0.65rem 1.25rem", textDecoration: "none", transition: "background 0.15s" }}
                     onMouseEnter={e => (e.currentTarget.style.background = "var(--g-black)")}
                     onMouseLeave={e => (e.currentTarget.style.background = "var(--g-red)")}>
-                    <ExternalLink size={14} />
+                    <Award size={14} />
                     Consulter les certifications GALACTUS Digital
                   </a>
                 </div>

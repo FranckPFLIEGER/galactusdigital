@@ -7,7 +7,7 @@ export const Route = createFileRoute('/certifications-rs/infrastructure-reseau')
   head: () => ({
     meta: [
       { title: 'Certification — Mettre en œuvre, sécuriser et superviser une infrastructure réseau | GALACTUS Digital' },
-      { name: 'description', content: "Certification professionnelle inscrite au Répertoire spécifique : mettre en œuvre, sécuriser et superviser une infrastructure réseau. Formation certifiante en Martinique, Guadeloupe et La Réunion." },
+      { name: 'description', content: "Certification professionnelle en cours d'enregistrement au Répertoire spécifique : mettre en œuvre, sécuriser et superviser une infrastructure réseau. Formation certifiante en Martinique, Guadeloupe et La Réunion." },
       { property: 'og:title', content: 'Certification — Infrastructure réseau | GALACTUS Digital' },
       { property: 'og:description', content: "Certification professionnelle RS : installer, sécuriser et superviser une infrastructure réseau d'entreprise. Territoires ultramarins." },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications-rs/infrastructure-reseau' },

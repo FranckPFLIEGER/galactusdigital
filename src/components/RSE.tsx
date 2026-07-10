@@ -9,7 +9,7 @@ const pillars = [
     badge: "Procédures documentées — Référent dédié",
     items: [
       "Référent Handicap GALACTUS Digital : adaptation systématique des modalités pédagogiques à chaque situation individuelle, dès l'inscription",
-      "Cisco Networking Academy accompagne depuis 2019 les apprenants en situation de handicap — plus de 188 000 personnes ont atteint leurs objectifs via les dispositifs d'accessibilité NetAcad (source : Cisco Networking Academy)",
+      "Cisco Networking Academy accompagne depuis 2019 les apprenants en situation de handicap — plus de 188 000 personnes ont atteint leurs objectifs via les dispositifs d'accessibilité NetAcad (source : Cisco NetAcad)",
       "Contenus officiels Cisco conformes aux standards d'accessibilité internationaux — handicaps visuels, auditifs, cognitifs et de mobilité physique pris en compte",
       "FOAD et e-learning tutoré : solution adaptée pour les apprenants à mobilité réduite ou ne pouvant se déplacer en centre",
       "Aménagements des évaluations disponibles sur demande — délais supplémentaires, supports adaptés, tiers-temps",
@@ -53,7 +53,7 @@ const pillars = [
       "Partenaire Cisco Networking Academy — programme mondial reconnu pour l'accès des femmes aux métiers IT",
       "Formations flexibles (FOAD, e-learning tutoré, rythme adapté) : concilier vie professionnelle, familiale et montée en compétences IT",
       "Mêmes certifications mondiales pour tous — les femmes obtiennent exactement les mêmes titres reconnus qu'en Europe ou en Amérique du Nord",
-      "Financement CPF/OPCO accessible sans discrimination — aucune barrière financière à l'entrée dans les métiers du numérique",
+      "Financement OPCO accessible sans discrimination — aucune barrière financière à l'entrée dans les métiers du numérique",
     ],
     link: { label: "Connected Girls 2025 — Cisco France", url: "https://gblogs.cisco.com/fr/rse/inclusion-et-diversite/connected-girls-2025/" },
   },

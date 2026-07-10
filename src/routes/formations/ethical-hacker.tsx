@@ -7,15 +7,15 @@ export const Route = createFileRoute('/formations/ethical-hacker')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "Ethical Hacker Cisco Networking Academy — Cybersécurité offensive | GALACTUS Digital" },
+      { title: "Ethical Hacker Cisco NetAcad — Cybersécurité offensive | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco Ethical Hacker. 30h. Badge certifiant. Tests intrusion pentest sécurité offensive. Certifié Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco Networking Academy',
-  famille: 'Cisco Networking Academy — Cybersécurité',
+  editeur: 'Cisco NetAcad',
+  famille: 'Cisco NetAcad — Cybersécurité',
   titre: 'Ethical Hacker — Sécurité offensive',
   sousTitre: `Formation aux tests d'intrusion · Référence : ETHHACK`,
   ref: 'ETHHACK-001',
@@ -40,8 +40,8 @@ const DATA = {
     note: '',
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
-    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
+    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",
@@ -72,8 +72,7 @@ function DelaisAcces() {
         { label: 'Standard', val: '1 mois après signature du devis et de la convention.' },
         { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
         { label: 'Inscription min.', val: "Possible jusqu\'à 48 heures avant le début de la formation." },
-        { label: 'Financement CPF', val: "Délai minimum obligatoire de 11 jours ouvrés entre la proposition et le début." },
-      ].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}
+        ].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}
     </div>
   )
 }

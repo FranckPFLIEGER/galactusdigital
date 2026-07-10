@@ -87,8 +87,7 @@ function DelaisAcces({ dark = true }: { dark?: boolean }) {
           { label: 'Standard', val: '1 mois après signature du devis et de la convention de formation.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
           { label: 'Inscription minimale', val: "Les inscriptions sont possibles jusqu'à 48 heures avant le début de la formation." },
-          { label: 'Financement CPF', val: "Délai minimum obligatoire de 11 jours ouvrés entre la date d'envoi de la proposition et la date de début de la formation." },
-        ].map(d => (
+          ].map(d => (
           <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
             <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}
           </li>
@@ -115,7 +114,7 @@ function FoadPage() {
               Sessions live sur WEBEX, plateforme NetAcad accessible 24h/24, accompagnement individualisé documenté à chaque étape du parcours. La même qualité que le présentiel, sans contrainte géographique.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              {['Art. D.6313-3-1 Code du travail', 'Qualiopi — Indicateur 19', 'Qualiopi — Critère 3', 'Eligible CPF · OPCO', 'Formateur certifié éditeur'].map(b => (
+              {['Art. D.6313-3-1 Code du travail', 'Qualiopi — Indicateur 19', 'Qualiopi — Critère 3', 'Eligible OPCO', 'Formateur certifié éditeur'].map(b => (
                 <div key={b} style={{ padding: '0.35rem 0.9rem', background: 'rgba(228,31,38,0.10)', border: '1px solid rgba(228,31,38,0.25)', fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>{b}</div>
               ))}
             </div>
@@ -129,7 +128,7 @@ function FoadPage() {
             <div className="g-rule" />
             <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
-                { icon: <Monitor size={24} color="white" />, title: 'Plateforme officielle', desc: "Toutes nos formations FOAD s'appuient sur Cisco Networking Academy ou Microsoft Learn — accessibles 24h/24 depuis n'importe quel appareil, avec suivi de progression individuel." },
+                { icon: <Monitor size={24} color="white" />, title: 'Plateforme officielle', desc: "Toutes nos formations FOAD s'appuient sur Cisco NetAcad ou Microsoft Learn — accessibles 24h/24 depuis n'importe quel appareil, avec suivi de progression individuel." },
                 { icon: <Wifi size={24} color="white" />, title: 'Sessions live WEBEX', desc: "Nos sessions synchrones se déroulent via WEBEX. Partage d'écran, ateliers pratiques à distance, interactions en temps réel avec le formateur certifié." },
                 { icon: <Users size={24} color="white" />, title: 'Assistance documentée', desc: "Conformément à l'article D.6313-3-1 du Code du travail, une assistance technique et pédagogique est disponible et documentée tout au long du parcours." },
               ].map(a => (
@@ -160,7 +159,7 @@ function FoadPage() {
               {[
                 { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: "Échangez avec des professionnels d'horizons différents depuis tous les territoires. Opportunité unique de réseautage inter-îles." },
                 { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: "Inscrivez-vous à la session qui correspond à vos disponibilités. Plusieurs dates disponibles dans l'année sur tous les territoires." },
-                { icon: <TrendingUp size={24} color="white" />, title: 'Financement facilité', desc: 'Éligible CPF, OPCO, aides régionales DOM. Nous vous accompagnons dans le montage de votre dossier de financement.' },
+                { icon: <TrendingUp size={24} color="white" />, title: 'Financement facilité', desc: 'Éligible OPCO, aides régionales DOM. Nous vous accompagnons dans le montage de votre dossier de financement.' },
               ].map(a => (
                 <div key={a.title} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ width: '44px', height: '44px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>{a.icon}</div>
@@ -173,7 +172,7 @@ function FoadPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Sessions live WEBEX (synchrone)','Plateforme NetAcad / Microsoft Learn incluse','Supports de cours officiels inclus','Feuilles de présence numériques','Passage de la certification intégré','Attestation de formation et de présence','Éligible CPF, OPCO, aides régionales DOM','Test de connexion organisé avant démarrage'].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Sessions live WEBEX (synchrone)','Plateforme NetAcad / Microsoft Learn incluse','Supports de cours officiels inclus','Feuilles de présence numériques','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM','Test de connexion organisé avant démarrage'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.70)' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>

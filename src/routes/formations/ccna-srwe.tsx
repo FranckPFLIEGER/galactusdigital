@@ -14,7 +14,7 @@ export const Route = createFileRoute('/formations/ccna-srwe')({
 })
 
 const DATA = {
-  editeur: 'Cisco', famille: 'Cisco Networking Academy — CCNA', titre: 'CCNA — Commutation, Routage et Wi-Fi (SRWE)', sousTitre: 'Module 2 sur 3 · Référence officielle : CCNA-SRWE',
+  editeur: 'Cisco', famille: 'Cisco NetAcad — CCNA', titre: 'CCNA — Commutation, Routage et Wi-Fi (SRWE)', sousTitre: 'Module 2 sur 3 · Référence officielle : CCNA-SRWE',
   ref: 'CCNA-SRWE-002', niveau: 'Intermédiaire', partenaire: 'Partenaire Cisco n° 3018982', certification: 'Cisco Certified Network Associate (CCNA 200-301)',
   duree: '70 heures', groupeMin: 4, groupeMax: 12, lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Deuxième module du cursus CCNA officiel Cisco, cette formation se concentre sur les technologies de commutation de couche 2, le routage avancé et les réseaux sans fil. Elle couvre les VLAN, STP, EtherChannel, DHCPv4/v6, les routes statiques et la sécurité LAN. Prérequis : avoir validé le module CCNA ITN (module 1).`,
@@ -37,8 +37,8 @@ const DATA = {
   ],
   examen: { code: '200-301 CCNA', duree: '120 minutes', langue: 'Français', organisme: 'Cisco Networking Academy', format: 'QCM, drag-and-drop, simulation réseau', score: '825 / 1000', note: 'Ce module est le 2ème des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA.' },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
-    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
+    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",
@@ -59,7 +59,7 @@ function CheckItem({ text, light = false }: { text: string; light?: boolean }) {
   return (<li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: light ? 'rgba(255,255,255,0.70)' : '#4a4a48' }}><CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{text}</li>)
 }
 function DelaisAcces() {
-  return (<div style={{ background: 'rgba(228,31,38,0.06)', border: '1px solid rgba(228,31,38,0.18)', borderLeft: '4px solid var(--g-red)', padding: '1.25rem 1.5rem' }}><div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}><AlertCircle size={15} color="#E41F26" /><span style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)' }}>Délais d'accès à la formation</span></div>{[{ label: 'Standard', val: '1 mois après signature du devis et de la convention.' }, { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' }, { label: 'Inscription min.', val: 'Possible jusqu\'à 48 heures avant le début de la formation.' }, { label: 'Financement CPF', val: 'Délai minimum obligatoire de 11 jours ouvrés entre la proposition et le début.' }].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}</div>)
+  return (<div style={{ background: 'rgba(228,31,38,0.06)', border: '1px solid rgba(228,31,38,0.18)', borderLeft: '4px solid var(--g-red)', padding: '1.25rem 1.5rem' }}><div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}><AlertCircle size={15} color="#E41F26" /><span style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)' }}>Délais d'accès à la formation</span></div>{[{ label: 'Standard', val: '1 mois après signature du devis et de la convention.' }, { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' }, { label: 'Inscription min.', val: 'Possible jusqu\'à 48 heures avant le début de la formation.' }, ].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}</div>)
 }
 
 function CcnaSrwePage() {

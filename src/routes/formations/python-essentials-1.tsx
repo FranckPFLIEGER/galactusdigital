@@ -7,15 +7,15 @@ export const Route = createFileRoute('/formations/python-essentials-1')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "Python Essentials 1 Cisco Networking Academy — Programmation Python | GALACTUS Digital" },
-      { name: "description", content: "Formation Python Essentials 1 Cisco Networking Academy. 40h. Certification PCEP OpenEDG. Bases Python structures données fonctions. Qualiopi." },
+      { title: "Python Essentials 1 Cisco NetAcad — Programmation Python | GALACTUS Digital" },
+      { name: "description", content: "Formation Python Essentials 1 Cisco NetAcad. 40h. Certification PCEP OpenEDG. Bases Python structures données fonctions. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco Networking Academy',
-  famille: 'Cisco Networking Academy — Programmation',
+  editeur: 'Cisco NetAcad',
+  famille: 'Cisco NetAcad — Programmation',
   titre: 'Python Essentials 1 — Introduction à Python',
   sousTitre: 'Certification PCEP · Python Certified Entry-Level Programmer · Référence : PE1',
   ref: 'PE1-001',
@@ -26,7 +26,7 @@ const DATA = {
   groupeMin: 4,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Premier module de la série Python Essentials développée par le Cisco Networking Academy en partenariat avec l'OpenEDG Python Institute. Formation complète pour débuter la programmation Python from scratch. Couvre les fondamentaux du langage, les structures de contrôle, les fonctions et les collections. Prépare à la certification PCEP.`,
+  description: `Premier module de la série Python Essentials développée par le Cisco NetAcad en partenariat avec l'OpenEDG Python Institute. Formation complète pour débuter la programmation Python from scratch. Couvre les fondamentaux du langage, les structures de contrôle, les fonctions et les collections. Prépare à la certification PCEP.`,
   objectifs: ["Écrire, exécuter et déboguer des programmes Python simples", "Utiliser les types de données Python — int, float, str, bool, None", "Implémenter les structures de contrôle — if/elif/else, boucles while et for", "Définir et appeler des fonctions avec paramètres, valeurs de retour et portée", "Manipuler les collections Python — listes, tuples, dictionnaires, ensembles", "Lire et écrire des fichiers texte en Python"],
   public: ["Débutants complets en programmation", "Étudiants BTS / Licence informatique", "Professionnels IT souhaitant coder", "Prérequis pour Python Essentials 2 et DevNet"],
   prerequis: ["Aucune connaissance en programmation requise", "Utilisation courante d'un PC", "Notions basiques de mathématiques"],
@@ -40,8 +40,8 @@ const DATA = {
     note: `La certification PCEP est délivrée par l'OpenEDG Python Institute. Elle prépare à Python Essentials 2 et à la certification PCAP (Associate Level).`,
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
-    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
+    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
     "Environnements pratiques Python interactifs sur NetAcad (Jupyter-style, exercices guidés)",
     "Badge numérique PCEP — Python Essentials 1 (OpenEDG / Python Institute) remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",
@@ -72,8 +72,7 @@ function DelaisAcces() {
         { label: 'Standard', val: '1 mois après signature du devis et de la convention.' },
         { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
         { label: 'Inscription min.', val: "Possible jusqu\'à 48 heures avant le début de la formation." },
-        { label: 'Financement CPF', val: "Délai minimum obligatoire de 11 jours ouvrés entre la proposition et le début." },
-      ].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}
+        ].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}
     </div>
   )
 }

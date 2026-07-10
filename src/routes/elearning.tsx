@@ -26,8 +26,7 @@ function DelaisAcces({ dark = false }: { dark?: boolean }) {
           { label: 'Accès à la plateforme', val: 'Sous 72h après validation administrative.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
           { label: 'Inscription minimale', val: "Les inscriptions sont possibles jusqu'à 48 heures avant le début du parcours." },
-          { label: 'Financement CPF', val: "Délai minimum obligatoire de 11 jours ouvrés entre la date d'envoi de la proposition et la date de début de la formation." },
-        ].map(d => (
+          ].map(d => (
           <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
             <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}
           </li>
@@ -51,10 +50,10 @@ function ElearningPage() {
               Formation E-learning Tutoré
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              Progressez à votre rythme sur les plateformes officielles Cisco Networking Academy et Microsoft Learn. Un tuteur certifié vous accompagne tout au long du parcours avec un suivi individualisé documenté conforme Qualiopi.
+              Progressez à votre rythme sur les plateformes officielles Cisco NetAcad et Microsoft Learn. Un tuteur certifié vous accompagne tout au long du parcours avec un suivi individualisé documenté conforme Qualiopi.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              {['Art. L.6313-1 Code du travail', 'FOAD asynchrone · Qualiopi', 'Qualiopi — Indicateur 19', 'NetAcad · Microsoft Learn', 'Eligible CPF · OPCO'].map(b => (
+              {['Art. L.6313-1 Code du travail', 'FOAD asynchrone · Qualiopi', 'Qualiopi — Indicateur 19', 'NetAcad · Microsoft Learn', 'Eligible OPCO'].map(b => (
                 <div key={b} style={{ padding: '0.35rem 0.9rem', background: 'rgba(228,31,38,0.10)', border: '1px solid rgba(228,31,38,0.25)', fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>{b}</div>
               ))}
             </div>
@@ -132,7 +131,7 @@ function ElearningPage() {
             <div className="g-rule" />
             <div className="el-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
-                { num: '01', title: 'Inscription', desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement CPF/OPCO monté avec vous.' },
+                { num: '01', title: 'Inscription', desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement OPCO monté avec vous.' },
                 { num: '02', title: 'Accès activé', desc: 'Sous 72h, vous recevez vos accès NetAcad et/ou Microsoft Learn. Votre tuteur vous contacte pour un échange de cadrage.' },
                 { num: '03', title: 'Parcours tutoré', desc: 'Vous avancez à votre rythme. Votre tuteur suit votre progression, répond à vos questions et valide chaque module complété.' },
                 { num: '04', title: 'Certification', desc: 'Passage de la certification officielle éditeur. Attestation de formation et relevé de complétion remis.' },
@@ -198,7 +197,7 @@ function ElearningPage() {
                     'Messagerie directe avec le tuteur sous 24h ouvrées',
                     'Passage de la certification intégré',
                     'Attestation de formation et relevé de complétion',
-                    'Éligible CPF, OPCO, plan de développement des compétences',
+                    'Éligible OPCO, plan de développement des compétences',
                   ].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />

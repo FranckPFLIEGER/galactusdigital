@@ -106,7 +106,7 @@ function CertificationsPage() {
                   ))}
                 </ul>
                 <p style={{ fontSize: "0.84rem", color: "#5a5a58", lineHeight: 1.7, margin: 0, background: "var(--g-offwhite)", border: "1px solid rgba(187,187,187,0.30)", borderLeft: "3px solid var(--g-red)", padding: "0.85rem 1rem" }}>
-                  Cela contribue également à l'optimisation de votre budget formation, grâce à une co-construction des parcours avec vos collaborateurs et une potentielle mobilisation de leur <strong>CPF</strong> pour le financement.
+                  Cela contribue également à l'optimisation de votre budget formation, grâce à une co-construction des parcours avec vos collaborateurs et une mobilisation des dispositifs de financement de la formation professionnelle (<strong>OPCO</strong>, plan de développement des compétences).
                 </p>
               </div>
 
@@ -139,7 +139,7 @@ function CertificationsPage() {
                   ))}
                 </ul>
                 <p style={{ fontSize: "0.84rem", color: "#5a5a58", lineHeight: 1.7, margin: 0, background: "var(--g-offwhite)", border: "1px solid rgba(187,187,187,0.30)", borderLeft: "3px solid var(--g-red)", padding: "0.85rem 1rem" }}>
-                  Les formations certifiantes peuvent vous permettre de mobiliser votre <strong>CPF</strong> pour financer tout ou partie de votre parcours certifiant.
+                  Les formations certifiantes peuvent être financées via les dispositifs de la formation professionnelle (<strong>OPCO</strong>, plan de développement des compétences, aides régionales).
                 </p>
               </div>
 

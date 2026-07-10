@@ -7,15 +7,15 @@ export const Route = createFileRoute('/formations/python-essentials-2')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "Python Essentials 2 Cisco Networking Academy — Python avancé | GALACTUS Digital" },
-      { name: "description", content: "Formation Python Essentials 2 Cisco Networking Academy. 40h. Certification PCAP OpenEDG. POO modules exceptions fichiers. Qualiopi." },
+      { title: "Python Essentials 2 Cisco NetAcad — Python avancé | GALACTUS Digital" },
+      { name: "description", content: "Formation Python Essentials 2 Cisco NetAcad. 40h. Certification PCAP OpenEDG. POO modules exceptions fichiers. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco Networking Academy',
-  famille: 'Cisco Networking Academy — Programmation',
+  editeur: 'Cisco NetAcad',
+  famille: 'Cisco NetAcad — Programmation',
   titre: 'Python Essentials 2 — Python Avancé',
   sousTitre: 'Certification PCAP · Python Certified Associate Programmer · Référence : PE2',
   ref: 'PE2-001',
@@ -40,8 +40,8 @@ const DATA = {
     note: `Examen PCAP-31-0x délivré par l'OpenEDG Python Institute. Après PCAP, la progression naturelle mène à PCPP1 — Certified Professional in Python Programming.`,
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
-    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
+    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
     "Environnements pratiques Python interactifs sur NetAcad (Jupyter-style, exercices guidés)",
     "Badge numérique PCAP — Python Essentials 2 (OpenEDG / Python Institute) remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",
@@ -72,8 +72,7 @@ function DelaisAcces() {
         { label: 'Standard', val: '1 mois après signature du devis et de la convention.' },
         { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
         { label: 'Inscription min.', val: "Possible jusqu\'à 48 heures avant le début de la formation." },
-        { label: 'Financement CPF', val: "Délai minimum obligatoire de 11 jours ouvrés entre la proposition et le début." },
-      ].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}
+        ].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}
     </div>
   )
 }

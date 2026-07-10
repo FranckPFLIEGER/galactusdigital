@@ -7,7 +7,7 @@ export const Route = createFileRoute('/certifications-rs/')({
   head: () => ({
     meta: [
       { title: 'Certifications professionnelles RS — GALACTUS Digital' },
-      { name: 'description', content: "Les certifications professionnelles de GALACTUS Digital inscrites au Répertoire spécifique de France Compétences. Organisme certificateur des territoires ultramarins." },
+      { name: 'description', content: "Les certifications professionnelles de GALACTUS Digital en cours d'enregistrement au Répertoire spécifique de France Compétences. Organisme certificateur des territoires ultramarins." },
       { property: 'og:title', content: 'Certifications professionnelles RS — GALACTUS Digital' },
       { property: 'og:description', content: "Certifications RS France Compétences délivrées par GALACTUS Digital dans les territoires ultramarins." },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications-rs' },
@@ -68,7 +68,7 @@ function CertificationsRSHub() {
               Nos certifications professionnelles
             </h1>
             <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.75)', lineHeight: 1.7, maxWidth: '820px' }}>
-              GALACTUS Digital (PFLIEGER SASU) conçoit et délivre des certifications professionnelles inscrites au Répertoire spécifique de France Compétences, au service de la montée en compétences IT dans les territoires ultramarins.
+              GALACTUS Digital (PFLIEGER SASU) conçoit des certifications professionnelles destinées au Répertoire spécifique de France Compétences, au service de la montée en compétences IT dans les territoires ultramarins.
             </p>
           </div>
         </section>

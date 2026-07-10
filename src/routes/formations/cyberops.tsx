@@ -14,7 +14,7 @@ export const Route = createFileRoute('/formations/cyberops')({
 })
 
 const DATA = {
-  editeur: 'Cisco', famille: 'Cisco Networking Academy — CyberOps', titre: 'CyberOps Associate — Opérations de cybersécurité', sousTitre: 'Certification Cisco CyberOps Associate · Référence : CBROPS-200-201',
+  editeur: 'Cisco', famille: 'Cisco NetAcad — CyberOps', titre: 'CyberOps Associate — Opérations de cybersécurité', sousTitre: 'Certification Cisco CyberOps Associate · Référence : CBROPS-200-201',
   ref: 'CYBEROPS-001', niveau: 'Intermédiaire', partenaire: 'Partenaire Cisco n° 3018982', certification: 'Cisco Certified CyberOps Associate (200-201 CBROPS)',
   duree: '60 heures', groupeMin: 4, groupeMax: 12, lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Cette formation prépare les analystes en cybersécurité de niveau débutant à travailler dans un Centre d'Opérations de Sécurité (SOC). Elle couvre la surveillance réseau, la détection d'intrusion, l'analyse forensique et la réponse aux incidents. Elle prépare à la certification Cisco Certified CyberOps Associate (200-201 CBROPS).`,
@@ -37,8 +37,8 @@ const DATA = {
   ],
   examen: { code: '200-201 CBROPS', duree: '120 minutes', langue: 'Français', organisme: 'Cisco Networking Academy', format: 'QCM, simulation d\'analyse réseau', score: '750 / 1000', note: 'L\'examen 200-201 CBROPS est indépendant. Un seul examen suffit pour obtenir la certification CyberOps Associate, sans module préalable obligatoire.' },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
-    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
+    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",
@@ -59,7 +59,7 @@ function CheckItem({ text }: { text: string }) {
   return (<li style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}><CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{text}</li>)
 }
 function DelaisAcces() {
-  return (<div style={{ background: 'rgba(228,31,38,0.06)', border: '1px solid rgba(228,31,38,0.18)', borderLeft: '4px solid var(--g-red)', padding: '1.25rem 1.5rem' }}><div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}><AlertCircle size={15} color="#E41F26" /><span style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)' }}>Délais d'accès</span></div>{[{ label: 'Standard', val: '1 mois après signature.' }, { label: 'OPCO', val: '3 mois (dossier compris).' }, { label: 'Inscription min.', val: '48 heures avant le début.' }, { label: 'CPF', val: '11 jours ouvrés minimum entre la proposition et le début.' }].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}</div>)
+  return (<div style={{ background: 'rgba(228,31,38,0.06)', border: '1px solid rgba(228,31,38,0.18)', borderLeft: '4px solid var(--g-red)', padding: '1.25rem 1.5rem' }}><div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}><AlertCircle size={15} color="#E41F26" /><span style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)' }}>Délais d'accès</span></div>{[{ label: 'Standard', val: '1 mois après signature.' }, { label: 'OPCO', val: '3 mois (dossier compris).' }, { label: 'Inscription min.', val: '48 heures avant le début.' }, ].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}</div>)
 }
 
 function CyberOpsPage() {

@@ -145,7 +145,7 @@ export function FormationGrid({ modalite, dark = false }: Props) {
       {/* Note prix */}
       <p style={{ fontSize: '0.73rem', color: metaCol, marginTop: '1rem', fontStyle: 'italic', lineHeight: 1.6 }}>
         * Prix indicatifs en HT — TVA non applicable (Art. 261-4-4° CGI, organisme certifié Qualiopi).
-        "Sur demande" : devis sous 48h. Financement CPF, OPCO et aides régionales DOM disponibles —{' '}
+        "Sur demande" : devis sous 48h. Financement OPCO et aides régionales DOM disponibles —{' '}
         <a href="/financements" style={{ color: '#E41F26', textDecoration: 'none' }}>voir les financements</a>.
       </p>
     </div>

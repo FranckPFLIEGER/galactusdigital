@@ -34,18 +34,6 @@ function FinancementsPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 {
-                  title: 'CPF — Compte Personnel de Formation',
-                  tag: 'Particuliers & Salariés',
-                  items: [
-                    "Utilisable par tout salarié ou demandeur d'emploi",
-                    'Consultez votre solde sur moncompteformation.gouv.fr',
-                    'Nos formations certifiantes sont éligibles au CPF',
-                    'Démarche 100% en ligne — simple et rapide',
-                  ],
-                  cta: 'moncompteformation.gouv.fr',
-                  href: 'https://www.moncompteformation.gouv.fr',
-                },
-                {
                   title: 'OPCO — Opérateurs de Compétences',
                   tag: 'Entreprises',
                   items: [

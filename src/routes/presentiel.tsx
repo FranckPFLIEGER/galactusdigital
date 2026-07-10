@@ -111,8 +111,7 @@ function DelaisAcces({ dark = false }: { dark?: boolean }) {
           { label: 'Standard', val: '1 mois après signature du devis et de la convention de formation.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
           { label: 'Inscription minimale', val: "Les inscriptions sont possibles jusqu'à 48 heures avant le début de la formation." },
-          { label: 'Financement CPF', val: "Délai minimum obligatoire de 11 jours ouvrés entre la date d'envoi de la proposition et la date de début de la formation." },
-        ].map(d => (
+          ].map(d => (
           <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
             <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}
           </li>
@@ -139,7 +138,7 @@ function PresentielPage() {
               Un formateur certifié intervient en face-à-face dans nos centres ou directement chez vous. Immersion totale, ateliers pratiques sur équipements réels, progression maximale vers la certification.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              {['Art. L.6313-1 Code du travail', 'Qualiopi certifié', 'Eligible CPF · OPCO · PDC', 'Formateur certifié éditeur'].map(b => (
+              {['Art. L.6313-1 Code du travail', 'Qualiopi certifié', 'Eligible OPCO · PDC', 'Formateur certifié éditeur'].map(b => (
                 <div key={b} style={{ padding: '0.35rem 0.9rem', background: 'rgba(228,31,38,0.10)', border: '1px solid rgba(228,31,38,0.25)', fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>{b}</div>
               ))}
             </div>
@@ -215,7 +214,7 @@ function PresentielPage() {
               {[
                 { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: "Échangez avec des professionnels d'horizons différents. Opportunité unique de réseautage et de partage d'expériences dans les territoires ultramarins." },
                 { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: "Inscrivez-vous à la session qui correspond à vos disponibilités. Plusieurs dates disponibles dans l'année sur nos différents territoires." },
-                { icon: <TrendingUp size={24} color="white" />, title: 'Financement facilité', desc: 'Les formations inter-entreprises sont éligibles CPF, OPCO, aides régionales DOM. Nous vous accompagnons dans le montage de votre dossier.' },
+                { icon: <TrendingUp size={24} color="white" />, title: 'Financement facilité', desc: 'Les formations inter-entreprises sont éligibles OPCO, aides régionales DOM. Nous vous accompagnons dans le montage de votre dossier.' },
               ].map(a => (
                 <div key={a.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem', background: 'var(--g-white)' }}>
                   <div style={{ width: '44px', height: '44px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>{a.icon}</div>
@@ -228,7 +227,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions en présentiel ou en FOAD selon les dates','Supports de cours officiels inclus','Accès aux plateformes NetAcad / Microsoft Learn','Passage de la certification intégré','Attestation de formation et de présence','Éligible CPF, OPCO, aides régionales DOM',"Délai d'inscription : 2 semaines avant le démarrage"].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions en présentiel ou en FOAD selon les dates','Supports de cours officiels inclus','Accès aux plateformes NetAcad / Microsoft Learn','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Délai d'inscription : 2 semaines avant le démarrage"].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>

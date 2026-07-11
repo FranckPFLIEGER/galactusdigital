@@ -50,7 +50,7 @@ function ElearningPage() {
               Formation E-learning Tutoré
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              Progressez à votre rythme sur les plateformes officielles Cisco NetAcad et Microsoft Learn. Un tuteur certifié vous accompagne tout au long du parcours avec un suivi individualisé documenté conforme Qualiopi.
+              Progressez à votre rythme sur les plateformes officielles Cisco Networking Academy et Microsoft Learn. Un tuteur certifié vous accompagne tout au long du parcours avec un suivi individualisé documenté conforme Qualiopi.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               {['Art. L.6313-1 Code du travail', 'FOAD asynchrone · Qualiopi', 'Qualiopi — Indicateur 19', 'NetAcad · Microsoft Learn', 'Eligible OPCO'].map(b => (

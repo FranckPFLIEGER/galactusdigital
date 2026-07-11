@@ -23,7 +23,7 @@ export const Route = createFileRoute('/formations/ccna-itn')({
 const DATA = {
   // Identité
   editeur:        'Cisco',
-  famille:        'Cisco NetAcad — CCNA',
+  famille:        'Cisco Networking Academy — CCNA',
   titre:          'CCNA — Introduction aux réseaux (ITN)',
   sousTitre:      'Module 1 sur 3 · Référence officielle : CCNA-ITN',
   ref:            'CCNA-ITN-001',
@@ -139,8 +139,8 @@ const DATA = {
 
   // Méthodes pédagogiques
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

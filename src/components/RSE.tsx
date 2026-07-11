@@ -9,7 +9,7 @@ const pillars = [
     badge: "Procédures documentées — Référent dédié",
     items: [
       "Référent Handicap GALACTUS Digital : adaptation systématique des modalités pédagogiques à chaque situation individuelle, dès l'inscription",
-      "Cisco Networking Academy accompagne depuis 2019 les apprenants en situation de handicap — plus de 188 000 personnes ont atteint leurs objectifs via les dispositifs d'accessibilité NetAcad (source : Cisco NetAcad)",
+      "Cisco Networking Academy accompagne depuis 2019 les apprenants en situation de handicap — plus de 188 000 personnes ont atteint leurs objectifs via les dispositifs d'accessibilité NetAcad (source : Cisco Networking Academy)",
       "Contenus officiels Cisco conformes aux standards d'accessibilité internationaux — handicaps visuels, auditifs, cognitifs et de mobilité physique pris en compte",
       "FOAD et e-learning tutoré : solution adaptée pour les apprenants à mobilité réduite ou ne pouvant se déplacer en centre",
       "Aménagements des évaluations disponibles sur demande — délais supplémentaires, supports adaptés, tiers-temps",
@@ -60,12 +60,12 @@ const pillars = [
   {
     icon: <Users size={24} color="white" />,
     title: "Ancrage territorial & ASPIK",
-    badge: "7 territoires — Association loi 1901 depuis 2018",
+    badge: "6 territoires ultramarins — Association loi 1901 depuis 2018",
     items: [
       "ASPIK — Association Spécialisée dans la Protection Informatique de la Karaïbe (ASCPK à l'international) : fondée en 2018 à Le François, Martinique, pour développer la cybersécurité et la coopération IT aux Caraïbes",
       "Formateurs locaux certifiés en priorité — vous êtes formés par des professionnels qui connaissent votre réalité terrain, votre marché, vos contraintes",
       "Mêmes certifications mondiales qu'à Paris ou New York — sans quitter votre territoire, sans financer un séjour en métropole",
-      "Sessions de veille IT ouvertes à tous via ASPIK — réseau d'alumni ultramarins, partage d'opportunités et d'expériences entre certifiés des 7 territoires",
+      "Sessions de veille IT ouvertes à tous via ASPIK — réseau d'alumni ultramarins, partage d'opportunités et d'expériences entre certifiés des territoires ultramarins",
       "Partenariats actifs avec les collectivités, entreprises et institutions des DOM — contribution directe au développement économique local",
     ],
   },

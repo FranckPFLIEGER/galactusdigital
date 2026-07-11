@@ -97,7 +97,7 @@ export function Footer() {
             <h4 className="footer-col-title">Formations</h4>
             <ul className="footer-links">
               <li><a href="/formations">Tout le catalogue</a></li>
-              <li><a href="/formations#cisco">Cisco NetAcad</a></li>
+              <li><a href="/formations#cisco">Cisco Networking Academy</a></li>
               <li><a href="/formations#microsoft">Microsoft Azure &amp; M365</a></li>
               <li><a href="/certifications">Passer une certification</a></li>
               <li><a href="/calendrier">Calendrier des sessions</a></li>

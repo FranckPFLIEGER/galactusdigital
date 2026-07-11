@@ -14,7 +14,7 @@ export const Route = createFileRoute('/formations/ccna-ensa')({
 })
 
 const DATA = {
-  editeur: 'Cisco', famille: 'Cisco NetAcad — CCNA', titre: 'CCNA — Réseaux d\'entreprise, Sécurité et Automatisation (ENSA)', sousTitre: 'Module 3 sur 3 · Référence officielle : CCNA-ENSA',
+  editeur: 'Cisco', famille: 'Cisco Networking Academy — CCNA', titre: 'CCNA — Réseaux d\'entreprise, Sécurité et Automatisation (ENSA)', sousTitre: 'Module 3 sur 3 · Référence officielle : CCNA-ENSA',
   ref: 'CCNA-ENSA-003', niveau: 'Avancé', partenaire: 'Partenaire Cisco n° 3018982', certification: 'Cisco Certified Network Associate (CCNA 200-301)',
   duree: '70 heures', groupeMin: 4, groupeMax: 12, lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Troisième et dernier module du cursus CCNA officiel Cisco, cette formation couvre les réseaux WAN d'entreprise, la sécurité avancée, la virtualisation et l'automatisation réseau. Elle prépare directement au passage de l'examen CCNA 200-301 et est accessible après validation des modules ITN et SRWE.`,
@@ -37,8 +37,8 @@ const DATA = {
   ],
   examen: { code: '200-301 CCNA', duree: '120 minutes', langue: 'Français', organisme: 'Cisco Networking Academy', format: 'QCM, drag-and-drop, simulation réseau Cisco', score: '825 / 1000', note: 'Ce module est le 3ème et dernier requis. La certification CCNA 200-301 est obtenue après validation des 3 modules ITN + SRWE + ENSA et passage de l\'examen Cisco Networking Academy.' },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

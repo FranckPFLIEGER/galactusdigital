@@ -7,15 +7,15 @@ export const Route = createFileRoute('/formations/iot-introduction')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "IoT Introduction Cisco NetAcad — Objets connectés | GALACTUS Digital" },
+      { title: "IoT Introduction Cisco Networking Academy — Objets connectés | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco IoT Introduction. 70h. Badge certifiant. Fondamentaux IoT capteurs connectivité sécurité. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco NetAcad',
-  famille: 'Cisco NetAcad — IoT',
+  editeur: 'Cisco Networking Academy',
+  famille: 'Cisco Networking Academy — IoT',
   titre: `Introduction à l'IoT et à la Transformation Digitale`,
   sousTitre: `Cours d'introduction — Internet des Objets · Référence : IOT-INTRO`,
   ref: 'IOT-INTRO-001',
@@ -40,8 +40,8 @@ const DATA = {
     note: ``,
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

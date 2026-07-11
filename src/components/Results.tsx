@@ -1,9 +1,9 @@
 import { useIntersection } from '../hooks/useIntersection'
 
 const years = [
-  { year: '2023', candidates: 115 },
-  { year: '2024', candidates: 272 },
-  { year: '2025', candidates: 131 },
+  { year: '2023' },
+  { year: '2024' },
+  { year: '2025' },
 ]
 
 export function Results() {
@@ -23,9 +23,9 @@ export function Results() {
 
         <div className={`results-notice reveal${isVisible ? ' visible' : ''} delay-2`}>
           <p>
-            Parmi les candidats formés, <strong>tous ceux qui ont choisi de se présenter
-            à l'examen de certification l'ont réussi.</strong> Zéro abandon,
-            zéro annulation, zéro échec.
+            <strong>Tous nos candidats présentés à un examen de certification l'ont
+            obtenu.</strong> Année après année, ceux qui font le choix de passer la
+            certification officielle la réussissent — zéro échec.
           </p>
         </div>
 
@@ -37,24 +37,16 @@ export function Results() {
             >
               <div className="result-year">{y.year}</div>
               <div className="result-main">
-                <span className="result-big">{y.candidates}</span>
-                <span className="result-unit">candidats formés</span>
+                <span className="result-big" style={{ color: '#E41F26' }}>100%</span>
+                <span className="result-unit">de réussite<br />parmi les présentés</span>
               </div>
               <div style={{ width: '40px', height: '2px', background: '#E41F26', margin: '1rem auto' }} />
               <div className="result-details">
-                <div className="result-detail-item">
-                  <span className="result-detail-label">Abandons</span>
-                  <span className="result-detail-num">0</span>
-                </div>
-                <div className="result-detail-item">
-                  <span className="result-detail-label">Annulations</span>
-                  <span className="result-detail-num">0</span>
-                </div>
                 <div className="result-detail-item result-detail-highlight">
                   <span className="result-detail-label" style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 700 }}>
-                    Réussite parmi<br />les présentés
+                    Zéro échec
                   </span>
-                  <span className="result-detail-num" style={{ color: '#E41F26', fontSize: '1.8rem' }}>100%</span>
+                  <span className="result-detail-num" style={{ color: '#E41F26', fontSize: '1.8rem' }}>&#10003;</span>
                 </div>
               </div>
             </div>
@@ -64,8 +56,8 @@ export function Results() {
         <div className={`results-total reveal${isVisible ? ' visible' : ''} delay-5`}>
           <div className="results-total-inner">
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '3.5rem', fontWeight: 700, color: '#E41F26', lineHeight: 1 }}>518</div>
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>candidats formés</div>
+              <div style={{ fontFamily: 'var(--font-title)', fontSize: '3.5rem', fontWeight: 700, color: '#E41F26', lineHeight: 1 }}>+500</div>
+              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>apprenants formés en 3 ans</div>
             </div>
             <div style={{ width: '1px', height: '60px', background: 'rgba(228,31,38,0.3)' }} />
             <div style={{ textAlign: 'center' }}>
@@ -75,7 +67,7 @@ export function Results() {
             <div style={{ width: '1px', height: '60px', background: 'rgba(228,31,38,0.3)' }} />
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-title)', fontSize: '3.5rem', fontWeight: 700, color: '#E41F26', lineHeight: 1 }}>0</div>
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>abandon ou annulation</div>
+              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>echec a l'examen</div>
             </div>
           </div>
         </div>

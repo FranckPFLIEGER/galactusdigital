@@ -7,15 +7,15 @@ export const Route = createFileRoute('/formations/iot-hackathon')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "IoT Hackathon Cisco NetAcad — Projet IoT certifiant | GALACTUS Digital" },
+      { title: "IoT Hackathon Cisco Networking Academy — Projet IoT certifiant | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco IoT Hackathon. 35h. Badge certifiant. Projet IoT complet bout en bout en équipe. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco NetAcad',
-  famille: 'Cisco NetAcad — IoT',
+  editeur: 'Cisco Networking Academy',
+  famille: 'Cisco Networking Academy — IoT',
   titre: 'IoT Fundamentals — Hackathon Playbook',
   sousTitre: 'Cours 3/3 — Projet IoT en équipe · Référence : IOT-HACK',
   ref: 'IOT-HACK-001',
@@ -40,8 +40,8 @@ const DATA = {
     note: '',
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

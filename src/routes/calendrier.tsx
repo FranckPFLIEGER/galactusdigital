@@ -313,7 +313,7 @@ function CalendrierPage() {
             <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>Formations · Sessions</span>
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,3vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.75rem' }}>Calendrier des sessions</h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.62)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.75rem' }}>
-              {SESSIONS.length} sessions disponibles — Cisco NetAcad et Microsoft. Dates confirmées sur convocation.
+              {SESSIONS.length} sessions disponibles — Cisco Networking Academy et Microsoft. Dates confirmées sur convocation.
             </p>
             <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
               {[ {val:FORMATIONS.length.toString(),label:'Formations'}, {val:SESSIONS.filter(x=>x.modalite==='Présentiel').length.toString(),label:'Présentiel'}, {val:SESSIONS.filter(x=>x.modalite==='FOAD').length.toString(),label:'FOAD'}, {val:SESSIONS.filter(x=>x.modalite==='E-learning').length.toString(),label:'E-learning'}, {val:SESSIONS_PREP.length>0?SESSIONS_PREP.length.toString():'—',label:'Planifiées'} ].map(st => (
@@ -384,7 +384,7 @@ function CalendrierPage() {
                     {[
                       { label: 'Modalité',   vals: ['Toutes','Présentiel','FOAD','E-learning'], state: fModalite, set: setFModalite },
                       { label: 'Territoire', vals: ['Tous','Martinique','Guadeloupe','Paris','Tous territoires'], state: fTerritoire, set: setFTerritoire, labels: {'Tous territoires':'FOAD / Partout'} },
-                      { label: 'Éditeur',    vals: ['Tous','Cisco NetAcad','Microsoft'], state: fEditeur, set: setFEditeur },
+                      { label: 'Éditeur',    vals: ['Tous','Cisco Networking Academy','Microsoft'], state: fEditeur, set: setFEditeur },
                       { label: 'Famille',    vals: familles, state: fFamille, set: setFFamille },
                     ].map(row => (
                       <div key={row.label} style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>

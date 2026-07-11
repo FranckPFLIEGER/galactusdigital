@@ -7,15 +7,15 @@ export const Route = createFileRoute('/formations/iot-big-data-analytics')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "IoT Big Data Analytics Cisco NetAcad | GALACTUS Digital" },
+      { title: "IoT Big Data Analytics Cisco Networking Academy | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco IoT Big Data Analytics. 70h. Badge certifiant. Analyse données IoT visualisation machine learning. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco NetAcad',
-  famille: 'Cisco NetAcad — IoT',
+  editeur: 'Cisco Networking Academy',
+  famille: 'Cisco Networking Academy — IoT',
   titre: 'IoT Fundamentals — Big Data & Analytics',
   sousTitre: 'Cours 2/3 du cursus IoT Fundamentals · Référence : IOT-BDA',
   ref: 'IOT-BDA-001',
@@ -40,8 +40,8 @@ const DATA = {
     note: 'Prérequis recommandé avant le Hackathon Playbook (cours 3/3). Cette formation prépare aux rôles IoT Data Engineer et aux certifications data (DP-900, AWS Data Analytics).',
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco NetAcad officiel)",
-    "Accès à la plateforme Cisco NetAcad 24h/24 pendant et après la formation",
+    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
+    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
     "Quiz de validation des acquis à chaque fin de module sur NetAcad",

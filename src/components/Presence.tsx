@@ -166,7 +166,7 @@ export function Presence() {
           <div className="presence-map-stats">
             <div className="presence-stat">
               <span className="presence-stat-num">7</span>
-              <span className="presence-stat-label">territoires</span>
+              <span className="presence-stat-label">implantations</span>
             </div>
             <div className="presence-stat-divider" />
             <div className="presence-stat">

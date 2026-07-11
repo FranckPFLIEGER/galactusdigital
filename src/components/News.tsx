@@ -2,31 +2,6 @@ import { useIntersection } from '../hooks/useIntersection'
 
 const articles = [
   {
-    date: 'Presses des Mines · 2018',
-    title: "Big Data et visibilité en ligne",
-    desc: "Ouvrage collectif publié en 2018 aux Presses des Mines (dir. C. Alcantara, F. Charest, S. Agostinelli), issu du colloque international tenu en 2017 à l'Université des Antilles en Martinique. Franck PFLIEGER y apporte un éclairage professionnel sur les technologies du Big Data. Un enjeu pluridisciplinaire de l'économie numérique — informatique, juridique, communication et gestion.",
-    tag: 'Publication',
-    image: '/actu/bigdata-visibilite.png',
-    link: 'https://www.pressesdesmines.com/produit/big-data-et-visibilite-en-ligne/',
-    linkLabel: "Découvrir l'ouvrage (éditeur)",
-  },
-  {
-    date: '2019',
-    title: "Rapport IPv6 Council Martinique",
-    desc: "Rapport d'activité du IPv6 Council Martinique — atelier réunissant les opérateurs télécoms de la Caraïbe française pour accélérer le déploiement de l'IPv6. GALACTUS Digital en est membre actif via l'association ASPIK.",
-    tag: 'Rapport',
-    image: '/actu/ipv6-council-report-2019.png',
-    pdf: '/docs/ipv6-council-report-2019.pdf',
-  },
-  {
-    date: 'Juillet 2016',
-    title: "Création du IPv6 Council Martinique",
-    desc: "Communiqué officiel du IPv6 Forum annonçant la fondation du IPv6 Council Martinique, sous la présidence de notre fondateur, en collaboration avec l'écosystème télécom de la Caraïbe française.",
-    tag: 'Communiqué',
-    image: '/actu/ipv6-council-2016.png',
-    pdf: '/docs/ipv6-council-2016.pdf',
-  },
-  {
     date: '2024',
     title: "Métiers du numérique dans les territoires ultramarins",
     desc: "Étude de l'Observatoire Régional de l'Emploi et de la Formation sur les métiers du numérique — un contexte dans lequel GALACTUS Digital accompagne la montée en compétences.",
@@ -41,6 +16,31 @@ const articles = [
     tag: 'Veille',
     image: '/actu/arcep-internet-2019.png',
     pdf: '/docs/arcep-internet-2019.pdf',
+  },
+  {
+    date: '2019',
+    title: "Rapport IPv6 Council Martinique",
+    desc: "Rapport d'activité du IPv6 Council Martinique — atelier réunissant les opérateurs télécoms de la Caraïbe française pour accélérer le déploiement de l'IPv6. GALACTUS Digital en est membre actif via l'association ASPIK.",
+    tag: 'Rapport',
+    image: '/actu/ipv6-council-report-2019.png',
+    pdf: '/docs/ipv6-council-report-2019.pdf',
+  },
+  {
+    date: 'Presses des Mines · 2018',
+    title: "Big Data et visibilité en ligne",
+    desc: "Ouvrage collectif publié en 2018 aux Presses des Mines (dir. C. Alcantara, F. Charest, S. Agostinelli), issu du colloque international tenu en 2017 à l'Université des Antilles en Martinique. Franck PFLIEGER y apporte un éclairage professionnel sur les technologies du Big Data. Un enjeu pluridisciplinaire de l'économie numérique — informatique, juridique, communication et gestion.",
+    tag: 'Publication',
+    image: '/actu/bigdata-visibilite.png',
+    link: 'https://www.pressesdesmines.com/produit/big-data-et-visibilite-en-ligne/',
+    linkLabel: "Découvrir l'ouvrage (éditeur)",
+  },
+  {
+    date: 'Juillet 2016',
+    title: "Création du IPv6 Council Martinique",
+    desc: "Communiqué officiel du IPv6 Forum annonçant la fondation du IPv6 Council Martinique, sous la présidence de notre fondateur, en collaboration avec l'écosystème télécom de la Caraïbe française.",
+    tag: 'Communiqué',
+    image: '/actu/ipv6-council-2016.png',
+    pdf: '/docs/ipv6-council-2016.pdf',
   },
 ]
 

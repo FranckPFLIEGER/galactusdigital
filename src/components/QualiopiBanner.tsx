@@ -71,8 +71,8 @@ export function QualiopiBanner() {
           <p style={{ fontSize: '0.95rem', color: '#4a4a48', lineHeight: 1.8, margin: 0 }}>
             GALACTUS Digital est certifié <strong>Qualiopi</strong> par Certifopac
             (accréditation Cofrac n° 5-0620, certificat n° 951711-1) au titre des{' '}
-            <strong>actions de formation</strong>. Un gage de qualité reconnu par l'État qui
-            permet le financement de nos formations.{' '}
+            <strong>actions de formation</strong>. Cette certification qualité est la condition
+            d'accès aux financements publics et mutualisés de la formation professionnelle.{' '}
             <a
               href="/certificat-qualiopi.pdf"
               target="_blank"

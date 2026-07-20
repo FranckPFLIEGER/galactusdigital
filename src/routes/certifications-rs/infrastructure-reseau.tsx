@@ -101,7 +101,7 @@ function CertifInfraReseau() {
               </div>
             </div>
             <p style={{ marginTop: '1rem', color: '#333', lineHeight: 1.8 }}>
-              Un jury de délivrance indépendant statue au vu des résultats, sur un barème à quatre échelons : Non acquis — Acquis (seuil de délivrance) — Expert — Capable de transmettre. La certification s'acquiert dans sa totalité.
+              Un jury de délivrance indépendant statue au vu des résultats des deux épreuves. La certification est délivrée lorsque l'ensemble des compétences est validé : seuil de réussite à l'épreuve de connaissances et validation de la grille critériée en mise en situation, chaque compétence étant couverte par au moins un critère d'évaluation. Elle s'acquiert dans sa totalité — sans validation partielle. Le jury formule en complément une appréciation qualitative restituée au candidat.
             </p>
           </section>
 

@@ -2,6 +2,14 @@ import { useIntersection } from '../hooks/useIntersection'
 
 const articles = [
   {
+    date: 'Juillet 2026',
+    title: "Anticipation du Référentiel National Qualité V2",
+    desc: "GALACTUS Digital a formalisé dès juillet 2026 les nouvelles procédures exigées par le projet de décret RNQ V2 (entrée en vigueur prévue le 1er novembre 2026) : procédure VHD (FQ-14), procédure ruptures de parcours (FQ-15) et évaluation des enseignements (FQ-08c). Kit qualité V2026.2 opérationnel.",
+    tag: 'Qualité',
+    link: '/demarche-qualite',
+    linkLabel: 'Voir notre démarche qualité',
+  },
+  {
     date: '2024',
     title: "Métiers du numérique dans les territoires ultramarins",
     desc: "Étude de l'Observatoire Régional de l'Emploi et de la Formation sur les métiers du numérique — un contexte dans lequel GALACTUS Digital accompagne la montée en compétences.",

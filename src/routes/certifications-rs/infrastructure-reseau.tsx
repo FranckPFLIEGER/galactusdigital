@@ -48,7 +48,7 @@ function CertifInfraReseau() {
               <ArrowLeft size={15} /> Toutes les certifications RS
             </a>
             <span style={{ display: 'inline-block', background: 'var(--g-red)', color: '#fff', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', padding: '0.4rem 0.8rem', fontFamily: 'var(--font-title)' }}>
-              Répertoire spécifique — France Compétences
+              Répertoire spécifique — France Compétences · En cours d'enregistrement
             </span>
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,4vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.02em', lineHeight: 1.15, margin: '1.2rem 0 1rem' }}>
               Mettre en œuvre, sécuriser et superviser une infrastructure réseau

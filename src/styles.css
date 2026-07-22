@@ -9,7 +9,7 @@
   --g-red-50  : rgba(228,31,38,0.50);
   --g-red-25  : rgba(228,31,38,0.25);
   --font-title: 'Barlow Condensed', 'Agency FB', sans-serif;
-  --font-body : 'Nunito', 'Avenir', Arial, sans-serif;
+  --font-body : 'Nunito Sans', 'Avenir', Arial, sans-serif;
   --transition-fast  : 0.18s ease;
   --transition-normal: 0.28s ease;
   --transition-slow  : 0.5s ease;

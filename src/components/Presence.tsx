@@ -34,7 +34,7 @@ function MapCanvas() {
     if (!ctx) return
 
     ctx.clearRect(0, 0, W, H)
-    ctx.fillStyle = '#111110'
+    ctx.fillStyle = '#1D1D1B'
     ctx.fillRect(0, 0, W, H)
 
     const lats = [-60, -30, 0, 30, 60]

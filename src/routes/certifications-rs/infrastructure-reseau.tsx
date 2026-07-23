@@ -30,7 +30,7 @@ const competences = [
 const infosPratiques: [string, string][] = [
   ['Certificateur', 'GALACTUS Digital (PFLIEGER SASU)'],
   ['Domaine (NSF)', '326 · 326n'],
-  ['Durée de validité', 'Sans limite'],
+  ['Durée de validité', Fixée 'par la décision d'enregistrement (5 ans maximum)'],
   ['Validation partielle', 'Non'],
   ['Territoires', 'Martinique · Guadeloupe · La Réunion'],
   ['Accessibilité', 'Référent handicap — accès adapté'],

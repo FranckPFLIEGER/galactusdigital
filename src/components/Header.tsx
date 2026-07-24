@@ -305,7 +305,7 @@ export function Header() {
       {/* Ticker */}
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
-          <span>Bienvenue chez GALACTUS Digital</span>
+          <span>Bienvenue chez Galactus Digital</span>
         </div>
       </div>
 

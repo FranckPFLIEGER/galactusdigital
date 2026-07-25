@@ -14,7 +14,10 @@ const pillars = [
       "FOAD et e-learning tutoré : solution adaptée pour les apprenants à mobilité réduite ou ne pouvant se déplacer en centre",
       "Aménagements des évaluations disponibles sur demande — délais supplémentaires, supports adaptés, tiers-temps",
     ],
-    link: { label: "Notre politique Handicap complète", url: "/handicap" },
+    links: [
+      { label: "Notre politique Handicap complète", url: "/handicap" },
+      { label: "Accessibilité — Cisco Networking Academy", url: "https://www.netacad.com/fr/accessibility" },
+    ],
     source: "Cisco Networking Academy — netacad.com/fr/accessibility",
   },
   {
@@ -55,7 +58,9 @@ const pillars = [
       "Mêmes certifications mondiales pour tous — les femmes obtiennent exactement les mêmes titres reconnus qu'en Europe ou en Amérique du Nord",
       "Financement OPCO accessible sans discrimination — aucune barrière financière à l'entrée dans les métiers du numérique",
     ],
-    link: { label: "Connected Girls 2025 — Cisco France", url: "https://gblogs.cisco.com/fr/rse/inclusion-et-diversite/connected-girls-2025/" },
+    links: [
+      { label: "Connected Girls 2025 — Cisco France", url: "https://gblogs.cisco.com/fr/rse/inclusion-et-diversite/connected-girls-2025/" },
+    ],
   },
   {
     icon: <Users size={24} color="white" />,
@@ -147,15 +152,15 @@ export function RSE() {
                   Source : {p.source}
                 </div>
               )}
-              {p.link && (
-                <a href={p.link.url}
-                  target={p.link.url.startsWith('http') ? '_blank' : undefined}
-                  rel={p.link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginTop: '1rem', fontSize: '0.72rem', color: 'var(--g-red)', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.06em' }}>
-                  {p.link.url.startsWith('http') ? <ExternalLink size={12} /> : <ArrowRight size={12} />}
-                  {p.link.label}
+              {p.links && p.links.map((lnk, k) => (
+                <a key={k} href={lnk.url}
+                  target={lnk.url.startsWith('http') ? '_blank' : undefined}
+                  rel={lnk.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginTop: '1rem', marginRight: '1.25rem', fontSize: '0.72rem', color: 'var(--g-red)', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.06em' }}>
+                  {lnk.url.startsWith('http') ? <ExternalLink size={12} /> : <ArrowRight size={12} />}
+                  {lnk.label}
                 </a>
-              )}
+              ))}
             </div>
           ))}
         </div>

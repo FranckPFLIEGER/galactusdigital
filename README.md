@@ -1,6 +1,6 @@
 # GALACTUS Digital
 
-Site vitrine pour **GALACTUS Digital**, organisme de formation certifiée IT aux Caraïbes. Le site présente l'offre de formations officielles éditeurs (Microsoft, Cisco, AWS, CompTIA, VMware, EC-Council, ITIL, PMI) en modalités intra et inter-entreprise, avec une couverture de 11 territoires caribéens.
+Site vitrine pour **GALACTUS Digital**, organisme de formation IT certifié Qualiopi. Le site présente l'offre de formations officielles éditeurs (Cisco Networking Academy, Microsoft, IPv6 Forum) en modalités présentiel, FOAD et e-learning tutoré, inter et intra-entreprise, avec une couverture de 6 territoires ultramarins et de la France hexagonale.
 
 ## Technologies
 
@@ -10,7 +10,7 @@ Site vitrine pour **GALACTUS Digital**, organisme de formation certifiée IT aux
 | [TanStack Router](https://tanstack.com/router) | Routing type-safe |
 | [Tailwind CSS v4](https://tailwindcss.com) | Utilitaires CSS |
 | [Lucide React](https://lucide.dev) | Icônes |
-| [Netlify](https://netlify.com) | Hébergement & déploiement |
+| [Cloudflare Pages](https://pages.cloudflare.com) | Hébergement & déploiement |
 
 **Polices** : Cormorant Garamond (titres) + Outfit (corps) via Google Fonts.
 
@@ -21,8 +21,6 @@ npm install
 npm run dev        # démarrage sur http://localhost:3000
 ```
 
-Ou avec la CLI Netlify pour émuler toutes les fonctionnalités de la plateforme :
+## Déploiement
 
-```bash
-netlify dev        # http://localhost:8888
-```
+Le déploiement est automatique sur **Cloudflare Pages** à chaque `push` sur la branche principale. Cloudflare exécute `npm run build` et ne met le site à jour que si le build réussit.

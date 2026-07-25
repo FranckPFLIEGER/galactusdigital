@@ -65,7 +65,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Introduction complète aux réseaux sans prérequis. Base recommandée avant le cursus CCNA.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'ccna-itn',
@@ -77,7 +77,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Premiers modules du cursus CCNA officiel — OSI, TCP/IP, IPv4, IPv6, CLI Cisco.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 590 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'ccna-srwe',
@@ -89,7 +89,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'VLANs, STP, EtherChannel, DHCP, Wi-Fi 802.11 et routage statique avancé.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 590 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'ccna-ensa',
@@ -101,7 +101,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'OSPF, ACL, NAT, VPN, SDN et automatisation réseau. Dernier module avant l\'examen CCNA.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 590 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
 
   // ── CISCO — Cybersécurité ──────────────────────────────────────────────────
@@ -115,7 +115,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'CIA Triad, cryptographie, sécurité OS, firewalls et réponse aux incidents.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'cyberops',
@@ -127,7 +127,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-201 CBROPS',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Formation SOC complète — surveillance réseau, forensique, réponse aux incidents.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 590 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'ethical-hacker',
@@ -139,7 +139,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD'],
     description: 'Méthodologie pentest, Kali Linux, Nmap, Metasploit, Burp Suite et rapport.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
 
   // ── CISCO — Programmation ─────────────────────────────────────────────────
@@ -153,7 +153,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PCEP-30-02',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Python from scratch — types, boucles, fonctions, collections, fichiers.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 290 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'python-essentials-2',
@@ -165,7 +165,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PCAP-31-03',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'POO, modules, exceptions, générateurs, décorateurs et programmation fonctionnelle.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 290 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'devnet-associate',
@@ -177,7 +177,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-901 DEVASC',
     modalites: ['Présentiel', 'FOAD'],
     description: 'APIs REST, Python réseau, YANG/NETCONF, Ansible et CI/CD pour le réseau.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 590 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
 
   // ── CISCO — IoT ───────────────────────────────────────────────────────────
@@ -191,7 +191,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Comprendre l\'IoT et la transformation digitale sans prérequis technique.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'iot-connecting-things',
@@ -203,7 +203,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Arduino, Raspberry Pi, MQTT, protocoles IoT et sécurisation des déploiements.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'iot-big-data-analytics',
@@ -215,7 +215,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Collecte, stockage, analyse et visualisation des données IoT avec Python.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'iot-security',
@@ -227,7 +227,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD'],
     description: 'Menaces IoT, cryptographie embarquée, segmentation réseau et audits de sécurité.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
     slug: 'iot-hackathon',
@@ -239,7 +239,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD'],
     description: 'Projet IoT en équipe — design thinking, prototype fonctionnel et pitch jury.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 390 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
 
   // ── CISCO — Linux & Open Source ───────────────────────────────────────────
@@ -253,7 +253,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '010-160',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Commandes Linux, gestion des fichiers, utilisateurs, processus et scripts Bash.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 290 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
 
   // ── CISCO — Data & Analytics ──────────────────────────────────────────────
@@ -267,7 +267,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'SQL, Python Pandas, visualisation et storytelling data sans prérequis avancé.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 290 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
 
   // ── MICROSOFT — Azure & Cloud ─────────────────────────────────────────────

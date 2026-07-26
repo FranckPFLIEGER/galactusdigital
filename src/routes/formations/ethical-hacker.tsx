@@ -30,7 +30,7 @@ const DATA = {
   description: `Formation aux techniques de sécurité offensive pour identifier les vulnérabilités avant les attaquants. Elle couvre la reconnaissance, le scanning, l'exploitation et le rapport de tests d'intrusion. Utilise des outils professionnels comme Kali Linux, Nmap, Metasploit et Burp Suite dans un environnement sécurisé.`,
   objectifs: ["Appliquer la méthodologie de test d'intrusion — reconnaissance, scanning, exploitation, rapport", "Utiliser des outils de reconnaissance passive — OSINT, Maltego, theHarvester, Shodan", "Effectuer du scanning actif avec Nmap, Nessus et Nikto", "Exploiter des vulnérabilités connues avec Metasploit Framework", "Tester la sécurité des applications web — injections SQL, XSS avec Burp Suite", "Rédiger un rapport de test d'intrusion professionnel avec recommandations"],
   public: ["Analystes sécurité expérimentés", "Administrateurs réseaux évoluant en sécurité offensive", "Candidats préparant CEH (EC-Council) ou OSCP (Offensive Security)", "Équipes Blue Team souhaitant comprendre les techniques Red Team"],
-  prerequis: ["CyberOps Associate ou connaissance équivalente en sécurité réseau", "Maîtrise de Linux (ligne de commande)", "Connaissance des protocoles réseau (TCP/IP, HTTP, DNS)", "Notions de programmation Python recommandées"],
+  prerequis: ["CCNA Cybersecurity ou connaissance équivalente en sécurité réseau", "Maîtrise de Linux (ligne de commande)", "Connaissance des protocoles réseau (TCP/IP, HTTP, DNS)", "Notions de programmation Python recommandées"],
   examen: {
     code: 'Ethical Hacker Final Exam',
     duree: 'Évaluation continue',

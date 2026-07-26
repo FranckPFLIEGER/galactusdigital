@@ -27,9 +27,9 @@ const DATA = {
   groupeMin: 4,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Formation aux principes fondamentaux de la cybersécurité. Elle couvre la cryptographie, la sécurité des systèmes d'exploitation, la sécurité des réseaux, la gestion des vulnérabilités et les procédures de réponse aux incidents. Idéale avant d'attaquer CyberOps Associate ou le parcours Ethical Hacker.`,
+  description: `Formation aux principes fondamentaux de la cybersécurité. Elle couvre la cryptographie, la sécurité des systèmes d'exploitation, la sécurité des réseaux, la gestion des vulnérabilités et les procédures de réponse aux incidents. Idéale avant d'attaquer CCNA Cybersecurity ou le parcours Ethical Hacker.`,
   objectifs: ["Décrire les principes de la cybersécurité — CIA Triad, menaces, vulnérabilités, risques", "Expliquer les mécanismes cryptographiques — chiffrement symétrique/asymétrique, PKI, hachage", "Configurer les mesures de sécurité des systèmes d'exploitation Windows et Linux", "Décrire les technologies de sécurité réseau — firewalls, IDS/IPS, VPN, ACL", "Analyser les vulnérabilités avec des outils d'évaluation basiques", "Appliquer les procédures de réponse aux incidents selon NIST SP 800-61"],
-  public: ["Techniciens IT souhaitant acquérir des bases en sécurité", "Étudiants en BTS SIO option SISR", "Professionnels IT avant CyberOps ou Ethical Hacker", "Toute personne intéressée par la cybersécurité"],
+  public: ["Techniciens IT souhaitant acquérir des bases en sécurité", "Étudiants en BTS SIO option SISR", "Professionnels IT avant CCNA Cybersecurity ou Ethical Hacker", "Toute personne intéressée par la cybersécurité"],
   prerequis: ["Networking Essentials ou connaissances TCP/IP basiques", "Utilisation courante de Windows et/ou Linux", "Aucune connaissance en cybersécurité requise"],
   examen: {
     code: 'Cybersecurity Essentials Final Exam',

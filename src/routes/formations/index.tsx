@@ -169,13 +169,13 @@ function FormationsPage() {
               Certifications IT
             </h1>
             <p style={{ fontSize: "1rem", color: "rgba(255,255,255,.65)", maxWidth: "680px", lineHeight: 1.8, marginBottom: "2rem" }}>
-              22 formations certifiantes officielles dispensées par des formateurs accrédités éditeurs.
+              25 formations certifiantes officielles dispensées par des formateurs accrédités éditeurs.
               Présentiel, FOAD et E-learning — dans les territoires ultramarins et en France hexagonale.
             </p>
             {/* Stats */}
             <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap" }}>
               {[
-                ["22", "formations"],
+                ["25", "formations"],
                 ["2", "éditeurs officiels"],
                 ["8", "familles"],
                 ["100%", "de réussite"],
@@ -189,6 +189,75 @@ function FormationsPage() {
           </div>
         </section>
 
+        {/* ── Parcours certifiants ── */}
+        <section style={{ background: "var(--g-white)", padding: "4rem 2rem", borderBottom: "1px solid rgba(187,187,187,.25)" }}>
+          <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+            <span style={{ fontFamily: "var(--font-title)", fontSize: ".70rem", fontWeight: 600, letterSpacing: ".20em", textTransform: "uppercase", color: "var(--g-red)", display: "block", marginBottom: ".6rem" }}>
+              Parcours métier
+            </span>
+            <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.4rem,2.2vw,2rem)", fontWeight: 700, color: "var(--g-black)", textTransform: "uppercase", letterSpacing: ".04em", marginBottom: ".75rem" }}>
+              Cinq trajectoires certifiantes
+            </h2>
+            <p style={{ fontSize: ".95rem", color: "#5a5a58", maxWidth: "760px", lineHeight: 1.75, marginBottom: "2.5rem" }}>
+              Au-delà des formations à l'unité, nous construisons des parcours alignés sur les métiers les plus recherchés en 2026 — du socle réseau à l'automatisation, de la cybersécurité au cloud et à l'IA Microsoft.
+            </p>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(320px,1fr))", gap: "1.25rem" }} className="parcours-grid">
+              {[
+                {
+                  col: "#E41F26",
+                  titre: "Réseaux & Infrastructure",
+                  pitch: "Le socle universellement reconnu, du câblage au réseau d'entreprise piloté par l'IA.",
+                  etapes: "Networking Essentials → CCNA (ITN · SRWE · ENSA) → Infrastructure réseau (RS)",
+                  debouche: "Technicien réseau, administrateur infrastructure, ingénieur réseau",
+                },
+                {
+                  col: "#1D1D1B",
+                  titre: "Cybersécurité",
+                  pitch: "Un des axes les plus porteurs en salaire : défense, SOC et sécurité offensive.",
+                  etapes: "Cybersecurity Essentials → CCNA Cybersecurity → Ethical Hacker",
+                  debouche: "Analyste SOC, pentester, ingénieur sécurité",
+                },
+                {
+                  col: "#E41F26",
+                  titre: "Automatisation & IA réseau",
+                  pitch: "Le virage 2026 : d'ici 2027, l'essentiel des opérations réseau sera automatisé.",
+                  etapes: "Python Essentials 1 & 2 → CCNA Automation (ex-DevNet, IA-ready)",
+                  debouche: "Ingénieur automatisation, NetDevOps, développeur réseau",
+                },
+                {
+                  col: "#1D1D1B",
+                  titre: "Cloud & Modern Workplace Microsoft",
+                  pitch: "Administrer le cloud et le poste de travail moderne de bout en bout.",
+                  etapes: "AZ-900 → AZ-104 → MD-102 (Intune) · SC-900",
+                  debouche: "Administrateur Azure, endpoint administrator, admin M365",
+                },
+                {
+                  col: "#E41F26",
+                  titre: "Data & IA Microsoft",
+                  pitch: "Transformer la donnée en décision et déployer Copilot en entreprise.",
+                  etapes: "AI-901 → PL-300 (Power BI) → MS-4010 (Copilot Specialist)",
+                  debouche: "Data analyst, référent Power BI, spécialiste adoption Copilot",
+                },
+              ].map(p => (
+                <div key={p.titre} style={{ background: "var(--g-offwhite)", border: "1px solid rgba(187,187,187,.35)", borderTop: `3px solid ${p.col}`, padding: "1.5rem", display: "flex", flexDirection: "column" }}>
+                  <h3 style={{ fontFamily: "var(--font-title)", fontSize: "1rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: "var(--g-black)", margin: "0 0 .5rem", lineHeight: 1.2 }}>
+                    {p.titre}
+                  </h3>
+                  <p style={{ fontSize: ".85rem", color: "#5a5a58", lineHeight: 1.6, margin: "0 0 1rem" }}>{p.pitch}</p>
+                  <div style={{ fontFamily: "var(--font-title)", fontSize: ".62rem", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", color: p.col, marginBottom: ".3rem" }}>Parcours</div>
+                  <p style={{ fontSize: ".82rem", color: "var(--g-black)", fontWeight: 600, lineHeight: 1.5, margin: "0 0 1rem" }}>{p.etapes}</p>
+                  <div style={{ marginTop: "auto", paddingTop: ".75rem", borderTop: "1px solid rgba(187,187,187,.3)" }}>
+                    <div style={{ fontFamily: "var(--font-title)", fontSize: ".62rem", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", color: "#999", marginBottom: ".25rem" }}>Débouchés</div>
+                    <p style={{ fontSize: ".78rem", color: "#5a5a58", lineHeight: 1.5, margin: 0, fontStyle: "italic" }}>{p.debouche}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p style={{ fontSize: ".82rem", color: "#888", marginTop: "1.75rem", fontStyle: "italic", lineHeight: 1.6 }}>
+              Formateur certifié éditeur, accompagnement au financement OPCO et aides régionales DOM, présence dans 6 territoires ultramarins et en France hexagonale. Parcours personnalisables sur devis.
+            </p>
+          </div>
+        </section>
         {/* ── Filtres ── */}
         <section style={{ background: "var(--g-offwhite)", padding: "1.5rem 2rem", borderBottom: "1px solid rgba(187,187,187,.25)", position: "sticky", top: "72px", zIndex: 50 }}>
           <div style={{ maxWidth: "1280px", margin: "0 auto" }}>

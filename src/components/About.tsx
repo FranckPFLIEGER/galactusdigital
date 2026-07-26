@@ -25,10 +25,10 @@ const points = [
 ]
 
 const certPrograms = [
-  { name: 'Microsoft Azure & M365',          meta: 'n° 4653557' },
+  { name: 'Microsoft — Azure, M365, Power BI, Intune & Copilot',          meta: 'n° 4653557' },
   { name: 'Cisco Networking Academy — Réseaux & CCNA',  meta: 'n° 3018982' },
   { name: 'Cisco Networking Academy — Cybersécurité',   meta: 'n° 3018982' },
-  { name: 'Cisco Networking Academy — IoT & DevNet',    meta: 'n° 3018982' },
+  { name: 'Cisco Networking Academy — IoT & Automation',    meta: 'n° 3018982' },
   { name: 'IPv6 Forum',                      meta: 'Official' },
   { name: 'Linux & Python (LPI / OpenEDG)',  meta: 'Official' },
 ]
@@ -51,7 +51,7 @@ export function About() {
             <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}>
               GALACTUS Digital est né d'une conviction : les professionnels des territoires ultramarins méritent
               d'accéder aux mêmes certifications IT de niveau mondial que leurs homologues en Europe
-              ou en Amérique du Nord. Forts de plus de 20 ans d'expérience et d'un réseau
+              ou en Amérique du Nord. Forts de plus de 25 ans d'expérience et d'un réseau
               d'experts certifiés à l'échelle internationale, nous avons bâti une offre complète,
               rigoureuse et adaptée aux réalités du marché ultramarin.
             </p>

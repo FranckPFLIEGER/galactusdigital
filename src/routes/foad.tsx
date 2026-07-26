@@ -22,13 +22,13 @@ const FORMATIONS = [
   },
   {
     editeur: 'Cisco — Cybersécurité',
-    formations: ['Cybersecurity Essentials', 'CyberOps Associate', 'Ethical Hacker'],
+    formations: ['Cybersecurity Essentials', 'CCNA Cybersecurity', 'Ethical Hacker'],
   },
   {
     editeur: 'Cisco — Dev & Data',
     formations: [
       'Python Essentials 1 (PCEP)', 'Python Essentials 2 (PCAP)',
-      'DevNet Associate', 'Linux Essentials', 'Data Analytics Essentials',
+      'CCNA Automation', 'Linux Essentials', 'Data Analytics Essentials',
     ],
   },
   {
@@ -42,7 +42,7 @@ const FORMATIONS = [
     editeur: 'Microsoft',
     formations: [
       'AZ-900 Azure Fundamentals', 'AZ-104 Azure Administrator',
-      'SC-900 Security Fundamentals', 'AI-900 Azure AI Fundamentals',
+      'SC-900 Security Fundamentals', 'AI-901 Azure AI Fundamentals',
       'MS-900 Microsoft 365 Fundamentals',
     ],
   },

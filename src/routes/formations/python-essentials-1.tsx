@@ -29,7 +29,7 @@ const DATA = {
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Premier module de la série Python Essentials développée par le Cisco Networking Academy en partenariat avec l'OpenEDG Python Institute. Formation complète pour débuter la programmation Python from scratch. Couvre les fondamentaux du langage, les structures de contrôle, les fonctions et les collections. Prépare à la certification PCEP.`,
   objectifs: ["Écrire, exécuter et déboguer des programmes Python simples", "Utiliser les types de données Python — int, float, str, bool, None", "Implémenter les structures de contrôle — if/elif/else, boucles while et for", "Définir et appeler des fonctions avec paramètres, valeurs de retour et portée", "Manipuler les collections Python — listes, tuples, dictionnaires, ensembles", "Lire et écrire des fichiers texte en Python"],
-  public: ["Débutants complets en programmation", "Étudiants BTS / Licence informatique", "Professionnels IT souhaitant coder", "Prérequis pour Python Essentials 2 et DevNet"],
+  public: ["Débutants complets en programmation", "Étudiants BTS / Licence informatique", "Professionnels IT souhaitant coder", "Prérequis pour Python Essentials 2 et CCNA Automation"],
   prerequis: ["Aucune connaissance en programmation requise", "Utilisation courante d'un PC", "Notions basiques de mathématiques"],
   examen: {
     code: 'PCEP-30-02',

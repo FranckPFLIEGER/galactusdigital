@@ -4,7 +4,7 @@ const floatingBadges = [
   {
     cls: 'badge-a',
     label: 'Microsoft Azure',
-    sub: 'AZ-900 · AZ-104 · SC-900 · AI-900',
+    sub: 'AZ-900 · AZ-104 · PL-300 · MS-4010',
     Icon: Cloud,
   },
   {
@@ -16,7 +16,7 @@ const floatingBadges = [
   {
     cls: 'badge-c',
     label: 'Cisco',
-    sub: 'CCNA · CyberOps · IoT · DevNet',
+    sub: 'CCNA · CCNA Cybersecurity · IoT · CCNA Automation',
     Icon: Network,
   },
   {

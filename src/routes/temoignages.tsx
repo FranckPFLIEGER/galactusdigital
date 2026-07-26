@@ -43,9 +43,9 @@ const temoignagesEcrits = [
   {
     nom: 'Technicien réseau',
     entreprise: 'Administration publique — Guyane',
-    formation: 'CyberOps Associate',
+    formation: 'CCNA Cybersecurity (ex-CyberOps)',
     annee: '2023',
-    texte: "La formation CyberOps Associate m'a donné toutes les clés pour comprendre et sécuriser nos infrastructures. Le fait que la formation soit disponible à distance depuis la Guyane a été déterminant — nous n'avons plus à nous déplacer en métropole pour accéder à des formations de ce niveau.",
+    texte: "Cette formation cybersécurité m'a donné toutes les clés pour comprendre et sécuriser nos infrastructures. Le fait qu'elle soit disponible à distance depuis la Guyane a été déterminant — nous n'avons plus à nous déplacer en métropole pour accéder à des formations de ce niveau.",
     note: '5/5',
   },
   {

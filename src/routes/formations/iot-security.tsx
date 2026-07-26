@@ -30,7 +30,7 @@ const DATA = {
   description: `Formation spécialisée dans la sécurisation des systèmes IoT industriels et grand public. Elle couvre les menaces spécifiques aux objets connectés, la cryptographie embarquée, la segmentation réseau IoT, la mise à jour sécurisée des firmwares et la conformité réglementaire. Utilise des cas réels d'incidents IoT (Mirai, Stuxnet, VPNFilter).`,
   objectifs: ["Identifier et analyser les menaces et vecteurs d'attaque spécifiques aux systèmes IoT", "Implémenter la cryptographie légère adaptée aux microcontrôleurs à ressources limitées", "Concevoir une architecture réseau IoT sécurisée avec segmentation VLAN et DMZ IoT", "Sécuriser le cycle de vie des firmwares — signature, distribution et mise à jour OTA sécurisée", "Appliquer les standards de sécurité IoT — NIST IoT, ETSI EN 303 645, IEC 62443", "Réaliser un audit de sécurité IoT et produire un rapport de remédiation"],
   public: ["Ingénieurs sécurité travaillant sur des environnements IoT", "Architectes réseau déployant des infrastructures IoT", "Professionnels OT/IT en environnement industriel (ICS/SCADA)", "Candidats préparant des certifications sécurité IoT"],
-  prerequis: ["IoT Fundamentals: Connecting Things validé", "CyberOps Associate ou Cybersecurity Essentials recommandé", "Connaissance des réseaux TCP/IP et des protocoles de sécurité"],
+  prerequis: ["IoT Fundamentals: Connecting Things validé", "CCNA Cybersecurity ou Cybersecurity Essentials recommandé", "Connaissance des réseaux TCP/IP et des protocoles de sécurité"],
   examen: {
     code: 'IoT Security',
     duree: `Projet d'audit + QCM`,
@@ -38,7 +38,7 @@ const DATA = {
     organisme: 'Cisco Networking Academy',
     format: 'QCM et questions pratiques',
     score: '700/1000',
-    note: 'Formation avancée complémentaire à CyberOps Associate et Ethical Hacker. Prépare aux certifications sécurité spécialisées IoT et à la certification GICSP (ICS/SCADA Security).',
+    note: 'Formation avancée complémentaire à CCNA Cybersecurity et Ethical Hacker. Prépare aux certifications sécurité spécialisées IoT et à la certification GICSP (ICS/SCADA Security).',
   },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",

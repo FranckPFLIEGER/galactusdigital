@@ -154,10 +154,10 @@ function ElearningPage() {
             <div className="el-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginTop: '2rem' }}>
               {[
                 { titre: 'Cisco — Réseaux', items: ['Networking Essentials (40h)', 'CCNA 1 — ITN (70h)', 'CCNA 2 — SRWE (70h)', 'CCNA 3 — ENSA (70h)'] },
-                { titre: 'Cisco — Cybersécurité', items: ['Cybersecurity Essentials (30h)', 'CyberOps Associate (60h)', 'Ethical Hacker (40h)'] },
-                { titre: 'Cisco — Dev & Data', items: ["Python Essentials 1 — PCEP (35h)", "Python Essentials 2 — PCAP (40h)", 'DevNet Associate (50h)', 'Linux Essentials (40h)', 'Data Analytics Essentials (30h)'] },
+                { titre: 'Cisco — Cybersécurité', items: ['Cybersecurity Essentials (30h)', 'CCNA Cybersecurity (60h)', 'Ethical Hacker (40h)'] },
+                { titre: 'Cisco — Dev & Data', items: ["Python Essentials 1 — PCEP (35h)", "Python Essentials 2 — PCAP (40h)", 'CCNA Automation (50h)', 'Linux Essentials (40h)', 'Data Analytics Essentials (30h)'] },
                 { titre: 'Cisco — IoT', items: ['IoT — Introduction (25h)', 'IoT — Connecting Things (30h)', 'IoT — Big Data & Analytics (30h)', 'IoT — Security (25h)', 'IoT — Hackathon (20h)'] },
-                { titre: 'Microsoft', items: ['AZ-900 Azure Fundamentals (20h)', 'AZ-104 Azure Administrator (40h)', 'SC-900 Security Fundamentals (15h)', 'AI-900 Azure AI Fundamentals (15h)', 'MS-900 Microsoft 365 (18h)'] },
+                { titre: 'Microsoft', items: ['AZ-900 Azure Fundamentals (20h)', 'AZ-104 Azure Administrator (40h)', 'SC-900 Security Fundamentals (15h)', 'AI-901 Azure AI Fundamentals (15h)', 'MS-900 Microsoft 365 (18h)'] },
                 { titre: 'IPv6 Forum', items: ['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'] },
               ].map(f => (
                 <div key={f.titre} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>

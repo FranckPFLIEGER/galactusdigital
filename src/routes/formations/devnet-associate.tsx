@@ -8,28 +8,28 @@ export const Route = createFileRoute('/formations/devnet-associate')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "DevNet Associate Cisco — Automatisation réseau 200-901 | GALACTUS Digital" },
-      { name: "description", content: "Formation Cisco DevNet Associate. 50h. Certification 200-901. APIs REST Python réseau automatisation DevOps. Qualiopi." },
+      { title: "CCNA Automation Cisco — Automatisation réseau 200-901 | GALACTUS Digital" },
+      { name: "description", content: "Formation Cisco CCNA Automation (ex-DevNet). 50h. Certification 200-901 CCNAAUTO. APIs REST Python réseau automatisation IA-ready. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
   editeur: 'Cisco Networking Academy',
-  famille: 'Cisco Networking Academy — DevNet',
-  titre: 'DevNet Associate — Automatisation réseau',
-  sousTitre: 'Certification Cisco Certified DevNet Associate · Référence : DEVASC-200-901',
+  famille: 'Cisco Networking Academy — Automation',
+  titre: 'CCNA Automation — Automatisation réseau',
+  sousTitre: 'Certification Cisco Certified CCNA Automation (ex-DevNet) · Référence : CCNAAUTO-200-901',
   ref: 'DEVNET-001',
   niveau: 'Intermédiaire',
   partenaire: 'Partenaire Cisco n° 3018982',
-  certification: 'Cisco Certified DevNet Associate (200-901 DEVASC)',
+  certification: 'Cisco Certified CCNA Automation (200-901 CCNAAUTO)',
   duree: '50 heures',
   groupeMin: 4,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Formation orientée développement et automatisation des infrastructures réseau Cisco. Elle couvre les APIs REST, Python pour le réseau, les modèles de données YANG/NETCONF/RESTCONF, Ansible, Git et les plateformes Cisco DNA Center et Meraki. Prépare à la certification DevNet Associate 200-901.`,
-  objectifs: ["Développer et tester des scripts Python pour automatiser des tâches réseau Cisco", "Consommer des APIs REST Cisco (DNA Center, Meraki, NX-OS, IOS XE) avec Python Requests", "Utiliser Git et GitHub pour le versionnement du code réseau (NetDevOps)", "Modéliser les configurations réseau avec YANG, NETCONF et RESTCONF", "Automatiser des déploiements avec Ansible et des playbooks réseau", "Développer et tester des applications avec les outils Cisco DevNet Sandbox"],
-  public: ["Ingénieurs réseau souhaitant automatiser", "Développeurs backend s'orientant réseau", "Administrateurs systèmes DevOps", "Candidats à la certification DevNet Associate"],
+  description: `Formation orientée développement et automatisation des infrastructures réseau Cisco. Elle couvre les APIs REST, Python pour le réseau, les modèles de données YANG/NETCONF/RESTCONF, Ansible, Git et les plateformes Cisco DNA Center et Meraki. Prépare à la certification CCNA Automation 200-901 (ex-DevNet, blueprint 2026 avec automatisation IA-ready).`,
+  objectifs: ["Développer et tester des scripts Python pour automatiser des tâches réseau Cisco", "Consommer des APIs REST Cisco (DNA Center, Meraki, NX-OS, IOS XE) avec Python Requests", "Utiliser Git et GitHub pour le versionnement du code réseau (NetDevOps)", "Modéliser les configurations réseau avec YANG, NETCONF et RESTCONF", "Automatiser des déploiements avec Ansible et des playbooks réseau", "Développer et tester des applications avec les outils Cisco DevNet Sandbox et Foundry"],
+  public: ["Ingénieurs réseau souhaitant automatiser", "Développeurs backend s'orientant réseau", "Administrateurs systèmes DevOps", "Candidats à la certification CCNA Automation"],
   prerequis: ["Maîtrise de Python (niveau Python Essentials 1 minimum)", "Connaissance des réseaux TCP/IP (CCNA ITN niveau recommandé)", "Notions de Linux et ligne de commande", "Compréhension basique des APIs REST (HTTP, JSON)"],
   examen: {
     code: '200-901 DEVASC',
@@ -50,7 +50,7 @@ const DATA = {
     "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
     "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
-    "Certification Cisco Certified DevNet Associate (200-901 DEVASC) envoyée par mail à l'issue du parcours",
+    "Certification Cisco Certified CCNA Automation (200-901 CCNAAUTO) envoyée par mail à l'issue du parcours",
     "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Passage de l'examen certifiant Cisco Networking Academy intégré au programme",
   ],
@@ -259,7 +259,7 @@ function FormationPage() {
                   <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 10–12</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>CI/CD et outils DevNet</div>
+                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>CI/CD et outils d'automatisation</div>
                     </div>
                     <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />14h</div>
                   </div>

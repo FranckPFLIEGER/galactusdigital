@@ -14,10 +14,7 @@ const pillars = [
       "FOAD et e-learning tutoré : solution adaptée pour les apprenants à mobilité réduite ou ne pouvant se déplacer en centre",
       "Aménagements des évaluations disponibles sur demande — délais supplémentaires, supports adaptés, tiers-temps",
     ],
-    links: [
-      { label: "Notre politique Handicap complète", url: "/handicap" },
-      { label: "Accessibilité — Cisco Networking Academy", url: "https://www.netacad.com/fr/accessibility" },
-    ],
+    link: { label: "Notre politique Handicap complète", url: "/handicap" },
     source: "Cisco Networking Academy — netacad.com/fr/accessibility",
   },
   {
@@ -40,11 +37,11 @@ const pillars = [
     fc: "Fiche 23 — Vademecum France Compétences 2026",
     badge: "Cœur de métier — 22 formations certifiantes",
     items: [
-      "100% de notre catalogue est dédié à la montée en compétences numériques : réseaux, cybersécurité, cloud, IoT, IA, Python, DevNet — certifications mondiales Cisco et Microsoft",
-      "Accompagnement des entreprises ultramarines dans leur transformation numérique : de l'infrastructure réseau (CCNA) à l'intelligence artificielle (AI-900)",
+      "100% de notre catalogue est dédié à la montée en compétences numériques : réseaux, cybersécurité, cloud, IoT, IA, Python, automatisation — certifications mondiales Cisco et Microsoft",
+      "Accompagnement des entreprises ultramarines dans leur transformation numérique : de l'infrastructure réseau (CCNA) à l'intelligence artificielle (Copilot, AI-901)",
       "Formations IoT et Big Data directement connectées aux enjeux de la transition numérique des territoires — smart cities, capteurs, données massives",
-      "Cybersécurité au premier plan : CyberOps, Ethical Hacker, SC-900 — former des professionnels capables de sécuriser la transition numérique",
-      "DevNet Associate : former les développeurs de l'automatisation réseau, compétence clé de la transformation IT des organisations ultramarines",
+      "Cybersécurité au premier plan : CCNA Cybersecurity, Ethical Hacker, SC-900 — former des professionnels capables de sécuriser la transition numérique",
+      "CCNA Automation : former les ingénieurs de l'automatisation réseau et de l'IA appliquée, compétence clé de la transformation IT des organisations ultramarines",
     ],
   },
   {
@@ -58,9 +55,7 @@ const pillars = [
       "Mêmes certifications mondiales pour tous — les femmes obtiennent exactement les mêmes titres reconnus qu'en Europe ou en Amérique du Nord",
       "Financement OPCO accessible sans discrimination — aucune barrière financière à l'entrée dans les métiers du numérique",
     ],
-    links: [
-      { label: "Connected Girls 2025 — Cisco France", url: "https://gblogs.cisco.com/fr/rse/inclusion-et-diversite/connected-girls-2025/" },
-    ],
+    link: { label: "Connected Girls 2025 — Cisco France", url: "https://gblogs.cisco.com/fr/rse/inclusion-et-diversite/connected-girls-2025/" },
   },
   {
     icon: <Users size={24} color="white" />,
@@ -152,15 +147,15 @@ export function RSE() {
                   Source : {p.source}
                 </div>
               )}
-              {p.links && p.links.map((lnk, k) => (
-                <a key={k} href={lnk.url}
-                  target={lnk.url.startsWith('http') ? '_blank' : undefined}
-                  rel={lnk.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginTop: '1rem', marginRight: '1.25rem', fontSize: '0.72rem', color: 'var(--g-red)', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.06em' }}>
-                  {lnk.url.startsWith('http') ? <ExternalLink size={12} /> : <ArrowRight size={12} />}
-                  {lnk.label}
+              {p.link && (
+                <a href={p.link.url}
+                  target={p.link.url.startsWith('http') ? '_blank' : undefined}
+                  rel={p.link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginTop: '1rem', fontSize: '0.72rem', color: 'var(--g-red)', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.06em' }}>
+                  {p.link.url.startsWith('http') ? <ExternalLink size={12} /> : <ArrowRight size={12} />}
+                  {p.link.label}
                 </a>
-              ))}
+              )}
             </div>
           ))}
         </div>

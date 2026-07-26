@@ -4,7 +4,7 @@ const partners = [
   {
     file: 'cisco-academy.png',
     name: 'Cisco Networking Academy',
-    desc: 'Partenaire officiel n° 3018982 — formations CCNA, CyberOps, DevNet, IoT',
+    desc: 'Partenaire officiel n° 3018982 — formations CCNA, CCNA Cybersecurity, CCNA Automation, IoT',
     level: 'Academy Partner',
   },
   {

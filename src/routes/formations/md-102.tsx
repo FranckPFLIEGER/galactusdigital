@@ -1,58 +1,58 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
-import { CheckCircle, Clock, Calendar, Users, MapPin, Phone, Mail, Award, BookOpen, Monitor, AlertCircle, Terminal } from 'lucide-react'
+import { CheckCircle, Clock, Calendar, Users, MapPin, Phone, Mail, Award, BookOpen, Monitor, AlertCircle, Cloud } from 'lucide-react'
 import { getFormationBySlug, getTarifsModalites } from '../../data/catalogue'
 
-export const Route = createFileRoute('/formations/linux-essentials')({
+export const Route = createFileRoute('/formations/md-102')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "Linux Essentials Cisco Networking Academy — Certification LPI 010-160 | GALACTUS Digital" },
-      { name: "description", content: "Formation Linux Essentials Cisco Networking Academy. 70h. Certification LPI 010-160. CLI systèmes fichiers scripting shell. Qualiopi." },
+      { title: "MD-102 Endpoint Administrator Microsoft — Formation certifiante | GALACTUS Digital" },
+      { name: "description", content: "Formation Microsoft MD-102 Endpoint Administrator. 35h. Certification officielle. Intune Autopilot conformité Defender. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco Networking Academy',
-  famille: 'Cisco Networking Academy — Linux & Open Source',
-  titre: 'NDG Linux Essentials — Introduction à Linux',
-  sousTitre: 'Certification Linux Essentials (LPI 010) · Référence : LINUX-ESS',
-  ref: 'LINUX-ESS-001',
-  niveau: 'Fondamental',
-  partenaire: 'Partenaire Cisco n° 3018982',
-  certification: 'LPI Linux Essentials (010-160)',
-  duree: '40 heures',
+  editeur: 'Microsoft',
+  famille: 'Microsoft Learn — Modern Workplace',
+  titre: 'Endpoint Administrator',
+  sousTitre: 'Certification Microsoft 365 Endpoint Administrator Associate · Référence : MD-102',
+  ref: 'MD-102-001',
+  niveau: 'Intermédiaire',
+  partenaire: 'Partenaire Microsoft n° 4653557',
+  certification: 'Microsoft 365 Certified: Endpoint Administrator Associate (MD-102)',
+  duree: '35 heures',
   groupeMin: 4,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Formation d'introduction à Linux et à l'open source en partenariat entre Cisco Networking Academy et le Linux Professional Institute (LPI). Elle couvre les commandes fondamentales, la gestion des fichiers, les processus, les permissions et les bases de la sécurité Linux. Prépare à la certification Linux Essentials LPI 010-160.`,
-  objectifs: ["Décrire l'écosystème Linux et open source — distributions, licences, communautés", "Naviguer et manipuler le système de fichiers Linux en ligne de commande", "Gérer les utilisateurs, groupes et permissions Linux (chmod, chown, ACL)", "Administrer les processus Linux — ps, kill, top, cron, systemd", "Configurer le réseau Linux basique — ip, ifconfig, /etc/hosts, DNS", "Écrire des scripts shell Bash simples pour automatiser des tâches"],
-  public: ["Débutants complets sur Linux", "Administrateurs Windows s'ouvrant à Linux", "Développeurs souhaitant maîtriser leur environnement", "Prérequis pour CCNA, CCNA Automation ou cybersécurité Linux"],
-  prerequis: ["Aucun prérequis technique obligatoire", "Utilisation courante d'un PC (Windows ou macOS)", "Curiosité pour les systèmes open source"],
+  description: `Formation certifiante pour les administrateurs qui déploient, configurent et sécurisent les postes de travail et appareils d'un tenant Microsoft 365 avec Microsoft Intune. Elle couvre le déploiement Windows avec Autopilot, la gestion de l'identité et de la conformité, la protection des appareils et le déploiement des applications. Renouvellement annuel gratuit via Microsoft Learn.`,
+  objectifs: ["Déployer le client Windows — Windows Autopilot, Windows 365, stratégies de déploiement", "Gérer l'identité et la conformité — Entra ID, authentification, RBAC Intune, LAPS", "Implémenter les stratégies de conformité — Conditional Access exigeant un appareil conforme", "Gérer, maintenir et protéger les appareils — profils de configuration, mises à jour, Defender for Endpoint", "Gérer les applications — déploiement, protection des applications (MAM), stores par plateforme", "Superviser et automatiser — reporting, Remote Help, monitoring de conformité"],
+  public: ["Administrateurs postes de travail et endpoints", "Techniciens support et desktop engineers", "Administrateurs Microsoft 365", "Certifiés MS-900 ou AZ-900 souhaitant progresser"],
+  prerequis: ["Expérience de l'administration Windows et des appareils", "Connaissance de Microsoft 365 et Entra ID", "Notions de réseau, DNS et gestion d'identité", "Expérience pratique d'un tenant Microsoft 365 recommandée"],
   examen: {
-    code: '010-160 Linux Essentials',
-    duree: '60 minutes',
+    code: 'MD-102',
+    duree: '120 minutes',
     langue: 'Français / Anglais',
-    organisme: 'Cisco Networking Academy',
-    format: 'QCM et questions pratiques',
-    score: '500 / 800',
-    note: 'Certification Linux Essentials délivrée par le LPI (Linux Professional Institute). Elle prépare à LPIC-1 (Linux Administrator) et aux parcours CCNA Automation et cybersécurité.',
+    organisme: 'Pearson VUE',
+    format: 'QCM, scénarios et questions à réponses multiples',
+    score: '700 / 1000',
+    note: "La certification MD-102 est valable 12 mois. Renouvellement gratuit via une évaluation en ligne sur Microsoft Learn. S'associe naturellement à AZ-104 (admin cloud) ou SC-900 (sécurité).",
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
-    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
-    "Travaux pratiques sur terminal Linux — environnements réels et simulateurs NetAcad",
-    "Badge numérique Linux Essentials (LPI — Linux Professional Institute) remis à l'issue du parcours — visible sur Credly",
-    "Quiz de validation des acquis à chaque fin de module sur NetAcad",
+    "Formation dispensée par un formateur certifié Microsoft (Microsoft Certified Trainer — MCT)",
+    "Accès à la plateforme Microsoft Learn 24h/24 pendant et après la formation",
+    "Labs pratiques sur tenant Microsoft 365 et console Microsoft Intune",
+    "Badge numérique Microsoft remis à l'issue du parcours — visible sur Credly et LinkedIn",
+    "Quiz de validation des acquis à chaque fin de module sur Microsoft Learn",
     "Auto-évaluation formative en début et en fin de formation",
     "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
     "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
-    "Supports de cours officiels LPI inclus (version numérique NetAcad)",
-    "Certification LPI Linux Essentials (010-160) envoyée par mail à l'issue du parcours",
+    "Supports de cours officiels Microsoft inclus (version numérique Microsoft Learn)",
+    "Certification Microsoft 365 Certified: Endpoint Administrator Associate (MD-102) envoyée par mail à l'issue du parcours",
     "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
-    "Passage de l'examen certifiant LPI intégré au programme",
+    "Passage de l'examen certifiant Microsoft intégré au programme (Pearson VUE)",
   ],
 }
 
@@ -79,7 +79,7 @@ function DelaisAcces() {
 }
 
 function FormationPage() {
-  const FORMATION = getFormationBySlug('linux-essentials')
+  const FORMATION = getFormationBySlug('md-102')
   const TARIFS = FORMATION ? getTarifsModalites(FORMATION) : []
   return (
     <>
@@ -174,7 +174,7 @@ function FormationPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem' }} className="fiche-objectifs">
               {DATA.objectifs.map((obj, i) => (
                 <div key={i} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '1.5rem', background: 'var(--g-offwhite)' }}>
-                  <div style={{ width: '32px', height: '32px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}><Terminal size={16} color="white" /></div>
+                  <div style={{ width: '32px', height: '32px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}><Cloud size={16} color="white" /></div>
                   <p style={{ fontSize: '0.85rem', color: '#4a4a48', lineHeight: 1.6, margin: 0 }}>{obj}</p>
                 </div>
               ))}
@@ -195,83 +195,6 @@ function FormationPage() {
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                 {DATA.prerequis.map((item, i) => <CheckItem key={i} text={item} />)}
               </ul>
-            </div>
-          </div>
-        </section>
-
-        <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <SectionTitle>Programme détaillé</SectionTitle>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1.25rem' }}>
-              
-                <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
-                  <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 1–3</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Introduction à Linux</div>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />10h</div>
-                  </div>
-                  <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Histoire et philosophie Linux — noyau, distributions (Ubuntu, CentOS, Debian)</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Environnements de bureau Linux — GNOME, KDE, CLI vs GUI</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Licences open source — GPL, MIT, Apache, Creative Commons</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />TP — Installation et prise en main d'Ubuntu en VM</li>
-                    </ul>
-                  </div>
-                </div>
-                <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
-                  <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 4–6</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Ligne de commande et fichiers</div>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />12h</div>
-                  </div>
-                  <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Shell Bash — navigation, ls, cd, pwd, mkdir, rm, cp, mv</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Éditeurs de texte — nano, vi/vim fondamentaux</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Flux, redirection et pipes — &gt;, &gt;&gt;, |, tee, grep, awk, sed</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Arborescence Linux — FHS, /etc, /var, /home, /usr, /tmp</li>
-                    </ul>
-                  </div>
-                </div>
-                <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
-                  <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 7–9</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Utilisateurs et sécurité</div>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />10h</div>
-                  </div>
-                  <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Gestion des utilisateurs — useradd, usermod, passwd, /etc/passwd</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Permissions Linux — rwx, chmod octal et symbolique, chown, chgrp</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />sudo et élévation de privilèges — /etc/sudoers</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />TP — Sécurisation d'un serveur Linux multi-utilisateurs</li>
-                    </ul>
-                  </div>
-                </div>
-                <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
-                  <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 10–11</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Processus et automatisation</div>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />8h</div>
-                  </div>
-                  <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Gestion des processus — ps, top, htop, kill, nice, systemd/systemctl</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Planification de tâches — cron, crontab, at</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Scripts Bash — variables, conditions, boucles, fonctions</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />TP — Script d'automatisation de sauvegarde Linux</li>
-                    </ul>
-                  </div>
-                </div>
             </div>
           </div>
         </section>
@@ -328,9 +251,9 @@ function FormationPage() {
                 {[
                   { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail.' },
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation complète envoyée avant démarrage.' },
-                  { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + auto-évaluation selon 4 niveaux.' },
+                  { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz Microsoft Learn + auto-évaluation formateur.' },
                                     { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de la formation FOAD ou e-learning, conformément à la circulaire DGEFP du 17 février 2026." },
-                  { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès NetAcad vérifié avant démarrage.' },
+                  { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès Microsoft Learn et sandbox Azure vérifiés avant démarrage.' },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
                     <div style={{ flexShrink: 0 }}><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.55rem', whiteSpace: 'nowrap' }}>{c.ref}</div></div>

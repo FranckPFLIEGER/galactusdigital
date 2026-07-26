@@ -8,17 +8,17 @@ export const Route = createFileRoute('/formations/cyberops')({
   component: CyberOpsPage,
   head: () => ({
     meta: [
-      { title: "CyberOps Associate Cisco — Certification 200-201 | GALACTUS Digital" },
-      { name: "description", content: "Formation Cisco CyberOps Associate. 60h. Certification 200-201. Analyste SOC détection intrusion réponse incidents. Qualiopi." },
+      { title: "CCNA Cybersecurity Cisco — Certification 200-201 CBROPS | GALACTUS Digital" },
+      { name: "description", content: "Formation Cisco CCNA Cybersecurity (ex-CyberOps). 60h. Certification 200-201 CBROPS. Analyste SOC détection intrusion réponse incidents. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco', famille: 'Cisco Networking Academy — CyberOps', titre: 'CyberOps Associate — Opérations de cybersécurité', sousTitre: 'Certification Cisco CyberOps Associate · Référence : CBROPS-200-201',
-  ref: 'CYBEROPS-001', niveau: 'Intermédiaire', partenaire: 'Partenaire Cisco n° 3018982', certification: 'Cisco Certified CyberOps Associate (200-201 CBROPS)',
+  editeur: 'Cisco', famille: 'Cisco Networking Academy — Cybersécurité', titre: 'CCNA Cybersecurity — Opérations de cybersécurité SOC', sousTitre: 'Certification Cisco CCNA Cybersecurity (ex-CyberOps) · Référence : CBROPS-200-201',
+  ref: 'CYBEROPS-001', niveau: 'Intermédiaire', partenaire: 'Partenaire Cisco n° 3018982', certification: 'Cisco Certified CCNA Cybersecurity (200-201 CBROPS v1.2)',
   duree: '60 heures', groupeMin: 4, groupeMax: 12, lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Cette formation prépare les analystes en cybersécurité de niveau débutant à travailler dans un Centre d'Opérations de Sécurité (SOC). Elle couvre la surveillance réseau, la détection d'intrusion, l'analyse forensique et la réponse aux incidents. Elle prépare à la certification Cisco Certified CyberOps Associate (200-201 CBROPS).`,
+  description: `Cette formation prépare les analystes en cybersécurité de niveau débutant à travailler dans un Centre d'Opérations de Sécurité (SOC). Elle couvre la surveillance réseau, la détection d'intrusion, l'analyse forensique et la réponse aux incidents. Elle prépare à la certification Cisco Certified CCNA Cybersecurity (200-201 CBROPS v1.2, ex-CyberOps).`,
   objectifs: [
     'Décrire les concepts fondamentaux de sécurité — CIA Triad, gestion des risques, cryptographie',
     'Analyser le trafic réseau et identifier les activités malveillantes avec des outils comme Wireshark et tcpdump',
@@ -36,7 +36,7 @@ const DATA = {
     { num: '11–13', titre: 'Analyse des intrusions réseau', duree: '12h', contenu: ['Attaques réseau — DoS, DDoS, man-in-the-middle, ARP poisoning', 'Attaques applicatives — injections SQL, XSS, débordements de tampon', 'Outils d\'attaque réseau — Nmap, Metasploit (perspective défensive)', 'TP — Identification et analyse d\'intrusions réseau'] },
     { num: '14–16', titre: 'Politiques et procédures SOC', duree: '8h', contenu: ['Procédures de réponse aux incidents — NIST SP 800-61, phases d\'intervention', 'Classification des incidents et procédures d\'escalade SOC', 'Conformité et réglementation — RGPD, PCI-DSS, HIPAA', 'TP de synthèse — Simulation d\'investigation complète SOC'] },
   ],
-  examen: { code: '200-201 CBROPS', duree: '120 minutes', langue: 'Français', organisme: 'Cisco Networking Academy', format: 'QCM, simulation d\'analyse réseau', score: '750 / 1000', note: 'L\'examen 200-201 CBROPS est indépendant. Un seul examen suffit pour obtenir la certification CyberOps Associate, sans module préalable obligatoire.' },
+  examen: { code: '200-201 CBROPS', duree: '120 minutes', langue: 'Français', organisme: 'Cisco Networking Academy', format: 'QCM, simulation d\'analyse réseau', score: '750 / 1000', note: 'L\'examen 200-201 CBROPS est indépendant. Un seul examen suffit pour obtenir la certification CCNA Cybersecurity, sans module préalable obligatoire.' },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
     "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
@@ -47,7 +47,7 @@ const DATA = {
     "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
     "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
-    "Certification Cisco Certified CyberOps Associate (200-201 CBROPS) envoyée par mail à l'issue du parcours",
+    "Certification Cisco Certified CCNA Cybersecurity (200-201 CBROPS) envoyée par mail à l'issue du parcours",
     "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Passage de l'examen certifiant Cisco Networking Academy intégré au programme",
   ],

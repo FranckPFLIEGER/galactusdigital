@@ -153,7 +153,7 @@ export function Footer() {
               <li>
                 <a href="tel:+33781074746" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
                   <Phone size={14} style={{ flexShrink: 0, color: '#E41F26' }} />
-                  +33 07 81 07 47 46
+                  +33 7 81 07 47 46
                 </a>
               </li>
               <li>

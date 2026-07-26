@@ -69,9 +69,9 @@ const FORMATIONS = [
 ]
 
 const LIEUX = [
-  { zone: 'Martinique', badge: 'Siège régional Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: 'Centre régional principal des Caraïbes. Toutes nos formations Cisco, Microsoft, CompTIA et IPv6 disponibles en présentiel.', tel: '+33 07 81 07 47 46' },
-  { zone: 'Guadeloupe', badge: 'Présence active', adresse: 'Pointe de la Verdure\nGosier 97190', desc: 'Interventions en présentiel chez vos équipes ou en salle partenaire adaptée à vos besoins.', tel: '+33 07 81 07 47 46' },
-  { zone: 'Paris — France hexagonale', badge: 'Siège social', adresse: '66 avenue des Champs Élysées\n75008 Paris', desc: 'Formations en présentiel à Paris et interventions intra-entreprise partout en France hexagonale sur demande.', tel: '+33 07 81 07 47 46' },
+  { zone: 'Martinique', badge: 'Siège régional Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: 'Centre régional principal des Caraïbes. Toutes nos formations Cisco, Microsoft, CompTIA et IPv6 disponibles en présentiel.', tel: '+33 7 81 07 47 46' },
+  { zone: 'Guadeloupe', badge: 'Présence active', adresse: 'Pointe de la Verdure\nGosier 97190', desc: 'Interventions en présentiel chez vos équipes ou en salle partenaire adaptée à vos besoins.', tel: '+33 7 81 07 47 46' },
+  { zone: 'Paris — France hexagonale', badge: 'Siège social', adresse: '66 avenue des Champs Élysées\n75008 Paris', desc: 'Formations en présentiel à Paris et interventions intra-entreprise partout en France hexagonale sur demande.', tel: '+33 7 81 07 47 46' },
 ]
 
 function FormationGrid() {

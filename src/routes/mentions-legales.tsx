@@ -37,17 +37,17 @@ function MentionsLegalesPage() {
               <h2 className="legal-h2">Mentions légales</h2>
               <div className="legal-block">
                 <h3 className="legal-h3">Éditeur du site</h3>
-                <p><strong>Raison sociale :</strong> GALACTUS Digital</p>
-                <p><strong>Forme juridique :</strong> Organisme de formation professionnelle</p>
+                <p><strong>Raison sociale :</strong> PFLIEGER SASU (enseigne GALACTUS Digital)</p>
+                <p><strong>Forme juridique :</strong> SASU au capital de 750 € — organisme de formation professionnelle</p>
                 <p><strong>Siège social :</strong> 66 avenue des Champs Élysées, 75008 Paris</p>
                 <p><strong>Siège régional Caraïbes :</strong> Pointe Madeleine — CAP EST, 97240 Le François, Martinique</p>
                 <p><strong>Présence active Guadeloupe :</strong> Pointe de la Verdure, Gosier 97190</p>
-                <p><strong>SIRET :</strong> 880 430 418 00017</p>
-                <p><strong>NDA :</strong> 11 75 59933 75</p>
+                <p><strong>RCS :</strong> Paris — SIRET : 880 430 418 00017</p>
+                <p><strong>NDA :</strong> 11 75 59933 75 (préfet de la région Île-de-France). Cet enregistrement ne vaut pas agrément de l'État (art. L.6352-12 du code du travail).</p>
                 <p><strong>Certification Qualiopi :</strong> Certifopac — Certificat n° 951711-1 — Accréditation Cofrac n° 5-0620 (portée disponible sur www.cofrac.fr). Valide du 16/09/2024 au 15/09/2027</p>
                 <p><strong>TVA :</strong> Non applicable — Article 261-4-4° du CGI</p>
-                <p><strong>Directeur de publication :</strong> Le président</p>
-                <p><strong>Contact :</strong> president@galactusdigital.com — +33 07 81 07 47 46</p>
+                <p><strong>Directeur de publication :</strong> Franck PFLIEGER, Président</p>
+                <p><strong>Contact :</strong> president@galactusdigital.com — +33 7 81 07 47 46</p>
               </div>
               <div className="legal-block">
                 <h3 className="legal-h3">Hébergement</h3>

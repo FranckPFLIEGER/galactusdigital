@@ -86,7 +86,7 @@ function HandicapPage() {
                       <div style={{ width: '36px', height: '36px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                         <Phone size={16} color="white" />
                       </div>
-                      +33 07 81 07 47 46
+                      +33 7 81 07 47 46
                     </a>
                     <a href="mailto:president@galactusdigital.com" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'rgba(255,255,255,0.80)', textDecoration: 'none', fontSize: '0.90rem' }}>
                       <div style={{ width: '36px', height: '36px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>

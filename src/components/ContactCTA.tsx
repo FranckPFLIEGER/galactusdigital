@@ -300,7 +300,7 @@ export function ContactCTA() {
               <a href="tel:+33781074746"
                 style={{ display: "flex", alignItems: "center", gap: "0.75rem", color: "rgba(255,255,255,0.70)", textDecoration: "none", fontSize: "0.85rem" }}>
                 <Phone size={16} color="var(--g-red)" />
-                +33 07 81 07 47 46
+                +33 7 81 07 47 46
               </a>
               <div style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", color: "rgba(255,255,255,0.50)", fontSize: "0.82rem", lineHeight: 1.6 }}>
                 <MapPin size={16} color="var(--g-red)" style={{ marginTop: "2px", flexShrink: 0 }} />

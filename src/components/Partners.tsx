@@ -4,19 +4,19 @@ const partners = [
   {
     file: 'cisco-academy.png',
     name: 'Cisco Networking Academy',
-    desc: 'Partenaire officiel n° 3018982 — formations CCNA, CCNA Cybersecurity, CCNA Automation, IoT',
+    desc: 'Partenaire officiel n° 3018982 depuis 2005 — formations CCNA, CCNA Cybersecurity, CCNA Automation, IoT',
     level: 'Academy Partner',
   },
   {
     file: 'microsoft-partner.jpg',
     name: 'Microsoft',
-    desc: 'Partenaire officiel n° 4653557 — formations Azure, M365, Security, AI',
+    desc: 'Partenaire officiel n° 4653557 depuis 2016 — formations Azure, M365, Power BI, Copilot',
     level: 'Microsoft Partner',
   },
   {
     file: 'ipv6-council.png',
     name: 'IPv6 Council Martinique',
-    desc: 'Membre actif — formations IPv6 Certified Network & Security Engineer',
+    desc: 'Membre actif depuis 2016 — formations IPv6 Certified Network & Security Engineer',
     level: 'Membre actif',
   },
 ]

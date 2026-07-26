@@ -178,7 +178,7 @@ function FormationsPage() {
                 ["25", "formations"],
                 ["2", "éditeurs officiels"],
                 ["8", "familles"],
-                ["100%", "de réussite"],
+                ["100%", "de réussite (518 présentés)"],
               ].map(([num, lbl]) => (
                 <div key={lbl}>
                   <div style={{ fontFamily: "var(--font-title)", fontSize: "1.8rem", fontWeight: 700, color: "var(--g-red)", lineHeight: 1 }}>{num}</div>

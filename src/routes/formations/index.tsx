@@ -207,7 +207,7 @@ function FormationsPage() {
                   col: "#E41F26",
                   titre: "Réseaux & Infrastructure",
                   pitch: "Le socle universellement reconnu, du câblage au réseau d'entreprise piloté par l'IA.",
-                  etapes: "Networking Essentials → CCNA (ITN · SRWE · ENSA) → Infrastructure réseau (RS)",
+                  etapes: "Networking Essentials → CCNA (ITN · SRWE · ENSA) → Infrastructure réseau (RS en cours d'enregistrement)",
                   debouche: "Technicien réseau, administrateur infrastructure, ingénieur réseau",
                 },
                 {

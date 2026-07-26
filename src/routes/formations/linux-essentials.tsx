@@ -2,6 +2,7 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { CheckCircle, Clock, Calendar, Users, MapPin, Phone, Mail, Award, BookOpen, Monitor, AlertCircle, Terminal } from 'lucide-react'
+import { getFormationBySlug, getTarifsModalites } from '../../data/catalogue'
 
 export const Route = createFileRoute('/formations/linux-essentials')({
   component: FormationPage,
@@ -78,6 +79,8 @@ function DelaisAcces() {
 }
 
 function FormationPage() {
+  const FORMATION = getFormationBySlug('linux-essentials')
+  const TARIFS = FORMATION ? getTarifsModalites(FORMATION) : []
   return (
     <>
       <Header />
@@ -119,21 +122,40 @@ function FormationPage() {
           </div>
         </section>
 
+        {/* ── Modalités & tarifs ── */}
         <section style={{ background: 'var(--g-white)', padding: '1.5rem 2rem', borderBottom: '1px solid rgba(187,187,187,0.25)' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '1rem', flexWrap: 'wrap' }}>
-              <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#888' }}>Modalités disponibles :</span>
-              {[
-                { icon: <Users size={13} />, label: 'Présentiel', href: '/presentiel' },
-                { icon: <Monitor size={13} />, label: 'FOAD synchrone', href: '/foad' },
-                { icon: <BookOpen size={13} />, label: 'E-learning tutoré', href: '/elearning' },
-              ].map(m => (
-                <a key={m.label} href={m.href} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '0.35rem 0.85rem', border: '1px solid rgba(187,187,187,0.5)', color: '#5a5a58', textDecoration: 'none' }}
-                  onMouseEnter={e => { e.currentTarget.style.borderColor = 'var(--g-red)'; e.currentTarget.style.color = 'var(--g-red)' }}
-                  onMouseLeave={e => { e.currentTarget.style.borderColor = 'rgba(187,187,187,0.5)'; e.currentTarget.style.color = '#5a5a58' }}>
-                  {m.icon} {m.label}
-                </a>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
+              <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#888' }}>
+                Modalités & tarifs :
+              </span>
+              {TARIFS.map(t => (
+                <div key={t.modalite} style={{
+                  display: 'inline-flex', alignItems: 'center', gap: '0.55rem',
+                  padding: '0.4rem 0.9rem',
+                  border: '1px solid rgba(187,187,187,0.5)',
+                  borderLeft: '3px solid var(--g-red)',
+                  background: 'var(--g-offwhite)',
+                }}>
+                  <span style={{ fontSize: '0.78rem', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.06em', textTransform: 'uppercase', color: '#5a5a58' }}>
+                    {t.label}
+                  </span>
+                  <span style={{
+                    fontFamily: 'var(--font-title)', fontSize: '0.80rem', fontWeight: 700,
+                    color: t.surDevis ? '#888' : 'var(--g-red)',
+                    fontStyle: t.surDevis ? 'italic' : 'normal',
+                  }}>
+                    {t.surDevis ? 'Sur devis' : t.valeur}
+                  </span>
+                </div>
               ))}
+              <a href="mailto:president@galactusdigital.com" style={{
+                fontSize: '0.74rem', fontFamily: 'var(--font-title)', fontWeight: 600,
+                letterSpacing: '0.08em', textTransform: 'uppercase',
+                color: 'var(--g-red)', textDecoration: 'none', marginLeft: '0.25rem',
+              }}>
+                Demander un devis →
+              </a>
             </div>
           </div>
         </section>

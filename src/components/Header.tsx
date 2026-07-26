@@ -134,12 +134,10 @@ function MegaMenu({ visible, onClose }: { visible: boolean; onClose: () => void 
                   {f.examCode !== 'Certificat Cisco Networking Academy' ? `${f.examCode} · ` : ''}{f.duree}
                 </div>
               </div>
-              {/* Prix si renseigné */}
-              {f.prix.elearning !== null && (
-                <div style={{ flexShrink: 0, fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.62rem', fontWeight: 700, color: '#E41F26', background: 'rgba(228,31,38,0.10)', padding: '0.1rem 0.4rem', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
-                  dès {f.prix.elearning!.toLocaleString('fr-FR')} €
-                </div>
-              )}
+              {/* Tarif sur devis */}
+              <div style={{ flexShrink: 0, fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.62rem', fontWeight: 700, color: '#E41F26', background: 'rgba(228,31,38,0.10)', padding: '0.1rem 0.4rem', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
+                Sur devis
+              </div>
             </a>
           ))}
         </div>

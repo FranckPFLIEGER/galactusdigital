@@ -215,7 +215,6 @@ function Pill({ label, actif, onClick }: { label: string; actif: boolean; onClic
 function SessionRow({ s, prep = false }: { s: Session; prep?: boolean }) {
   const mc = MC[s.modalite] || { bg: '#888', color: '#fff' }
   const nc = NC[s.formation.niveau] || '#888'
-  const prix = s.modalite === 'E-learning' ? s.formation.prix.elearning : s.modalite === 'FOAD' ? s.formation.prix.foad : s.formation.prix.presentiel
   const editeurColor = s.formation.editeur === 'Microsoft' ? '#1D1D1B' : '#E41F26'
   return (
     <div className="session-row"
@@ -249,7 +248,7 @@ function SessionRow({ s, prep = false }: { s: Session; prep?: boolean }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', color: '#4a4a48' }}><Users size={12} color="#E41F26" />Max {s.placesMax} participants</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem' }}>
           <Euro size={12} color="#E41F26" />
-          {prix !== null ? <strong style={{ color: 'var(--g-black)' }}>{prix.toLocaleString('fr-FR')} € HT</strong> : <span style={{ color: '#aaa', fontStyle: 'italic' }}>Sur devis</span>}
+          <span style={{ color: '#aaa', fontStyle: 'italic' }}>Sur devis</span>
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.72rem', color: prep ? '#EF9F27' : '#bbb', fontStyle: 'italic', fontWeight: prep ? 600 : 400 }}>
           <CalendarClock size={11} color={prep ? '#EF9F27' : '#ccc'} />{s.dateLabel}

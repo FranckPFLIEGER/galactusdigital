@@ -2,7 +2,7 @@
 // Props : modalite + dark (fond sombre ou clair)
 import { useState } from 'react'
 import { ChevronRight, Euro } from 'lucide-react'
-import { FORMATIONS, getFormationsParFamille, type Modalite, formatPrix } from '../data/catalogue'
+import { FORMATIONS, getFormationsParFamille, type Modalite } from '../data/catalogue'
 
 const FC: Record<string, string> = {
   'Réseaux & CCNA':      '#E41F26',
@@ -81,10 +81,6 @@ export function FormationGrid({ modalite, dark = false }: Props) {
         {visible.map(f => {
           const fCol = FC[f.famille] || '#E41F26'
           const nCol = NC[f.niveau]  || '#888'
-          const prixVal = modalite === 'Présentiel' ? f.prix.presentiel
-                        : modalite === 'FOAD'       ? f.prix.foad
-                        : f.prix.elearning
-
           return (
             <a key={f.slug} href={`/formations/${f.slug}`}
               style={{ display: 'flex', flexDirection: 'column', background: cardBg, border: `1px solid ${cardBord}`, borderTop: `3px solid ${fCol}`, padding: '1.25rem', textDecoration: 'none', transition: 'transform 0.15s, box-shadow 0.15s' }}
@@ -128,9 +124,9 @@ export function FormationGrid({ modalite, dark = false }: Props) {
               {/* Prix + CTA */}
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '0.65rem', borderTop: `1px solid ${divider}` }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
-                  <Euro size={11} color={prixVal !== null ? '#E41F26' : metaCol} />
-                  <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 700, color: prixVal !== null ? titleCol : metaCol, fontStyle: prixVal === null ? 'italic' : 'normal', letterSpacing: '0.04em' }}>
-                    {formatPrix(prixVal)}
+                  <Euro size={11} color={metaCol} />
+                  <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 700, color: metaCol, fontStyle: 'italic', letterSpacing: '0.04em' }}>
+                    Sur devis
                   </span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#E41F26' }}>
@@ -144,8 +140,8 @@ export function FormationGrid({ modalite, dark = false }: Props) {
 
       {/* Note prix */}
       <p style={{ fontSize: '0.73rem', color: metaCol, marginTop: '1rem', fontStyle: 'italic', lineHeight: 1.6 }}>
-        * Prix indicatifs en HT — TVA non applicable (Art. 261-4-4° CGI, organisme certifié Qualiopi).
-        "Sur demande" : devis sous 48h. Financement OPCO et aides régionales DOM disponibles —{' '}
+        * Tarifs sur devis — TVA non applicable (Art. 261-4-4° CGI, organisme certifié Qualiopi).
+        Devis sous 48h. Financement OPCO et aides régionales DOM disponibles —{' '}
         <a href="/financements" style={{ color: '#E41F26', textDecoration: 'none' }}>voir les financements</a>.
       </p>
     </div>

@@ -366,3 +366,37 @@ export function formatPrix(prix: number | null): string {
   if (prix === 0) return 'Inclus'
   return `${prix.toLocaleString('fr-FR')} € HT`
 }
+
+/** Retourne une formation par son slug (ou undefined) */
+export function getFormationBySlug(slug: string): Formation | undefined {
+  return FORMATIONS.find(f => f.slug === slug)
+}
+
+/**
+ * Tarifs par modalité pour l'affichage fiche.
+ * Règle commerciale : le prix e-learning est affiché tel quel ;
+ * Présentiel et FOAD sont "Sur devis". Une modalité non proposée
+ * par la formation n'est pas retournée.
+ */
+export interface TarifModalite {
+  modalite: Modalite
+  label: string
+  valeur: string
+  surDevis: boolean
+}
+
+export function getTarifsModalites(f: Formation): TarifModalite[] {
+  const LABELS: Record<Modalite, string> = {
+    'Présentiel':  'Présentiel',
+    'FOAD':        'FOAD synchrone',
+    'E-learning':  'E-learning tutoré',
+  }
+  return f.modalites.map(m => {
+    return {
+      modalite: m,
+      label: LABELS[m],
+      valeur: 'Sur devis',
+      surDevis: true,
+    }
+  })
+}

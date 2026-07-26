@@ -59,30 +59,10 @@ function s(slug: string, territoire: Territoire, modalite: Modalite, opts: Parti
 }
 
 const RAW: (Session | null)[] = [
-  s('networking-essentials','Martinique','Présentiel'), s('networking-essentials','Guadeloupe','Présentiel'),
-  s('networking-essentials','Tous territoires','FOAD'), s('networking-essentials','Tous territoires','E-learning'),
-  s('ccna-itn','Martinique','Présentiel'), s('ccna-itn','Guadeloupe','Présentiel'), s('ccna-itn','Paris','Présentiel'),
-  s('ccna-itn','Tous territoires','FOAD'), s('ccna-itn','Tous territoires','E-learning'),
-  s('ccna-srwe','Martinique','Présentiel'), s('ccna-srwe','Tous territoires','FOAD'), s('ccna-srwe','Tous territoires','E-learning'),
-  s('ccna-ensa','Martinique','Présentiel'), s('ccna-ensa','Tous territoires','FOAD'), s('ccna-ensa','Tous territoires','E-learning'),
-  s('cybersecurity-essentials','Martinique','Présentiel'), s('cybersecurity-essentials','Tous territoires','FOAD'), s('cybersecurity-essentials','Tous territoires','E-learning'),
-  s('cyberops','Martinique','Présentiel'), s('cyberops','Guadeloupe','Présentiel'), s('cyberops','Tous territoires','FOAD'), s('cyberops','Tous territoires','E-learning'),
-  s('ethical-hacker','Martinique','Présentiel'), s('ethical-hacker','Tous territoires','FOAD'),
-  s('python-essentials-1','Martinique','Présentiel'), s('python-essentials-1','Tous territoires','FOAD'), s('python-essentials-1','Tous territoires','E-learning'),
-  s('python-essentials-2','Martinique','Présentiel'), s('python-essentials-2','Tous territoires','FOAD'), s('python-essentials-2','Tous territoires','E-learning'),
-  s('devnet-associate','Martinique','Présentiel'), s('devnet-associate','Tous territoires','FOAD'),
-  s('iot-introduction','Martinique','Présentiel'), s('iot-introduction','Tous territoires','FOAD'), s('iot-introduction','Tous territoires','E-learning'),
-  s('iot-connecting-things','Martinique','Présentiel'), s('iot-connecting-things','Tous territoires','FOAD'),
-  s('iot-big-data-analytics','Martinique','Présentiel'), s('iot-big-data-analytics','Tous territoires','FOAD'),
-  s('iot-security','Martinique','Présentiel'), s('iot-security','Tous territoires','FOAD'),
-  s('iot-hackathon','Martinique','Présentiel'), s('iot-hackathon','Tous territoires','FOAD'),
-  s('linux-essentials','Martinique','Présentiel'), s('linux-essentials','Tous territoires','FOAD'), s('linux-essentials','Tous territoires','E-learning'),
-  s('data-analytics-essentials','Martinique','Présentiel'), s('data-analytics-essentials','Tous territoires','FOAD'), s('data-analytics-essentials','Tous territoires','E-learning'),
-  s('az-900','Martinique','Présentiel'), s('az-900','Guadeloupe','Présentiel'), s('az-900','Paris','Présentiel'), s('az-900','Tous territoires','FOAD'), s('az-900','Tous territoires','E-learning'),
-  s('az-104','Martinique','Présentiel'), s('az-104','Paris','Présentiel'), s('az-104','Tous territoires','FOAD'), s('az-104','Tous territoires','E-learning'),
-  s('sc-900','Martinique','Présentiel'), s('sc-900','Tous territoires','FOAD'), s('sc-900','Tous territoires','E-learning'),
-  s('ai-900','Paris','Présentiel'), s('ai-900','Tous territoires','FOAD'), s('ai-900','Tous territoires','E-learning'),
-  s('ms-900','Martinique','Présentiel'), s('ms-900','Tous territoires','FOAD'), s('ms-900','Tous territoires','E-learning'),
+  // ── Sessions retirées en attendant les dates réelles ──
+  // Pour réactiver une session : s('slug','Territoire','Modalite'),
+  // puis renseigner sa date via opts { dateLabel: 'Du JJ/MM/AA au JJ/MM/AA' }.
+  // Exemple : s('ccna-itn','Martinique','Présentiel', { dateLabel: 'Du 15/09/26 au 03/10/26' }),
 ]
 const SESSIONS: Session[] = RAW.filter(Boolean) as Session[]
 
@@ -312,7 +292,9 @@ function CalendrierPage() {
             <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>Formations · Sessions</span>
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,3vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.75rem' }}>Calendrier des sessions</h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.62)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.75rem' }}>
-              {SESSIONS.length} sessions disponibles — Cisco Networking Academy et Microsoft. Dates confirmées sur convocation.
+              {SESSIONS.length > 0
+                ? `${SESSIONS.length} sessions disponibles — Cisco Networking Academy et Microsoft. Dates confirmées sur convocation.`
+                : "Prochaines sessions en cours de planification. Toutes nos formations Cisco Networking Academy et Microsoft sont disponibles à la demande — contactez-nous pour convenir d'une date."}
             </p>
             <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
               {[ {val:FORMATIONS.length.toString(),label:'Formations'}, {val:SESSIONS.filter(x=>x.modalite==='Présentiel').length.toString(),label:'Présentiel'}, {val:SESSIONS.filter(x=>x.modalite==='FOAD').length.toString(),label:'FOAD'}, {val:SESSIONS.filter(x=>x.modalite==='E-learning').length.toString(),label:'E-learning'}, {val:SESSIONS_PREP.length>0?SESSIONS_PREP.length.toString():'—',label:'Planifiées'} ].map(st => (

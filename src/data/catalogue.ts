@@ -104,7 +104,32 @@ export const FORMATIONS: Formation[] = [
     prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
 
+  {
+    slug: 'ccnp-enterprise',
+    titre: 'CCNP Enterprise',
+    titreLong: 'CCNP Enterprise — ENCOR 350-401 + ENARSI 300-410',
+    editeur: 'Cisco Networking Academy', famille: 'Réseaux & CCNA',
+    niveau: 'Avancé', duree: '90 heures', dureeJours: 12,
+    certification: 'Cisco Certified Network Professional (CCNP) Enterprise',
+    examCode: '350-401 ENCOR + 300-410 ENARSI',
+    modalites: ['Présentiel', 'FOAD'],
+    description: 'Routage avancé, OSPF, EIGRP, BGP, MPLS, DMVPN, sécurité et automatisation d entreprise. Niveau professionnel.',
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+  },
+
   // ── CISCO — Cybersécurité ──────────────────────────────────────────────────
+  {
+    slug: 'ccnp-security',
+    titre: 'CCNP Security',
+    titreLong: 'CCNP Security — SCOR 350-701 v2.0',
+    editeur: 'Cisco Networking Academy', famille: 'Cybersécurité',
+    niveau: 'Avancé', duree: '80 heures', dureeJours: 10,
+    certification: 'Cisco Certified Network Professional (CCNP) Security',
+    examCode: '350-701 SCOR v2.0',
+    modalites: ['Présentiel', 'FOAD'],
+    description: 'Sécurité réseau et cloud, VPN, Cisco ISE, Secure Firewall, endpoint, plus vulnérabilités IA/LLM et cryptographie post-quantique. Niveau professionnel.',
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+  },
   {
     slug: 'cybersecurity-essentials',
     titre: 'Cybersecurity Essentials',

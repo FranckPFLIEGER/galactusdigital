@@ -169,13 +169,13 @@ function FormationsPage() {
               Certifications IT
             </h1>
             <p style={{ fontSize: "1rem", color: "rgba(255,255,255,.65)", maxWidth: "680px", lineHeight: 1.8, marginBottom: "2rem" }}>
-              25 formations certifiantes officielles dispensées par des formateurs accrédités éditeurs.
+              27 formations certifiantes officielles dispensées par des formateurs accrédités éditeurs.
               Présentiel, FOAD et E-learning — dans les territoires ultramarins et en France hexagonale.
             </p>
             {/* Stats */}
             <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap" }}>
               {[
-                ["25", "formations"],
+                ["27", "formations"],
                 ["2", "éditeurs officiels"],
                 ["8", "familles"],
                 ["100%", "de réussite (518 présentés)"],
@@ -207,14 +207,14 @@ function FormationsPage() {
                   col: "#E41F26",
                   titre: "Réseaux & Infrastructure",
                   pitch: "Le socle universellement reconnu, du câblage au réseau d'entreprise piloté par l'IA.",
-                  etapes: "Networking Essentials → CCNA (ITN · SRWE · ENSA) → Infrastructure réseau (RS en cours d'enregistrement)",
+                  etapes: "Networking Essentials → CCNA (ITN · SRWE · ENSA) → CCNP Enterprise → Infrastructure réseau (RS en cours d'enregistrement)",
                   debouche: "Technicien réseau, administrateur infrastructure, ingénieur réseau",
                 },
                 {
                   col: "#1D1D1B",
                   titre: "Cybersécurité",
                   pitch: "Un des axes les plus porteurs en salaire : défense, SOC et sécurité offensive.",
-                  etapes: "Cybersecurity Essentials → CCNA Cybersecurity → Ethical Hacker",
+                  etapes: "Cybersecurity Essentials → CCNA Cybersecurity → CCNP Security → Ethical Hacker",
                   debouche: "Analyste SOC, pentester, ingénieur sécurité",
                 },
                 {

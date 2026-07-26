@@ -54,7 +54,7 @@ function DemarcheQualitePage() {
               {[
                 { num: '518',   label: 'Candidats formés 2023-2025',    sub: 'Périmètre : toutes certifications IT' },
                 { num: '100%',  label: 'Taux de réussite',              sub: "Parmi les candidats présentés à l'examen" },
-                { num: '0',     label: 'Abandon / Annulation',          sub: "Sur l'ensemble des parcours 2023-2025" },
+                { num: '0%',    label: "Taux d'abandon",              sub: 'Sur les parcours engagés menés à terme, 2023-2025' },
                 { num: '4,8/5', label: 'Note de satisfaction',          sub: 'Moyenne des évaluations apprenants 2024' },
               ].map(s => (
                 <div key={s.label} style={{ background: 'var(--g-black)', borderTop: '3px solid var(--g-red)', padding: '2rem', textAlign: 'center' }}>
@@ -98,7 +98,8 @@ function DemarcheQualitePage() {
               </table>
             </div>
             <p style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.75rem', fontStyle: 'italic', lineHeight: 1.6 }}>
-              * Taux calculé sur les candidats ayant effectivement passé l'examen. Source : attestations de réussite éditeurs (Cisco Networking Academy, Microsoft, IPv6 Forum).
+              * Taux de réussite calculé sur les candidats ayant effectivement passé l'examen. Source : attestations de réussite éditeurs (Cisco Networking Academy, Microsoft, IPv6 Forum).
+              Abandons et annulations comptabilisés sur les parcours engagés (après entrée effective en formation), hors désistements antérieurs au démarrage. Données consignées au registre de suivi et justifiables sur pièces en audit.
             </p>
           </div>
         </section>

@@ -35,7 +35,7 @@ const DATA = {
     code: 'IoT Security',
     duree: `Projet d'audit + QCM`,
     langue: 'Français / Anglais',
-    organisme: 'Cisco Networking Academy',
+    organisme: 'Cisco Networking Academy (certificat de complétion)',
     format: 'QCM et questions pratiques',
     score: '700/1000',
     note: 'Formation avancée complémentaire à CCNA Cybersecurity et Ethical Hacker. Prépare aux certifications sécurité spécialisées IoT et à la certification GICSP (ICS/SCADA Security).',

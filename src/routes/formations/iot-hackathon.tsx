@@ -35,7 +35,7 @@ const DATA = {
     code: 'IoT Hackathon',
     duree: 'Présentation jury (30 min)',
     langue: 'Français / Anglais',
-    organisme: 'Cisco Networking Academy',
+    organisme: 'Cisco Networking Academy (certificat de complétion)',
     format: 'QCM et questions pratiques',
     score: '700/1000',
     note: '',

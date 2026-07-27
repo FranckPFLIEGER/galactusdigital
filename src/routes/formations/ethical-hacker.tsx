@@ -35,7 +35,7 @@ const DATA = {
     code: 'Ethical Hacker Final Exam',
     duree: 'Évaluation continue',
     langue: 'Français',
-    organisme: 'Cisco Networking Academy',
+    organisme: 'Cisco Networking Academy (certificat de complétion)',
     format: 'QCM et questions pratiques',
     score: '700/1000',
     note: '',

@@ -35,10 +35,10 @@ const DATA = {
     code: 'PCAP-31-03',
     duree: '65 minutes',
     langue: 'Français',
-    organisme: 'Cisco Networking Academy',
+    organisme: 'Python Institute / OpenEDG (Pearson VUE)',
     format: 'QCM et questions pratiques',
     score: '700/1000',
-    note: `Examen PCAP-31-0x délivré par l'OpenEDG Python Institute. Après PCAP, la progression naturelle mène à PCPP1 — Certified Professional in Python Programming.`,
+    note: `Examen PCAP-31-0x délivré par l'OpenEDG Python Institute. Après PCAP, la progression naturelle mène à PCPP1 — Certified Professional in Python Programming. Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",

@@ -303,7 +303,7 @@ export function Header() {
       {/* Ticker */}
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
-          <span>Bienvenue chez Galactus Digital</span>
+          <span>Bienvenue chez Galactus Digital&nbsp;&nbsp;•&nbsp;&nbsp;Voucher d'examen officiel Pearson VUE inclus&nbsp;&nbsp;•&nbsp;&nbsp;100% de réussite parmi les présentés à l'examen&nbsp;&nbsp;•&nbsp;&nbsp;Certifications Cisco, Microsoft, Python Institute &amp; LPI&nbsp;&nbsp;•&nbsp;&nbsp;Organisme certifié Qualiopi</span>
         </div>
       </div>
 

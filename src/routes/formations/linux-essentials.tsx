@@ -35,10 +35,10 @@ const DATA = {
     code: '010-160 Linux Essentials',
     duree: '60 minutes',
     langue: 'Français / Anglais',
-    organisme: 'Cisco Networking Academy',
+    organisme: 'LPI — Linux Professional Institute (Pearson VUE)',
     format: 'QCM et questions pratiques',
     score: '500 / 800',
-    note: 'Certification Linux Essentials délivrée par le LPI (Linux Professional Institute). Elle prépare à LPIC-1 (Linux Administrator) et aux parcours CCNA Automation et cybersécurité.',
+    note: `Certification Linux Essentials délivrée par le LPI (Linux Professional Institute). Elle prépare à LPIC-1 (Linux Administrator) et aux parcours CCNA Automation et cybersécurité. Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",

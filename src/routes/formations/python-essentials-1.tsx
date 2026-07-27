@@ -35,10 +35,10 @@ const DATA = {
     code: 'PCEP-30-02',
     duree: '45 minutes',
     langue: 'Français',
-    organisme: 'Cisco Networking Academy',
+    organisme: 'Python Institute / OpenEDG (Pearson VUE)',
     format: 'QCM et questions pratiques',
     score: '700/1000',
-    note: `La certification PCEP est délivrée par l'OpenEDG Python Institute. Elle prépare à Python Essentials 2 et à la certification PCAP (Associate Level).`,
+    note: `La certification PCEP est délivrée par l'OpenEDG Python Institute. Elle prépare à Python Essentials 2 et à la certification PCAP (Associate Level). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",

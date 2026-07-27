@@ -35,7 +35,7 @@ const DATA = {
     code: 'IoT Introduction',
     duree: 'Évaluation continue',
     langue: 'Français / Anglais',
-    organisme: 'Cisco Networking Academy',
+    organisme: 'Cisco Networking Academy (certificat de complétion)',
     format: 'QCM et questions pratiques',
     score: '700/1000',
     note: ``,

@@ -35,7 +35,7 @@ const DATA = {
     code: 'IoT Fundamentals: Connecting Things',
     duree: 'Projet final + QCM',
     langue: 'Français / Anglais',
-    organisme: 'Cisco Networking Academy',
+    organisme: 'Cisco Networking Academy (certificat de complétion)',
     format: 'QCM et questions pratiques',
     score: '700/1000',
     note: 'Prérequis recommandé avant IoT Fundamentals: Big Data & Analytics (cours 2/3) et le Hackathon Playbook (cours 3/3).',

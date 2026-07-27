@@ -35,10 +35,10 @@ const DATA = {
     code: 'AI-900',
     duree: '45 minutes',
     langue: 'Français / Anglais',
-    organisme: 'Pearson VUE',
+    organisme: 'Microsoft (Pearson VUE)',
     format: 'QCM et questions à réponses multiples',
     score: '700 / 1000',
-    note: `La certification AI-900 n'expire pas. Elle prépare aux certifications avancées AI-102 (AI Engineer Associate) et DP-100 (Data Scientist Associate).`,
+    note: `La certification AI-900 n'expire pas. Elle prépare aux certifications avancées AI-102 (AI Engineer Associate) et DP-100 (Data Scientist Associate). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Microsoft (Microsoft Certified Trainer — MCT)",

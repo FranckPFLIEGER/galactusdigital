@@ -35,7 +35,7 @@ const DATA = {
     code: 'Data Analytics Essentials Badge',
     duree: 'Évaluation continue',
     langue: 'Français / Anglais',
-    organisme: 'Cisco Networking Academy',
+    organisme: 'Cisco Networking Academy (certificat de complétion)',
     format: 'QCM et questions pratiques',
     score: '700 sur 1000',
     note: '',

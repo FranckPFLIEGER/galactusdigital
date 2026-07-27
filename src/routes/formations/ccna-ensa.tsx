@@ -36,7 +36,7 @@ const DATA = {
     { num: '09–12', titre: 'QoS, supervision et dépannage', duree: '14h', contenu: ['Concepts QoS — classification, marquage, mise en file d\'attente', 'Gestion réseau — SNMP, Syslog, NTP, CDP/LLDP', 'Conception réseau — hiérarchique (accès/distribution/cœur)', 'Méthodologie de dépannage — show, debug, analyse Packet Tracer'] },
     { num: '13–14', titre: 'Virtualisation et automatisation', duree: '14h', contenu: ['Virtualisation réseau — hyperviseurs, VMs, conteneurs', 'SDN et architectures basées sur contrôleur (Cisco DNA Center)', 'APIs REST — opérations GET/POST/PUT/DELETE, format JSON', 'Automatisation avec Ansible, Puppet, Chef — introduction pratique'] },
   ],
-  examen: { code: '200-301 CCNA', duree: '120 minutes', langue: 'Français', organisme: 'Cisco Networking Academy', format: 'QCM, drag-and-drop, simulation réseau Cisco', score: '825 / 1000', note: 'Ce module est le 3ème et dernier requis. La certification CCNA 200-301 est obtenue après validation des 3 modules ITN + SRWE + ENSA et passage de l\'examen Cisco Networking Academy.' },
+  examen: { code: '200-301 CCNA', duree: '120 minutes', langue: 'Français', organisme: 'Cisco (Pearson VUE)', format: 'QCM, drag-and-drop, simulation réseau Cisco', score: '825 / 1000', note: 'Ce module est le 3ème et dernier requis. La certification CCNA 200-301 est obtenue après validation des 3 modules ITN + SRWE + ENSA et passage de l\'examen Cisco Networking Academy. Le passage de l\'examen (voucher officiel) est inclus dans le tarif de la formation.' },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
     "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",

@@ -35,10 +35,10 @@ const DATA = {
     code: 'PL-300',
     duree: '100 minutes',
     langue: 'Français / Anglais',
-    organisme: 'Pearson VUE',
+    organisme: 'Microsoft (Pearson VUE)',
     format: 'QCM, études de cas et questions à réponses multiples',
     score: '700 / 1000',
-    note: 'La certification PL-300 est valable 12 mois. Renouvellement gratuit via une évaluation en ligne sur Microsoft Learn. Passerelle naturelle vers DP-600 (Fabric Analytics Engineer).',
+    note: `La certification PL-300 est valable 12 mois. Renouvellement gratuit via une évaluation en ligne sur Microsoft Learn. Passerelle naturelle vers DP-600 (Fabric Analytics Engineer). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Microsoft (Microsoft Certified Trainer — MCT)",

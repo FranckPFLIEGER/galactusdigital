@@ -35,10 +35,10 @@ const DATA = {
     code: '350-701 SCOR v2.0',
     duree: '120 minutes',
     langue: 'Anglais',
-    organisme: 'Pearson VUE',
+    organisme: 'Cisco (Pearson VUE)',
     format: 'QCM, glisser-déposer et simulations',
     score: 'Défini par Cisco (variable)',
-    note: 'La certification CCNP Security nécessite la réussite de l\'examen cœur SCOR 350-701 (v2.0, incluant sécurité IA/LLM et post-quantique) et d\'une concentration. Valable 3 ans. Socle vers le CCIE Security.',
+    note: `La certification CCNP Security nécessite la réussite de l'examen cœur SCOR 350-701 (v2.0, incluant sécurité IA/LLM et post-quantique) et d'une concentration. Valable 3 ans. Socle vers le CCIE Security. Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur Cisco CCNP / CCDP certifié (15+ ans d'expérience)",

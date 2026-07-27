@@ -35,10 +35,10 @@ const DATA = {
     code: '200-901 DEVASC',
     duree: '120 minutes',
     langue: 'Français',
-    organisme: 'Cisco Networking Academy',
+    organisme: 'Cisco (Pearson VUE)',
     format: 'QCM et questions pratiques',
     score: '825 / 1000',
-    note: '',
+    note: ` Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",

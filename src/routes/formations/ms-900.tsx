@@ -35,10 +35,10 @@ const DATA = {
     code: 'MS-900',
     duree: '60 minutes',
     langue: 'Français / Anglais',
-    organisme: 'Pearson VUE',
+    organisme: 'Microsoft (Pearson VUE)',
     format: 'QCM et questions à réponses multiples',
     score: '700 / 1000',
-    note: `La certification MS-900 n'expire pas. Elle constitue un point d'entrée pour les certifications M365 avancées : MS-100 (Identity), MS-700 (Teams), MS-500 (Security).`,
+    note: `La certification MS-900 n'expire pas. Elle constitue un point d'entrée pour les certifications M365 avancées : MS-100 (Identity), MS-700 (Teams), MS-500 (Security). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Microsoft (Microsoft Certified Trainer — MCT)",

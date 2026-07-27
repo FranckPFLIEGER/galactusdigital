@@ -47,7 +47,7 @@ export function Hero() {
             de formation certifiante, nous proposons les certifications officielles{' '}
             <strong style={{ color: '#fff' }}>Cisco, Microsoft et IPv6 Forum</strong>
             {' — en présentiel, à distance (FOAD) ou en e-learning tutoré —'}
-            {' pour vous accompagner vers des certifications reconnues dans plus de 170 pays.'}
+            {' pour vous accompagner vers des certifications reconnues dans plus de 170 pays. Voucher d\'examen officiel (Pearson VUE) inclus.'}
           </p>
           <div className="hero-actions" style={{ animation: 'fadeUp 0.7s ease-out 0.36s both' }}>
             <a href="/formations" className="btn-red">

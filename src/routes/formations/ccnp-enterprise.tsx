@@ -35,10 +35,10 @@ const DATA = {
     code: '350-401 + 300-410',
     duree: '120 min (ENCOR) + 90 min (ENARSI)',
     langue: 'Anglais',
-    organisme: 'Pearson VUE',
+    organisme: 'Cisco (Pearson VUE)',
     format: 'QCM, glisser-déposer et simulations',
     score: 'Défini par Cisco (variable)',
-    note: 'La certification CCNP Enterprise nécessite la réussite de deux examens : ENCOR 350-401 (cœur) et une concentration, ici ENARSI 300-410. Valable 3 ans. Socle vers le CCIE Enterprise.',
+    note: `La certification CCNP Enterprise nécessite la réussite de deux examens : ENCOR 350-401 (cœur) et une concentration, ici ENARSI 300-410. Valable 3 ans. Socle vers le CCIE Enterprise. Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur Cisco CCNP / CCDP certifié (15+ ans d'expérience)",

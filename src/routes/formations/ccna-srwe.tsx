@@ -36,7 +36,7 @@ const DATA = {
     { num: '11–13', titre: 'Routes statiques', duree: '12h', contenu: ['Routes statiques IPv4 et IPv6 — types et cas d\'usage', 'Routes statiques par défaut et flottantes (failover)', 'Dépannage des routes statiques avec show ip route', 'TP — Topologie multi-routeurs avec routes statiques'] },
     { num: '14–16', titre: 'Réseau sans fil (WLAN)', duree: '10h', contenu: ['Architecture WLAN — AP autonome et contrôlé (WLC)', 'Standards IEEE 802.11 a/b/g/n/ac/ax et canaux', 'Sécurité WLAN — WPA2, WPA3, 802.1X', 'TP — Configuration WLAN avec WLC Cisco'] },
   ],
-  examen: { code: '200-301 CCNA', duree: '120 minutes', langue: 'Français', organisme: 'Cisco Networking Academy', format: 'QCM, drag-and-drop, simulation réseau', score: '825 / 1000', note: 'Ce module est le 2ème des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA.' },
+  examen: { code: '200-301 CCNA', duree: '120 minutes', langue: 'Français', organisme: 'Cisco (Pearson VUE)', format: 'QCM, drag-and-drop, simulation réseau', score: '825 / 1000', note: 'Ce module est le 2ème des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA. Le passage de l\'examen (voucher officiel) est inclus dans le tarif de la formation.' },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
     "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",

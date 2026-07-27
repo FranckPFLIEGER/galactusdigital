@@ -35,10 +35,10 @@ const DATA = {
     code: 'AZ-104',
     duree: '120 minutes',
     langue: 'Français / Anglais',
-    organisme: 'Pearson VUE',
+    organisme: 'Microsoft (Pearson VUE)',
     format: 'QCM et questions à réponses multiples',
     score: '700 / 1000',
-    note: 'La certification AZ-104 est valable 12 mois. Renouvellement gratuit via une évaluation en ligne sur Microsoft Learn.',
+    note: `La certification AZ-104 est valable 12 mois. Renouvellement gratuit via une évaluation en ligne sur Microsoft Learn. Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Microsoft (Microsoft Certified Trainer — MCT)",

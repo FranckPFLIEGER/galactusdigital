@@ -38,13 +38,13 @@ export function Results() {
               <div className="result-year">{y.year}</div>
               <div className="result-main">
                 <span className="result-big" style={{ color: '#E41F26' }}>100%</span>
-                <span className="result-unit">de réussite<br />parmi les présentés</span>
+                <span className="result-unit">de réussite<br />parmi les présentés à l'examen</span>
               </div>
               <div style={{ width: '40px', height: '2px', background: '#E41F26', margin: '1rem auto' }} />
               <div className="result-details">
                 <div className="result-detail-item result-detail-highlight">
                   <span className="result-detail-label" style={{ color: 'rgba(255,255,255,0.9)', fontWeight: 700 }}>
-                    Candidats présentés
+                    Candidats formés
                   </span>
                   <span className="result-detail-num" style={{ color: '#E41F26', fontSize: '1.6rem' }}>{y.presentes}</span>
                 </div>
@@ -57,12 +57,12 @@ export function Results() {
           <div className="results-total-inner">
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-title)', fontSize: '3.5rem', fontWeight: 700, color: '#E41F26', lineHeight: 1 }}>518</div>
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>candidats présentés, toutes formations (2023-2025)</div>
+              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>candidats formés, toutes formations (2023-2025)</div>
             </div>
             <div style={{ width: '1px', height: '60px', background: 'rgba(228,31,38,0.3)' }} />
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-title)', fontSize: '3.5rem', fontWeight: 700, color: '#E41F26', lineHeight: 1 }}>100%</div>
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>de réussite parmi les présentés</div>
+              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>de réussite parmi les présentés à l'examen</div>
             </div>
             <div style={{ width: '1px', height: '60px', background: 'rgba(228,31,38,0.3)' }} />
             <div style={{ textAlign: 'center' }}>

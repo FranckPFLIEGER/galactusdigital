@@ -72,7 +72,7 @@ function DemarcheQualitePage() {
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem', minWidth: '700px' }}>
                 <thead>
                   <tr style={{ background: 'var(--g-black)', color: '#fff' }}>
-                    {['Année', 'Candidats formés', 'Abandons', 'Annulations', 'Réussite parmi présentés', 'Note formation', 'Note formateur', 'Note impact travail'].map(h => (
+                    {['Année', 'Candidats formés', 'Abandons', 'Annulations', 'Réussite parmi présentés à l\'examen', 'Note formation', 'Note formateur', 'Note impact travail'].map(h => (
                       <th key={h} style={{ fontFamily: 'var(--font-title)', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '0.75rem 1rem', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.08)' }}>{h}</th>
                     ))}
                   </tr>

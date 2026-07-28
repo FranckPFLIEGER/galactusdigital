@@ -26,7 +26,7 @@ const points = [
 
 const certPrograms = [
   { name: 'Microsoft — Azure, M365, Power BI, Intune & Copilot',          meta: 'n° 4653557' },
-  { name: 'Cisco Networking Academy — Réseaux & CCNA',  meta: 'n° 3018982' },
+  { name: 'Cisco Networking Academy — CCNA & CCNP',  meta: 'n° 3018982' },
   { name: 'Cisco Networking Academy — Cybersécurité',   meta: 'n° 3018982' },
   { name: 'Cisco Networking Academy — IoT & Automation',    meta: 'n° 3018982' },
   { name: 'IPv6 Forum',                      meta: 'Official' },

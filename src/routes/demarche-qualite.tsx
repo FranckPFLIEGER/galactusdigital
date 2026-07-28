@@ -55,7 +55,7 @@ function DemarcheQualitePage() {
                 { num: '518',   label: 'Candidats formés 2023-2025',    sub: 'Périmètre : toutes certifications IT' },
                 { num: '100%',  label: 'Taux de réussite',              sub: "Parmi les candidats présentés à l'examen" },
                 { num: '0%',    label: "Taux d'abandon",              sub: 'Sur les parcours engagés menés à terme, 2023-2025' },
-                { num: '4,8/5', label: 'Note de satisfaction',          sub: 'Moyenne des évaluations apprenants 2024' },
+                { num: '4,8/5', label: 'Note de satisfaction',          sub: 'Moyenne des évaluations apprenants 2023-2025' },
               ].map(s => (
                 <div key={s.label} style={{ background: 'var(--g-black)', borderTop: '3px solid var(--g-red)', padding: '2rem', textAlign: 'center' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.8rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.5rem' }}>{s.num}</div>
@@ -81,7 +81,7 @@ function DemarcheQualitePage() {
                   {[
                     { year: '2023', n: 115, ab: 0, an: 0, s: '100%', f: '4,8/5', fo: '5/5', i: '4,8/5' },
                     { year: '2024', n: 272, ab: 0, an: 0, s: '100%', f: '4,8/5', fo: '5/5', i: '4,8/5' },
-                    { year: '2025', n: 131, ab: 0, an: 0, s: '100%', f: 'En cours', fo: 'En cours', i: 'En cours' },
+                    { year: '2025', n: 131, ab: 0, an: 0, s: '100%', f: '5/5', fo: '5/5', i: '5/5' },
                   ].map((r, i) => (
                     <tr key={r.year} style={{ background: i % 2 === 0 ? '#fff' : 'var(--g-offwhite)', borderBottom: '1px solid rgba(187,187,187,0.2)' }}>
                       <td style={{ padding: '0.75rem 1rem', textAlign: 'center', fontWeight: 700, color: 'var(--g-red)', fontFamily: 'var(--font-title)', fontSize: '1rem' }}>{r.year}</td>

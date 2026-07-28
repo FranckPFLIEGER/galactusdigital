@@ -169,7 +169,7 @@ function FormationsPage() {
               Certifications IT
             </h1>
             <p style={{ fontSize: "1rem", color: "rgba(255,255,255,.65)", maxWidth: "680px", lineHeight: 1.8, marginBottom: "2rem" }}>
-              {FORMATIONS.length} formations certifiantes officielles dispensées par des formateurs accrédités éditeurs.
+             35 formations certifiantes officielles dispensées par des formateurs accrédités éditeurs.
               Présentiel, FOAD et E-learning — dans les territoires ultramarins et en France hexagonale.
             </p>
             {/* Stats */}

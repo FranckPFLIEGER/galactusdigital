@@ -169,13 +169,13 @@ function FormationsPage() {
               Certifications IT
             </h1>
             <p style={{ fontSize: "1rem", color: "rgba(255,255,255,.65)", maxWidth: "680px", lineHeight: 1.8, marginBottom: "2rem" }}>
-              27 formations certifiantes officielles dispensées par des formateurs accrédités éditeurs.
+              {FORMATIONS.length} formations certifiantes officielles dispensées par des formateurs accrédités éditeurs.
               Présentiel, FOAD et E-learning — dans les territoires ultramarins et en France hexagonale.
             </p>
             {/* Stats */}
             <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap" }}>
               {[
-                ["27", "formations"],
+                [String(FORMATIONS.length), "formations"],
                 ["2", "éditeurs officiels"],
                 ["8", "familles"],
                 ["100%", "de réussite (518 formés)"],

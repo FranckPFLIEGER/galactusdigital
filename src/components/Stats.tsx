@@ -2,7 +2,7 @@ import { useIntersection } from '../hooks/useIntersection'
 
 const stats = [
   { num: '+25', label: "ans d'expérience reconnue" },
-  { num: '131', label: 'stagiaires / 131 actions de formation e-learning en 2025' },
+  { num: '131', label: 'stagiaires en 2025' },
   { num: '518', label: 'candidats formés, toutes formations, en 3 ans' },
   { num: '100%', label: 'de réussite aux certifications éditeurs (2023-2025)' },
 ]

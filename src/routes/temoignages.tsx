@@ -1,60 +1,141 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import { Play, Quote } from 'lucide-react'
+import { Quote } from 'lucide-react'
 
 export const Route = createFileRoute('/temoignages')({
   component: TemoignagesPage,
 })
 
+// ─────────────────────────────────────────────────────────────────────────────
+// VIDÉOS TV — passages médias régionaux
+// Pour activer une vidéo : renseigner `src` avec le chemin du fichier dans
+// /public/videos/  (ex: '/videos/2016_06_20_ATV_IPv6.mp4')
+// et éventuellement `poster` avec une vignette dans le même dossier.
+// Tant que `src` est vide (''), la carte affiche « Bientôt disponible ».
+// ─────────────────────────────────────────────────────────────────────────────
+const videosTV = [
+  {
+    titre: 'Reportage Cybersécurité',
+    chaine: 'Martinique 1ère',
+    date: '20 nov. 2015',
+    src: '',
+    poster: '',
+  },
+  {
+    titre: 'Reportage IPv6',
+    chaine: 'ATV Martinique',
+    date: '20 juin 2016',
+    src: '',
+    poster: '',
+  },
+  {
+    titre: 'Reportage Cybersécurité',
+    chaine: 'ATV Martinique',
+    date: '29 nov. 2016',
+    src: '',
+    poster: '',
+  },
+  {
+    titre: 'Sawka di — Franck Pflieger',
+    chaine: 'Média régional',
+    date: '20 oct. 2017',
+    src: '',
+    poster: '',
+  },
+  {
+    titre: 'Reportage Cybersécurité',
+    chaine: 'Martinique 1ère',
+    date: '14 nov. 2017',
+    src: '',
+    poster: '',
+  },
+]
+
+// ─────────────────────────────────────────────────────────────────────────────
+// TÉMOIGNAGE VIDÉO — apprenant certifié
+// ─────────────────────────────────────────────────────────────────────────────
+const temoignageVideo = {
+  titre: 'Formation IPv6 — juin 2016',
+  lieu: 'Martinique · Hôtel Cap Est',
+  src: '/videos/tem-ipv6-cap-est-2016.mp4',
+  poster: '/videos/tem-ipv6-cap-est-2016-poster.jpg',
+}
+
+// ─────────────────────────────────────────────────────────────────────────────
+// TÉMOIGNAGES ÉCRITS — issus de lettres de recommandation réelles
+// Signature RGPD : initiales prénom·nom + fonction + entreprise + lieu
+// ─────────────────────────────────────────────────────────────────────────────
 const temoignagesEcrits = [
   {
-    nom: 'Responsable IT',
-    entreprise: 'Collectivité territoriale — Martinique',
-    formation: 'CCNA Routing & Switching',
-    annee: '2024',
-    texte: 'La formation dispensée par le président de GALACTUS Digital a complètement transformé notre approche des réseaux. La pédagogie est exceptionnelle — concrets, adaptés à notre contexte ultramarin, les ateliers pratiques nous ont permis de certifier 100% de notre équipe. Je recommande sans réserve.',
-    note: '5/5',
+    initiales: 'P.B.',
+    fonction: 'Directeur & responsable des systèmes d’information',
+    entreprise: 'Biolab Martinique',
+    lieu: 'Martinique',
+    formation: 'Cybersécurité',
+    annee: '2018',
+    texte:
+      "L'étendue de la formation Cybersécurité, dispensée à plein temps pendant une semaine, a permis à notre ingénieur d'acquérir de solides bases théoriques et pratiques. Le professionnalisme, la rigueur et la pédagogie des intervenants ont été essentiels, avec des applications concrètes dès le retour en entreprise : analyse RGPD, audit de sécurité interne, évaluation des fournisseurs. Je recommande fortement cette formation.",
   },
   {
-    nom: 'Administrateur réseaux',
-    entreprise: 'Entreprise privée — Guadeloupe',
-    formation: 'CCNP Enterprise',
-    annee: '2024',
-    texte: "Enfin un organisme qui comprend les enjeux du numérique aux Caraïbes. La formation CCNP était exigeante mais l'accompagnement de bout en bout a fait toute la différence. Le simulateur Packet Tracer utilisé en cours m'a permis de pratiquer sans risque avant d'intervenir sur nos infrastructures réelles.",
-    note: '5/5',
+    initiales: 'J-H.T.',
+    fonction: 'Responsable des opérations clients',
+    entreprise: 'IDOM',
+    lieu: 'Martinique',
+    formation: 'CCNA',
+    annee: '2020',
+    texte:
+      "Un grand merci pour la qualité de l'enseignement et la pédagogie. Nos collaborateurs ont été certifiés CCNA les uns après les autres, avec des résultats à la hauteur de leur investissement. L'accompagnement a confirmé toutes nos attentes.",
   },
   {
-    nom: 'Ingénieure systèmes',
-    entreprise: 'Opérateur télécom — Réunion',
-    formation: 'IPv6 Forum Certification',
-    annee: '2023',
-    texte: "En tant que femme dans un secteur très masculin, j'ai trouvé chez GALACTUS Digital une formation qui m'a mis sur un pied d'égalité avec mes collègues. La certification IPv6 a été un vrai tremplin dans ma carrière. Merci pour cet accompagnement de qualité.",
-    note: '5/5',
+    initiales: 'C-A.H.',
+    fonction: 'Directeur des systèmes d’information',
+    entreprise: 'Collectivité Territoriale de Martinique',
+    lieu: 'Martinique',
+    formation: 'Réseaux',
+    annee: '2015',
+    texte:
+      "Je tiens à faire part de ma satisfaction quant à la qualité, à la fois pédagogique et technique, des interventions réalisées pour la collectivité. Nous espérons poursuivre cette relation de qualité.",
   },
   {
-    nom: "Directeur des systèmes d'information",
-    entreprise: 'Établissement scolaire — Martinique',
-    formation: 'Microsoft Azure Administrator',
-    annee: '2025',
-    texte: "Nous avions besoin de former rapidement nos techniciens sur Azure dans le cadre de notre migration cloud. GALACTUS Digital a su adapter le contenu à notre contexte précis et à nos contraintes de connectivité en FOAD. Résultat : 100% de certification au premier passage.",
-    note: '5/5',
+    initiales: 'A.A.',
+    fonction: 'Responsable Réseau de Transport',
+    entreprise: 'Digicel Antilles-Guyane',
+    lieu: 'Martinique',
+    formation: 'Cisco Service Provider',
+    annee: '2018',
+    texte:
+      "La formation Cisco Service Provider correspondait à la fois au cursus certifiant et à nos besoins spécifiques. Les moyens mis en œuvre — laboratoires virtuels — et l'expertise reconnue du formateur ont permis à l'ensemble du public de suivre, malgré des niveaux différents. Une formation à recommander.",
   },
   {
-    nom: 'Technicien réseau',
-    entreprise: 'Administration publique — Guyane',
-    formation: 'CCNA Cybersecurity (ex-CyberOps)',
-    annee: '2023',
-    texte: "Cette formation cybersécurité m'a donné toutes les clés pour comprendre et sécuriser nos infrastructures. Le fait qu'elle soit disponible à distance depuis la Guyane a été déterminant — nous n'avons plus à nous déplacer en métropole pour accéder à des formations de ce niveau.",
-    note: '5/5',
+    initiales: 'G.L.B.',
+    fonction: 'Chef de projet',
+    entreprise: 'Learning Tribes',
+    lieu: 'Paris',
+    formation: 'Formation réseau & IT',
+    annee: '2017',
+    texte:
+      "Beaucoup de pédagogie et une écoute constante des apprenants pour leur transmettre savoir et expertise en informatique et réseau. L'efficacité du travail et les qualités humaines ont été unanimement appréciées, tant par le client final que par l'équipe projet. Nous recommandons fortement ses services.",
   },
   {
-    nom: 'Chef de projet informatique',
-    entreprise: 'Secteur privé — Saint-Martin',
-    formation: 'Microsoft Azure Administrator (AZ-104)',
-    annee: '2024',
-    texte: "La certification AZ-104 était un objectif que je poursuivais depuis longtemps. Grâce à la méthode de GALACTUS Digital — évaluation des acquis à chaque module, ateliers pratiques, soutien entre les sessions — j'ai réussi du premier coup. Un organisme vraiment professionnel.",
-    note: '5/5',
+    initiales: 'F.G.',
+    fonction: 'Responsable Support & Help Desk',
+    entreprise: 'Air France — Direction Générale SI',
+    lieu: 'Paris',
+    formation: 'Formation réseau',
+    annee: '2019',
+    texte:
+      "Mission de formateur réseau menée à bien pour une population d'agents en horaires décalés : préparation du plan de formation, création des contenus et des modules, ateliers techniques de mise en pratique et évaluation continue des compétences. Un atout majeur de la réussite du projet, avec un professionnalisme sans faille.",
+  },
+  {
+    initiales: 'B.H.',
+    fonction: 'Responsable technique',
+    entreprise: 'SFR Business',
+    lieu: 'Paris',
+    formation: 'Pilotage de projets réseau',
+    annee: '2022',
+    texte:
+      "Curieux, responsable, très impliqué et doté d'un esprit critique et de synthèse. Un moteur qui aime les challenges, sachant travailler en parfaite autonomie tout au long de ses missions. Nous le recommandons vivement pour sa connaissance pointue du secteur.",
   },
 ]
 
@@ -74,9 +155,9 @@ function TemoignagesPage() {
               Témoignages<br />de nos apprenants
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8 }}>
-              Ils ont choisi GALACTUS Digital pour leurs certifications IT. Voici ce qu'ils en disent —
+              Ils ont choisi GALACTUS Digital pour leurs formations et certifications IT. Voici ce qu'ils en disent —
               des professionnels des territoires ultramarins et de France hexagonale qui ont transformé
-              leur carrière grâce à une certification officielle éditeur.
+              leur carrière grâce à un accompagnement de qualité.
             </p>
           </div>
         </section>
@@ -94,23 +175,75 @@ function TemoignagesPage() {
               par les médias régionaux. Retrouvez ici nos passages TV et interventions presse.
             </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem' }}>
-              {[1, 2, 3].map(i => (
-                <div key={i} style={{ background: 'var(--g-black)', border: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden' }}>
-                  <div style={{ aspectRatio: '16/9', background: '#1a1a18', display: 'flex', alignItems: 'center', justifyContent: 'center', cursor: 'pointer' }}>
-                    <div style={{ width: '56px', height: '56px', background: 'var(--g-red)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                      <Play size={24} color="white" fill="white" />
-                    </div>
+              {videosTV.map((v, i) => (
+                <div key={i} style={{ background: 'var(--g-black)', border: '1px solid rgba(255,255,255,0.06)', overflow: 'hidden', display: 'flex', flexDirection: 'column' }}>
+                  <div style={{ aspectRatio: '16/9', background: '#1a1a18' }}>
+                    {v.src ? (
+                      <video
+                        controls
+                        preload="metadata"
+                        poster={v.poster || undefined}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                      >
+                        <source src={v.src} type="video/mp4" />
+                        Votre navigateur ne prend pas en charge la lecture vidéo.
+                      </video>
+                    ) : (
+                      <div style={{ width: '100%', height: '100%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                        <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)' }}>
+                          Bientôt disponible
+                        </span>
+                      </div>
+                    )}
                   </div>
                   <div style={{ padding: '1rem 1.25rem' }}>
                     <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.85rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '0.25rem' }}>
-                      Reportage TV — Territoires ultramarins {2023 + i - 1}
+                      {v.titre}
                     </div>
-                    <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.45)' }}>
-                      À venir — vidéo en cours d'intégration
+                    <div style={{ fontSize: '0.78rem', color: 'rgba(255,255,255,0.55)' }}>
+                      {v.chaine} · {v.date}
                     </div>
                   </div>
                 </div>
               ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Témoignage vidéo apprenant */}
+        <section style={{ background: 'var(--g-black)', padding: '4rem 2rem', borderTop: '4px solid var(--g-red)' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>
+              Témoignage vidéo
+            </span>
+            <h2 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.5rem,2.4vw,2.2rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.5rem' }}>
+              La parole à nos apprenants
+            </h2>
+            <div className="g-rule" />
+            <div style={{ display: 'grid', gridTemplateColumns: 'minmax(0,640px) 1fr', gap: '2.5rem', alignItems: 'center', marginTop: '2rem' }}>
+              <div style={{ background: '#000', border: '1px solid rgba(255,255,255,0.08)', overflow: 'hidden' }}>
+                <video
+                  controls
+                  preload="metadata"
+                  poster={temoignageVideo.poster}
+                  style={{ width: '100%', display: 'block', aspectRatio: '16/9', objectFit: 'cover' }}
+                >
+                  <source src={temoignageVideo.src} type="video/mp4" />
+                  Votre navigateur ne prend pas en charge la lecture vidéo.
+                </video>
+              </div>
+              <div>
+                <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.3rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: '#fff', marginBottom: '0.5rem' }}>
+                  {temoignageVideo.titre}
+                </div>
+                <div style={{ fontSize: '0.9rem', color: 'var(--g-red)', fontWeight: 600, marginBottom: '1rem' }}>
+                  {temoignageVideo.lieu}
+                </div>
+                <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.8 }}>
+                  Un apprenant revient sur la formation IPv6 dispensée par GALACTUS Digital en Martinique,
+                  et sur ce que cette montée en compétence a changé dans sa pratique professionnelle.
+                </p>
+              </div>
             </div>
           </div>
         </section>
@@ -123,6 +256,10 @@ function TemoignagesPage() {
             </span>
             <h2 className="section-h2" style={{ marginBottom: '0.5rem' }}>Ce qu'ils disent de nous</h2>
             <div className="g-rule" />
+            <p style={{ fontSize: '0.85rem', color: '#9a9a98', lineHeight: 1.7, marginTop: '1rem', marginBottom: '0.5rem', maxWidth: '620px', fontStyle: 'italic' }}>
+              Extraits de lettres de recommandation et de retours clients réels. Les noms sont abrégés en
+              initiales conformément au RGPD ; entreprises et territoires sont cités avec l'accord des signataires.
+            </p>
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               {temoignagesEcrits.map((t, i) => (
                 <div key={i} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '4px solid var(--g-red)', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -133,10 +270,10 @@ function TemoignagesPage() {
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end', marginTop: 'auto', gap: '1rem', flexWrap: 'wrap' }}>
                     <div>
                       <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>
-                        {t.nom}
+                        {t.initiales} — {t.fonction}
                       </div>
                       <div style={{ fontSize: '0.80rem', color: '#888', marginTop: '0.2rem' }}>
-                        {t.entreprise}
+                        {t.entreprise} — {t.lieu}
                       </div>
                     </div>
                     <div style={{ textAlign: 'right', flexShrink: 0 }}>
@@ -144,7 +281,7 @@ function TemoignagesPage() {
                         {t.formation}
                       </div>
                       <div style={{ fontSize: '0.75rem', color: '#888' }}>
-                        {t.annee} · {t.note}
+                        {t.annee}
                       </div>
                     </div>
                   </div>

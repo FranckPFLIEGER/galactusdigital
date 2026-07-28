@@ -94,9 +94,18 @@ const NC: Record<string,string> = { 'Fondamental':'#BBBBBB', 'Intermédiaire':'r
 
 // ── COMPOSANT GANTT ────────────────────────────────────────────────────────
 function GanttView() {
-  const today = new Date()
-  const months = Array.from({ length: 6 }, (_, i) => {
-    const d = new Date(today.getFullYear(), today.getMonth() + i, 1)
+  // Toutes les sessions ayant une date ferme (planifiées), quelle que soit leur source
+  const plannedSessions = [...SESSIONS.filter(s => s.statut === 'en_preparation'), ...SESSIONS_PREP]
+  const parsedDates = plannedSessions
+    .map(s => parseDateRange(s.dateLabel))
+    .filter((p): p is { start: Date; end: Date } => p !== null)
+    .sort((a, b) => a.start.getTime() - b.start.getTime())
+
+  // La fenêtre démarre au mois de la 1re session planifiée (ou aujourd'hui si aucune)
+  const anchor = parsedDates.length > 0 ? parsedDates[0].start : new Date()
+  const nbMonths = 12
+  const months = Array.from({ length: nbMonths }, (_, i) => {
+    const d = new Date(anchor.getFullYear(), anchor.getMonth() + i, 1)
     return {
       date: d,
       label: d.toLocaleDateString('fr-FR', { month: 'short' }).replace('.',''),
@@ -104,7 +113,7 @@ function GanttView() {
     }
   })
   const start6 = months[0].date
-  const end6   = new Date(months[5].date.getFullYear(), months[5].date.getMonth() + 1, 0)
+  const end6   = new Date(months[nbMonths-1].date.getFullYear(), months[nbMonths-1].date.getMonth() + 1, 0)
   const totalMs = end6.getTime() - start6.getTime()
 
   function pct(d: Date): number {
@@ -114,7 +123,7 @@ function GanttView() {
   const familles = Object.entries(FAMILLES)
 
   const prepBySlug: Record<string, Array<{ start: Date; end: Date; territoire: Territoire; modalite: Modalite; label: string }>> = {}
-  for (const sess of SESSIONS_PREP) {
+  for (const sess of plannedSessions) {
     const parsed = parseDateRange(sess.dateLabel)
     if (!parsed) continue
     const slug = sess.formation.slug
@@ -131,7 +140,7 @@ function GanttView() {
         {/* En-tête mois */}
         <div style={{ display: 'grid', gridTemplateColumns: '180px 1fr', marginBottom: '4px' }}>
           <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#888', padding: '0 0 4px 4px' }}>Famille</div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(6,1fr)', borderBottom: '1px solid rgba(187,187,187,0.3)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(12,1fr)', borderBottom: '1px solid rgba(187,187,187,0.3)' }}>
             {months.map(m => (
               <div key={m.label} style={{ textAlign: 'center', fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--g-black)', paddingBottom: '4px' }}>
                 {m.label} {m.year}
@@ -158,7 +167,7 @@ function GanttView() {
               <div style={{ position: 'relative', height: '28px', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.2)' }}>
                 {/* Grille mois */}
                 {months.map((m, i) => (
-                  <div key={i} style={{ position: 'absolute', left: `${(i / 6) * 100}%`, top: 0, bottom: 0, width: '1px', background: 'rgba(187,187,187,0.25)' }} />
+                  <div key={i} style={{ position: 'absolute', left: `${(i / 12) * 100}%`, top: 0, bottom: 0, width: '1px', background: 'rgba(187,187,187,0.25)' }} />
                 ))}
                 {/* Barres sessions planifiées */}
                 {hasPlanned ? (
@@ -314,7 +323,7 @@ function CalendrierPage() {
                 : "Prochaines sessions en cours de planification. Toutes nos formations Cisco Networking Academy et Microsoft sont disponibles à la demande — contactez-nous pour convenir d'une date."}
             </p>
             <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
-              {[ {val:FORMATIONS.length.toString(),label:'Formations'}, {val:SESSIONS.filter(x=>x.modalite==='Présentiel').length.toString(),label:'Présentiel'}, {val:SESSIONS.filter(x=>x.modalite==='FOAD').length.toString(),label:'FOAD'}, {val:SESSIONS.filter(x=>x.modalite==='E-learning').length.toString(),label:'E-learning'}, {val:SESSIONS_PREP.length>0?SESSIONS_PREP.length.toString():'—',label:'Planifiées'} ].map(st => (
+              {[ {val:FORMATIONS.length.toString(),label:'Formations'}, {val:SESSIONS.filter(x=>x.modalite==='Présentiel').length.toString(),label:'Présentiel'}, {val:SESSIONS.filter(x=>x.modalite==='FOAD').length.toString(),label:'FOAD'}, {val:SESSIONS.filter(x=>x.modalite==='E-learning').length.toString(),label:'E-learning'}, {val:(SESSIONS.filter(x=>x.statut==='en_preparation').length + SESSIONS_PREP.length) > 0 ? (SESSIONS.filter(x=>x.statut==='en_preparation').length + SESSIONS_PREP.length).toString() : '—',label:'Planifiées'} ].map(st => (
                 <div key={st.label}><div style={{ fontFamily: 'var(--font-title)', fontSize: '1.9rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1 }}>{st.val}</div><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.60rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', marginTop: '0.2rem' }}>{st.label}</div></div>
               ))}
             </div>
@@ -342,7 +351,7 @@ function CalendrierPage() {
             {/* Toggle vue */}
             <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.75rem' }}>
               <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-black)' }}>
-                {vue === 'gantt' ? 'Vision 6 mois — Gantt' : 'Liste des sessions'}
+                {vue === 'gantt' ? 'Planning des sessions — Gantt' : 'Liste des sessions'}
               </div>
               <div style={{ display: 'flex', gap: '4px' }}>
                 <button onClick={() => setVue('gantt')} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontFamily: 'var(--font-title)', fontSize: '0.66rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', padding: '0.5rem 1rem', border: vue === 'gantt' ? '1px solid var(--g-red)' : '1px solid rgba(187,187,187,0.4)', background: vue === 'gantt' ? 'var(--g-red)' : 'transparent', color: vue === 'gantt' ? '#fff' : '#666', cursor: 'pointer' }}>

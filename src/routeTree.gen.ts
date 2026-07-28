@@ -27,10 +27,19 @@ import { Route as IndexRouteImport } from './routes/index'
 import { Route as FormationsIndexRouteImport } from './routes/formations/index'
 import { Route as CertificationsRsIndexRouteImport } from './routes/certifications-rs/index'
 import { Route as FormationsSc900RouteImport } from './routes/formations/sc-900'
+import { Route as FormationsSc401RouteImport } from './routes/formations/sc-401'
+import { Route as FormationsSc300RouteImport } from './routes/formations/sc-300'
 import { Route as FormationsPythonEssentials2RouteImport } from './routes/formations/python-essentials-2'
 import { Route as FormationsPythonEssentials1RouteImport } from './routes/formations/python-essentials-1'
+import { Route as FormationsPl7008RouteImport } from './routes/formations/pl-7008'
+import { Route as FormationsPl7002RouteImport } from './routes/formations/pl-7002'
+import { Route as FormationsPl300RouteImport } from './routes/formations/pl-300'
 import { Route as FormationsNetworkingEssentialsRouteImport } from './routes/formations/networking-essentials'
 import { Route as FormationsMs900RouteImport } from './routes/formations/ms-900'
+import { Route as FormationsMs4017RouteImport } from './routes/formations/ms-4017'
+import { Route as FormationsMs4010RouteImport } from './routes/formations/ms-4010'
+import { Route as FormationsMs102RouteImport } from './routes/formations/ms-102'
+import { Route as FormationsMd102RouteImport } from './routes/formations/md-102'
 import { Route as FormationsLinuxEssentialsRouteImport } from './routes/formations/linux-essentials'
 import { Route as FormationsIotSecurityRouteImport } from './routes/formations/iot-security'
 import { Route as FormationsIotIntroductionRouteImport } from './routes/formations/iot-introduction'
@@ -42,11 +51,15 @@ import { Route as FormationsDevnetAssociateRouteImport } from './routes/formatio
 import { Route as FormationsDataAnalyticsEssentialsRouteImport } from './routes/formations/data-analytics-essentials'
 import { Route as FormationsCybersecurityEssentialsRouteImport } from './routes/formations/cybersecurity-essentials'
 import { Route as FormationsCyberopsRouteImport } from './routes/formations/cyberops'
+import { Route as FormationsCcnpSecurityRouteImport } from './routes/formations/ccnp-security'
+import { Route as FormationsCcnpEnterpriseRouteImport } from './routes/formations/ccnp-enterprise'
 import { Route as FormationsCcnaSrweRouteImport } from './routes/formations/ccna-srwe'
 import { Route as FormationsCcnaItnRouteImport } from './routes/formations/ccna-itn'
 import { Route as FormationsCcnaEnsaRouteImport } from './routes/formations/ccna-ensa'
 import { Route as FormationsAz900RouteImport } from './routes/formations/az-900'
+import { Route as FormationsAz802RouteImport } from './routes/formations/az-802'
 import { Route as FormationsAz104RouteImport } from './routes/formations/az-104'
+import { Route as FormationsAz1008RouteImport } from './routes/formations/az-1008'
 import { Route as FormationsAi900RouteImport } from './routes/formations/ai-900'
 import { Route as CertificationsRsInfrastructureReseauRouteImport } from './routes/certifications-rs/infrastructure-reseau'
 
@@ -140,6 +153,16 @@ const FormationsSc900Route = FormationsSc900RouteImport.update({
   path: '/formations/sc-900',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FormationsSc401Route = FormationsSc401RouteImport.update({
+  id: '/formations/sc-401',
+  path: '/formations/sc-401',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationsSc300Route = FormationsSc300RouteImport.update({
+  id: '/formations/sc-300',
+  path: '/formations/sc-300',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FormationsPythonEssentials2Route =
   FormationsPythonEssentials2RouteImport.update({
     id: '/formations/python-essentials-2',
@@ -152,6 +175,21 @@ const FormationsPythonEssentials1Route =
     path: '/formations/python-essentials-1',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FormationsPl7008Route = FormationsPl7008RouteImport.update({
+  id: '/formations/pl-7008',
+  path: '/formations/pl-7008',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationsPl7002Route = FormationsPl7002RouteImport.update({
+  id: '/formations/pl-7002',
+  path: '/formations/pl-7002',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationsPl300Route = FormationsPl300RouteImport.update({
+  id: '/formations/pl-300',
+  path: '/formations/pl-300',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FormationsNetworkingEssentialsRoute =
   FormationsNetworkingEssentialsRouteImport.update({
     id: '/formations/networking-essentials',
@@ -161,6 +199,26 @@ const FormationsNetworkingEssentialsRoute =
 const FormationsMs900Route = FormationsMs900RouteImport.update({
   id: '/formations/ms-900',
   path: '/formations/ms-900',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationsMs4017Route = FormationsMs4017RouteImport.update({
+  id: '/formations/ms-4017',
+  path: '/formations/ms-4017',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationsMs4010Route = FormationsMs4010RouteImport.update({
+  id: '/formations/ms-4010',
+  path: '/formations/ms-4010',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationsMs102Route = FormationsMs102RouteImport.update({
+  id: '/formations/ms-102',
+  path: '/formations/ms-102',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationsMd102Route = FormationsMd102RouteImport.update({
+  id: '/formations/md-102',
+  path: '/formations/md-102',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FormationsLinuxEssentialsRoute =
@@ -225,6 +283,17 @@ const FormationsCyberopsRoute = FormationsCyberopsRouteImport.update({
   path: '/formations/cyberops',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FormationsCcnpSecurityRoute = FormationsCcnpSecurityRouteImport.update({
+  id: '/formations/ccnp-security',
+  path: '/formations/ccnp-security',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationsCcnpEnterpriseRoute =
+  FormationsCcnpEnterpriseRouteImport.update({
+    id: '/formations/ccnp-enterprise',
+    path: '/formations/ccnp-enterprise',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FormationsCcnaSrweRoute = FormationsCcnaSrweRouteImport.update({
   id: '/formations/ccna-srwe',
   path: '/formations/ccna-srwe',
@@ -245,9 +314,19 @@ const FormationsAz900Route = FormationsAz900RouteImport.update({
   path: '/formations/az-900',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FormationsAz802Route = FormationsAz802RouteImport.update({
+  id: '/formations/az-802',
+  path: '/formations/az-802',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FormationsAz104Route = FormationsAz104RouteImport.update({
   id: '/formations/az-104',
   path: '/formations/az-104',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const FormationsAz1008Route = FormationsAz1008RouteImport.update({
+  id: '/formations/az-1008',
+  path: '/formations/az-1008',
   getParentRoute: () => rootRouteImport,
 } as any)
 const FormationsAi900Route = FormationsAi900RouteImport.update({
@@ -280,11 +359,15 @@ export interface FileRoutesByFullPath {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
   '/formations/ai-900': typeof FormationsAi900Route
+  '/formations/az-1008': typeof FormationsAz1008Route
   '/formations/az-104': typeof FormationsAz104Route
+  '/formations/az-802': typeof FormationsAz802Route
   '/formations/az-900': typeof FormationsAz900Route
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
   '/formations/ccna-srwe': typeof FormationsCcnaSrweRoute
+  '/formations/ccnp-enterprise': typeof FormationsCcnpEnterpriseRoute
+  '/formations/ccnp-security': typeof FormationsCcnpSecurityRoute
   '/formations/cyberops': typeof FormationsCyberopsRoute
   '/formations/cybersecurity-essentials': typeof FormationsCybersecurityEssentialsRoute
   '/formations/data-analytics-essentials': typeof FormationsDataAnalyticsEssentialsRoute
@@ -296,10 +379,19 @@ export interface FileRoutesByFullPath {
   '/formations/iot-introduction': typeof FormationsIotIntroductionRoute
   '/formations/iot-security': typeof FormationsIotSecurityRoute
   '/formations/linux-essentials': typeof FormationsLinuxEssentialsRoute
+  '/formations/md-102': typeof FormationsMd102Route
+  '/formations/ms-102': typeof FormationsMs102Route
+  '/formations/ms-4010': typeof FormationsMs4010Route
+  '/formations/ms-4017': typeof FormationsMs4017Route
   '/formations/ms-900': typeof FormationsMs900Route
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
+  '/formations/pl-300': typeof FormationsPl300Route
+  '/formations/pl-7002': typeof FormationsPl7002Route
+  '/formations/pl-7008': typeof FormationsPl7008Route
   '/formations/python-essentials-1': typeof FormationsPythonEssentials1Route
   '/formations/python-essentials-2': typeof FormationsPythonEssentials2Route
+  '/formations/sc-300': typeof FormationsSc300Route
+  '/formations/sc-401': typeof FormationsSc401Route
   '/formations/sc-900': typeof FormationsSc900Route
   '/certifications-rs/': typeof CertificationsRsIndexRoute
   '/formations/': typeof FormationsIndexRoute
@@ -322,11 +414,15 @@ export interface FileRoutesByTo {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
   '/formations/ai-900': typeof FormationsAi900Route
+  '/formations/az-1008': typeof FormationsAz1008Route
   '/formations/az-104': typeof FormationsAz104Route
+  '/formations/az-802': typeof FormationsAz802Route
   '/formations/az-900': typeof FormationsAz900Route
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
   '/formations/ccna-srwe': typeof FormationsCcnaSrweRoute
+  '/formations/ccnp-enterprise': typeof FormationsCcnpEnterpriseRoute
+  '/formations/ccnp-security': typeof FormationsCcnpSecurityRoute
   '/formations/cyberops': typeof FormationsCyberopsRoute
   '/formations/cybersecurity-essentials': typeof FormationsCybersecurityEssentialsRoute
   '/formations/data-analytics-essentials': typeof FormationsDataAnalyticsEssentialsRoute
@@ -338,10 +434,19 @@ export interface FileRoutesByTo {
   '/formations/iot-introduction': typeof FormationsIotIntroductionRoute
   '/formations/iot-security': typeof FormationsIotSecurityRoute
   '/formations/linux-essentials': typeof FormationsLinuxEssentialsRoute
+  '/formations/md-102': typeof FormationsMd102Route
+  '/formations/ms-102': typeof FormationsMs102Route
+  '/formations/ms-4010': typeof FormationsMs4010Route
+  '/formations/ms-4017': typeof FormationsMs4017Route
   '/formations/ms-900': typeof FormationsMs900Route
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
+  '/formations/pl-300': typeof FormationsPl300Route
+  '/formations/pl-7002': typeof FormationsPl7002Route
+  '/formations/pl-7008': typeof FormationsPl7008Route
   '/formations/python-essentials-1': typeof FormationsPythonEssentials1Route
   '/formations/python-essentials-2': typeof FormationsPythonEssentials2Route
+  '/formations/sc-300': typeof FormationsSc300Route
+  '/formations/sc-401': typeof FormationsSc401Route
   '/formations/sc-900': typeof FormationsSc900Route
   '/certifications-rs': typeof CertificationsRsIndexRoute
   '/formations': typeof FormationsIndexRoute
@@ -365,11 +470,15 @@ export interface FileRoutesById {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
   '/formations/ai-900': typeof FormationsAi900Route
+  '/formations/az-1008': typeof FormationsAz1008Route
   '/formations/az-104': typeof FormationsAz104Route
+  '/formations/az-802': typeof FormationsAz802Route
   '/formations/az-900': typeof FormationsAz900Route
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
   '/formations/ccna-srwe': typeof FormationsCcnaSrweRoute
+  '/formations/ccnp-enterprise': typeof FormationsCcnpEnterpriseRoute
+  '/formations/ccnp-security': typeof FormationsCcnpSecurityRoute
   '/formations/cyberops': typeof FormationsCyberopsRoute
   '/formations/cybersecurity-essentials': typeof FormationsCybersecurityEssentialsRoute
   '/formations/data-analytics-essentials': typeof FormationsDataAnalyticsEssentialsRoute
@@ -381,10 +490,19 @@ export interface FileRoutesById {
   '/formations/iot-introduction': typeof FormationsIotIntroductionRoute
   '/formations/iot-security': typeof FormationsIotSecurityRoute
   '/formations/linux-essentials': typeof FormationsLinuxEssentialsRoute
+  '/formations/md-102': typeof FormationsMd102Route
+  '/formations/ms-102': typeof FormationsMs102Route
+  '/formations/ms-4010': typeof FormationsMs4010Route
+  '/formations/ms-4017': typeof FormationsMs4017Route
   '/formations/ms-900': typeof FormationsMs900Route
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
+  '/formations/pl-300': typeof FormationsPl300Route
+  '/formations/pl-7002': typeof FormationsPl7002Route
+  '/formations/pl-7008': typeof FormationsPl7008Route
   '/formations/python-essentials-1': typeof FormationsPythonEssentials1Route
   '/formations/python-essentials-2': typeof FormationsPythonEssentials2Route
+  '/formations/sc-300': typeof FormationsSc300Route
+  '/formations/sc-401': typeof FormationsSc401Route
   '/formations/sc-900': typeof FormationsSc900Route
   '/certifications-rs/': typeof CertificationsRsIndexRoute
   '/formations/': typeof FormationsIndexRoute
@@ -409,11 +527,15 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/infrastructure-reseau'
     | '/formations/ai-900'
+    | '/formations/az-1008'
     | '/formations/az-104'
+    | '/formations/az-802'
     | '/formations/az-900'
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
     | '/formations/ccna-srwe'
+    | '/formations/ccnp-enterprise'
+    | '/formations/ccnp-security'
     | '/formations/cyberops'
     | '/formations/cybersecurity-essentials'
     | '/formations/data-analytics-essentials'
@@ -425,10 +547,19 @@ export interface FileRouteTypes {
     | '/formations/iot-introduction'
     | '/formations/iot-security'
     | '/formations/linux-essentials'
+    | '/formations/md-102'
+    | '/formations/ms-102'
+    | '/formations/ms-4010'
+    | '/formations/ms-4017'
     | '/formations/ms-900'
     | '/formations/networking-essentials'
+    | '/formations/pl-300'
+    | '/formations/pl-7002'
+    | '/formations/pl-7008'
     | '/formations/python-essentials-1'
     | '/formations/python-essentials-2'
+    | '/formations/sc-300'
+    | '/formations/sc-401'
     | '/formations/sc-900'
     | '/certifications-rs/'
     | '/formations/'
@@ -451,11 +582,15 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/infrastructure-reseau'
     | '/formations/ai-900'
+    | '/formations/az-1008'
     | '/formations/az-104'
+    | '/formations/az-802'
     | '/formations/az-900'
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
     | '/formations/ccna-srwe'
+    | '/formations/ccnp-enterprise'
+    | '/formations/ccnp-security'
     | '/formations/cyberops'
     | '/formations/cybersecurity-essentials'
     | '/formations/data-analytics-essentials'
@@ -467,10 +602,19 @@ export interface FileRouteTypes {
     | '/formations/iot-introduction'
     | '/formations/iot-security'
     | '/formations/linux-essentials'
+    | '/formations/md-102'
+    | '/formations/ms-102'
+    | '/formations/ms-4010'
+    | '/formations/ms-4017'
     | '/formations/ms-900'
     | '/formations/networking-essentials'
+    | '/formations/pl-300'
+    | '/formations/pl-7002'
+    | '/formations/pl-7008'
     | '/formations/python-essentials-1'
     | '/formations/python-essentials-2'
+    | '/formations/sc-300'
+    | '/formations/sc-401'
     | '/formations/sc-900'
     | '/certifications-rs'
     | '/formations'
@@ -493,11 +637,15 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/infrastructure-reseau'
     | '/formations/ai-900'
+    | '/formations/az-1008'
     | '/formations/az-104'
+    | '/formations/az-802'
     | '/formations/az-900'
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
     | '/formations/ccna-srwe'
+    | '/formations/ccnp-enterprise'
+    | '/formations/ccnp-security'
     | '/formations/cyberops'
     | '/formations/cybersecurity-essentials'
     | '/formations/data-analytics-essentials'
@@ -509,10 +657,19 @@ export interface FileRouteTypes {
     | '/formations/iot-introduction'
     | '/formations/iot-security'
     | '/formations/linux-essentials'
+    | '/formations/md-102'
+    | '/formations/ms-102'
+    | '/formations/ms-4010'
+    | '/formations/ms-4017'
     | '/formations/ms-900'
     | '/formations/networking-essentials'
+    | '/formations/pl-300'
+    | '/formations/pl-7002'
+    | '/formations/pl-7008'
     | '/formations/python-essentials-1'
     | '/formations/python-essentials-2'
+    | '/formations/sc-300'
+    | '/formations/sc-401'
     | '/formations/sc-900'
     | '/certifications-rs/'
     | '/formations/'
@@ -536,11 +693,15 @@ export interface RootRouteChildren {
   TemoignagesRoute: typeof TemoignagesRoute
   CertificationsRsInfrastructureReseauRoute: typeof CertificationsRsInfrastructureReseauRoute
   FormationsAi900Route: typeof FormationsAi900Route
+  FormationsAz1008Route: typeof FormationsAz1008Route
   FormationsAz104Route: typeof FormationsAz104Route
+  FormationsAz802Route: typeof FormationsAz802Route
   FormationsAz900Route: typeof FormationsAz900Route
   FormationsCcnaEnsaRoute: typeof FormationsCcnaEnsaRoute
   FormationsCcnaItnRoute: typeof FormationsCcnaItnRoute
   FormationsCcnaSrweRoute: typeof FormationsCcnaSrweRoute
+  FormationsCcnpEnterpriseRoute: typeof FormationsCcnpEnterpriseRoute
+  FormationsCcnpSecurityRoute: typeof FormationsCcnpSecurityRoute
   FormationsCyberopsRoute: typeof FormationsCyberopsRoute
   FormationsCybersecurityEssentialsRoute: typeof FormationsCybersecurityEssentialsRoute
   FormationsDataAnalyticsEssentialsRoute: typeof FormationsDataAnalyticsEssentialsRoute
@@ -552,10 +713,19 @@ export interface RootRouteChildren {
   FormationsIotIntroductionRoute: typeof FormationsIotIntroductionRoute
   FormationsIotSecurityRoute: typeof FormationsIotSecurityRoute
   FormationsLinuxEssentialsRoute: typeof FormationsLinuxEssentialsRoute
+  FormationsMd102Route: typeof FormationsMd102Route
+  FormationsMs102Route: typeof FormationsMs102Route
+  FormationsMs4010Route: typeof FormationsMs4010Route
+  FormationsMs4017Route: typeof FormationsMs4017Route
   FormationsMs900Route: typeof FormationsMs900Route
   FormationsNetworkingEssentialsRoute: typeof FormationsNetworkingEssentialsRoute
+  FormationsPl300Route: typeof FormationsPl300Route
+  FormationsPl7002Route: typeof FormationsPl7002Route
+  FormationsPl7008Route: typeof FormationsPl7008Route
   FormationsPythonEssentials1Route: typeof FormationsPythonEssentials1Route
   FormationsPythonEssentials2Route: typeof FormationsPythonEssentials2Route
+  FormationsSc300Route: typeof FormationsSc300Route
+  FormationsSc401Route: typeof FormationsSc401Route
   FormationsSc900Route: typeof FormationsSc900Route
   CertificationsRsIndexRoute: typeof CertificationsRsIndexRoute
   FormationsIndexRoute: typeof FormationsIndexRoute
@@ -689,6 +859,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsSc900RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/formations/sc-401': {
+      id: '/formations/sc-401'
+      path: '/formations/sc-401'
+      fullPath: '/formations/sc-401'
+      preLoaderRoute: typeof FormationsSc401RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/sc-300': {
+      id: '/formations/sc-300'
+      path: '/formations/sc-300'
+      fullPath: '/formations/sc-300'
+      preLoaderRoute: typeof FormationsSc300RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/formations/python-essentials-2': {
       id: '/formations/python-essentials-2'
       path: '/formations/python-essentials-2'
@@ -703,6 +887,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsPythonEssentials1RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/formations/pl-7008': {
+      id: '/formations/pl-7008'
+      path: '/formations/pl-7008'
+      fullPath: '/formations/pl-7008'
+      preLoaderRoute: typeof FormationsPl7008RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/pl-7002': {
+      id: '/formations/pl-7002'
+      path: '/formations/pl-7002'
+      fullPath: '/formations/pl-7002'
+      preLoaderRoute: typeof FormationsPl7002RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/pl-300': {
+      id: '/formations/pl-300'
+      path: '/formations/pl-300'
+      fullPath: '/formations/pl-300'
+      preLoaderRoute: typeof FormationsPl300RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/formations/networking-essentials': {
       id: '/formations/networking-essentials'
       path: '/formations/networking-essentials'
@@ -715,6 +920,34 @@ declare module '@tanstack/react-router' {
       path: '/formations/ms-900'
       fullPath: '/formations/ms-900'
       preLoaderRoute: typeof FormationsMs900RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/ms-4017': {
+      id: '/formations/ms-4017'
+      path: '/formations/ms-4017'
+      fullPath: '/formations/ms-4017'
+      preLoaderRoute: typeof FormationsMs4017RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/ms-4010': {
+      id: '/formations/ms-4010'
+      path: '/formations/ms-4010'
+      fullPath: '/formations/ms-4010'
+      preLoaderRoute: typeof FormationsMs4010RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/ms-102': {
+      id: '/formations/ms-102'
+      path: '/formations/ms-102'
+      fullPath: '/formations/ms-102'
+      preLoaderRoute: typeof FormationsMs102RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/md-102': {
+      id: '/formations/md-102'
+      path: '/formations/md-102'
+      fullPath: '/formations/md-102'
+      preLoaderRoute: typeof FormationsMd102RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/formations/linux-essentials': {
@@ -794,6 +1027,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsCyberopsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/formations/ccnp-security': {
+      id: '/formations/ccnp-security'
+      path: '/formations/ccnp-security'
+      fullPath: '/formations/ccnp-security'
+      preLoaderRoute: typeof FormationsCcnpSecurityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/ccnp-enterprise': {
+      id: '/formations/ccnp-enterprise'
+      path: '/formations/ccnp-enterprise'
+      fullPath: '/formations/ccnp-enterprise'
+      preLoaderRoute: typeof FormationsCcnpEnterpriseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/formations/ccna-srwe': {
       id: '/formations/ccna-srwe'
       path: '/formations/ccna-srwe'
@@ -822,11 +1069,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsAz900RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/formations/az-802': {
+      id: '/formations/az-802'
+      path: '/formations/az-802'
+      fullPath: '/formations/az-802'
+      preLoaderRoute: typeof FormationsAz802RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/formations/az-104': {
       id: '/formations/az-104'
       path: '/formations/az-104'
       fullPath: '/formations/az-104'
       preLoaderRoute: typeof FormationsAz104RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/az-1008': {
+      id: '/formations/az-1008'
+      path: '/formations/az-1008'
+      fullPath: '/formations/az-1008'
+      preLoaderRoute: typeof FormationsAz1008RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/formations/ai-900': {
@@ -865,11 +1126,15 @@ const rootRouteChildren: RootRouteChildren = {
   CertificationsRsInfrastructureReseauRoute:
     CertificationsRsInfrastructureReseauRoute,
   FormationsAi900Route: FormationsAi900Route,
+  FormationsAz1008Route: FormationsAz1008Route,
   FormationsAz104Route: FormationsAz104Route,
+  FormationsAz802Route: FormationsAz802Route,
   FormationsAz900Route: FormationsAz900Route,
   FormationsCcnaEnsaRoute: FormationsCcnaEnsaRoute,
   FormationsCcnaItnRoute: FormationsCcnaItnRoute,
   FormationsCcnaSrweRoute: FormationsCcnaSrweRoute,
+  FormationsCcnpEnterpriseRoute: FormationsCcnpEnterpriseRoute,
+  FormationsCcnpSecurityRoute: FormationsCcnpSecurityRoute,
   FormationsCyberopsRoute: FormationsCyberopsRoute,
   FormationsCybersecurityEssentialsRoute:
     FormationsCybersecurityEssentialsRoute,
@@ -883,10 +1148,19 @@ const rootRouteChildren: RootRouteChildren = {
   FormationsIotIntroductionRoute: FormationsIotIntroductionRoute,
   FormationsIotSecurityRoute: FormationsIotSecurityRoute,
   FormationsLinuxEssentialsRoute: FormationsLinuxEssentialsRoute,
+  FormationsMd102Route: FormationsMd102Route,
+  FormationsMs102Route: FormationsMs102Route,
+  FormationsMs4010Route: FormationsMs4010Route,
+  FormationsMs4017Route: FormationsMs4017Route,
   FormationsMs900Route: FormationsMs900Route,
   FormationsNetworkingEssentialsRoute: FormationsNetworkingEssentialsRoute,
+  FormationsPl300Route: FormationsPl300Route,
+  FormationsPl7002Route: FormationsPl7002Route,
+  FormationsPl7008Route: FormationsPl7008Route,
   FormationsPythonEssentials1Route: FormationsPythonEssentials1Route,
   FormationsPythonEssentials2Route: FormationsPythonEssentials2Route,
+  FormationsSc300Route: FormationsSc300Route,
+  FormationsSc401Route: FormationsSc401Route,
   FormationsSc900Route: FormationsSc900Route,
   CertificationsRsIndexRoute: CertificationsRsIndexRoute,
   FormationsIndexRoute: FormationsIndexRoute,

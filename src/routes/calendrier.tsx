@@ -31,13 +31,22 @@ const PROCHAINES: Array<{
 
 function parseDateRange(label: string): { start: Date; end: Date } | null {
   const m = label.match(/[Dd]u\s+(\d{1,2})\/(\d{2})\/(\d{2,4})\s+au\s+(\d{1,2})\/(\d{2})\/(\d{2,4})/)
-  if (!m) return null
-  const y1 = parseInt(m[3]) < 100 ? 2000 + parseInt(m[3]) : parseInt(m[3])
-  const y2 = parseInt(m[6]) < 100 ? 2000 + parseInt(m[6]) : parseInt(m[6])
-  return {
-    start: new Date(y1, parseInt(m[2]) - 1, parseInt(m[1])),
-    end:   new Date(y2, parseInt(m[5]) - 1, parseInt(m[4])),
+  if (m) {
+    const y1 = parseInt(m[3]) < 100 ? 2000 + parseInt(m[3]) : parseInt(m[3])
+    const y2 = parseInt(m[6]) < 100 ? 2000 + parseInt(m[6]) : parseInt(m[6])
+    return {
+      start: new Date(y1, parseInt(m[2]) - 1, parseInt(m[1])),
+      end:   new Date(y2, parseInt(m[5]) - 1, parseInt(m[4])),
+    }
   }
+  // Session d'une journée : 'Le JJ/MM/AA'
+  const one = label.match(/[Ll]e\s+(\d{1,2})\/(\d{2})\/(\d{2,4})/)
+  if (one) {
+    const y = parseInt(one[3]) < 100 ? 2000 + parseInt(one[3]) : parseInt(one[3])
+    const d = new Date(y, parseInt(one[2]) - 1, parseInt(one[1]))
+    return { start: d, end: d }
+  }
+  return null
 }
 
 function s(slug: string, territoire: Territoire, modalite: Modalite, opts: Partial<Session> = {}): Session | null {
@@ -59,10 +68,18 @@ function s(slug: string, territoire: Territoire, modalite: Modalite, opts: Parti
 }
 
 const RAW: (Session | null)[] = [
-  // ── Sessions retirées en attendant les dates réelles ──
-  // Pour réactiver une session : s('slug','Territoire','Modalite'),
-  // puis renseigner sa date via opts { dateLabel: 'Du JJ/MM/AA au JJ/MM/AA' }.
-  // Exemple : s('ccna-itn','Martinique','Présentiel', { dateLabel: 'Du 15/09/26 au 03/10/26' }),
+  // ── Planning 2027 — Sessions présentiel Martinique (Pointe Madeleine, Le François) ──
+  s('md-102',   'Martinique', 'Présentiel', { dateLabel: 'Du 25/01/27 au 29/01/27', statut: 'en_preparation' }),
+  s('pl-7002',  'Martinique', 'Présentiel', { dateLabel: 'Le 25/02/27', statut: 'en_preparation' }),
+  s('az-802',   'Martinique', 'Présentiel', { dateLabel: 'Du 08/03/27 au 12/03/27', statut: 'en_preparation' }),
+  s('ms-102',   'Martinique', 'Présentiel', { dateLabel: 'Du 05/04/27 au 09/04/27', statut: 'en_preparation' }),
+  s('pl-7008',  'Martinique', 'Présentiel', { dateLabel: 'Le 20/04/27', statut: 'en_preparation' }),
+  s('sc-300',   'Martinique', 'Présentiel', { dateLabel: 'Du 04/05/27 au 07/05/27', statut: 'en_preparation' }),
+  s('ms-4017',  'Martinique', 'Présentiel', { dateLabel: 'Le 18/05/27', statut: 'en_preparation' }),
+  s('az-1008',  'Martinique', 'Présentiel', { dateLabel: 'Le 03/06/27', statut: 'en_preparation' }),
+  s('az-104',   'Martinique', 'Présentiel', { dateLabel: 'Du 14/06/27 au 17/06/27', statut: 'en_preparation' }),
+  s('sc-401',   'Martinique', 'Présentiel', { dateLabel: 'Du 04/10/27 au 07/10/27', statut: 'en_preparation' }),
+  s('pl-300',   'Martinique', 'Présentiel', { dateLabel: 'Du 15/11/27 au 18/11/27', statut: 'en_preparation' }),
 ]
 const SESSIONS: Session[] = RAW.filter(Boolean) as Session[]
 

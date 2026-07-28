@@ -43,7 +43,7 @@ const FORMATIONS = [
     formations: [
       'AZ-900 Azure Fundamentals', 'AZ-104 Azure Administrator',
       'SC-900 Security Fundamentals', 'AI-901 Azure AI Fundamentals',
-      'MS-900 Microsoft 365 Fundamentals',
+      'AB-900 Microsoft 365 Copilot Fundamentals',
     ],
   },
   {

@@ -196,7 +196,7 @@ function FormationsPage() {
               Parcours métier
             </span>
             <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.4rem,2.2vw,2rem)", fontWeight: 700, color: "var(--g-black)", textTransform: "uppercase", letterSpacing: ".04em", marginBottom: ".75rem" }}>
-              Cinq trajectoires certifiantes
+              Sept trajectoires certifiantes
             </h2>
             <p style={{ fontSize: ".95rem", color: "#5a5a58", maxWidth: "760px", lineHeight: 1.75, marginBottom: "2.5rem" }}>
               Au-delà des formations à l'unité, nous construisons des parcours alignés sur les métiers les plus recherchés en 2026 — du socle réseau à l'automatisation, de la cybersécurité au cloud et à l'IA Microsoft.
@@ -226,17 +226,31 @@ function FormationsPage() {
                 },
                 {
                   col: "#1D1D1B",
-                  titre: "Cloud & Modern Workplace Microsoft",
-                  pitch: "Administrer le cloud et le poste de travail moderne de bout en bout.",
-                  etapes: "AZ-900 → AZ-104 → MD-102 (Intune) · SC-900",
-                  debouche: "Administrateur Azure, endpoint administrator, admin M365",
+                  titre: "Cloud & Infrastructure Azure",
+                  pitch: "Administrer le cloud Azure et l'infrastructure serveur de bout en bout.",
+                  etapes: "AZ-900 → AZ-104 → AZ-802 (Windows Server) → AZ-1008 (Active Directory)",
+                  debouche: "Administrateur Azure, administrateur systèmes, ingénieur infrastructure",
                 },
                 {
                   col: "#E41F26",
-                  titre: "Data & IA Microsoft",
-                  pitch: "Transformer la donnée en décision et déployer Copilot en entreprise.",
-                  etapes: "AI-901 → PL-300 (Power BI) → MS-4010 (Copilot Specialist)",
-                  debouche: "Data analyst, référent Power BI, spécialiste adoption Copilot",
+                  titre: "Modern Workplace Microsoft 365",
+                  pitch: "Déployer et sécuriser le poste de travail moderne et le tenant M365.",
+                  etapes: "AB-900 (Copilot Fundamentals) → MS-102 (M365 Administrator) → MD-102 (Intune)",
+                  debouche: "Administrateur Microsoft 365, endpoint administrator, admin collaboratif",
+                },
+                {
+                  col: "#1D1D1B",
+                  titre: "Sécurité Microsoft",
+                  pitch: "Le parcours sécurité officiel Microsoft : identité, accès et protection des données.",
+                  etapes: "SC-900 → SC-300 (Identité & accès) → SC-401 (Purview / protection de l'information)",
+                  debouche: "Administrateur identité, ingénieur sécurité, référent conformité",
+                },
+                {
+                  col: "#E41F26",
+                  titre: "Data, IA & Copilot Microsoft",
+                  pitch: "Transformer la donnée en décision et déployer l'IA Copilot en entreprise.",
+                  etapes: "AI-901 → PL-300 (Power BI) · PL-7002 · PL-7008 · MS-4017 → MS-4010 (Copilot Specialist)",
+                  debouche: "Data analyst, référent Power BI, spécialiste automatisation & Copilot",
                 },
               ].map(p => (
                 <div key={p.titre} style={{ background: "var(--g-offwhite)", border: "1px solid rgba(187,187,187,.35)", borderTop: `3px solid ${p.col}`, padding: "1.5rem", display: "flex", flexDirection: "column" }}>

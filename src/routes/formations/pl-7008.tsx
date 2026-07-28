@@ -4,56 +4,35 @@ import { Footer } from '../../components/Footer'
 import { CheckCircle, Clock, Calendar, Users, MapPin, Phone, Mail, Award, BookOpen, Monitor, AlertCircle, Cloud } from 'lucide-react'
 import { getFormationBySlug, getTarifsModalites } from '../../data/catalogue'
 
-export const Route = createFileRoute('/formations/md-102')({
+export const Route = createFileRoute('/formations/pl-7008')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "MD-102 Endpoint Administrator Microsoft — Formation certifiante | GALACTUS Digital" },
-      { name: "description", content: "Formation Microsoft MD-102 Endpoint Administrator. 35h. Certification officielle. Intune Autopilot conformité Defender. Qualiopi." },
+      { title: "PL-7008 Copilot Studio — Applied Skills | GALACTUS Digital" },
+      { name: "description", content: "Formation PL-7008 Copilot Studio agents IA. Applied Skills. Lab Microsoft Learn. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
   editeur: 'Microsoft',
-  famille: 'Microsoft Learn — Modern Workplace',
-  titre: 'Endpoint Administrator',
-  sousTitre: 'Certification Microsoft 365 Endpoint Administrator Associate · Référence : MD-102',
-  ref: 'MD-102-001',
+  famille: 'Microsoft Learn — Power Platform',
+  titre: 'Copilot Studio',
+  sousTitre: 'Applied Skills — Créer des agents (PL-7008)',
+  ref: 'PL-7008-001',
   niveau: 'Intermédiaire',
   partenaire: 'Partenaire Microsoft n° 4653557',
-  certification: 'Microsoft 365 Certified: Endpoint Administrator Associate (MD-102)',
-  duree: '35 heures',
-  groupeMin: 4,
+  certification: 'Microsoft Applied Skills: Create agents in Microsoft Copilot Studio',
+  duree: '7 heures',
+  groupeMin: 3,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Formation certifiante pour les administrateurs qui déploient, configurent et sécurisent les postes de travail et appareils d'un tenant Microsoft 365 avec Microsoft Intune. Elle couvre le déploiement Windows avec Autopilot, la gestion de l'identité et de la conformité, la protection des appareils et le déploiement des applications. Renouvellement annuel gratuit via Microsoft Learn.`,
-  objectifs: ["Déployer le client Windows — Windows Autopilot, Windows 365, stratégies de déploiement", "Gérer l'identité et la conformité — Entra ID, authentification, RBAC Intune, LAPS", "Implémenter les stratégies de conformité — Conditional Access exigeant un appareil conforme", "Gérer, maintenir et protéger les appareils — profils de configuration, mises à jour, Defender for Endpoint", "Gérer les applications — déploiement, protection des applications (MAM), stores par plateforme", "Superviser et automatiser — reporting, Remote Help, monitoring de conformité"],
-  public: ["Administrateurs postes de travail et endpoints", "Techniciens support et desktop engineers", "Administrateurs Microsoft 365", "Certifiés AB-900 ou AZ-900 souhaitant progresser"],
-  prerequis: ["Expérience de l'administration Windows et des appareils", "Connaissance de Microsoft 365 et Entra ID", "Notions de réseau, DNS et gestion d'identité", "Expérience pratique d'un tenant Microsoft 365 recommandée"],
-  examen: {
-    code: 'MD-102',
-    duree: '120 minutes',
-    langue: 'Français / Anglais',
-    organisme: 'Microsoft (Pearson VUE)',
-    format: 'QCM, scénarios et questions à réponses multiples',
-    score: '700 / 1000',
-    note: "La certification MD-102 est valable 12 mois. Renouvellement gratuit via une évaluation en ligne sur Microsoft Learn. S'associe naturellement à AZ-104 (admin cloud) ou SC-900 (sécurité). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.",
-  },
-  methodes: [
-    "Formation dispensée par un formateur certifié Microsoft (Microsoft Certified Trainer — MCT)",
-    "Accès à la plateforme Microsoft Learn 24h/24 pendant et après la formation",
-    "Labs pratiques sur tenant Microsoft 365 et console Microsoft Intune",
-    "Badge numérique Microsoft remis à l'issue du parcours — visible sur Credly et LinkedIn",
-    "Quiz de validation des acquis à chaque fin de module sur Microsoft Learn",
-    "Auto-évaluation formative en début et en fin de formation",
-    "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
-    "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
-    "Supports de cours officiels Microsoft inclus (version numérique Microsoft Learn)",
-    "Certification Microsoft 365 Certified: Endpoint Administrator Associate (MD-102) envoyée par mail à l'issue du parcours",
-    "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
-    "Passage de l'examen certifiant Microsoft intégré au programme (Pearson VUE)",
-  ],
+  description: `Formation courte (Applied Skills) : créer des agents dans Microsoft Copilot Studio — sujets, actions, connaissances, déploiement. Validation par évaluation en ligne (lab Microsoft Learn), sans examen Pearson VUE.`,
+  objectifs: ["Créer un agent Copilot Studio", "Définir sujets, déclencheurs, actions", "Connecter des sources de connaissances", "Intégrer flux et connecteurs", "Déployer l agent (Teams, web)", "Gouverner les agents"],
+  public: ["Utilisateurs métier et power users", "Chefs de projet IA", "Administrateurs M365", "Référents adoption Copilot"],
+  prerequis: ["Maîtrise de Microsoft 365", "Notions Power Platform utiles", "Aucun développement requis", "Intérêt pour l IA conversationnelle"],
+  examen: { code: 'PL-7008', duree: 'Évaluation en lab', langue: 'Anglais', organisme: 'Microsoft Learn (Applied Skills — lab en ligne)', format: 'Évaluation pratique en environnement réel (pas d examen Pearson VUE)', score: 'Réussite / échec', note: `Applied Skills — Créer des agents dans Microsoft Copilot Studio. Évaluation Applied Skills réalisée en ligne sur Microsoft Learn (lab pratique), et non un examen Pearson VUE : aucun voucher requis.` },
+  methodes: ["Formation dispensée par un formateur certifié Microsoft (MCT)", "Accès à Microsoft Learn 24h/24", "Labs guidés reproduisant l évaluation Applied Skills", "Quiz de validation à chaque fin de module", "Auto-évaluation formative en début et fin de formation", "Évaluation formateur : non évalué · non acquis · en cours · acquis", "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)", "Supports officiels Microsoft inclus", "Préparation à l évaluation Applied Skills (lab en ligne Microsoft Learn)", "Attestation de formation, de présence et plan de travail individuel"],
 }
 
 function SectionTitle({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
@@ -79,7 +58,7 @@ function DelaisAcces() {
 }
 
 function FormationPage() {
-  const FORMATION = getFormationBySlug('md-102')
+  const FORMATION = getFormationBySlug('pl-7008')
   const TARIFS = FORMATION ? getTarifsModalites(FORMATION) : []
   return (
     <>
@@ -199,83 +178,6 @@ function FormationPage() {
           </div>
         </section>
 
-
-        <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <SectionTitle>Programme détaillé</SectionTitle>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1.25rem' }} className="fiche-programme">
-                <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
-                  <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Domaine 1</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Déployer le client Windows</div>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />8h</div>
-                  </div>
-                  <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Stratégies de déploiement — migration vs reconstruction, imagerie</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Windows Autopilot — profils, Enrollment Status Page, modes de déploiement</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Windows 365 et Azure Virtual Desktop</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Activation par abonnement et éditions Windows</li>
-                    </ul>
-                  </div>
-                </div>
-                <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
-                  <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Domaine 2</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Identité et conformité</div>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />8h</div>
-                  </div>
-                  <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Authentification — Windows Hello for Business, sans mot de passe</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />RBAC Intune, jonction Entra ID, LAPS</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Stratégies de conformité multi-plateformes</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Conditional Access exigeant un appareil conforme</li>
-                    </ul>
-                  </div>
-                </div>
-                <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
-                  <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Domaine 3</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Gérer et protéger les appareils</div>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />11h</div>
-                  </div>
-                  <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Profils de configuration — restrictions, VPN, Wi-Fi, certificats</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Gestion des mises à jour — anneaux de déploiement, feature updates</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Microsoft Defender for Endpoint et sécurité des appareils</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Remote Help, supervision et reporting de conformité</li>
-                    </ul>
-                  </div>
-                </div>
-                <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
-                  <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
-                    <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Domaine 4</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Gérer les applications</div>
-                    </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />8h</div>
-                  </div>
-                  <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
-                    <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Déploiement d'applications par plateforme (stores, Win32, LOB)</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Microsoft 365 Apps — ODT, centre d'administration</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Stratégies de protection des applications (MAM) sans enrôlement</li>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Lancement conditionnel et protection des données</li>
-                    </ul>
-                  </div>
-                </div>
-            </div>
-          </div>
-        </section>
-
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <SectionTitle>Examen de certification</SectionTitle>
@@ -360,7 +262,6 @@ function FormationPage() {
         <style>{`
           @media (max-width: 768px) {
             .fiche-objectifs { grid-template-columns: 1fr !important; }
-            .fiche-programme { grid-template-columns: 1fr !important; }
             .fiche-exam-grid { grid-template-columns: 1fr 1fr !important; }
             .fiche-methodes  { grid-template-columns: 1fr !important; }
             .fiche-public    { grid-template-columns: 1fr !important; }

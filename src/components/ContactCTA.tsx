@@ -24,7 +24,7 @@ const FORMATIONS = [
   "AZ-104 Azure Administrator",
   "SC-900 Security Fundamentals",
   "AI-901 Azure AI Fundamentals",
-  "MS-900 Microsoft 365 Fundamentals",
+  "AB-900 Microsoft 365 Copilot Fundamentals",
   "PL-300 Power BI Data Analyst",
   "MD-102 Endpoint Administrator",
   "MS-4010 Microsoft 365 Copilot Specialist",

@@ -10,14 +10,6 @@ const articles = [
     linkLabel: 'Voir notre démarche qualité',
   },
   {
-    date: '2024',
-    title: "Métiers du numérique dans les territoires ultramarins",
-    desc: "Étude de l'Observatoire Régional de l'Emploi et de la Formation sur les métiers du numérique — un contexte dans lequel GALACTUS Digital accompagne la montée en compétences.",
-    tag: 'Étude',
-    image: '/actu/metiers-numerique.png',
-    pdf: '/docs/metiers-numerique.pdf',
-  },
-  {
     date: 'Juin 2019',
     title: "ARCEP — L'état d'internet en France",
     desc: "Rapport d'activité de l'ARCEP (Tome 3) sur l'état d'internet en France, incluant la transition vers l'IPv6 — une veille de référence sur les enjeux d'infrastructure réseau.",
@@ -41,6 +33,14 @@ const articles = [
     image: '/actu/bigdata-visibilite.png',
     link: 'https://www.pressesdesmines.com/produit/big-data-et-visibilite-en-ligne/',
     linkLabel: "Découvrir l'ouvrage (éditeur)",
+  },
+    {
+    date: '2017',
+    title: "Métiers du numérique dans les territoires ultramarins",
+    desc: "Étude de l'Observatoire Régional de l'Emploi et de la Formation sur les métiers du numérique — un contexte dans lequel GALACTUS Digital accompagne la montée en compétences.",
+    tag: 'Étude',
+    image: '/actu/metiers-numerique.png',
+    pdf: '/docs/metiers-numerique.pdf',
   },
   {
     date: 'Juillet 2016',

@@ -23,7 +23,7 @@ export function Satisfaction() {
             <p style={{ fontSize: '0.82rem', color: '#888', lineHeight: 1.6, marginBottom: '2rem' }}>
               Ce taux correspond au pourcentage d'apprenants ayant attribué une note
               supérieure ou égale à 4 sur 5 dans le questionnaire de satisfaction
-              renseigné en fin de formation — données 2024, mise à jour mai 2026.
+              renseigné en fin de formation — données 2023 à 2025, mise à jour mai 2026.
             </p>
             <a href="/demarche-qualite" className="btn-red" style={{ fontSize: '0.85rem' }}>
               Consulter notre démarche qualité <ArrowRight size={15} />

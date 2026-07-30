@@ -26,7 +26,7 @@ const points = [
 
 const certPrograms = [
   { name: 'Microsoft — Azure, M365, Power BI, Intune & Copilot',          meta: 'n° 4653557' },
-  { name: 'Cisco — CCNA 200-301 & CCNP ENCOR 350-401 & ENARSI 300-410',  meta: 'n° 3018982' },
+  { name: 'Cisco — CCNAv2 200-301 & CCNP ENCOR 350-401 & ENARSI 300-410',  meta: 'n° 3018982' },
   { name: 'Cisco — Cybersécurité 200-201 ',  meta: 'n° 3018982' },
   { name: 'Cisco — IoT & Automation 200-901', meta: 'n° 3018982' },
   { name: 'IPv6 Forum - Certified Network Engineer', meta: 'Official' },

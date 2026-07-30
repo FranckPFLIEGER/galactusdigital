@@ -32,7 +32,7 @@ export interface Formation {
 
 // ─── Familles pour l'affichage groupé ────────────────────────────────────────
 export const FAMILLES: Record<string, { label: string; icon: string }> = {
-  'Réseaux & CCNA':        { label: 'Réseaux & CCNA',        icon: 'Network'  },
+  'CCNA & CCNP':            { label: 'CCNAv2 & CCNP',        icon: 'Network'  },
   'Cybersécurité':         { label: 'Cybersécurité',          icon: 'Shield'   },
   'Programmation':         { label: 'Programmation',          icon: 'Code'     },
   'IoT':                   { label: 'IoT & Objets Connectés', icon: 'Wifi'     },
@@ -69,11 +69,11 @@ export const FORMATIONS: Formation[] = [
   },
   {
     slug: 'ccna-itn',
-    titre: 'CCNA — ITN (1/3)',
+    titre: 'CCNAv2 — ITN (1/3)',
     titreLong: 'CCNA Introduction aux réseaux (Module 1/3)',
     editeur: 'Cisco Networking Academy', famille: 'Réseaux & CCNA',
     niveau: 'Fondamental', duree: '70 heures', dureeJours: 9,
-    certification: 'Cisco CCNA 200-301',
+    certification: 'Cisco CCNAv2 200-301',
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Premiers modules du cursus CCNA officiel — OSI, TCP/IP, IPv4, IPv6, CLI Cisco.',
@@ -81,11 +81,11 @@ export const FORMATIONS: Formation[] = [
   },
   {
     slug: 'ccna-srwe',
-    titre: 'CCNA — SRWE (2/3)',
+    titre: 'CCNAv2 — SRWE (2/3)',
     titreLong: 'CCNA Commutation, Routage et Wi-Fi (Module 2/3)',
     editeur: 'Cisco Networking Academy', famille: 'Réseaux & CCNA',
     niveau: 'Intermédiaire', duree: '70 heures', dureeJours: 9,
-    certification: 'Cisco CCNA 200-301',
+    certification: 'Cisco CCNAv2 200-301',
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'VLANs, STP, EtherChannel, DHCP, Wi-Fi 802.11 et routage statique avancé.',
@@ -93,11 +93,11 @@ export const FORMATIONS: Formation[] = [
   },
   {
     slug: 'ccna-ensa',
-    titre: 'CCNA — ENSA (3/3)',
+    titre: 'CCNAv2 — ENSA (3/3)',
     titreLong: 'CCNA Réseaux d\'entreprise, Sécurité et Automatisation (Module 3/3)',
     editeur: 'Cisco Networking Academy', famille: 'Réseaux & CCNA',
     niveau: 'Avancé', duree: '70 heures', dureeJours: 9,
-    certification: 'Cisco CCNA 200-301',
+    certification: 'Cisco CCNAv2 200-301',
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'OSPF, ACL, NAT, VPN, SDN et automatisation réseau. Dernier module avant l\'examen CCNA.',

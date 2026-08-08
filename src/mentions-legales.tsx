@@ -1,0 +1,121 @@
+import { createFileRoute } from '@tanstack/react-router'
+import { Header } from '../components/Header'
+import { Footer } from '../components/Footer'
+import { ExternalLink } from 'lucide-react'
+
+export const Route = createFileRoute('/mentions-legales')({
+  component: MentionsLegalesPage,
+})
+
+function MentionsLegalesPage() {
+  return (
+    <>
+      <Header />
+      <main style={{ paddingTop: '72px' }}>
+
+        <section style={{ background: 'var(--g-black)', borderBottom: '3px solid var(--g-red)', padding: '4rem 2rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>Légal</span>
+            <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,3vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '1.5rem' }}>
+              Mentions légales,<br />CGV & Protection des données
+            </h1>
+            <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+              <a href="/certificat-qualiopi.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
+                <ExternalLink size={14} /> Certificat Qualiopi PDF
+              </a>
+              <a href="/reglement-interieur.pdf" target="_blank" rel="noopener noreferrer" className="btn-ghost" style={{ fontSize: '0.78rem' }}>
+                <ExternalLink size={14} /> Règlement intérieur PDF
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
+          <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+
+            <div id="mentions" className="legal-section">
+              <h2 className="legal-h2">Mentions légales</h2>
+              <div className="legal-block">
+                <h3 className="legal-h3">Éditeur du site</h3>
+                <p><strong>Raison sociale :</strong> PFLIEGER SASU (enseigne GALACTUS Digital)</p>
+                <p><strong>Forme juridique :</strong> SASU au capital de 750 € — organisme de formation professionnelle</p>
+                <p><strong>Siège social :</strong> 66 avenue des Champs Élysées, 75008 Paris</p>
+                <p><strong>Siège régional Caraïbes :</strong> Pointe Madeleine — CAP EST, 97240 Le François, Martinique</p>
+                <p><strong>Présence active Guadeloupe :</strong> Pointe de la Verdure, Gosier 97190</p>
+                <p><strong>RCS :</strong> Paris — SIRET : 880 430 418 00017</p>
+                <p><strong>NDA :</strong> 11 75 59933 75 (préfet de la région Île-de-France). Cet enregistrement ne vaut pas agrément de l'État (art. L.6352-12 du code du travail).</p>
+                <p><strong>Certification Qualiopi :</strong> Certifopac — Certificat n° 951711-1 — Accréditation Cofrac n° 5-0620 (portée disponible sur www.cofrac.fr). Valide du 16/09/2024 au 15/09/2027</p>
+                <p><strong>TVA :</strong> Non applicable — Article 261-4-4° du CGI</p>
+                <p><strong>Directeur de publication :</strong> Franck PFLIEGER, Président</p>
+                <p><strong>Contact :</strong> president@galactusdigital.com — +33 7 81 07 47 46</p>
+              </div>
+              <div className="legal-block">
+                <h3 className="legal-h3">Hébergement</h3>
+                <p>Ce site est hébergé par Cloudflare Pages — 101 Townsend St, San Francisco, CA 94107, USA.</p>
+              </div>
+            </div>
+
+            <div id="cgv" className="legal-section" style={{ marginTop: '3rem' }}>
+              <h2 className="legal-h2">Conditions Générales de Vente</h2>
+              <p style={{ fontSize: '0.85rem', color: '#666', fontStyle: 'italic', marginBottom: '2rem' }}>
+                Conformément aux articles L. 6316-1 et suivants du Code du travail. — Version V2026.3 en vigueur au 8 août 2026.
+              </p>
+
+              {[
+                {
+                  num: '1', title: 'Désignation',
+                  content: `GALACTUS Digital est un organisme de formation professionnelle spécialisé dans les métiers du digital. Siège social : 66 avenue des Champs Élysées, 75008 Paris. Siège régional Caraïbes : Pointe Madeleine — CAP EST, 97240 Le François (Martinique). Présence active Guadeloupe : Pointe de la Verdure, Gosier 97190. SIRET : 880 430 418 00017 — NDA : 11 75 59933 75. GALACTUS Digital conçoit, élabore et dispense des formations inter-entreprises et intra-entreprises sur le territoire national et ultramarin (Caraïbes, Océan Indien, France hexagonale), seule ou en partenariat.`,
+                },
+                { num: '2', title: 'Objet', content: `Les présentes CGV s'appliquent à l'ensemble des prestations de formation engagées par GALACTUS Digital. Le fait de s'inscrire ou de passer commande implique l'adhésion entière et sans réserve aux présentes CGV, qui prévalent sur tout autre document du Client.` },
+                { num: '3', title: 'Conditions financières et modalités de paiement', content: `Tous les prix sont indiqués en euros et nets de taxe. La TVA n'est pas applicable en application de l'article 261-4-4°-a du CGI (exonération des prestations de formation professionnelle continue). Le règlement est dû à l'issue de la formation, à réception de facture, au comptant et sans escompte. Pour les parcours longs, des facturations intermédiaires peuvent être engagées. Toute somme non payée à échéance entraîne de plein droit, sans mise en demeure préalable, des pénalités de retard calculées au taux de trois fois le taux d'intérêt légal en vigueur, ainsi qu'une indemnité forfaitaire de recouvrement de 40 € (art. L.441-10 et D.441-5 du code de commerce). En cas de prise en charge par un OPCO, il appartient au Client d'effectuer sa demande avant le début de la formation et de communiquer l'accord de financement à l'inscription. À défaut d'accord reçu au plus tard un jour ouvrable avant le démarrage, GALACTUS Digital peut refuser l'entrée en formation ou facturer la totalité au Client.` },
+                { num: '4', title: 'Dédit et remplacement d\'un participant', content: `En cas de dédit signifié au moins 7 jours avant le démarrage, GALACTUS Digital offre la possibilité de repousser l'inscription à une session ultérieure ou de remplacer le stagiaire par un autre participant ayant le même profil, sous réserve de l'accord éventuel de l'OPCO.` },
+                { num: '5', title: 'Annulation, absence ou interruption', content: `Tout module commencé est dû dans son intégralité. Frais d'annulation : aucun si plus de 15 jours ouvrables avant le démarrage — 500€ TTC entre 15 et 7 jours ouvrables — 100% du prix TTC si moins de 7 jours ouvrables avant le démarrage.` },
+                { num: '6', title: 'Information et gestion des réclamations et des aléas', content: `Les modalités de recours en cas de réclamation sont indiquées sur la convocation. En début de formation, les modalités de traitement des difficultés sont expliquées aux apprenants. Les réclamations peuvent être formulées individuellement (entretien physique, WEBEX, mail ou téléphone). Un PV est établi et une réunion organisée en cas de difficulté grave. Après la formation, les modalités de réclamation sont proposées sur le document d'appréciation.` },
+                { num: '6 bis', title: 'Prévention et traitement des ruptures de parcours', content: `GALACTUS Digital met en œuvre un dispositif de prévention et de traitement des ruptures de parcours, formalisé dans la procédure FQ-15. Dès qu'une absence non justifiée ou une difficulté susceptible de conduire à une interruption est constatée, le formateur ou le responsable prend contact avec le bénéficiaire dans la journée. Un entretien individuel est organisé sous 48 heures pour identifier les causes et proposer des mesures d'accompagnement : aménagement du rythme, rattrapage, tutorat renforcé, réorientation ou orientation vers des partenaires spécialisés. L'employeur et/ou le financeur sont informés dans le respect de la confidentialité due au bénéficiaire. En cas d'abandon définitif, une attestation de fin de formation partielle est émise, mentionnant les compétences effectivement acquises.` },
+                { num: '6 ter', title: 'Prévention des violences, du harcèlement et des discriminations', content: `GALACTUS Digital s'engage à garantir un environnement de formation exempt de toute forme de violence, de harcèlement (moral ou sexuel) ou de discrimination, conformément aux articles L.1152-1 et suivants et L.1153-1 et suivants du code du travail et aux articles 225-1 et suivants du code pénal. Un dispositif de prévention, de signalement et de traitement est formalisé dans la procédure FQ-14, communiquée à chaque stagiaire par le règlement intérieur (article 10 bis). Tout signalement est traité avec diligence et confidentialité. Les voies de recours internes et externes (Défenseur des droits, autorités judiciaires) sont accessibles à tout moment. Contact : president@galactusdigital.com (objet : « Signalement VHD ») ou 07 81 07 47 46.` },
+                { num: '7', title: 'Horaires et accueil', content: `Durée quotidienne : 7 heures. À Paris : 09h30-13h00 et 14h00-17h30 avec pauses. Pour les formations en région et dans les DOM (Caraïbes et Océan Indien), les lieux, adresses et horaires sont indiqués sur la convocation.` },
+                { num: '8', title: 'Effectif et ajournement', content: `Les inscriptions sont prises en compte dans leur ordre d'arrivée. Seuls les devis dûment renseignés, datés, tamponnés, signés et revêtus de la mention "Bon pour accord" ont valeur contractuelle. GALACTUS Digital peut ajourner une formation au plus tard une semaine avant la date prévue si le nombre de participants est insuffisant, sans indemnités.` },
+                { num: '9', title: 'Devis, convention et attestation', content: `Pour chaque action, un devis et une convention sont adressés en deux exemplaires. À l'issue de la formation, GALACTUS Digital remet une attestation de formation au stagiaire ainsi qu'une attestation de présence au Client.` },
+                { num: '10', title: 'Obligations et force majeure', content: `GALACTUS Digital est tenue à une obligation de moyen et non de résultat. Elle ne pourra être tenue responsable en cas de force majeure : maladie ou accident d'un intervenant, grèves externes, désastres naturels, incendies, interruption des télécommunications, de l'approvisionnement en énergie ou des transports.` },
+                { num: '11', title: 'Propriété intellectuelle', content: `L'ensemble des supports pédagogiques, quelle qu'en soit la forme, constituent des œuvres originales protégées par la propriété intellectuelle. Le Client et le stagiaire s'interdisent de les reproduire, transmettre ou exploiter sans accord exprès de GALACTUS Digital.` },
+                { num: '12', title: 'Descriptif et programme des formations', content: `Les contenus des programmes sont fournis à titre indicatif. L'intervenant se réserve le droit de les modifier en fonction de l'actualité ou du niveau des participants. Les indicateurs qualité (nombre de formés, taux de satisfaction, taux de réussite) sont communiqués sur le plan de formation.` },
+                { num: '12 bis', title: 'Transparence de l\'information et modalités de financement', content: `Conformément au critère 1 du Référentiel National Qualité (décret n° 2026-728 du 1er août 2026), GALACTUS Digital communique de manière claire, exacte et vérifiable, sur l'ensemble de ses supports (site, devis, plan de formation) : prérequis et conditions d'accès, objectifs et modalités pédagogiques (présentiel, FOAD, e-learning tutoré), durée, tarifs nets de taxe, délais d'accès et accessibilité aux personnes en situation de handicap. Modes de financement : les formations sont finançables par l'employeur, par un OPCO ou en autofinancement. Elles ne sont pas éligibles au CPF. Les modalités de prise en charge sont précisées sur le devis et lors de l'entretien préalable. Formations certifiantes : pour chaque formation préparant à une certification professionnelle, GALACTUS Digital indique l'intitulé exact et le code de la certification, les taux d'obtention et de réussite constatés, les possibilités de validation par blocs de compétences ainsi que les débouchés, suites de parcours et équivalences. Aucune allégation trompeuse n'est diffusée ; l'organisme s'inscrit dans le plan national de lutte contre la fraude à la formation.` },
+                { num: '13', title: 'Conditions d\'accueil des publics en situation de handicap', content: `GALACTUS Digital s'attache à permettre l'accès à ses formations à tous les publics. Référent Handicap certifié : Le président — 07 81 07 47 46 — president@galactusdigital.com. Partenaires : RHF Martinique (AGEFMA), RHF Île-de-France, AGEFIPH Antilles Guyane. Un entretien préalable est organisé pour toute situation de handicap signalée.` },
+                { num: '14', title: 'Délai d\'accès à la formation', content: `Le délai d'accès est défini sur le devis lors de la sollicitation client. Délai standard : 1 mois après la signature du devis et de la convention. Délai avec financement OPCO : 3 mois en fonction des règles de prise en charge. Pour les formations intra-entreprise, le délai est déterminé avec le responsable de formation du client.` },
+                { num: '15', title: 'Confidentialité', content: `GALACTUS Digital s'engage à ne pas communiquer à des tiers les informations transmises par le Client, sauf aux partenaires de formation et aux OPCO. Le Client autorise GALACTUS Digital à le citer comme référence dans ses listes et propositions commerciales.` },
+                { num: '16', title: 'Protection des données personnelles', content: `Conformément à la loi n° 78-17 du 6 janvier 1978 et au RGPD, le stagiaire dispose d'un droit d'accès, de modification et de rectification de ses données personnelles. Contact : president@galactusdigital.com ou 66 avenue des Champs Élysées, 75008 Paris. Les données pédagogiques sont conservées 3 ans à compter de la fin de la formation (Art. R6352-9 Code du travail). Les pièces comptables et justificatifs de financement sont conservés 5 ans conformément aux obligations légales.` },
+                { num: '17', title: 'Médiation de la consommation', content: `Conformément aux articles L.612-1 et L.616-1 du code de la consommation, tout client ayant la qualité de consommateur (personne physique agissant à des fins n'entrant pas dans le cadre de son activité professionnelle) a le droit de recourir gratuitement à un médiateur de la consommation en vue de la résolution amiable d'un litige l'opposant à GALACTUS Digital, après avoir tenté de le résoudre par une réclamation écrite directe. Les coordonnées du médiateur retenu sont communiquées sur demande et sur le site de l'organisme. Cette disposition ne s'applique pas aux clients professionnels.` },
+                { num: '18', title: 'Droit applicable et juridiction', content: `Les présentes CGV sont régies par le droit français. En cas de litige, une solution amiable sera recherchée en priorité. À défaut, les Tribunaux de Paris sont seuls compétents.` },
+                { num: '19', title: 'Sollicitation des appréciations', content: `En fin de formation, les appréciations des apprenants et de leur hiérarchie sont recueillies le dernier jour. Une relance est effectuée 15 jours après. Une sollicitation à froid est envoyée 2 mois après la formation pour mesurer l'impact sur le poste de travail, avec relance tous les 15 jours en cas de non-retour.` },
+              ].map(article => (
+                <div key={article.num} className="legal-article">
+                  <h3 className="legal-h3">Article {article.num} — {article.title}</h3>
+                  <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48' }}>{article.content}</p>
+                </div>
+              ))}
+            </div>
+
+            <div id="rgpd" className="legal-section" style={{ marginTop: '3rem' }}>
+              <h2 className="legal-h2">Protection des données — RGPD</h2>
+              <div className="legal-block">
+                <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48' }}>
+                  Conformément au Règlement Général sur la Protection des Données (RGPD — Règlement UE 2016/679) et à la loi Informatique et Libertés, vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation et de portabilité de vos données personnelles.
+                </p>
+                <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48', marginTop: '1rem' }}>
+                  <strong>Responsable du traitement :</strong> GALACTUS Digital — 66 avenue des Champs Élysées, 75008 Paris<br />
+                  <strong>Contact :</strong> president@galactusdigital.com<br />
+                  <strong>Finalité :</strong> Suivi des parcours de formation et amélioration de l'offre pédagogique<br />
+                  <strong>Durée de conservation :</strong> 3 ans pour les dossiers pédagogiques · 5 ans pour les pièces comptables<br />
+                  <strong>Droit de réclamation :</strong> Vous pouvez adresser une réclamation à la CNIL — www.cnil.fr
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </section>
+      </main>
+      <Footer />
+    </>
+  )
+}
+

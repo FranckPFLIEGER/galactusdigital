@@ -4,15 +4,7 @@ const articles = [
   {
     date: 'Août 2026',
     title: "Conformité au nouveau Référentiel National Qualité (décret 2026-728)",
-    desc: "Le décret n° 2026-728 du 1er août 2026 actualise le Référentiel National Qualité (33 indicateurs, entrée en vigueur le 1er novembre 2026). GALACTUS Digital est en conformité : information transparente sur les modalités pédagogiques, les modes de financement (employeur, OPCO, autofinancement — non éligible au CPF), les taux de réussite, la validation par blocs de compétences et les débouchés. Kit qualité V2026.3 opérationnel.",
-    tag: 'Qualité',
-    link: '/demarche-qualite',
-    linkLabel: 'Voir notre démarche qualité',
-  },
-  {
-    date: 'Juillet 2026',
-    title: "Anticipation du Référentiel National Qualité V2",
-    desc: "GALACTUS Digital a formalisé dès juillet 2026 les nouvelles procédures exigées par le projet de décret RNQ V2 (entrée en vigueur prévue le 1er novembre 2026) : procédure VHD (FQ-14), procédure ruptures de parcours (FQ-15) et évaluation des enseignements (FQ-08c). Kit qualité V2026.2 opérationnel.",
+    desc: "Le décret n° 2026-728 du 1er août 2026, publié au Journal officiel du 4 août 2026 (NOR TRSD2619632D), actualise le Référentiel National Qualité : 33 indicateurs, 7 critères inchangés, entrée en vigueur le 1er novembre 2026. GALACTUS Digital avait anticipé ces exigences dès juillet 2026 (procédure VHD FQ-14, procédure ruptures de parcours FQ-15, évaluation des enseignements FQ-08c) et est en conformité : information transparente sur les modalités pédagogiques, les modes de financement (employeur, OPCO, autofinancement — non éligible au CPF), les taux de réussite, la validation par blocs de compétences et les débouchés. Kit qualité V2026.3 opérationnel.",
     tag: 'Qualité',
     link: '/demarche-qualite',
     linkLabel: 'Voir notre démarche qualité',

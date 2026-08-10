@@ -14,9 +14,9 @@ import { Satisfaction }   from '@/components/Satisfaction'
 import { Services }       from '@/components/Services'
 import { WhyUs }          from '@/components/WhyUs'
 import { Partners }       from '@/components/Partners'
-import { News }           from '@/components/News'
+import { NewsTeaser }     from '@/components/NewsTeaser'
 import { AwardsSection }  from '@/components/Awards'
-import { RSE }            from '@/components/RSE'
+import { RSETeaser }      from '@/components/RSETeaser'
 import { ContactCTA }     from '@/components/ContactCTA'
 import { Footer }         from '@/components/Footer'
 
@@ -42,9 +42,9 @@ function HomePage() {
         <Results />
         <Partners />
         <WhyUs />
-        <News />
+        <NewsTeaser />
         <AwardsSection />
-        <RSE />
+        <RSETeaser />
         <ContactCTA />
       </main>
       <Footer />

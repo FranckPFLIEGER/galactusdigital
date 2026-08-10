@@ -11,7 +11,7 @@ function ActualitesPage() {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: '104px' }}>
+      <main className="page-below-header">
         <News />
       </main>
       <Footer />

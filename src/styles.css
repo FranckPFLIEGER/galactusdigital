@@ -569,3 +569,10 @@ a { color: inherit; }
 .legal-block p:last-child { margin-bottom: 0; }
 .legal-article { border-bottom: 1px solid rgba(187,187,187,0.25); padding: 1.5rem 0; }
 .legal-article:last-child { border-bottom: none; }
+
+/* Décalage sous l'en-tête fixe (menu + bandeau défilant) pour les pages
+   autonomes dont la première section n'a pas de fond sombre plein.
+   Menu 72px + ticker 32px = 104px ; on ajoute une marge de confort. */
+.page-below-header { padding-top: 128px; }
+@media (max-width: 900px) { .page-below-header { padding-top: 132px; } }
+@media (max-width: 480px) { .page-below-header { padding-top: 120px; } }

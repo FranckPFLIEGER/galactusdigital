@@ -11,7 +11,7 @@ function RSEPage() {
   return (
     <>
       <Header />
-      <main style={{ paddingTop: '104px' }}>
+      <main className="page-below-header">
         <RSE />
       </main>
       <Footer />

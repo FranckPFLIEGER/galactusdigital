@@ -11,7 +11,7 @@ function RSEPage() {
   return (
     <>
       <Header />
-      <main className="page-below-header">
+      <main className="page-below-header" style={{ background: 'var(--g-black)' }}>
         <RSE />
       </main>
       <Footer />

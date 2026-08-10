@@ -11,7 +11,7 @@ function ActualitesPage() {
   return (
     <>
       <Header />
-      <main className="page-below-header">
+      <main className="page-below-header" style={{ background: 'var(--g-offwhite)' }}>
         <News />
       </main>
       <Footer />

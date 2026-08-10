@@ -572,7 +572,24 @@ a { color: inherit; }
 
 /* Décalage sous l'en-tête fixe (menu + bandeau défilant) pour les pages
    autonomes dont la première section n'a pas de fond sombre plein.
-   Menu 72px + ticker 32px = 104px ; on ajoute une marge de confort. */
-.page-below-header { padding-top: 128px; }
-@media (max-width: 900px) { .page-below-header { padding-top: 132px; } }
-@media (max-width: 480px) { .page-below-header { padding-top: 120px; } }
+   Menu 72px + ticker 32px = 104px ; on ajoute une marge de confort.
+   Le margin-top négatif fait remonter le fond de la page sous la bordure
+   de 2px de l'en-tête, ce qui supprime le liseré blanc entre le bandeau
+   rouge et le contenu. */
+.page-below-header { margin-top: -4px; padding-top: 132px; }
+@media (max-width: 900px) { .page-below-header { padding-top: 136px; } }
+@media (max-width: 480px) { .page-below-header { padding-top: 124px; } }
+
+/* ── Ancres : décalage sous l'en-tête fixe (menu + bandeau défilant) ──
+   Sans cela, un clic sur un lien d'ancre (#president, #presence, …) cale
+   le haut de la section à y=0, sous l'en-tête fixe, et masque le titre.
+   scroll-margin-top réserve la hauteur de l'en-tête pour que le titre
+   reste visible juste sous le bandeau rouge. */
+:target,
+#accueil, #stats, #president, #expertise, #presence, #services,
+#satisfaction, #clients, #resultats, #partenaires, #pourquoi,
+#actualites, #awards, #rse, #contact,
+#inter, #intra, #cgv, #mentions, #rgpd {
+  scroll-margin-top: 120px;
+}
+@media (max-width: 900px) { :target { scroll-margin-top: 112px; } }

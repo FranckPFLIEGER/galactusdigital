@@ -71,65 +71,64 @@ const DATA = {
   // Programme
   modules: [
     {
-      num: '01', titre: 'Réseaux aujourd\'hui', duree: '6h',
+      num: '01–03', titre: 'Connectivité réseau de base et communications', duree: '12h',
       contenu: [
-        'Composants, types et connexions réseau',
-        'Modèles de réseau fiable (tolérance, évolutivité, qualité de service)',
-        'Tendances actuelles : BYOD, cloud computing, IoT',
-        'TP Packet Tracer — cartographie d\'un réseau d\'entreprise',
+        'Composants, types et connexions réseau ; représentations et topologies',
+        'Configuration initiale d\'un système d\'exploitation Cisco IOS (CLI)',
+        'Protocoles et modèles — OSI et TCP/IP, encapsulation',
+        'TP Packet Tracer — navigation IOS et cartographie réseau',
       ],
     },
     {
-      num: '02', titre: 'Protocoles et modèles', duree: '8h',
+      num: '04–07', titre: 'Concepts Ethernet', duree: '16h',
       contenu: [
-        'Règles de communication, encodage, encapsulation, segmentation',
-        'Modèle OSI — les 7 couches et leurs rôles respectifs',
-        'Modèle TCP/IP — comparaison et correspondance avec OSI',
-        'TP Wireshark — analyse de trafic réseau en temps réel',
-      ],
-    },
-    {
-      num: '03', titre: 'Couche physique', duree: '6h',
-      contenu: [
-        'Débit binaire, largeur de bande, latence, gigue',
-        'Câblage cuivre (UTP Cat5e/6, coaxial) et fibre optique (monomode/multimode)',
-        'Supports sans fil — normes IEEE 802.11 a/b/g/n/ac/ax',
-        'TP — Câblage Ethernet et test de connectivité physique',
-      ],
-    },
-    {
-      num: '04', titre: 'Adressage IPv4', duree: '12h',
-      contenu: [
-        'Structure des adresses IPv4, classes, adresses publiques et privées',
-        'Adressage unicast, multicast, broadcast — cas d\'usage',
-        'Découpage en sous-réseaux VLSM (Variable Length Subnet Mask)',
-        'TP — Calcul, planification et configuration d\'adressage IPv4',
-      ],
-    },
-    {
-      num: '05', titre: 'Adressage IPv6', duree: '8h',
-      contenu: [
-        'Structure et représentation compressée des adresses IPv6',
-        'Types d\'adresses IPv6 : GUA, LLA, multicast, anycast',
-        'Configuration statique, SLAAC et DHCPv6 stateless/stateful',
-        'TP — Déploiement d\'une infrastructure dual-stack IPv4/IPv6',
-      ],
-    },
-    {
-      num: '06–11', titre: 'Couches réseau, transport et application', duree: '30h',
-      contenu: [
-        'Routage statique, table de routage, protocole ARP',
+        'Couche physique — supports cuivre, fibre, sans fil',
+        'Systèmes de numération (binaire, hexadécimal) et couche liaison',
         'Commutation Ethernet — trames, adresses MAC, tables CAM',
-        'Couche transport : TCP (fiable) vs UDP (non fiable), numéros de port',
-        'Couche application : DNS, DHCP, HTTP/HTTPS, FTP, TFTP',
-        'TP de synthèse — Configuration réseau complète multi-couches',
+        'TP Wireshark — analyse de trames Ethernet et ARP',
+      ],
+    },
+    {
+      num: '08–10', titre: 'Communication entre réseaux', duree: '12h',
+      contenu: [
+        'Couche réseau — paquets IPv4/IPv6 et routage',
+        'Résolution d\'adresses — ARP et découverte de voisins IPv6 (ND)',
+        'Configuration de base d\'un routeur Cisco IOS',
+        'TP — Configuration routeur et passerelle par défaut',
+      ],
+    },
+    {
+      num: '11–13', titre: 'Adressage IP', duree: '16h',
+      contenu: [
+        'Structure et adressage IPv4 — public, privé, réservé',
+        'Découpage en sous-réseaux VLSM (Variable Length Subnet Mask)',
+        'Adressage IPv6 — GUA, LLA, SLAAC, DHCPv6 stateless/stateful',
+        'TP — Planification et configuration d\'adressage IPv4/IPv6',
+      ],
+    },
+    {
+      num: '14–15', titre: 'Communications applicatives', duree: '8h',
+      contenu: [
+        'Couche transport — TCP (fiable) vs UDP, numéros de port',
+        'Couche application — DNS, DHCP, HTTP/HTTPS, FTP, TFTP, SMTP',
+        'Établissement et gestion des sessions TCP',
+        'TP — Analyse des protocoles applicatifs',
+      ],
+    },
+    {
+      num: '16–17', titre: 'Créer et sécuriser un petit réseau', duree: '6h',
+      contenu: [
+        'Conception d\'un petit réseau et bonnes pratiques',
+        'Bases de la sécurité réseau — menaces et mesures d\'atténuation',
+        'Sécurisation des équipements et vérification de la connectivité',
+        'TP de synthèse — dépannage d\'un petit réseau',
       ],
     },
   ],
 
   // Examen
   examen: {
-    code:       '200-301 CCNA',
+    code:       '200-301 CCNA v1.1',
     duree:      '120 minutes',
     langue:     'Français',
     organisme:  'Cisco Networking Academy',
@@ -179,6 +178,10 @@ function CheckItem({ text, light = false }: { text: string; light?: boolean }) {
       {text}
     </li>
   )
+}
+
+function NewBadge() {
+  return (<span style={{ display: 'inline-flex', alignItems: 'center', flexShrink: 0, fontFamily: 'var(--font-title)', fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '1px 6px', marginLeft: '0.4rem', borderRadius: '2px', verticalAlign: 'middle' }}>Nouveau v1.1</span>)
 }
 
 function DelaisAcces() {
@@ -420,7 +423,7 @@ function CcnaItnPage() {
                   ].map(row => (
                     <div key={row.label} style={{ padding: '0.75rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.25)' }}>
                       <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.25rem' }}>{row.label}</div>
-                      <div style={{ fontSize: '0.84rem', color: 'var(--g-black)', fontWeight: 600 }}>{row.val}</div>
+                      <div style={{ fontSize: '0.84rem', color: 'var(--g-black)', fontWeight: 600 }}>{row.val}{typeof row.val === 'string' && row.val.includes('v1.1') && <NewBadge />}</div>
                     </div>
                   ))}
                 </div>

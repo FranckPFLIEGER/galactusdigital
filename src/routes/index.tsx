@@ -1,6 +1,7 @@
 import '@/styles.css'
 import { createFileRoute } from '@tanstack/react-router'
 import { Header }         from '@/components/Header'
+import { ScrollProgress } from '@/components/ScrollProgress'
 import { Hero }           from '@/components/Hero'
 import { QualiopiBanner } from '@/components/QualiopiBanner'
 import { Stats }          from '@/components/Stats'
@@ -26,6 +27,7 @@ export const Route = createFileRoute('/')({
 function HomePage() {
   return (
     <>
+      <ScrollProgress />
       <Header />
       <main>
         <Hero />

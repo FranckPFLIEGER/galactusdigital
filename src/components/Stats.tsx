@@ -1,10 +1,10 @@
 import { useIntersection } from '../hooks/useIntersection'
 
 const stats = [
-  { num: '+25', label: "ans d'expérience reconnue" },
+  { num: '+25', label: "ans d'expérience du fondateur" },
   { num: '131', label: 'stagiaires en 2025' },
   { num: '518', label: 'candidats formés, toutes formations, en 3 ans' },
-  { num: '100%', label: 'de réussite aux certifications éditeurs (2023-2025)' },
+  { num: '0', label: 'abandon en cours de parcours (2023-2025)' },
 ]
 
 export function Stats() {

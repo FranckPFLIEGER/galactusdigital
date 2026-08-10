@@ -62,7 +62,7 @@ const pillars = [
     title: "Ancrage territorial & ASPIK",
     badge: "6 territoires ultramarins — Association loi 1901 depuis 2018",
     items: [
-      "ASPIK — Association Spécialisée dans la Protection Informatique de la Karaïbe (ASCPK à l'international) : fondée en 2018 à Le François, Martinique, pour développer la cybersécurité et la coopération IT aux Caraïbes",
+      "ASPIK — Association Spécialisée dans la Protection Informatique de la Karaïbe : fondée en 2018 à Le François, Martinique, pour développer la cybersécurité et la coopération IT aux Caraïbes",
       "Formateurs locaux certifiés en priorité — vous êtes formés par des professionnels qui connaissent votre réalité terrain, votre marché, vos contraintes",
       "Mêmes certifications mondiales qu'à Paris ou New York — sans quitter votre territoire, sans financer un séjour en métropole",
       "Sessions de veille IT ouvertes à tous via ASPIK — réseau d'alumni ultramarins, partage d'opportunités et d'expériences entre certifiés des territoires ultramarins",

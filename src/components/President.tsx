@@ -1,5 +1,12 @@
+import { useState } from 'react'
 import { useIntersection } from '../hooks/useIntersection'
-import { Target, Globe, BookOpen } from 'lucide-react'
+import { Target, Globe, BookOpen, Linkedin } from 'lucide-react'
+
+// À renseigner : dépose la photo dans /public/president.jpg
+// et remplace l'URL LinkedIn ci-dessous par ton profil réel.
+const PRESIDENT_PHOTO = '/president.jpg'
+const PRESIDENT_LINKEDIN = 'https://www.linkedin.com/in/franckpflieger'
+const PRESIDENT_TITLES = ['CCNP / CCDP', '15 ans instructeur Cisco', 'IPv6 Hall of Fame 2025']
 
 const values = [
   {
@@ -21,6 +28,7 @@ const values = [
 
 export function President() {
   const { ref, isVisible } = useIntersection()
+  const [photoOk, setPhotoOk] = useState(true)
   return (
     <section className="president-section" id="president" ref={ref}>
       <div className="section-inner">
@@ -46,11 +54,32 @@ export function President() {
               capable d'évoluer à chaque nouvelle innovation — en s'appuyant sur ceux
               qui la font : les éditeurs.
             </blockquote>
-            <div className="president-signature">
+            <div className="president-signature" style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+              {photoOk && (
+                <img
+                  src={PRESIDENT_PHOTO}
+                  alt="Franck PFLIEGER — Fondateur & Président de GALACTUS Digital"
+                  onError={() => setPhotoOk(false)}
+                  style={{ width: '64px', height: '64px', borderRadius: '50%', objectFit: 'cover', border: '2px solid rgba(228,31,38,0.4)', flexShrink: 0 }}
+                />
+              )}
               <div className="president-signature-line" />
               <div>
-                <div className="president-name">Le président</div>
-                <div className="president-title">Fondateur & Président — GALACTUS Digital</div>
+                <div className="president-name">Franck PFLIEGER</div>
+                <div className="president-title">Fondateur &amp; Président — GALACTUS Digital</div>
+                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.4rem', marginTop: '0.5rem' }}>
+                  {PRESIDENT_TITLES.map(t => (
+                    <span key={t} style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: '#E41F26', background: 'rgba(228,31,38,0.10)', padding: '3px 8px' }}>{t}</span>
+                  ))}
+                </div>
+                <a
+                  href={PRESIDENT_LINKEDIN}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.35rem', marginTop: '0.6rem', fontSize: '0.72rem', color: 'rgba(255,255,255,0.7)', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.06em' }}
+                >
+                  <Linkedin size={13} /> Profil LinkedIn
+                </a>
               </div>
             </div>
           </div>

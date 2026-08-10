@@ -19,6 +19,26 @@ const clients = [
   { file: '040.jpg' }, { file: '041.jpg' }, 
 ]
 
+// Extraits de vrais témoignages (voir page /temoignages pour l'intégralité).
+// Initiales conformes RGPD ; entreprises/territoires cités avec accord.
+const testimonials = [
+  {
+    quote: "Des bases théoriques et pratiques solides, avec des applications concrètes dès le retour en entreprise : analyse RGPD, audit de sécurité interne. Je recommande fortement.",
+    author: "P.B. — Directeur & RSI",
+    context: "Biolab Martinique — Cybersécurité",
+  },
+  {
+    quote: "La qualité, à la fois pédagogique et technique, des interventions réalisées pour la collectivité. Nous espérons poursuivre cette relation de qualité.",
+    author: "C-A.H. — Directeur des SI",
+    context: "Collectivité Territoriale de Martinique — Réseaux",
+  },
+  {
+    quote: "Laboratoires virtuels et expertise reconnue du formateur ont permis à l'ensemble du public de suivre malgré des niveaux différents. Une formation à recommander.",
+    author: "A.A. — Responsable Réseau de Transport",
+    context: "Digicel Antilles-Guyane — Cisco Service Provider",
+  },
+]
+
 export function Clients() {
   const { ref, isVisible } = useIntersection()
   const [expanded, setExpanded] = useState(false)
@@ -37,6 +57,28 @@ export function Clients() {
           Des entreprises publiques et privées dans les territoires ultramarins et en France hexagonale
           nous confient la montée en compétences de leurs équipes IT.
         </p>
+        <div className={`reveal${isVisible ? ' visible' : ''} delay-2`}
+          style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.25rem', margin: '2.5rem 0 3rem' }}>
+          {testimonials.map((t, i) => (
+            <figure key={i}
+              style={{ margin: 0, padding: '1.5rem', background: 'rgba(0,0,0,0.02)', borderLeft: '3px solid #E41F26' }}>
+              <blockquote style={{ margin: 0, fontSize: '0.92rem', lineHeight: 1.55, color: 'inherit' }}>
+                « {t.quote} »
+              </blockquote>
+              <figcaption style={{ marginTop: '1rem', fontFamily: 'var(--font-title)' }}>
+                <span style={{ display: 'block', fontSize: '0.78rem', fontWeight: 700, letterSpacing: '0.04em' }}>{t.author}</span>
+                <span style={{ display: 'block', fontSize: '0.70rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: '#E41F26', marginTop: '2px' }}>{t.context}</span>
+              </figcaption>
+            </figure>
+          ))}
+        </div>
+
+        <div className={`reveal${isVisible ? ' visible' : ''} delay-2`} style={{ textAlign: 'center', marginBottom: '3rem' }}>
+          <a href="/temoignages" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', color: '#E41F26', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase' }}>
+            Voir tous les témoignages →
+          </a>
+        </div>
+
         <div className={`clients-grid${expanded ? ' expanded' : ''}`}>
           {clients.map((c, i) => (
             <div

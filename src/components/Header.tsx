@@ -7,7 +7,7 @@ import { FORMATIONS, getFormationsParFamille } from '../data/catalogue'
 // Toutes les familles partagent le rouge de marque #E41F26.
 // La distinction se fait par l'intensité, pas par la teinte.
 const FC: Record<string, string> = {
-  'Réseaux & CCNA':      '#E41F26',
+  'CCNA et CCNP':        '#E41F26',
   'Cybersécurité':       '#E41F26',
   'Programmation':       '#E41F26',
   'IoT':                 '#E41F26',

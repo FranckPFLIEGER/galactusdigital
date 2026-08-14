@@ -7,9 +7,9 @@ export const Route = createFileRoute('/certifications-rs/')({
   head: () => ({
     meta: [
       { title: 'Certifications professionnelles RS — GALACTUS Digital' },
-      { name: 'description', content: "Les certifications professionnelles de GALACTUS Digital en cours d'enregistrement au Répertoire spécifique de France Compétences. Organisme certificateur des territoires ultramarins." },
+      { name: 'description', content: "Les certifications professionnelles de GALACTUS Digital en cours d'instruction au Répertoire spécifique de France Compétences (dossier recevable). Organisme certificateur des territoires ultramarins." },
       { property: 'og:title', content: 'Certifications professionnelles RS — GALACTUS Digital' },
-      { property: 'og:description', content: "Certifications professionnelles en cours d'enregistrement au Répertoire spécifique de France Compétences — GALACTUS Digital, territoires ultramarins." },
+      { property: 'og:description', content: "Certifications professionnelles en cours d'instruction au Répertoire spécifique de France Compétences — GALACTUS Digital, territoires ultramarins." },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications-rs' },
     ],
   }),
@@ -50,7 +50,7 @@ const CERTIFICATIONS_RS: CertifRS[] = [
 
 const STATUT_LABEL: Record<StatutRS, string> = {
   'enregistree': 'Enregistrée au RS',
-  'en-cours': "En cours d'enregistrement",
+  'en-cours': "En cours d'instruction",
 }
 
 function CertificationsRSHub() {

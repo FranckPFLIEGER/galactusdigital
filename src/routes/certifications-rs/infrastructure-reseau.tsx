@@ -7,7 +7,7 @@ export const Route = createFileRoute('/certifications-rs/infrastructure-reseau')
   head: () => ({
     meta: [
       { title: 'Certification — Mettre en œuvre, sécuriser et superviser une infrastructure réseau | GALACTUS Digital' },
-      { name: 'description', content: "Certification professionnelle en cours d'enregistrement au Répertoire spécifique : mettre en œuvre, sécuriser et superviser une infrastructure réseau. Formation certifiante en Martinique, Guadeloupe et La Réunion." },
+      { name: 'description', content: "Certification professionnelle en cours d'instruction au Répertoire spécifique de France Compétences (dossier recevable) : mettre en œuvre, sécuriser et superviser une infrastructure réseau. Formation certifiante en Martinique, Guadeloupe et La Réunion." },
       { property: 'og:title', content: 'Certification — Infrastructure réseau | GALACTUS Digital' },
       { property: 'og:description', content: "Certification professionnelle RS : installer, sécuriser et superviser une infrastructure réseau d'entreprise. Territoires ultramarins." },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications-rs/infrastructure-reseau' },
@@ -48,7 +48,7 @@ function CertifInfraReseau() {
               <ArrowLeft size={15} /> Toutes les certifications RS
             </a>
             <span style={{ display: 'inline-block', background: 'var(--g-red)', color: '#fff', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', padding: '0.4rem 0.8rem', fontFamily: 'var(--font-title)' }}>
-              Répertoire spécifique — France Compétences · En cours d'enregistrement
+              Répertoire spécifique — France Compétences · En cours d'instruction
             </span>
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,4vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.02em', lineHeight: 1.15, margin: '1.2rem 0 1rem' }}>
               Mettre en œuvre, sécuriser et superviser une infrastructure réseau
@@ -135,7 +135,7 @@ function CertifInfraReseau() {
               <span style={{ border: '1px solid var(--g-line, #E4E4E4)', padding: '0.5rem 0.75rem', fontSize: '0.85rem', background: '#fff' }}><b style={{ color: 'var(--g-red)' }}>IPv6</b> Forum</span>
             </div>
             <p style={{ marginTop: '1.75rem', color: 'var(--g-grey, #6B6B6B)', fontSize: '0.85rem', lineHeight: 1.7 }}>
-              Certification en cours d'enregistrement au Répertoire spécifique de France Compétences. Certificateur : GALACTUS Digital (PFLIEGER SASU) — SIRET 880 430 418 00017.
+              Certification en cours d'enregistrement au Répertoire spécifique de France Compétences — dossier n° 53224 jugé recevable, en cours d'instruction (art. R. 6113-11 du code du travail). Certificateur : GALACTUS Digital (PFLIEGER SASU) — SIRET 880 430 418 00017.
             </p>
           </section>
         </div>

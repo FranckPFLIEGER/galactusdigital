@@ -126,7 +126,7 @@ export function FormationGrid({ modalite, dark = false }: Props) {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
                   <Euro size={11} color={metaCol} />
                   <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 700, color: metaCol, fontStyle: 'italic', letterSpacing: '0.04em' }}>
-                    {f.prix?.presentiel ? `${f.prix.presentiel.toLocaleString('fr-FR')} € TTC` : 'Sur devis'}
+                    {f.prixPublic && f.prix?.presentiel ? `${f.prix.presentiel.toLocaleString('fr-FR')} € TTC` : 'Sur devis'}
                   </span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#E41F26' }}>

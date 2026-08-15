@@ -258,7 +258,7 @@ function SessionRow({ s, prep = false }: { s: Session; prep?: boolean }) {
           {(() => {
             const pr = s.formation.prix as any
             const key = s.modalite === 'Présentiel' ? 'presentiel' : s.modalite === 'FOAD' ? 'foad' : 'elearning'
-            const v = pr && pr[key]
+            const v = s.formation.prixPublic && pr && pr[key]
             return v ? <span style={{ color: '#1D1D1B', fontWeight: 700 }}>{v.toLocaleString('fr-FR')} € TTC</span>
                      : <span style={{ color: '#aaa', fontStyle: 'italic' }}>Sur devis</span>
           })()}

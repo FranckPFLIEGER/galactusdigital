@@ -95,7 +95,7 @@ function Card({ f }: { f: Formation }) {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: ".9rem 1.25rem", borderTop: "1px solid rgba(187,187,187,.20)", marginTop: "auto" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: ".15rem" }}>
           <span style={{ fontFamily: "var(--font-title)", fontSize: ".82rem", fontWeight: 700, color: "var(--g-black)" }}>
-            {f.prix?.presentiel ? `${f.prix.presentiel.toLocaleString('fr-FR')} € TTC` : 'Sur devis'}
+            {f.prixPublic && f.prix?.presentiel ? `${f.prix.presentiel.toLocaleString('fr-FR')} € TTC` : 'Sur devis'}
           </span>
         </div>
         <a href={`/formations/${f.slug}`} style={{ display: "inline-flex", alignItems: "center", gap: ".35rem", fontFamily: "var(--font-title)", fontSize: ".70rem", fontWeight: 700, letterSpacing: ".10em", textTransform: "uppercase", color, textDecoration: "none" }}>

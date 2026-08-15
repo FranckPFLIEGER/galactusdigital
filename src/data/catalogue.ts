@@ -32,7 +32,7 @@ export interface Formation {
 
 // ─── Familles pour l'affichage groupé ────────────────────────────────────────
 export const FAMILLES: Record<string, { label: string; icon: string }> = {
-  'CCNA & CCNP':            { label: 'CCNAv2 & CCNP',        icon: 'Network'  },
+  'CCNA et CCNP':          { label: 'CCNA & CCNP',        icon: 'Network'  },
   'Cybersécurité':         { label: 'Cybersécurité',          icon: 'Shield'   },
   'Programmation':         { label: 'Programmation',          icon: 'Code'     },
   'IoT':                   { label: 'IoT & Objets Connectés', icon: 'Wifi'     },

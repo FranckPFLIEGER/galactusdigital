@@ -277,12 +277,17 @@ function SessionRow({ s, prep = false }: { s: Session; prep?: boolean }) {
 
 // ── PAGE ──────────────────────────────────────────────────────────────
 function CalendrierPage() {
-  const [vue,          setVue]          = useState<'liste'|'gantt'>('gantt')
+  const initialF = (() => {
+    if (typeof window === 'undefined') return 'Toutes'
+    const sp = new URLSearchParams(window.location.search).get('f')
+    return sp && FORMATIONS.some(x => x.slug === sp) ? sp : 'Toutes'
+  })()
+  const [vue,          setVue]          = useState<'liste'|'gantt'>(initialF !== 'Toutes' ? 'liste' : 'gantt')
   const [fModalite,    setFModalite]    = useState('Toutes')
   const [fTerritoire,  setFTerritoire]  = useState('Tous')
   const [fEditeur,     setFEditeur]     = useState('Tous')
   const [fFamille,     setFFamille]     = useState('Toutes')
-  const [fFormation,   setFFormation]   = useState('Toutes')
+  const [fFormation,   setFFormation]   = useState(initialF)
   const [query,        setQuery]        = useState('')
 
   const familles  = ['Toutes', ...Array.from(new Set(FORMATIONS.map(f => f.famille)))]

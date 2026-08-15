@@ -167,16 +167,19 @@ function FormationPage() {
                 <div key={b.label} style={{ padding: '0.35rem 0.9rem', background: b.main ? 'rgba(228,31,38,0.15)' : 'rgba(255,255,255,0.07)', border: `1px solid ${b.main ? 'rgba(228,31,38,0.35)' : 'rgba(255,255,255,0.12)'}`, fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: b.main ? 'rgba(255,255,255,0.90)' : 'rgba(255,255,255,0.55)' }}>{b.label}</div>
               ))}
             </div>
-            <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap', alignItems: 'center' }}>
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Calendar size={14} />, text: 'Voir calendrier' },
+                { icon: <Award size={14} />, text: '2 590 € TTC (présentiel)' },
               ].map((m, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>
                   <span style={{ color: 'var(--g-red)' }}>{m.icon}</span>{m.text}
                 </div>
               ))}
+              <a href="/calendrier?f=ccna-cisco" style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: 'var(--g-red)', padding: '0.4rem 0.9rem' }}>
+                <Calendar size={14} /> Voir le calendrier
+              </a>
             </div>
           </div>
         </section>

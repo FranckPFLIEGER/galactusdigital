@@ -255,7 +255,13 @@ function SessionRow({ s, prep = false }: { s: Session; prep?: boolean }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', color: '#4a4a48' }}><Users size={12} color="#E41F26" />Max {s.placesMax} participants</div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem' }}>
           <Euro size={12} color="#E41F26" />
-          <span style={{ color: '#aaa', fontStyle: 'italic' }}>Sur devis</span>
+          {(() => {
+            const pr = s.formation.prix as any
+            const key = s.modalite === 'Présentiel' ? 'presentiel' : s.modalite === 'FOAD' ? 'foad' : 'elearning'
+            const v = pr && pr[key]
+            return v ? <span style={{ color: '#1D1D1B', fontWeight: 700 }}>{v.toLocaleString('fr-FR')} € TTC</span>
+                     : <span style={{ color: '#aaa', fontStyle: 'italic' }}>Sur devis</span>
+          })()}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.72rem', color: prep ? '#EF9F27' : '#bbb', fontStyle: 'italic', fontWeight: prep ? 600 : 400 }}>
           <CalendarClock size={11} color={prep ? '#EF9F27' : '#ccc'} />{s.dateLabel}

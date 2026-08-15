@@ -108,7 +108,7 @@ export const FORMATIONS: Formation[] = [
     slug: 'ccna-cisco',
     titre: 'CCNA v2.0 — Cisco (accéléré)',
     titreLong: 'CCNA v2.0 — Implementing and Administering Cisco Solutions (parcours accéléré Cisco)',
-    editeur: 'Cisco', famille: 'CCNA et CCNP',
+    editeur: 'Cisco Networking Academy', famille: 'CCNA et CCNP',
     niveau: 'Fondamental à intermédiaire', duree: '40 heures', dureeJours: 5,
     certification: 'Cisco CCNA 200-301 (blueprint v2.0)',
     examCode: '200-301 v2.0',
@@ -598,11 +598,13 @@ export function getTarifsModalites(f: Formation): TarifModalite[] {
     'E-learning':  'E-learning tutoré',
   }
   return f.modalites.map(m => {
+    const key = m === 'Présentiel' ? 'presentiel' : m === 'FOAD' ? 'foad' : 'elearning'
+    const v = f.prix ? (f.prix as any)[key] : undefined
     return {
       modalite: m,
       label: LABELS[m],
-      valeur: 'Sur devis',
-      surDevis: true,
+      valeur: v ? `${v.toLocaleString('fr-FR')} € TTC` : 'Sur devis',
+      surDevis: !v,
     }
   })
 }

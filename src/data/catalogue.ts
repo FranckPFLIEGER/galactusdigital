@@ -105,6 +105,19 @@ export const FORMATIONS: Formation[] = [
   },
 
   {
+    slug: 'ccna-cisco',
+    titre: 'CCNA v2.0 — Cisco (accéléré)',
+    titreLong: 'CCNA v2.0 — Implementing and Administering Cisco Solutions (parcours accéléré Cisco)',
+    editeur: 'Cisco', famille: 'CCNA et CCNP',
+    niveau: 'Fondamental à intermédiaire', duree: '40 heures', dureeJours: 5,
+    certification: 'Cisco CCNA 200-301 (blueprint v2.0)',
+    examCode: '200-301 v2.0',
+    modalites: ['Présentiel', 'FOAD'],
+    description: 'Parcours accéléré officiel Cisco (5 jours) préparant à l\'examen CCNA 200-301 v2.0 : nouvelle section IA dans les opérations réseau, virage troubleshooting, allègement théorique. Distinct du parcours NetAcad en 3 modules.',
+    prix: { presentiel: 2490, foad: 2490, elearning: 0 },
+  },
+
+  {
     slug: 'ccnp-encor',
     titre: 'CCNP Enterprise — ENCOR',
     titreLong: 'CCNP Enterprise : Core Networking (ENCOR 350-401) v9',

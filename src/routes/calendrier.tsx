@@ -72,6 +72,7 @@ const RAW: (Session | null)[] = [
   s('md-102',   'Martinique', 'Présentiel', { dateLabel: 'Du 25/01/27 au 29/01/27', statut: 'en_preparation' }),
   s('pl-7002',  'Martinique', 'Présentiel', { dateLabel: 'Le 25/02/27', statut: 'en_preparation' }),
   s('az-802',   'Martinique', 'Présentiel', { dateLabel: 'Du 08/03/27 au 12/03/27', statut: 'en_preparation' }),
+  s('ccna-cisco', 'Martinique', 'Présentiel', { dateLabel: 'Du 15/03/27 au 19/03/27', statut: 'en_preparation' }),
   s('ms-102',   'Martinique', 'Présentiel', { dateLabel: 'Du 05/04/27 au 09/04/27', statut: 'en_preparation' }),
   s('pl-7008',  'Martinique', 'Présentiel', { dateLabel: 'Le 20/04/27', statut: 'en_preparation' }),
   s('sc-300',   'Martinique', 'Présentiel', { dateLabel: 'Du 04/05/27 au 07/05/27', statut: 'en_preparation' }),

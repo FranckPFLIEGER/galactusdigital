@@ -114,7 +114,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301 v2.0',
     modalites: ['Présentiel', 'FOAD'],
     description: 'Parcours accéléré officiel Cisco (5 jours) préparant à l\'examen CCNA 200-301 v2.0 : nouvelle section IA dans les opérations réseau, virage troubleshooting, allègement théorique. Distinct du parcours NetAcad en 3 modules.',
-    prix: { presentiel: 2490, foad: 2490, elearning: 0 },
+    prix: { presentiel: 2590, foad: 2490, elearning: 0 },
   },
 
   {

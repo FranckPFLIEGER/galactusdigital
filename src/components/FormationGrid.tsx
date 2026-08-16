@@ -1,8 +1,9 @@
 // FormationGrid.tsx — Grille formations dynamique depuis le catalogue
 // Props : modalite + dark (fond sombre ou clair)
 import { useState } from 'react'
-import { ChevronRight, Euro } from 'lucide-react'
+import { ChevronRight, Euro, Calendar } from 'lucide-react'
 import { FORMATIONS, getFormationsParFamille, type Modalite } from '../data/catalogue'
+import { getProchaineSession } from '../data/sessions'
 
 const FC: Record<string, string> = {
   'Réseaux & CCNA':      '#E41F26',
@@ -81,6 +82,7 @@ export function FormationGrid({ modalite, dark = false }: Props) {
         {visible.map(f => {
           const fCol = FC[f.famille] || '#E41F26'
           const nCol = NC[f.niveau]  || '#888'
+          const prochaine = getProchaineSession(f.slug)
           return (
             <a key={f.slug} href={`/formations/${f.slug}`}
               style={{ display: 'flex', flexDirection: 'column', background: cardBg, border: `1px solid ${cardBord}`, borderTop: `3px solid ${fCol}`, padding: '1.25rem', textDecoration: 'none', transition: 'transform 0.15s, box-shadow 0.15s' }}
@@ -120,6 +122,16 @@ export function FormationGrid({ modalite, dark = false }: Props) {
                   </span>
                 )}
               </div>
+
+              {/* Prochaine session (pulsation douce) */}
+              {prochaine && (
+                <div className="gd-next-session" style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', marginTop: '0.75rem', padding: '0.3rem 0.55rem', background: 'rgba(228,31,38,0.08)', border: '1px solid rgba(228,31,38,0.25)', alignSelf: 'flex-start' }}>
+                  <Calendar size={11} color="#E41F26" />
+                  <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.64rem', fontWeight: 700, letterSpacing: '0.04em', textTransform: 'uppercase', color: '#E41F26' }}>
+                    Prochaine session : {prochaine.dateLabel} · {prochaine.territoire}
+                  </span>
+                </div>
+              )}
 
               {/* Prix + CTA */}
               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', paddingTop: '0.65rem', borderTop: `1px solid ${divider}` }}>

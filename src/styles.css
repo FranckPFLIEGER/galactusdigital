@@ -593,3 +593,13 @@ a { color: inherit; }
   scroll-margin-top: 120px;
 }
 @media (max-width: 900px) { :target { scroll-margin-top: 112px; } }
+
+/* Pulsation douce de la pastille « Prochaine session » sur les cartes.
+   Volontairement subtile (opacité + halo), pas un clignotement agressif :
+   respecte la lisibilité et l'accessibilité. */
+@keyframes gdNextPulse {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(228,31,38,0.0); opacity: 1; }
+  50%      { box-shadow: 0 0 0 4px rgba(228,31,38,0.10); opacity: 0.78; }
+}
+.gd-next-session { animation: gdNextPulse 1.8s ease-in-out infinite; border-radius: 2px; }
+@media (prefers-reduced-motion: reduce) { .gd-next-session { animation: none; } }

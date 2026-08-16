@@ -4,7 +4,8 @@ import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { FORMATIONS, FAMILLES } from "../../data/catalogue"
 import type { Formation } from "../../data/catalogue"
-import { ArrowRight, Clock, Award, Phone, Mail, Filter } from "lucide-react"
+import { ArrowRight, Clock, Award, Phone, Mail, Filter, Calendar } from "lucide-react"
+import { getProchaineSession } from "../../data/sessions"
 
 export const Route = createFileRoute("/formations/")({
   component: FormationsPage,
@@ -35,6 +36,7 @@ const MODALITE_ICON: Record<string, string> = {
 
 function Card({ f }: { f: Formation }) {
   const color = EDITEUR_COLOR[f.editeur] ?? "#E41F26"
+  const prochaine = getProchaineSession(f.slug)
   return (
     <div style={{
       background: "#fff",
@@ -90,6 +92,15 @@ function Card({ f }: { f: Formation }) {
           </span>
         ))}
       </div>
+
+      {prochaine && (
+        <div className="gd-next-session" style={{ display: "flex", alignItems: "center", gap: ".35rem", margin: "0 1.25rem", padding: ".3rem .55rem", background: "rgba(228,31,38,0.08)", border: "1px solid rgba(228,31,38,0.25)", alignSelf: "flex-start" }}>
+          <Calendar size={11} color="#E41F26" />
+          <span style={{ fontFamily: "var(--font-title)", fontSize: ".64rem", fontWeight: 700, letterSpacing: ".04em", textTransform: "uppercase", color: "#E41F26" }}>
+            Prochaine session : {prochaine.dateLabel} · {prochaine.territoire}
+          </span>
+        </div>
+      )}
 
       {/* prix + CTA */}
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: ".9rem 1.25rem", borderTop: "1px solid rgba(187,187,187,.20)", marginTop: "auto" }}>

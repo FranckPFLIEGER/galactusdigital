@@ -428,7 +428,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'MD-102',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Intune, Windows Autopilot, conformité, Conditional Access, Defender for Endpoint et gestion des appareils à grande échelle.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 2390, foad: 1790, elearning: 490 }, prixPublic: true,
   },
   {
     slug: 'ms-4010',

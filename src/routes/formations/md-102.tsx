@@ -112,6 +112,7 @@ function FormationPage() {
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
                                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
+                { icon: <Award size={14} />, text: '2 390 € TTC (présentiel)' },
                 { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=md-102' },
               ].map((m, i) => (
                 m.href ? (

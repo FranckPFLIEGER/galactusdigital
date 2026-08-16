@@ -258,7 +258,7 @@ function SessionRow({ s, prep = false }: { s: Session; prep?: boolean }) {
           {(() => {
             const pr = s.formation.prix as any
             const key = s.modalite === 'Présentiel' ? 'presentiel' : s.modalite === 'FOAD' ? 'foad' : 'elearning'
-            const v = s.formation.prixPublic && pr && pr[key]
+            const v = s.formation.prixPublic && pr && key === 'presentiel' && pr[key]
             return v ? <span style={{ color: '#1D1D1B', fontWeight: 700 }}>{v.toLocaleString('fr-FR')} € TTC</span>
                      : <span style={{ color: '#aaa', fontStyle: 'italic' }}>Sur devis</span>
           })()}
@@ -286,7 +286,9 @@ function CalendrierPage() {
   const initialF = (() => {
     if (typeof window === 'undefined') return 'Toutes'
     const sp = new URLSearchParams(window.location.search).get('f')
-    return sp && FORMATIONS.some(x => x.slug === sp) ? sp : 'Toutes'
+    if (!sp) return 'Toutes'
+    const match = FORMATIONS.find(x => x.slug === sp || x.titre === sp)
+    return match ? match.titre : 'Toutes'
   })()
   const [vue,          setVue]          = useState<'liste'|'gantt'>(initialF !== 'Toutes' ? 'liste' : 'gantt')
   const [fModalite,    setFModalite]    = useState('Toutes')

@@ -600,7 +600,7 @@ export function getTarifsModalites(f: Formation): TarifModalite[] {
   }
   return f.modalites.map(m => {
     const key = m === 'Présentiel' ? 'presentiel' : m === 'FOAD' ? 'foad' : 'elearning'
-    const v = f.prixPublic && f.prix ? (f.prix as any)[key] : undefined
+    const v = f.prixPublic && f.prix && key === 'presentiel' ? (f.prix as any)[key] : undefined
     return {
       modalite: m,
       label: LABELS[m],

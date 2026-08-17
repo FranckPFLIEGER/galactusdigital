@@ -246,7 +246,7 @@ function FormationsPage() {
                   col: "#E41F26",
                   titre: "Modern Workplace Microsoft 365",
                   pitch: "Déployer et sécuriser le poste de travail moderne et le tenant M365.",
-                  etapes: "AB-900 (Copilot Fundamentals) → MS-102 (M365 Administrator) → MD-102 (Intune)",
+                  etapes: "AB-900 (Copilot Fundamentals) → MD-102 (Intune) → AB-650 (M365 & IA, remplace MS-102)",
                   debouche: "Administrateur Microsoft 365, endpoint administrator, admin collaboratif",
                 },
                 {

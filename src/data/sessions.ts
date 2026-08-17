@@ -14,7 +14,7 @@ export const SESSIONS_PLANIFIEES: SessionPlanifiee[] = [
   { slug: 'pl-7002',    territoire: 'Martinique', dateLabel: '25 févr. 2027', debut: '2027-02-25' },
   { slug: 'az-802',     territoire: 'Martinique', dateLabel: '8 mars 2027',   debut: '2027-03-08' },
   { slug: 'ccna-cisco', territoire: 'Martinique', dateLabel: '15 mars 2027',  debut: '2027-03-15' },
-  { slug: 'ms-102',     territoire: 'Martinique', dateLabel: '5 avr. 2027',   debut: '2027-04-05' },
+  { slug: 'ab-650',     territoire: 'Martinique', dateLabel: '5 avr. 2027',   debut: '2027-04-05' },
   { slug: 'pl-7008',    territoire: 'Martinique', dateLabel: '20 avr. 2027',  debut: '2027-04-20' },
   { slug: 'sc-300',     territoire: 'Martinique', dateLabel: '4 mai 2027',    debut: '2027-05-04' },
   { slug: 'ms-4017',    territoire: 'Martinique', dateLabel: '18 mai 2027',   debut: '2027-05-18' },

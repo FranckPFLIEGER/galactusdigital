@@ -3,6 +3,22 @@ import { useIntersection } from '../hooks/useIntersection'
 const articles = [
   {
     date: 'Août 2026',
+    title: "CCNA v2.0 : la plus grande refonte depuis 2020 — nos parcours sont à jour",
+    desc: "Cisco fait évoluer l'examen CCNA 200-301 vers le blueprint v2.0 : la v1.1 reste disponible jusqu'au 2 février 2027, la v2.0 s'impose à partir du 3 février 2027. Ce qui change vraiment : une nouvelle section dédiée à l'IA dans les opérations réseau, le retour du troubleshooting — absent depuis 2020 et qui pèse désormais près de 30 % de l'examen — une automatisation modernisée autour d'Ansible et Terraform (Puppet et Chef sont retirés), et un allègement de la théorie au profit de la pratique. Nos fiches CCNA (ITN · SRWE · ENSA) et notre parcours accéléré CCNA v2.0 sont déjà alignés sur le programme officiel v7.02 et ses modules complémentaires v1.1, avec chaque nouveauté identifiée.",
+    tag: 'Veille',
+    link: '/formations/ccna-cisco',
+    linkLabel: 'Voir le parcours CCNA v2.0',
+  },
+  {
+    date: 'Août 2026',
+    title: "Microsoft : MS-102 remplacé par AB-650 — notre catalogue est déjà aligné",
+    desc: "Le référentiel officiel Microsoft (poster certifications, juillet 2026) confirme plusieurs évolutions majeures. MS-102 est retiré le 31 octobre 2026 et remplacé par AB-650 — Administering Microsoft 365 and AI Services : un seul examen, sans prérequis de certification, avec un périmètre élargi à Copilot et à la gouvernance des services IA. Autre point de vigilance, souvent mal appliqué : MS-102 était de niveau expert et exigeait une certification associate, l'ordre correct est donc AB-900 → MD-102 → AB-650. Nous avons également mis à jour AZ-802 (examen unique remplaçant AZ-800 et AZ-801, certification renommée Windows Server Administrator Associate) et intégré la nouvelle certification SC-500 — Cloud and AI Security Engineer.",
+    tag: 'Veille',
+    link: '/formations',
+    linkLabel: 'Voir le catalogue Microsoft',
+  },
+  {
+    date: 'Août 2026',
     title: "Conformité au nouveau Référentiel National Qualité (décret 2026-728)",
     desc: "Le décret n° 2026-728 du 1er août 2026, publié au Journal officiel du 4 août 2026 (NOR TRSD2619632D), actualise le Référentiel National Qualité : 33 indicateurs, 7 critères inchangés, entrée en vigueur le 1er novembre 2026. GALACTUS Digital avait anticipé ces exigences dès juillet 2026 (procédure VHD FQ-14, procédure ruptures de parcours FQ-15, évaluation des enseignements FQ-08c) et est en conformité : information transparente sur les modalités pédagogiques, les modes de financement (employeur, OPCO, autofinancement — non éligible au CPF), les taux de réussite, la validation par blocs de compétences et les débouchés. Kit qualité V2026.3 opérationnel.",
     tag: 'Qualité',

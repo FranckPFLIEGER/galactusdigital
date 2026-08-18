@@ -303,7 +303,7 @@ export function Header() {
       {/* Ticker */}
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
-          <span>Bienvenue chez Galactus Digital&nbsp;&nbsp;•&nbsp;&nbsp;Voucher d'examen officiel Pearson VUE inclus&nbsp;&nbsp;•&nbsp;&nbsp;100% de réussite parmi les présentés à l'examen&nbsp;&nbsp;•&nbsp;&nbsp;Certifications Cisco, Microsoft, Python Institute &amp; LPI&nbsp;&nbsp;•&nbsp;&nbsp;Organisme certifié Qualiopi</span>
+          <span>Bienvenue chez Galactus Digital&nbsp;&nbsp;•&nbsp;&nbsp;Voucher d'examen officiel Pearson VUE inclus&nbsp;&nbsp;•&nbsp;&nbsp;100% de réussite parmi les présentés à l'examen&nbsp;&nbsp;•&nbsp;&nbsp;CCNA v2.0 — nouveau blueprint 200-301 au 3 février 2027, nos parcours sont à jour&nbsp;&nbsp;•&nbsp;&nbsp;Certifications Cisco, Microsoft, Python Institute &amp; LPI&nbsp;&nbsp;•&nbsp;&nbsp;Microsoft : MS-102 remplacé par AB-650, notre catalogue est déjà aligné&nbsp;&nbsp;•&nbsp;&nbsp;Organisme certifié Qualiopi</span>
         </div>
       </div>
 

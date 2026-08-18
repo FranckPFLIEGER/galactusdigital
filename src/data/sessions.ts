@@ -21,6 +21,7 @@ export const SESSIONS_PLANIFIEES: SessionPlanifiee[] = [
   { slug: 'az-1008',    territoire: 'Martinique', dateLabel: '3 juin 2027',   debut: '2027-06-03' },
   { slug: 'az-104',     territoire: 'Martinique', dateLabel: '14 juin 2027',  debut: '2027-06-14' },
   { slug: 'sc-401',     territoire: 'Martinique', dateLabel: '4 oct. 2027',   debut: '2027-10-04' },
+  { slug: 'sc-500',     territoire: 'Martinique', dateLabel: '22 nov. 2027',  debut: '2027-11-22' },
   { slug: 'pl-300',     territoire: 'Martinique', dateLabel: '15 nov. 2027',  debut: '2027-11-15' },
 ]
 

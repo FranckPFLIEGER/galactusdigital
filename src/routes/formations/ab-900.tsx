@@ -4,35 +4,56 @@ import { Footer } from '../../components/Footer'
 import { CheckCircle, Clock, Calendar, Users, MapPin, Phone, Mail, Award, BookOpen, Monitor, AlertCircle, Cloud } from 'lucide-react'
 import { getFormationBySlug, getTarifsModalites } from '../../data/catalogue'
 
-export const Route = createFileRoute('/formations/az-802')({
+export const Route = createFileRoute('/formations/ab-900')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "AZ-802 Administer Windows Server | GALACTUS Digital" },
-      { name: "description", content: "Formation AZ-802 Windows Server hybride. 35h. Certification. Voucher inclus. Qualiopi." },
+      { title: "AB-900 Microsoft 365 Copilot Fundamentals — Formation certifiante | GALACTUS Digital" },
+      { name: "description", content: "Formation Microsoft AB-900 Copilot & Agent Administration Fundamentals. 18h. Certification officielle. M365, Copilot, agents IA, sécurité. Voucher inclus. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
   editeur: 'Microsoft',
-  famille: 'Microsoft Learn — Infrastructure',
-  titre: 'Administer Windows Server',
-  sousTitre: 'Certification Microsoft Windows Server Administrator Associate — AZ-802 (examen unique, remplace AZ-800 et AZ-801)',
-  ref: 'AZ-802-001',
-  niveau: 'Intermédiaire',
+  famille: 'Microsoft Learn — Azure & M365',
+  titre: 'Microsoft 365 Copilot Fundamentals',
+  sousTitre: 'Certification Copilot & Agent Administration Fundamentals · Référence : AB-900 (remplace MS-900)',
+  ref: 'AB-900-001',
+  niveau: 'Fondamental',
   partenaire: 'Partenaire Microsoft n° 4653557',
-  certification: 'Microsoft Certified: Windows Server Administrator Associate',
-  duree: '35 heures',
+  certification: 'Microsoft Certified: Copilot and Agent Administration Fundamentals (AB-900)',
+  duree: '18 heures',
   groupeMin: 4,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Formation certifiante pour administrer une infrastructure Windows Server hybride : identité, stockage, calcul, haute disponibilité, migration et reprise d activité.`,
-  objectifs: ["Administrer l identité — AD DS, Entra ID, GPO", "Gérer le stockage et les partages", "Déployer le calcul — Hyper-V, conteneurs", "Assurer la haute disponibilité", "Migrer serveurs et charges", "Superviser et dépanner"],
-  public: ["Administrateurs Windows Server", "Ingénieurs infrastructure", "Certifiés AZ-104 ou MD-102", "Techniciens serveur"],
-  prerequis: ["Expérience Windows Server", "Notions réseau, DNS, AD", "Compréhension de la virtualisation", "Pratique recommandée"],
-  examen: { code: 'AZ-802', duree: '120 minutes', langue: 'Français / Anglais', organisme: 'Microsoft (Pearson VUE)', format: 'QCM, études de cas et scénarios', score: '700 / 1000', note: `Depuis septembre 2026, la certification s obtient avec le seul examen AZ-802 : les examens AZ-800 et AZ-801 ont été retirés le 30/09/2026 et la certification a été renommée Windows Server Administrator Associate (le terme Hybrid a été retiré). Valable 12 mois, renouvelable gratuitement via Microsoft Learn. L examen certifiant est proposé en option.` },
-  methodes: ["Formation dispensée par un formateur certifié Microsoft (MCT)", "Accès à Microsoft Learn 24h/24", "Labs pratiques sur environnement Microsoft réel", "Badge numérique Microsoft — Credly et LinkedIn", "Quiz de validation à chaque fin de module", "Auto-évaluation formative en début et fin de formation", "Évaluation formateur : non évalué · non acquis · en cours · acquis", "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)", "Supports officiels Microsoft inclus", "Attestation de formation, de présence et plan de travail individuel", "Passage de l examen certifiant Microsoft intégré (Pearson VUE)"],
+  description: `Formation d'introduction à l'écosystème Microsoft 365 et à l'administration de Copilot et des agents IA — cloud, productivité, sécurité, conformité et gouvernance de l'IA. Elle couvre Teams, SharePoint, Exchange Online, Intune, les concepts de sécurité M365 ainsi que les fondamentaux de Microsoft 365 Copilot. AB-900 remplace MS-900 (retiré le 31 mars 2026) et intègre l'IA au cœur des fondamentaux M365.`,
+  objectifs: ["Décrire les concepts cloud de Microsoft 365 — abonnements, modèles de déploiement hybrides", "Décrire les solutions de productivité M365 — Teams, Exchange Online, SharePoint, OneDrive", "Décrire les solutions collaboratives — Microsoft Viva, Power Platform, Yammer", "Décrire la sécurité et conformité M365 — Purview, Defender for M365, DLP, Archivage", "Décrire la gestion des appareils avec Microsoft Intune et Windows Autopilot", "Décrire les fondamentaux de Microsoft 365 Copilot et l'administration des agents IA", "Comprendre la gouvernance de l'IA, la sécurité des données Copilot et les licences M365"],
+  public: ["Professionnels métiers utilisant Microsoft 365", "Administrateurs IT débutant avec M365", "Responsables IT et DSI", "Candidats préparant MS-100, MS-700 ou MS-500"],
+  prerequis: ["Aucun prérequis technique obligatoire", "Expérience basique de Windows et Office recommandée", "AZ-900 ou SC-900 constituent un plus"],
+  examen: {
+    code: 'AB-900',
+    duree: '60 minutes',
+    langue: 'Français / Anglais',
+    organisme: 'Microsoft (Pearson VUE)',
+    format: 'QCM et questions à réponses multiples',
+    score: '700 / 1000',
+    note: `AB-900 (Copilot and Agent Administration Fundamentals) remplace MS-900, retiré le 31 mars 2026. Les certifications MS-900 obtenues avant cette date restent valables. AB-900 est le socle d'entrée du parcours Microsoft 365 vers MS-102 (Administrator Expert). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
+  },
+  methodes: [
+    "Formation dispensée par un formateur certifié Microsoft (Microsoft Certified Trainer — MCT)",
+    "Accès à la plateforme Microsoft Learn 24h/24 pendant et après la formation",
+    "Labs pratiques sur sandbox Azure officiel Microsoft",
+    "Badge numérique Microsoft remis à l'issue du parcours — visible sur Credly et LinkedIn",
+    "Quiz de validation des acquis à chaque fin de module sur Microsoft Learn",
+    "Auto-évaluation formative en début et en fin de formation",
+    "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
+    "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
+    "Supports de cours officiels Microsoft inclus (version numérique Microsoft Learn)",
+    "Certification Microsoft Certified: Copilot and Agent Administration Fundamentals (AB-900) envoyée par mail à l'issue du parcours",
+    "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
+    "Passage de l'examen certifiant Microsoft intégré au programme (Pearson VUE)",
+  ],
 }
 
 function SectionTitle({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
@@ -58,7 +79,7 @@ function DelaisAcces() {
 }
 
 function FormationPage() {
-  const FORMATION = getFormationBySlug('az-802')
+  const FORMATION = getFormationBySlug('ab-900')
   const TARIFS = FORMATION ? getTarifsModalites(FORMATION) : []
   return (
     <>
@@ -91,7 +112,7 @@ function FormationPage() {
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
                                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=az-802' },
+                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=ab-900' },
               ].map((m, i) => (
                 m.href ? (
                   <a key={i} href={m.href} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: 'var(--g-red)', padding: '0.35rem 0.8rem' }}>

@@ -383,7 +383,7 @@ export const FORMATIONS: Formation[] = [
     prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
-    slug: 'ai-900',
+    slug: 'ai-901',
     titre: 'AI-901 Azure AI Fundamentals',
     titreLong: 'Azure AI Fundamentals (AI-901)',
     editeur: 'Microsoft', famille: 'Azure & Cloud',
@@ -395,7 +395,7 @@ export const FORMATIONS: Formation[] = [
     prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
   {
-    slug: 'ms-900',
+    slug: 'ab-900',
     titre: 'AB-900 Microsoft 365 Copilot',
     titreLong: 'Microsoft 365 Copilot & Agent Administration Fundamentals (AB-900)',
     editeur: 'Microsoft', famille: 'Microsoft 365',
@@ -445,10 +445,10 @@ export const FORMATIONS: Formation[] = [
   {
     slug: 'az-802',
     titre: 'AZ-802 Administer Windows Server',
-    titreLong: 'Administer Windows Server Hybrid Core Infrastructure (AZ-802)',
+    titreLong: 'Administering Windows Server (AZ-802) — examen unique, remplace AZ-800 et AZ-801',
     editeur: 'Microsoft', famille: 'Azure & Cloud',
     niveau: 'Intermédiaire', duree: '35 heures', dureeJours: 5,
-    certification: 'Microsoft Certified — Windows Server Hybrid Administrator (partie AZ-802)',
+    certification: 'Microsoft Certified — Windows Server Administrator Associate',
     examCode: 'AZ-802',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Administration Windows Server hybride : identité, stockage, calcul, haute disponibilité, migration et reprise d activité.',
@@ -490,6 +490,19 @@ export const FORMATIONS: Formation[] = [
     description: 'Protection des informations sensibles avec Microsoft Purview à l ère de l IA : étiquettes, DLP, chiffrement et gestion des risques internes.',
     prix: { presentiel: 1790, foad: 1790, elearning: 490 },
   },
+  {
+    slug: 'sc-500',
+    titre: 'SC-500 Cloud & AI Security Engineer',
+    titreLong: 'Cloud and AI Security Engineer (SC-500)',
+    editeur: 'Microsoft', famille: 'Microsoft 365',
+    niveau: 'Avancé', duree: '28 heures', dureeJours: 4,
+    certification: 'Microsoft Certified — Cloud and AI Security Engineer Associate',
+    examCode: 'SC-500',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Sécurisation des charges cloud et des services IA : Defender for Cloud, protection des workloads, sécurité des agents et de Copilot, gouvernance des données IA (nouvelle certification 2026).',
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+  },
+
   {
     slug: 'pl-7002',
     titre: 'PL-7002 Power Automate',

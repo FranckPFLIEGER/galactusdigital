@@ -4,34 +4,34 @@ import { Footer } from '../../components/Footer'
 import { CheckCircle, Clock, Calendar, Users, MapPin, Phone, Mail, Award, BookOpen, Monitor, AlertCircle, Cloud } from 'lucide-react'
 import { getFormationBySlug, getTarifsModalites } from '../../data/catalogue'
 
-export const Route = createFileRoute('/formations/az-802')({
+export const Route = createFileRoute('/formations/sc-500')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "AZ-802 Administer Windows Server | GALACTUS Digital" },
-      { name: "description", content: "Formation AZ-802 Windows Server hybride. 35h. Certification. Voucher inclus. Qualiopi." },
+      { title: "SC-500 Cloud & AI Security Engineer | GALACTUS Digital" },
+      { name: "description", content: "Formation SC-500 Cloud and AI Security Engineer. Defender for Cloud, sécurité des workloads et des services IA, gouvernance Copilot. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
   editeur: 'Microsoft',
-  famille: 'Microsoft Learn — Infrastructure',
-  titre: 'Administer Windows Server',
-  sousTitre: 'Certification Microsoft Windows Server Administrator Associate — AZ-802 (examen unique, remplace AZ-800 et AZ-801)',
-  ref: 'AZ-802-001',
+  famille: 'Microsoft Learn — Sécurité',
+  titre: 'Cloud & AI Security Engineer',
+  sousTitre: 'Certification Microsoft Cloud and AI Security Engineer Associate · Référence : SC-500 (nouvelle certification 2026)',
+  ref: 'SC-500-001',
   niveau: 'Intermédiaire',
   partenaire: 'Partenaire Microsoft n° 4653557',
-  certification: 'Microsoft Certified: Windows Server Administrator Associate',
-  duree: '35 heures',
+  certification: 'Microsoft Certified — Cloud and AI Security Engineer Associate',
+  duree: '28 heures',
   groupeMin: 4,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Formation certifiante pour administrer une infrastructure Windows Server hybride : identité, stockage, calcul, haute disponibilité, migration et reprise d activité.`,
-  objectifs: ["Administrer l identité — AD DS, Entra ID, GPO", "Gérer le stockage et les partages", "Déployer le calcul — Hyper-V, conteneurs", "Assurer la haute disponibilité", "Migrer serveurs et charges", "Superviser et dépanner"],
-  public: ["Administrateurs Windows Server", "Ingénieurs infrastructure", "Certifiés AZ-104 ou MD-102", "Techniciens serveur"],
-  prerequis: ["Expérience Windows Server", "Notions réseau, DNS, AD", "Compréhension de la virtualisation", "Pratique recommandée"],
-  examen: { code: 'AZ-802', duree: '120 minutes', langue: 'Français / Anglais', organisme: 'Microsoft (Pearson VUE)', format: 'QCM, études de cas et scénarios', score: '700 / 1000', note: `Depuis septembre 2026, la certification s obtient avec le seul examen AZ-802 : les examens AZ-800 et AZ-801 ont été retirés le 30/09/2026 et la certification a été renommée Windows Server Administrator Associate (le terme Hybrid a été retiré). Valable 12 mois, renouvelable gratuitement via Microsoft Learn. L examen certifiant est proposé en option.` },
+  description: `Formation certifiante pour protéger l information sensible avec Microsoft Purview à l ère de l IA : étiquettes, DLP, chiffrement et risques internes. Remplace SC-400.`,
+  objectifs: ["Classer et protéger l information", "Déployer les étiquettes de confidentialité", "Configurer la DLP", "Gérer chiffrement et droits", "Prévenir les risques internes", "Sécuriser l usage de l IA (Copilot)"],
+  public: ["Administrateurs sécurité et conformité", "Ingénieurs Purview", "Administrateurs M365", "Certifiés SC-900 ou SC-300"],
+  prerequis: ["Expérience M365 et Purview", "Notions de sécurité de l information", "Compréhension de la conformité", "Pratique recommandée"],
+  examen: { code: 'SC-500', duree: '120 minutes', langue: 'Français / Anglais', organisme: 'Microsoft (Pearson VUE)', format: 'QCM, études de cas et scénarios', score: '700 / 1000', note: `Nouvelle certification Microsoft 2026 — Cloud and AI Security Engineer Associate. Elle valide la sécurisation des charges cloud et des services IA (Defender for Cloud, protection des workloads, sécurité des agents et de Copilot). Valable 12 mois, renouvelable gratuitement via Microsoft Learn. L'examen certifiant est proposé en option.` },
   methodes: ["Formation dispensée par un formateur certifié Microsoft (MCT)", "Accès à Microsoft Learn 24h/24", "Labs pratiques sur environnement Microsoft réel", "Badge numérique Microsoft — Credly et LinkedIn", "Quiz de validation à chaque fin de module", "Auto-évaluation formative en début et fin de formation", "Évaluation formateur : non évalué · non acquis · en cours · acquis", "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)", "Supports officiels Microsoft inclus", "Attestation de formation, de présence et plan de travail individuel", "Passage de l examen certifiant Microsoft intégré (Pearson VUE)"],
 }
 
@@ -58,7 +58,7 @@ function DelaisAcces() {
 }
 
 function FormationPage() {
-  const FORMATION = getFormationBySlug('az-802')
+  const FORMATION = getFormationBySlug('sc-500')
   const TARIFS = FORMATION ? getTarifsModalites(FORMATION) : []
   return (
     <>
@@ -91,7 +91,7 @@ function FormationPage() {
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
                                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=az-802' },
+                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=sc-500' },
               ].map((m, i) => (
                 m.href ? (
                   <a key={i} href={m.href} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: 'var(--g-red)', padding: '0.35rem 0.8rem' }}>

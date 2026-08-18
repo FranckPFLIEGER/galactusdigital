@@ -80,6 +80,7 @@ const RAW: (Session | null)[] = [
   s('az-1008',  'Martinique', 'Présentiel', { dateLabel: 'Le 03/06/27', statut: 'en_preparation' }),
   s('az-104',   'Martinique', 'Présentiel', { dateLabel: 'Du 14/06/27 au 17/06/27', statut: 'en_preparation' }),
   s('sc-401',   'Martinique', 'Présentiel', { dateLabel: 'Du 04/10/27 au 07/10/27', statut: 'en_preparation' }),
+  s('sc-500',   'Martinique', 'Présentiel', { dateLabel: 'Du 22/11/27 au 25/11/27', statut: 'en_preparation' }),
   s('pl-300',   'Martinique', 'Présentiel', { dateLabel: 'Du 15/11/27 au 18/11/27', statut: 'en_preparation' }),
 ]
 const SESSIONS: Session[] = RAW.filter(Boolean) as Session[]

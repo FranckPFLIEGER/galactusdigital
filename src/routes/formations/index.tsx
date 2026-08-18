@@ -253,14 +253,14 @@ function FormationsPage() {
                   col: "#1D1D1B",
                   titre: "Sécurité Microsoft",
                   pitch: "Le parcours sécurité officiel Microsoft : identité, accès et protection des données.",
-                  etapes: "SC-900 → SC-300 (Identité & accès) → SC-401 (Purview / protection de l'information)",
+                  etapes: "SC-900 → SC-300 (Identité & accès) → SC-401 (Purview / protection de l'information) → SC-500 (sécurité cloud & IA)",
                   debouche: "Administrateur identité, ingénieur sécurité, référent conformité",
                 },
                 {
                   col: "#E41F26",
                   titre: "Data, IA & Copilot Microsoft",
                   pitch: "Transformer la donnée en décision et déployer l'IA Copilot en entreprise.",
-                  etapes: "AI-901 → PL-300 (Power BI) · PL-7002 · PL-7008 · MS-4017 → MS-4010 (Copilot Specialist)",
+                  etapes: "AI-901 (fondamentaux IA) → PL-300 (Power BI Data Analyst) → MS-4010 (Copilot Specialist) — complété par les Applied Skills PL-7002, PL-7008 et MS-4017",
                   debouche: "Data analyst, référent Power BI, spécialiste automatisation & Copilot",
                 },
               ].map(p => (

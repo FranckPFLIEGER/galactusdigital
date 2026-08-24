@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ChevronDown, ArrowRight, Check } from "lucide-react"
+import { ChevronDown, ArrowRight, Check, RefreshCw } from "lucide-react"
 import { PARCOURS, heuresParcours, heuresSocle } from "../data/parcours"
 import type { Parcours, BlocParcours } from "../data/parcours"
 
@@ -8,7 +8,7 @@ import type { Parcours, BlocParcours } from "../data/parcours"
 // Remplace le bloc « Sept trajectoires certifiantes » de routes/formations/index.tsx
 // ─────────────────────────────────────────────────────────────────────────────
 
-function EtapeLigne({ titre, slug, heures, nouveau, col }: { titre: string; slug: string; heures: number; nouveau?: boolean; col: string }) {
+function EtapeLigne({ titre, slug, heures, nouveau, maj, col }: { titre: string; slug: string; heures: number; nouveau?: boolean; maj?: string; col: string }) {
   return (
     <li style={{ display: "flex", alignItems: "flex-start", gap: ".5rem", padding: ".25rem 0" }}>
       <span style={{ marginTop: ".55rem", width: "10px", height: "1px", background: "rgba(187,187,187,.8)", flexShrink: 0 }} />
@@ -23,6 +23,11 @@ function EtapeLigne({ titre, slug, heures, nouveau, col }: { titre: string; slug
         {nouveau && (
           <span style={{ fontFamily: "var(--font-title)", fontSize: ".52rem", fontWeight: 700, letterSpacing: ".10em", textTransform: "uppercase", color: "#fff", background: "#E41F26", padding: ".08rem .35rem" }}>
             Nouveau
+          </span>
+        )}
+        {maj && (
+          <span title={`Mise à jour éditeur : ${maj}`} style={{ display: "inline-flex", alignItems: "center", gap: ".18rem", fontFamily: "var(--font-title)", fontSize: ".52rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: "#b71c1f", background: "#fff", border: "1px solid rgba(228,31,38,.45)", padding: ".08rem .35rem" }}>
+            <RefreshCw size={8} strokeWidth={3} /> {maj}
           </span>
         )}
       </a>
@@ -142,7 +147,19 @@ export function ParcoursMetier() {
           {PARCOURS.map(p => <CarteParcours key={p.id} p={p} />)}
         </div>
 
-        <div style={{ display: "flex", alignItems: "flex-start", gap: ".75rem", marginTop: "1.75rem", borderLeft: "3px solid var(--g-red)", paddingLeft: "1rem" }}>
+        <div style={{ display: "flex", alignItems: "center", gap: "1.25rem", flexWrap: "wrap", marginTop: "1.5rem", paddingTop: "1rem", borderTop: "1px solid rgba(187,187,187,.3)" }}>
+          <span style={{ fontFamily: "var(--font-title)", fontSize: ".62rem", fontWeight: 700, letterSpacing: ".14em", textTransform: "uppercase", color: "#999" }}>Légende</span>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", fontSize: ".78rem", color: "#5a5a58" }}>
+            <span style={{ fontFamily: "var(--font-title)", fontSize: ".52rem", fontWeight: 700, letterSpacing: ".10em", textTransform: "uppercase", color: "#fff", background: "#E41F26", padding: ".08rem .35rem" }}>Nouveau</span>
+            formation ajoutée au catalogue
+          </span>
+          <span style={{ display: "inline-flex", alignItems: "center", gap: ".4rem", fontSize: ".78rem", color: "#5a5a58" }}>
+            <span style={{ display: "inline-flex", alignItems: "center", gap: ".18rem", fontFamily: "var(--font-title)", fontSize: ".52rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: "#b71c1f", background: "#fff", border: "1px solid rgba(228,31,38,.45)", padding: ".08rem .35rem" }}><RefreshCw size={8} strokeWidth={3} /> Mise à jour</span>
+            programme ou certification révisé par l'éditeur
+          </span>
+        </div>
+
+        <div style={{ display: "flex", alignItems: "flex-start", gap: ".75rem", marginTop: "1.25rem", borderLeft: "3px solid var(--g-red)", paddingLeft: "1rem" }}>
           <p style={{ fontSize: ".82rem", color: "#888", margin: 0, fontStyle: "italic", lineHeight: 1.6 }}>
             Un test de positionnement gratuit détermine votre bloc d'entrée. Formateur certifié éditeur, accompagnement au financement OPCO et aides régionales DOM, présence dans 6 territoires ultramarins et en France hexagonale. Parcours personnalisables sur devis.
           </p>

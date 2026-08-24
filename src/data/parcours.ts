@@ -14,6 +14,8 @@ export interface EtapeParcours {
   heures: number
   /** true = formation socle nouvellement ajoutée au catalogue */
   nouveau?: boolean
+  /** Mention de mise à jour éditeur (nouveau blueprint, renommage, remplacement) */
+  maj?: string
 }
 
 export interface BlocParcours {
@@ -111,8 +113,8 @@ export const PARCOURS: Parcours[] = [
         titre: 'Bloc 3 — Niveau professionnel',
         intention: 'Passer d\'exécutant à concepteur d\'infrastructure. RS en cours d\'enregistrement.',
         etapes: [
-          { titre: 'CCNP Enterprise — ENCOR', slug: 'ccnp-encor', heures: 70 },
-          { titre: 'CCNP Enterprise — ENARSI', slug: 'ccnp-enarsi', heures: 70 },
+          { titre: 'CCNP Enterprise — ENCOR', slug: 'ccnp-encor', heures: 70, maj: 'Blueprint v9' },
+          { titre: 'CCNP Enterprise — ENARSI', slug: 'ccnp-enarsi', heures: 70, maj: 'Blueprint v9' },
         ],
       },
     ],
@@ -149,14 +151,14 @@ export const PARCOURS: Parcours[] = [
         rang: 2,
         titre: 'Bloc 2 — Analyste SOC',
         intention: 'Surveillance, forensique et réponse à incident.',
-        etapes: [{ titre: 'CCNA Cybersecurity (ex-CyberOps)', slug: 'cyberops', heures: 60 }],
+        etapes: [{ titre: 'CCNA Cybersecurity (ex-CyberOps)', slug: 'cyberops', heures: 60, maj: 'Ex-CyberOps · blueprint 2026' }],
       },
       {
         rang: 3,
         titre: 'Bloc 3 — Spécialisation',
         intention: 'Défense d\'infrastructure ou sécurité offensive, au choix.',
         etapes: [
-          { titre: 'CCNP Security', slug: 'ccnp-security', heures: 80 },
+          { titre: 'CCNP Security', slug: 'ccnp-security', heures: 80, maj: 'SCOR v2.0' },
           { titre: 'Ethical Hacker', slug: 'ethical-hacker', heures: 30 },
         ],
       },
@@ -202,7 +204,7 @@ export const PARCOURS: Parcours[] = [
         rang: 3,
         titre: 'Bloc 3 — Automatisation',
         intention: 'APIs, YANG/NETCONF, Ansible, Terraform et pipelines IA-ready.',
-        etapes: [{ titre: 'CCNA Automation (ex-DevNet)', slug: 'devnet-associate', heures: 50 }],
+        etapes: [{ titre: 'CCNA Automation (ex-DevNet)', slug: 'devnet-associate', heures: 50, maj: 'Ex-DevNet · blueprint 2026' }],
       },
     ],
     debouche: 'Ingénieur automatisation, NetDevOps, développeur réseau',
@@ -241,7 +243,7 @@ export const PARCOURS: Parcours[] = [
         titre: 'Bloc 3 — Infrastructure hybride',
         intention: 'Serveurs et annuaire : la réalité des SI d\'entreprise.',
         etapes: [
-          { titre: 'AZ-802 Administer Windows Server', slug: 'az-802', heures: 35 },
+          { titre: 'AZ-802 Administer Windows Server', slug: 'az-802', heures: 35, maj: 'Remplace AZ-800 et AZ-801' },
           { titre: 'AZ-1008 Active Directory DS', slug: 'az-1008', heures: 7 },
         ],
       },
@@ -269,7 +271,7 @@ export const PARCOURS: Parcours[] = [
         rang: 1,
         titre: 'Bloc 1 — Fondamentaux M365 & Copilot',
         intention: 'Le tenant, les services et l\'IA générative en entreprise.',
-        etapes: [{ titre: 'AB-900 Microsoft 365 Copilot', slug: 'ab-900', heures: 18 }],
+        etapes: [{ titre: 'AB-900 Microsoft 365 Copilot', slug: 'ab-900', heures: 18, maj: 'Remplace MS-900' }],
       },
       {
         rang: 2,
@@ -281,7 +283,7 @@ export const PARCOURS: Parcours[] = [
         rang: 3,
         titre: 'Bloc 3 — Administration du tenant',
         intention: 'Identité, Defender, Purview et gouvernance des agents IA.',
-        etapes: [{ titre: 'AB-650 Microsoft 365 & AI Services', slug: 'ab-650', heures: 35 }],
+        etapes: [{ titre: 'AB-650 Microsoft 365 & AI Services', slug: 'ab-650', heures: 35, maj: 'Remplace MS-102' }],
       },
     ],
     debouche: 'Administrateur Microsoft 365, endpoint administrator, admin collaboratif',
@@ -315,14 +317,14 @@ export const PARCOURS: Parcours[] = [
         intention: 'Les deux briques les plus demandées sur le marché.',
         etapes: [
           { titre: 'SC-300 Identity & Access Administrator', slug: 'sc-300', heures: 28 },
-          { titre: 'SC-401 Information Security Administrator', slug: 'sc-401', heures: 28 },
+          { titre: 'SC-401 Information Security Administrator', slug: 'sc-401', heures: 28, maj: 'Nouveau 2026' },
         ],
       },
       {
         rang: 3,
         titre: 'Bloc 3 — Cloud & IA',
         intention: 'Sécuriser les charges cloud, les agents et Copilot.',
-        etapes: [{ titre: 'SC-500 Cloud & AI Security Engineer', slug: 'sc-500', heures: 28 }],
+        etapes: [{ titre: 'SC-500 Cloud & AI Security Engineer', slug: 'sc-500', heures: 28, maj: 'Nouveau 2026' }],
       },
     ],
     debouche: 'Administrateur identité, ingénieur sécurité, référent conformité',
@@ -350,7 +352,7 @@ export const PARCOURS: Parcours[] = [
         intention: 'Premiers traitements de données et vocabulaire IA Azure.',
         etapes: [
           { titre: 'Data Analytics Essentials', slug: 'data-analytics-essentials', heures: 30 },
-          { titre: 'AI-901 Azure AI Fundamentals', slug: 'ai-901', heures: 15 },
+          { titre: 'AI-901 Azure AI Fundamentals', slug: 'ai-901', heures: 15, maj: 'Remplace AI-900' },
         ],
       },
       {

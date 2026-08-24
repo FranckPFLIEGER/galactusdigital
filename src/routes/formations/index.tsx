@@ -2,9 +2,10 @@ import { createFileRoute } from "@tanstack/react-router"
 import { useState, useMemo } from "react"
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
+import { ParcoursMetier } from "../../components/ParcoursMetier"
 import { FORMATIONS, FAMILLES } from "../../data/catalogue"
 import type { Formation } from "../../data/catalogue"
-import { ArrowRight, Clock, Award, Phone, Mail, Filter, Calendar } from "lucide-react"
+import { ArrowRight, Clock, Award, Phone, Mail, Filter, Calendar, Check } from "lucide-react"
 import { getProchaineSession } from "../../data/sessions"
 
 export const Route = createFileRoute("/formations/")({
@@ -19,11 +20,13 @@ const EDITEUR_COLOR: Record<string, string> = {
 }
 
 const NIVEAU_BG: Record<string, string> = {
+  "Grand débutant": "rgba(228,31,38,.12)",
   "Fondamental":   "rgba(187,187,187,.18)",
   "Intermédiaire": "rgba(228,31,38,.06)",
   "Avancé":        "rgba(228,31,38,.10)",
 }
 const NIVEAU_COLOR: Record<string, string> = {
+  "Grand débutant": "#E41F26",
   "Fondamental":   "#8a8a88",
   "Intermédiaire": "#b71c1f",
   "Avancé":        "#E41F26",
@@ -58,6 +61,16 @@ function Card({ f }: { f: Formation }) {
           {f.niveau}
         </span>
       </div>
+
+      {/* bandeau socle */}
+      {f.socle && (
+        <div style={{ display: "flex", alignItems: "center", gap: ".3rem", margin: "0 1.25rem .5rem", padding: ".2rem .5rem", background: "rgba(228,31,38,.08)", border: "1px solid rgba(228,31,38,.25)", alignSelf: "flex-start" }}>
+          <Check size={11} color="#E41F26" />
+          <span style={{ fontFamily: "var(--font-title)", fontSize: ".58rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: "#E41F26" }}>
+            Aucun prérequis — reconversion
+          </span>
+        </div>
+      )}
 
       {/* titre + famille */}
       <div style={{ padding: "0 1.25rem .75rem" }}>
@@ -141,6 +154,9 @@ function FormationsPage() {
   const cisco     = filtered.filter(f => f.editeur === "Cisco Networking Academy")
   const microsoft = filtered.filter(f => f.editeur === "Microsoft")
 
+  const nbFamilles = useMemo(() => new Set(FORMATIONS.map(f => f.famille)).size, [])
+  const nbSocle    = useMemo(() => FORMATIONS.filter(f => f.socle).length, [])
+
   function selectEditeur(e: string) {
     setEditeurFilter(e)
     setFamilleFilter("Tout")
@@ -179,16 +195,18 @@ function FormationsPage() {
             <h1 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.8rem,3vw,2.8rem)", fontWeight: 700, color: "#fff", textTransform: "uppercase", letterSpacing: ".04em", marginBottom: "1rem" }}>
               Certifications IT
             </h1>
-            <p style={{ fontSize: "1rem", color: "rgba(255,255,255,.65)", maxWidth: "680px", lineHeight: 1.8, marginBottom: "2rem" }}>
-             35 formations certifiantes officielles dispensées par des formateurs accrédités éditeurs.
+            <p style={{ fontSize: "1rem", color: "rgba(255,255,255,.65)", maxWidth: "720px", lineHeight: 1.8, marginBottom: "2rem" }}>
+              {FORMATIONS.length} formations certifiantes officielles dispensées par des formateurs accrédités éditeurs,
+              dont {nbSocle} formations d'entrée sans aucun prérequis pour les personnes en reconversion.
               Présentiel, FOAD et E-learning — dans les territoires ultramarins et en France hexagonale.
             </p>
             {/* Stats */}
             <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap" }}>
               {[
                 [String(FORMATIONS.length), "formations"],
+                [String(nbSocle), "sans prérequis"],
                 ["2", "éditeurs officiels"],
-                ["8", "familles"],
+                [String(nbFamilles), "familles"],
                 ["100%", "de réussite (518 formés)"],
               ].map(([num, lbl]) => (
                 <div key={lbl}>
@@ -200,89 +218,9 @@ function FormationsPage() {
           </div>
         </section>
 
-        {/* ── Parcours certifiants ── */}
-        <section style={{ background: "var(--g-white)", padding: "4rem 2rem", borderBottom: "1px solid rgba(187,187,187,.25)" }}>
-          <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-            <span style={{ fontFamily: "var(--font-title)", fontSize: ".70rem", fontWeight: 600, letterSpacing: ".20em", textTransform: "uppercase", color: "var(--g-red)", display: "block", marginBottom: ".6rem" }}>
-              Parcours métier
-            </span>
-            <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.4rem,2.2vw,2rem)", fontWeight: 700, color: "var(--g-black)", textTransform: "uppercase", letterSpacing: ".04em", marginBottom: ".75rem" }}>
-              Sept trajectoires certifiantes
-            </h2>
-            <p style={{ fontSize: ".95rem", color: "#5a5a58", maxWidth: "760px", lineHeight: 1.75, marginBottom: "2.5rem" }}>
-              Au-delà des formations à l'unité, nous construisons des parcours alignés sur les métiers les plus recherchés en 2026 — du socle réseau à l'automatisation, de la cybersécurité au cloud et à l'IA Microsoft.
-            </p>
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(320px,1fr))", gap: "1.25rem" }} className="parcours-grid">
-              {[
-                {
-                  col: "#E41F26",
-                  titre: "Réseaux & Infrastructure",
-                  pitch: "Le socle universellement reconnu, du câblage au réseau d'entreprise piloté par l'IA.",
-                  etapes: "Networking Essentials → CCNA (ITN · SRWE · ENSA) → CCNP Enterprise → Infrastructure réseau (RS en cours d'enregistrement)",
-                  debouche: "Technicien réseau, administrateur infrastructure, ingénieur réseau",
-                },
-                {
-                  col: "#1D1D1B",
-                  titre: "Cybersécurité",
-                  pitch: "Un des axes les plus porteurs en salaire : défense, SOC et sécurité offensive.",
-                  etapes: "Cybersecurity Essentials → CCNA Cybersecurity → CCNP Security → Ethical Hacker",
-                  debouche: "Analyste SOC, pentester, ingénieur sécurité",
-                },
-                {
-                  col: "#E41F26",
-                  titre: "Automatisation & IA réseau",
-                  pitch: "Le virage 2026 : d'ici 2027, l'essentiel des opérations réseau sera automatisé.",
-                  etapes: "Python Essentials 1 & 2 → CCNA Automation (ex-DevNet, IA-ready)",
-                  debouche: "Ingénieur automatisation, NetDevOps, développeur réseau",
-                },
-                {
-                  col: "#1D1D1B",
-                  titre: "Cloud & Infrastructure Azure",
-                  pitch: "Administrer le cloud Azure et l'infrastructure serveur de bout en bout.",
-                  etapes: "AZ-900 → AZ-104 → AZ-802 (Windows Server) → AZ-1008 (Active Directory)",
-                  debouche: "Administrateur Azure, administrateur systèmes, ingénieur infrastructure",
-                },
-                {
-                  col: "#E41F26",
-                  titre: "Modern Workplace Microsoft 365",
-                  pitch: "Déployer et sécuriser le poste de travail moderne et le tenant M365.",
-                  etapes: "AB-900 (Copilot Fundamentals) → MD-102 (Intune) → AB-650 (M365 & IA, remplace MS-102)",
-                  debouche: "Administrateur Microsoft 365, endpoint administrator, admin collaboratif",
-                },
-                {
-                  col: "#1D1D1B",
-                  titre: "Sécurité Microsoft",
-                  pitch: "Le parcours sécurité officiel Microsoft : identité, accès et protection des données.",
-                  etapes: "SC-900 → SC-300 (Identité & accès) → SC-401 (Purview / protection de l'information) → SC-500 (sécurité cloud & IA)",
-                  debouche: "Administrateur identité, ingénieur sécurité, référent conformité",
-                },
-                {
-                  col: "#E41F26",
-                  titre: "Data, IA & Copilot Microsoft",
-                  pitch: "Transformer la donnée en décision et déployer l'IA Copilot en entreprise.",
-                  etapes: "AI-901 (fondamentaux IA) → PL-300 (Power BI Data Analyst) → MS-4010 (Copilot Specialist) — complété par les Applied Skills PL-7002, PL-7008 et MS-4017",
-                  debouche: "Data analyst, référent Power BI, spécialiste automatisation & Copilot",
-                },
-              ].map(p => (
-                <div key={p.titre} style={{ background: "var(--g-offwhite)", border: "1px solid rgba(187,187,187,.35)", borderTop: `3px solid ${p.col}`, padding: "1.5rem", display: "flex", flexDirection: "column" }}>
-                  <h3 style={{ fontFamily: "var(--font-title)", fontSize: "1rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: "var(--g-black)", margin: "0 0 .5rem", lineHeight: 1.2 }}>
-                    {p.titre}
-                  </h3>
-                  <p style={{ fontSize: ".85rem", color: "#5a5a58", lineHeight: 1.6, margin: "0 0 1rem" }}>{p.pitch}</p>
-                  <div style={{ fontFamily: "var(--font-title)", fontSize: ".62rem", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", color: p.col, marginBottom: ".3rem" }}>Parcours</div>
-                  <p style={{ fontSize: ".82rem", color: "var(--g-black)", fontWeight: 600, lineHeight: 1.5, margin: "0 0 1rem" }}>{p.etapes}</p>
-                  <div style={{ marginTop: "auto", paddingTop: ".75rem", borderTop: "1px solid rgba(187,187,187,.3)" }}>
-                    <div style={{ fontFamily: "var(--font-title)", fontSize: ".62rem", fontWeight: 700, letterSpacing: ".1em", textTransform: "uppercase", color: "#999", marginBottom: ".25rem" }}>Débouchés</div>
-                    <p style={{ fontSize: ".78rem", color: "#5a5a58", lineHeight: 1.5, margin: 0, fontStyle: "italic" }}>{p.debouche}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-            <p style={{ fontSize: ".82rem", color: "#888", marginTop: "1.75rem", fontStyle: "italic", lineHeight: 1.6 }}>
-              Formateur certifié éditeur, accompagnement au financement OPCO et aides régionales DOM, présence dans 6 territoires ultramarins et en France hexagonale. Parcours personnalisables sur devis.
-            </p>
-          </div>
-        </section>
+        {/* ── Parcours métier (Bloc 0 reconversion) ── */}
+        <ParcoursMetier />
+
         {/* ── Filtres ── */}
         <section style={{ background: "var(--g-offwhite)", padding: "1.5rem 2rem", borderBottom: "1px solid rgba(187,187,187,.25)", position: "sticky", top: "72px", zIndex: 50 }}>
           <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
@@ -306,7 +244,7 @@ function FormationsPage() {
                 {familles.map(fam => (
                   <button key={fam} onClick={() => setFamilleFilter(fam)}
                     style={familleFilter === fam ? { ...btnBase, background: "var(--g-black)", borderColor: "var(--g-black)", color: "#fff", fontSize: ".65rem" } : { ...btnBase, color: "#666", fontSize: ".65rem" }}>
-                    {fam === "Tout" ? "Toutes" : fam}
+                    {fam === "Tout" ? "Toutes" : (FAMILLES[fam]?.label ?? fam)}
                   </button>
                 ))}
               </div>
@@ -391,10 +329,10 @@ function FormationsPage() {
           <div style={{ maxWidth: "900px", margin: "0 auto", display: "flex", alignItems: "center", justifyContent: "space-between", gap: "2rem", flexWrap: "wrap" }}>
             <div>
               <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: "#fff", margin: "0 0 .4rem" }}>
-                Formation non trouvée ?
+                Vous partez de zéro ?
               </h2>
               <p style={{ fontSize: ".90rem", color: "rgba(255,255,255,.55)", margin: 0, lineHeight: 1.7 }}>
-                Notre catalogue évolue. Contactez-nous pour une formation sur mesure ou un programme intra.
+                C'est le cas prévu. Un test de positionnement gratuit détermine votre bloc d'entrée et le financement mobilisable.
               </p>
             </div>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", flexShrink: 0 }}>

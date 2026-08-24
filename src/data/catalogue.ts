@@ -3,11 +3,15 @@
 // Importé par : Header, Footer, presentiel, foad, elearning, calendrier
 // Pour ajouter une formation : ajouter une entrée dans FORMATIONS[]
 // Pour ajouter un prix : renseigner le champ `prix` de la session concernée
+//
+// MAJ août 2026 — ajout de la famille « Socle & Reconversion » (11 formations
+// sans aucun prérequis, portfolio Cisco Networking Academy FR du 25/07/2026).
+// Elles ouvrent le Bloc 0 de chaque parcours métier (voir data/parcours.ts).
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type Modalite = 'Présentiel' | 'FOAD' | 'E-learning'
 export type Territoire = 'Martinique' | 'Guadeloupe' | 'Paris' | 'Tous territoires'
-export type Niveau = 'Fondamental' | 'Intermédiaire' | 'Avancé'
+export type Niveau = 'Grand débutant' | 'Fondamental' | 'Intermédiaire' | 'Avancé'
 
 export interface Formation {
   slug: string                 // route → /formations/{slug}
@@ -29,10 +33,13 @@ export interface Formation {
     elearning: number | null
   }
   prixPublic?: boolean
+  /** true = cours d'entrée sans aucun prérequis (Bloc 0 des parcours) */
+  socle?: boolean
 }
 
 // ─── Familles pour l'affichage groupé ────────────────────────────────────────
 export const FAMILLES: Record<string, { label: string; icon: string }> = {
+  'Socle & Reconversion':  { label: 'Socle & Reconversion',   icon: 'GraduationCap' },
   'CCNA et CCNP':          { label: 'CCNA & CCNP',        icon: 'Network'  },
   'Cybersécurité':         { label: 'Cybersécurité',          icon: 'Shield'   },
   'Programmation':         { label: 'Programmation',          icon: 'Code'     },
@@ -50,10 +57,155 @@ export const EDITEURS: Record<string, { label: string; badge?: string }> = {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CATALOGUE PRINCIPAL — 22 formations
+// CATALOGUE PRINCIPAL — 51 formations
 // prix: null = sur demande / 0 = inclus dans pack / nombre = tarif public HT €
 // ─────────────────────────────────────────────────────────────────────────────
 export const FORMATIONS: Formation[] = [
+
+  // ── SOCLE & RECONVERSION — aucun prérequis ────────────────────────────────
+  {
+    slug: 'sensibilisation-numerique',
+    titre: 'Sensibilisation au numérique',
+    titreLong: 'Sensibilisation au numérique — Premiers repères dans le monde digital',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
+    niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
+    certification: 'Badge numérique Cisco Networking Academy',
+    examCode: 'Badge Cisco Networking Academy',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Première marche du parcours : outils numériques, identité en ligne, recherche, mots de passe et premiers réflexes IA. Aucun prérequis.',
+    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    socle: true,
+  },
+  {
+    slug: 'utilisation-ordinateurs-mobiles',
+    titre: 'Utilisation d\'ordinateurs et de mobiles',
+    titreLong: 'Utilisation d\'ordinateurs et d\'équipements mobiles',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
+    niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
+    certification: 'Badge numérique Cisco Networking Academy',
+    examCode: 'Badge Cisco Networking Academy',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Poste de travail et mobile : matériel, systèmes, logiciels, fichiers et connectivité Wi-Fi, Bluetooth et cellulaire. Aucun prérequis.',
+    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    socle: true,
+  },
+  {
+    slug: 'bases-materiel-informatique',
+    titre: 'Les bases du matériel informatique',
+    titreLong: 'Les bases du matériel informatique — Composants, PC et terminaux mobiles',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
+    niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
+    certification: 'Badge numérique — brique CCST Cybersecurity',
+    examCode: 'Badge Cisco Networking Academy',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Monter, réparer et faire évoluer un PC. Composants d\'un poste fixe, d\'un portable et d\'un terminal mobile. Aucun prérequis.',
+    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    socle: true,
+  },
+  {
+    slug: 'operating-system-basics',
+    titre: 'Operating System Basics',
+    titreLong: 'Operating System Basics — Windows, Linux, Android et iOS',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
+    niveau: 'Grand débutant', duree: '12 heures', dureeJours: 2,
+    certification: 'Badge numérique Cisco Networking Academy',
+    examCode: 'Badge Cisco Networking Academy',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Rôle et caractéristiques des systèmes d\'exploitation, outils d\'administration Windows, bases de la sécurité Linux. Aucun prérequis.',
+    prix: { presentiel: 690, foad: 690, elearning: 190 },
+    socle: true,
+  },
+  {
+    slug: 'notions-base-reseaux',
+    titre: 'Notions de base sur les réseaux',
+    titreLong: 'Notions de base sur les réseaux — Networking Basics',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
+    niveau: 'Grand débutant', duree: '22 heures', dureeJours: 3,
+    certification: 'Badge numérique — brique CCST Cybersecurity',
+    examCode: 'Badge Cisco Networking Academy',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Périphériques, supports et protocoles réseau avec Packet Tracer. Construire un réseau local simple. Aucun prérequis.',
+    prix: { presentiel: 990, foad: 990, elearning: 290 },
+    socle: true,
+  },
+  {
+    slug: 'introduction-cybersecurite',
+    titre: 'Introduction à la cybersécurité',
+    titreLong: 'Introduction à la cybersécurité — Menaces, protection et métiers',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
+    niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
+    certification: 'Badge numérique — brique CCST Cybersecurity',
+    examCode: 'Badge Cisco Networking Academy',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Cybermenaces, protection des données personnelles et professionnelles, panorama des métiers de la cybersécurité. Aucun prérequis.',
+    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    socle: true,
+  },
+  {
+    slug: 'linux-unhatched',
+    titre: 'Linux Unhatched',
+    titreLong: 'Linux Unhatched — Première approche du système Linux',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
+    niveau: 'Grand débutant', duree: '8 heures', dureeJours: 1,
+    certification: 'Badge numérique Cisco Networking Academy',
+    examCode: 'Badge Cisco Networking Academy',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Installation, configuration de base et ligne de commande Linux. Porte d\'entrée vers Linux Essentials et le LPIC-1. Aucun prérequis.',
+    prix: { presentiel: 490, foad: 490, elearning: 140 },
+    socle: true,
+  },
+  {
+    slug: 'introduction-ia-moderne',
+    titre: 'Introduction à l\'IA moderne',
+    titreLong: 'Introduction à l\'IA moderne — Chatbots, vision et prompts',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
+    niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
+    certification: 'Badge numérique Cisco Networking Academy',
+    examCode: 'Badge Cisco Networking Academy',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Bases de l\'IA en pratique : vision par ordinateur, traduction automatique, chatbots et rédaction de prompts. Aucun prérequis.',
+    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    socle: true,
+  },
+  {
+    slug: 'introduction-science-donnees',
+    titre: 'Introduction à la science des données',
+    titreLong: 'Introduction à la science des données — Donnée, analyse et machine learning',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
+    niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
+    certification: 'Badge numérique Cisco Networking Academy',
+    examCode: 'Badge Cisco Networking Academy',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Bases de la science des données, de l\'analyse et de l\'ingénierie de la donnée. Rôle du machine learning en entreprise. Aucun prérequis.',
+    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    socle: true,
+  },
+  {
+    slug: 'support-informatique-essentiels',
+    titre: 'Essentiels du support informatique',
+    titreLong: 'Essentiels du support informatique — Préparation CCST IT Support',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
+    niveau: 'Fondamental', duree: '56 heures', dureeJours: 7,
+    certification: 'Cisco Certified Support Technician (CCST) IT Support',
+    examCode: 'CCST IT Support',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Entrée directe dans l\'emploi : matériel, Windows et macOS, dépannage réseau. 103 laboratoires pratiques. Aucun prérequis.',
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    socle: true,
+  },
+  {
+    slug: 'it-essentials',
+    titre: 'IT Essentials',
+    titreLong: 'IT Essentials — Matériel, systèmes et dépannage (préparation CompTIA A+)',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
+    niveau: 'Fondamental', duree: '70 heures', dureeJours: 9,
+    certification: 'CompTIA A+',
+    examCode: 'CompTIA A+',
+    modalites: ['Présentiel', 'FOAD'],
+    description: 'Installer, configurer et dépanner ordinateurs, terminaux mobiles et logiciels. 14 chapitres, 99 TP. Aucun prérequis.',
+    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    socle: true,
+  },
 
   // ── CISCO — Réseaux & CCNA ─────────────────────────────────────────────────
   {
@@ -110,7 +262,7 @@ export const FORMATIONS: Formation[] = [
     titre: 'CCNA v2.0 — Cisco (accéléré)',
     titreLong: 'CCNA v2.0 — Implementing and Administering Cisco Solutions (parcours accéléré Cisco)',
     editeur: 'Cisco Networking Academy', famille: 'CCNA et CCNP',
-    niveau: 'Fondamental à intermédiaire', duree: '40 heures', dureeJours: 5,
+    niveau: 'Intermédiaire', duree: '40 heures', dureeJours: 5,
     certification: 'Cisco CCNA 200-301 (blueprint v2.0)',
     examCode: '200-301 v2.0',
     modalites: ['Présentiel', 'FOAD'],
@@ -578,6 +730,11 @@ export function getFormationsParEditeur(): Record<string, Formation[]> {
 /** Retourne les formations disponibles pour une modalité donnée */
 export function getFormationsParModalite(modalite: Modalite): Formation[] {
   return FORMATIONS.filter(f => f.modalites.includes(modalite))
+}
+
+/** Retourne les formations d'entrée sans prérequis (Bloc 0 des parcours) */
+export function getFormationsSocle(): Formation[] {
+  return FORMATIONS.filter(f => f.socle)
 }
 
 /** Formate un prix ou retourne "Sur demande" */

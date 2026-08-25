@@ -35,6 +35,15 @@ const DATA = {
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Parcours accéléré officiel Cisco préparant à l'examen CCNA 200-301 en blueprint v2.0 (en vigueur au 3 février 2027). Format condensé sur 5 jours (présentiel ou FOAD synchrone), complété d'ateliers pratiques, distinct du parcours Cisco Networking Academy en 3 modules (ITN · SRWE · ENSA). La v2.0 marque la plus importante refonte du CCNA depuis 2020 : retour du dépannage à un niveau approfondi, nouvelle section sur l'IA dans les opérations réseau, et allègement de la théorie au profit de la pratique.`,
+  // Répartition officielle Cisco du blueprint d'examen 200-301 v2.0 (en vigueur au 3 février 2027).
+  // Source : documentation officielle Cisco du blueprint v2.0. Total = 100%.
+  domaines: [
+    { num: '1.0', titre: 'Infrastructure réseau et connectivité', pct: 25 },
+    { num: '2.0', titre: 'Commutation et accès réseau', pct: 25 },
+    { num: '3.0', titre: 'Routage IP', pct: 20 },
+    { num: '4.0', titre: 'Services réseau et sécurité', pct: 20 },
+    { num: '5.0', titre: 'IA, exploitation et gestion du réseau', pct: 10, neuf: true },
+  ],
   objectifs: [
     "Installer, configurer et vérifier un réseau IPv4/IPv6 de petite à moyenne envergure",
     "Configurer commutateurs, routeurs et contrôleurs WLAN, et gérer les équipements réseau",
@@ -81,8 +90,8 @@ const DATA = {
       "TP — introduction à l'automatisation réseau",
     ] as Item[] },
     { num: 'J5', titre: 'Dépannage & IA réseau', duree: '8h', contenu: [
-      { text: "Méthodologie de dépannage et diagnostic approfondi (~30% de l'examen v2.0)", neuf: true },
-      { text: "IA dans les opérations réseau — IA générative et prédictive, ML", neuf: true },
+      { text: "Méthodologie de dépannage et diagnostic approfondi, évalués de façon transversale dans les 5 domaines de l'examen", neuf: true },
+      { text: "IA dans les opérations réseau — IA générative et prédictive, ML (domaine 5.0, 10% de l'examen)", neuf: true },
       "Révision transversale et examens blancs",
       "TP de synthèse — scénarios de panne et résolution",
     ] as Item[] },
@@ -222,6 +231,28 @@ function FormationPage() {
           </div>
         </section>
 
+        {/* ── Domaines de l'examen (répartition officielle Cisco du blueprint v2.0) ── */}
+        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <SectionTitle>Domaines de l'examen 200-301 v2.0</SectionTitle>
+            <p style={{ fontSize: '0.88rem', color: '#888', marginBottom: '2rem', fontStyle: 'italic' }}>Répartition officielle Cisco du blueprint d'examen v2.0, en vigueur au 3 février 2027.</p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              {DATA.domaines.map(d => (
+                <div key={d.num} className="fiche-domaine-row" style={{ display: 'grid', gridTemplateColumns: '300px 1fr 56px', alignItems: 'center', gap: '1.25rem' }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.82rem', fontWeight: 700, color: 'var(--g-black)', display: 'flex', alignItems: 'center' }}>
+                    <span style={{ color: 'var(--g-red)', marginRight: '0.5rem' }}>{d.num}</span>{d.titre}
+                    {d.neuf && <NewBadge />}
+                  </div>
+                  <div style={{ height: '14px', background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.35)', position: 'relative', overflow: 'hidden' }}>
+                    <div style={{ width: `${d.pct}%`, height: '100%', background: 'var(--g-red)' }} />
+                  </div>
+                  <div style={{ textAlign: 'right', fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, color: 'var(--g-red)' }}>{d.pct}%</div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '3rem' }} className="fiche-public">
             <div>
@@ -355,6 +386,7 @@ function FormationPage() {
             .fiche-exam-grid { grid-template-columns: 1fr 1fr !important; }
             .fiche-methodes  { grid-template-columns: 1fr !important; }
             .fiche-public    { grid-template-columns: 1fr !important; }
+            .fiche-domaine-row { grid-template-columns: 1fr !important; gap: 0.4rem !important; }
           }
           @media (max-width: 480px) {
             .fiche-exam-grid { grid-template-columns: 1fr !important; }

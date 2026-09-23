@@ -7,9 +7,9 @@ export const Route = createFileRoute('/certifications-rs/')({
   head: () => ({
     meta: [
       { title: 'Certifications professionnelles RS — GALACTUS Digital' },
-      { name: 'description', content: "Les certifications professionnelles de GALACTUS Digital en cours d'instruction au Répertoire spécifique de France Compétences (dossier recevable). Organisme certificateur des territoires ultramarins." },
+      { name: 'description', content: "Les certifications professionnelles de GALACTUS Digital au Répertoire spécifique de France Compétences : infrastructure réseau et incidents de sécurité. Organisme certificateur des territoires ultramarins." },
       { property: 'og:title', content: 'Certifications professionnelles RS — GALACTUS Digital' },
-      { property: 'og:description', content: "Certifications professionnelles en cours d'instruction au Répertoire spécifique de France Compétences — GALACTUS Digital, territoires ultramarins." },
+      { property: 'og:description', content: "Certifications professionnelles au Répertoire spécifique de France Compétences — GALACTUS Digital, territoires ultramarins." },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications-rs' },
     ],
   }),
@@ -19,7 +19,7 @@ export const Route = createFileRoute('/certifications-rs/')({
 // ─── Liste des certifications RS ──────────────────────────────────────────────
 // Pour ajouter une nouvelle certification RS : dupliquer une entrée ci-dessous,
 // puis créer la page correspondante dans src/routes/certifications-rs/<slug>.tsx
-type StatutRS = 'enregistree' | 'en-cours'
+type StatutRS = 'enregistree' | 'en-cours' | 'en-preparation'
 
 interface CertifRS {
   slug: string
@@ -38,19 +38,19 @@ const CERTIFICATIONS_RS: CertifRS[] = [
     domaine: 'Réseaux · NSF 326',
     statut: 'en-cours',
   },
-  // ── Prochaines certifications RS (à venir) ──
-  // {
-  //   slug: 'cyberops',
-  //   titre: 'Détecter et répondre aux incidents de cybersécurité',
-  //   resume: '...',
-  //   domaine: 'Cybersécurité · NSF 326',
-  //   statut: 'en-cours',
-  // },
+  {
+    slug: 'incidents-securite',
+    titre: "Détecter, analyser et traiter les incidents de sécurité d'un système d'information",
+    resume: "Surveiller un système d'information, analyser une intrusion à partir des traces réseau et système, qualifier une alerte et traiter un incident jusqu'au rétablissement du service. Accessible sans diplôme préalable.",
+    domaine: 'Cybersécurité · NSF 326',
+    statut: 'en-preparation',
+  },
 ]
 
 const STATUT_LABEL: Record<StatutRS, string> = {
   'enregistree': 'Enregistrée au RS',
   'en-cours': "En cours d'instruction",
+  'en-preparation': "En cours d'enregistrement",
 }
 
 function CertificationsRSHub() {

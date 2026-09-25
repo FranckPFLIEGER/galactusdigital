@@ -7,6 +7,12 @@
 // MAJ août 2026 — ajout de la famille « Socle & Reconversion » (11 formations
 // sans aucun prérequis, portfolio Cisco Networking Academy FR du 25/07/2026).
 // Elles ouvrent le Bloc 0 de chaque parcours métier (voir data/parcours.ts).
+//
+// MAJ septembre 2026 — CCNP Security retiré (50 formations). Toutes les
+// formations sauf le CCNA v2.0 accéléré sont proposées en e-learning tutoré,
+// à un tarif public qui comprend le titre officiel de l'éditeur (champ
+// `voucher`). Présentiel et FOAD restent sur devis, leur coût dépendant du
+// territoire et de la taille du groupe.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type Modalite = 'Présentiel' | 'FOAD' | 'E-learning'
@@ -26,13 +32,18 @@ export interface Formation {
   examCode: string             // Ex: "200-301", "AZ-900"
   modalites: Modalite[]        // Modalités disponibles
   description: string          // Courte description (2 lignes max)
-  // Prix par modalité (€ HT, null = sur demande)
+  // Prix par modalité (€, organisme exonéré de TVA — null = sur demande)
   prix: {
     presentiel: number | null
     foad: number | null
     elearning: number | null
   }
+  /** true = le tarif présentiel est affiché publiquement */
   prixPublic?: boolean
+  /** true = le tarif e-learning tutoré est affiché publiquement */
+  prixPublicElearning?: boolean
+  /** Coût du titre officiel compris dans le prix e-learning (€, 0 = certificat éditeur sans examen surveillé) */
+  voucher?: number
   /** true = cours d'entrée sans aucun prérequis (Bloc 0 des parcours) */
   socle?: boolean
 }
@@ -57,8 +68,8 @@ export const EDITEURS: Record<string, { label: string; badge?: string }> = {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CATALOGUE PRINCIPAL — 51 formations
-// prix: null = sur demande / 0 = inclus dans pack / nombre = tarif public HT €
+// CATALOGUE PRINCIPAL — 50 formations
+// prix: null = sur demande / 0 = inclus dans pack / nombre = tarif public en €
 // ─────────────────────────────────────────────────────────────────────────────
 export const FORMATIONS: Formation[] = [
 
@@ -73,7 +84,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Badge Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Première marche du parcours : outils numériques, identité en ligne, recherche, mots de passe et premiers réflexes IA. Aucun prérequis.',
-    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    prix: { presentiel: 390, foad: 390, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
     socle: true,
   },
   {
@@ -86,7 +99,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Badge Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Poste de travail et mobile : matériel, systèmes, logiciels, fichiers et connectivité Wi-Fi, Bluetooth et cellulaire. Aucun prérequis.',
-    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    prix: { presentiel: 390, foad: 390, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
     socle: true,
   },
   {
@@ -99,7 +114,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Badge Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Monter, réparer et faire évoluer un PC. Composants d\'un poste fixe, d\'un portable et d\'un terminal mobile. Aucun prérequis.',
-    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    prix: { presentiel: 390, foad: 390, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
     socle: true,
   },
   {
@@ -112,7 +129,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Badge Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Rôle et caractéristiques des systèmes d\'exploitation, outils d\'administration Windows, bases de la sécurité Linux. Aucun prérequis.',
-    prix: { presentiel: 690, foad: 690, elearning: 190 },
+    prix: { presentiel: 690, foad: 690, elearning: 210 },
+    prixPublicElearning: true,
+    voucher: 0,
     socle: true,
   },
   {
@@ -125,7 +144,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Badge Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Périphériques, supports et protocoles réseau avec Packet Tracer. Construire un réseau local simple. Aucun prérequis.',
-    prix: { presentiel: 990, foad: 990, elearning: 290 },
+    prix: { presentiel: 990, foad: 990, elearning: 270 },
+    prixPublicElearning: true,
+    voucher: 0,
     socle: true,
   },
   {
@@ -138,7 +159,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Badge Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Cybermenaces, protection des données personnelles et professionnelles, panorama des métiers de la cybersécurité. Aucun prérequis.',
-    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    prix: { presentiel: 390, foad: 390, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
     socle: true,
   },
   {
@@ -151,7 +174,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Badge Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Installation, configuration de base et ligne de commande Linux. Porte d\'entrée vers Linux Essentials et le LPIC-1. Aucun prérequis.',
-    prix: { presentiel: 490, foad: 490, elearning: 140 },
+    prix: { presentiel: 490, foad: 490, elearning: 190 },
+    prixPublicElearning: true,
+    voucher: 0,
     socle: true,
   },
   {
@@ -164,7 +189,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Badge Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Bases de l\'IA en pratique : vision par ordinateur, traduction automatique, chatbots et rédaction de prompts. Aucun prérequis.',
-    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    prix: { presentiel: 390, foad: 390, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
     socle: true,
   },
   {
@@ -177,7 +204,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Badge Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Bases de la science des données, de l\'analyse et de l\'ingénierie de la donnée. Rôle du machine learning en entreprise. Aucun prérequis.',
-    prix: { presentiel: 390, foad: 390, elearning: 90 },
+    prix: { presentiel: 390, foad: 390, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
     socle: true,
   },
   {
@@ -190,7 +219,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'CCST IT Support',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Entrée directe dans l\'emploi : matériel, Windows et macOS, dépannage réseau. 103 laboratoires pratiques. Aucun prérequis.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 580 },
+    prixPublicElearning: true,
+    voucher: 125,
     socle: true,
   },
   {
@@ -201,9 +232,11 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Fondamental', duree: '70 heures', dureeJours: 9,
     certification: 'CompTIA A+',
     examCode: 'CompTIA A+',
-    modalites: ['Présentiel', 'FOAD'],
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Installer, configurer et dépanner ordinateurs, terminaux mobiles et logiciels. 14 chapitres, 99 TP. Aucun prérequis.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 990 },
+    prixPublicElearning: true,
+    voucher: 460,
     socle: true,
   },
 
@@ -218,7 +251,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Introduction complète aux réseaux sans prérequis. Base recommandée avant le cursus CCNA.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 340 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
   {
     slug: 'ccna-itn',
@@ -230,7 +265,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Premiers modules du cursus CCNA officiel — OSI, TCP/IP, IPv4, IPv6, CLI Cisco.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 530 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
   {
     slug: 'ccna-srwe',
@@ -242,7 +279,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'VLANs, STP, EtherChannel, DHCP, Wi-Fi 802.11 et routage statique avancé.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 530 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
   {
     slug: 'ccna-ensa',
@@ -254,7 +293,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'OSPF, ACL, NAT, VPN, SDN et automatisation réseau. Dernier module avant l\'examen CCNA.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 820 },
+    prixPublicElearning: true,
+    voucher: 290,
   },
 
   {
@@ -278,9 +319,11 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Avancé', duree: '70 heures', dureeJours: 10,
     certification: 'Cisco Certified Specialist – Enterprise Core',
     examCode: '350-401 ENCOR v1.2',
-    modalites: ['Présentiel', 'FOAD'],
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Cœur du CCNP Enterprise (v9) : architecture SD-Access, LISP/VXLAN, dual-stack, virtualisation, assurance réseau, sécurité et automatisation.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 920 },
+    prixPublicElearning: true,
+    voucher: 390,
   },
   {
     slug: 'ccnp-enarsi',
@@ -290,9 +333,11 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Avancé', duree: '70 heures', dureeJours: 10,
     certification: 'Cisco Certified Specialist – Enterprise Advanced Infrastructure',
     examCode: '300-410 ENARSI v1.2',
-    modalites: ['Présentiel', 'FOAD'],
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Concentration Advanced Routing (v9) : Layer 3 (EIGRP, OSPF, BGP), MPLS L3 VPN, DMVPN, sécurité d\'infrastructure et services, dépannage avancé.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 820 },
+    prixPublicElearning: true,
+    voucher: 290,
   },
 
   // ── CISCO — Cybersécurité ──────────────────────────────────────────────────
@@ -306,7 +351,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'CIA Triad, cryptographie, sécurité OS, firewalls et réponse aux incidents.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 310 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
   {
     slug: 'cyberops',
@@ -318,19 +365,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-201 CBROPS v1.2',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Formation SOC complète — surveillance réseau, forensique, réponse aux incidents et IA appliquée à la détection (ex-CyberOps, blueprint 2026).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
-  },
-  {
-    slug: 'ccnp-security',
-    titre: 'CCNP Security',
-    titreLong: 'CCNP Security — SCOR 350-701 v2.0',
-    editeur: 'Cisco Networking Academy', famille: 'Cybersécurité',
-    niveau: 'Avancé', duree: '80 heures', dureeJours: 10,
-    certification: 'Cisco Certified Network Professional (CCNP) Security',
-    examCode: '350-701 SCOR v2.0',
-    modalites: ['Présentiel', 'FOAD'],
-    description: 'Sécurité réseau et cloud, VPN, Cisco ISE, Secure Firewall, endpoint, plus vulnérabilités IA/LLM et cryptographie post-quantique. Niveau professionnel.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 770 },
+    prixPublicElearning: true,
+    voucher: 290,
   },
   {
     slug: 'ethical-hacker',
@@ -340,9 +377,11 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Avancé', duree: '30 heures', dureeJours: 4,
     certification: 'Cisco Ethical Hacker Certificat',
     examCode: 'Certificat Cisco Networking Academy',
-    modalites: ['Présentiel', 'FOAD'],
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Méthodologie pentest, Kali Linux, Nmap, Metasploit, Burp Suite et rapport.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 310 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
 
   // ── CISCO — Programmation ─────────────────────────────────────────────────
@@ -356,7 +395,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PCEP-30-02',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Python from scratch — types, boucles, fonctions, collections, fichiers.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 440 },
+    prixPublicElearning: true,
+    voucher: 69,
   },
   {
     slug: 'python-essentials-2',
@@ -368,7 +409,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PCAP-31-03',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'POO, modules, exceptions, générateurs, décorateurs et programmation fonctionnelle.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 660 },
+    prixPublicElearning: true,
+    voucher: 285,
   },
   {
     slug: 'devnet-associate',
@@ -378,9 +421,11 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '50 heures', dureeJours: 6,
     certification: 'Cisco Certified CCNA Automation 200-901',
     examCode: '200-901 CCNAAUTO',
-    modalites: ['Présentiel', 'FOAD'],
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'APIs REST, Python réseau, YANG/NETCONF, Ansible, Terraform et automatisation IA-ready (ex-DevNet, blueprint 2026).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 710 },
+    prixPublicElearning: true,
+    voucher: 290,
   },
 
   // ── CISCO — IoT ───────────────────────────────────────────────────────────
@@ -394,7 +439,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Cisco Networking Academy — Certificate of Completion',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Comprendre l\'IoT et la transformation digitale sans prérequis technique.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 260 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
   {
     slug: 'iot-connecting-things',
@@ -406,7 +453,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Cisco Networking Academy — Certificate of Completion',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Arduino, Raspberry Pi, MQTT, protocoles IoT et sécurisation des déploiements.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 530 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
   {
     slug: 'iot-big-data-analytics',
@@ -418,7 +467,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Cisco Networking Academy — Certificate of Completion',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Collecte, stockage, analyse et visualisation des données IoT avec Python.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 530 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
   {
     slug: 'iot-security',
@@ -428,9 +479,11 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Avancé', duree: '60 heures', dureeJours: 8,
     certification: 'Certificate of Completion — IoT Fundamentals: IoT Security',
     examCode: 'Cisco Networking Academy — Certificate of Completion',
-    modalites: ['Présentiel', 'FOAD'],
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Menaces IoT, cryptographie embarquée, segmentation réseau et audits de sécurité.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 480 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
   {
     slug: 'iot-hackathon',
@@ -440,9 +493,11 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Avancé', duree: '40 heures', dureeJours: 5,
     certification: 'Certificate of Completion — IoT Fundamentals: Hackathon Playbook',
     examCode: 'Cisco Networking Academy — Certificate of Completion',
-    modalites: ['Présentiel', 'FOAD'],
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Projet IoT en équipe — design thinking, prototype fonctionnel et pitch jury.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 370 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
 
   // ── CISCO — Linux & Open Source ───────────────────────────────────────────
@@ -456,7 +511,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '010-160',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Commandes Linux, gestion des fichiers, utilisateurs, processus et scripts Bash.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 480 },
+    prixPublicElearning: true,
+    voucher: 110,
   },
   {
     slug: 'ndg-linux-1',
@@ -468,7 +525,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '101-500',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Architecture système, installation et gestion de paquets, commandes GNU/Unix, périphériques et systèmes de fichiers. Premier des deux cours vers le LPIC-1.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 710 },
+    prixPublicElearning: true,
+    voucher: 176,
   },
   {
     slug: 'ndg-linux-2',
@@ -480,7 +539,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '102-500',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Shells et scripts, interfaces et bureaux, tâches d\'administration, services système, réseau et sécurité. Second cours vers le LPIC-1. Prérequis : NDG Linux I.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 710 },
+    prixPublicElearning: true,
+    voucher: 176,
   },
 
   // ── CISCO — Data & Analytics ──────────────────────────────────────────────
@@ -494,7 +555,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'Certificat Cisco Networking Academy',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'SQL, Python Pandas, visualisation et storytelling data sans prérequis avancé.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 310 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
 
   // ── MICROSOFT — Azure & Cloud ─────────────────────────────────────────────
@@ -508,7 +571,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AZ-900',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'IaaS, PaaS, SaaS, services Azure principaux, sécurité et tarification cloud.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 360 },
+    prixPublicElearning: true,
+    voucher: 99,
   },
   {
     slug: 'az-104',
@@ -520,7 +585,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AZ-104',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Entra ID, stockage, VM, VNet, supervision et gouvernance Azure.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 540 },
+    prixPublicElearning: true,
+    voucher: 165,
   },
   {
     slug: 'sc-900',
@@ -532,7 +599,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'SC-900',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Zero Trust, Entra ID, Defender, Purview et conformité réglementaire Microsoft.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 330 },
+    prixPublicElearning: true,
+    voucher: 99,
   },
   {
     slug: 'ai-901',
@@ -544,7 +613,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AI-901',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'ML, vision, NLP, IA générative et Azure OpenAI Service (AI-901, remplace AI-900).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 330 },
+    prixPublicElearning: true,
+    voucher: 99,
   },
   {
     slug: 'ab-900',
@@ -556,7 +627,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AB-900',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Fondamentaux Microsoft 365, Copilot et administration d\'agents IA, sécurité, conformité et gouvernance (AB-900, remplace MS-900).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 340 },
+    prixPublicElearning: true,
+    voucher: 99,
   },
   {
     slug: 'pl-300',
@@ -568,7 +641,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PL-300',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Power Query, modélisation en étoile, DAX, visualisations et déploiement sécurisé de rapports Power BI.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 510 },
+    prixPublicElearning: true,
+    voucher: 165,
   },
   {
     slug: 'md-102',
@@ -580,7 +655,10 @@ export const FORMATIONS: Formation[] = [
     examCode: 'MD-102',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Intune, Windows Autopilot, conformité, Conditional Access, Defender for Endpoint et gestion des appareils à grande échelle.',
-    prix: { presentiel: 2390, foad: 1790, elearning: 490 }, prixPublic: true,
+    prix: { presentiel: 2390, foad: 1790, elearning: 510 },
+    prixPublic: true,
+    prixPublicElearning: true,
+    voucher: 165,
   },
   {
     slug: 'ms-4010',
@@ -592,7 +670,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'MS-4010',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Déploiement, configuration, sécurité et adoption de Microsoft 365 Copilot en entreprise (Teams, SharePoint, DLP, gouvernance).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 430 },
+    prixPublicElearning: true,
+    voucher: 165,
   },
   {
     slug: 'az-802',
@@ -604,7 +684,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AZ-802',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Administration Windows Server hybride : identité, stockage, calcul, haute disponibilité, migration et reprise d activité.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 510 },
+    prixPublicElearning: true,
+    voucher: 165,
   },
   {
     slug: 'ab-650',
@@ -616,7 +698,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AB-650',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Administration d un tenant Microsoft 365 et des services IA : identité Entra ID, Defender, Purview, Copilot et gouvernance des agents (AB-650, remplace MS-102 retiré le 31/10/2026).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 510 },
+    prixPublicElearning: true,
+    voucher: 165,
   },
   {
     slug: 'sc-300',
@@ -628,7 +712,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'SC-300',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Gestion des identités et des accès avec Microsoft Entra ID : authentification, gouvernance, accès conditionnel et identités externes.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 470 },
+    prixPublicElearning: true,
+    voucher: 165,
   },
   {
     slug: 'sc-401',
@@ -640,7 +726,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'SC-401',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Protection des informations sensibles avec Microsoft Purview à l ère de l IA : étiquettes, DLP, chiffrement et gestion des risques internes.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 470 },
+    prixPublicElearning: true,
+    voucher: 165,
   },
   {
     slug: 'sc-500',
@@ -652,7 +740,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'SC-500',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Sécurisation des charges cloud et des services IA : Defender for Cloud, protection des workloads, sécurité des agents et de Copilot, gouvernance des données IA (nouvelle certification 2026).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 470 },
+    prixPublicElearning: true,
+    voucher: 165,
   },
 
   {
@@ -663,9 +753,11 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Fondamental', duree: '7 heures', dureeJours: 1,
     certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
     examCode: 'PL-7002',
-    modalites: ['Présentiel', 'FOAD'],
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Créer et gérer des processus automatisés avec Power Automate : flux cloud, connecteurs, approbations et intégration Microsoft 365.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
   {
     slug: 'pl-7008',
@@ -675,9 +767,11 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '7 heures', dureeJours: 1,
     certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
     examCode: 'PL-7008',
-    modalites: ['Présentiel', 'FOAD'],
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Créer des agents dans Microsoft Copilot Studio : sujets, actions, connaissances, déploiement et gouvernance des agents IA.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
   {
     slug: 'ms-4017',
@@ -687,9 +781,11 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '7 heures', dureeJours: 1,
     certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
     examCode: 'MS-4017',
-    modalites: ['Présentiel', 'FOAD'],
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Gérer et étendre Microsoft 365 Copilot : agents déclaratifs, connecteurs Graph, extensibilité et personnalisation.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
   {
     slug: 'az-1008',
@@ -699,9 +795,11 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '7 heures', dureeJours: 1,
     certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
     examCode: 'AZ-1008',
-    modalites: ['Présentiel', 'FOAD'],
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
     description: 'Administrer Active Directory Domain Services : domaines, OU, GPO, réplication et sécurisation de l annuaire.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 490 },
+    prix: { presentiel: 1790, foad: 1790, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
   },
 ]
 
@@ -737,11 +835,16 @@ export function getFormationsSocle(): Formation[] {
   return FORMATIONS.filter(f => f.socle)
 }
 
-/** Formate un prix ou retourne "Sur demande" */
+/**
+ * Formate un prix ou retourne "Sur demande".
+ * L'organisme est exonéré de TVA (art. 261-4-4°-a du CGI) : le montant affiché
+ * est le prix total à payer. Ni « HT » (qui laisserait croire qu'une taxe
+ * s'ajoute) ni « TTC » (il n'y a pas de taxe) n'ont de sens ici.
+ */
 export function formatPrix(prix: number | null): string {
   if (prix === null) return 'Sur demande'
   if (prix === 0) return 'Inclus'
-  return `${prix.toLocaleString('fr-FR')} € HT`
+  return `${prix.toLocaleString('fr-FR')} €`
 }
 
 /** Retourne une formation par son slug (ou undefined) */
@@ -751,14 +854,18 @@ export function getFormationBySlug(slug: string): Formation | undefined {
 
 /**
  * Tarifs par modalité pour l'affichage fiche.
- * Règle commerciale : le prix e-learning est affiché tel quel ;
- * Présentiel et FOAD sont "Sur devis". Une modalité non proposée
- * par la formation n'est pas retournée.
+ *
+ *  - E-learning tutoré  → prix public (prixPublicElearning), titre officiel compris
+ *  - Présentiel         → prix public seulement si prixPublic est vrai
+ *  - FOAD               → sur devis, le coût dépend de la taille du groupe
+ *
+ * Une modalité non proposée par la formation n'est pas retournée.
  */
 export interface TarifModalite {
   modalite: Modalite
   label: string
   valeur: string
+  montant: number | null
   surDevis: boolean
 }
 
@@ -769,13 +876,60 @@ export function getTarifsModalites(f: Formation): TarifModalite[] {
     'E-learning':  'E-learning tutoré',
   }
   return f.modalites.map(m => {
-    const key = m === 'Présentiel' ? 'presentiel' : m === 'FOAD' ? 'foad' : 'elearning'
-    const v = f.prixPublic && f.prix && key === 'presentiel' ? (f.prix as any)[key] : undefined
+    let v: number | null | undefined
+    if (m === 'E-learning')      v = f.prixPublicElearning ? f.prix?.elearning : undefined
+    else if (m === 'Présentiel') v = f.prixPublic ? f.prix?.presentiel : undefined
+    else                         v = undefined
     return {
       modalite: m,
       label: LABELS[m],
-      valeur: v ? `${v.toLocaleString('fr-FR')} € TTC` : 'Sur devis',
+      valeur: v ? `${v.toLocaleString('fr-FR')} €` : 'Sur devis',
+      montant: v ?? null,
       surDevis: !v,
     }
   })
 }
+
+/** Prix e-learning affichable, ou null si la formation n'est pas proposée en e-learning */
+export function getPrixElearning(f: Formation): number | null {
+  if (!f.prixPublicElearning || !f.prix?.elearning) return null
+  return f.prix.elearning
+}
+
+/** Prix présentiel affichable, ou null */
+export function getPrixPresentiel(f: Formation): number | null {
+  if (!f.prixPublic || !f.prix?.presentiel) return null
+  return f.prix.presentiel
+}
+
+/** Coût du titre officiel compris dans le prix e-learning (0 si certificat éditeur) */
+export function getVoucher(f: Formation): number {
+  return f.voucher ?? 0
+}
+
+/** Détail du prix e-learning : part formation et part titre officiel */
+export function getDetailPrixElearning(f: Formation):
+  { total: number; formation: number; titre: number } | null {
+  const total = getPrixElearning(f)
+  if (total === null) return null
+  const titre = getVoucher(f)
+  return { total, formation: total - titre, titre }
+}
+
+/**
+ * Mention obligatoire affichée sous les tarifs.
+ *
+ * Article L.112-1 du code de la consommation et arrêté du 3 décembre 1987 :
+ * le consommateur doit connaître à l'avance la dépense totale. L'organisme
+ * étant exonéré de TVA, le prix affiché est ce montant total.
+ */
+export const MENTION_PRIX_ELEARNING =
+  "Prix total à payer, par personne. TVA non applicable — art. 261-4-4°-a du CGI. " +
+  "Comprend l'accès à la plateforme, les supports officiels, le tutorat, le suivi individuel " +
+  "et le titre officiel de l'éditeur : certificat et badge Cisco Networking Academy, ou voucher " +
+  "d'examen surveillé (Pearson VUE, Certiport) lorsque la certification en requiert un. " +
+  "Aucun frais supplémentaire pour la première présentation à l'examen."
+
+/** Mention courte, pour les listes et le calendrier */
+export const MENTION_PRIX_COURTE =
+  "Prix total à payer, par personne — TVA non applicable, art. 261-4-4°-a du CGI."

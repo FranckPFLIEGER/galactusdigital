@@ -3,7 +3,7 @@ import { useState, useMemo } from "react"
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { ParcoursMetier } from "../../components/ParcoursMetier"
-import { FORMATIONS, FAMILLES } from "../../data/catalogue"
+import { FORMATIONS, FAMILLES, MENTION_PRIX_ELEARNING, getDetailPrixElearning } from "../../data/catalogue"
 import type { Formation } from "../../data/catalogue"
 import { ArrowRight, Clock, Award, Phone, Mail, Filter, Calendar, Check } from "lucide-react"
 import { getProchaineSession } from "../../data/sessions"
@@ -40,6 +40,7 @@ const MODALITE_ICON: Record<string, string> = {
 function Card({ f }: { f: Formation }) {
   const color = EDITEUR_COLOR[f.editeur] ?? "#E41F26"
   const prochaine = getProchaineSession(f.slug)
+  const detail = getDetailPrixElearning(f)
   return (
     <div style={{
       background: "#fff",
@@ -119,8 +120,13 @@ function Card({ f }: { f: Formation }) {
       <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: ".9rem 1.25rem", borderTop: "1px solid rgba(187,187,187,.20)", marginTop: "auto" }}>
         <div style={{ display: "flex", flexDirection: "column", gap: ".15rem" }}>
           <span style={{ fontFamily: "var(--font-title)", fontSize: ".82rem", fontWeight: 700, color: "var(--g-black)" }}>
-            {f.prixPublic && f.prix?.presentiel ? `${f.prix.presentiel.toLocaleString('fr-FR')} € TTC` : 'Sur devis'}
+            {detail ? `${detail.total.toLocaleString('fr-FR')} €` : 'Sur devis'}
           </span>
+          {detail && (
+            <span style={{ fontFamily: "var(--font-title)", fontSize: ".54rem", fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: "#999" }}>
+              E-learning tutoré{detail.titre > 0 ? ` · voucher ${detail.titre.toLocaleString('fr-FR')} € inclus` : " · certificat inclus"}
+            </span>
+          )}
         </div>
         <a href={`/formations/${f.slug}`} style={{ display: "inline-flex", alignItems: "center", gap: ".35rem", fontFamily: "var(--font-title)", fontSize: ".70rem", fontWeight: 700, letterSpacing: ".10em", textTransform: "uppercase", color, textDecoration: "none" }}>
           Voir la fiche <ArrowRight size={12} />
@@ -252,6 +258,9 @@ function FormationsPage() {
             {/* Résultat */}
             <div style={{ marginTop: ".75rem", fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 600, letterSpacing: ".10em", textTransform: "uppercase", color: "#888" }}>
               {filtered.length} formation{filtered.length > 1 ? "s" : ""} affichée{filtered.length > 1 ? "s" : ""}
+            </div>
+            <div style={{ marginTop: ".4rem", fontSize: ".72rem", color: "#999", lineHeight: 1.5, maxWidth: "880px", textTransform: "none", fontWeight: 400, letterSpacing: "normal" }}>
+              {MENTION_PRIX_ELEARNING}
             </div>
           </div>
         </section>

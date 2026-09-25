@@ -2,57 +2,119 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { TarifsModalites } from '../../components/TarifsModalites'
-import { CheckCircle, Clock, Calendar, Users, MapPin, Phone, Mail, Award, BookOpen, Monitor, AlertCircle, Network } from 'lucide-react'
+import { CheckCircle, Clock, Calendar, Users, MapPin, Phone, Mail, Award, BookOpen, Monitor, AlertCircle, Terminal } from 'lucide-react'
 
-export const Route = createFileRoute('/formations/networking-essentials')({
-  component: FormationPage,
+export const Route = createFileRoute('/formations/ndg-linux-1')({
+  component: NdgLinux1Page,
   head: () => ({
     meta: [
-      { title: "Networking Essentials Cisco Networking Academy — Formation réseaux | GALACTUS Digital" },
-      { name: "description", content: "Formation Cisco Networking Academy Networking Essentials. 35h. Badge certifiant. Fondamentaux réseaux sans prérequis. Présentiel · FOAD · E-learning. Certifié Qualiopi." },
+      { title: "NDG Linux I — Administration Linux, préparation LPIC-1 (Exam 101) | GALACTUS Digital" },
+      { name: "description", content: "NDG Linux I — 70h. Architecture système, gestion de paquets, commandes GNU/Unix, périphériques et systèmes de fichiers. Préparation LPIC-1 exam 101-500. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
   editeur: 'Cisco Networking Academy',
-  famille: 'Cisco Networking Academy — Réseaux',
-  titre: 'Networking Essentials',
-  sousTitre: 'Introduction aux fondamentaux des réseaux · Référence : NETESS',
-  ref: 'NETESS-001',
-  niveau: 'Fondamental',
+  famille: 'Cisco Networking Academy — Linux & Open Source',
+  titre: 'NDG Linux I — Administration Linux',
+  sousTitre: 'Premier des deux cours vers le LPIC-1 · Référence officielle : NDG-LINUX-I',
+  ref: 'LINUX-LPIC1-101',
+  niveau: 'Intermédiaire',
   partenaire: 'Partenaire Cisco n° 3018982',
-  certification: 'Cisco Networking Essentials',
-  duree: '35 heures',
+  certification: 'LPIC-1 — Linux Administrator (Exam 101-500)',
+  duree: '70 heures',
   groupeMin: 4,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Formation d'introduction complète aux réseaux informatiques. Sans prérequis technique, elle couvre les appareils réseau, les médias, les protocoles et la configuration de base. Idéale avant d'attaquer le cursus CCNA ou une spécialisation cybersécurité / IoT.`,
-  objectifs: ["Décrire les composants d'un réseau — appareils, médias, topologies et architectures", "Configurer des équipements réseau Cisco de base via Cisco Packet Tracer", "Expliquer le rôle des protocoles réseau et les couches du modèle TCP/IP", "Configurer manuellement et automatiquement les adresses IP (IPv4 et IPv6)", "Tester et dépanner la connectivité réseau avec ping, traceroute et Packet Tracer", "Décrire les caractéristiques du cloud et de la virtualisation réseau"],
-  public: ["Débutants complets en informatique", "Étudiants BTS / Licence Pro", "Professionnels IT en reconversion", "Prérequis d'entrée pour CCNA ou CCNA Cybersecurity"],
-  prerequis: ["Aucun prérequis technique", "Utilisation basique d'un PC et d'Internet"],
+  description: 'Premier des deux cours NDG menant à la certification LPIC-1 du Linux Professional Institute. Il couvre l\'architecture d\'un système Linux, l\'installation et la gestion de paquets (dpkg/APT et RPM/YUM), les commandes GNU et Unix, les flux et les filtres, ainsi que les périphériques, les systèmes de fichiers et le partitionnement. Il prépare directement à l\'examen 101-500.',
+  objectifs: [
+    'Décrire l\'architecture matérielle et logicielle d\'un système Linux',
+    'Installer une distribution et gérer les paquets avec dpkg/APT et RPM/YUM',
+    'Utiliser les commandes GNU et Unix en ligne de commande, les flux, les tubes et les redirections',
+    'Manipuler le texte avec les filtres : grep, sed, awk, sort, cut, tr',
+    'Créer et gérer partitions, systèmes de fichiers et points de montage',
+    'Gérer les permissions, les liens et les quotas disque',
+  ],
+  public: [
+    'Techniciens et administrateurs systèmes débutant sur Linux',
+    'Administrateurs Windows en montée de compétence Linux',
+    'Développeurs et profils DevOps souhaitant maîtriser leur environnement',
+    'Titulaires de Linux Essentials engagés vers le LPIC-1',
+    'Profils réseau et cybersécurité ayant besoin d\'un socle Linux solide',
+  ],
+  prerequis: [
+    'Linux Essentials (LPI 010-160) ou une pratique équivalente de la ligne de commande',
+    'Savoir naviguer dans une arborescence de fichiers et lire la sortie d\'une commande',
+    'Notions de base en réseau (adressage IP, DNS)',
+    'Un ordinateur et une connexion Internet stable pour les laboratoires',
+  ],
+  modules: [
+    {
+      num: '101', titre: 'Architecture du système', duree: '12h',
+      contenu: [
+        'Matériel, périphériques et paramètres du BIOS/UEFI',
+        'Démarrage du système : GRUB, initramfs, cibles systemd',
+        'Niveaux d\'exécution, arrêt et redémarrage propres',
+        'TP — analyse d\'une séquence de démarrage et dépannage',
+      ],
+    },
+    {
+      num: '102', titre: 'Installation et gestion des paquets', duree: '14h',
+      contenu: [
+        'Conception du partitionnement et de l\'espace disque',
+        'Gestionnaire d\'amorçage et bibliothèques partagées',
+        'Gestion de paquets Debian : dpkg et APT',
+        'Gestion de paquets RPM : rpm, YUM et DNF',
+        'TP — installation d\'une distribution et mise à niveau de paquets',
+      ],
+    },
+    {
+      num: '103', titre: 'Commandes GNU et Unix', duree: '26h',
+      contenu: [
+        'Ligne de commande, variables d\'environnement, historique',
+        'Filtres de texte : cat, grep, sed, awk, sort, cut, tr, wc',
+        'Gestion des fichiers : find, tar, gzip, cpio, dd',
+        'Flux, tubes et redirections ; tee et xargs',
+        'Processus : ps, top, kill, nice, jobs, nohup',
+        'Éditeur vi : édition, recherche et remplacement',
+        'TP — chaînes de traitement de texte sur fichiers de journalisation',
+      ],
+    },
+    {
+      num: '104', titre: 'Périphériques, systèmes de fichiers et FHS', duree: '18h',
+      contenu: [
+        'Création de partitions et de systèmes de fichiers',
+        'Intégrité, montage et démontage ; /etc/fstab',
+        'Quotas disque et gestion de l\'espace',
+        'Permissions, propriétés, setuid, setgid et sticky bit',
+        'Liens durs et symboliques ; hiérarchie FHS et localisation des fichiers',
+        'TP de synthèse — partitionnement complet et plan de permissions',
+      ],
+    },
+  ],
   examen: {
-    code: 'Networking Essentials Final Exam',
-    duree: 'Évaluation continue',
-    langue: 'Français',
-    organisme: 'Cisco Networking Academy (certificat de complétion)',
-    format: 'QCM et questions pratiques',
-    score: '700 sur 1000',
-    note: ``,
+    code:       '101-500',
+    duree:      '90 minutes',
+    langue:     'Anglais, allemand, japonais, portugais',
+    organisme:  'Linux Professional Institute (LPI), via Pearson VUE',
+    format:     '60 questions — QCM et questions à saisie libre',
+    score:      '500 / 800',
+    note: 'Le LPIC-1 exige la réussite des examens 101 et 102, à passer dans les cinq ans. Ce cours prépare le premier. Cours suivant : NDG Linux II (exam 102-500). Le voucher d\'examen LPI est compris dans le tarif e-learning.',
   },
   methodes: [
-    "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
-    "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
-    "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
-    "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
-    "Quiz de validation des acquis à chaque fin de module sur NetAcad",
-    "Auto-évaluation formative en début et en fin de formation",
-    "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
-    "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
-    "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
-    "Certification Cisco Networking Essentials envoyée par mail à l'issue du parcours",
-    "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
-    "Passage de l'examen certifiant Cisco Networking Academy intégré au programme",
+    'Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)',
+    'Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation',
+    'Laboratoires Linux en machine virtuelle, accessibles depuis le navigateur',
+    'Supports de cours officiels NDG et LPI inclus (version numérique NetAcad)',
+    'Quiz de validation des acquis à chaque fin de module sur NetAcad',
+    'Examens blancs en conditions réelles avant le passage de la certification',
+    'Badge numérique Cisco Networking Academy remis à l\'issue du cours — partageable sur Credly',
+    'Auto-évaluation formative en début et en fin de formation',
+    'Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis',
+    'Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)',
+    'Attestation de formation, de présence et plan de travail individuel',
+    'Voucher d\'examen LPI compris dans le tarif e-learning tutoré',
   ],
 }
 
@@ -78,7 +140,7 @@ function DelaisAcces() {
   )
 }
 
-function FormationPage() {
+function NdgLinux1Page() {
   return (
     <>
       <Header />
@@ -110,7 +172,7 @@ function FormationPage() {
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
                                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=networking-essentials' },
+                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=ndg-linux-1' },
               ].map((m, i) => (
                 m.href ? (
                   <a key={i} href={m.href} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: 'var(--g-red)', padding: '0.35rem 0.8rem' }}>
@@ -127,7 +189,7 @@ function FormationPage() {
         </section>
 
         {/* ── Modalités & tarifs ── */}
-        <TarifsModalites slug="networking-essentials" />
+        <TarifsModalites slug="ndg-linux-1" />
 
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
@@ -143,7 +205,7 @@ function FormationPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem' }} className="fiche-objectifs">
               {DATA.objectifs.map((obj, i) => (
                 <div key={i} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '1.5rem', background: 'var(--g-offwhite)' }}>
-                  <div style={{ width: '32px', height: '32px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}><Network size={16} color="white" /></div>
+                  <div style={{ width: '32px', height: '32px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '0.75rem' }}><Terminal size={16} color="white" /></div>
                   <p style={{ fontSize: '0.85rem', color: '#4a4a48', lineHeight: 1.6, margin: 0 }}>{obj}</p>
                 </div>
               ))}
@@ -176,68 +238,68 @@ function FormationPage() {
                 <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
                   <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 1–4</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Composants et médias réseau</div>
+                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 1–3</div>
+                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Introduction à Linux</div>
                     </div>
                     <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />10h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Appareils réseau — switchs, routeurs, points d'accès, pare-feux</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Médias réseau — câble cuivre, fibre optique, sans fil</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Topologies réseau — bus, étoile, maillée, hybride</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />TP Packet Tracer — exploration d'un réseau d'entreprise</li>
+                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Histoire et philosophie Linux — noyau, distributions (Ubuntu, CentOS, Debian)</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Environnements de bureau Linux — GNOME, KDE, CLI vs GUI</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Licences open source — GPL, MIT, Apache, Creative Commons</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />TP — Installation et prise en main d'Ubuntu en VM</li>
                     </ul>
                   </div>
                 </div>
                 <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
                   <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 5–8</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Protocoles et modèles</div>
+                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 4–6</div>
+                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Ligne de commande et fichiers</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />9h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />12h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Modèle TCP/IP et correspondance OSI</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Encapsulation, PDU et flux de données</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Protocoles de couche application — HTTP, DNS, DHCP, FTP</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />TP — Analyse de trafic réseau en temps réel</li>
+                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Shell Bash — navigation, ls, cd, pwd, mkdir, rm, cp, mv</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Éditeurs de texte — nano, vi/vim fondamentaux</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Flux, redirection et pipes — &gt;, &gt;&gt;, |, tee, grep, awk, sed</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Arborescence Linux — FHS, /etc, /var, /home, /usr, /tmp</li>
                     </ul>
                   </div>
                 </div>
                 <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
                   <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 9–12</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Adressage IP et configuration</div>
+                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 7–9</div>
+                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Utilisateurs et sécurité</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />9h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />10h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Adressage IPv4 — classes, masques, CIDR</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Adressage IPv6 — types, configuration SLAAC</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Configuration manuelle et DHCP sur Cisco IOS</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />TP — Calcul de sous-réseaux et configuration complète</li>
+                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Gestion des utilisateurs — useradd, usermod, passwd, /etc/passwd</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Permissions Linux — rwx, chmod octal et symbolique, chown, chgrp</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />sudo et élévation de privilèges — /etc/sudoers</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />TP — Sécurisation d'un serveur Linux multi-utilisateurs</li>
                     </ul>
                   </div>
                 </div>
                 <div style={{ border: "1px solid rgba(187,187,187,0.3)", overflow: "hidden" }}>
                   <div style={{ background: "var(--g-red)", padding: "0.75rem 1.25rem", display: "flex", alignItems: "center", justifyContent: "space-between" }}>
                     <div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 13–16</div>
-                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Connectivité et dépannage</div>
+                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 10–11</div>
+                      <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Processus et automatisation</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />7h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />8h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
-                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Ping, traceroute et outils de diagnostic réseau</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Notions de routage — passerelle par défaut, table de routage</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Concepts cloud et virtualisation réseau</li>
-                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />TP de synthèse — Configuration d'un réseau complet</li>
+                      <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Gestion des processus — ps, top, htop, kill, nice, systemd/systemctl</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Planification de tâches — cron, crontab, at</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />Scripts Bash — variables, conditions, boucles, fonctions</li>
+                        <li style={{ display: "flex", alignItems: "flex-start", gap: "0.5rem", fontSize: "0.83rem", color: "#5a5a58", lineHeight: 1.5 }}><div style={{ width: "5px", height: "5px", background: "var(--g-red)", flexShrink: 0, marginTop: "6px" }} />TP — Script d'automatisation de sauvegarde Linux</li>
                     </ul>
                   </div>
                 </div>

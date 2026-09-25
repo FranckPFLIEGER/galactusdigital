@@ -41,6 +41,8 @@ import { Route as FormationsMs4010RouteImport } from './routes/formations/ms-401
 import { Route as FormationsMs102RouteImport } from './routes/formations/ms-102'
 import { Route as FormationsMd102RouteImport } from './routes/formations/md-102'
 import { Route as FormationsLinuxEssentialsRouteImport } from './routes/formations/linux-essentials'
+import { Route as FormationsNdgLinux2RouteImport } from './routes/formations/ndg-linux-2'
+import { Route as FormationsNdgLinux1RouteImport } from './routes/formations/ndg-linux-1'
 import { Route as FormationsIotSecurityRouteImport } from './routes/formations/iot-security'
 import { Route as FormationsIotIntroductionRouteImport } from './routes/formations/iot-introduction'
 import { Route as FormationsIotHackathonRouteImport } from './routes/formations/iot-hackathon'
@@ -51,8 +53,6 @@ import { Route as FormationsDevnetAssociateRouteImport } from './routes/formatio
 import { Route as FormationsDataAnalyticsEssentialsRouteImport } from './routes/formations/data-analytics-essentials'
 import { Route as FormationsCybersecurityEssentialsRouteImport } from './routes/formations/cybersecurity-essentials'
 import { Route as FormationsCyberopsRouteImport } from './routes/formations/cyberops'
-import { Route as FormationsCcnpSecurityRouteImport } from './routes/formations/ccnp-security'
-import { Route as FormationsCcnpEnterpriseRouteImport } from './routes/formations/ccnp-enterprise'
 import { Route as FormationsCcnaSrweRouteImport } from './routes/formations/ccna-srwe'
 import { Route as FormationsCcnaItnRouteImport } from './routes/formations/ccna-itn'
 import { Route as FormationsCcnaEnsaRouteImport } from './routes/formations/ccna-ensa'
@@ -227,6 +227,18 @@ const FormationsLinuxEssentialsRoute =
     path: '/formations/linux-essentials',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FormationsNdgLinux2Route =
+  FormationsNdgLinux2RouteImport.update({
+    id: '/formations/ndg-linux-2',
+    path: '/formations/ndg-linux-2',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FormationsNdgLinux1Route =
+  FormationsNdgLinux1RouteImport.update({
+    id: '/formations/ndg-linux-1',
+    path: '/formations/ndg-linux-1',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FormationsIotSecurityRoute = FormationsIotSecurityRouteImport.update({
   id: '/formations/iot-security',
   path: '/formations/iot-security',
@@ -283,17 +295,6 @@ const FormationsCyberopsRoute = FormationsCyberopsRouteImport.update({
   path: '/formations/cyberops',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FormationsCcnpSecurityRoute = FormationsCcnpSecurityRouteImport.update({
-  id: '/formations/ccnp-security',
-  path: '/formations/ccnp-security',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsCcnpEnterpriseRoute =
-  FormationsCcnpEnterpriseRouteImport.update({
-    id: '/formations/ccnp-enterprise',
-    path: '/formations/ccnp-enterprise',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const FormationsCcnaSrweRoute = FormationsCcnaSrweRouteImport.update({
   id: '/formations/ccna-srwe',
   path: '/formations/ccna-srwe',
@@ -366,8 +367,6 @@ export interface FileRoutesByFullPath {
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
   '/formations/ccna-srwe': typeof FormationsCcnaSrweRoute
-  '/formations/ccnp-enterprise': typeof FormationsCcnpEnterpriseRoute
-  '/formations/ccnp-security': typeof FormationsCcnpSecurityRoute
   '/formations/cyberops': typeof FormationsCyberopsRoute
   '/formations/cybersecurity-essentials': typeof FormationsCybersecurityEssentialsRoute
   '/formations/data-analytics-essentials': typeof FormationsDataAnalyticsEssentialsRoute
@@ -379,6 +378,8 @@ export interface FileRoutesByFullPath {
   '/formations/iot-introduction': typeof FormationsIotIntroductionRoute
   '/formations/iot-security': typeof FormationsIotSecurityRoute
   '/formations/linux-essentials': typeof FormationsLinuxEssentialsRoute
+  '/formations/ndg-linux-2': typeof FormationsNdgLinux2Route
+  '/formations/ndg-linux-1': typeof FormationsNdgLinux1Route
   '/formations/md-102': typeof FormationsMd102Route
   '/formations/ms-102': typeof FormationsMs102Route
   '/formations/ms-4010': typeof FormationsMs4010Route
@@ -421,8 +422,6 @@ export interface FileRoutesByTo {
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
   '/formations/ccna-srwe': typeof FormationsCcnaSrweRoute
-  '/formations/ccnp-enterprise': typeof FormationsCcnpEnterpriseRoute
-  '/formations/ccnp-security': typeof FormationsCcnpSecurityRoute
   '/formations/cyberops': typeof FormationsCyberopsRoute
   '/formations/cybersecurity-essentials': typeof FormationsCybersecurityEssentialsRoute
   '/formations/data-analytics-essentials': typeof FormationsDataAnalyticsEssentialsRoute
@@ -434,6 +433,8 @@ export interface FileRoutesByTo {
   '/formations/iot-introduction': typeof FormationsIotIntroductionRoute
   '/formations/iot-security': typeof FormationsIotSecurityRoute
   '/formations/linux-essentials': typeof FormationsLinuxEssentialsRoute
+  '/formations/ndg-linux-2': typeof FormationsNdgLinux2Route
+  '/formations/ndg-linux-1': typeof FormationsNdgLinux1Route
   '/formations/md-102': typeof FormationsMd102Route
   '/formations/ms-102': typeof FormationsMs102Route
   '/formations/ms-4010': typeof FormationsMs4010Route
@@ -477,8 +478,6 @@ export interface FileRoutesById {
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
   '/formations/ccna-srwe': typeof FormationsCcnaSrweRoute
-  '/formations/ccnp-enterprise': typeof FormationsCcnpEnterpriseRoute
-  '/formations/ccnp-security': typeof FormationsCcnpSecurityRoute
   '/formations/cyberops': typeof FormationsCyberopsRoute
   '/formations/cybersecurity-essentials': typeof FormationsCybersecurityEssentialsRoute
   '/formations/data-analytics-essentials': typeof FormationsDataAnalyticsEssentialsRoute
@@ -490,6 +489,8 @@ export interface FileRoutesById {
   '/formations/iot-introduction': typeof FormationsIotIntroductionRoute
   '/formations/iot-security': typeof FormationsIotSecurityRoute
   '/formations/linux-essentials': typeof FormationsLinuxEssentialsRoute
+  '/formations/ndg-linux-2': typeof FormationsNdgLinux2Route
+  '/formations/ndg-linux-1': typeof FormationsNdgLinux1Route
   '/formations/md-102': typeof FormationsMd102Route
   '/formations/ms-102': typeof FormationsMs102Route
   '/formations/ms-4010': typeof FormationsMs4010Route
@@ -534,8 +535,6 @@ export interface FileRouteTypes {
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
     | '/formations/ccna-srwe'
-    | '/formations/ccnp-enterprise'
-    | '/formations/ccnp-security'
     | '/formations/cyberops'
     | '/formations/cybersecurity-essentials'
     | '/formations/data-analytics-essentials'
@@ -547,6 +546,8 @@ export interface FileRouteTypes {
     | '/formations/iot-introduction'
     | '/formations/iot-security'
     | '/formations/linux-essentials'
+    | '/formations/ndg-linux-2'
+    | '/formations/ndg-linux-1'
     | '/formations/md-102'
     | '/formations/ms-102'
     | '/formations/ms-4010'
@@ -589,8 +590,6 @@ export interface FileRouteTypes {
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
     | '/formations/ccna-srwe'
-    | '/formations/ccnp-enterprise'
-    | '/formations/ccnp-security'
     | '/formations/cyberops'
     | '/formations/cybersecurity-essentials'
     | '/formations/data-analytics-essentials'
@@ -602,6 +601,8 @@ export interface FileRouteTypes {
     | '/formations/iot-introduction'
     | '/formations/iot-security'
     | '/formations/linux-essentials'
+    | '/formations/ndg-linux-2'
+    | '/formations/ndg-linux-1'
     | '/formations/md-102'
     | '/formations/ms-102'
     | '/formations/ms-4010'
@@ -644,8 +645,6 @@ export interface FileRouteTypes {
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
     | '/formations/ccna-srwe'
-    | '/formations/ccnp-enterprise'
-    | '/formations/ccnp-security'
     | '/formations/cyberops'
     | '/formations/cybersecurity-essentials'
     | '/formations/data-analytics-essentials'
@@ -657,6 +656,8 @@ export interface FileRouteTypes {
     | '/formations/iot-introduction'
     | '/formations/iot-security'
     | '/formations/linux-essentials'
+    | '/formations/ndg-linux-2'
+    | '/formations/ndg-linux-1'
     | '/formations/md-102'
     | '/formations/ms-102'
     | '/formations/ms-4010'
@@ -700,8 +701,6 @@ export interface RootRouteChildren {
   FormationsCcnaEnsaRoute: typeof FormationsCcnaEnsaRoute
   FormationsCcnaItnRoute: typeof FormationsCcnaItnRoute
   FormationsCcnaSrweRoute: typeof FormationsCcnaSrweRoute
-  FormationsCcnpEnterpriseRoute: typeof FormationsCcnpEnterpriseRoute
-  FormationsCcnpSecurityRoute: typeof FormationsCcnpSecurityRoute
   FormationsCyberopsRoute: typeof FormationsCyberopsRoute
   FormationsCybersecurityEssentialsRoute: typeof FormationsCybersecurityEssentialsRoute
   FormationsDataAnalyticsEssentialsRoute: typeof FormationsDataAnalyticsEssentialsRoute
@@ -713,6 +712,8 @@ export interface RootRouteChildren {
   FormationsIotIntroductionRoute: typeof FormationsIotIntroductionRoute
   FormationsIotSecurityRoute: typeof FormationsIotSecurityRoute
   FormationsLinuxEssentialsRoute: typeof FormationsLinuxEssentialsRoute
+  FormationsNdgLinux2Route: typeof FormationsNdgLinux2Route
+  FormationsNdgLinux1Route: typeof FormationsNdgLinux1Route
   FormationsMd102Route: typeof FormationsMd102Route
   FormationsMs102Route: typeof FormationsMs102Route
   FormationsMs4010Route: typeof FormationsMs4010Route
@@ -957,6 +958,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsLinuxEssentialsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/formations/ndg-linux-2': {
+      id: '/formations/ndg-linux-2'
+      path: '/formations/ndg-linux-2'
+      fullPath: '/formations/ndg-linux-2'
+      preLoaderRoute: typeof FormationsNdgLinux2RouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/ndg-linux-1': {
+      id: '/formations/ndg-linux-1'
+      path: '/formations/ndg-linux-1'
+      fullPath: '/formations/ndg-linux-1'
+      preLoaderRoute: typeof FormationsNdgLinux1RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/formations/iot-security': {
       id: '/formations/iot-security'
       path: '/formations/iot-security'
@@ -1025,20 +1040,6 @@ declare module '@tanstack/react-router' {
       path: '/formations/cyberops'
       fullPath: '/formations/cyberops'
       preLoaderRoute: typeof FormationsCyberopsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/ccnp-security': {
-      id: '/formations/ccnp-security'
-      path: '/formations/ccnp-security'
-      fullPath: '/formations/ccnp-security'
-      preLoaderRoute: typeof FormationsCcnpSecurityRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/ccnp-enterprise': {
-      id: '/formations/ccnp-enterprise'
-      path: '/formations/ccnp-enterprise'
-      fullPath: '/formations/ccnp-enterprise'
-      preLoaderRoute: typeof FormationsCcnpEnterpriseRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/formations/ccna-srwe': {
@@ -1133,8 +1134,6 @@ const rootRouteChildren: RootRouteChildren = {
   FormationsCcnaEnsaRoute: FormationsCcnaEnsaRoute,
   FormationsCcnaItnRoute: FormationsCcnaItnRoute,
   FormationsCcnaSrweRoute: FormationsCcnaSrweRoute,
-  FormationsCcnpEnterpriseRoute: FormationsCcnpEnterpriseRoute,
-  FormationsCcnpSecurityRoute: FormationsCcnpSecurityRoute,
   FormationsCyberopsRoute: FormationsCyberopsRoute,
   FormationsCybersecurityEssentialsRoute:
     FormationsCybersecurityEssentialsRoute,
@@ -1148,6 +1147,8 @@ const rootRouteChildren: RootRouteChildren = {
   FormationsIotIntroductionRoute: FormationsIotIntroductionRoute,
   FormationsIotSecurityRoute: FormationsIotSecurityRoute,
   FormationsLinuxEssentialsRoute: FormationsLinuxEssentialsRoute,
+  FormationsNdgLinux2Route: FormationsNdgLinux2Route,
+  FormationsNdgLinux1Route: FormationsNdgLinux1Route,
   FormationsMd102Route: FormationsMd102Route,
   FormationsMs102Route: FormationsMs102Route,
   FormationsMs4010Route: FormationsMs4010Route,

@@ -3,7 +3,8 @@ import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { MapPin, Phone, Mail, Clock, Users, Info, Euro, Search, X, ChevronDown, CalendarClock, LayoutList, BarChart2 } from 'lucide-react'
-import { FORMATIONS, FAMILLES, type Formation, type Modalite, type Territoire } from '../data/catalogue'
+import { FORMATIONS, FAMILLES, getTarifsModalites, MENTION_PRIX_COURTE, type Formation, type Modalite, type Territoire } from '../data/catalogue'
+import { SESSIONS_PLANIFIEES, LIEUX, labelPlage, places } from '../data/sessions'
 
 export const Route = createFileRoute('/calendrier')({
   component: CalendrierPage,
@@ -20,14 +21,9 @@ interface Session {
   statut: 'sur_demande' | 'en_preparation'
 }
 
-// ── ⚠️ SESSIONS PLANIFIÉES — remplir dateLabel et lieu ───────────────
-const PROCHAINES: Array<{
-  slug: string; territoire: Territoire; modalite: Modalite
-  dateLabel: string; lieu: string; placesMax?: number
-}> = [
-  // { slug: 'ccna-itn', territoire: 'Martinique', modalite: 'Présentiel',
-  //   dateLabel: 'Du 15/09/26 au 03/10/26', lieu: 'Pointe Madeleine — CAP EST, Le François 97240' },
-]
+// ── Sessions ────────────────────────────────────────────────────────────────
+// La liste vit dans src/data/sessions.ts, source unique partagée avec les
+// cartes du catalogue et les fiches formation. Ne rien saisir ici.
 
 function parseDateRange(label: string): { start: Date; end: Date } | null {
   const m = label.match(/[Dd]u\s+(\d{1,2})\/(\d{2})\/(\d{2,4})\s+au\s+(\d{1,2})\/(\d{2})\/(\d{2,4})/)
@@ -39,7 +35,6 @@ function parseDateRange(label: string): { start: Date; end: Date } | null {
       end:   new Date(y2, parseInt(m[5]) - 1, parseInt(m[4])),
     }
   }
-  // Session d'une journée : 'Le JJ/MM/AA'
   const one = label.match(/[Ll]e\s+(\d{1,2})\/(\d{2})\/(\d{2,4})/)
   if (one) {
     const y = parseInt(one[3]) < 100 ? 2000 + parseInt(one[3]) : parseInt(one[3])
@@ -49,47 +44,22 @@ function parseDateRange(label: string): { start: Date; end: Date } | null {
   return null
 }
 
-function s(slug: string, territoire: Territoire, modalite: Modalite, opts: Partial<Session> = {}): Session | null {
-  const f = FORMATIONS.find(x => x.slug === slug)
-  if (!f || !f.modalites.includes(modalite)) return null
-  const lieux: Record<Territoire, string> = {
-    'Martinique':       'Pointe Madeleine — CAP EST, Le François 97240',
-    'Guadeloupe':       'Pointe de la Verdure, Gosier 97190',
-    'Paris':            '66 avenue des Champs Élysées, 75008 Paris',
-    'Tous territoires': 'En ligne — WEBEX · NetAcad · Microsoft Learn',
-  }
-  return {
-    id: `${slug}__${territoire}__${modalite}`.replace(/\s/g, '-'),
-    formation: f, territoire, lieu: lieux[territoire], modalite,
-    dateLabel: 'Du JJ/MM/AA au JJ/MM/AA',
-    placesMax: modalite === 'Présentiel' ? 12 : 20,
-    statut: 'sur_demande', ...opts,
-  }
-}
-
-const RAW: (Session | null)[] = [
-  // ── Planning 2027 — Sessions présentiel Martinique (Pointe Madeleine, Le François) ──
-  s('md-102',   'Martinique', 'Présentiel', { dateLabel: 'Du 25/01/27 au 29/01/27', statut: 'en_preparation' }),
-  s('pl-7002',  'Martinique', 'Présentiel', { dateLabel: 'Le 25/02/27', statut: 'en_preparation' }),
-  s('az-802',   'Martinique', 'Présentiel', { dateLabel: 'Du 08/03/27 au 12/03/27', statut: 'en_preparation' }),
-  s('ccna-cisco', 'Martinique', 'Présentiel', { dateLabel: 'Du 15/03/27 au 19/03/27', statut: 'en_preparation' }),
-  s('ab-650',   'Martinique', 'Présentiel', { dateLabel: 'Du 05/04/27 au 09/04/27', statut: 'en_preparation' }),
-  s('pl-7008',  'Martinique', 'Présentiel', { dateLabel: 'Le 20/04/27', statut: 'en_preparation' }),
-  s('sc-300',   'Martinique', 'Présentiel', { dateLabel: 'Du 04/05/27 au 07/05/27', statut: 'en_preparation' }),
-  s('ms-4017',  'Martinique', 'Présentiel', { dateLabel: 'Le 18/05/27', statut: 'en_preparation' }),
-  s('az-1008',  'Martinique', 'Présentiel', { dateLabel: 'Le 03/06/27', statut: 'en_preparation' }),
-  s('az-104',   'Martinique', 'Présentiel', { dateLabel: 'Du 14/06/27 au 17/06/27', statut: 'en_preparation' }),
-  s('sc-401',   'Martinique', 'Présentiel', { dateLabel: 'Du 04/10/27 au 07/10/27', statut: 'en_preparation' }),
-  s('sc-500',   'Martinique', 'Présentiel', { dateLabel: 'Du 22/11/27 au 25/11/27', statut: 'en_preparation' }),
-  s('pl-300',   'Martinique', 'Présentiel', { dateLabel: 'Du 15/11/27 au 18/11/27', statut: 'en_preparation' }),
-]
-const SESSIONS: Session[] = RAW.filter(Boolean) as Session[]
-
-const SESSIONS_PREP: Session[] = PROCHAINES.flatMap(p => {
+const SESSIONS: Session[] = SESSIONS_PLANIFIEES.flatMap(p => {
   const f = FORMATIONS.find(x => x.slug === p.slug)
-  if (!f) return []
-  return [{ id: `prep__${p.slug}__${p.territoire}__${p.modalite}`.replace(/\s/g,'-'), formation: f, territoire: p.territoire, lieu: p.lieu, modalite: p.modalite, dateLabel: p.dateLabel, placesMax: p.placesMax ?? 12, statut: 'en_preparation' as const }]
+  if (!f || !f.modalites.includes(p.modalite)) return []
+  return [{
+    id: `${p.slug}__${p.territoire}__${p.modalite}`.replace(/\s/g, '-'),
+    formation: f,
+    territoire: p.territoire,
+    lieu: LIEUX[p.territoire],
+    modalite: p.modalite,
+    dateLabel: labelPlage(p),
+    placesMax: places(p),
+    statut: 'en_preparation' as const,
+  }]
 })
+
+const SESSIONS_PREP: Session[] = []
 
 const MC: Record<string,{bg:string;color:string}> = { 'Présentiel':{bg:'#E41F26',color:'#fff'}, 'FOAD':{bg:'#1D1D1B',color:'#fff'}, 'E-learning':{bg:'#5a5a58',color:'#fff'} }
 const NC: Record<string,string> = { 'Fondamental':'#BBBBBB', 'Intermédiaire':'rgba(228,31,38,0.55)', 'Avancé':'#E41F26' }
@@ -202,7 +172,7 @@ function GanttView() {
 
         {!hasAnyPlanned && (
           <div style={{ marginTop: '12px', padding: '10px 12px', background: 'rgba(239,159,39,0.06)', border: '1px solid rgba(239,159,39,0.25)', fontSize: '0.78rem', color: '#856404' }}>
-            <strong>Vue Gantt —</strong> Remplissez le tableau <code>PROCHAINES</code> en haut du fichier pour voir apparaître les sessions planifiées sur cette timeline.
+            <strong>Vue Gantt —</strong> Ajoutez une session dans <code>src/data/sessions.ts</code> pour la voir apparaître sur cette timeline.
           </div>
         )}
       </div>
@@ -257,11 +227,10 @@ function SessionRow({ s, prep = false }: { s: Session; prep?: boolean }) {
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem' }}>
           <Euro size={12} color="#E41F26" />
           {(() => {
-            const pr = s.formation.prix as any
-            const key = s.modalite === 'Présentiel' ? 'presentiel' : s.modalite === 'FOAD' ? 'foad' : 'elearning'
-            const v = s.formation.prixPublic && pr && key === 'presentiel' && pr[key]
-            return v ? <span style={{ color: '#1D1D1B', fontWeight: 700 }}>{v.toLocaleString('fr-FR')} € TTC</span>
-                     : <span style={{ color: '#aaa', fontStyle: 'italic' }}>Sur devis</span>
+            const t = getTarifsModalites(s.formation).find(x => x.modalite === s.modalite)
+            return t && !t.surDevis
+              ? <span style={{ color: '#1D1D1B', fontWeight: 700 }}>{t.valeur}</span>
+              : <span style={{ color: '#aaa', fontStyle: 'italic' }}>Sur devis</span>
           })()}
         </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.72rem', color: prep ? '#EF9F27' : '#bbb', fontStyle: 'italic', fontWeight: prep ? 600 : 400 }}>
@@ -383,7 +352,7 @@ function CalendrierPage() {
               <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.28)', padding: '1.5rem', marginBottom: '1rem' }}>
                 <GanttView />
                 <p style={{ fontSize: '0.72rem', color: '#aaa', marginTop: '1rem', fontStyle: 'italic' }}>
-                  Les barres apparaissent lorsque vous planifiez une session dans le tableau PROCHAINES du fichier calendrier.tsx.
+                  Les barres apparaissent lorsque vous ajoutez une session dans src/data/sessions.ts.
                 </p>
               </div>
             )}
@@ -440,6 +409,7 @@ function CalendrierPage() {
 
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                   <p style={{ fontSize: '0.80rem', color: '#888', margin: 0 }}><strong style={{ color: 'var(--g-black)' }}>{results.length}</strong> session{results.length > 1 ? 's' : ''} affichée{results.length > 1 ? 's' : ''}{hasFilter ? ' · filtres actifs' : ''}</p>
+                  <p style={{ fontSize: '0.72rem', color: '#aaa', margin: '0.3rem 0 0', lineHeight: 1.5 }}>{MENTION_PRIX_COURTE}</p>
                   <a href="/financements" style={{ fontFamily: 'var(--font-title)', fontSize: '0.66rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--g-red)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.3rem' }}><Euro size={12} /> Financer ma formation →</a>
                 </div>
 

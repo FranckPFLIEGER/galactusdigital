@@ -6,6 +6,9 @@
 //
 // Les slugs pointent vers /formations/{slug} et existent tous dans catalogue.ts.
 // Importé par : components/ParcoursMetier.tsx
+//
+// MAJ septembre 2026 — CCNP Security retiré du catalogue : le Bloc 3 du parcours
+// Cybersécurité ne conserve que la voie offensive (Ethical Hacker).
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface EtapeParcours {
@@ -155,10 +158,9 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 3,
-        titre: 'Bloc 3 — Spécialisation',
-        intention: 'Défense d\'infrastructure ou sécurité offensive, au choix.',
+        titre: 'Bloc 3 — Sécurité offensive',
+        intention: 'Passer de la défense à l\'attaque : méthodologie de test d\'intrusion et rapport.',
         etapes: [
-          { titre: 'CCNP Security', slug: 'ccnp-security', heures: 80, maj: 'SCOR v2.0' },
           { titre: 'Ethical Hacker', slug: 'ethical-hacker', heures: 30 },
         ],
       },

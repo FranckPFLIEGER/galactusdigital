@@ -8,11 +8,13 @@
 // sans aucun prérequis, portfolio Cisco Networking Academy FR du 25/07/2026).
 // Elles ouvrent le Bloc 0 de chaque parcours métier (voir data/parcours.ts).
 //
-// MAJ septembre 2026 — CCNP Security retiré (50 formations). Toutes les
-// formations sauf le CCNA v2.0 accéléré sont proposées en e-learning tutoré,
+// MAJ septembre 2026 — CCNP Security retiré (50 formations). Les formations
+// Cisco Networking Academy, sauf le CCNA v2.0 accéléré, sont proposées en
+// e-learning tutoré,
 // à un tarif public qui comprend le titre officiel de l'éditeur (champ
-// `voucher`). Présentiel et FOAD restent sur devis, leur coût dépendant du
-// territoire et de la taille du groupe.
+// `voucher`). Le catalogue Microsoft n'est PAS proposé en e-learning : ces
+// formations restent en présentiel et FOAD, sur devis. Présentiel et FOAD
+// restent sur devis, leur coût dépendant du territoire et de la taille du groupe.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type Modalite = 'Présentiel' | 'FOAD' | 'E-learning'
@@ -569,11 +571,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Fondamental', duree: '20 heures', dureeJours: 3,
     certification: 'Microsoft Azure Fundamentals',
     examCode: 'AZ-900',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'IaaS, PaaS, SaaS, services Azure principaux, sécurité et tarification cloud.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 360 },
-    prixPublicElearning: true,
-    voucher: 99,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'az-104',
@@ -583,11 +583,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '40 heures', dureeJours: 5,
     certification: 'Microsoft Azure Administrator Associate',
     examCode: 'AZ-104',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Entra ID, stockage, VM, VNet, supervision et gouvernance Azure.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 540 },
-    prixPublicElearning: true,
-    voucher: 165,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'sc-900',
@@ -597,11 +595,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Fondamental', duree: '15 heures', dureeJours: 2,
     certification: 'Microsoft Security, Compliance & Identity Fundamentals',
     examCode: 'SC-900',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Zero Trust, Entra ID, Defender, Purview et conformité réglementaire Microsoft.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 330 },
-    prixPublicElearning: true,
-    voucher: 99,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'ai-901',
@@ -611,11 +607,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Fondamental', duree: '15 heures', dureeJours: 2,
     certification: 'Microsoft Azure AI Fundamentals',
     examCode: 'AI-901',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'ML, vision, NLP, IA générative et Azure OpenAI Service (AI-901, remplace AI-900).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 330 },
-    prixPublicElearning: true,
-    voucher: 99,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'ab-900',
@@ -625,11 +619,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Fondamental', duree: '18 heures', dureeJours: 2,
     certification: 'Microsoft Certified: Copilot and Agent Administration Fundamentals',
     examCode: 'AB-900',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Fondamentaux Microsoft 365, Copilot et administration d\'agents IA, sécurité, conformité et gouvernance (AB-900, remplace MS-900).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 340 },
-    prixPublicElearning: true,
-    voucher: 99,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'pl-300',
@@ -639,11 +631,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '35 heures', dureeJours: 5,
     certification: 'Microsoft Certified: Power BI Data Analyst Associate',
     examCode: 'PL-300',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Power Query, modélisation en étoile, DAX, visualisations et déploiement sécurisé de rapports Power BI.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 510 },
-    prixPublicElearning: true,
-    voucher: 165,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'md-102',
@@ -653,12 +643,10 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '35 heures', dureeJours: 5,
     certification: 'Microsoft 365 Certified: Endpoint Administrator Associate',
     examCode: 'MD-102',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Intune, Windows Autopilot, conformité, Conditional Access, Defender for Endpoint et gestion des appareils à grande échelle.',
-    prix: { presentiel: 2390, foad: 1790, elearning: 510 },
+    prix: { presentiel: 2390, foad: 1790, elearning: null },
     prixPublic: true,
-    prixPublicElearning: true,
-    voucher: 165,
   },
   {
     slug: 'ms-4010',
@@ -668,11 +656,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '21 heures', dureeJours: 3,
     certification: 'Microsoft 365 Copilot Specialist',
     examCode: 'MS-4010',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Déploiement, configuration, sécurité et adoption de Microsoft 365 Copilot en entreprise (Teams, SharePoint, DLP, gouvernance).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 430 },
-    prixPublicElearning: true,
-    voucher: 165,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'az-802',
@@ -682,11 +668,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '35 heures', dureeJours: 5,
     certification: 'Microsoft Certified — Windows Server Administrator Associate',
     examCode: 'AZ-802',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Administration Windows Server hybride : identité, stockage, calcul, haute disponibilité, migration et reprise d activité.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 510 },
-    prixPublicElearning: true,
-    voucher: 165,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'ab-650',
@@ -696,11 +680,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '35 heures', dureeJours: 5,
     certification: 'Microsoft 365 Certified — AI Services Administrator Associate',
     examCode: 'AB-650',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Administration d un tenant Microsoft 365 et des services IA : identité Entra ID, Defender, Purview, Copilot et gouvernance des agents (AB-650, remplace MS-102 retiré le 31/10/2026).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 510 },
-    prixPublicElearning: true,
-    voucher: 165,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'sc-300',
@@ -710,11 +692,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '28 heures', dureeJours: 4,
     certification: 'Microsoft Certified — Identity and Access Administrator Associate',
     examCode: 'SC-300',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Gestion des identités et des accès avec Microsoft Entra ID : authentification, gouvernance, accès conditionnel et identités externes.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 470 },
-    prixPublicElearning: true,
-    voucher: 165,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'sc-401',
@@ -724,11 +704,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '28 heures', dureeJours: 4,
     certification: 'Microsoft Certified — Information Security Administrator Associate',
     examCode: 'SC-401',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Protection des informations sensibles avec Microsoft Purview à l ère de l IA : étiquettes, DLP, chiffrement et gestion des risques internes.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 470 },
-    prixPublicElearning: true,
-    voucher: 165,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'sc-500',
@@ -738,11 +716,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Avancé', duree: '28 heures', dureeJours: 4,
     certification: 'Microsoft Certified — Cloud and AI Security Engineer Associate',
     examCode: 'SC-500',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Sécurisation des charges cloud et des services IA : Defender for Cloud, protection des workloads, sécurité des agents et de Copilot, gouvernance des données IA (nouvelle certification 2026).',
-    prix: { presentiel: 1790, foad: 1790, elearning: 470 },
-    prixPublicElearning: true,
-    voucher: 165,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
 
   {
@@ -753,11 +729,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Fondamental', duree: '7 heures', dureeJours: 1,
     certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
     examCode: 'PL-7002',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Créer et gérer des processus automatisés avec Power Automate : flux cloud, connecteurs, approbations et intégration Microsoft 365.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 180 },
-    prixPublicElearning: true,
-    voucher: 0,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'pl-7008',
@@ -767,11 +741,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '7 heures', dureeJours: 1,
     certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
     examCode: 'PL-7008',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Créer des agents dans Microsoft Copilot Studio : sujets, actions, connaissances, déploiement et gouvernance des agents IA.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 180 },
-    prixPublicElearning: true,
-    voucher: 0,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'ms-4017',
@@ -781,11 +753,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '7 heures', dureeJours: 1,
     certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
     examCode: 'MS-4017',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Gérer et étendre Microsoft 365 Copilot : agents déclaratifs, connecteurs Graph, extensibilité et personnalisation.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 180 },
-    prixPublicElearning: true,
-    voucher: 0,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
   {
     slug: 'az-1008',
@@ -795,11 +765,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Intermédiaire', duree: '7 heures', dureeJours: 1,
     certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
     examCode: 'AZ-1008',
-    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    modalites: ['Présentiel', 'FOAD'],
     description: 'Administrer Active Directory Domain Services : domaines, OU, GPO, réplication et sécurisation de l annuaire.',
-    prix: { presentiel: 1790, foad: 1790, elearning: 180 },
-    prixPublicElearning: true,
-    voucher: 0,
+    prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
 ]
 

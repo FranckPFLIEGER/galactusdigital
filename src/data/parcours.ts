@@ -7,8 +7,9 @@
 // Les slugs pointent vers /formations/{slug} et existent tous dans catalogue.ts.
 // Importé par : components/ParcoursMetier.tsx
 //
-// MAJ septembre 2026 — CCNP Security retiré du catalogue : le Bloc 3 du parcours
-// Cybersécurité ne conserve que la voie offensive (Ethical Hacker).
+// MAJ septembre 2026 — CCNP Security retiré du catalogue. Le Bloc 3 du parcours
+// Cybersécurité est reconstruit autour du CCNP Cybersecurity (CBRCOR + CBRFIR),
+// suite directe du CCNA Cybersecurity, avec Ethical Hacker en voie offensive.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface EtapeParcours {
@@ -154,18 +155,20 @@ export const PARCOURS: Parcours[] = [
         rang: 2,
         titre: 'Bloc 2 — Analyste SOC',
         intention: 'Surveillance, forensique et réponse à incident.',
-        etapes: [{ titre: 'CCNA Cybersecurity (ex-CyberOps)', slug: 'cyberops', heures: 60, maj: 'Ex-CyberOps · blueprint 2026' }],
+        etapes: [{ titre: 'CCNA Cybersecurity', slug: 'cyberops', heures: 60, maj: 'Ex-CyberOps Associate · blueprint v1.2' }],
       },
       {
         rang: 3,
-        titre: 'Bloc 3 — Sécurité offensive',
-        intention: 'Passer de la défense à l\'attaque : méthodologie de test d\'intrusion et rapport.',
+        titre: 'Bloc 3 — Niveau professionnel',
+        intention: 'Monter au niveau professionnel du SOC, ou bifurquer vers la sécurité offensive.',
         etapes: [
-          { titre: 'Ethical Hacker', slug: 'ethical-hacker', heures: 30 },
+          { titre: 'CCNP Cybersecurity — CBRCOR (cœur)', slug: 'ccnp-cybersecurity-cbrcor', heures: 70, nouveau: true, maj: 'Ex-CyberOps Professional' },
+          { titre: 'CCNP Cybersecurity — CBRFIR (concentration)', slug: 'ccnp-cybersecurity-cbrfir', heures: 60, nouveau: true },
+          { titre: 'Ethical Hacker — voie offensive', slug: 'ethical-hacker', heures: 30 },
         ],
       },
     ],
-    debouche: 'Analyste SOC, pentester, ingénieur sécurité',
+    debouche: 'Analyste SOC, analyste forensique, responsable réponse à incident, pentester',
   },
   {
     id: 'automatisation-ia-reseau',

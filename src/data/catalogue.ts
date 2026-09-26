@@ -15,6 +15,10 @@
 // `voucher`). Le catalogue Microsoft n'est PAS proposé en e-learning : ces
 // formations restent en présentiel et FOAD, sur devis. Présentiel et FOAD
 // restent sur devis, leur coût dépendant du territoire et de la taille du groupe.
+//
+// MAJ septembre 2026 — ajout du CCNP Cybersecurity (CBRCOR + CBRFIR), niveau
+// professionnel du parcours Cybersécurité. Anciennement CyberOps Professional,
+// renommé par Cisco le 3 février 2026 en même temps que CCNA Cybersecurity.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type Modalite = 'Présentiel' | 'FOAD' | 'E-learning'
@@ -70,7 +74,7 @@ export const EDITEURS: Record<string, { label: string; badge?: string }> = {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CATALOGUE PRINCIPAL — 50 formations
+// CATALOGUE PRINCIPAL — 52 formations
 // prix: null = sur demande / 0 = inclus dans pack / nombre = tarif public en €
 // ─────────────────────────────────────────────────────────────────────────────
 export const FORMATIONS: Formation[] = [
@@ -360,13 +364,41 @@ export const FORMATIONS: Formation[] = [
   {
     slug: 'cyberops',
     titre: 'CCNA Cybersecurity',
-    titreLong: 'CCNA Cybersecurity — Opérations de cybersécurité SOC (ex-CyberOps)',
+    titreLong: 'CCNA Cybersecurity — Opérations de cybersécurité SOC (ex-CyberOps Associate)',
     editeur: 'Cisco Networking Academy', famille: 'Cybersécurité',
     niveau: 'Intermédiaire', duree: '60 heures', dureeJours: 8,
     certification: 'Cisco Certified CCNA Cybersecurity 200-201',
-    examCode: '200-201 CBROPS v1.2',
+    examCode: '200-201 CCNACBR v1.2',
     modalites: ['Présentiel', 'FOAD', 'E-learning'],
-    description: 'Formation SOC complète — surveillance réseau, forensique, réponse aux incidents et IA appliquée à la détection (ex-CyberOps, blueprint 2026).',
+    description: 'Formation SOC complète — surveillance réseau, forensique, réponse aux incidents et IA appliquée à la détection. Anciennement CyberOps Associate, renommée CCNA Cybersecurity par Cisco le 3 février 2026 ; examen 200-201 inchangé, blueprint v1.2.',
+    prix: { presentiel: 1790, foad: 1790, elearning: 770 },
+    prixPublicElearning: true,
+    voucher: 290,
+  },
+  {
+    slug: 'ccnp-cybersecurity-cbrcor',
+    titre: 'CCNP Cybersecurity — CBRCOR',
+    titreLong: 'CCNP Cybersecurity : examen cœur — Performing Cybersecurity Using Cisco Security Technologies (CBRCOR 350-201) v1.2',
+    editeur: 'Cisco Networking Academy', famille: 'Cybersécurité',
+    niveau: 'Avancé', duree: '70 heures', dureeJours: 9,
+    certification: 'Cisco Certified Specialist – Cybersecurity Core (examen cœur du CCNP Cybersecurity)',
+    examCode: '350-201 CBRCOR v1.2',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Examen cœur du CCNP Cybersecurity : fondamentaux, techniques, processus et automatisation des opérations de cybersécurité. Anciennement CyberOps Professional, renommé par Cisco le 3 février 2026.',
+    prix: { presentiel: 1790, foad: 1790, elearning: 920 },
+    prixPublicElearning: true,
+    voucher: 390,
+  },
+  {
+    slug: 'ccnp-cybersecurity-cbrfir',
+    titre: 'CCNP Cybersecurity — CBRFIR',
+    titreLong: 'CCNP Cybersecurity : concentration — Conducting Forensic Analysis and Incident Response (CBRFIR 300-215)',
+    editeur: 'Cisco Networking Academy', famille: 'Cybersécurité',
+    niveau: 'Avancé', duree: '60 heures', dureeJours: 8,
+    certification: 'Cisco Certified Network Professional (CCNP) Cybersecurity',
+    examCode: '300-215 CBRFIR',
+    modalites: ['Présentiel', 'FOAD', 'E-learning'],
+    description: 'Concentration forensique et réponse à incident : analyse post-incident, collecte de preuves, investigation et remédiation. Associée au CBRCOR, elle délivre le CCNP Cybersecurity.',
     prix: { presentiel: 1790, foad: 1790, elearning: 770 },
     prixPublicElearning: true,
     voucher: 290,

@@ -17,6 +17,7 @@ const GMAIL = "https://mail.google.com/mail/?view=cm&to=president@galactusdigita
 const EDITEUR_COLOR: Record<string, string> = {
   "Cisco Networking Academy": "#E41F26",
   "Microsoft": "#1D1D1B",
+  "Juniper Networks": "#E41F26",
 }
 
 const NIVEAU_BG: Record<string, string> = {
@@ -140,7 +141,7 @@ function FormationsPage() {
   const [editeurFilter, setEditeurFilter] = useState<string>("Tout")
   const [familleFilter, setFamilleFilter] = useState<string>("Tout")
 
-  const editeurs = ["Tout", "Cisco Networking Academy", "Microsoft"]
+  const editeurs = ["Tout", "Cisco Networking Academy", "Microsoft", "Juniper Networks"]
   const familles = useMemo(() => {
     const base = editeurFilter === "Tout"
       ? FORMATIONS
@@ -159,6 +160,7 @@ function FormationsPage() {
   // Groupes pour les ancres footer
   const cisco     = filtered.filter(f => f.editeur === "Cisco Networking Academy")
   const microsoft = filtered.filter(f => f.editeur === "Microsoft")
+  const juniper   = filtered.filter(f => f.editeur === "Juniper Networks")
 
   const nbFamilles = useMemo(() => new Set(FORMATIONS.map(f => f.famille)).size, [])
   const nbSocle    = useMemo(() => FORMATIONS.filter(f => f.socle).length, [])
@@ -238,7 +240,7 @@ function FormationsPage() {
               </div>
               {editeurs.map(e => (
                 <button key={e} onClick={() => selectEditeur(e)}
-                  style={editeurFilter === e ? btnActive(e === "Microsoft" ? "#1D1D1B" : e === "Cisco Networking Academy" ? "#E41F26" : "#1D1D1B") : { ...btnBase, color: "#555" }}>
+                  style={editeurFilter === e ? btnActive(e === "Microsoft" ? "#1D1D1B" : "#E41F26") : { ...btnBase, color: "#555" }}>
                   {e}
                 </button>
               ))}
@@ -312,6 +314,32 @@ function FormationsPage() {
               <div className="g-rule" />
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: "1.25rem", marginTop: ".5rem" }}>
                 {microsoft.map(f => <Card key={f.slug} f={f} />)}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* ── Section Juniper ── */}
+        {juniper.length > 0 && (
+          <section id="juniper" style={{ background: "var(--g-white)", padding: "4rem 2rem" }}>
+            <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
+              <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: ".5rem" }}>
+                <div style={{ width: "4px", height: "32px", background: "#E41F26" }} />
+                <div>
+                  <div style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#E41F26" }}>
+                    Formateur certifié — parcours JNCIA
+                  </div>
+                  <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: "var(--g-black)", margin: 0 }}>
+                    Juniper Networks
+                  </h2>
+                </div>
+                <span style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", color: "#fff", background: "#E41F26", padding: ".2rem .7rem", marginLeft: "auto" }}>
+                  {juniper.length} formation{juniper.length > 1 ? "s" : ""}
+                </span>
+              </div>
+              <div className="g-rule" />
+              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: "1.25rem", marginTop: ".5rem" }}>
+                {juniper.map(f => <Card key={f.slug} f={f} />)}
               </div>
             </div>
           </section>

@@ -65,16 +65,18 @@ export const FAMILLES: Record<string, { label: string; icon: string }> = {
   'Data & Analytics':      { label: 'Data & Analytics',       icon: 'BarChart2'},
   'Azure & Cloud':         { label: 'Azure & Cloud',          icon: 'Cloud'    },
   'Microsoft 365':         { label: 'Microsoft 365',          icon: 'Grid'     },
+  'Juniper Junos':         { label: 'Juniper Junos',          icon: 'Router'   },
 }
 
 // ─── Éditeurs ─────────────────────────────────────────────────────────────────
 export const EDITEURS: Record<string, { label: string; badge?: string }> = {
   'Cisco Networking Academy': { label: 'Cisco Networking Academy', badge: 'Partenaire n° 3018982' },
   'Microsoft':     { label: 'Microsoft',     badge: 'Partenaire Microsoft n° 4653557' },
+  'Juniper Networks': { label: 'Juniper Networks', badge: 'Formateur certifié — parcours JNCIA' },
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CATALOGUE PRINCIPAL — 52 formations
+// CATALOGUE PRINCIPAL — 53 formations
 // prix: null = sur demande / 0 = inclus dans pack / nombre = tarif public en €
 // ─────────────────────────────────────────────────────────────────────────────
 export const FORMATIONS: Formation[] = [
@@ -801,6 +803,21 @@ export const FORMATIONS: Formation[] = [
     description: 'Administrer Active Directory Domain Services : domaines, OU, GPO, réplication et sécurisation de l annuaire.',
     prix: { presentiel: 1790, foad: 1790, elearning: null },
   },
+  // ── Juniper Networks ───────────────────────────────────────────────────────
+  // MAJ octobre 2026 — ouverture du catalogue Juniper. Certification éditeur,
+  // non enregistrée au RNCP ni au Répertoire spécifique : non éligible au CPF.
+  {
+    slug: 'jncia-junos',
+    titre: 'JNCIA-Junos',
+    titreLong: 'JNCIA-Junos — Introduction to the Junos Operating System (IJOS)',
+    editeur: 'Juniper Networks', famille: 'Juniper Junos',
+    niveau: 'Fondamental', duree: '35 heures', dureeJours: 5,
+    certification: 'Juniper Networks Certified Associate — Junos (JNCIA-Junos)',
+    examCode: 'JN0-106',
+    modalites: ['Présentiel', 'FOAD'],
+    description: "Premier niveau du parcours de certification Juniper : architecture de Junos OS, interface en ligne de commande, interfaces réseau, routage, politiques et filtres, supervision et dépannage.",
+    prix: { presentiel: null, foad: null, elearning: null },
+  }
 ]
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────

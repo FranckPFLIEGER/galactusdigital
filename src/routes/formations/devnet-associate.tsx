@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
+import { InfoCertifiante } from '../../components/InfoCertifiante'
 import { TarifsModalites } from '../../components/TarifsModalites'
 import { CheckCircle, Clock, Calendar, Users, MapPin, Phone, Mail, Award, BookOpen, Monitor, AlertCircle, Code } from 'lucide-react'
 
@@ -338,6 +339,9 @@ function FormationPage() {
             .fiche-exam-grid { grid-template-columns: 1fr !important; }
           }
         `}</style>
+        {/* ── Information du public — RNQ V2 indicateurs 1, 2 et 3 ── */}
+        <InfoCertifiante slug="devnet-associate" />
+
       </main>
       <Footer />
     </>

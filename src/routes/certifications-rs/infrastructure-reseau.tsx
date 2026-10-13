@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
+import { BanniereInstruction } from '../../components/BanniereInstruction'
 import { ArrowLeft, ShieldCheck, Award } from 'lucide-react'
 
 export const Route = createFileRoute('/certifications-rs/infrastructure-reseau')({
@@ -135,10 +136,14 @@ function CertifInfraReseau() {
               <span style={{ border: '1px solid var(--g-line, #E4E4E4)', padding: '0.5rem 0.75rem', fontSize: '0.85rem', background: '#fff' }}><b style={{ color: 'var(--g-red)' }}>IPv6</b> Forum</span>
             </div>
             <p style={{ marginTop: '1.75rem', color: 'var(--g-grey, #6B6B6B)', fontSize: '0.85rem', lineHeight: 1.7 }}>
-              Certification en cours d'enregistrement au Répertoire spécifique de France Compétences — dossier n° 53224 jugé recevable, en cours d'instruction (art. R. 6113-11 du code du travail). Certificateur : GALACTUS Digital (PFLIEGER SASU) — SIRET 880 430 418 00017.
+              Certification en cours d'instruction au Répertoire spécifique de France Compétences — dossier n° 53224 déposé sur CertifPro le 30 juillet 2026, jugé recevable et en cours d'instruction (art. R. 6113-11 du code du travail). Certificateur : GALACTUS Digital (PFLIEGER SASU) — SIRET 880 430 418 00017.
             </p>
           </section>
         </div>
+      
+        {/* ── Message aux instructeurs et auditeurs France Compétences ── */}
+        <BanniereInstruction />
+
       </main>
       <Footer />
     </>

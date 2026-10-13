@@ -4,6 +4,15 @@ import { Footer } from '../components/Footer'
 import { CheckCircle, Phone, Mail, ArrowRight } from 'lucide-react'
 
 export const Route = createFileRoute('/financements')({
+  head: () => ({
+    meta: [
+      { title: 'Guide du financement des formations — GALACTUS Digital' },
+      { name: 'description', content: "Financer une formation GALACTUS Digital : OPCO, plan de developpement des competences, France Travail AIF et POEI via Kairos, dispositifs regionaux et FSE+ des territoires ultramarins, autofinancement. Formations non eligibles au CPF." },
+      { property: 'og:title', content: 'Guide du financement des formations — GALACTUS Digital' },
+      { property: 'og:url', content: 'https://galactusdigital.com/financements' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/financements' }],
+  }),
   component: FinancementsPage,
 })
 
@@ -22,8 +31,22 @@ function FinancementsPage() {
               Guide du financement<br />de vos formations
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8 }}>
-              Plusieurs dispositifs permettent de financer vos formations GALACTUS Digital. Nos formations sont exonérées de TVA (l'article 261-4-4° du CGI). Nous vous accompagnons dans vos démarches.
+              Plusieurs dispositifs permettent de financer vos formations GALACTUS Digital. Nos formations sont exonérées de TVA (article 261-4-4° du CGI). Nous vous accompagnons dans vos démarches.
             </p>
+            <div style={{ marginTop: '1.5rem', maxWidth: '760px', background: 'rgba(228,31,38,0.10)', border: '1px solid rgba(228,31,38,0.30)', borderLeft: '4px solid var(--g-red)', padding: '1.1rem 1.4rem' }}>
+              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.5rem' }}>
+                À savoir avant toute démarche
+              </div>
+              <p style={{ fontSize: '0.88rem', color: 'rgba(255,255,255,0.72)', margin: 0, lineHeight: 1.75 }}>
+                Nos formations <strong style={{ color: '#fff' }}>ne sont pas éligibles au compte personnel de formation (CPF)</strong> :
+                GALACTUS Digital ne détient aucune habilitation de certificateur lui permettant de
+                délivrer les certifications préparées au titre d'un enregistrement au RNCP ou au
+                Répertoire spécifique de France Compétences. Aucune offre GALACTUS Digital n'est publiée
+                sur Mon Compte Formation. Les dispositifs mobilisables sont ceux listés ci-dessous.
+                Cette information est publiée au titre du critère 1 du Référentiel National Qualité
+                (décret n° 2026-728 du 1er août 2026) et de l'article 12 bis de nos CGV.
+              </p>
+            </div>
           </div>
         </section>
 
@@ -38,8 +61,8 @@ function FinancementsPage() {
                   tag: 'Entreprises',
                   items: [
                     'Prise en charge partielle ou totale selon votre branche',
+                    'Organisme inscrit au catalogue de référence des prestataires AFDAS (art. R.6316-2)',
                     "L'accord de financement doit être communiqué avant le démarrage",
-                    'GALACTUS Digital établit les documents nécessaires',
                     'En cas de prise en charge partielle, le reste est facturé au client',
                   ],
                   cta: 'Nous contacter pour identifier votre OPCO',
@@ -58,13 +81,13 @@ function FinancementsPage() {
                   href: GMAIL,
                 },
                 {
-                  title: 'France Travail (Pôle Emploi)',
+                  title: 'France Travail',
                   tag: "Demandeurs d'emploi",
                   items: [
-                    'AIF — Aide Individuelle à la Formation',
-                    "Financement possible pour les demandeurs d'emploi",
+                    'AIF — Aide Individuelle à la Formation, instruite via Kairos',
+                    'POEI — Préparation Opérationnelle à l\'Emploi Individuelle, en lien avec un employeur',
                     'Dossier à constituer avec votre conseiller France Travail',
-                    'GALACTUS Digital vous accompagne dans la constitution du dossier',
+                    'GALACTUS Digital est référencé sur Kairos et monte le dossier avec vous',
                   ],
                   cta: 'Contactez votre conseiller France Travail',
                   href: 'https://www.francetravail.fr',
@@ -73,7 +96,7 @@ function FinancementsPage() {
                   title: 'Financement Régional & DOM',
                   tag: 'Territoires ultramarins',
                   items: [
-                    'Dispositifs spécifiques aux Antilles, Guyane et Réunion',
+                    'Dispositifs spécifiques aux Antilles, Guyane et La Réunion, y compris FSE+',
                     'Financement AGEFIPH pour les personnes en situation de handicap',
                     'Dispositifs régionaux selon votre territoire',
                     'GALACTUS Digital vous oriente vers les bons interlocuteurs',

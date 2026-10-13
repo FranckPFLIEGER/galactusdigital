@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
+import { BanniereInstruction } from '../../components/BanniereInstruction'
 import { ArrowRight, Award, Clock } from 'lucide-react'
 
 export const Route = createFileRoute('/certifications-rs/')({
@@ -12,6 +13,7 @@ export const Route = createFileRoute('/certifications-rs/')({
       { property: 'og:description', content: "Certifications professionnelles au Répertoire spécifique de France Compétences — GALACTUS Digital, territoires ultramarins." },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications-rs' },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/certifications-rs' }],
   }),
   component: CertificationsRSHub,
 })
@@ -37,20 +39,22 @@ const CERTIFICATIONS_RS: CertifRS[] = [
     resume: "Installer, configurer, sécuriser et superviser une infrastructure réseau d'entreprise. Compétence indépendante des constructeurs, pensée pour les territoires ultramarins.",
     domaine: 'Réseaux · NSF 326',
     statut: 'en-cours',
+    codeRS: '53224',
   },
   {
     slug: 'incidents-securite',
     titre: "Détecter, analyser et traiter les incidents de sécurité d'un système d'information",
     resume: "Surveiller un système d'information, analyser une intrusion à partir des traces réseau et système, qualifier une alerte et traiter un incident jusqu'au rétablissement du service. Accessible sans diplôme préalable.",
     domaine: 'Cybersécurité · NSF 326',
-    statut: 'en-preparation',
+    statut: 'en-cours',
+    codeRS: '53693',
   },
 ]
 
 const STATUT_LABEL: Record<StatutRS, string> = {
   'enregistree': 'Enregistrée au RS',
   'en-cours': "En cours d'instruction",
-  'en-preparation': "En cours d'enregistrement",
+  'en-preparation': "Dossier en préparation",
 }
 
 function CertificationsRSHub() {
@@ -90,7 +94,7 @@ function CertificationsRSHub() {
                       <Award size={20} />
                     </span>
                     <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: c.statut === 'enregistree' ? 'var(--g-red)' : 'var(--g-grey, #6B6B6B)' }}>
-                      {STATUT_LABEL[c.statut]}{c.codeRS ? ` · ${c.codeRS}` : ''}
+                      {STATUT_LABEL[c.statut]}{c.codeRS ? ` · dossier n° ${c.codeRS}` : ''}
                     </span>
                   </div>
                   <h2 style={{ fontFamily: 'var(--font-title)', fontSize: '1.2rem', fontWeight: 700, color: 'var(--g-black)', textTransform: 'uppercase', letterSpacing: '0.02em', lineHeight: 1.25, margin: '0 0 0.75rem' }}>
@@ -112,6 +116,10 @@ function CertificationsRSHub() {
             </div>
           </div>
         </section>
+      
+        {/* ── Message aux instructeurs et auditeurs France Compétences ── */}
+        <BanniereInstruction />
+
       </main>
       <Footer />
     </>

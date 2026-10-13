@@ -4,6 +4,7 @@ import { Header }         from '@/components/Header'
 import { ScrollProgress } from '@/components/ScrollProgress'
 import { Hero }           from '@/components/Hero'
 import { QualiopiBanner } from '@/components/QualiopiBanner'
+import { BanniereInstruction } from '@/components/BanniereInstruction'
 import { Stats }          from '@/components/Stats'
 import { President }      from '@/components/President'
 import { About }          from '@/components/About'
@@ -32,6 +33,7 @@ function HomePage() {
       <main>
         <Hero />
         <QualiopiBanner />
+        <BanniereInstruction compact />
         <Stats />
         <President />
         <About />

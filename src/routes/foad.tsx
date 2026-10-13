@@ -314,9 +314,9 @@ function FoadPage() {
               {[
                 { ref: 'Art. D.6313-3-1', title: 'Assistance pédagogique documentée', desc: "Une assistance technique et pédagogique appropriée est mise en œuvre pour accompagner le bénéficiaire dans le déroulement de son parcours à distance." },
                 { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique et pédagogique', desc: "Les outils de formation sont centralisés sur une plateforme digitale (NetAcad + WEBEX). Les apprenants reçoivent une invitation pour vérifier le bon fonctionnement avant démarrage." },
-                { ref: 'Circulaire DGEFP 2026-2027', title: 'Réalité des actions documentée', desc: "La réalité de nos actions de formation à distance est attestée par les bilans pédagogiques et les feuilles de présence numériques." },
+                { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Réalité des actions documentée', desc: "La réalité de nos actions de formation à distance est attestée par les bilans pédagogiques et les feuilles de présence numériques." },
                 { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé', desc: "Un suivi individualisé est mis en place pour chaque apprenant en FOAD, avec évaluation des acquis à chaque module via ateliers pratiques et QCM sur NetAcad." },
-                { ref: 'RNQ V2 (anticipé)', title: 'Effectivité du suivi pédagogique', desc: "Au-delà de la simple connexion, l'effectivité du suivi est attestée par l'export du gradebook NetAcad (modules complétés, résultats), l'historique des sessions Webex et les comptes rendus de points d'étape individuels." },
+                { ref: 'RNQ V2 — déc. 2026-728', title: 'Effectivité du suivi pédagogique', desc: "Au-delà de la simple connexion, l'effectivité du suivi est attestée par l'export du gradebook NetAcad (modules complétés, résultats), l'historique des sessions Webex et les comptes rendus de points d'étape individuels. Les seuils que préciseront les arrêtés d'application du décret n° 2026-728 seront intégrés dès leur parution." },
               ].map(c => (
                 <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
                   <div style={{ flexShrink: 0 }}>

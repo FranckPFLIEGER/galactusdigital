@@ -315,7 +315,7 @@ export function ContactCTA() {
               </div>
               {[
                 ["OPCO", "Prise en charge totale possible"],
-                ["AIF Pôle Emploi", "Pour demandeurs d\'emploi"],
+                ["AIF France Travail", "Pour demandeurs d\'emploi"],
                 ["Plan de formation", "Entreprise — toutes tailles"],
               ].map(([label, detail]) => (
                 <div key={label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.45rem 0", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>

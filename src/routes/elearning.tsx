@@ -216,7 +216,7 @@ function ElearningPage() {
                     { ref: 'Art. L.6313-1', title: 'Action de formation à distance', desc: "L'e-learning tutoré est reconnu comme action de formation au sens du Code du travail dès lors qu'un accompagnement individualisé est documenté." },
                     { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique adapté', desc: 'NetAcad et Microsoft Learn constituent le plateau technique officiel certifié. Vérification de la prise en main organisée avant démarrage de chaque parcours.' },
                     { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé documenté', desc: "Un relevé de progression module par module est généré automatiquement par la plateforme et archivé dans le dossier de formation de l'apprenant." },
-                    { ref: 'Circulaire DGEFP 2026-2027', title: 'Réalité des actions documentée', desc: "Les bilans de progression constituent la preuve de réalité des actions conformément aux priorités de contrôle 2026-2027." },
+                    { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Réalité des actions documentée', desc: "Les bilans de progression constituent la preuve de réalité des actions conformément aux priorités de contrôle 2026-2027." },
                   ].map(c => (
                     <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.25rem', display: 'flex', gap: '0.75rem' }}>
                       <div style={{ flexShrink: 0 }}>

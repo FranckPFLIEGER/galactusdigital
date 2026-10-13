@@ -1,13 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
+import { BanniereInstruction } from '../../components/BanniereInstruction'
 import { ArrowLeft } from 'lucide-react'
 
 export const Route = createFileRoute('/certifications-rs/incidents-securite')({
   head: () => ({
     meta: [
       { title: "Certification — Détecter, analyser et traiter les incidents de sécurité d'un système d'information | GALACTUS Digital" },
-      { name: 'description', content: "Certification professionnelle en cours d'enregistrement au Répertoire spécifique de France Compétences : détecter, analyser et traiter les incidents de sécurité d'un système d'information. Accessible sans diplôme préalable. Martinique, Guadeloupe et territoires ultramarins." },
+      { name: 'description', content: "Certification professionnelle en cours d'instruction au Repertoire specifique de France Competences (dossier n° 53693) : détecter, analyser et traiter les incidents de sécurité d'un système d'information. Accessible sans diplôme préalable. Martinique, Guadeloupe et territoires ultramarins." },
       { property: 'og:title', content: 'Certification — Incidents de sécurité | GALACTUS Digital' },
       { property: 'og:description', content: "Certification professionnelle RS : surveiller, analyser une intrusion, qualifier une alerte et traiter un incident de sécurité. Sans prérequis de diplôme." },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications-rs/incidents-securite' },
@@ -48,7 +49,7 @@ function CertifIncidentsSecurite() {
               <ArrowLeft size={15} /> Toutes les certifications RS
             </a>
             <span style={{ display: 'inline-block', background: 'var(--g-red)', color: '#fff', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', padding: '0.4rem 0.8rem', fontFamily: 'var(--font-title)' }}>
-              Répertoire spécifique — France Compétences · En cours d'enregistrement
+              Répertoire spécifique — France Compétences · En cours d'instruction
             </span>
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,4vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.02em', lineHeight: 1.15, margin: '1.2rem 0 1rem' }}>
               Détecter, analyser et traiter les incidents de sécurité d'un système d'information
@@ -140,10 +141,14 @@ function CertifIncidentsSecurite() {
               <span style={{ border: '1px solid var(--g-line, #E4E4E4)', padding: '0.5rem 0.75rem', fontSize: '0.85rem', background: '#fff' }}><b style={{ color: 'var(--g-red)' }}>IPv6</b> Forum</span>
             </div>
             <p style={{ marginTop: '1.75rem', color: 'var(--g-grey, #6B6B6B)', fontSize: '0.85rem', lineHeight: 1.7 }}>
-              Certification en cours d'enregistrement au Répertoire spécifique de France Compétences — dossier en cours de dépôt (art. R. 6113-11 du code du travail). Le numéro de fiche sera publié sur cette page dès la décision. Certificateur : GALACTUS Digital (PFLIEGER SASU) — SIRET 880 430 418 00017.
+              Certification en cours d'instruction au Répertoire spécifique de France Compétences — dossier n° 53693 déposé sur CertifPro le 28 septembre 2026 et en cours d'instruction (art. R. 6113-11 du code du travail). La décision sera publiée sur cette page dès sa notification. Certificateur : GALACTUS Digital (PFLIEGER SASU) — SIRET 880 430 418 00017.
             </p>
           </section>
         </div>
+      
+        {/* ── Message aux instructeurs et auditeurs France Compétences ── */}
+        <BanniereInstruction />
+
       </main>
       <Footer />
     </>

@@ -23,6 +23,14 @@ const NC: Record<string, string> = {
   'Avancé':        '#E41F26',
 }
 
+// Le catalogue /formations est segmenté par éditeur : on y renvoie via l'ancre de l'éditeur
+// de la famille affichée, les ancres par famille n'existant pas sur cette page.
+const ANCRE_EDITEUR: Record<string, string> = {
+  'Cisco Networking Academy': 'cisco',
+  'Microsoft':                'microsoft',
+  'Juniper Networks':         'juniper',
+}
+
 const PAR_FAMILLE = getFormationsParFamille()
 const FAMILLES = Object.keys(PAR_FAMILLE)
 
@@ -109,7 +117,7 @@ function MegaMenu({ visible, onClose }: { visible: boolean; onClose: () => void 
           <div style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.18em', textTransform: 'uppercase', color: FC[famille] || '#E41F26' }}>
             {famille} · {formations.length} formation{formations.length > 1 ? 's' : ''}
           </div>
-          <a href={`/formations#${famille.toLowerCase().replace(/[^a-z]/g, '-')}`} onClick={onClose}
+          <a href={`/formations#${ANCRE_EDITEUR[formations[0]?.editeur ?? ''] ?? ''}`} onClick={onClose}
             style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.28)', textDecoration: 'none', display: 'flex', alignItems: 'center', gap: '0.25rem', transition: 'color 0.15s' }}
             onMouseEnter={e => (e.currentTarget.style.color = '#E41F26')}
             onMouseLeave={e => (e.currentTarget.style.color = 'rgba(255,255,255,0.28)')}>
@@ -304,6 +312,8 @@ export function Header() {
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
           <span>Prochaine formation en présentielle à la Martinique : MICROSOFT MD-102 Endpoint Administrator du 25/01/27 au 29/01/27</span>
+          <span>Référentiel National Qualité V2 — décret n° 2026-728 du 1er août 2026, applicable au 1er novembre 2026 : nos fiches formation publient taux, blocs, passerelles et débouchés</span>
+          <span>Certifications professionnelles : deux dossiers déposés au Répertoire spécifique de France Compétences, n° 53224 et n° 53693, en cours d'instruction</span>
         </div>
       </div>
 

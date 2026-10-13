@@ -75,11 +75,13 @@ function HandicapPage() {
                     Référent Handicap — GALACTUS Digital
                   </div>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.6rem', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.3rem' }}>
-                    Le président
+                    Franck PFLIEGER
                   </div>
                   <div style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.50)', marginBottom: '2rem', lineHeight: 1.6 }}>
-                    Certifié Référent Handicap — DFD Consulting<br />
-                    Financement AGEFIPH Antilles Guyane — Février 2023
+                    Président — Référent Handicap et Santé<br />
+                    Certificat Référent Handicap OF/CFA délivré le 20 février 2023 par DFD Consulting<br />
+                    Formation financée par l'Agefiph Antilles-Guyane<br />
+                    Également référent violences, harcèlement et discriminations de l'organisme
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                     <a href="tel:+33781074746" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'rgba(255,255,255,0.80)', textDecoration: 'none', fontSize: '0.90rem' }}>
@@ -103,9 +105,9 @@ function HandicapPage() {
                     Nos partenaires RHF
                   </div>
                   {[
-                    { name: 'RHF Martinique — AGEFMA', zone: 'Caraïbes', detail: 'Membre actif — réseau partenaire officiel' },
-                    { name: 'RHF Île-de-France', zone: 'France hexagonale', detail: 'Réseau Handicap Formation IDF' },
-                    { name: 'AGEFIPH Antilles Guyane', zone: 'Caraïbes & Guyane', detail: 'Financement et accompagnement DOM' },
+                    { name: 'RHF Martinique — AGEFMA', zone: 'Caraïbes & Guyane', detail: 'Réseau partenaire officiel — conseiller RHF dédié' },
+                    { name: 'RHF Île-de-France — Agefiph', zone: 'France hexagonale', detail: 'Réseau Handicap Formation — lettre d\'information et plateforme d\'autoformation' },
+                    { name: 'AGEFIPH Antilles-Guyane', zone: 'Caraïbes & Guyane', detail: 'Financement et accompagnement — charte d\'engagement signée le 4 novembre 2024' },
                   ].map(p => (
                     <div key={p.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '0.75rem 0', borderBottom: '1px solid rgba(187,187,187,0.25)' }}>
                       <div>

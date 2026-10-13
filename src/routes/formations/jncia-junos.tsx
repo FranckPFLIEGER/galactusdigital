@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
+import { InfoCertifiante } from '../../components/InfoCertifiante'
 import { TarifsModalites } from '../../components/TarifsModalites'
 import { CheckCircle, Clock, Calendar, Users, Phone, Mail, Award, AlertCircle, Router } from 'lucide-react'
 
@@ -334,7 +335,7 @@ function FormationPage() {
                 <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.5rem' }}>Financement</div>
                 <p style={{ fontSize: '0.84rem', color: '#4a4a48', margin: 0, lineHeight: 1.7 }}>
                   Action finançable par l'employeur au titre du plan de développement des compétences, par un OPCO, par France Travail (AIF ou POEI) ou en autofinancement.
-                  Certification éditeur non enregistrée au RNCP ni au Répertoire spécifique : <strong style={{ color: 'var(--g-black)' }}>non éligible au CPF</strong>.
+                  Certification éditeur que GALACTUS Digital n'est pas habilité à délivrer au titre d'un enregistrement au RNCP ou au Répertoire spécifique : <strong style={{ color: 'var(--g-black)' }}>non éligible au CPF</strong>.
                 </p>
               </div>
               <div style={{ marginTop: '1rem', background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '4px solid var(--g-red)', padding: '1.25rem 1.5rem' }}>
@@ -372,6 +373,9 @@ function FormationPage() {
             .fiche-exam-grid { grid-template-columns: 1fr !important; }
           }
         `}</style>
+        {/* ── Information du public — RNQ V2 indicateurs 1, 2 et 3 ── */}
+        <InfoCertifiante slug="jncia-junos" />
+
       </main>
       <Footer />
     </>

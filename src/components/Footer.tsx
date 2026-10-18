@@ -106,9 +106,9 @@ export function Footer() {
             <h4 className="footer-col-title" style={{ marginTop: '1.25rem' }}>Solutions</h4>
             <div style={{ fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#E41F26', marginBottom: '0.4rem' }}>Modalités</div>
             <ul className="footer-links" style={{ marginBottom: '0.75rem' }}>
-              <li><a href="/presentiel">Formation en présentiel</a></li>
-              <li><a href="/foad">Formation à distance (FOAD)</a></li>
-              <li><a href="/elearning">E-learning tutoré</a></li>
+              <li><a href="/elearning">E-learning tutoré — Cisco</a></li>
+              <li><a href="/foad">Classe virtuelle FOAD — Juniper</a></li>
+              <li><a href="/presentiel">Présentiel — Microsoft</a></li>
             </ul>
             <div style={{ fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#E41F26', marginBottom: '0.4rem' }}>Formats</div>
             <ul className="footer-links">
@@ -137,6 +137,7 @@ export function Footer() {
               <li><a href="/demarche-qualite">Démarche qualité</a></li>
               <li><a href="/temoignages">Témoignages</a></li>
               <li><a href="/handicap">Accessibilité &amp; Handicap</a></li>
+              <li><a href="/retractation">Droit de rétractation</a></li>
             </ul>
           </div>
 

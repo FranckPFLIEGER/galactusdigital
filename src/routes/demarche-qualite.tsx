@@ -172,7 +172,7 @@ function DemarcheQualitePage() {
                 { num: '01', title: 'Information du public', desc: "Diffusion d'informations accessibles, détaillées et vérifiables : prérequis, objectifs, durée, modalités pédagogiques, tarifs, délais d'accès, accessibilité aux personnes en situation de handicap, modes de financement et résultats. Pour chaque action certifiante : taux d'obtention, validation par blocs, équivalences, passerelles, suites de parcours et débouchés, publiés sur la fiche de la formation. Aucune communication susceptible d'induire le public en erreur." },
                 { num: '02', title: 'Identification des objectifs & adaptation', desc: "Objectifs définis sous forme de verbes d'action dans le plan de formation. Analyse des besoins via questionnaire d'évaluation des attentes. Prise en compte des situations de handicap signalées, dès l'entretien préalable." },
                 { num: '03', title: 'Adaptation aux publics bénéficiaires', desc: "Convocation avec règlement intérieur. Évaluation des acquis par ateliers pratiques et QCM (seuil 70%). Procédure de prévention et traitement des ruptures de parcours (FQ-15). Procédure de prévention des violences, harcèlement et discriminations (FQ-14), communiquée dès la convocation." },
-                { num: '04', title: 'Adéquation des moyens', desc: "Formateur certifié Cisco, instructeur Cisco Networking Academy depuis 15 ans — CCNP, CCDP. Plateforme NetAcad officielle. WEBEX pour la FOAD avec traçabilité de l'effectivité du suivi pédagogique (gradebook, historique sessions). Salles adaptées en présentiel." },
+                { num: '04', title: 'Adéquation des moyens', desc: "Formateur certifié Cisco, instructeur Cisco Networking Academy depuis 15 ans — CCNP, CCDP. Référent pédagogique désigné : Franck PFLIEGER (indicateur 19). Plateforme NetAcad officielle pour l'e-learning tutoré, maquette Junos à distance pour la FOAD Juniper, WEBEX pour le tutorat. Effectivité du suivi tracée pour chaque apprenant à distance par trois pièces : relevé de progression de la plateforme, historique des sessions Webex et compte rendu des points d'étape. Salles adaptées en présentiel." },
                 { num: '05', title: 'Qualification des personnels', desc: "Certifications CCNP et CCDP Cisco. Programme IPD Cisco Networking Academy. Vérification annuelle des compétences. Inscription à la communauté des formateurs Cisco Networking Academy." },
                 { num: '06', title: "Inscription dans l'environnement professionnel", desc: "Veille réglementaire (CARIF, Centre Inffo, AFDAS, AKTO, Service public). Veille métier (APEC, LinkedIn Cisco). Partenaire Cisco n° 3018982. Partenaire Microsoft n° 4653557. Membre IPv6 Forum. Association ASPIK." },
                 { num: '07', title: 'Recueil et traitement des appréciations', desc: "Évaluation apprenants et hiérarchie en fin de formation. Évaluation des enseignements (FQ-08c) distincte de l'enquête de satisfaction. Sollicitation à froid 2 mois après. Tableau de suivi : points forts, axes d'amélioration, réclamations, actions correctives." },
@@ -232,6 +232,12 @@ function DemarcheQualitePage() {
                   icon: '📋',
                 },
                 {
+                  ref: 'Ind. 18 · 19 · 26',
+                  title: 'Référent pédagogique et suivi à distance',
+                  desc: "Référent pédagogique désigné : Franck PFLIEGER, président — president@galactusdigital.com — 07 81 07 47 46. Il coordonne les actions et répond sous deux jours ouvrés pendant toute la durée d'ouverture des accès. L'effectivité du suivi des modules à distance ne repose pas sur la seule connexion : elle est établie par apprenant et par module par le relevé de progression de la plateforme éditeur, l'historique des sessions de tutorat Webex et le compte rendu écrit de chaque point d'étape. Article 13 bis des CGV, registre des référents de l'organisme — désignation du 6 janvier 2026. La fonction se démontre aux indicateurs 18 et 26 du référentiel en vigueur et devient un attendu exprès de l'indicateur 19 au 1er novembre 2026. Le guide de lecture admet qu'un prestataire indépendant assure seul ces fonctions ; le seuil d'intervenants imposant la désignation reste fixé par arrêté à paraître, et l'organisme désigne son référent par anticipation.",
+                  icon: '🎓',
+                },
+                {
                   ref: 'Ind. 1 · 2 · 3',
                   title: 'Information du public renforcée',
                   desc: "Modalités de calcul des indicateurs publiées en clair, taux d'obtention, validation par blocs, équivalences, passerelles, suites de parcours et débouchés publiés sur chaque fiche formation, mention explicite de la non-éligibilité au CPF. Article 12 bis des CGV.",
@@ -274,8 +280,17 @@ function DemarcheQualitePage() {
                   à maintenir et les axes d'amélioration. Cette démarche est documentée et tracée via un tableau
                   de suivi par apprenant.
                 </p>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
+                  Le référentiel applicable au 1<sup>er</sup> novembre 2026 ajoute à cet indicateur une
+                  <strong> analyse des risques qualité</strong>. Elle est tenue sous forme de cartographie
+                  datée et revue au moins une fois par an : pour chaque risque identifié — rupture de parcours,
+                  indisponibilité de l'intervenant unique, perte d'accès à une plateforme éditeur, évolution
+                  d'un blueprint de certification, défaut de traçabilité du suivi à distance — sont consignés
+                  sa criticité, la mesure de maîtrise en place et la preuve associée.
+                </p>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {[
+                    'Cartographie des risques qualité, datée et revue annuellement',
                     'Tableau de suivi par apprenant (points forts, points à améliorer)',
                     'Analyse des appréciations apprenants et hiérarchie',
                     'Cartouche de versioning sur tous les documents',

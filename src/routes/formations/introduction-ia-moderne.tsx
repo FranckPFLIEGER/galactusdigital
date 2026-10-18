@@ -64,7 +64,7 @@ const DATA = {
     'Aucun prérequis technique',
     'Aucune connaissance informatique préalable requise',
     'Savoir lire et écrire le français',
-    'Disposer d\'un ordinateur et d\'une connexion Internet pour les modalités FOAD et e-learning',
+    'Disposer d\'un ordinateur et d\'une connexion Internet pour suivre le parcours e-learning',
   ],
 
   // Programme
@@ -172,7 +172,7 @@ function DelaisAcces() {
       {[
         { label: 'Standard',          val: '1 mois après signature du devis et de la convention de formation.' },
         { label: 'Financement OPCO',  val: '3 mois (montage du dossier de financement compris).' },
-        { label: 'Inscription min.',  val: 'Les inscriptions sont possibles jusqu\'à 48 heures avant le début de la formation.' },
+        { label: 'Inscription min.',  val: "Entrées permanentes : aucune date limite. Accès plateforme ouverts sous 72 heures après validation administrative." },
       ].map(d => (
         <p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}>
           <strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}
@@ -410,11 +410,11 @@ function IntroductionIaModernePage() {
               <SectionTitle>Conformité réglementaire</SectionTitle>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {[
-                  { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail — synchrone en présentiel ou FOAD.' },
+                  { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail.' },
                   { ref: 'Critère 1 Qualiopi', title: 'Analyse du besoin', desc: 'Test de positionnement préalable : il détermine le bloc d\'entrée et confirme qu\'aucun prérequis n\'est nécessaire.' },
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation avec programme, lieu, horaires et règlement intérieur envoyée avant démarrage.' },
                   { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + auto-évaluation formateur selon 4 niveaux : non acquis → acquis.' },
-                  { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de la formation FOAD ou e-learning, conformément à la circulaire DGEFP du 17 février 2026." },
+                  { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de toute formation à distance, conformément à la circulaire DGEFP du 17 février 2026." },
                   { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès NetAcad vérifié avant démarrage. Un poste de travail et une connexion Internet suffisent.' },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
@@ -449,7 +449,7 @@ function IntroductionIaModernePage() {
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
+              <a href="/?f=introduction-ia-moderne#contact" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
             </div>
           </div>
         </section>

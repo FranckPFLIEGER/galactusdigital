@@ -25,7 +25,7 @@ function DelaisAcces({ dark = false }: { dark?: boolean }) {
         {[
           { label: 'Accès à la plateforme', val: 'Sous 72h après validation administrative.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
-          { label: 'Inscription minimale', val: "Les inscriptions sont possibles jusqu'à 48 heures avant le début du parcours." },
+          { label: 'Inscription minimale', val: "Entrées permanentes : aucune date limite. L'e-learning tutoré n'a pas de date de démarrage commune — les accès sont ouverts sous 72 heures après validation administrative." },
           ].map(d => (
           <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
             <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}
@@ -50,10 +50,10 @@ function ElearningPage() {
               Formation E-learning Tutoré
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              Progressez à votre rythme sur les plateformes officielles Cisco Networking Academy et Microsoft Learn. Un tuteur certifié vous accompagne tout au long du parcours avec un suivi individualisé documenté conforme Qualiopi.
+              Progressez à votre rythme sur la plateforme officielle Cisco Networking Academy. Un tuteur certifié vous accompagne tout au long du parcours avec un suivi individualisé documenté conforme Qualiopi.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              {['Art. L.6313-1 Code du travail', 'FOAD asynchrone · Qualiopi', 'Qualiopi — Indicateur 19', 'NetAcad · Microsoft Learn', 'Eligible OPCO'].map(b => (
+              {['Art. L.6313-1 Code du travail', 'FOAD asynchrone · Qualiopi', 'Qualiopi — Indicateur 19', 'Cisco Networking Academy', 'Eligible OPCO'].map(b => (
                 <div key={b} style={{ padding: '0.35rem 0.9rem', background: 'rgba(228,31,38,0.10)', border: '1px solid rgba(228,31,38,0.25)', fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>{b}</div>
               ))}
             </div>
@@ -70,7 +70,7 @@ function ElearningPage() {
                 { icon: <Clock size={24} color="white" />, title: 'Rythme libre', desc: "Vous avancez selon vos disponibilités, sans contrainte d'horaire. Idéal pour les professionnels en activité dans les territoires ultramarins avec des contraintes opérationnelles fortes." },
                 { icon: <UserCheck size={24} color="white" />, title: 'Tuteur dédié', desc: 'Un tuteur certifié éditeur vous est assigné pour toute la durée du parcours. Il répond à vos questions, valide vos avancées et vous prépare à la certification officielle.' },
                 { icon: <Award size={24} color="white" />, title: 'Certifications officielles', desc: "Les parcours sont alignés sur les programmes officiels Cisco et Microsoft. Le passage de la certification est intégré au parcours avec accompagnement à l'examen." },
-                { icon: <Zap size={24} color="white" />, title: 'Accès rapide', desc: 'Démarrage sous 72h après inscription. Les accès aux plateformes NetAcad et Microsoft Learn sont activés dès la validation administrative.' },
+                { icon: <Zap size={24} color="white" />, title: 'Accès rapide', desc: 'Démarrage sous 72h après inscription. Les accès à la plateforme NetAcad sont activés dès la validation administrative.' },
                 { icon: <BarChart2 size={24} color="white" />, title: 'Suivi de progression', desc: 'Tableau de bord personnalisé sur chaque plateforme. Votre tuteur suit votre progression module par module et vous alerte si vous décrochez du rythme prévu.' },
                 { icon: <BookOpen size={24} color="white" />, title: 'Contenus officiels', desc: 'Accès aux contenus pédagogiques officiels des éditeurs : labs virtuels Cisco Packet Tracer, sandbox Azure, modules interactifs Microsoft, QCM de validation des acquis.' },
               ].map(a => (
@@ -84,20 +84,24 @@ function ElearningPage() {
           </div>
         </section>
 
-        {/* ── FOAD vs E-learning ── */}
+        {/* ── E-learning vs Présentiel ── */}
         <section style={{ background: 'var(--g-black)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2-light">FOAD synchrone vs E-learning tutoré</h2>
+            <h2 className="section-h2-light">Nos trois modalités</h2>
             <div className="g-rule" />
             <div className="el-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
               {[
                 {
-                  titre: 'FOAD synchrone', href: '/foad', active: false,
-                  items: ['Sessions live à horaires fixes sur WEBEX','Groupe constitué (inter ou intra)','Interaction directe avec le formateur en temps réel','Rythme imposé par le calendrier de la session','Idéal pour les formations courtes et intensives'],
+                  titre: 'E-learning tutoré', href: '/elearning', active: true,
+                  items: ['Catalogue Cisco Networking Academy','Parcours asynchrone — avancez quand vous voulez','Tuteur certifié disponible par messagerie','Accès plateforme ouvert un an','Tarif public, titre officiel de l\'éditeur compris'],
                 },
                 {
-                  titre: 'E-learning tutoré', href: '/elearning', active: true,
-                  items: ['Parcours asynchrone — avancez quand vous voulez','Individuel ou petit groupe avec accès autonome','Tuteur disponible par messagerie / e-mail','Rythme libre dans une fenêtre définie','Idéal pour les parcours longue durée (CCNA, AZ-104…)'],
+                  titre: 'FOAD — classe virtuelle', href: '/foad', active: false,
+                  items: ['Parcours Juniper JNCIA-Junos','Sessions live à horaires fixes sur WEBEX','Interaction directe avec le formateur','17 ateliers sur maquette Junos à distance','Devis sur mesure'],
+                },
+                {
+                  titre: 'Présentiel', href: '/presentiel', active: false,
+                  items: ['Catalogue Microsoft','Sessions en salle, inter ou intra-entreprise','Interaction directe avec le formateur','Ateliers pratiques sur équipements réels','Devis sur mesure selon le territoire'],
                 },
               ].map(c => (
                 <div key={c.titre} style={{ background: c.active ? 'rgba(228,31,38,0.07)' : 'rgba(255,255,255,0.03)', border: c.active ? '1px solid rgba(228,31,38,0.25)' : '1px solid rgba(255,255,255,0.06)', borderTop: `3px solid ${c.active ? 'var(--g-red)' : 'rgba(255,255,255,0.12)'}`, padding: '2rem' }}>
@@ -115,7 +119,7 @@ function ElearningPage() {
                   </ul>
                   {!c.active && (
                     <a href={c.href} style={{ display: 'inline-block', marginTop: '1.25rem', fontSize: '0.78rem', color: 'rgba(255,255,255,0.40)', textDecoration: 'underline' }}>
-                      Voir la FOAD synchrone →
+                      Voir cette modalité →
                     </a>
                   )}
                 </div>
@@ -132,7 +136,7 @@ function ElearningPage() {
             <div className="el-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 { num: '01', title: 'Inscription', desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement OPCO monté avec vous.' },
-                { num: '02', title: 'Accès activé', desc: 'Sous 72h, vous recevez vos accès NetAcad et/ou Microsoft Learn. Votre tuteur vous contacte pour un échange de cadrage.' },
+                { num: '02', title: 'Accès activé', desc: 'Sous 72h, vous recevez vos accès NetAcad. Votre tuteur vous contacte pour un échange de cadrage.' },
                 { num: '03', title: 'Parcours tutoré', desc: 'Vous avancez à votre rythme. Votre tuteur suit votre progression, répond à vos questions et valide chaque module complété.' },
                 { num: '04', title: 'Certification', desc: 'Passage de la certification officielle éditeur. Attestation de formation et relevé de complétion remis.' },
               ].map(s => (
@@ -190,7 +194,7 @@ function ElearningPage() {
                   {[
                     'Parcours individuel ou petit groupe (2 à 6 apprenants)',
                     'Tuteur certifié éditeur assigné dès le démarrage',
-                    'Accès 24h/24 aux plateformes NetAcad et Microsoft Learn',
+                    'Accès 24h/24 à la plateforme NetAcad',
                     'Labs virtuels Cisco Packet Tracer inclus',
                     'Sandbox Azure pour les parcours Microsoft',
                     'Suivi documenté de la progression par module',
@@ -214,7 +218,9 @@ function ElearningPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                   {[
                     { ref: 'Art. L.6313-1', title: 'Action de formation à distance', desc: "L'e-learning tutoré est reconnu comme action de formation au sens du Code du travail dès lors qu'un accompagnement individualisé est documenté." },
-                    { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique adapté', desc: 'NetAcad et Microsoft Learn constituent le plateau technique officiel certifié. Vérification de la prise en main organisée avant démarrage de chaque parcours.' },
+                    { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique adapté', desc: 'Cisco Networking Academy constitue le plateau technique officiel certifié. Vérification de la prise en main organisée avant démarrage de chaque parcours.' },
+                    { ref: 'Ind. 19 — référent', title: 'Référent pédagogique', desc: "Référent pédagogique désigné : Franck PFLIEGER, président — president@galactusdigital.com — 07 81 07 47 46, joignable sous deux jours ouvrés pendant toute la durée d'ouverture des accès." },
+                    { ref: 'Ind. 19 — preuves', title: 'Effectivité du suivi', desc: "L'effectivité du suivi ne repose pas sur la seule connexion : elle est établie pour chaque apprenant et chaque module par le relevé de progression de la plateforme, l'historique des sessions de tutorat Webex et le compte rendu écrit de chaque point d'étape, consignés au registre de suivi. Article 13 bis des CGV." },
                     { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé documenté', desc: "Un relevé de progression module par module est généré automatiquement par la plateforme et archivé dans le dossier de formation de l'apprenant." },
                     { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Réalité des actions documentée', desc: "Les bilans de progression constituent la preuve de réalité des actions conformément aux priorités de contrôle 2026-2027." },
                   ].map(c => (

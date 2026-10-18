@@ -20,17 +20,30 @@ export interface SessionPlanifiee {
   fin: string
   /** Nombre de places, par défaut 12 en présentiel et 20 à distance */
   placesMax?: number
+  /**
+   * Session dont l'effectif est atteint. Elle reste publiée — c'est une action
+   * de formation réalisée, traçable en audit Qualiopi — mais l'inscription est
+   * fermée : l'indicateur 1 interdit d'appeler à s'inscrire à une session qui
+   * ne peut plus accueillir personne.
+   */
+  complet?: boolean
+  /** Effectif inscrit, publié lorsque la session est complète */
+  inscrits?: number
 }
 
 export const LIEUX: Record<Territoire, string> = {
   'Martinique':       'Pointe Madeleine — CAP EST, Le François 97240',
   'Guadeloupe':       'Pointe de la Verdure, Gosier 97190',
   'Paris':            '66 avenue des Champs Élysées, 75008 Paris',
-  'Tous territoires': 'En ligne — WEBEX · NetAcad · Microsoft Learn',
+  'Tous territoires': 'En ligne — WEBEX · plateformes officielles éditeurs',
 }
 
-// ── Planning 2027 — sessions présentiel Martinique ───────────────────────────
+// ── Sessions programmées ─────────────────────────────────────────────────────
 export const SESSIONS_PLANIFIEES: SessionPlanifiee[] = [
+  // FOAD — classe virtuelle Juniper
+  { slug: 'jncia-junos', territoire: 'Tous territoires', modalite: 'FOAD', debut: '2026-10-20', fin: '2026-10-30', complet: true, inscrits: 2 },
+
+  // Présentiel Martinique — planning 2027
   { slug: 'md-102',     territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-01-25', fin: '2027-01-29' },
   { slug: 'pl-7002',    territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-02-25', fin: '2027-02-25' },
   { slug: 'az-802',     territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-03-08', fin: '2027-03-12' },

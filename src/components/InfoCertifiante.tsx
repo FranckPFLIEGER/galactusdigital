@@ -1,5 +1,5 @@
 // ─────────────────────────────────────────────────────────────────────────────
-// InfoCertifiante.tsx — Bloc « Certification, résultats et suites de parcours »
+// InfoCertifiante.tsx — Bloc « Certification, résultats, financement et accessibilité »
 //
 // Répond aux indicateurs 1, 2 et 3 du Référentiel National Qualité version 2
 // (décret n° 2026-728 du 1er août 2026, en vigueur le 1er novembre 2026) :
@@ -9,12 +9,13 @@
 //   • équivalences et passerelles
 //   • suites de parcours
 //   • débouchés
+//   • accessibilité aux personnes en situation de handicap (indicateur 1)
 //   • modes de financement, avec mention explicite de la non-éligibilité au CPF
 //
 // Usage dans une fiche : <InfoCertifiante slug="ccna-itn" />
 // ─────────────────────────────────────────────────────────────────────────────
 
-import { Award, Layers, GitBranch, ArrowUpRight, Briefcase, Wallet, Info } from 'lucide-react'
+import { Award, Layers, GitBranch, ArrowUpRight, Briefcase, Wallet, Info, Accessibility } from 'lucide-react'
 import { getInfoCertifiante, MODES_FINANCEMENT, MENTION_NON_CPF } from '../data/infoCertifiante'
 import { getTauxObtention, RESULTATS_ARRETE_AU } from '../data/resultats'
 
@@ -82,7 +83,7 @@ export function InfoCertifiante({ slug }: { slug: string }) {
         }}>
           Information du public — RNQ indicateurs 1, 2 et 3
         </span>
-        <h2 className="section-h2">Certification, résultats et suites de parcours</h2>
+        <h2 className="section-h2">Certification, résultats, financement et accessibilité</h2>
         <div className="g-rule" />
         <p style={{ fontSize: '0.88rem', color: '#5a5a58', lineHeight: 1.7, maxWidth: '900px', marginBottom: '2rem' }}>
           Informations publiées au titre du Référentiel National Qualité dans sa version issue du
@@ -185,6 +186,22 @@ export function InfoCertifiante({ slug }: { slug: string }) {
 
           <Carte icon={<Wallet size={15} color="#fff" />} titre="Modes de financement">
             <Puces items={MODES_FINANCEMENT} />
+          </Carte>
+
+          <Carte icon={<Accessibility size={15} color="#fff" />} titre="Accessibilité — handicap">
+            <p style={{ margin: 0 }}>
+              Cette formation est accessible aux personnes en situation de handicap. Un référent
+              handicap certifié étudie chaque demande et met en place les aménagements nécessaires
+              (rythme, durée des séquences, supports adaptés, matériel, conditions d'examen auprès
+              de l'éditeur).
+            </p>
+            <p style={{ margin: '0.5rem 0 0', fontSize: '0.78rem', color: '#888', lineHeight: 1.55 }}>
+              Signalez votre besoin dès la demande de devis : l'étude est menée avant l'entrée en
+              formation.{' '}
+              <a href="/handicap" style={{ color: 'var(--g-red)', fontWeight: 600, textDecoration: 'none' }}>
+                Référent handicap et aménagements
+              </a>.
+            </p>
           </Carte>
         </div>
 

@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/jncia-junos')({
   head: () => ({
     meta: [
       { title: "JNCIA-Junos — Introduction to the Junos OS (JN0-106) | GALACTUS Digital" },
-      { name: "description", content: "JNCIA-Junos (IJOS) — préparation à l'examen Juniper JN0-106. 35 h en présentiel ou à distance, 17 travaux pratiques sur maquette Junos. Organisme certifié Qualiopi." },
+      { name: "description", content: "JNCIA-Junos (IJOS) — préparation à l'examen Juniper JN0-106. 35 h en classe virtuelle (FOAD), 17 travaux pratiques sur maquette Junos. Organisme certifié Qualiopi." },
     ],
   }),
 })
@@ -135,7 +135,7 @@ function DelaisAcces() {
       {[
         { label: 'Standard', val: '1 mois après signature du devis et de la convention.' },
         { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
-        { label: 'Inscription min.', val: "Possible jusqu'à 48 heures avant le début de la formation." },
+        { label: 'Inscription min.', val: "Possible jusqu'à une semaine avant le démarrage, selon les places disponibles (art. 14 des CGV)." },
       ].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}
     </div>
   )
@@ -356,7 +356,7 @@ function FormationPage() {
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
+              <a href="/?f=jncia-junos#contact" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
             </div>
           </div>
         </section>

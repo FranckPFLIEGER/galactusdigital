@@ -9,14 +9,14 @@ export const Route = createRootRoute({
       { title: 'GALACTUS Digital — Formation Cisco & Microsoft en Martinique, Guadeloupe, Guyane et Réunion' },
       {
         name: 'description',
-        content: 'Organisme certifié Qualiopi. Formations et certifications IT officielles Cisco (CCNA, CCNP), Microsoft (Azure, Power BI, Copilot) et IPv6 Forum en Martinique, Guadeloupe, Guyane, Saint-Martin et La Réunion. 100% de réussite. Présentiel, FOAD et e-learning. NDA : 11 75 59933 75.',
+        content: 'Organisme certifié Qualiopi. Formations et certifications IT officielles Cisco (CCNA, CCNP), Microsoft (Azure, Power BI, Copilot) et IPv6 Forum en Martinique, Guadeloupe, Guyane, Saint-Martin et La Réunion. 100% de réussite parmi les candidats présentés à l\'examen. E-learning tutoré, FOAD et présentiel. NDA : 11 75 59933 75.',
       },
       { property: 'og:type',        content: 'website' },
       { property: 'og:url',         content: 'https://www.galactusdigital.com/' },
       { property: 'og:title',       content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         property: 'og:description',
-        content: 'Organisme de formation certifié Qualiopi. Certifications Cisco Networking Academy, Microsoft et IPv6 Forum. 100% de réussite. 6 territoires ultramarins.',
+        content: 'Organisme de formation certifié Qualiopi. Certifications Cisco Networking Academy, Microsoft et IPv6 Forum. 100% de réussite parmi les candidats présentés à l\'examen. 6 territoires ultramarins.',
       },
       { property: 'og:image',       content: 'https://www.galactusdigital.com/og-image.png' },
       { property: 'og:image:width',  content: '1200' },

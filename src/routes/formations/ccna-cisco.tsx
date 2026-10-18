@@ -9,8 +9,8 @@ export const Route = createFileRoute('/formations/ccna-cisco')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "CCNA v2.0 — Cisco (parcours accéléré) 200-301 | GALACTUS Digital" },
-      { name: "description", content: "CCNA v2.0 (200-301) — parcours accéléré officiel Cisco, 5 jours. Nouvelle section IA, virage troubleshooting. Distinct du parcours NetAcad. Qualiopi." },
+      { title: "CCNA v2.0 — Parcours complet ITN · SRWE · ENSA (200-301) | GALACTUS Digital" },
+      { name: "description", content: "CCNA v2.0 (200-301) — les 3 modules ITN, SRWE et ENSA réunis. 210h en e-learning tutoré, voucher d'examen compris. Format accéléré 5 jours en présentiel. Qualiopi." },
     ],
   }),
 })
@@ -24,18 +24,24 @@ const itemNeuf = (it: Item) => typeof it === 'string' ? false : !!it.neuf
 
 const DATA = {
   editeur: 'Cisco',
-  famille: 'Cisco — CCNA (parcours officiel accéléré)',
-  titre: 'CCNA v2.0 — Cisco (parcours accéléré)',
-  sousTitre: 'Implementing and Administering Cisco Solutions · Examen 200-301 blueprint v2.0 · Distinct du parcours NetAcad (ITN·SRWE·ENSA)',
+  famille: 'Cisco Networking Academy — CCNA',
+  titre: 'CCNA v2.0 — Parcours complet',
+  sousTitre: 'Les 3 modules ITN · SRWE · ENSA réunis · Examen 200-301 blueprint v2.0',
   ref: 'CCNA-CISCO-V2',
   niveau: 'Fondamental à intermédiaire',
   partenaire: 'Formateur Cisco CCNP / CCDP certifié',
   certification: 'Cisco Certified Network Associate (CCNA 200-301)',
-  duree: '40 heures',
+  duree: '210 heures (e-learning) · 35 heures (présentiel accéléré)',
   groupeMin: 3,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Parcours accéléré officiel Cisco préparant à l'examen CCNA 200-301 en blueprint v2.0 (en vigueur au 3 février 2027). Format condensé sur 5 jours (présentiel ou FOAD synchrone), complété d'ateliers pratiques, distinct du parcours Cisco Networking Academy en 3 modules (ITN · SRWE · ENSA). La v2.0 marque la plus importante refonte du CCNA depuis 2020 : retour du dépannage à un niveau approfondi, nouvelle section sur l'IA dans les opérations réseau, et allègement de la théorie au profit de la pratique.`,
+  description: `Les trois modules du cursus CCNA réunis en un seul parcours : Introduction aux réseaux (ITN), Commutation, routage et Wi-Fi (SRWE), puis Réseaux d'entreprise, sécurité et automatisation (ENSA). C'est le parcours le plus demandé : il couvre l'intégralité du programme 200-301 et mène à la certification sans rupture.
+
+**En e-learning tutoré** — 210 heures sur la plateforme Cisco Networking Academy, accès ouvert un an, tutorat par un instructeur certifié CCNP/CCDP et voucher d'examen Pearson VUE compris dans le tarif.
+
+**En présentiel** — format accéléré de 5 jours (35 heures, 7 h par jour) lors des sessions programmées, pour les professionnels des réseaux disposant déjà d'une première expérience du routage et de la commutation.
+
+La v2.0 marque la plus importante refonte du CCNA depuis 2020 : retour du dépannage à un niveau approfondi, nouvelle section sur l'IA dans les opérations réseau, et allègement de la théorie au profit de la pratique.`,
   // Répartition officielle Cisco du blueprint d'examen 200-301 v2.0 (en vigueur au 3 février 2027).
   // Source : documentation officielle Cisco du blueprint v2.0. Total = 100%.
   domaines: [
@@ -108,7 +114,7 @@ const DATA = {
   },
   methodes: [
     "Formation dispensée par un formateur Cisco CCNP / CCDP certifié (15+ ans d'expérience, administrateur VUE Pearson)",
-    "Format accéléré : 5 jours intensifs, présentiel ou FOAD synchrone",
+    "Deux rythmes : e-learning tutoré sur un an, ou format accéléré 5 jours en présentiel",
     "Labs pratiques sur simulateurs et équipements (Packet Tracer / CML)",
     "Supports officiels Cisco et QCM d'entraînement à l'examen",
     "Quiz de validation des acquis à chaque fin de journée",
@@ -141,7 +147,7 @@ function DelaisAcces() {
       {[
         { label: 'Standard', val: '1 mois après signature du devis et de la convention.' },
         { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
-        { label: 'Inscription min.', val: "Possible jusqu'à 48 heures avant le début de la formation." },
+        { label: 'Inscription min.', val: "Possible jusqu'à une semaine avant le démarrage, selon les places disponibles (art. 14 des CGV)." },
       ].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}
     </div>
   )
@@ -338,7 +344,7 @@ function FormationPage() {
                   { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail.' },
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation complète envoyée avant démarrage.' },
                   { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz + auto-évaluation formateur selon 4 niveaux.' },
-                  { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de la formation FOAD ou e-learning, conformément à la circulaire DGEFP du 17 février 2026." },
+                  { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de toute formation à distance, conformément à la circulaire DGEFP du 17 février 2026." },
                   { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès CML / EVE-NG et équipements vérifiés avant démarrage.' },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
@@ -360,7 +366,7 @@ function FormationPage() {
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
+              <a href="/?f=ccna-cisco#contact" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
             </div>
           </div>
         </section>

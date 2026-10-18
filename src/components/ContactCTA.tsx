@@ -1,35 +1,20 @@
-import { useState } from "react"
-import { Mail, Phone, MapPin, ArrowRight, CheckCircle, AlertCircle, Send, Clock, Shield, Award } from "lucide-react"
+import { useState, useEffect, useMemo } from "react"
+import { Mail, Phone, MapPin, CheckCircle, AlertCircle, Send, Clock, Shield, Award } from "lucide-react"
 import { useIntersection } from "../hooks/useIntersection"
+import { FORMATIONS as CATALOGUE } from "../data/catalogue"
 
-const FORMATIONS = [
-  "Networking Essentials",
-  "CCNA — ITN (Module 1/3)",
-  "CCNA — SRWE (Module 2/3)",
-  "CCNA — ENSA (Module 3/3)",
-  "Cybersecurity Essentials",
-  "CCNA Cybersecurity",
-  "Ethical Hacker",
-  "Python Essentials 1",
-  "Python Essentials 2",
-  "CCNA Automation",
-  "IoT — Introduction",
-  "IoT — Connecting Things",
-  "IoT — Big Data & Analytics",
-  "IoT — Security",
-  "IoT — Hackathon",
-  "Linux Essentials",
-  "Data Analytics Essentials",
-  "AZ-900 Azure Fundamentals",
-  "AZ-104 Azure Administrator",
-  "SC-900 Security Fundamentals",
-  "AI-901 Azure AI Fundamentals",
-  "AB-900 Microsoft 365 Copilot Fundamentals",
-  "PL-300 Power BI Data Analyst",
-  "MD-102 Endpoint Administrator",
-  "MS-4010 Microsoft 365 Copilot Specialist",
-  "Formation sur mesure / autre",
-]
+// ─────────────────────────────────────────────────────────────────────────────
+// ContactCTA — formulaire unique de demande de devis
+//
+// Toutes les demandes du site aboutissent ici (fiches formation, calendrier,
+// pages modalités). Un lien peut pré-sélectionner la formation :
+//   /?f=<slug>#contact
+//
+// Tous les champs sont obligatoires. Une demande arrive donc qualifiée :
+// qui, pour quelle formation, dans quelle modalité, avec quel financement.
+// Deux branches conditionnelles — particulier ou entreprise — adaptent le
+// nom de l'organisation, le format d'organisation et les modes de financement.
+// ─────────────────────────────────────────────────────────────────────────────
 
 const TERRITOIRES = [
   "Martinique",
@@ -39,16 +24,41 @@ const TERRITOIRES = [
   "Saint-Barthélemy",
   "La Réunion",
   "France hexagonale",
-  "Autre territoire",
 ]
 
-const TYPES = [
-  "Demande de devis",
-  "Formation intra-entreprise",
-  "Formation inter-entreprise",
-  "E-learning tutoré",
-  "Renseignement général",
-  "Partenariat / convention",
+// Les trois axes commerciaux. Le choix détermine la liste des formations.
+const MODALITES = [
+  "E-learning tutoré — Cisco Networking Academy",
+  "Présentiel — Microsoft, CCNA accéléré",
+  "FOAD classe virtuelle — Juniper JNCIA-Junos",
+]
+const MOD_ELEARNING  = MODALITES[0]
+const MOD_PRESENTIEL = MODALITES[1]
+const MOD_FOAD       = MODALITES[2]
+
+const PROFILS = ["Particulier", "Entreprise / organisation"]
+const PROFIL_PARTICULIER = PROFILS[0]
+const PROFIL_ENTREPRISE  = PROFILS[1]
+
+// Format d'organisation — entreprise uniquement
+const FORMATS = [
+  "Inter-entreprise (vos salariés rejoignent une session)",
+  "Intra-entreprise (session dédiée, sur votre site)",
+]
+
+// Modes de prise en charge. Le CPF n'y figure pas : les certifications éditeur
+// ne sont enregistrées ni au RNCP ni au Répertoire spécifique.
+const FINANCEMENT_ENTREPRISE = [
+  "OPCO — prise en charge à instruire",
+  "Plan de développement des compétences (fonds propres)",
+  "Dispositif régional ou FSE+",
+  "À définir ensemble",
+]
+const FINANCEMENT_PARTICULIER = [
+  "AIF France Travail (demandeur d'emploi)",
+  "POEI France Travail",
+  "Financement personnel",
+  "À définir ensemble",
 ]
 
 type FormState = {
@@ -56,53 +66,123 @@ type FormState = {
   prenom: string
   email: string
   telephone: string
+  profil: string
   entreprise: string
+  format: string
   territoire: string
+  modalite: string
   formation: string
-  type: string
+  financement: string
   message: string
   rgpd: boolean
 }
 
 const INIT: FormState = {
   nom: "", prenom: "", email: "", telephone: "",
-  entreprise: "", territoire: "", formation: "", type: "",
-  message: "", rgpd: false,
+  profil: "", entreprise: "", format: "",
+  territoire: "", modalite: "", formation: "",
+  financement: "", message: "", rgpd: false,
 }
 
-// ⚠️ INSTRUCTION : Créez un compte gratuit sur web3forms.com
-// → entrez president@galactusdigital.com → copiez votre Access Key
-// → remplacez "035246e2-1884-48e8-bc56-411d7aee84e6" ci-dessous
 const WEB3FORMS_KEY = "035246e2-1884-48e8-bc56-411d7aee84e6"
+
+// ─── Listes de formations, construites depuis le catalogue ────────────────────
+// Une seule source de vérité : ajouter une formation au catalogue suffit.
+
+const F_ELEARNING  = CATALOGUE.filter(f => f.modalites.includes("E-learning")).map(f => f.titre)
+const F_PRESENTIEL = CATALOGUE.filter(f => f.modalites.includes("Présentiel")).map(f => f.titre)
+const F_FOAD       = CATALOGUE.filter(f => f.modalites.includes("FOAD")).map(f => f.titre)
 
 export function ContactCTA() {
   const { ref, isVisible } = useIntersection()
   const [form, setForm]     = useState<FormState>(INIT)
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle")
 
+  // Pré-sélection depuis l'URL : /?f=<slug>#contact
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const slug = new URLSearchParams(window.location.search).get("f")
+    if (!slug) return
+    const f = CATALOGUE.find(x => x.slug === slug)
+    if (!f) return
+    setForm(prev => ({
+      ...prev,
+      formation: f.titre,
+      modalite: f.modalites.includes("E-learning") ? MOD_ELEARNING
+              : f.modalites.includes("FOAD")       ? MOD_FOAD
+              : MOD_PRESENTIEL,
+    }))
+  }, [])
+
+  const estEntreprise = form.profil === PROFIL_ENTREPRISE
+
+  const formationsProposees = useMemo(() => {
+    if (form.modalite === MOD_ELEARNING)  return F_ELEARNING
+    if (form.modalite === MOD_PRESENTIEL) return F_PRESENTIEL
+    if (form.modalite === MOD_FOAD)       return F_FOAD
+    return []
+  }, [form.modalite])
+
+  const financements = estEntreprise ? FINANCEMENT_ENTREPRISE : FINANCEMENT_PARTICULIER
+
   const set = (k: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const val = e.target.type === "checkbox" ? (e.target as HTMLInputElement).checked : e.target.value
-    setForm(prev => ({ ...prev, [k]: val }))
+    setForm(prev => {
+      const next = { ...prev, [k]: val }
+      // Changer de modalité invalide une formation absente du nouvel axe
+      if (k === "modalite" && next.formation) {
+        const liste = val === MOD_ELEARNING ? F_ELEARNING
+                    : val === MOD_FOAD      ? F_FOAD
+                    : F_PRESENTIEL
+        if (!liste.includes(next.formation)) next.formation = ""
+      }
+      // Changer de profil remet à zéro les champs qui en dépendent
+      if (k === "profil") {
+        next.financement = ""
+        if (val === PROFIL_PARTICULIER) { next.entreprise = ""; next.format = "" }
+      }
+      return next
+    })
   }
+
+  // Tous les champs renseignés ? L'entreprise et le format ne valent que pour
+  // le profil Entreprise.
+  const complet =
+    form.nom.trim() !== "" &&
+    form.prenom.trim() !== "" &&
+    form.email.trim() !== "" &&
+    form.telephone.trim() !== "" &&
+    form.profil !== "" &&
+    (!estEntreprise || (form.entreprise.trim() !== "" && form.format !== "")) &&
+    form.territoire !== "" &&
+    form.modalite !== "" &&
+    form.formation !== "" &&
+    form.financement !== "" &&
+    form.message.trim() !== "" &&
+    form.rgpd
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    if (!form.rgpd) return
+    if (!complet) return
     setStatus("sending")
     try {
       const payload = {
         access_key: WEB3FORMS_KEY,
-        subject: `[GALACTUS Digital] ${form.type || "Demande"} — ${form.formation || "Formation"}`,
+        subject: `[GALACTUS Digital] ${form.formation} — ${form.profil}`,
         from_name: `${form.prenom} ${form.nom}`,
         email: form.email,
         message: `DEMANDE REÇUE VIA GALACTUSDIGITAL.COM\n\n`
           + `Nom : ${form.prenom} ${form.nom}\n`
           + `Email : ${form.email}\n`
-          + `Téléphone : ${form.telephone || "Non renseigné"}\n`
-          + `Entreprise : ${form.entreprise || "Non renseignée"}\n`
-          + `Territoire : ${form.territoire || "Non renseigné"}\n`
-          + `Formation souhaitée : ${form.formation || "Non précisée"}\n`
-          + `Type de demande : ${form.type || "Non précisé"}\n\n`
+          + `Téléphone : ${form.telephone}\n`
+          + `Profil : ${form.profil}\n`
+          + (estEntreprise
+              ? `Entreprise : ${form.entreprise}\nFormat : ${form.format}\n`
+              : ``)
+          + `Territoire : ${form.territoire}\n\n`
+          + `Modalité : ${form.modalite}\n`
+          + `Formation souhaitée : ${form.formation}\n`
+          + `Prise en charge envisagée : ${form.financement}\n\n`
           + `Message :\n${form.message}`,
       }
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -131,6 +211,10 @@ export function ContactCTA() {
     color: "rgba(255,255,255,0.55)", marginBottom: "0.35rem",
   }
   const fld: React.CSSProperties = { display: "flex", flexDirection: "column" }
+  const aide: React.CSSProperties = {
+    fontSize: "0.72rem", color: "rgba(255,255,255,0.38)",
+    marginTop: "0.3rem", lineHeight: 1.5,
+  }
 
   return (
     <section className="contact-section" id="contact" ref={ref}>
@@ -152,6 +236,7 @@ export function ContactCTA() {
             <p className={`contact-sub reveal${isVisible ? " visible" : ""} delay-2`}
               style={{ textAlign: "left", margin: "0 0 2rem" }}>
               Remplissez ce formulaire — nous vous répondons sous 48h avec un devis personnalisé.
+              Tous les champs sont nécessaires pour établir le devis et instruire votre financement.
             </p>
 
             {status === "ok" ? (
@@ -171,7 +256,7 @@ export function ContactCTA() {
             ) : (
               <form onSubmit={handleSubmit} style={{ display: "flex", flexDirection: "column", gap: "1rem" }}>
 
-                {/* Ligne Nom / Prénom */}
+                {/* Nom / Prénom */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                   <div style={fld}>
                     <label style={lbl}>Nom *</label>
@@ -186,54 +271,115 @@ export function ContactCTA() {
                 {/* Email / Téléphone */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                   <div style={fld}>
-                    <label style={lbl}>Email professionnel *</label>
+                    <label style={lbl}>Email *</label>
                     <input style={inp} type="email" required value={form.email} onChange={set("email")} placeholder="jean.dupont@entreprise.com" />
                   </div>
                   <div style={fld}>
-                    <label style={lbl}>Téléphone</label>
-                    <input style={inp} type="tel" value={form.telephone} onChange={set("telephone")} placeholder="+596 6 96 ..." />
+                    <label style={lbl}>Téléphone *</label>
+                    <input style={inp} type="tel" required value={form.telephone} onChange={set("telephone")} placeholder="+596 6 96 ..." />
                   </div>
                 </div>
 
-                {/* Entreprise / Territoire */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-                  <div style={fld}>
-                    <label style={lbl}>Entreprise / Organisation</label>
-                    <input style={inp} value={form.entreprise} onChange={set("entreprise")} placeholder="Ma Société SAS" />
-                  </div>
-                  <div style={fld}>
-                    <label style={lbl}>Territoire *</label>
-                    <select style={sel} required value={form.territoire} onChange={set("territoire")}>
-                      <option value="">-- Choisir --</option>
-                      {TERRITOIRES.map(t => <option key={t} value={t}>{t}</option>)}
-                    </select>
-                  </div>
+                {/* Profil — commande l'entreprise, le format et le financement */}
+                <div style={fld}>
+                  <label style={lbl}>Vous êtes *</label>
+                  <select style={sel} required value={form.profil} onChange={set("profil")}>
+                    <option value="" disabled>-- Particulier ou entreprise ? --</option>
+                    {PROFILS.map(p => <option key={p} value={p}>{p}</option>)}
+                  </select>
+                  {form.profil === PROFIL_PARTICULIER && (
+                    <span style={aide}>
+                      En vous inscrivant à titre individuel, vous disposez de 14 jours pour vous
+                      rétracter après signature du contrat, sans frais ni justification.{" "}
+                      <a href="/retractation" style={{ color: "#E41F26", fontWeight: 600, textDecoration: "none" }}>
+                        Exercer ce droit en ligne
+                      </a>.
+                    </span>
+                  )}
                 </div>
 
-                {/* Formation / Type */}
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
-                  <div style={fld}>
-                    <label style={lbl}>Formation souhaitée</label>
-                    <select style={sel} value={form.formation} onChange={set("formation")}>
-                      <option value="">-- Toutes / Je ne sais pas --</option>
-                      {FORMATIONS.map(f => <option key={f} value={f}>{f}</option>)}
-                    </select>
+                {/* Entreprise / Format — profil Entreprise uniquement */}
+                {estEntreprise && (
+                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
+                    <div style={fld}>
+                      <label style={lbl}>Entreprise / Organisation *</label>
+                      <input style={inp} required value={form.entreprise} onChange={set("entreprise")} placeholder="Ma Société SAS" />
+                    </div>
+                    <div style={fld}>
+                      <label style={lbl}>Format *</label>
+                      <select style={sel} required value={form.format} onChange={set("format")}>
+                        <option value="" disabled>-- Choisir le format --</option>
+                        {FORMATS.map(f => <option key={f} value={f}>{f}</option>)}
+                      </select>
+                    </div>
                   </div>
-                  <div style={fld}>
-                    <label style={lbl}>Type de demande *</label>
-                    <select style={sel} required value={form.type} onChange={set("type")}>
-                      <option value="">-- Choisir --</option>
-                      {TYPES.map(t => <option key={t} value={t}>{t}</option>)}
-                    </select>
-                  </div>
+                )}
+
+                {/* Territoire */}
+                <div style={fld}>
+                  <label style={lbl}>Territoire *</label>
+                  <select style={sel} required value={form.territoire} onChange={set("territoire")}>
+                    <option value="" disabled>-- Choisir un territoire --</option>
+                    {TERRITOIRES.map(t => <option key={t} value={t}>{t}</option>)}
+                  </select>
+                </div>
+
+                {/* Modalité — commande la liste des formations */}
+                <div style={fld}>
+                  <label style={lbl}>Modalité souhaitée *</label>
+                  <select style={sel} required value={form.modalite} onChange={set("modalite")}>
+                    <option value="" disabled>-- Choisir la modalité --</option>
+                    {MODALITES.map(m => <option key={m} value={m}>{m}</option>)}
+                  </select>
+                </div>
+
+                {/* Formation — filtrée par la modalité */}
+                <div style={fld}>
+                  <label style={lbl}>Formation souhaitée *</label>
+                  <select style={sel} required value={form.formation} onChange={set("formation")}
+                    disabled={form.modalite === ""}>
+                    <option value="" disabled>
+                      {form.modalite === "" ? "-- Choisissez d'abord la modalité --" : "-- Choisir une formation --"}
+                    </option>
+                    {formationsProposees.map(f => <option key={f} value={f}>{f}</option>)}
+                  </select>
+                  {form.modalite !== "" && (
+                    <span style={aide}>
+                      {form.modalite === MOD_ELEARNING
+                        ? `${F_ELEARNING.length} formations Cisco Networking Academy — e-learning tutoré, tarif public.`
+                        : form.modalite === MOD_FOAD
+                        ? `${F_FOAD.length} parcours Juniper en classe virtuelle WEBEX — sur devis.`
+                        : `${F_PRESENTIEL.length} formations Microsoft et CCNA accéléré — présentiel, sur devis.`}
+                    </span>
+                  )}
+                </div>
+
+                {/* Prise en charge — liste selon le profil */}
+                <div style={fld}>
+                  <label style={lbl}>Prise en charge envisagée *</label>
+                  <select style={sel} required value={form.financement} onChange={set("financement")}
+                    disabled={form.profil === ""}>
+                    <option value="" disabled>
+                      {form.profil === "" ? "-- Indiquez d'abord votre profil --" : "-- Choisir le mode de financement --"}
+                    </option>
+                    {form.profil !== "" && financements.map(f => <option key={f} value={f}>{f}</option>)}
+                  </select>
+                  <span style={aide}>
+                    Nos formations ne sont pas éligibles au CPF : les certifications éditeur ne sont
+                    enregistrées ni au RNCP ni au Répertoire spécifique.
+                  </span>
                 </div>
 
                 {/* Message */}
                 <div style={fld}>
-                  <label style={lbl}>Message / contexte</label>
+                  <label style={lbl}>Votre projet *</label>
                   <textarea style={{ ...inp, resize: "vertical", minHeight: "110px" }}
-                    value={form.message} onChange={set("message")}
-                    placeholder="Nombre de stagiaires, objectifs, contraintes, questions..." />
+                    required value={form.message} onChange={set("message")}
+                    placeholder="Nombre de stagiaires, niveau de départ, échéance souhaitée, contraintes..." />
+                  <span style={aide}>
+                    Précisez ici toute adaptation souhaitée : nous construisons des parcours sur mesure
+                    à partir du catalogue.
+                  </span>
                 </div>
 
                 {/* RGPD */}
@@ -243,19 +389,25 @@ export function ContactCTA() {
                   <span style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.5 }}>
                     J&apos;accepte que GALACTUS Digital conserve mes données pour traiter ma demande.
                     Conformément au RGPD, je peux exercer mes droits en contactant
-                    president@galactusdigital.com.
+                    president@galactusdigital.com. *
                   </span>
                 </label>
 
-                {/* Submit */}
                 {status === "err" && (
                   <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#f87171", fontSize: "0.83rem" }}>
                     <AlertCircle size={15} /> Erreur d&apos;envoi. Contactez-nous directement par email.
                   </div>
                 )}
-                <button type="submit" disabled={status === "sending" || !form.rgpd}
+
+                {!complet && (
+                  <div style={{ fontSize: "0.76rem", color: "rgba(255,255,255,0.35)", fontStyle: "italic" }}>
+                    Renseignez tous les champs pour activer l&apos;envoi.
+                  </div>
+                )}
+
+                <button type="submit" disabled={status === "sending" || !complet}
                   className="btn-red"
-                  style={{ alignSelf: "flex-start", opacity: (!form.rgpd || status === "sending") ? 0.5 : 1, cursor: (!form.rgpd || status === "sending") ? "not-allowed" : "pointer" }}>
+                  style={{ alignSelf: "flex-start", opacity: (!complet || status === "sending") ? 0.5 : 1, cursor: (!complet || status === "sending") ? "not-allowed" : "pointer" }}>
                   {status === "sending" ? "Envoi en cours..." : "Envoyer ma demande"}
                   {status !== "sending" && <Send size={15} />}
                 </button>
@@ -267,16 +419,37 @@ export function ContactCTA() {
           {/* ── Colonne info ── */}
           <div style={{ display: "flex", flexDirection: "column", gap: "1.5rem" }}>
 
-            {/* Engagements */}
+            {/* Les deux axes */}
             <div style={{ background: "rgba(228,31,38,0.08)", border: "1px solid rgba(228,31,38,0.20)", padding: "1.75rem" }}>
               <div style={{ fontFamily: "var(--font-title)", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--g-red)", marginBottom: "1.25rem" }}>
-                Nos engagements
+                Nos deux offres
               </div>
+              <div style={{ marginBottom: "1.1rem" }}>
+                <div style={{ fontFamily: "var(--font-title)", fontSize: "0.80rem", fontWeight: 700, color: "#fff", textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: "0.3rem" }}>
+                  Cisco Networking Academy
+                </div>
+                <div style={{ fontSize: "0.80rem", color: "rgba(255,255,255,0.60)", lineHeight: 1.6 }}>
+                  E-learning tutoré, tarif public affiché, titre officiel de l&apos;éditeur compris.
+                  Accès plateforme ouvert un an.
+                </div>
+              </div>
+              <div>
+                <div style={{ fontFamily: "var(--font-title)", fontSize: "0.80rem", fontWeight: 700, color: "#fff", textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: "0.3rem" }}>
+                  Microsoft · Juniper
+                </div>
+                <div style={{ fontSize: "0.80rem", color: "rgba(255,255,255,0.60)", lineHeight: 1.6 }}>
+                  Présentiel uniquement, en inter ou en intra sur votre site. Devis sur mesure.
+                </div>
+              </div>
+            </div>
+
+            {/* Engagements */}
+            <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", padding: "1.5rem" }}>
               {[
                 [Clock, "Réponse sous 48h ouvrées"],
                 [Shield, "Devis gratuit et sans engagement"],
                 [Award, "Certification Qualiopi garantie"],
-                [CheckCircle, "Financement OPCO / AIF"],
+                [CheckCircle, "Accompagnement au financement"],
               ].map(([Icon, text]) => (
                 <div key={text as string} style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.85rem" }}>
                   <div style={{ width: 32, height: 32, background: "var(--g-red)", display: "flex", alignItems: "center", justifyContent: "center", flexShrink: 0 }}>
@@ -308,19 +481,19 @@ export function ContactCTA() {
               </div>
             </div>
 
-            {/* Financement rapide */}
+            {/* Financements */}
             <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", padding: "1.25rem" }}>
               <div style={{ fontFamily: "var(--font-title)", fontSize: "0.68rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.40)", marginBottom: "0.75rem" }}>
                 Financements disponibles
               </div>
               {[
-                ["OPCO", "Prise en charge totale possible"],
-                ["AIF France Travail", "Pour demandeurs d\'emploi"],
+                ["OPCO", "Entreprise — prise en charge possible"],
+                ["AIF · POEI", "France Travail — demandeur d'emploi"],
                 ["Plan de formation", "Entreprise — toutes tailles"],
               ].map(([label, detail]) => (
                 <div key={label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.45rem 0", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>
                   <span style={{ fontFamily: "var(--font-title)", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.08em", color: "var(--g-red)", textTransform: "uppercase" }}>{label}</span>
-                  <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.45)", textAlign: "right", maxWidth: "170px" }}>{detail.replace(/\'/g, "\'")}</span>
+                  <span style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.45)", textAlign: "right", maxWidth: "170px" }}>{detail}</span>
                 </div>
               ))}
             </div>
@@ -328,7 +501,6 @@ export function ContactCTA() {
           </div>
         </div>
 
-        {/* Mobile : stack vertical */}
         <style>{`
           @media (max-width: 860px) {
             #contact .section-inner > div { grid-template-columns: 1fr !important; }
@@ -338,6 +510,8 @@ export function ContactCTA() {
             border-color: var(--g-red) !important;
           }
           #contact select option { background: #1D1D1B; color: #fff; }
+          #contact select option[disabled] { color: rgba(255,255,255,0.3); }
+          #contact select:disabled { opacity: 0.45; cursor: not-allowed; }
         `}</style>
 
       </div>

@@ -110,7 +110,7 @@ function DelaisAcces({ dark = false }: { dark?: boolean }) {
         {[
           { label: 'Standard', val: '1 mois après signature du devis et de la convention de formation.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
-          { label: 'Inscription minimale', val: "Les inscriptions sont possibles jusqu'à 48 heures avant le début de la formation." },
+          { label: 'Inscription minimale', val: "Possible jusqu'à une semaine avant le démarrage, selon les places disponibles (art. 14 des CGV)." },
           ].map(d => (
           <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
             <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}
@@ -227,7 +227,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions en présentiel ou en FOAD selon les dates','Supports de cours officiels inclus','Accès aux plateformes NetAcad / Microsoft Learn','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Délai d'inscription : 2 semaines avant le démarrage"].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions planifiées au calendrier ou en intra à vos dates','Supports de cours officiels inclus','Accès aux plateformes NetAcad / Microsoft Learn','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Délai d'inscription : 2 semaines avant le démarrage"].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>

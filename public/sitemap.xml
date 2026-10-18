@@ -37,14 +37,14 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.galactusdigital.com/presentiel</loc>
-    <lastmod>2026-07-26</lastmod>
+    <loc>https://www.galactusdigital.com/foad</loc>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.galactusdigital.com/foad</loc>
-    <lastmod>2026-10-13</lastmod>
+    <loc>https://www.galactusdigital.com/presentiel</loc>
+    <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -93,6 +93,12 @@
   <url>
     <loc>https://www.galactusdigital.com/handicap</loc>
     <lastmod>2026-10-13</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.4</priority>
+  </url>
+  <url>
+    <loc>https://www.galactusdigital.com/retractation</loc>
+    <lastmod>2026-10-18</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>

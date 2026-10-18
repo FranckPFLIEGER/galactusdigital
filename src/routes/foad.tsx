@@ -5,63 +5,30 @@ import {
   Monitor, Wifi, Users, CheckCircle, Phone, Mail,
   Network, Calendar, TrendingUp, Target, Settings, AlertCircle,
 } from 'lucide-react'
+import { getFormationsParModalite } from '../data/catalogue'
 
 export const Route = createFileRoute('/foad')({
   component: FoadPage,
 })
 
-const FORMATIONS = [
-  {
-    editeur: 'Cisco — Réseaux',
-    formations: [
-      'Networking Essentials',
-      "CCNA 1 — Introduction aux réseaux (ITN)",
-      "CCNA 2 — Commutation & routage (SRWE)",
-      "CCNA 3 — Réseaux d'entreprise (ENSA)",
-    ],
-  },
-  {
-    editeur: 'Cisco — Cybersécurité',
-    formations: ['Cybersecurity Essentials', 'CCNA Cybersecurity', 'Ethical Hacker'],
-  },
-  {
-    editeur: 'Cisco — Dev & Data',
-    formations: [
-      'Python Essentials 1 (PCEP)', 'Python Essentials 2 (PCAP)',
-      'CCNA Automation', 'Linux Essentials', 'Data Analytics Essentials',
-    ],
-  },
-  {
-    editeur: 'Cisco — IoT',
-    formations: [
-      'IoT — Introduction', 'IoT — Connecting Things',
-      'IoT — Big Data & Analytics', 'IoT — Security', 'IoT — Hackathon',
-    ],
-  },
-  {
-    editeur: 'Microsoft',
-    formations: [
-      'AZ-900 Azure Fundamentals', 'AZ-104 Azure Administrator',
-      'SC-900 Security Fundamentals', 'AI-901 Azure AI Fundamentals',
-      'AB-900 Microsoft 365 Copilot Fundamentals',
-    ],
-  },
-  {
-    editeur: 'IPv6 Forum',
-    formations: ['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'],
-  },
-]
 
 function FormationGrid() {
+  // Pilotée par le catalogue : n'affiche que les formations déclarées en FOAD.
+  const formations = getFormationsParModalite('FOAD')
+  const parEditeur = formations.reduce<Record<string, typeof formations>>((acc, f) => {
+    (acc[f.editeur] ||= []).push(f)
+    return acc
+  }, {})
   return (
     <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginTop: '2rem' }}>
-      {FORMATIONS.map(f => (
-        <div key={f.editeur} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
-          <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>{f.editeur}</div>
+      {Object.entries(parEditeur).map(([editeur, liste]) => (
+        <div key={editeur} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
+          <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>{editeur}</div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-            {f.formations.map((item, i) => (
-              <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
-                <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
+            {liste.map(f => (
+              <li key={f.slug} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
+                <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
+                <a href={`/formations/${f.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>{f.titreLong}</a>
               </li>
             ))}
           </ul>
@@ -86,7 +53,7 @@ function DelaisAcces({ dark = true }: { dark?: boolean }) {
         {[
           { label: 'Standard', val: '1 mois après signature du devis et de la convention de formation.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
-          { label: 'Inscription minimale', val: "Les inscriptions sont possibles jusqu'à 48 heures avant le début de la formation." },
+          { label: 'Inscription minimale', val: "Possible jusqu'à une semaine avant le démarrage, selon les places disponibles (art. 14 des CGV)." },
           ].map(d => (
           <li key={d.label} style={{ fontSize: '0.84rem', color: textColor, lineHeight: 1.6 }}>
             <strong style={{ color: strongColor }}>{d.label} — </strong>{d.val}
@@ -111,7 +78,7 @@ function FoadPage() {
               Formation à Distance (FOAD)
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              Sessions live sur WEBEX, plateforme NetAcad accessible 24h/24, accompagnement individualisé documenté à chaque étape du parcours. La même qualité que le présentiel, sans contrainte géographique.
+              Le parcours Juniper JNCIA-Junos se tient en classe virtuelle : sessions live sur WEBEX, maquette Junos accessible à distance, accompagnement individualisé documenté à chaque étape. La même qualité que le présentiel, sans contrainte géographique.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               {['Art. D.6313-3-1 Code du travail', 'Qualiopi — Indicateur 19', 'Qualiopi — Critère 3', 'Eligible OPCO', 'Formateur certifié éditeur'].map(b => (
@@ -128,7 +95,7 @@ function FoadPage() {
             <div className="g-rule" />
             <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
-                { icon: <Monitor size={24} color="white" />, title: 'Plateforme officielle', desc: "Toutes nos formations FOAD s'appuient sur Cisco Networking Academy ou Microsoft Learn — accessibles 24h/24 depuis n'importe quel appareil, avec suivi de progression individuel." },
+                { icon: <Monitor size={24} color="white" />, title: 'Plateforme officielle', desc: "Les travaux pratiques se déroulent sur une maquette Junos mise à disposition à distance — 17 ateliers guidés, accessibles depuis n'importe quel appareil, avec suivi de progression individuel." },
                 { icon: <Wifi size={24} color="white" />, title: 'Sessions live WEBEX', desc: "Nos sessions synchrones se déroulent via WEBEX. Partage d'écran, ateliers pratiques à distance, interactions en temps réel avec le formateur certifié." },
                 { icon: <Users size={24} color="white" />, title: 'Assistance documentée', desc: "Conformément à l'article D.6313-3-1 du Code du travail, une assistance technique et pédagogique est disponible et documentée tout au long du parcours." },
               ].map(a => (
@@ -158,7 +125,7 @@ function FoadPage() {
             <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '2.5rem' }}>
               {[
                 { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: "Échangez avec des professionnels d'horizons différents depuis tous les territoires. Opportunité unique de réseautage inter-îles." },
-                { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: "Inscrivez-vous à la session qui correspond à vos disponibilités. Plusieurs dates disponibles dans l'année sur tous les territoires." },
+                { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: "Inscrivez-vous à la session ouverte au calendrier. Accessible depuis tous les territoires, sans déplacement." },
                 { icon: <TrendingUp size={24} color="white" />, title: 'Financement facilité', desc: 'Éligible OPCO, aides régionales DOM. Nous vous accompagnons dans le montage de votre dossier de financement.' },
               ].map(a => (
                 <div key={a.title} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
@@ -172,7 +139,7 @@ function FoadPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Sessions live WEBEX (synchrone)','Plateforme NetAcad / Microsoft Learn incluse','Supports de cours officiels inclus','Feuilles de présence numériques','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM','Test de connexion organisé avant démarrage'].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Sessions live WEBEX (synchrone)','Maquette Junos à distance incluse','Supports de cours officiels inclus','Feuilles de présence numériques','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM','Test de connexion organisé avant démarrage'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.70)' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -182,7 +149,7 @@ function FoadPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Sessions & disponibilités</h3>
                 <p style={{ fontSize: '0.87rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, marginBottom: '1rem' }}>
-                  Plusieurs sessions planifiées par trimestre sur tous les territoires.
+                  Sessions ouvertes publiées au calendrier, accessibles depuis tous les territoires.
                 </p>
                 <div style={{ background: 'rgba(228,31,38,0.08)', border: '1px solid rgba(228,31,38,0.20)', padding: '0.9rem 1rem' }}>
                   <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.70)', margin: 0, lineHeight: 1.6 }}>
@@ -244,7 +211,7 @@ function FoadPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 15 participants','Formateur certifié dédié à votre groupe','Programme entièrement personnalisé','Sessions live WEBEX aux horaires de votre choix','Supports de cours officiels éditeurs inclus','Accès NetAcad / Microsoft Learn inclus','Passage de la certification intégré au programme','Attestation de formation et de présence','Financement via OPCO ou plan de développement des compétences'].map((item, i) => (
+                  {['Groupes de 4 à 15 participants','Formateur certifié dédié à votre groupe','Programme entièrement personnalisé','Sessions live WEBEX aux horaires de votre choix','Supports de cours officiels éditeurs inclus','Accès à la maquette Junos inclus','Passage de la certification intégré au programme','Attestation de formation et de présence','Financement via OPCO ou plan de développement des compétences'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -261,7 +228,7 @@ function FoadPage() {
             </div>
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost-dark"><Mail size={16} /> Demander un devis sous 48h</a>
+              <a href="/?f=jncia-junos#contact" className="btn-ghost-dark"><Mail size={16} /> Demander un devis sous 48h</a>
             </div>
           </div>
         </section>
@@ -285,7 +252,7 @@ function FoadPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Avant le démarrage</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  {['Invitation et accès à la plateforme NetAcad envoyés par courriel','Test de connexion WEBEX organisé avant la première session','Vérification du bon fonctionnement de l\'ensemble des outils','Support technique disponible en cas de difficulté','Supports de cours accessibles en ligne sur NetAcad'].map((item, i) => (
+                  {['Invitation et accès à la maquette Junos envoyés par courriel','Test de connexion WEBEX organisé avant la première session','Vérification du bon fonctionnement de l\'ensemble des outils','Support technique disponible en cas de difficulté','Supports officiels Juniper accessibles en ligne'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87rem', color: 'rgba(255,255,255,0.70)' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -299,7 +266,7 @@ function FoadPage() {
         {/* ── Formations disponibles ── */}
         <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2">Formations disponibles en FOAD</h2>
+            <h2 className="section-h2">Formation disponible en FOAD</h2>
             <div className="g-rule" />
             <FormationGrid />
           </div>
@@ -313,10 +280,12 @@ function FoadPage() {
             <div className="foad-grid-2" style={{ display: 'grid', gridTemplateColumns: 'repeat(2,1fr)', gap: '1rem' }}>
               {[
                 { ref: 'Art. D.6313-3-1', title: 'Assistance pédagogique documentée', desc: "Une assistance technique et pédagogique appropriée est mise en œuvre pour accompagner le bénéficiaire dans le déroulement de son parcours à distance." },
-                { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique et pédagogique', desc: "Les outils de formation sont centralisés sur une plateforme digitale (NetAcad + WEBEX). Les apprenants reçoivent une invitation pour vérifier le bon fonctionnement avant démarrage." },
+                { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique et pédagogique', desc: "Les outils de formation sont centralisés sur une plateforme digitale (maquette Junos + WEBEX). Les apprenants reçoivent une invitation pour vérifier le bon fonctionnement avant démarrage." },
+                { ref: 'Ind. 19 — référent', title: 'Référent pédagogique', desc: "Référent pédagogique désigné : Franck PFLIEGER, président — president@galactusdigital.com — 07 81 07 47 46, joignable sous deux jours ouvrés pendant toute la durée d'ouverture des accès." },
+                { ref: 'Ind. 19 — preuves', title: 'Effectivité du suivi', desc: "L'effectivité du suivi ne repose pas sur la seule connexion : elle est établie pour chaque apprenant et chaque module par le relevé de progression de la plateforme, l'historique des sessions de tutorat Webex et le compte rendu écrit de chaque point d'étape, consignés au registre de suivi. Article 13 bis des CGV." },
                 { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Réalité des actions documentée', desc: "La réalité de nos actions de formation à distance est attestée par les bilans pédagogiques et les feuilles de présence numériques." },
-                { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé', desc: "Un suivi individualisé est mis en place pour chaque apprenant en FOAD, avec évaluation des acquis à chaque module via ateliers pratiques et QCM sur NetAcad." },
-                { ref: 'RNQ V2 — déc. 2026-728', title: 'Effectivité du suivi pédagogique', desc: "Au-delà de la simple connexion, l'effectivité du suivi est attestée par l'export du gradebook NetAcad (modules complétés, résultats), l'historique des sessions Webex et les comptes rendus de points d'étape individuels. Les seuils que préciseront les arrêtés d'application du décret n° 2026-728 seront intégrés dès leur parution." },
+                { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé', desc: "Un suivi individualisé est mis en place pour chaque apprenant en FOAD, avec évaluation des acquis à chaque module via ateliers pratiques sur maquette Junos et QCM d'entraînement à l'examen JN0-106." },
+                { ref: 'RNQ V2 — déc. 2026-728', title: 'Effectivité du suivi pédagogique', desc: "Au-delà de la simple connexion, l'effectivité du suivi est attestée par les comptes rendus d'ateliers sur maquette Junos, l'historique des sessions Webex et les comptes rendus de points d'étape individuels. Les seuils que préciseront les arrêtés d'application du décret n° 2026-728 seront intégrés dès leur parution." },
               ].map(c => (
                 <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
                   <div style={{ flexShrink: 0 }}>
@@ -341,7 +310,7 @@ function FoadPage() {
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
+              <a href="/?f=jncia-junos#contact" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
             </div>
           </div>
         </section>

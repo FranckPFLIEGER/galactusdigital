@@ -155,9 +155,9 @@ function MegaMenu({ visible, onClose }: { visible: boolean; onClose: () => void 
           {[
             { label: 'Calendrier des sessions', href: '/calendrier' },
             { label: 'Financer ma formation', href: '/financements' },
-            { label: 'Présentiel', href: '/presentiel' },
-            { label: 'FOAD', href: '/foad' },
-            { label: 'E-learning tutoré', href: '/elearning' },
+            { label: 'E-learning tutoré — Cisco', href: '/elearning' },
+            { label: 'FOAD — Juniper', href: '/foad' },
+            { label: 'Présentiel — Microsoft', href: '/presentiel' },
           ].map(l => (
             <a key={l.label} href={l.href} onClick={onClose}
               style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.30)', textDecoration: 'none', transition: 'color 0.15s' }}
@@ -178,9 +178,9 @@ const NAV_LINKS = [
     label: 'Solutions', href: '/#services',
     children: [
       { label: '— Modalités de formation', isHeading: true },
-      { label: 'Formation en présentiel',      href: '/presentiel' },
-      { label: 'Formation à distance (FOAD)',  href: '/foad' },
-      { label: 'E-learning tutoré',            href: '/elearning' },
+      { label: 'E-learning tutoré — Cisco',    href: '/elearning' },
+      { label: 'Classe virtuelle FOAD — Juniper', href: '/foad' },
+      { label: 'Présentiel — Microsoft',       href: '/presentiel' },
       { label: "— Formats d'organisation",     isHeading: true },
       { label: 'Inter-entreprise',             href: '/presentiel#inter' },
       { label: 'Intra-entreprise',             href: '/presentiel#intra' },

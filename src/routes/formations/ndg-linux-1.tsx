@@ -135,7 +135,7 @@ function DelaisAcces() {
       {[
         { label: 'Standard', val: '1 mois après signature du devis et de la convention.' },
         { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
-        { label: 'Inscription min.', val: "Possible jusqu\'à 48 heures avant le début de la formation." },
+        { label: 'Inscription min.', val: "Entrées permanentes : aucune date limite. Les accès plateforme sont ouverts sous 72 heures après validation administrative du dossier." },
         ].map(d => (<p key={d.label} style={{ fontSize: '0.84rem', color: '#4a4a48', margin: '0 0 0.35rem', lineHeight: 1.6 }}><strong style={{ color: 'var(--g-black)' }}>{d.label} — </strong>{d.val}</p>))}
     </div>
   )
@@ -361,7 +361,7 @@ function NdgLinux1Page() {
                   { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail.' },
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation complète envoyée avant démarrage.' },
                   { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + auto-évaluation selon 4 niveaux.' },
-                                    { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de la formation FOAD ou e-learning, conformément à la circulaire DGEFP du 17 février 2026." },
+                                    { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de toute formation à distance, conformément à la circulaire DGEFP du 17 février 2026." },
                   { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès NetAcad vérifié avant démarrage.' },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
@@ -383,7 +383,7 @@ function NdgLinux1Page() {
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
+              <a href="/?f=ndg-linux-1#contact" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
             </div>
           </div>
         </section>

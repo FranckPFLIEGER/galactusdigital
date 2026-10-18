@@ -223,7 +223,12 @@ function SessionRow({ s, prep = false }: { s: Session; prep?: boolean }) {
       </div>
       <div className="sr-infos" style={{ display: 'flex', flexDirection: 'column', gap: '0.35rem' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', color: '#4a4a48' }}><Clock size={12} color="#E41F26" />{s.formation.duree}</div>
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', color: '#4a4a48' }}><Users size={12} color="#E41F26" />Max {s.placesMax} participants</div>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem', color: '#4a4a48' }}>
+          <Users size={12} color="#E41F26" />
+          {s.complet
+            ? <span><strong style={{ color: 'var(--g-black)' }}>Effectif atteint</strong>{s.inscrits ? ` — ${s.inscrits} inscrit${s.inscrits > 1 ? 's' : ''}` : ''}</span>
+            : <>Max {s.placesMax} participants</>}
+        </div>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.78rem' }}>
           <Euro size={12} color="#E41F26" />
           {(() => {
@@ -238,10 +243,21 @@ function SessionRow({ s, prep = false }: { s: Session; prep?: boolean }) {
         </div>
       </div>
       <div className="sr-cta" style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem', alignItems: 'flex-end' }}>
-        <a href={`mailto:president@galactusdigital.com?subject=${encodeURIComponent('Inscription — ' + s.formation.titre + ' — ' + s.territoire + ' — ' + s.modalite)}`}
-          className="btn-red" style={{ fontSize: '0.68rem', padding: '0.5rem 1rem', whiteSpace: 'nowrap' }}>
-          {prep ? 'Réserver' : "S'inscrire"}
-        </a>
+        {s.complet ? (
+          <span style={{
+            fontFamily: 'var(--font-title)', fontSize: '0.66rem', fontWeight: 700,
+            letterSpacing: '0.10em', textTransform: 'uppercase', whiteSpace: 'nowrap',
+            padding: '0.5rem 1rem', color: '#888',
+            background: 'rgba(187,187,187,0.14)', border: '1px solid rgba(187,187,187,0.45)',
+          }}>
+            Session complète
+          </span>
+        ) : (
+          <a href={`/?f=${s.formation.slug}#contact`}
+            className="btn-red" style={{ fontSize: '0.68rem', padding: '0.5rem 1rem', whiteSpace: 'nowrap' }}>
+            {prep ? 'Réserver' : "S'inscrire"}
+          </a>
+        )}
         <a href={`/formations/${s.formation.slug}`} style={{ fontSize: '0.66rem', color: 'rgba(187,187,187,0.8)', textDecoration: 'none', whiteSpace: 'nowrap' }}
           onMouseEnter={e => (e.currentTarget.style.color = 'var(--g-red)')} onMouseLeave={e => (e.currentTarget.style.color = 'rgba(187,187,187,0.8)')}>
           Voir la fiche →
@@ -303,11 +319,11 @@ function CalendrierPage() {
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,3vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.75rem' }}>Calendrier des sessions</h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.62)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.75rem' }}>
               {SESSIONS.length > 0
-                ? `${SESSIONS.length} sessions disponibles — Cisco Networking Academy et Microsoft. Dates confirmées sur convocation.`
+                ? `${SESSIONS.length} sessions disponibles — Cisco Networking Academy, Microsoft et Juniper. Dates confirmées sur convocation.`
                 : "Prochaines sessions en cours de planification. Toutes nos formations Cisco Networking Academy et Microsoft sont disponibles à la demande — contactez-nous pour convenir d'une date."}
             </p>
             <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
-              {[ {val:FORMATIONS.length.toString(),label:'Formations'}, {val:SESSIONS.filter(x=>x.modalite==='Présentiel').length.toString(),label:'Présentiel'}, {val:SESSIONS.filter(x=>x.modalite==='FOAD').length.toString(),label:'FOAD'}, {val:SESSIONS.filter(x=>x.modalite==='E-learning').length.toString(),label:'E-learning'}, {val:(SESSIONS.filter(x=>x.statut==='en_preparation').length + SESSIONS_PREP.length) > 0 ? (SESSIONS.filter(x=>x.statut==='en_preparation').length + SESSIONS_PREP.length).toString() : '—',label:'Planifiées'} ].map(st => (
+              {[ {val:FORMATIONS.length.toString(),label:'Formations'}, {val:SESSIONS.filter(x=>x.modalite==='Présentiel').length.toString(),label:'Présentiel'}, {val:SESSIONS.filter(x=>x.modalite==='E-learning').length.toString(),label:'E-learning'}, {val:(SESSIONS.filter(x=>x.statut==='en_preparation').length + SESSIONS_PREP.length) > 0 ? (SESSIONS.filter(x=>x.statut==='en_preparation').length + SESSIONS_PREP.length).toString() : '—',label:'Planifiées'} ].map(st => (
                 <div key={st.label}><div style={{ fontFamily: 'var(--font-title)', fontSize: '1.9rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1 }}>{st.val}</div><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.60rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', marginTop: '0.2rem' }}>{st.label}</div></div>
               ))}
             </div>
@@ -375,7 +391,7 @@ function CalendrierPage() {
                     {[
                       { label: 'Modalité',   vals: ['Toutes','Présentiel','FOAD','E-learning'], state: fModalite, set: setFModalite },
                       { label: 'Territoire', vals: ['Tous','Martinique','Guadeloupe','Paris','Tous territoires'], state: fTerritoire, set: setFTerritoire, labels: {'Tous territoires':'FOAD / Partout'} },
-                      { label: 'Éditeur',    vals: ['Tous','Cisco Networking Academy','Microsoft'], state: fEditeur, set: setFEditeur },
+                      { label: 'Éditeur',    vals: ['Tous','Cisco Networking Academy','Microsoft','Juniper Networks'], state: fEditeur, set: setFEditeur },
                       { label: 'Famille',    vals: familles, state: fFamille, set: setFFamille },
                     ].map(row => (
                       <div key={row.label} style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
@@ -419,7 +435,7 @@ function CalendrierPage() {
                     <p style={{ fontSize: '0.87rem', color: '#888', marginBottom: '1.5rem' }}>Toutes nos formations sont disponibles sur mesure à la demande.</p>
                     <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
                       <button onClick={reset} style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', padding: '0.6rem 1.25rem', border: '1px solid rgba(187,187,187,0.4)', background: 'transparent', color: '#666', cursor: 'pointer' }}>Voir toutes les sessions</button>
-                      <a href="mailto:president@galactusdigital.com" className="btn-red" style={{ fontSize: '0.72rem' }}>Demander une session</a>
+                      <a href="/#contact" className="btn-red" style={{ fontSize: '0.72rem' }}>Demander une session</a>
                     </div>
                   </div>
                 ) : (
@@ -437,7 +453,7 @@ function CalendrierPage() {
             <h2 className="section-h2-light">Vous ne trouvez pas la session souhaitée ?</h2>
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem' }}>
-              {[ {titre:'Présentiel',desc:"En inter-entreprises (sessions planifiées au calendrier) ou en intra sur mesure, à vos dates et dans vos locaux.",href:'/presentiel',cta:'En savoir plus'}, {titre:'FOAD synchrone',desc:"Toutes nos formations en live WEBEX depuis n'importe quel territoire.",href:'/foad',cta:'Voir la FOAD'}, {titre:'E-learning tutoré',desc:'Avancez à votre rythme sur NetAcad et Microsoft Learn avec un tuteur certifié.',href:'/elearning',cta:"Voir l'e-learning"} ].map(b => (
+              {[ {titre:'Présentiel',desc:"Catalogue Microsoft — en inter-entreprises (sessions planifiées au calendrier) ou en intra sur mesure, dans vos locaux.",href:'/presentiel',cta:'En savoir plus'}, {titre:'FOAD — classe virtuelle',desc:"Le parcours Juniper JNCIA-Junos en sessions live sur WEBEX, depuis n'importe quel territoire.",href:'/foad',cta:'Voir la FOAD'}, {titre:'E-learning tutoré',desc:'Catalogue Cisco Networking Academy — avancez à votre rythme avec un tuteur certifié, accès plateforme un an.',href:'/elearning',cta:"Voir l'e-learning"} ].map(b => (
                 <div key={b.titre} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '0.75rem' }}>{b.titre}</div>
                   <p style={{ fontSize: '0.85rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.50)', marginBottom: '1.5rem' }}>{b.desc}</p>
@@ -457,7 +473,7 @@ function CalendrierPage() {
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost-dark"><Mail size={16} /> Nous écrire</a>
+              <a href="/#contact" className="btn-ghost-dark"><Mail size={16} /> Demander un devis</a>
             </div>
           </div>
         </section>

@@ -6,10 +6,10 @@ import { CalendarClock, ArrowRight } from 'lucide-react'
 // TarifsModalites — bandeau « Modalités & tarifs » des fiches formation
 //
 // Remplace le bloc dupliqué dans les 50 fiches. Tout vient du catalogue :
-//  - E-learning tutoré : prix public, titre officiel de l'éditeur compris
-//  - Présentiel        : prix public s'il existe, sinon sur devis
-//  - FOAD              : sur devis
+//  - Cisco Networking Academy  : e-learning tutoré, prix public
+//  - Microsoft / Juniper / CCNA accéléré : présentiel, sur devis
 // Si une session est programmée, un lien vers le calendrier apparaît.
+// Le lien devis mène au formulaire avec la formation pré-sélectionnée.
 //
 // Usage dans une fiche : <TarifsModalites slug="ccna-itn" />
 // ─────────────────────────────────────────────────────────────────────────────
@@ -72,7 +72,7 @@ export function TarifsModalites({ slug }: { slug: string }) {
             </a>
           )}
 
-          <a href="mailto:president@galactusdigital.com" style={{
+          <a href={`/?f=${slug}#contact`} style={{
             fontSize: '0.74rem', fontFamily: 'var(--font-title)', fontWeight: 600,
             letterSpacing: '0.08em', textTransform: 'uppercase',
             color: 'var(--g-red)', textDecoration: 'none', marginLeft: '0.25rem',
@@ -83,7 +83,7 @@ export function TarifsModalites({ slug }: { slug: string }) {
 
         <p style={{ fontSize: '0.72rem', color: '#999', lineHeight: 1.55, margin: '0.6rem 0 0', maxWidth: '900px' }}>
           {MENTION_PRIX_COURTE}
-          {voucher > 0 && ` Le tarif e-learning comprend le voucher d'examen officiel (${voucher.toLocaleString('fr-FR')} €).`}
+          {voucher > 0 && " Le tarif e-learning comprend le voucher d'examen officiel."}
           {voucher === 0 && f.modalites.includes('E-learning') && " Le tarif e-learning comprend le certificat et le badge numérique de l'éditeur."}
         </p>
 

@@ -125,7 +125,7 @@ function Card({ f }: { f: Formation }) {
           </span>
           {detail && (
             <span style={{ fontFamily: "var(--font-title)", fontSize: ".54rem", fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: "#999" }}>
-              E-learning tutoré{detail.titre > 0 ? " · voucher d'examen inclus" : " · certificat inclus"}
+              E-learning tutoré{detail.titre > 0 ? " · voucher Pearson VUE inclus" : " · badge et certificat Cisco NetAcad"}
             </span>
           )}
         </div>

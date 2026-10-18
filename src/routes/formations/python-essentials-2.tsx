@@ -39,7 +39,7 @@ const DATA = {
     organisme: 'Python Institute / OpenEDG (Pearson VUE)',
     format: 'QCM et questions pratiques',
     score: '700/1000',
-    note: `Examen PCAP-31-0x délivré par l'OpenEDG Python Institute. Après PCAP, la progression naturelle mène à PCPP1 — Certified Professional in Python Programming. Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
+    note: `Examen PCAP-31-0x délivré par l'OpenEDG Python Institute. Après PCAP, la progression naturelle mène à PCPP1 — Certified Professional in Python Programming. Le badge et le certificat Cisco Networking Academy sont délivrés à l'issue du cours et compris dans le tarif. Le voucher d'examen surveillé n'est pas inclus : le candidat qui souhaite passer la certification de l'éditeur l'acquiert auprès du centre agréé.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",

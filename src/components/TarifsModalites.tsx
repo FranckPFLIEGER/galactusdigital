@@ -83,8 +83,8 @@ export function TarifsModalites({ slug }: { slug: string }) {
 
         <p style={{ fontSize: '0.72rem', color: '#999', lineHeight: 1.55, margin: '0.6rem 0 0', maxWidth: '900px' }}>
           {MENTION_PRIX_COURTE}
-          {voucher > 0 && " Le tarif e-learning comprend le voucher d'examen officiel."}
-          {voucher === 0 && f.modalites.includes('E-learning') && " Le tarif e-learning comprend le certificat et le badge numérique de l'éditeur."}
+          {voucher > 0 && " Le tarif e-learning comprend le voucher d'examen surveillé Pearson VUE."}
+          {voucher === 0 && f.modalites.includes('E-learning') && " Le tarif e-learning comprend le badge et le certificat Cisco Networking Academy."}
         </p>
 
       </div>

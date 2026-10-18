@@ -139,19 +139,6 @@ const OVERRIDES: Record<string, Override> = {
       'D\'autres organismes portent au Répertoire spécifique des certifications voisines sur l\'analyse des incidents de sécurité : leur statut est à vérifier sur le site de France Compétences, seul référentiel opposable',
     ],
   },
-  'ccnp-cybersecurity-cbrcor': {
-    blocs:
-      'Le CCNP Cybersecurity s\'obtient par deux examens : CBRCOR 350-201 (cœur) et une ' +
-      'concentration, CBRFIR 300-215 chez GALACTUS Digital. Chaque examen réussi est capitalisé ' +
-      'par Cisco et reste acquis — mécanisme de validation partielle propre à l\'éditeur, ' +
-      'distinct des blocs de compétences de l\'article L.6113-1.',
-  },
-  'ccnp-cybersecurity-cbrfir': {
-    blocs:
-      'Concentration du CCNP Cybersecurity, à associer à l\'examen cœur CBRCOR 350-201. ' +
-      'Chaque examen réussi est capitalisé par Cisco et reste acquis — mécanisme de validation ' +
-      'partielle propre à l\'éditeur, distinct des blocs de compétences de l\'article L.6113-1.',
-  },
   'ccnp-encor': {
     blocs:
       'Le CCNP Enterprise s\'obtient par deux examens : ENCOR 350-401 (cœur) et une concentration, ' +

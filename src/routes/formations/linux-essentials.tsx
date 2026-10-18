@@ -39,7 +39,7 @@ const DATA = {
     organisme: 'LPI — Linux Professional Institute (Pearson VUE)',
     format: 'QCM et questions pratiques',
     score: '500 / 800',
-    note: `Certification Linux Essentials délivrée par le LPI (Linux Professional Institute). Elle prépare à LPIC-1 (Linux Administrator) et aux parcours CCNA Automation et cybersécurité. Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
+    note: `Certification Linux Essentials délivrée par le LPI (Linux Professional Institute). Elle prépare à LPIC-1 (Linux Administrator) et aux parcours CCNA Automation et cybersécurité. Le badge et le certificat Cisco Networking Academy sont délivrés à l'issue du cours et compris dans le tarif. Le voucher d'examen surveillé n'est pas inclus : le candidat qui souhaite passer la certification de l'éditeur l'acquiert auprès du centre agréé.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",

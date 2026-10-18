@@ -16,9 +16,16 @@
 // formations Microsoft restent en présentiel, sur devis. Le présentiel
 // restent sur devis, leur coût dépendant du territoire et de la taille du groupe.
 //
-// MAJ septembre 2026 — ajout du CCNP Cybersecurity (CBRCOR + CBRFIR), niveau
-// professionnel du parcours Cybersécurité. Anciennement CyberOps Professional,
-// renommé par Cisco le 3 février 2026 en même temps que CCNA Cybersecurity.
+// MAJ 18 octobre 2026 — Le CCNP Cybersecurity (examens CBRCOR 350-201 et
+// CBRFIR 300-215, anciennement CyberOps Professional) est retiré du catalogue :
+// hors périmètre de compétence de l'organisme. Le parcours Cybersécurité
+// s'arrête donc au CCNA Cybersecurity pour la voie défensive, et à Ethical
+// Hacker pour la voie offensive.
+//
+// Voucher d'examen surveillé Pearson VUE : compris uniquement dans le CCNA v2.0
+// parcours complet et les parcours CCNP Enterprise. Tous les autres cours
+// Networking Academy délivrent le badge et le certificat Cisco Networking
+// Academy, et leur tarif ne comprend aucun voucher.
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -66,9 +73,11 @@ export interface Formation {
   /** true = le tarif e-learning tutoré est affiché publiquement */
   prixPublicElearning?: boolean
   /** Coût du titre officiel compris dans le prix e-learning (€, 0 = certificat éditeur sans examen surveillé) */
-  /** Coût du titre officiel, compris dans le tarif e-learning.
-   *  Usage interne : le site annonce « voucher compris » sans jamais
-   *  afficher le montant. 0 = badge ou certificat sans examen payant. */
+  /** Coût du voucher d'examen surveillé Pearson VUE, compris dans le tarif.
+   *  RÈGLE : seuls le CCNA v2.0 parcours complet et les CCNP comprennent un
+   *  voucher. Tous les autres cours Networking Academy délivrent le badge et
+   *  le certificat Cisco Networking Academy — voucher: 0.
+   *  Usage interne : le montant n'est jamais affiché sur le site. */
   voucher?: number
   /** true = cours d'entrée sans aucun prérequis (Bloc 0 des parcours) */
   socle?: boolean
@@ -247,9 +256,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'CCST IT Support',
     modalites: ['E-learning'],
     description: 'Entrée directe dans l\'emploi : matériel, Windows et macOS, dépannage réseau. 103 laboratoires pratiques. Aucun prérequis.',
-    prix: { presentiel: null, foad: null, elearning: 580 },
+    prix: { presentiel: null, foad: null, elearning: 455 },
     prixPublicElearning: true,
-    voucher: 125,
+    voucher: 0,
     socle: true,
   },
   {
@@ -262,9 +271,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'CompTIA A+',
     modalites: ['E-learning'],
     description: 'Installer, configurer et dépanner ordinateurs, terminaux mobiles et logiciels. 14 chapitres, 99 TP. Aucun prérequis.',
-    prix: { presentiel: null, foad: null, elearning: 990 },
+    prix: { presentiel: null, foad: null, elearning: 530 },
     prixPublicElearning: true,
-    voucher: 460,
+    voucher: 0,
     socle: true,
   },
 
@@ -321,9 +330,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301',
     modalites: ['E-learning'],
     description: 'OSPF, ACL, NAT, VPN, SDN et automatisation réseau. Dernier module avant l\'examen CCNA.',
-    prix: { presentiel: null, foad: null, elearning: 820 },
+    prix: { presentiel: null, foad: null, elearning: 530 },
     prixPublicElearning: true,
-    voucher: 290,
+    voucher: 0,
   },
 
   {
@@ -399,37 +408,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-201 CCNACBR v1.2',
     modalites: ['E-learning'],
     description: 'Formation SOC complète — surveillance réseau, forensique, réponse aux incidents et IA appliquée à la détection. Anciennement CyberOps Associate, renommée CCNA Cybersecurity par Cisco le 3 février 2026 ; examen 200-201 inchangé, blueprint v1.2.',
-    prix: { presentiel: null, foad: null, elearning: 770 },
+    prix: { presentiel: null, foad: null, elearning: 480 },
     prixPublicElearning: true,
-    voucher: 290,
-  },
-  {
-    slug: 'ccnp-cybersecurity-cbrcor',
-    titre: 'CCNP Cybersecurity — CBRCOR',
-    titreLong: 'CCNP Cybersecurity : examen cœur — Performing Cybersecurity Using Cisco Security Technologies (CBRCOR 350-201) v1.2',
-    editeur: 'Cisco Networking Academy', famille: 'Cybersécurité',
-    niveau: 'Avancé', duree: '70 heures', dureeJours: 9,
-    certification: 'Cisco Certified Specialist – Cybersecurity Core (examen cœur du CCNP Cybersecurity)',
-    examCode: '350-201 CBRCOR v1.2',
-    modalites: ['E-learning'],
-    description: 'Examen cœur du CCNP Cybersecurity : fondamentaux, techniques, processus et automatisation des opérations de cybersécurité. Anciennement CyberOps Professional, renommé par Cisco le 3 février 2026.',
-    prix: { presentiel: null, foad: null, elearning: 920 },
-    prixPublicElearning: true,
-    voucher: 390,
-  },
-  {
-    slug: 'ccnp-cybersecurity-cbrfir',
-    titre: 'CCNP Cybersecurity — CBRFIR',
-    titreLong: 'CCNP Cybersecurity : concentration — Conducting Forensic Analysis and Incident Response (CBRFIR 300-215)',
-    editeur: 'Cisco Networking Academy', famille: 'Cybersécurité',
-    niveau: 'Avancé', duree: '60 heures', dureeJours: 8,
-    certification: 'Cisco Certified Network Professional (CCNP) Cybersecurity',
-    examCode: '300-215 CBRFIR',
-    modalites: ['E-learning'],
-    description: 'Concentration forensique et réponse à incident : analyse post-incident, collecte de preuves, investigation et remédiation. Associée au CBRCOR, elle délivre le CCNP Cybersecurity.',
-    prix: { presentiel: null, foad: null, elearning: 770 },
-    prixPublicElearning: true,
-    voucher: 290,
+    voucher: 0,
   },
   {
     slug: 'ethical-hacker',
@@ -457,9 +438,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PCEP-30-02',
     modalites: ['E-learning'],
     description: 'Python from scratch — types, boucles, fonctions, collections, fichiers.',
-    prix: { presentiel: null, foad: null, elearning: 440 },
+    prix: { presentiel: null, foad: null, elearning: 371 },
     prixPublicElearning: true,
-    voucher: 69,
+    voucher: 0,
   },
   {
     slug: 'python-essentials-2',
@@ -471,9 +452,9 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PCAP-31-03',
     modalites: ['E-learning'],
     description: 'POO, modules, exceptions, générateurs, décorateurs et programmation fonctionnelle.',
-    prix: { presentiel: null, foad: null, elearning: 660 },
+    prix: { presentiel: null, foad: null, elearning: 375 },
     prixPublicElearning: true,
-    voucher: 285,
+    voucher: 0,
   },
   {
     slug: 'devnet-associate',
@@ -485,9 +466,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-901 CCNAAUTO',
     modalites: ['E-learning'],
     description: 'APIs REST, Python réseau, YANG/NETCONF, Ansible, Terraform et automatisation IA-ready (ex-DevNet, blueprint 2026).',
-    prix: { presentiel: null, foad: null, elearning: 710 },
+    prix: { presentiel: null, foad: null, elearning: 420 },
     prixPublicElearning: true,
-    voucher: 290,
+    voucher: 0,
   },
 
   // ── CISCO — IoT ───────────────────────────────────────────────────────────
@@ -573,9 +554,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '010-160',
     modalites: ['E-learning'],
     description: 'Commandes Linux, gestion des fichiers, utilisateurs, processus et scripts Bash.',
-    prix: { presentiel: null, foad: null, elearning: 480 },
+    prix: { presentiel: null, foad: null, elearning: 370 },
     prixPublicElearning: true,
-    voucher: 110,
+    voucher: 0,
   },
   {
     slug: 'ndg-linux-1',
@@ -587,9 +568,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '101-500',
     modalites: ['E-learning'],
     description: 'Architecture système, installation et gestion de paquets, commandes GNU/Unix, périphériques et systèmes de fichiers. Premier des deux cours vers le LPIC-1.',
-    prix: { presentiel: null, foad: null, elearning: 710 },
+    prix: { presentiel: null, foad: null, elearning: 534 },
     prixPublicElearning: true,
-    voucher: 176,
+    voucher: 0,
   },
   {
     slug: 'ndg-linux-2',
@@ -601,9 +582,9 @@ export const FORMATIONS: Formation[] = [
     examCode: '102-500',
     modalites: ['E-learning'],
     description: 'Shells et scripts, interfaces et bureaux, tâches d\'administration, services système, réseau et sécurité. Second cours vers le LPIC-1. Prérequis : NDG Linux I.',
-    prix: { presentiel: null, foad: null, elearning: 710 },
+    prix: { presentiel: null, foad: null, elearning: 534 },
     prixPublicElearning: true,
-    voucher: 176,
+    voucher: 0,
   },
 
   // ── CISCO — Data & Analytics ──────────────────────────────────────────────
@@ -967,10 +948,12 @@ export function getDetailPrixElearning(f: Formation):
  */
 export const MENTION_PRIX_ELEARNING =
   "Prix total à payer, par personne. TVA non applicable — art. 261-4-4°-a du CGI. " +
-  "Comprend l'accès à la plateforme, les supports officiels, le tutorat, le suivi individuel " +
-  "et le titre officiel de l'éditeur : certificat et badge Cisco Networking Academy, ou voucher " +
-  "d'examen surveillé (Pearson VUE, Certiport) lorsque la certification en requiert un. " +
-  "Aucun frais supplémentaire pour la première présentation à l'examen."
+  "Comprend l'accès à la plateforme, les supports officiels, le tutorat et le suivi individuel. " +
+  "Le badge et le certificat Cisco Networking Academy sont délivrés à l'issue de chaque cours. " +
+  "Le voucher d'examen surveillé Pearson VUE est compris pour le CCNA v2.0 parcours complet et " +
+  "les parcours CCNP ; aucun frais supplémentaire pour la première présentation à cet examen. " +
+  "Pour les autres cours, l'examen de certification de l'éditeur reste à la charge du candidat " +
+  "s'il choisit de le passer."
 
 /** Mention courte, pour les listes et le calendrier */
 export const MENTION_PRIX_COURTE =

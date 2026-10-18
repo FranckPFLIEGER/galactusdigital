@@ -135,7 +135,7 @@ const DATA = {
     organisme:  'Cisco Networking Academy',
     format:     'QCM, drag-and-drop, simulation réseau Cisco',
     score:      '825 / 1000',
-    note: 'Ce module est le 1er des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA. Le passage de l\'examen (voucher officiel) est inclus dans le tarif de la formation.',
+    note: 'Ce module est le 1er des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA. Le badge et le certificat Cisco Networking Academy sont délivrés à l\'issue du cours et compris dans le tarif. Le voucher d\'examen surveillé n\'est pas inclus : le candidat qui souhaite passer la certification de l\'éditeur l\'acquiert auprès du centre agréé.',
   },
 
   // Méthodes pédagogiques

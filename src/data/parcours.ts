@@ -7,9 +7,11 @@
 // Les slugs pointent vers /formations/{slug} et existent tous dans catalogue.ts.
 // Importé par : components/ParcoursMetier.tsx
 //
-// MAJ septembre 2026 — CCNP Security retiré du catalogue. Le Bloc 3 du parcours
-// Cybersécurité est reconstruit autour du CCNP Cybersecurity (CBRCOR + CBRFIR),
-// suite directe du CCNA Cybersecurity, avec Ethical Hacker en voie offensive.
+// MAJ octobre 2026 — les deux CCNP Cybersecurity (CBRCOR 350-201 et CBRFIR
+// 300-215) sont retirés du catalogue : hors périmètre de compétence de
+// l'organisme. Le parcours Cybersécurité culmine désormais au niveau associate
+// (CCNA Cybersecurity) et se prolonge par la voie offensive (Ethical Hacker).
+// Aucune étape du parcours ne pointe vers une formation absente du catalogue.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export interface EtapeParcours {
@@ -159,16 +161,14 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 3,
-        titre: 'Bloc 3 — Niveau professionnel',
-        intention: 'Monter au niveau professionnel du SOC, ou bifurquer vers la sécurité offensive.',
+        titre: 'Bloc 3 — La voie offensive',
+        intention: 'Passer de la défense à l\'attaque : comprendre les techniques adverses pour mieux les contrer.',
         etapes: [
-          { titre: 'CCNP Cybersecurity — CBRCOR (cœur)', slug: 'ccnp-cybersecurity-cbrcor', heures: 70, nouveau: true, maj: 'Ex-CyberOps Professional' },
-          { titre: 'CCNP Cybersecurity — CBRFIR (concentration)', slug: 'ccnp-cybersecurity-cbrfir', heures: 60, nouveau: true },
-          { titre: 'Ethical Hacker — voie offensive', slug: 'ethical-hacker', heures: 30 },
+          { titre: 'Ethical Hacker', slug: 'ethical-hacker', heures: 30 },
         ],
       },
     ],
-    debouche: 'Analyste SOC, analyste forensique, responsable réponse à incident, pentester',
+    debouche: 'Analyste SOC niveau 1 et 2, technicien réponse à incident, testeur d\'intrusion junior',
   },
   {
     id: 'automatisation-ia-reseau',

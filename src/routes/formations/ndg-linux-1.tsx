@@ -101,7 +101,7 @@ const DATA = {
     organisme:  'Linux Professional Institute (LPI), via Pearson VUE',
     format:     '60 questions — QCM et questions à saisie libre',
     score:      '500 / 800',
-    note: 'Le LPIC-1 exige la réussite des examens 101 et 102, à passer dans les cinq ans. Ce cours prépare le premier. Cours suivant : NDG Linux II (exam 102-500). Le voucher d\'examen LPI est compris dans le tarif e-learning.',
+    note: 'Le LPIC-1 exige la réussite des examens 101 et 102, à passer dans les cinq ans. Ce cours prépare le premier. Cours suivant : NDG Linux II (exam 102-500). Le badge et le certificat Cisco Networking Academy sont délivrés à l\'issue du cours et compris dans le tarif. Le voucher d\'examen surveillé n\'est pas inclus : le candidat qui souhaite passer la certification de l\'éditeur l\'acquiert auprès du centre agréé.',
   },
   methodes: [
     'Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)',

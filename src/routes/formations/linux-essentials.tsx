@@ -53,7 +53,7 @@ const DATA = {
     "Supports de cours officiels LPI inclus (version numérique NetAcad)",
     "Certification LPI Linux Essentials (010-160) envoyée par mail à l'issue du parcours",
     "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
-    "Passage de l'examen certifiant LPI intégré au programme",
+    "Préparation complète à l'examen de certification de l'éditeur, qui reste optionnel et à la charge du candidat",
   ],
 }
 

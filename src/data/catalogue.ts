@@ -347,7 +347,7 @@ export const FORMATIONS: Formation[] = [
     //  · E-learning tutoré — le pack des 3 modules NetAcad (210 h), offre standard
     //  · Présentiel — format accéléré Cisco de 5 jours (35 h), session exceptionnelle
     modalites: ['E-learning', 'Présentiel'],
-    description: 'Les trois modules du cursus CCNA réunis en un seul parcours : ITN, SRWE et ENSA, soit 210 heures en e-learning tutoré, voucher d\'examen 200-301 compris. Également proposé en format accéléré de 5 jours (35 h) lors des sessions présentielles programmées.',
+    description: 'Les trois modules du cursus CCNA réunis en un seul parcours — ITN, SRWE et ENSA — avec l\'accès à Packet Tracer : 210 heures en e-learning tutoré, voucher d\'examen 200-301 compris. Également proposé en format accéléré de 5 jours (35 h) lors des sessions présentielles programmées.',
     prix: { presentiel: 2590, foad: null, elearning: 1880 },
     prixPublic: true,
     prixPublicElearning: true,

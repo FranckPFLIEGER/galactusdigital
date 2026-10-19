@@ -93,6 +93,9 @@ interface Override {
   blocs?: string
   passerelles?: string[]
   debouches?: string[]
+  /** Suites de parcours imposées, lorsque la déduction par famille serait fausse —
+   *  cas d'un parcours « pack » dont les modules composants ne sont pas des suites. */
+  suites?: { libelle: string; slug?: string }[]
 }
 
 const OVERRIDES: Record<string, Override> = {
@@ -123,12 +126,22 @@ const OVERRIDES: Record<string, Override> = {
   },
   'ccna-cisco': {
     blocs:
-      'Parcours officiel Cisco accéléré de 5 jours, non modulaire : l\'attestation porte sur ' +
-      'l\'ensemble du parcours. La certification CCNA 200-301 n\'est pas découpée en blocs de ' +
-      'compétences au sens de l\'article L.6113-1.',
+      'Le parcours réunit les trois modules du cursus Cisco Networking Academy — ITN, SRWE et ' +
+      'ENSA — et l\'accès à Packet Tracer. Chaque module donne lieu à son propre badge et ' +
+      'certificat Networking Academy : la validation est donc progressive, module par module. ' +
+      'La certification CCNA 200-301 elle-même reste un examen unique et n\'est pas découpée en ' +
+      'blocs de compétences au sens de l\'article L.6113-1.',
     passerelles: [
-      'Réservé aux profils déjà techniques — alternative accélérée au parcours NetAcad en 3 modules (ITN, SRWE, ENSA)',
+      'Les trois modules ITN, SRWE et ENSA sont compris dans ce parcours : il n\'est pas nécessaire de les acheter séparément',
+      'Le candidat qui a déjà suivi un ou deux de ces modules est positionné en entretien préalable, et le parcours est allégé d\'autant',
       'Validation des prérequis par test de positionnement avant inscription',
+    ],
+    // Déduction désactivée : ITN et SRWE sont des composants du parcours, pas des suites.
+    suites: [
+      { libelle: 'CCNP Enterprise — Core Networking (ENCOR)', slug: 'ccnp-encor' },
+      { libelle: 'CCNP Enterprise — Advanced Routing (ENARSI)', slug: 'ccnp-enarsi' },
+      { libelle: 'CCNA Cybersecurity', slug: 'cyberops' },
+      { libelle: 'CCNA Automation (ex-DevNet)', slug: 'devnet-associate' },
     ],
   },
   // ── Cybersécurité — lien explicite avec la RS2 déposée
@@ -279,9 +292,9 @@ export function getInfoCertifiante(slug: string): InfoCertifiante | null {
 
   // ── Suites de parcours
   const suivantes = dedupe(positions.flatMap(p => p.suivantes), slug)
-  const suites: { libelle: string; slug?: string }[] = suivantes.slice(0, 5).map(e => ({
-    libelle: e.libelle, slug: e.slug,
-  }))
+  const suites: { libelle: string; slug?: string }[] = o.suites
+    ? [...o.suites]
+    : suivantes.slice(0, 5).map(e => ({ libelle: e.libelle, slug: e.slug }))
   if (suites.length === 0) {
     const memeFamille = FORMATIONS.filter(
       x => x.famille === f.famille && x.slug !== slug && x.niveau !== 'Grand débutant',

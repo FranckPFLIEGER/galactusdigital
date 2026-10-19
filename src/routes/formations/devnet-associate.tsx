@@ -53,7 +53,7 @@ const DATA = {
     "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
     "Certification Cisco Certified CCNA Automation (200-901 CCNAAUTO) envoyée par mail à l'issue du parcours",
     "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
-    "Passage de l'examen certifiant Cisco Networking Academy intégré au programme",
+    "Examen final du cours Cisco Networking Academy intégré au programme — l'examen de certification surveillé reste optionnel et à la charge du candidat",
   ],
 }
 

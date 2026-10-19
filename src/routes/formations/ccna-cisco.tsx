@@ -113,6 +113,7 @@ La v2.0 marque la plus importante refonte du CCNA depuis 2020 : retour du dépan
     note: `« CCNA v2.0 » désigne la version du blueprint d'examen 200-301 (à ne pas confondre avec la version du courseware officiel, numérotée séparément). Le blueprint v2.0 entre en vigueur le 3 février 2027 (la v1.1 est proposée jusqu'au 2 février 2027) ; le code d'examen reste 200-301. La certification CCNA est valable 3 ans. Le passage de l'examen (voucher officiel Pearson VUE) est inclus dans le tarif de la formation.`,
   },
   methodes: [
+    "Le parcours comprend les trois modules du cursus Cisco Networking Academy — ITN, SRWE et ENSA — ainsi que l'accès à Packet Tracer",
     "Formation dispensée par un formateur Cisco CCNP / CCDP certifié (15+ ans d'expérience, administrateur VUE Pearson)",
     "Deux rythmes : e-learning tutoré sur un an, ou format accéléré 5 jours en présentiel",
     "Labs pratiques sur simulateurs et équipements (Packet Tracer / CML)",

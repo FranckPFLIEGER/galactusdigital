@@ -53,7 +53,7 @@ const DATA = {
     "Supports de cours officiels inclus (version numérique NetAcad)",
     "Certification PCAP — Certified Associate in Python Programming (Python Institute) envoyée par mail à l'issue du parcours",
     "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
-    "Passage de l'examen certifiant OpenEDG / Python Institute intégré au programme",
+    "Préparation complète à l'examen de certification de l'éditeur, qui reste optionnel et à la charge du candidat",
   ],
 }
 

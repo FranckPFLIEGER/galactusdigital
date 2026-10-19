@@ -334,7 +334,7 @@ function CertificationsPage() {
             </div>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="mailto:president@galactusdigital.com" className="btn-ghost"><Mail size={16} /> Planifier mon examen</a>
+              <a href="/#contact" className="btn-ghost"><Mail size={16} /> Planifier mon examen</a>
             </div>
           </div>
         </section>

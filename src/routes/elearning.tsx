@@ -204,7 +204,7 @@ function ElearningPage() {
                     'Évaluations et QCM corrigés par le tuteur',
                     'Suivi documenté de la progression par module',
                     'Messagerie directe avec le tuteur sous 24h ouvrées',
-                    'Passage de la certification intégré',
+                    'Badge et certificat Cisco Networking Academy délivrés à chaque cours',
                     'Attestation de formation et relevé de complétion',
                     'Éligible OPCO, plan de développement des compétences',
                   ].map((item, i) => (

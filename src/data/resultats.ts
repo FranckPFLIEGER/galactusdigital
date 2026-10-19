@@ -26,10 +26,13 @@ export const RESULTATS_ARRETE_AU = '31 mai 2026'
 /** Périmètre couvert par les indicateurs globaux */
 export const RESULTATS_PERIMETRE =
   'Actions de formation certifiantes IT dispensées par PFLIEGER SASU — GALACTUS Digital ' +
-  '(Cisco Networking Academy, Microsoft, Juniper Networks, IPv6 Forum), ' +
+  '(Cisco Networking Academy, Microsoft, Juniper Networks), ' +
   'toutes modalités (présentiel, FOAD, e-learning tutoré), ' +
   'tous territoires (Martinique, Guadeloupe, Guyane, Saint-Martin, Saint-Barthélemy, La Réunion, France hexagonale). ' +
-  'NDA 11 75 59933 75 — SIRET 880 430 418 00017.'
+  'NDA 11 75 59933 75 — SIRET 880 430 418 00017. ' +
+  'Les effectifs publiés sont ceux des apprenants entrés effectivement en formation. ' +
+  'Un dossier engagé qui n\'aboutit pas à une entrée en formation n\'est pas comptabilisé : ' +
+  'en 2025, 131 entrées effectives sont retenues sur les dossiers ouverts dans l\'année.'
 
 /** Indicateur 2 — modalités de calcul, publiées en clair (exigence RNQ V2) */
 export const METHODE_CALCUL: { libelle: string; formule: string; source: string }[] = [
@@ -49,7 +52,7 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
       'effectivement présentés à l\'épreuve, sur la période. Les apprenants formés mais non ' +
       'présentés à l\'examen sont exclus du dénominateur — ce taux ne doit donc pas être lu ' +
       'comme un taux d\'obtention rapporté aux entrants.',
-    source: 'Attestations de réussite des éditeurs (Cisco Networking Academy, Microsoft, Juniper, IPv6 Forum)',
+    source: 'Attestations de réussite des éditeurs (Cisco Networking Academy, Microsoft, Juniper Networks)',
   },
   {
     libelle: 'Taux d\'abandon',
@@ -63,11 +66,16 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
   {
     libelle: 'Note de satisfaction',
     formule:
-      'Moyenne arithmétique des notes globales sur 5 recueillies par le questionnaire ' +
-      'd\'appréciation de fin de formation (FQ-08a), tous répondants confondus. ' +
-      'Les notes « formateur » et « impact sur le poste de travail » sont des items distincts ' +
-      'du même questionnaire, publiés séparément.',
-    source: 'Questionnaires d\'appréciation apprenants et hiérarchie — FQ-08a / FQ-08b',
+      'Moyenne arithmétique des notes portées à l\'item « Appréciation générale » du ' +
+      'questionnaire de fin de formation FQ-08a, sur une échelle de 1 (insatisfaisant) à ' +
+      '5 (excellent), tous répondants confondus. Les notes « formateur » et « impact sur le ' +
+      'poste de travail » sont des items distincts du même questionnaire, publiés séparément. ' +
+      'Seuls les questionnaires effectivement remis sont comptés : un questionnaire non ' +
+      'retourné n\'est pas compté comme une note, ni favorable ni défavorable, et n\'entre ' +
+      'donc ni au numérateur ni au dénominateur.',
+    source: 'Questionnaires d\'appréciation FQ-08a, remplis et signés par les apprenants, ' +
+      'archivés par session et communicables en audit. Aucune note inférieure à 4/5 n\'a été ' +
+      'relevée sur les questionnaires recueillis.',
   },
   {
     libelle: 'Évaluation des contenus et des enseignements',

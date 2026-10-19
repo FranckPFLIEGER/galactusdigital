@@ -93,7 +93,7 @@ const DATA = {
     organisme: 'Cisco (Pearson VUE)',
     format: 'QCM, glisser-déposer et simulations',
     score: 'Défini par Cisco (variable)',
-    note: `ENCOR 350-401 est l'examen cœur du CCNP Enterprise. Sa réussite octroie la certification Cisco Certified Specialist – Enterprise Core et satisfait l'exigence d'examen cœur du CCNP Enterprise (à compléter par une concentration, ex. ENARSI). Il compte aussi vers le CCIE Enterprise. Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
+    note: `ENCOR 350-401 est l'examen cœur du CCNP Enterprise. Sa réussite octroie la certification Cisco Certified Specialist – Enterprise Core et satisfait l'exigence d'examen cœur du CCNP Enterprise (à compléter par une concentration, ex. ENARSI). Il compte aussi vers le CCIE Enterprise. Le badge et le certificat Cisco Networking Academy sont délivrés à l'issue du cours. Le voucher d'examen surveillé Pearson VUE est compris dans le tarif : aucun frais supplémentaire pour la première présentation à l'examen.`,
   },
   methodes: [
     "Formation dispensée par un formateur Cisco CCNP / CCDP certifié (15+ ans d'expérience)",

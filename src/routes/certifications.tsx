@@ -228,7 +228,7 @@ function CertificationsPage() {
                     Pour les examens
                   </div>
                   <div style={{ fontFamily: "var(--font-title)", fontSize: "1.05rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--g-black)", marginBottom: "0.25rem" }}>
-                    Microsoft, Cisco, IPv6 Forum…
+                    Microsoft, Cisco, Juniper…
                   </div>
                   <div style={{ fontFamily: "var(--font-title)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#888" }}>
                     Certificateur

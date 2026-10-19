@@ -9,8 +9,8 @@ const floatingBadges = [
   },
   {
     cls: 'badge-b',
-    label: 'IPv6 Forum',
-    sub: 'Certified Network Engineer',
+    label: 'Juniper Networks',
+    sub: 'JNCIA-Junos · JN0-106',
     Icon: Globe,
   },
   {
@@ -45,9 +45,9 @@ export function Hero() {
           <p className="hero-desc" style={{ animation: 'fadeUp 0.7s ease-out 0.24s both' }}>
             Grâce à notre réseau d'experts internationaux et notre maîtrise de l'ingénierie
             de formation certifiante, nous proposons les certifications officielles{' '}
-            <strong style={{ color: '#fff' }}>Cisco, Microsoft et IPv6 Forum</strong>
+            <strong style={{ color: '#fff' }}>Cisco, Microsoft et Juniper</strong>
             {' — en e-learning tutoré, en classe virtuelle ou en présentiel —'}
-            {' pour vous accompagner vers des certifications reconnues dans plus de 170 pays. Voucher d\'examen officiel (Pearson VUE) inclus.'}
+            {' pour vous accompagner vers des certifications reconnues dans plus de 170 pays. Badge et certificat de l\'éditeur compris ; voucher d\'examen Pearson VUE inclus sur le CCNA v2.0 parcours complet et les parcours CCNP Enterprise.'}
           </p>
           <div className="hero-actions" style={{ animation: 'fadeUp 0.7s ease-out 0.36s both' }}>
             <a href="/formations" className="btn-red">

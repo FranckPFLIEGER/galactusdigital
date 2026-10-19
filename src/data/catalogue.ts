@@ -10,11 +10,9 @@
 //
 // MAJ septembre 2026 — CCNP Security retiré (50 formations). Les formations
 // Cisco Networking Academy, sauf le CCNA v2.0 accéléré, sont proposées en
-// e-learning tutoré,
-// à un tarif public qui comprend le titre officiel de l'éditeur (champ
-// `voucher`). Le catalogue Microsoft n'est PAS proposé en e-learning : ces
-// formations Microsoft restent en présentiel, sur devis. Le présentiel
-// restent sur devis, leur coût dépendant du territoire et de la taille du groupe.
+// e-learning tutoré, à un tarif public. Le catalogue Microsoft n'est PAS
+// proposé en e-learning : ces formations restent en présentiel, sur devis,
+// leur coût dépendant du territoire et de la taille du groupe.
 //
 // MAJ 18 octobre 2026 — Le CCNP Cybersecurity (examens CBRCOR 350-201 et
 // CBRFIR 300-215, anciennement CyberOps Professional) est retiré du catalogue :
@@ -22,14 +20,14 @@
 // s'arrête donc au CCNA Cybersecurity pour la voie défensive, et à Ethical
 // Hacker pour la voie offensive.
 //
-// Voucher d'examen surveillé Pearson VUE : compris uniquement dans le CCNA v2.0
-// parcours complet et les parcours CCNP Enterprise. Tous les autres cours
-// Networking Academy délivrent le badge et le certificat Cisco Networking
-// Academy, et leur tarif ne comprend aucun voucher.
+// Voucher d'examen surveillé Pearson VUE : compris dans le CCNA v2.0 parcours
+// complet et dans les deux parcours CCNP Enterprise (ENCOR, ENARSI). Tous les
+// autres cours Networking Academy délivrent le badge et le certificat Cisco
+// Networking Academy, et leur tarif ne comprend aucun voucher.
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ─────────────────────────────────────────────────────────────────────────────
-// POSITIONNEMENT COMMERCIAL (octobre 2026) — deux axes, une modalité chacun
+// POSITIONNEMENT COMMERCIAL (octobre 2026) — trois axes, une modalité chacun
 //
 //   1. Cisco Networking Academy  → E-learning tutoré EXCLUSIVEMENT, tarif public
 //   2. Microsoft                                → PRÉSENTIEL EXCLUSIVEMENT, sur devis
@@ -40,9 +38,8 @@
 // ITN · SRWE · ENSA. Le présentiel accéléré de 5 jours reste proposé lors des
 // sessions programmées, visibles au calendrier.
 //
-// La FOAD synchrone est réservée au parcours Juniper (JNCIA-Junos). Le type Modalite
-// la conserve pour ne pas casser les pages existantes, mais plus
-// aucune entrée du catalogue ne la déclare.
+// La FOAD est réservée au parcours Juniper (JNCIA-Junos), seule entrée du
+// catalogue à déclarer cette modalité.
 // ─────────────────────────────────────────────────────────────────────────────
 
 export type Modalite = 'Présentiel' | 'FOAD' | 'E-learning'
@@ -74,9 +71,10 @@ export interface Formation {
   prixPublicElearning?: boolean
   /** Coût du titre officiel compris dans le prix e-learning (€, 0 = certificat éditeur sans examen surveillé) */
   /** Coût du voucher d'examen surveillé Pearson VUE, compris dans le tarif.
-   *  RÈGLE : seuls le CCNA v2.0 parcours complet et les CCNP comprennent un
-   *  voucher. Tous les autres cours Networking Academy délivrent le badge et
-   *  le certificat Cisco Networking Academy — voucher: 0.
+   *  RÈGLE : le CCNA v2.0 parcours complet et les deux parcours CCNP
+   *  Enterprise (ENCOR, ENARSI) comprennent un voucher d'examen surveillé.
+   *  Tous les autres cours Networking Academy délivrent le badge et le
+   *  certificat Cisco Networking Academy — voucher: 0.
    *  Usage interne : le montant n'est jamais affiché sur le site. */
   voucher?: number
   /** true = cours d'entrée sans aucun prérequis (Bloc 0 des parcours) */
@@ -950,8 +948,9 @@ export const MENTION_PRIX_ELEARNING =
   "Prix total à payer, par personne. TVA non applicable — art. 261-4-4°-a du CGI. " +
   "Comprend l'accès à la plateforme, les supports officiels, le tutorat et le suivi individuel. " +
   "Le badge et le certificat Cisco Networking Academy sont délivrés à l'issue de chaque cours. " +
-  "Le voucher d'examen surveillé Pearson VUE est compris pour le CCNA v2.0 parcours complet et " +
-  "les parcours CCNP ; aucun frais supplémentaire pour la première présentation à cet examen. " +
+  "Le voucher d'examen surveillé Pearson VUE est compris pour le CCNA v2.0 parcours complet " +
+  "et pour les deux parcours CCNP Enterprise ; aucun frais supplémentaire pour la première " +
+  "présentation à cet examen. " +
   "Pour les autres cours, l'examen de certification de l'éditeur reste à la charge du candidat " +
   "s'il choisit de le passer."
 

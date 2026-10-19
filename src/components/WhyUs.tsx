@@ -8,8 +8,8 @@ const reasons = [
   },
   {
     num: '02',
-    title: 'Couverture unique dans les territoires ultramarins',
-    desc: "Présents sur 6 territoires ultramarins et en France hexagonale, nous sommes le seul organisme certifié IT capable de déployer des formations officielles à cette échelle.",
+    title: 'Une couverture ultramarine',
+    desc: "Nous intervenons sur six territoires ultramarins — Martinique, Guadeloupe, Guyane, Saint-Martin, Saint-Barthélemy, La Réunion — et en France hexagonale, en présentiel comme à distance.",
   },
   {
     num: '03',

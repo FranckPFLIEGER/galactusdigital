@@ -7,7 +7,7 @@ export const Route = createFileRoute('/demarche-pedagogique')({
   head: () => ({
     meta: [
       { title: 'Notre demarche pedagogique — GALACTUS Digital' },
-      { name: 'description', content: 'Ingenierie pedagogique basee sur les programmes officiels Cisco, Microsoft, IPv6 Forum. Objectifs operationnels, suivi individualise.' },
+      { name: 'description', content: 'Ingenierie pedagogique basee sur les programmes officiels Cisco, Microsoft et Juniper. Objectifs operationnels, suivi individualise.' },
       { property: 'og:title', content: 'Notre demarche pedagogique — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/demarche-pedagogique' },
     ],
@@ -41,7 +41,7 @@ function DemarchePedagogiquePage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '3rem', alignItems: 'start' }}>
               <div>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
-                  Notre ingénierie pédagogique s'appuie sur les programmes officiels des éditeurs IT (Cisco Networking Academy, Microsoft, IPv6 Forum) et une approche par compétences, vérifiée à chaque étape du parcours.
+                  Notre ingénierie pédagogique s'appuie sur les programmes officiels des éditeurs IT (Cisco Networking Academy, Microsoft, Juniper Networks) et une approche par compétences, vérifiée à chaque étape du parcours.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
                   Chaque formation est conçue sur mesure en fonction des besoins identifiés lors de l'analyse préalable, avec des objectifs pédagogiques définis sous forme de verbes d'action et une progression logique des acquis.
@@ -56,9 +56,9 @@ function DemarchePedagogiquePage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {[
                   { icon: <Target size={20} color="white" />, title: 'Objectifs opérationnels', desc: "Définis sous forme de verbes d'action, alignés sur les besoins de l'apprenant et vérifiés tout au long du parcours." },
-                  { icon: <BookOpen size={20} color="white" />, title: 'Contenus officiels éditeurs', desc: 'Programmes alignés sur les référentiels exacts des éditeurs, sans intermédiaire. Supports Cisco Networking Academy, Microsoft Learn, IPv6 Forum.' },
+                  { icon: <BookOpen size={20} color="white" />, title: 'Contenus officiels éditeurs', desc: 'Programmes alignés sur les référentiels exacts des éditeurs, sans intermédiaire. Supports officiels Cisco Networking Academy, Microsoft et Juniper.' },
                   { icon: <CheckCircle size={20} color="white" />, title: 'Évaluation continue', desc: "QCM, ateliers pratiques et mises en situation à chaque module pour vérifier l'acquisition des compétences." },
-                  { icon: <Award size={20} color="white" />, title: 'Certification officielle', desc: "Passage de l'examen de certification éditeur intégré dans chaque parcours. 100% de réussite parmi les présentés 2023-2025." },
+                  { icon: <Award size={20} color="white" />, title: 'Certification officielle', desc: "Chaque cours délivre le badge et le certificat de l'éditeur. Le voucher d'examen surveillé est compris dans le CCNA v2.0 parcours complet et dans les deux parcours CCNP Enterprise, ainsi que dans les formations en présentiel ou en classe virtuelle, dont le devis l'intègre. 100 % de réussite parmi les candidats présentés sur 2023-2025." },
                 ].map(item => (
                   <div key={item.title} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '3px solid var(--g-red)', padding: '1.25rem' }}>
                     <div style={{ width: '36px', height: '36px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.icon}</div>

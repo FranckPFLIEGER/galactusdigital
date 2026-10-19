@@ -104,7 +104,7 @@ function ElearningPage() {
               {[
                 {
                   titre: 'E-learning tutoré', href: '/elearning', active: true,
-                  items: ['Catalogue Cisco Networking Academy','Parcours asynchrone — avancez quand vous voulez','Tuteur certifié disponible par messagerie','Accès plateforme ouvert un an','Tarif public, titre officiel de l\'éditeur compris'],
+                  items: ['Catalogue Cisco Networking Academy','Parcours asynchrone — avancez quand vous voulez','Tuteur certifié disponible par messagerie','Accès plateforme ouvert un an','Tarif public ; badge et certificat de l\'éditeur compris'],
                 },
                 {
                   titre: 'FOAD — classe virtuelle', href: '/foad', active: false,
@@ -149,7 +149,7 @@ function ElearningPage() {
                 { num: '01', title: 'Inscription', desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement OPCO monté avec vous.' },
                 { num: '02', title: 'Accès activé', desc: 'Sous 72h, vous recevez vos accès NetAcad. Votre tuteur vous contacte pour un échange de cadrage.' },
                 { num: '03', title: 'Parcours tutoré', desc: 'Vous avancez à votre rythme. Votre tuteur suit votre progression, répond à vos questions et valide chaque module complété.' },
-                { num: '04', title: 'Certification', desc: 'Passage de la certification officielle éditeur. Attestation de formation et relevé de complétion remis.' },
+                { num: '04', title: 'Certification', desc: 'Examen final du cours, badge et certificat Cisco Networking Academy. Attestation de formation et relevé de complétion remis. Le voucher d\'examen surveillé Pearson VUE est compris sur le CCNA v2.0 parcours complet et les deux parcours CCNP Enterprise ; sur les autres cours, le candidat qui souhaite présenter la certification de l\'éditeur acquiert son voucher auprès du centre agréé.' },
               ].map(s => (
                 <div key={s.num} style={{ border: '1px solid rgba(187,187,187,0.3)', borderTop: '3px solid var(--g-red)', padding: '1.75rem 1.5rem', background: 'var(--g-white)' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.75rem' }}>{s.num}</div>

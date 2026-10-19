@@ -135,13 +135,14 @@ export function Presence() {
         </span>
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
         <h2 className={`section-h2 reveal${isVisible ? ' visible' : ''} delay-1`}>
-          Une couverture unique<br />dans les territoires ultramarins
+          Une présence directe<br />dans les territoires ultramarins
         </h2>
         <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '3rem' }}>
-          Seul organisme de formation certifiante IT présent à la fois
-          dans les territoires ultramarins et en France hexagonale,
-          capable de déployer des formations officielles sur 6 territoires ultramarins et en France hexagonale.
+          Organisme de formation certifiante IT présent à la fois dans six
+          territoires ultramarins — Martinique, Guadeloupe, Guyane, Saint-Martin,
+          Saint-Barthélemy, La Réunion — et en France hexagonale, en présentiel
+          comme à distance.
         </p>
 
         <div className="presence-grid">

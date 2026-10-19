@@ -23,6 +23,20 @@
 /** Date d'arrêté des données publiées sur le site */
 export const RESULTATS_ARRETE_AU = '31 mai 2026'
 
+/** Note de satisfaction globale publiée — source unique pour toutes les pages.
+ *  Moyenne de l'item « Appréciation générale » du questionnaire FQ-08a,
+ *  période 2023-2025, arrêtée à la date ci-dessus. Le détail par année et
+ *  par item est publié dans RESULTATS_ANNUELS. */
+export const SATISFACTION_GLOBALE = '4,8/5'
+
+/** Phrase de méthode affichée à côté du chiffre, partout où il apparaît. */
+export const SATISFACTION_METHODE =
+  'Note moyenne attribuée à l\'item « Appréciation générale » du questionnaire de fin '  +
+  'de formation, sur une échelle de 1 (insatisfaisant) à 5 (excellent) — données 2023 à ' +
+  '2025, arrêtées au ' + RESULTATS_ARRETE_AU + '. Seuls les questionnaires effectivement ' +
+  'remis sont comptés. Aucune note inférieure à 4/5 n\'a été relevée sur les '           +
+  'questionnaires recueillis.'
+
 /** Périmètre couvert par les indicateurs globaux */
 export const RESULTATS_PERIMETRE =
   'Actions de formation certifiantes IT dispensées par PFLIEGER SASU — GALACTUS Digital ' +

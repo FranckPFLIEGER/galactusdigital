@@ -65,7 +65,7 @@ function RgpdPage() {
                   base: 'Exécution du contrat',
                   donnees: 'Nom, prénom, email, téléphone, entreprise, données de parcours de formation, résultats aux évaluations.',
                   duree: '3 ans pour les dossiers pédagogiques (Art. R6352-9 Code du travail). 5 ans pour les pièces comptables.',
-                  dest: 'GALACTUS Digital, éditeurs certifiant (Cisco Networking Academy, Microsoft, IPv6 Forum), OPCO le cas échéant.',
+                  dest: 'GALACTUS Digital, éditeurs certifiant (Cisco Networking Academy, Microsoft, Juniper Networks), OPCO le cas échéant.',
                 },
                 {
                   titre: 'Données de satisfaction et d\'amélioration continue',

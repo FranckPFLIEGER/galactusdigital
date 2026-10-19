@@ -1,4 +1,5 @@
 import { useIntersection } from '../hooks/useIntersection'
+import { SATISFACTION_GLOBALE, SATISFACTION_METHODE } from '../data/resultats'
 import { ArrowRight, Star } from 'lucide-react'
 
 export function Satisfaction() {
@@ -21,9 +22,7 @@ export function Satisfaction() {
               en passant par la méthodologie d'enseignement.
             </p>
             <p style={{ fontSize: '0.82rem', color: '#888', lineHeight: 1.6, marginBottom: '2rem' }}>
-              Ce taux correspond au pourcentage d'apprenants ayant attribué une note
-              supérieure ou égale à 4 sur 5 dans le questionnaire de satisfaction
-              renseigné en fin de formation — données 2023 à 2025, mise à jour mai 2026.
+              {SATISFACTION_METHODE}
             </p>
             <a href="/demarche-qualite" className="btn-red" style={{ fontSize: '0.85rem' }}>
               Consulter notre démarche qualité <ArrowRight size={15} />
@@ -39,12 +38,12 @@ export function Satisfaction() {
                 />
               ))}
             </div>
-            <div className="satisfaction-num">4,8/5</div>
+            <div className="satisfaction-num">{SATISFACTION_GLOBALE}</div>
             <div className="satisfaction-label">
               Note moyenne de satisfaction<br />des apprenants
             </div>
             <div className="satisfaction-detail">
-              Formation · Formateur · Impact au travail
+              Notes formateur et impact au travail publiées séparément
             </div>
             <div style={{
               marginTop: '1rem',

@@ -16,7 +16,7 @@ const partners = [
   {
     file: 'ipv6-council.png',
     name: 'IPv6 Council Martinique',
-    desc: 'Membre actif depuis 2016 — formations IPv6 Certified Network & Security Engineer',
+    desc: 'Membre actif depuis 2016 — président fondateur du Council, IPv6 Hall of Fame 2025',
     level: 'Membre actif',
   },
 ]

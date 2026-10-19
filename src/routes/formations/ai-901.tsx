@@ -9,8 +9,8 @@ export const Route = createFileRoute('/formations/ai-901')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "AI-900 Azure AI Fundamentals Microsoft — Formation certifiante | GALACTUS Digital" },
-      { name: "description", content: "Formation Microsoft AI-900 Azure AI Fundamentals. 15h. Certification officielle. IA machine learning Cognitive Services. Qualiopi." },
+      { title: "AI-901 Azure AI Fundamentals Microsoft — Formation certifiante | GALACTUS Digital" },
+      { name: "description", content: "Formation Microsoft AI-901 Azure AI Fundamentals. 15 h. Certification officielle. IA machine learning Cognitive Services. Qualiopi." },
     ],
   }),
 })
@@ -19,27 +19,27 @@ const DATA = {
   editeur: 'Microsoft',
   famille: 'Microsoft Learn — Azure & M365',
   titre: 'Azure AI Fundamentals',
-  sousTitre: 'Certification Microsoft Azure AI Fundamentals · Référence : AI-900',
-  ref: 'AI-900-001',
+  sousTitre: 'Certification Microsoft Azure AI Fundamentals · Référence : AI-901',
+  ref: 'AI-901-001',
   niveau: 'Fondamental',
   partenaire: 'Partenaire Microsoft n° 4653557',
-  certification: 'Microsoft Certified: Azure AI Fundamentals (AI-900)',
+  certification: 'Microsoft Certified: Azure AI Fundamentals (AI-901)',
   duree: '15 heures',
   groupeMin: 4,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Formation d'introduction aux concepts d'intelligence artificielle et aux services IA de Microsoft Azure. Elle couvre le machine learning, la vision par ordinateur, le NLP, l'IA générative et Azure OpenAI Service. Idéale pour comprendre les workloads IA Azure sans prérequis technique avancé. La certification AI-900 n'expire pas.`,
+  description: `Formation d'introduction aux concepts d'intelligence artificielle et aux services IA de Microsoft Azure. Elle couvre le machine learning, la vision par ordinateur, le NLP, l'IA générative et Azure OpenAI Service. Idéale pour comprendre les workloads IA Azure sans prérequis technique avancé. La certification AI-901 n'expire pas.`,
   objectifs: ["Décrire les workloads IA fondamentaux — machine learning, vision, langage, IA générative", "Décrire les principes du machine learning sur Azure — régression, classification, clustering", "Décrire les services de vision Azure — Analyse d'image, OCR, Visage, Vidéo Indexer", "Décrire les services NLP Azure — Language, Speech to Text, Traducteur", "Décrire les fonctionnalités d'IA générative — Azure OpenAI Service, Copilot, LLMs", "Identifier les principes d'IA responsable de Microsoft (équité, fiabilité, confidentialité)"],
-  public: ["Professionnels IT découvrant l'IA", "Data analysts et business analysts", "Développeurs souhaitant intégrer l'IA Azure", "Candidats préparant AI-102 ou DP-100"],
+  public: ["Professionnels IT découvrant l'IA", "Data analysts et business analysts", "Développeurs souhaitant intégrer l'IA Azure", "Candidats préparant AI-103 ou AI-300"],
   prerequis: ["Aucun prérequis technique obligatoire", "AZ-900 recommandé", "Curiosité pour l'intelligence artificielle et le cloud"],
   examen: {
-    code: 'AI-900',
+    code: 'AI-901',
     duree: '45 minutes',
     langue: 'Français / Anglais',
     organisme: 'Microsoft (Pearson VUE)',
     format: 'QCM et questions à réponses multiples',
     score: '700 / 1000',
-    note: `La certification AI-900 n'expire pas. Elle prépare aux certifications avancées AI-102 (AI Engineer Associate) et DP-100 (Data Scientist Associate). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
+    note: `La certification AI-901 remplace AI-900, retirée le 30 juin 2026 ; elle n'expire pas. Elle prépare aux certifications avancées AI-103 (AI Engineer Associate, qui remplace AI-102) et AI-300 (Data Scientist Associate, qui remplace DP-100). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Microsoft (Microsoft Certified Trainer — MCT)",
@@ -51,7 +51,7 @@ const DATA = {
     "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
     "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Supports de cours officiels Microsoft inclus (version numérique Microsoft Learn)",
-    "Certification Microsoft Certified: Azure AI Fundamentals (AI-900) envoyée par mail à l'issue du parcours",
+    "Certification Microsoft Certified: Azure AI Fundamentals (AI-901) envoyée par mail à l'issue du parcours",
     "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Passage de l'examen certifiant Microsoft intégré au programme (Pearson VUE)",
   ],
@@ -240,7 +240,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

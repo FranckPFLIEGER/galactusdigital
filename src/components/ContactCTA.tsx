@@ -235,7 +235,7 @@ export function ContactCTA() {
             </h2>
             <p className={`contact-sub reveal${isVisible ? " visible" : ""} delay-2`}
               style={{ textAlign: "left", margin: "0 0 2rem" }}>
-              Remplissez ce formulaire — nous vous répondons sous 48h avec un devis personnalisé.
+              Remplissez ce formulaire — nous vous répondons sous 48 h avec un devis personnalisé.
               Tous les champs sont nécessaires pour établir le devis et instruire votre financement.
             </p>
 
@@ -246,7 +246,7 @@ export function ContactCTA() {
                   Message envoyé !
                 </div>
                 <p style={{ fontSize: "0.88rem", color: "rgba(255,255,255,0.62)", margin: 0 }}>
-                  Nous vous répondons sous 48h ouvrées à l&apos;adresse indiquée.
+                  Nous vous répondons sous 48 h ouvrées à l&apos;adresse indiquée.
                 </p>
                 <button onClick={() => { setForm(INIT); setStatus("idle") }}
                   style={{ marginTop: "1.5rem", background: "none", border: "1px solid rgba(255,255,255,0.25)", color: "rgba(255,255,255,0.7)", padding: "0.6rem 1.5rem", cursor: "pointer", fontFamily: "var(--font-title)", fontSize: "0.72rem", letterSpacing: "0.12em", textTransform: "uppercase" }}>
@@ -375,7 +375,7 @@ export function ContactCTA() {
                   <label style={lbl}>Votre projet *</label>
                   <textarea style={{ ...inp, resize: "vertical", minHeight: "110px" }}
                     required value={form.message} onChange={set("message")}
-                    placeholder="Nombre de stagiaires, niveau de départ, échéance souhaitée, contraintes..." />
+                    placeholder="Nombre de stagiaires, niveau de départ, échéance souhaitée, contraintes…" />
                   <span style={aide}>
                     Précisez ici toute adaptation souhaitée : nous construisons des parcours sur mesure
                     à partir du catalogue.
@@ -408,7 +408,7 @@ export function ContactCTA() {
                 <button type="submit" disabled={status === "sending" || !complet}
                   className="btn-red"
                   style={{ alignSelf: "flex-start", opacity: (!complet || status === "sending") ? 0.5 : 1, cursor: (!complet || status === "sending") ? "not-allowed" : "pointer" }}>
-                  {status === "sending" ? "Envoi en cours..." : "Envoyer ma demande"}
+                  {status === "sending" ? "Envoi en cours…" : "Envoyer ma demande"}
                   {status !== "sending" && <Send size={15} />}
                 </button>
 
@@ -446,7 +446,7 @@ export function ContactCTA() {
             {/* Engagements */}
             <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", padding: "1.5rem" }}>
               {[
-                [Clock, "Réponse sous 48h ouvrées"],
+                [Clock, "Réponse sous 48 h ouvrées"],
                 [Shield, "Devis gratuit et sans engagement"],
                 [Award, "Certification Qualiopi garantie"],
                 [CheckCircle, "Accompagnement au financement"],

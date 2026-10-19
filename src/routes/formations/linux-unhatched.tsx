@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/linux-unhatched')({
   head: () => ({
     meta: [
       { title: "Linux Unhatched — Formation Linux sans prérequis | GALACTUS Digital" },
-      { name: "description", content: "Formation Linux Unhatched. 8h, aucun prérequis. Installation, ligne de commande, premiers pas Linux. Porte d'entrée vers Linux Essentials et LPIC-1. Qualiopi." },
+      { name: "description", content: "Formation Linux Unhatched. 8 h, aucun prérequis. Installation, ligne de commande, premiers pas Linux. Porte d'entrée vers Linux Essentials et LPIC-1. Qualiopi." },
     ],
   }),
 })
@@ -70,7 +70,7 @@ const DATA = {
   // Programme
   modules: [
     {
-      num: '01–06', titre: 'Découvrir Linux', duree: '2h',
+      num: '01–06', titre: 'Découvrir Linux', duree: '2 h',
       contenu: [
         'Origines, philosophie et écosystème des distributions',
         'Où Linux est utilisé : serveurs, cloud, embarqué, réseau',
@@ -78,7 +78,7 @@ const DATA = {
       ],
     },
     {
-      num: '07–13', titre: 'Le terminal et le système de fichiers', duree: '3h',
+      num: '07–13', titre: 'Le terminal et le système de fichiers', duree: '3 h',
       contenu: [
         'Ouvrir un terminal et comprendre l\'invite de commande',
         'Arborescence : /, /home, /etc, /var et leurs rôles',
@@ -87,7 +87,7 @@ const DATA = {
       ],
     },
     {
-      num: '14–19', titre: 'Manipuler fichiers et répertoires', duree: '2h',
+      num: '14–19', titre: 'Manipuler fichiers et répertoires', duree: '2 h',
       contenu: [
         'Créer, copier, déplacer et supprimer (touch, mkdir, cp, mv, rm)',
         'Lire un fichier : cat, less, head, tail',
@@ -96,7 +96,7 @@ const DATA = {
       ],
     },
     {
-      num: '20–22', titre: 'Aller plus loin', duree: '1h',
+      num: '20–22', titre: 'Aller plus loin', duree: '1 h',
       contenu: [
         'Utilisateurs, droits et notions d\'administration',
         'Parcours de certification Linux : LPI Linux Essentials puis LPIC-1',
@@ -459,7 +459,7 @@ function LinuxUnhatchedPage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

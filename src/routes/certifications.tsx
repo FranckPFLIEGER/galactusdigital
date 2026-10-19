@@ -7,7 +7,7 @@ export const Route = createFileRoute('/certifications')({
   head: () => ({
     meta: [
       { title: 'Certifications IT Cisco, Microsoft, Linux — GALACTUS Digital' },
-      { name: 'description', content: 'Passez vos certifications IT officielles Cisco CCNA, Microsoft Azure, Linux LPI. Centre agree Cisco Networking Academy n 3018982. Qualiopi.' },
+      { name: 'description', content: 'Passez vos certifications IT officielles Cisco CCNA, Microsoft Azure, Linux LPI. Centre agréé Cisco Networking Academy n° 3018982. Qualiopi.' },
       { property: 'og:title', content: 'Certifications IT Cisco, Microsoft, Linux — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications' },
     ],
@@ -329,7 +329,7 @@ function CertificationsPage() {
                 Prêt à passer votre certification ?
               </h2>
               <p style={{ fontSize: "0.90rem", color: "rgba(255,255,255,0.55)", margin: 0, lineHeight: 1.7 }}>
-                Caraïbes · Océan Indien · France hexagonale · OnVUE partout. Devis sous 48h.
+                Caraïbes · Océan Indien · France hexagonale · OnVUE partout. Devis sous 48 h.
               </p>
             </div>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", flexShrink: 0 }}>

@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/az-104')({
   head: () => ({
     meta: [
       { title: "AZ-104 Azure Administrator Microsoft — Formation certifiante | GALACTUS Digital" },
-      { name: "description", content: "Formation Microsoft AZ-104 Azure Administrator. 40h. Certification officielle. Gestion Azure réseaux virtuels stockage. Qualiopi." },
+      { name: "description", content: "Formation Microsoft AZ-104 Azure Administrator. 40 h. Certification officielle. Gestion Azure réseaux virtuels stockage. Qualiopi." },
     ],
   }),
 })
@@ -240,7 +240,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

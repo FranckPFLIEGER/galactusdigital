@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/iot-big-data-analytics')({
   head: () => ({
     meta: [
       { title: "IoT Big Data Analytics Cisco Networking Academy | GALACTUS Digital" },
-      { name: "description", content: "Formation Cisco IoT Big Data Analytics. 70h. Badge certifiant. Analyse données IoT visualisation machine learning. Qualiopi." },
+      { name: "description", content: "Formation Cisco IoT Big Data Analytics. 70 h. Badge certifiant. Analyse données IoT visualisation machine learning. Qualiopi." },
     ],
   }),
 })
@@ -23,7 +23,7 @@ const DATA = {
   ref: 'IOT-BDA-001',
   niveau: 'Intermédiaire',
   partenaire: 'Partenaire Cisco n° 3018982',
-  certification: 'Cisco IoT Fundamentals: Big Data & Analytics',
+  certification: 'Certificate of Completion — IoT Fundamentals: Big Data & Analytics',
   duree: '70 heures',
   groupeMin: 4,
   groupeMax: 12,
@@ -180,7 +180,7 @@ function FormationPage() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 1–3</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Collecte et stockage des données IoT</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />18h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />18 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -197,7 +197,7 @@ function FormationPage() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 4–6</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Analyse de données IoT avec Python</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />18h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />18 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -214,7 +214,7 @@ function FormationPage() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 7–9</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Visualisation et dashboards</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />18h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />18 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -231,7 +231,7 @@ function FormationPage() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 10–12</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Big Data et ML IoT</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />16h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />16 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -317,7 +317,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/ccnp-enarsi')({
   head: () => ({
     meta: [
       { title: "CCNP Enterprise Advanced Routing — ENARSI 300-410 v9 | GALACTUS Digital" },
-      { name: "description", content: "CCNP Enterprise : Advanced Routing (ENARSI 300-410) v9. 70h. EIGRP, OSPF, BGP, MPLS L3 VPN, DMVPN, sécurité et services, dépannage. Qualiopi." },
+      { name: "description", content: "CCNP Enterprise : Advanced Routing (ENARSI 300-410) v9. 70 h. EIGRP, OSPF, BGP, MPLS L3 VPN, DMVPN, sécurité et services, dépannage. Qualiopi." },
     ],
   }),
 })
@@ -57,25 +57,25 @@ const DATA = {
     "3 à 5 ans d'expérience réseau recommandés",
   ],
   modules: [
-    { num: '01', titre: 'Layer 3 — EIGRP & OSPF', duree: '20h', contenu: [
+    { num: '01', titre: 'Layer 3 — EIGRP & OSPF', duree: '20 h', contenu: [
       "EIGRP — configuration, optimisation, dépannage",
       "OSPF — types de LSA, zones spéciales (stub, NSSA)",
       "Sélection de chemin et convergence",
       "TP — dépannage adjacences et routes",
     ] as Item[] },
-    { num: '02', titre: 'BGP & redistribution', duree: '18h', contenu: [
+    { num: '02', titre: 'BGP & redistribution', duree: '18 h', contenu: [
       "BGP — eBGP, iBGP, attributs, path selection",
       "Communautés, route-maps, filtrage de préfixes",
       "Redistribution multi-protocoles et prévention des boucles",
       "TP — politiques de routage BGP",
     ] as Item[] },
-    { num: '03', titre: 'VPN — MPLS & DMVPN', duree: '16h', contenu: [
+    { num: '03', titre: 'VPN — MPLS & DMVPN', duree: '16 h', contenu: [
       "MPLS Layer 3 VPN — concepts et configuration",
       "DMVPN — phases, NHRP, tunnels multipoint",
       "Technologies de tunneling (GRE, IPsec)",
       "TP — déploiement DMVPN",
     ] as Item[] },
-    { num: '04', titre: 'Sécurité, services & dépannage', duree: '16h', contenu: [
+    { num: '04', titre: 'Sécurité, services & dépannage', duree: '16 h', contenu: [
       { text: "Sécurité d'infrastructure — ACL, AAA, uRPF, CoPP", neuf: true },
       { text: "IPv6 first-hop security (RA Guard, DHCPv6 Guard, IPv6 snooping)", neuf: true },
       { text: "Services — DHCP, syslog, SNMP, IP SLA, Object Tracking, NetFlow / Flexible NetFlow", neuf: true },
@@ -322,7 +322,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

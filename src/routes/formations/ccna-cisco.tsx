@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/ccna-cisco')({
   head: () => ({
     meta: [
       { title: "CCNA v2.0 — Parcours complet ITN · SRWE · ENSA (200-301) | GALACTUS Digital" },
-      { name: "description", content: "CCNA v2.0 (200-301) — les 3 modules ITN, SRWE et ENSA réunis. 210h en e-learning tutoré, voucher d'examen compris. Format accéléré 5 jours en présentiel. Qualiopi." },
+      { name: "description", content: "CCNA v2.0 (200-301) — les 3 modules ITN, SRWE et ENSA réunis. 210 h en e-learning tutoré, voucher d'examen compris. Format accéléré 5 jours en présentiel. Qualiopi." },
     ],
   }),
 })
@@ -72,31 +72,31 @@ La v2.0 marque la plus importante refonte du CCNA depuis 2020 : retour du dépan
     "Contrôle des prérequis par questionnaire + vérification à l'accès plateforme (séance de remise à niveau si besoin)",
   ],
   modules: [
-    { num: 'J1', titre: 'Fondamentaux réseau & accès', duree: '8h', contenu: [
+    { num: 'J1', titre: 'Fondamentaux réseau & accès', duree: '7 h', contenu: [
       "Composants réseau, topologies physiques/logiques, modèles OSI et TCP/IP",
       "Adressage IPv4, sous-réseaux (VLSM), adressage IPv6",
       "Commutation Ethernet, VLAN et trunking (802.1Q)",
       "TP — configuration de base des commutateurs",
     ] as Item[] },
-    { num: 'J2', titre: 'Connectivité IP & routage', duree: '8h', contenu: [
+    { num: 'J2', titre: 'Connectivité IP & routage', duree: '7 h', contenu: [
       "Routage statique et par défaut IPv4/IPv6",
       "OSPF simple aire — concepts et configuration",
       "Redondance de premier saut (HSRP)",
       "TP — routage inter-VLAN et OSPF",
     ] as Item[] },
-    { num: 'J3', titre: 'Services IP & sécurité', duree: '8h', contenu: [
+    { num: 'J3', titre: 'Services IP & sécurité', duree: '7 h', contenu: [
       "DHCP, DNS, NAT/PAT, NTP, SNMP, Syslog",
       "ACL standard et étendues, sécurité des ports",
       "Sécurité des équipements et bonnes pratiques",
       "TP — services IP et filtrage",
     ] as Item[] },
-    { num: 'J4', titre: 'Sans-fil, automatisation & SDN', duree: '8h', contenu: [
+    { num: 'J4', titre: 'Sans-fil, automatisation & SDN', duree: '7 h', contenu: [
       "Réseaux sans fil (WLC), architecture et sécurité WPA2/WPA3",
       { text: "Automatisation et gestion de configuration : Ansible et Terraform", neuf: true },
       "Programmabilité, APIs REST, JSON et principes SDN",
       "TP — introduction à l'automatisation réseau",
     ] as Item[] },
-    { num: 'J5', titre: 'Dépannage & IA réseau', duree: '8h', contenu: [
+    { num: 'J5', titre: 'Dépannage & IA réseau', duree: '7 h', contenu: [
       { text: "Méthodologie de dépannage et diagnostic approfondi, évalués de façon transversale dans les 5 domaines de l'examen", neuf: true },
       { text: "IA dans les opérations réseau — IA générative et prédictive, ML (domaine 5.0, 10% de l'examen)", neuf: true },
       "Révision transversale et examens blancs",
@@ -363,7 +363,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

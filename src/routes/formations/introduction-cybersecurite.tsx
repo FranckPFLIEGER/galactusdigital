@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/introduction-cybersecurite')({
   head: () => ({
     meta: [
       { title: "Introduction à la cybersécurité — Formation sans prérequis | GALACTUS Digital" },
-      { name: "description", content: "Formation Introduction à la cybersécurité. 6h, aucun prérequis. Cybermenaces, protection des données, métiers de la cyber. Brique CCST. Reconversion. Qualiopi." },
+      { name: "description", content: "Formation Introduction à la cybersécurité. 6 h, aucun prérequis. Cybermenaces, protection des données, métiers de la cyber. Brique CCST. Reconversion. Qualiopi." },
     ],
   }),
 })
@@ -70,7 +70,7 @@ const DATA = {
   // Programme
   modules: [
     {
-      num: '01', titre: 'Le besoin de cybersécurité', duree: '1h',
+      num: '01', titre: 'Le besoin de cybersécurité', duree: '1 h',
       contenu: [
         'Ce que valent vos données et pour qui',
         'Données personnelles et données d\'entreprise',
@@ -95,7 +95,7 @@ const DATA = {
       ],
     },
     {
-      num: '04', titre: 'Protéger l\'organisation', duree: '1h',
+      num: '04', titre: 'Protéger l\'organisation', duree: '1 h',
       contenu: [
         'Équipements et pratiques de défense en entreprise',
         'Comportement à adopter face à un incident',
@@ -103,7 +103,7 @@ const DATA = {
       ],
     },
     {
-      num: '05', titre: 'Les métiers de la cybersécurité', duree: '1h',
+      num: '05', titre: 'Les métiers de la cybersécurité', duree: '1 h',
       contenu: [
         'Analyste SOC, pentester, ingénieur sécurité : qui fait quoi',
         'Certifications et parcours de progression',
@@ -466,7 +466,7 @@ function IntroductionCybersecuritePage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

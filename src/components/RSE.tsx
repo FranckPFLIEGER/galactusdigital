@@ -25,7 +25,7 @@ const pillars = [
     items: [
       "Formations dispensées en Martinique et Guadeloupe : chaque stagiaire évite un aller-retour Paris–Antilles, soit plus d'une tonne de CO₂ par personne (source : calculateur ADEME)",
       "Modules IoT Introduction, IoT Big Data Analytics et Data Analytics Essentials intègrent nativement les enjeux d'efficacité énergétique, de smart grids et de réduction de l'empreinte numérique",
-      "100% supports digitaux dans l'ensemble de nos formations — zéro impression papier, zéro envoi postal",
+      "100 % supports digitaux dans l'ensemble de nos formations — zéro impression papier, zéro envoi postal",
       "Salles de formation louées à la demande en Martinique, Guadeloupe et Paris : aucune consommation énergétique de locaux permanents à notre charge",
       "FOAD et e-learning tutoré prioritaires pour réduire les déplacements quotidiens des apprenants",
     ],
@@ -37,7 +37,7 @@ const pillars = [
     fc: "Fiche 23 — Vademecum France Compétences 2026",
     badge: "Cœur de métier — 22 formations certifiantes",
     items: [
-      "100% de notre catalogue est dédié à la montée en compétences numériques : réseaux, cybersécurité, cloud, IoT, IA, Python, automatisation — certifications mondiales Cisco et Microsoft",
+      "100 % de notre catalogue est dédié à la montée en compétences numériques : réseaux, cybersécurité, cloud, IoT, IA, Python, automatisation — certifications mondiales Cisco et Microsoft",
       "Accompagnement des entreprises ultramarines dans leur transformation numérique : de l'infrastructure réseau (CCNA) à l'intelligence artificielle (Copilot, AI-901)",
       "Formations IoT et Big Data directement connectées aux enjeux de la transition numérique des territoires — smart cities, capteurs, données massives",
       "Cybersécurité au premier plan : CCNA Cybersecurity, Ethical Hacker, SC-900 — former des professionnels capables de sécuriser la transition numérique",
@@ -94,7 +94,7 @@ export function RSE() {
         <p className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '2.5rem' }}>
           Former aux métiers du numérique implique une responsabilité sociale, écologique et éthique.
-          Notre démarche RSE s'articule autour des trois axes du vademecum France Compétences 2026 —
+          Notre démarche RSE s'articule autour des trois axes du vade-mecum France Compétences 2026 —
           handicap, transition écologique, transition numérique — documentés et intégrés dans nos référentiels.
         </p>
 

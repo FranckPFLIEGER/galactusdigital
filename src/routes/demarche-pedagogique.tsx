@@ -6,9 +6,9 @@ import { CheckCircle, BookOpen, Target, Award } from 'lucide-react'
 export const Route = createFileRoute('/demarche-pedagogique')({
   head: () => ({
     meta: [
-      { title: 'Notre demarche pedagogique — GALACTUS Digital' },
-      { name: 'description', content: 'Ingenierie pedagogique basee sur les programmes officiels Cisco, Microsoft et Juniper. Objectifs operationnels, suivi individualise.' },
-      { property: 'og:title', content: 'Notre demarche pedagogique — GALACTUS Digital' },
+      { title: 'Notre démarche pédagogique — GALACTUS Digital' },
+      { name: 'description', content: 'Ingénierie pédagogique basée sur les programmes officiels Cisco, Microsoft et Juniper. Objectifs opérationnels, suivi individualisé.' },
+      { property: 'og:title', content: 'Notre démarche pédagogique — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/demarche-pedagogique' },
     ],
     links: [{ rel: 'canonical', href: 'https://galactusdigital.com/demarche-pedagogique' }],

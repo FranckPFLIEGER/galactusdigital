@@ -82,10 +82,12 @@ function RgpdPage() {
                   dest: 'GALACTUS Digital uniquement.',
                 },
                 {
-                  titre: 'Données de navigation (cookies)',
-                  base: 'Consentement',
-                  donnees: 'Adresse IP anonymisée, pages visitées, durée de visite.',
-                  duree: '13 mois maximum.',
+                  titre: 'Navigation sur le site',
+                  base: 'Intérêt légitime (sécurité et disponibilité du service)',
+                  donnees: "Journaux techniques de l'hébergeur : adresse IP, horodatage, ressource demandée. "
+                    + "Le site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience ni de publicité ; "
+                    + "aucun consentement n'a donc à être recueilli.",
+                  duree: "Selon la politique de conservation des journaux de l'hébergeur.",
                   dest: 'GALACTUS Digital — hébergeur Cloudflare Pages.',
                 },
               ].map(t => (
@@ -122,7 +124,7 @@ function RgpdPage() {
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.70)' }}>
                   <div><strong style={{ color: '#fff' }}>Organisme :</strong> GALACTUS Digital</div>
                   <div><strong style={{ color: '#fff' }}>Responsable :</strong> PFLIEGER SASU (GALACTUS Digital) — Franck PFLIEGER, Président</div>
-                  <div><strong style={{ color: '#fff' }}>Siège :</strong> 66 avenue des Champs Élysées, 75008 Paris</div>
+                  <div><strong style={{ color: '#fff' }}>Siège :</strong> 66 avenue des Champs-Élysées, 75008 Paris</div>
                   <div><strong style={{ color: '#fff' }}>Email :</strong> <a href="mailto:president@galactusdigital.com" style={{ color: 'var(--g-red)' }}>president@galactusdigital.com</a></div>
                   <div><strong style={{ color: '#fff' }}>Téléphone :</strong> +33 7 81 07 47 46</div>
                   <div><strong style={{ color: '#fff' }}>SIRET :</strong> 880 430 418 00017</div>

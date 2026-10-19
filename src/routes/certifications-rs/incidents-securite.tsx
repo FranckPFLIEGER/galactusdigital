@@ -8,7 +8,7 @@ export const Route = createFileRoute('/certifications-rs/incidents-securite')({
   head: () => ({
     meta: [
       { title: "Certification — Détecter, analyser et traiter les incidents de sécurité d'un système d'information | GALACTUS Digital" },
-      { name: 'description', content: "Certification professionnelle en cours d'instruction au Repertoire specifique de France Competences (dossier n° 53693) : détecter, analyser et traiter les incidents de sécurité d'un système d'information. Accessible sans diplôme préalable. Martinique, Guadeloupe et territoires ultramarins." },
+      { name: 'description', content: "Certification professionnelle en cours d'instruction au Répertoire spécifique de France Compétences (dossier n° 53693) : détecter, analyser et traiter les incidents de sécurité d'un système d'information. Accessible sans diplôme préalable. Martinique, Guadeloupe et territoires ultramarins." },
       { property: 'og:title', content: 'Certification — Incidents de sécurité | GALACTUS Digital' },
       { property: 'og:description', content: "Certification professionnelle RS : surveiller, analyser une intrusion, qualifier une alerte et traiter un incident de sécurité. Sans prérequis de diplôme." },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications-rs/incidents-securite' },

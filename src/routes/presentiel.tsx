@@ -15,7 +15,7 @@ export const Route = createFileRoute('/presentiel')({
 const LIEUX = [
   { zone: 'Martinique', badge: 'Siège régional Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: 'Centre régional principal des Caraïbes. Catalogue Microsoft en présentiel, inter ou intra-entreprise.', tel: '+33 7 81 07 47 46' },
   { zone: 'Guadeloupe', badge: 'Présence active', adresse: 'Pointe de la Verdure\nGosier 97190', desc: 'Interventions en présentiel chez vos équipes ou en salle partenaire adaptée à vos besoins.', tel: '+33 7 81 07 47 46' },
-  { zone: 'Paris — France hexagonale', badge: 'Siège social', adresse: '66 avenue des Champs Élysées\n75008 Paris', desc: 'Formations en présentiel à Paris et interventions intra-entreprise partout en France hexagonale sur demande.', tel: '+33 7 81 07 47 46' },
+  { zone: 'Paris — France hexagonale', badge: 'Siège social', adresse: '66 avenue des Champs-Élysées\n75008 Paris', desc: 'Formations en présentiel à Paris et interventions intra-entreprise partout en France hexagonale sur demande.', tel: '+33 7 81 07 47 46' },
 ]
 
 function FormationGrid() {
@@ -87,10 +87,10 @@ function PresentielPage() {
               Formation en Présentiel
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              Un formateur certifié intervient en face-à-face dans nos centres ou directement chez vous. Immersion totale, ateliers pratiques sur équipements réels, progression maximale vers la certification.
+              Un formateur certifié intervient en face-à-face chez vous ou dans une salle retenue pour la session. Immersion totale, ateliers pratiques sur équipements réels, progression maximale vers la certification.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              {['Art. L.6313-1 Code du travail', 'Qualiopi certifié', 'Eligible OPCO · PDC', 'Formateur certifié éditeur'].map(b => (
+              {['Art. L.6313-1 Code du travail', 'Qualiopi certifié', 'Éligible OPCO · PDC', 'Formateur certifié éditeur'].map(b => (
                 <div key={b} style={{ padding: '0.35rem 0.9rem', background: 'rgba(228,31,38,0.10)', border: '1px solid rgba(228,31,38,0.25)', fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>{b}</div>
               ))}
             </div>
@@ -191,7 +191,7 @@ function PresentielPage() {
                 {[
                   { zone: 'Martinique', badge: 'Siège régional Caraïbes', desc: "Sessions régulières tout au long de l'année. Pointe Madeleine — CAP EST, 97240 Le François." },
                   { zone: 'Guadeloupe', badge: 'Présence active', desc: 'Sessions organisées en salle partenaire. Pointe de la Verdure, Gosier 97190.' },
-                  { zone: 'Paris — France', badge: 'Siège social', desc: '66 avenue des Champs Élysées, 75008 Paris. Sessions en régions sur demande.' },
+                  { zone: 'Paris — France', badge: 'Siège social', desc: '66 avenue des Champs-Élysées, 75008 Paris. Sessions en régions sur demande.' },
                 ].map(l => (
                   <div key={l.zone} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
                     <div style={{ flexShrink: 0, width: '8px', height: '8px', background: 'var(--g-red)', marginTop: '5px' }} />
@@ -281,7 +281,7 @@ function PresentielPage() {
             </div>
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="/#contact" className="btn-ghost"><Mail size={16} /> Demander un devis sous 48h</a>
+              <a href="/#contact" className="btn-ghost"><Mail size={16} /> Demander un devis sous 48 h</a>
             </div>
           </div>
         </section>

@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/introduction-ia-moderne')({
   head: () => ({
     meta: [
       { title: "Introduction à l'IA moderne — Formation sans prérequis | GALACTUS Digital" },
-      { name: "description", content: "Formation Introduction à l'IA moderne. 6h, aucun prérequis. Chatbots, vision par ordinateur, rédaction de prompts. Reconversion. Territoires ultramarins. Qualiopi." },
+      { name: "description", content: "Formation Introduction à l'IA moderne. 6 h, aucun prérequis. Chatbots, vision par ordinateur, rédaction de prompts. Reconversion. Territoires ultramarins. Qualiopi." },
     ],
   }),
 })
@@ -70,7 +70,7 @@ const DATA = {
   // Programme
   modules: [
     {
-      num: '01', titre: 'Comprendre l\'IA générative', duree: '3h',
+      num: '01', titre: 'Comprendre l\'IA générative', duree: '3 h',
       contenu: [
         'Ce qu\'est un modèle d\'IA et comment il produit une réponse',
         'Vision par ordinateur et traduction automatique en pratique',
@@ -79,7 +79,7 @@ const DATA = {
       ],
     },
     {
-      num: '02', titre: 'Rédiger des prompts et appliquer l\'IA', duree: '3h',
+      num: '02', titre: 'Rédiger des prompts et appliquer l\'IA', duree: '3 h',
       contenu: [
         'Anatomie d\'un prompt efficace : contexte, tâche, format attendu',
         '16 exercices de sollicitation de chatbot',
@@ -444,7 +444,7 @@ function IntroductionIaModernePage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

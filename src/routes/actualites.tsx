@@ -8,9 +8,9 @@ export const Route = createFileRoute('/actualites')({
   head: () => ({
     meta: [
       { title: 'Actualités & veille réglementaire — GALACTUS Digital' },
-      { name: 'description', content: "Veille reglementaire et technologique de GALACTUS Digital : Referentiel National Qualite V2 (decret 2026-728, applicable au 1er novembre 2026), dossiers de certification deposes au Repertoire specifique, evolutions Cisco CCNA v2.0 et certifications Microsoft." },
+      { name: 'description', content: "Veille réglementaire et technologique de GALACTUS Digital : Référentiel national qualité V2 (décret n° 2026-728, applicable au 1er novembre 2026), dossiers de certification déposés au Répertoire spécifique, évolutions Cisco CCNA v2.0 et certifications Microsoft." },
       { property: 'og:title', content: 'Actualités & veille réglementaire — GALACTUS Digital' },
-      { property: 'og:description', content: "Veille reglementaire Qualiopi RNQ V2 et veille technologique Cisco, Microsoft et Juniper." },
+      { property: 'og:description', content: "Veille réglementaire Qualiopi RNQ V2 et veille technologique Cisco, Microsoft et Juniper." },
       { property: 'og:url', content: 'https://galactusdigital.com/actualites' },
     ],
     links: [{ rel: 'canonical', href: 'https://galactusdigital.com/actualites' }],

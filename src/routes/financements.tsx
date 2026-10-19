@@ -7,7 +7,7 @@ export const Route = createFileRoute('/financements')({
   head: () => ({
     meta: [
       { title: 'Guide du financement des formations — GALACTUS Digital' },
-      { name: 'description', content: "Financer une formation GALACTUS Digital : OPCO, plan de developpement des competences, France Travail AIF et POEI via Kairos, dispositifs regionaux et FSE+ des territoires ultramarins, autofinancement. Formations non eligibles au CPF." },
+      { name: 'description', content: "Financer une formation GALACTUS Digital : OPCO, plan de développement des compétences, France Travail AIF et POEI via Kairos, dispositifs régionaux et FSE+ des territoires ultramarins, autofinancement. Formations non éligibles au CPF." },
       { property: 'og:title', content: 'Guide du financement des formations — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/financements' },
     ],

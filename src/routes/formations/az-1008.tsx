@@ -30,7 +30,7 @@ const DATA = {
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Formation courte (Applied Skills) : administrer Active Directory Domain Services — domaines, OU, GPO, réplication, sécurisation. Validation par évaluation en ligne (lab Microsoft Learn), sans examen Pearson VUE.`,
   objectifs: ["Gérer domaines et OU", "Créer et appliquer des GPO", "Administrer utilisateurs et groupes", "Gérer la réplication AD", "Sécuriser l annuaire", "Dépanner AD DS"],
-  public: ["Administrateurs Windows", "Techniciens infrastructure", "Administrateurs Windows Server", "Certifiés AZ-800/802"],
+  public: ["Administrateurs Windows", "Techniciens infrastructure", "Administrateurs Windows Server", "Certifiés AZ-802"],
   prerequis: ["Expérience Windows Server", "Notions réseau et DNS", "Compréhension d Active Directory", "Pratique recommandée"],
   examen: { code: 'AZ-1008', duree: 'Évaluation en lab', langue: 'Anglais', organisme: 'Microsoft Learn (Applied Skills — lab en ligne)', format: 'Évaluation pratique en environnement réel (pas d examen Pearson VUE)', score: 'Réussite / échec', note: `Applied Skills — Administrer Active Directory Domain Services. Évaluation Applied Skills réalisée en ligne sur Microsoft Learn (lab pratique), et non un examen Pearson VUE : aucun voucher requis.` },
   methodes: ["Formation dispensée par un formateur certifié Microsoft (MCT)", "Accès à Microsoft Learn 24h/24", "Labs guidés reproduisant l évaluation Applied Skills", "Quiz de validation à chaque fin de module", "Auto-évaluation formative en début et fin de formation", "Évaluation formateur : non évalué · non acquis · en cours · acquis", "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)", "Supports officiels Microsoft inclus", "Préparation à l évaluation Applied Skills (lab en ligne Microsoft Learn)", "Attestation de formation, de présence et plan de travail individuel"],
@@ -219,7 +219,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

@@ -9,14 +9,14 @@ export const Route = createRootRoute({
       { title: 'GALACTUS Digital — Formation Cisco & Microsoft en Martinique, Guadeloupe, Guyane et Réunion' },
       {
         name: 'description',
-        content: 'Organisme certifié Qualiopi. Formations et certifications IT officielles Cisco (CCNA, CCNP), Microsoft (Azure, Power BI, Copilot) et Juniper en Martinique, Guadeloupe, Guyane, Saint-Martin et La Réunion. 100% de réussite parmi les candidats présentés à l\'examen. E-learning tutoré, FOAD et présentiel. NDA : 11 75 59933 75.',
+        content: 'Organisme certifié Qualiopi. Formations et certifications IT officielles Cisco (CCNA, CCNP), Microsoft (Azure, Power BI, Copilot) et Juniper en Martinique, Guadeloupe, Guyane, Saint-Martin et La Réunion. 100 % de réussite parmi les candidats présentés à l\'examen. E-learning tutoré, FOAD et présentiel. NDA : 11 75 59933 75.',
       },
       { property: 'og:type',        content: 'website' },
       { property: 'og:url',         content: 'https://www.galactusdigital.com/' },
       { property: 'og:title',       content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         property: 'og:description',
-        content: 'Organisme de formation certifié Qualiopi. Certifications Cisco Networking Academy, Microsoft et Juniper. 100% de réussite parmi les candidats présentés à l\'examen. 6 territoires ultramarins.',
+        content: 'Organisme de formation certifié Qualiopi. Certifications Cisco Networking Academy, Microsoft et Juniper. 100 % de réussite parmi les candidats présentés à l\'examen. 6 territoires ultramarins.',
       },
       { property: 'og:image',       content: 'https://www.galactusdigital.com/og-image.png' },
       { property: 'og:image:width',  content: '1200' },
@@ -72,7 +72,7 @@ const jsonLd = {
   email: 'president@galactusdigital.com',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: '66 avenue des Champs Élysées',
+    streetAddress: '66 avenue des Champs-Élysées',
     postalCode: '75008',
     addressLocality: 'Paris',
     addressCountry: 'FR',
@@ -82,7 +82,7 @@ const jsonLd = {
     { '@type': 'PropertyValue', name: 'SIRET', value: '88043041800017' },
   ],
   areaServed: ['Guadeloupe', 'Martinique', 'Guyane', 'Saint-Martin', 'Saint-Barthélemy', 'Réunion', 'France Hexagonale'],
-  knowsAbout: ['Cisco CCNA', 'Cisco CCNP', 'Cisco Networking Academy', 'Cybersécurité', 'Microsoft Azure', 'Microsoft 365', 'Power BI', 'Microsoft Copilot', 'Python', 'Linux', 'IoT', 'Réseaux informatiques', 'Automatisation réseau'],
+  knowsAbout: ['Cisco CCNA', 'Cisco CCNP', 'Cisco Networking Academy', 'Cybersécurité', 'Microsoft Azure', 'Microsoft 365', 'Power BI', 'Microsoft Copilot', 'Python', 'Linux', 'IoT', 'Réseaux informatiques', 'Automatisation réseau', 'Juniper Junos', 'JNCIA-Junos'],
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     name: 'Certification Qualiopi',

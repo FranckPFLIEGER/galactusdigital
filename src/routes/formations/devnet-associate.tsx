@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/devnet-associate')({
   head: () => ({
     meta: [
       { title: "CCNA Automation Cisco — Automatisation réseau 200-901 | GALACTUS Digital" },
-      { name: "description", content: "Formation Cisco CCNA Automation (ex-DevNet). 50h. Certification 200-901 CCNAAUTO. APIs REST Python réseau automatisation IA-ready. Qualiopi." },
+      { name: "description", content: "Formation Cisco CCNA Automation (ex-DevNet). 50 h. Certification 200-901 CCNAAUTO. APIs REST Python réseau automatisation IA-ready. Qualiopi." },
     ],
   }),
 })
@@ -33,7 +33,7 @@ const DATA = {
   public: ["Ingénieurs réseau souhaitant automatiser", "Développeurs backend s'orientant réseau", "Administrateurs systèmes DevOps", "Candidats à la certification CCNA Automation"],
   prerequis: ["Maîtrise de Python (niveau Python Essentials 1 minimum)", "Connaissance des réseaux TCP/IP (CCNA ITN niveau recommandé)", "Notions de Linux et ligne de commande", "Compréhension basique des APIs REST (HTTP, JSON)"],
   examen: {
-    code: '200-901 DEVASC',
+    code: '200-901 CCNAAUTO',
     duree: '120 minutes',
     langue: 'Français',
     organisme: 'Cisco (Pearson VUE)',
@@ -180,7 +180,7 @@ function FormationPage() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 1–3</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Python pour le réseau</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />12h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />12 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -197,7 +197,7 @@ function FormationPage() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 4–6</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>APIs REST Cisco</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />12h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />12 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -214,7 +214,7 @@ function FormationPage() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 7–9</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>YANG, NETCONF et RESTCONF</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />12h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />12 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -231,7 +231,7 @@ function FormationPage() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 10–12</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>CI/CD et outils d'automatisation</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />14h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />14 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -317,7 +317,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

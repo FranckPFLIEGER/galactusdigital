@@ -109,9 +109,9 @@ export const PARCOURS: Parcours[] = [
         titre: 'Bloc 2 — CCNA',
         intention: 'Le référentiel d\'entrée du marché, en trois modules.',
         etapes: [
-          { titre: 'CCNAv2 — ITN (1/3)', slug: 'ccna-itn', heures: 70 },
-          { titre: 'CCNAv2 — SRWE (2/3)', slug: 'ccna-srwe', heures: 70 },
-          { titre: 'CCNAv2 — ENSA (3/3)', slug: 'ccna-ensa', heures: 70 },
+          { titre: 'CCNA v2.0 — ITN (1/3)', slug: 'ccna-itn', heures: 70 },
+          { titre: 'CCNA v2.0 — SRWE (2/3)', slug: 'ccna-srwe', heures: 70 },
+          { titre: 'CCNA v2.0 — ENSA (3/3)', slug: 'ccna-ensa', heures: 70 },
         ],
       },
       {
@@ -202,7 +202,7 @@ export const PARCOURS: Parcours[] = [
         intention: 'Programmation objet et fondamentaux CCNA.',
         etapes: [
           { titre: 'Python Essentials 2', slug: 'python-essentials-2', heures: 40 },
-          { titre: 'CCNAv2 — ITN (1/3)', slug: 'ccna-itn', heures: 70 },
+          { titre: 'CCNA v2.0 — ITN (1/3)', slug: 'ccna-itn', heures: 70 },
         ],
       },
       {

@@ -22,7 +22,7 @@ const DATA = {
   sousTitre: "IJOS · Préparation à l'examen JN0-106 · Niveau associé du parcours Juniper",
   ref: 'JNCIA-JUNOS-001',
   niveau: 'Fondamental',
-  partenaire: 'Formateur réseau certifié — 15 ans d’expérience d’instructeur',
+  partenaire: 'Formateur réseau certifié — 15 ans d\'expérience d\'instructeur',
   certification: 'Juniper Networks Certified Associate — Junos (JNCIA-Junos)',
   duree: '35 heures',
   groupeMin: 1,
@@ -52,43 +52,43 @@ const DATA = {
     "Notions de TCP et UDP — aucune expérience préalable de Junos OS n'est requise",
   ],
   modules: [
-    { num: '01', titre: 'Fondamentaux et architecture de Junos OS', duree: '4h', contenu: [
+    { num: '01', titre: 'Fondamentaux et architecture de Junos OS', duree: '4 h', contenu: [
       "Positionnement de Junos OS et gamme d'équipements",
       "Séparation du plan de contrôle et du plan de transfert",
       "Processus système et démarrage de l'équipement",
       "TP 1 et 2 — prise en main de la maquette et premiers relevés d'état",
     ] },
-    { num: '02', titre: 'Interface utilisateur : la CLI Junos', duree: '6h', contenu: [
+    { num: '02', titre: 'Interface utilisateur : la CLI Junos', duree: '6 h', contenu: [
       "Modes opérationnel et configuration, hiérarchie de configuration",
       "Complétion, aide contextuelle et filtres de sortie",
       "Configuration candidate, commit, commit check, commit confirmed et rollback",
       "TP 3 à 5 — édition, validation et retour arrière d'une configuration",
     ] },
-    { num: '03', titre: 'Interfaces réseau', duree: '4h', contenu: [
+    { num: '03', titre: 'Interfaces réseau', duree: '4 h', contenu: [
       "Interfaces physiques et unités logiques, nommage",
       "Adressage IPv4 et IPv6, familles de protocoles",
       "Lecture de l'état d'une interface et diagnostic de niveau 1 et 2",
       "TP 6 et 7 — adressage, vérification et test de connectivité",
     ] },
-    { num: '04', titre: "Mise en service et administration de l'équipement", duree: '6h', contenu: [
+    { num: '04', titre: "Mise en service et administration de l'équipement", duree: '6 h', contenu: [
       "Configuration initiale, comptes utilisateurs et classes d'autorisation",
       "Services système — NTP, DNS, SNMP, journalisation",
       "Sauvegarde, archivage et restauration de configuration",
       "TP 8 à 10 — mise en service complète d'un équipement",
     ] },
-    { num: '05', titre: 'Routage : tables, routes statiques et OSPF', duree: '6h', contenu: [
+    { num: '05', titre: 'Routage : tables, routes statiques et OSPF', duree: '6 h', contenu: [
       "Tables de routage et de transfert, préférence de route",
       "Correspondance du préfixe le plus long et routes par défaut",
       "Routage statique et OSPF monozone — adjacences et vérification",
       "TP 11 et 12 — routage statique puis OSPF, vérifié de bout en bout",
     ] },
-    { num: '06', titre: 'Commutation, politiques de routage et filtres pare-feu', duree: '5h', contenu: [
+    { num: '06', titre: 'Commutation, politiques de routage et filtres pare-feu', duree: '5 h', contenu: [
       "VLAN, ports d'accès et ports trunk",
       "Politiques de routage — termes, actions, sens d'application",
       "Filtres pare-feu sans état — termes, actions et compteurs",
       "TP 13 à 15 — VLAN, politique d'import/export et filtre de protection",
     ] },
-    { num: '07', titre: "Supervision, dépannage et préparation à l'examen", duree: '4h', contenu: [
+    { num: '07', titre: "Supervision, dépannage et préparation à l'examen", duree: '4 h', contenu: [
       "Journalisation système, traceoptions et commandes monitor",
       "Démarche de dépannage structurée sur Junos OS",
       "Maintenance — mise à jour logicielle et gestion des fichiers",
@@ -319,7 +319,7 @@ function FormationPage() {
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation complète envoyée avant démarrage.' },
                   { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: "QCM de module au seuil de 70 % et grille critériée à 4 niveaux à l'issue de chaque laboratoire." },
                   { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de la formation FOAD, conformément à la circulaire DGEFP du 17 février 2026." },
-                  { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Maquette Junos et accès vérifiés lors d’un essai technique au plus tard 48 h avant le démarrage.' },
+                  { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Maquette Junos et accès vérifiés lors d\'un essai technique au plus tard 48 h avant le démarrage.' },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
                     <div style={{ flexShrink: 0 }}><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.55rem', whiteSpace: 'nowrap' }}>{c.ref}</div></div>
@@ -352,7 +352,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

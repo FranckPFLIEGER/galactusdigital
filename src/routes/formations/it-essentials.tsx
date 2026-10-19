@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/it-essentials')({
   head: () => ({
     meta: [
       { title: "IT Essentials — Préparation CompTIA A+ sans prérequis | GALACTUS Digital" },
-      { name: "description", content: "Formation IT Essentials. 70h, aucun prérequis. Matériel, systèmes, dépannage. Préparation CompTIA A+ (220-1201 et 220-1202). 99 TP. Reconversion. Qualiopi." },
+      { name: "description", content: "Formation IT Essentials. 70 h, aucun prérequis. Matériel, systèmes, dépannage. Préparation CompTIA A+ (220-1201 et 220-1202). 99 TP. Reconversion. Qualiopi." },
     ],
   }),
 })
@@ -70,7 +70,7 @@ const DATA = {
   // Programme
   modules: [
     {
-      num: '01–03', titre: 'Matériel et assemblage', duree: '16h',
+      num: '01–03', titre: 'Matériel et assemblage', duree: '16 h',
       contenu: [
         'Composants, compatibilité et choix de configuration',
         'Assemblage complet d\'un poste et première mise en service',
@@ -79,7 +79,7 @@ const DATA = {
       ],
     },
     {
-      num: '04–06', titre: 'Terminaux mobiles, impression et virtualisation', duree: '12h',
+      num: '04–06', titre: 'Terminaux mobiles, impression et virtualisation', duree: '12 h',
       contenu: [
         'Portables, tablettes et téléphones : matériel et interventions',
         'Imprimantes : installation, partage et dépannage',
@@ -88,7 +88,7 @@ const DATA = {
       ],
     },
     {
-      num: '07–09', titre: 'Systèmes d\'exploitation', duree: '16h',
+      num: '07–09', titre: 'Systèmes d\'exploitation', duree: '16 h',
       contenu: [
         'Installation de Windows, Linux et macOS',
         'Systèmes mobiles Android et iOS',
@@ -97,7 +97,7 @@ const DATA = {
       ],
     },
     {
-      num: '10–11', titre: 'Réseaux et connectivité', duree: '10h',
+      num: '10–11', titre: 'Réseaux et connectivité', duree: '10 h',
       contenu: [
         'Adressage IP, protocoles et services réseau',
         'Connexion filaire, Wi-Fi et configuration des équipements',
@@ -105,7 +105,7 @@ const DATA = {
       ],
     },
     {
-      num: '12–13', titre: 'Sécurité', duree: '10h',
+      num: '12–13', titre: 'Sécurité', duree: '10 h',
       contenu: [
         'Menaces, vulnérabilités et vecteurs d\'attaque courants',
         'Durcissement d\'un poste et protection des données',
@@ -114,7 +114,7 @@ const DATA = {
       ],
     },
     {
-      num: '14', titre: 'Procédures opérationnelles et méthodologie', duree: '6h',
+      num: '14', titre: 'Procédures opérationnelles et méthodologie', duree: '6 h',
       contenu: [
         'Méthodologie de dépannage en 6 étapes',
         'Documentation, ticketing et communication professionnelle',
@@ -132,7 +132,7 @@ const DATA = {
     organisme:  'CompTIA / Pearson VUE',
     format:     'Maximum 90 questions par examen : QCM, glisser-déposer et questions par simulation',
     score:      '675/900 pour le Core 1 · 700/900 pour le Core 2',
-    note: 'La certification CompTIA A+ exige la réussite des deux examens, à passer dans un intervalle de trois ans. Série V15 en vigueur depuis mars 2025. Cours suivant recommandé : CCNAv2 — ITN (1/3). Prévoir l\'inscription aux examens auprès d\'un centre Pearson VUE.',
+    note: 'La certification CompTIA A+ exige la réussite des deux examens, à passer dans un intervalle de trois ans. Série V15 en vigueur depuis mars 2025. Cours suivant recommandé : CCNA v2.0 — ITN (1/3). Prévoir l\'inscription aux examens auprès d\'un centre Pearson VUE.',
   },
 
   // Méthodes pédagogiques
@@ -480,7 +480,7 @@ function ItEssentialsPage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

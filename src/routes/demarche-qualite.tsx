@@ -5,15 +5,15 @@ import { BanniereInstruction } from '../components/BanniereInstruction'
 import { CheckCircle, AlertCircle } from 'lucide-react'
 import {
   RESULTATS_ANNUELS, RESULTATS_ARRETE_AU, RESULTATS_PERIMETRE,
-  RESULTATS_TOTAL_FORMES, METHODE_CALCUL,
+  RESULTATS_TOTAL_FORMES, METHODE_CALCUL, SATISFACTION_GLOBALE,
 } from '../data/resultats'
 
 export const Route = createFileRoute('/demarche-qualite')({
   head: () => ({
     meta: [
-      { title: 'Notre demarche qualite Qualiopi — GALACTUS Digital' },
-      { name: 'description', content: 'GALACTUS Digital certifie Qualiopi Certifopac n 5-0620. Referentiel National Qualite V2 (decret 2026-728 du 1er aout 2026, en vigueur le 1er novembre 2026) : 7 criteres, 33 indicateurs, modalites de calcul des resultats publiees, procedures VHD, ruptures de parcours, evaluation des enseignements. NDA 11 75 59933 75.' },
-      { property: 'og:title', content: 'Notre demarche qualite Qualiopi — GALACTUS Digital' },
+      { title: 'Notre démarche qualité Qualiopi — GALACTUS Digital' },
+      { name: 'description', content: 'GALACTUS Digital est certifié Qualiopi par Certifopac — certificat n° 5-0620. Référentiel national qualité V2 (décret n° 2026-728 du 1er août 2026, en vigueur le 1er novembre 2026) : 7 critères, 33 indicateurs, modalités de calcul des résultats publiées, prévention des violences et du harcèlement, ruptures de parcours, évaluation des enseignements. NDA 11 75 59933 75.' },
+      { property: 'og:title', content: 'Notre démarche qualité Qualiopi — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/demarche-qualite' },
     ],
     links: [{ rel: 'canonical', href: 'https://galactusdigital.com/demarche-qualite' }],
@@ -66,9 +66,9 @@ function DemarcheQualitePage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
                 { num: String(RESULTATS_TOTAL_FORMES), label: 'Candidats formés 2023-2025', sub: 'Entrées effectives en formation, toutes certifications IT' },
-                { num: '100%',  label: 'Taux de réussite',    sub: "Parmi les seuls candidats présentés à l'examen" },
-                { num: '0%',    label: "Taux d'abandon",      sub: 'Interruptions définitives après entrée en formation, 2023-2025' },
-                { num: '4,8/5', label: 'Note de satisfaction', sub: 'Moyenne des notes globales sur 5, 2023-2025' },
+                { num: '100 %',  label: 'Taux de réussite',    sub: "Parmi les seuls candidats présentés à l'examen" },
+                { num: '0 %',    label: "Taux d'abandon",      sub: 'Interruptions définitives après entrée en formation, 2023-2025' },
+                { num: SATISFACTION_GLOBALE, label: 'Note de satisfaction', sub: "Moyenne de l'appréciation générale, 2023-2025" },
               ].map(s => (
                 <div key={s.label} style={{ background: 'var(--g-black)', borderTop: '3px solid var(--g-red)', padding: '2rem', textAlign: 'center' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.8rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.5rem' }}>{s.num}</div>
@@ -170,8 +170,8 @@ function DemarcheQualitePage() {
               {[
                 { num: '01', title: 'Information du public', desc: "Diffusion d'informations accessibles, détaillées et vérifiables : prérequis, objectifs, durée, modalités pédagogiques, tarifs, délais d'accès, accessibilité aux personnes en situation de handicap, modes de financement et résultats. Pour chaque action certifiante : taux d'obtention, validation par blocs, équivalences, passerelles, suites de parcours et débouchés, publiés sur la fiche de la formation. Aucune communication susceptible d'induire le public en erreur." },
                 { num: '02', title: 'Identification des objectifs & adaptation', desc: "Objectifs définis sous forme de verbes d'action dans le plan de formation. Analyse des besoins via questionnaire d'évaluation des attentes. Prise en compte des situations de handicap signalées, dès l'entretien préalable." },
-                { num: '03', title: 'Adaptation aux publics bénéficiaires', desc: "Convocation avec règlement intérieur. Évaluation des acquis par ateliers pratiques et QCM (seuil 70%). Procédure de prévention et traitement des ruptures de parcours (FQ-15). Procédure de prévention des violences, harcèlement et discriminations (FQ-14), communiquée dès la convocation." },
-                { num: '04', title: 'Adéquation des moyens', desc: "Formateur certifié Cisco, instructeur Cisco Networking Academy depuis 15 ans — CCNP, CCDP. Référent pédagogique désigné : Franck PFLIEGER (indicateur 19). Plateforme NetAcad officielle pour l'e-learning tutoré, maquette Junos à distance pour la FOAD Juniper, WEBEX pour le tutorat. Effectivité du suivi tracée pour chaque apprenant à distance par trois pièces : relevé de progression de la plateforme, historique des sessions Webex et compte rendu des points d'étape. Salles adaptées en présentiel." },
+                { num: '03', title: 'Adaptation aux publics bénéficiaires', desc: "Convocation avec règlement intérieur. Évaluation des acquis par ateliers pratiques et QCM (seuil 70 %). Procédure de prévention et traitement des ruptures de parcours (FQ-15). Procédure de prévention des violences, harcèlement et discriminations (FQ-14), communiquée dès la convocation." },
+                { num: '04', title: 'Adéquation des moyens', desc: "Formateur certifié Cisco, instructeur Cisco Networking Academy depuis 15 ans — CCNP, CCDP. Référent pédagogique désigné : Franck PFLIEGER (indicateur 19). Plateforme NetAcad officielle pour l'e-learning tutoré, maquette Junos à distance pour la FOAD Juniper, WEBEX pour le tutorat. Effectivité du suivi tracée pour chaque apprenant à distance par trois pièces : relevé de progression de la plateforme, historique des sessions Webex et compte rendu des points d'étape. En présentiel, la salle est fournie par le client en intra ou retenue pour la session ; son accessibilité est vérifiée avant le démarrage avec le référent handicap." },
                 { num: '05', title: 'Qualification des personnels', desc: "Certifications CCNP et CCDP Cisco. Programme IPD Cisco Networking Academy. Vérification annuelle des compétences. Inscription à la communauté des formateurs Cisco Networking Academy." },
                 { num: '06', title: "Inscription dans l'environnement professionnel", desc: "Veille réglementaire (CARIF, Centre Inffo, AFDAS, AKTO, Service public). Veille métier (APEC, LinkedIn Cisco). Partenaire Cisco n° 3018982. Partenaire Microsoft n° 4653557. Membre IPv6 Forum. Association ASPIK." },
                 { num: '07', title: 'Recueil et traitement des appréciations', desc: "Évaluation apprenants et hiérarchie en fin de formation. Évaluation des enseignements (FQ-08c) distincte de l'enquête de satisfaction. Sollicitation à froid 2 mois après. Tableau de suivi : points forts, axes d'amélioration, réclamations, actions correctives." },
@@ -315,8 +315,8 @@ function DemarcheQualitePage() {
                     'Décret n° 2020-894 du 22 juillet 2020',
                     'Arrêté du 31 mai 2023',
                     'Décret n° 2026-728 du 1er août 2026 (JO du 4 août 2026, NOR TRSD2619632D) — RNQ à 33 indicateurs, applicable au 1er novembre 2026',
-                    'Guide de lecture Qualiopi V9 du 8 janvier 2024 — applicable jusqu’au 31 octobre 2026',
-                    'Nouveau guide de lecture et arrêtés d’application du RNQ V2 — à paraître',
+                    'Guide de lecture Qualiopi V9 du 8 janvier 2024 — applicable jusqu\'au 31 octobre 2026',
+                    'Nouveau guide de lecture et arrêtés d\'application du RNQ V2 — à paraître',
                     'Article L. 6113-1 du Code du travail (blocs de compétences)',
                     'Article D. 6313-3-1 du Code du travail (FOAD)',
                     'Circulaire DGEFP n° MOC/2026/30 du 17 février 2026',

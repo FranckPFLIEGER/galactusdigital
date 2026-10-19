@@ -1,9 +1,13 @@
 import { useIntersection } from '../hooks/useIntersection'
+import { RESULTATS_ANNUELS, RESULTATS_TOTAL_FORMES } from '../data/resultats'
 
+const derniere = RESULTATS_ANNUELS[RESULTATS_ANNUELS.length - 1]
+
+// Source unique : les effectifs viennent de data/resultats.ts.
 const stats = [
   { num: '+25', label: "ans d'expérience du fondateur" },
-  { num: '131', label: 'stagiaires en 2025' },
-  { num: '518', label: 'candidats formés, toutes formations, en 3 ans' },
+  { num: String(derniere.formes), label: `stagiaires en ${derniere.annee}` },
+  { num: String(RESULTATS_TOTAL_FORMES), label: 'candidats formés, toutes formations, en 3 ans' },
   { num: '0', label: 'abandon en cours de parcours (2023-2025)' },
 ]
 

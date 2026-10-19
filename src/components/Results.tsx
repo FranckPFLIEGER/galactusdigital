@@ -1,10 +1,8 @@
 import { useIntersection } from '../hooks/useIntersection'
+import { RESULTATS_ANNUELS, RESULTATS_TOTAL_FORMES } from '../data/resultats'
 
-const years = [
-  { year: '2023', presentes: 115 },
-  { year: '2024', presentes: 272 },
-  { year: '2025', presentes: 131 },
-]
+// Source unique : toute correction d'effectif se fait dans data/resultats.ts.
+const years = RESULTATS_ANNUELS.map(r => ({ year: r.annee, presentes: r.formes }))
 
 export function Results() {
   const { ref, isVisible } = useIntersection()
@@ -37,7 +35,7 @@ export function Results() {
             >
               <div className="result-year">{y.year}</div>
               <div className="result-main">
-                <span className="result-big" style={{ color: '#E41F26' }}>100%</span>
+                <span className="result-big" style={{ color: '#E41F26' }}>100&nbsp;%</span>
                 <span className="result-unit">de réussite<br />parmi les présentés à l'examen</span>
               </div>
               <div style={{ width: '40px', height: '2px', background: '#E41F26', margin: '1rem auto' }} />
@@ -56,12 +54,12 @@ export function Results() {
         <div className={`results-total reveal${isVisible ? ' visible' : ''} delay-5`}>
           <div className="results-total-inner">
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '3.5rem', fontWeight: 700, color: '#E41F26', lineHeight: 1 }}>518</div>
+              <div style={{ fontFamily: 'var(--font-title)', fontSize: '3.5rem', fontWeight: 700, color: '#E41F26', lineHeight: 1 }}>{RESULTATS_TOTAL_FORMES}</div>
               <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>candidats formés, toutes formations (2023-2025)</div>
             </div>
             <div style={{ width: '1px', height: '60px', background: 'rgba(228,31,38,0.3)' }} />
             <div style={{ textAlign: 'center' }}>
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '3.5rem', fontWeight: 700, color: '#E41F26', lineHeight: 1 }}>100%</div>
+              <div style={{ fontFamily: 'var(--font-title)', fontSize: '3.5rem', fontWeight: 700, color: '#E41F26', lineHeight: 1 }}>100&nbsp;%</div>
               <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>de réussite parmi les présentés à l'examen</div>
             </div>
             <div style={{ width: '1px', height: '60px', background: 'rgba(228,31,38,0.3)' }} />

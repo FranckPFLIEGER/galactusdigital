@@ -337,8 +337,8 @@ function CalendrierPage() {
               <Info size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />
               <p style={{ fontSize: '0.81rem', color: '#5a5a58', margin: 0, lineHeight: 1.65 }}>
                 <strong style={{ color: 'var(--g-black)' }}>Calendrier indicatif.</strong> Qualiopi (Indicateur 4) — dates et lieux confirmés sur la convocation.
-                Délais : <strong>1 mois</strong> standard · <strong>3 mois</strong> OPCO .
-                Prix HT — TVA non applicable (Art. 261-4-4° CGI, NDA 11 75 59933 75).
+                Délais : <strong>1 mois</strong> standard · <strong>3 mois</strong> OPCO.
+                Prix nets de taxe — TVA non applicable, art. 261-4-4°-a du CGI (NDA 11 75 59933 75).
               </p>
             </div>
           </div>
@@ -381,7 +381,7 @@ function CalendrierPage() {
                   <div style={{ display: 'flex', gap: '0.75rem', marginBottom: '1rem' }}>
                     <div style={{ flex: 1, position: 'relative' }}>
                       <Search size={14} color="#aaa" style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', pointerEvents: 'none' }} />
-                      <input type="text" placeholder="Rechercher (CCNA, Python, AZ-104, IoT...)" value={query} onChange={e => setQuery(e.target.value)}
+                      <input type="text" placeholder="Rechercher (CCNA, Python, AZ-104, IoT…)" value={query} onChange={e => setQuery(e.target.value)}
                         style={{ width: '100%', padding: '0.62rem 1rem 0.62rem 2.2rem', fontFamily: 'var(--font-body)', fontSize: '0.85rem', border: '1px solid rgba(187,187,187,0.5)', background: 'var(--g-white)', color: 'var(--g-black)', outline: 'none', boxSizing: 'border-box' }}
                         onFocus={e => (e.target.style.borderColor = 'var(--g-red)')} onBlur={e => (e.target.style.borderColor = 'rgba(187,187,187,0.5)')} />
                     </div>
@@ -441,7 +441,7 @@ function CalendrierPage() {
                 ) : (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>{results.map(s => <SessionRow key={s.id} s={s} />)}</div>
                 )}
-                <p style={{ fontSize: '0.76rem', color: '#aaa', marginTop: '1.5rem', fontStyle: 'italic', textAlign: 'center' }}>* Dates confirmées sur devis. Prix HT — TVA non applicable. Devis sous 48h.</p>
+                <p style={{ fontSize: '0.76rem', color: '#aaa', marginTop: '1.5rem', fontStyle: 'italic', textAlign: 'center' }}>* Dates confirmées sur devis. Prix nets de taxe — TVA non applicable. Devis sous 48 h.</p>
               </>
             )}
           </div>
@@ -469,7 +469,7 @@ function CalendrierPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--g-black)', marginBottom: '0.4rem' }}>Besoin d'informations sur une session ?</div>
-              <p style={{ fontSize: '0.90rem', color: '#5a5a58', margin: 0, lineHeight: 1.7 }}>Notre équipe vous répond sous 24h.</p>
+              <p style={{ fontSize: '0.90rem', color: '#5a5a58', margin: 0, lineHeight: 1.7 }}>Notre équipe vous répond sous 24 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

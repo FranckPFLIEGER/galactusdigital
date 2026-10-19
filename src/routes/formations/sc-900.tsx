@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/sc-900')({
   head: () => ({
     meta: [
       { title: "SC-900 Security Fundamentals Microsoft — Formation certifiante | GALACTUS Digital" },
-      { name: "description", content: "Formation Microsoft SC-900 Security Compliance Identity. 15h. Certification officielle. Sécurité cloud conformité. Qualiopi." },
+      { name: "description", content: "Formation Microsoft SC-900 Security Compliance Identity. 15 h. Certification officielle. Sécurité cloud conformité. Qualiopi." },
     ],
   }),
 })
@@ -30,7 +30,7 @@ const DATA = {
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Formation d'introduction aux concepts de sécurité, conformité et identité dans les environnements Microsoft cloud. Elle couvre Zero Trust, Microsoft Entra ID, Microsoft Defender, Purview et les réglementations. Idéale pour comprendre la posture de sécurité Microsoft. La certification SC-900 n'expire pas.`,
   objectifs: ["Décrire les concepts de sécurité fondamentaux — Zero Trust, chiffrement, SIEM, SOAR", "Décrire les capacités de Microsoft Entra ID — authentification, MFA, accès conditionnel", "Décrire les solutions de sécurité Microsoft — Defender XDR, Sentinel, Intune", "Décrire les capacités de conformité Microsoft — Purview, protection des données, DLP", "Décrire la gestion des risques et la conformité réglementaire cloud", "Identifier les mécanismes de gouvernance des identités dans Microsoft Entra"],
-  public: ["Professionnels IT souhaitant comprendre la sécurité Microsoft", "Responsables conformité et DSI", "Auditeurs et consultants sécurité", "Candidats préparant SC-200, SC-300 ou AZ-500"],
+  public: ["Professionnels IT souhaitant comprendre la sécurité Microsoft", "Responsables conformité et DSI", "Auditeurs et consultants sécurité", "Candidats préparant SC-200, SC-300 ou SC-500"],
   prerequis: ["Notions générales d'informatique et de cloud", "AZ-900 recommandé mais non obligatoire", "Intérêt pour la cybersécurité et la conformité"],
   examen: {
     code: 'SC-900',
@@ -39,7 +39,7 @@ const DATA = {
     organisme: 'Microsoft (Pearson VUE)',
     format: 'QCM et questions à réponses multiples',
     score: '700 / 1000',
-    note: `La certification SC-900 n'expire pas. Elle constitue un socle pour les certifications Microsoft avancées (SC-200, SC-300, AZ-500). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
+    note: `La certification SC-900 n'expire pas. Elle constitue un socle pour les certifications Microsoft avancées (SC-200, SC-300, SC-500, qui remplace AZ-500 depuis le 31 août 2026). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Microsoft (Microsoft Certified Trainer — MCT)",
@@ -240,7 +240,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

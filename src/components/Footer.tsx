@@ -160,7 +160,7 @@ export function Footer() {
               <li>
                 <span style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', color: 'rgba(255,255,255,0.45)', fontSize: '0.82rem', lineHeight: 1.5 }}>
                   <MapPin size={14} style={{ flexShrink: 0, marginTop: '3px', color: '#E41F26' }} />
-                  <span><strong style={{ color: 'rgba(255,255,255,0.60)', display: 'block' }}>Siège social</strong>66 av. des Champs Élysées, 75008 Paris</span>
+                  <span><strong style={{ color: 'rgba(255,255,255,0.60)', display: 'block' }}>Siège social</strong>66 av. des Champs-Élysées, 75008 Paris</span>
                 </span>
               </li>
               <li>

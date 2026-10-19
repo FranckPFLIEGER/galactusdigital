@@ -13,9 +13,9 @@ const services = [
     features: [
       'Formateur certifié en face-à-face',
       'Ateliers pratiques sur équipements réels',
-      'Centres en Martinique, Guadeloupe, Paris',
+      'Intervention sur site client ou en salle louée pour la session',
       'Idéal pour les formations techniques intensives',
-      'Groupes de 4 à 15 participants',
+      'Groupes de 4 à 12 en inter, jusqu\'à 15 en intra',
     ],
     formats: [
       { label: 'Inter-entreprise', href: '/presentiel#inter', icon: <Users size={13} /> },
@@ -51,7 +51,7 @@ const services = [
       'Tuteur certifié éditeur dédié',
       'Plateforme NetAcad accessible 24h/24',
       'Labs virtuels Cisco Packet Tracer inclus',
-      'Accès sous 72h après inscription',
+      'Accès sous 72 h après validation administrative',
     ],
     formats: [],
   },

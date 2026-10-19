@@ -34,7 +34,7 @@ export interface SessionPlanifiee {
 export const LIEUX: Record<Territoire, string> = {
   'Martinique':       'Pointe Madeleine — CAP EST, Le François 97240',
   'Guadeloupe':       'Pointe de la Verdure, Gosier 97190',
-  'Paris':            '66 avenue des Champs Élysées, 75008 Paris',
+  'Paris':            '66 avenue des Champs-Élysées, 75008 Paris',
   'Tous territoires': 'En ligne — WEBEX · plateformes officielles éditeurs',
 }
 

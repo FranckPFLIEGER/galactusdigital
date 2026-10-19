@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/ab-900')({
   head: () => ({
     meta: [
       { title: "AB-900 Microsoft 365 Copilot Fundamentals — Formation certifiante | GALACTUS Digital" },
-      { name: "description", content: "Formation Microsoft AB-900 Copilot & Agent Administration Fundamentals. 18h. Certification officielle. M365, Copilot, agents IA, sécurité. Voucher inclus. Qualiopi." },
+      { name: "description", content: "Formation Microsoft AB-900 Copilot & Agent Administration Fundamentals. 18 h. Certification officielle. M365, Copilot, agents IA, sécurité. Voucher inclus. Qualiopi." },
     ],
   }),
 })
@@ -240,7 +240,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

@@ -8,7 +8,7 @@
 // sans aucun prérequis, portfolio Cisco Networking Academy FR du 25/07/2026).
 // Elles ouvrent le Bloc 0 de chaque parcours métier (voir data/parcours.ts).
 //
-// MAJ septembre 2026 — CCNP Security retiré (50 formations). Les formations
+// MAJ septembre 2026 — CCNP Security retiré. Les formations
 // Cisco Networking Academy, sauf le CCNA v2.0 accéléré, sont proposées en
 // e-learning tutoré, à un tarif public. Le catalogue Microsoft n'est PAS
 // proposé en e-learning : ces formations restent en présentiel, sur devis,
@@ -103,7 +103,7 @@ export const EDITEURS: Record<string, { label: string; badge?: string }> = {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CATALOGUE PRINCIPAL — 53 formations
+// CATALOGUE PRINCIPAL — 51 formations
 // prix: null = sur demande / 0 = inclus dans pack / nombre = tarif public en €
 // ─────────────────────────────────────────────────────────────────────────────
 export const FORMATIONS: Formation[] = [
@@ -292,11 +292,11 @@ export const FORMATIONS: Formation[] = [
   },
   {
     slug: 'ccna-itn',
-    titre: 'CCNAv2 — ITN (1/3)',
+    titre: 'CCNA v2.0 — ITN (1/3)',
     titreLong: 'CCNA Introduction aux réseaux (Module 1/3)',
     editeur: 'Cisco Networking Academy', famille: 'CCNA et CCNP',
     niveau: 'Fondamental', duree: '70 heures', dureeJours: 9,
-    certification: 'Cisco CCNAv2 200-301',
+    certification: 'Cisco CCNA v2.0 200-301',
     examCode: '200-301',
     modalites: ['E-learning'],
     description: 'Premiers modules du cursus CCNA officiel — OSI, TCP/IP, IPv4, IPv6, CLI Cisco.',
@@ -306,25 +306,25 @@ export const FORMATIONS: Formation[] = [
   },
   {
     slug: 'ccna-srwe',
-    titre: 'CCNAv2 — SRWE (2/3)',
+    titre: 'CCNA v2.0 — SRWE (2/3)',
     titreLong: 'CCNA Commutation, Routage et Wi-Fi (Module 2/3)',
     editeur: 'Cisco Networking Academy', famille: 'CCNA et CCNP',
     niveau: 'Intermédiaire', duree: '70 heures', dureeJours: 9,
-    certification: 'Cisco CCNAv2 200-301',
+    certification: 'Cisco CCNA v2.0 200-301',
     examCode: '200-301',
     modalites: ['E-learning'],
-    description: 'VLANs, STP, EtherChannel, DHCP, Wi-Fi 802.11 et routage statique avancé.',
+    description: 'VLAN, STP, EtherChannel, DHCP, Wi-Fi 802.11 et routage statique avancé.',
     prix: { presentiel: null, foad: null, elearning: 530 },
     prixPublicElearning: true,
     voucher: 0,
   },
   {
     slug: 'ccna-ensa',
-    titre: 'CCNAv2 — ENSA (3/3)',
+    titre: 'CCNA v2.0 — ENSA (3/3)',
     titreLong: 'CCNA Réseaux d\'entreprise, Sécurité et Automatisation (Module 3/3)',
     editeur: 'Cisco Networking Academy', famille: 'CCNA et CCNP',
     niveau: 'Avancé', duree: '70 heures', dureeJours: 9,
-    certification: 'Cisco CCNAv2 200-301',
+    certification: 'Cisco CCNA v2.0 200-301',
     examCode: '200-301',
     modalites: ['E-learning'],
     description: 'OSPF, ACL, NAT, VPN, SDN et automatisation réseau. Dernier module avant l\'examen CCNA.',
@@ -338,7 +338,7 @@ export const FORMATIONS: Formation[] = [
     titre: 'CCNA v2.0 — Parcours complet',
     titreLong: 'CCNA v2.0 — Parcours complet ITN · SRWE · ENSA, préparation à la certification Cisco 200-301',
     editeur: 'Cisco Networking Academy', famille: 'CCNA et CCNP',
-    niveau: 'Intermédiaire', duree: '210 heures', dureeJours: 27,
+    niveau: 'Intermédiaire', duree: '210 h (e-learning) · 35 h (présentiel)', dureeJours: 27,
     certification: 'Cisco CCNA 200-301 (blueprint v2.0)',
     examCode: '200-301 v2.0',
     // Double modalité, seule exception du catalogue :

@@ -286,7 +286,7 @@ function RetractationPage() {
                 <button type="submit" disabled={status === 'sending' || !complet}
                   className="btn-red"
                   style={{ alignSelf: 'flex-start', display: 'inline-flex', alignItems: 'center', gap: '0.5rem', opacity: (!complet || status === 'sending') ? 0.5 : 1, cursor: (!complet || status === 'sending') ? 'not-allowed' : 'pointer' }}>
-                  {status === 'sending' ? 'Envoi en cours...' : 'Envoyer ma rétractation'}
+                  {status === 'sending' ? 'Envoi en cours…' : 'Envoyer ma rétractation'}
                   {status !== 'sending' && <Send size={15} />}
                 </button>
 

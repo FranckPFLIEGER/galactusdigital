@@ -34,7 +34,7 @@ function DelaisAcces({ dark = false }: { dark?: boolean }) {
       </div>
       <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
         {[
-          { label: 'Accès à la plateforme', val: 'Sous 72h après validation administrative.' },
+          { label: 'Accès à la plateforme', val: 'Sous 72 h après validation administrative.' },
           { label: 'Financement OPCO', val: '3 mois (montage du dossier compris).' },
           { label: 'Inscription minimale', val: "Entrées permanentes : aucune date limite. L'e-learning tutoré n'a pas de date de démarrage commune — les accès sont ouverts sous 72 heures après validation administrative." },
           ].map(d => (
@@ -64,7 +64,7 @@ function ElearningPage() {
               Progressez à votre rythme sur la plateforme officielle Cisco Networking Academy. Un tuteur certifié vous accompagne tout au long du parcours avec un suivi individualisé documenté conforme Qualiopi.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              {['Art. L.6313-1 Code du travail', 'FOAD asynchrone · Qualiopi', 'Qualiopi — Indicateur 19', 'Cisco Networking Academy', 'Eligible OPCO'].map(b => (
+              {['Art. L.6313-1 Code du travail', 'FOAD asynchrone · Qualiopi', 'Qualiopi — Indicateur 19', 'Cisco Networking Academy', 'Éligible OPCO'].map(b => (
                 <div key={b} style={{ padding: '0.35rem 0.9rem', background: 'rgba(228,31,38,0.10)', border: '1px solid rgba(228,31,38,0.25)', fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>{b}</div>
               ))}
             </div>
@@ -81,7 +81,7 @@ function ElearningPage() {
                 { icon: <Clock size={24} color="white" />, title: 'Rythme libre', desc: "Vous avancez selon vos disponibilités, sans contrainte d'horaire. Idéal pour les professionnels en activité dans les territoires ultramarins avec des contraintes opérationnelles fortes." },
                 { icon: <UserCheck size={24} color="white" />, title: 'Tuteur dédié', desc: 'Un tuteur certifié éditeur vous est assigné pour toute la durée du parcours. Il répond à vos questions, valide vos avancées et vous prépare à la certification officielle.' },
                 { icon: <Award size={24} color="white" />, title: 'Certifications officielles', desc: "Les parcours suivent les programmes officiels Cisco Networking Academy. Chaque cours délivre son badge et son certificat NetAcad, et le tuteur prépare à l'examen de certification de l'éditeur." },
-                { icon: <Zap size={24} color="white" />, title: 'Accès rapide', desc: 'Démarrage sous 72h après inscription. Les accès à la plateforme NetAcad sont activés dès la validation administrative.' },
+                { icon: <Zap size={24} color="white" />, title: 'Accès rapide', desc: 'Démarrage sous 72 h après inscription. Les accès à la plateforme NetAcad sont activés dès la validation administrative.' },
                 { icon: <BarChart2 size={24} color="white" />, title: 'Suivi de progression', desc: 'Tableau de bord personnalisé sur chaque plateforme. Votre tuteur suit votre progression module par module et vous alerte si vous décrochez du rythme prévu.' },
                 { icon: <BookOpen size={24} color="white" />, title: 'Contenus officiels', desc: 'Accès aux contenus pédagogiques officiels de Cisco Networking Academy : labs virtuels Packet Tracer, modules interactifs et QCM de validation des acquis.' },
               ].map(a => (
@@ -147,7 +147,7 @@ function ElearningPage() {
             <div className="el-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 { num: '01', title: 'Inscription', desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement OPCO monté avec vous.' },
-                { num: '02', title: 'Accès activé', desc: 'Sous 72h, vous recevez vos accès NetAcad. Votre tuteur vous contacte pour un échange de cadrage.' },
+                { num: '02', title: 'Accès activé', desc: 'Sous 72 h, vous recevez vos accès NetAcad. Votre tuteur vous contacte pour un échange de cadrage.' },
                 { num: '03', title: 'Parcours tutoré', desc: 'Vous avancez à votre rythme. Votre tuteur suit votre progression, répond à vos questions et valide chaque module complété.' },
                 { num: '04', title: 'Certification', desc: 'Examen final du cours, badge et certificat Cisco Networking Academy. Attestation de formation et relevé de complétion remis. Le voucher d\'examen surveillé Pearson VUE est compris sur le CCNA v2.0 parcours complet et les deux parcours CCNP Enterprise ; sur les autres cours, le candidat qui souhaite présenter la certification de l\'éditeur acquiert son voucher auprès du centre agréé.' },
               ].map(s => (
@@ -203,7 +203,7 @@ function ElearningPage() {
                     'Labs virtuels Cisco Packet Tracer inclus',
                     'Évaluations et QCM corrigés par le tuteur',
                     'Suivi documenté de la progression par module',
-                    'Messagerie directe avec le tuteur sous 24h ouvrées',
+                    'Messagerie directe avec le tuteur sous 24 h ouvrées',
                     'Badge et certificat Cisco Networking Academy délivrés à chaque cours',
                     'Attestation de formation et relevé de complétion',
                     'Éligible OPCO, plan de développement des compétences',
@@ -250,7 +250,7 @@ function ElearningPage() {
           <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
             <h2 className="section-h2-light" style={{ marginBottom: '1rem' }}>Démarrer un parcours e-learning tutoré</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.62)', lineHeight: 1.8, marginBottom: '2rem' }}>
-              Contactez-nous pour choisir votre parcours, monter votre dossier de financement et recevoir vos accès sous 72h.
+              Contactez-nous pour choisir votre parcours, monter votre dossier de financement et recevoir vos accès sous 72 h.
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/ndg-linux-1')({
   head: () => ({
     meta: [
       { title: "NDG Linux I — Administration Linux, préparation LPIC-1 (Exam 101) | GALACTUS Digital" },
-      { name: "description", content: "NDG Linux I — 70h. Architecture système, gestion de paquets, commandes GNU/Unix, périphériques et systèmes de fichiers. Préparation LPIC-1 exam 101-500. Qualiopi." },
+      { name: "description", content: "NDG Linux I — 70 h. Architecture système, gestion de paquets, commandes GNU/Unix, périphériques et systèmes de fichiers. Préparation LPIC-1 exam 101-500. Qualiopi." },
     ],
   }),
 })
@@ -52,7 +52,7 @@ const DATA = {
   ],
   modules: [
     {
-      num: '101', titre: 'Architecture du système', duree: '12h',
+      num: '101', titre: 'Architecture du système', duree: '12 h',
       contenu: [
         'Matériel, périphériques et paramètres du BIOS/UEFI',
         'Démarrage du système : GRUB, initramfs, cibles systemd',
@@ -61,7 +61,7 @@ const DATA = {
       ],
     },
     {
-      num: '102', titre: 'Installation et gestion des paquets', duree: '14h',
+      num: '102', titre: 'Installation et gestion des paquets', duree: '14 h',
       contenu: [
         'Conception du partitionnement et de l\'espace disque',
         'Gestionnaire d\'amorçage et bibliothèques partagées',
@@ -71,7 +71,7 @@ const DATA = {
       ],
     },
     {
-      num: '103', titre: 'Commandes GNU et Unix', duree: '26h',
+      num: '103', titre: 'Commandes GNU et Unix', duree: '26 h',
       contenu: [
         'Ligne de commande, variables d\'environnement, historique',
         'Filtres de texte : cat, grep, sed, awk, sort, cut, tr, wc',
@@ -83,7 +83,7 @@ const DATA = {
       ],
     },
     {
-      num: '104', titre: 'Périphériques, systèmes de fichiers et FHS', duree: '18h',
+      num: '104', titre: 'Périphériques, systèmes de fichiers et FHS', duree: '18 h',
       contenu: [
         'Création de partitions et de systèmes de fichiers',
         'Intégrité, montage et démontage ; /etc/fstab',
@@ -242,7 +242,7 @@ function NdgLinux1Page() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 1–3</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Introduction à Linux</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />10h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />10 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -259,7 +259,7 @@ function NdgLinux1Page() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 4–6</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Ligne de commande et fichiers</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />12h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />12 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -276,7 +276,7 @@ function NdgLinux1Page() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 7–9</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Utilisateurs et sécurité</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />10h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />10 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -293,7 +293,7 @@ function NdgLinux1Page() {
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.60rem", fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "rgba(255,255,255,0.65)", marginBottom: "0.2rem" }}>Module 10–11</div>
                       <div style={{ fontFamily: "var(--font-title)", fontSize: "0.88rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.06em", color: "#fff" }}>Processus et automatisation</div>
                     </div>
-                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />8h</div>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.3rem", fontSize: "0.78rem", color: "rgba(255,255,255,0.75)" }}><Clock size={13} />8 h</div>
                   </div>
                   <div style={{ padding: "1rem 1.25rem", background: "var(--g-white)" }}>
                     <ul style={{ listStyle: "none", padding: 0, margin: 0, display: "flex", flexDirection: "column", gap: "0.45rem" }}>
@@ -379,7 +379,7 @@ function NdgLinux1Page() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

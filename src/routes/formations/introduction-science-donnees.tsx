@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/introduction-science-donnees')
   head: () => ({
     meta: [
       { title: "Introduction à la science des données — Formation sans prérequis | GALACTUS Digital" },
-      { name: "description", content: "Formation Introduction à la science des données. 6h, aucun prérequis. Donnée, analyse, machine learning, métiers de la data. Reconversion. Qualiopi." },
+      { name: "description", content: "Formation Introduction à la science des données. 6 h, aucun prérequis. Donnée, analyse, machine learning, métiers de la data. Reconversion. Qualiopi." },
     ],
   }),
 })
@@ -86,7 +86,7 @@ const DATA = {
       ],
     },
     {
-      num: '03', titre: 'Analyser et visualiser', duree: '2h',
+      num: '03', titre: 'Analyser et visualiser', duree: '2 h',
       contenu: [
         'Widget de tableau croisé dynamique interactif',
         'Choisir la bonne visualisation selon la question posée',
@@ -95,7 +95,7 @@ const DATA = {
       ],
     },
     {
-      num: '04', titre: 'Machine learning et métiers de la data', duree: '1h',
+      num: '04', titre: 'Machine learning et métiers de la data', duree: '1 h',
       contenu: [
         'Comment une machine apprend à partir de données',
         'Data analyst, data engineer, data scientist : qui fait quoi',
@@ -458,7 +458,7 @@ function IntroductionScienceDonneesPage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

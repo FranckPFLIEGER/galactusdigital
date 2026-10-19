@@ -9,17 +9,17 @@ export const Route = createFileRoute('/formations/cyberops')({
   component: CyberOpsPage,
   head: () => ({
     meta: [
-      { title: "CCNA Cybersecurity Cisco — Certification 200-201 CBROPS | GALACTUS Digital" },
-      { name: "description", content: "Formation Cisco CCNA Cybersecurity (ex-CyberOps). 60h. Certification 200-201 CBROPS. Analyste SOC détection intrusion réponse incidents. Qualiopi." },
+      { title: "CCNA Cybersecurity Cisco — Certification 200-201 CCNACBR | GALACTUS Digital" },
+      { name: "description", content: "Formation Cisco CCNA Cybersecurity (ex-CyberOps). 60 h. Certification 200-201 CCNACBR. Analyste SOC détection intrusion réponse incidents. Qualiopi." },
     ],
   }),
 })
 
 const DATA = {
-  editeur: 'Cisco', famille: 'Cisco Networking Academy — Cybersécurité', titre: 'CCNA Cybersecurity — Opérations de cybersécurité SOC', sousTitre: 'Certification Cisco CCNA Cybersecurity (ex-CyberOps) · Référence : CBROPS-200-201',
-  ref: 'CYBEROPS-001', niveau: 'Intermédiaire', partenaire: 'Partenaire Cisco n° 3018982', certification: 'Cisco Certified CCNA Cybersecurity (200-201 CBROPS v1.2)',
+  editeur: 'Cisco', famille: 'Cisco Networking Academy — Cybersécurité', titre: 'CCNA Cybersecurity — Opérations de cybersécurité SOC', sousTitre: 'Certification Cisco CCNA Cybersecurity (ex-CyberOps) · Référence : CCNACBR-200-201',
+  ref: 'CYBEROPS-001', niveau: 'Intermédiaire', partenaire: 'Partenaire Cisco n° 3018982', certification: 'Cisco Certified CCNA Cybersecurity (200-201 CCNACBR v1.2)',
   duree: '60 heures', groupeMin: 4, groupeMax: 12, lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Cette formation prépare les analystes en cybersécurité de niveau débutant à travailler dans un Centre d'Opérations de Sécurité (SOC). Elle couvre la surveillance réseau, la détection d'intrusion, l'analyse forensique et la réponse aux incidents. Elle prépare à la certification Cisco Certified CCNA Cybersecurity (200-201 CBROPS v1.2, ex-CyberOps).`,
+  description: `Cette formation prépare les analystes en cybersécurité de niveau débutant à travailler dans un Centre d'Opérations de Sécurité (SOC). Elle couvre la surveillance réseau, la détection d'intrusion, l'analyse forensique et la réponse aux incidents. Elle prépare à la certification Cisco Certified CCNA Cybersecurity (200-201 CCNACBR v1.2, ex-CyberOps).`,
   objectifs: [
     'Décrire les concepts fondamentaux de sécurité — CIA Triad, gestion des risques, cryptographie',
     'Analyser le trafic réseau et identifier les activités malveillantes avec des outils comme Wireshark et tcpdump',
@@ -31,13 +31,13 @@ const DATA = {
   public: ['Analystes SOC niveau 1 et 2', 'Techniciens sécurité réseau', 'Administrateurs systèmes souhaitant évoluer en cybersécurité', 'Professionnels IT en reconversion cybersécurité'],
   prerequis: ['Connaissance des réseaux TCP/IP (niveau CCNA ITN recommandé)', 'Notions de systèmes d\'exploitation Windows et Linux', 'Compréhension basique des protocoles réseau (HTTP, DNS, SMTP)'],
   modules: [
-    { num: '01–03', titre: 'Concepts de sécurité', duree: '12h', contenu: ['CIA Triad — confidentialité, intégrité, disponibilité', 'Gestion des risques — évaluation, mitigation, frameworks ISO 27001', 'Cryptographie — chiffrement symétrique/asymétrique, PKI, hachage', 'TP — Analyse de certificats et outils cryptographiques'] },
-    { num: '04–07', titre: 'Surveillance de la sécurité réseau', duree: '16h', contenu: ['Protocoles réseau et analyse de trafic avec Wireshark et tcpdump', 'Technologies SOC — SIEM, IDS/IPS, honeypots', 'Analyse de fichiers PCAP et détection d\'anomalies', 'Surveillance avec NetFlow et flux de données réseau'] },
-    { num: '08–10', titre: 'Analyse basée sur l\'hôte', duree: '12h', contenu: ['Analyse forensique Windows — registre, logs d\'événements, artefacts', 'Analyse forensique Linux — logs système, commandes d\'investigation', 'Analyse de malwares — types, comportements, outils de détection', 'TP — Analyse d\'incident sur hôte compromis'] },
-    { num: '11–13', titre: 'Analyse des intrusions réseau', duree: '12h', contenu: ['Attaques réseau — DoS, DDoS, man-in-the-middle, ARP poisoning', 'Attaques applicatives — injections SQL, XSS, débordements de tampon', 'Outils d\'attaque réseau — Nmap, Metasploit (perspective défensive)', 'TP — Identification et analyse d\'intrusions réseau'] },
-    { num: '14–16', titre: 'Politiques et procédures SOC', duree: '8h', contenu: ['Procédures de réponse aux incidents — NIST SP 800-61, phases d\'intervention', 'Classification des incidents et procédures d\'escalade SOC', 'Conformité et réglementation — RGPD, PCI-DSS, HIPAA', 'TP de synthèse — Simulation d\'investigation complète SOC'] },
+    { num: '01–03', titre: 'Concepts de sécurité', duree: '12 h', contenu: ['CIA Triad — confidentialité, intégrité, disponibilité', 'Gestion des risques — évaluation, mitigation, frameworks ISO 27001', 'Cryptographie — chiffrement symétrique/asymétrique, PKI, hachage', 'TP — Analyse de certificats et outils cryptographiques'] },
+    { num: '04–07', titre: 'Surveillance de la sécurité réseau', duree: '16 h', contenu: ['Protocoles réseau et analyse de trafic avec Wireshark et tcpdump', 'Technologies SOC — SIEM, IDS/IPS, honeypots', 'Analyse de fichiers PCAP et détection d\'anomalies', 'Surveillance avec NetFlow et flux de données réseau'] },
+    { num: '08–10', titre: 'Analyse basée sur l\'hôte', duree: '12 h', contenu: ['Analyse forensique Windows — registre, logs d\'événements, artefacts', 'Analyse forensique Linux — logs système, commandes d\'investigation', 'Analyse de malwares — types, comportements, outils de détection', 'TP — Analyse d\'incident sur hôte compromis'] },
+    { num: '11–13', titre: 'Analyse des intrusions réseau', duree: '12 h', contenu: ['Attaques réseau — DoS, DDoS, man-in-the-middle, ARP poisoning', 'Attaques applicatives — injections SQL, XSS, débordements de tampon', 'Outils d\'attaque réseau — Nmap, Metasploit (perspective défensive)', 'TP — Identification et analyse d\'intrusions réseau'] },
+    { num: '14–16', titre: 'Politiques et procédures SOC', duree: '8 h', contenu: ['Procédures de réponse aux incidents — NIST SP 800-61, phases d\'intervention', 'Classification des incidents et procédures d\'escalade SOC', 'Conformité et réglementation — RGPD, PCI-DSS, HIPAA', 'TP de synthèse — Simulation d\'investigation complète SOC'] },
   ],
-  examen: { code: '200-201 CBROPS', duree: '120 minutes', langue: 'Français', organisme: 'Cisco (Pearson VUE)', format: 'QCM, simulation d\'analyse réseau', score: '750 / 1000', note: 'L\'examen 200-201 CBROPS est indépendant. Un seul examen suffit pour obtenir la certification CCNA Cybersecurity, sans module préalable obligatoire. Le badge et le certificat Cisco Networking Academy sont délivrés à l\'issue du cours et compris dans le tarif. Le voucher d\'examen surveillé n\'est pas inclus : le candidat qui souhaite passer la certification de l\'éditeur l\'acquiert auprès du centre agréé.' },
+  examen: { code: '200-201 CCNACBR', duree: '120 minutes', langue: 'Français', organisme: 'Cisco (Pearson VUE)', format: 'QCM, simulation d\'analyse réseau', score: '750 / 1000', note: 'L\'examen 200-201 CCNACBR est indépendant. Un seul examen suffit pour obtenir la certification CCNA Cybersecurity, sans module préalable obligatoire. Le badge et le certificat Cisco Networking Academy sont délivrés à l\'issue du cours et compris dans le tarif. Le voucher d\'examen surveillé n\'est pas inclus : le candidat qui souhaite passer la certification de l\'éditeur l\'acquiert auprès du centre agréé.' },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
     "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
@@ -48,7 +48,7 @@ const DATA = {
     "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
     "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
-    "Certification Cisco Certified CCNA Cybersecurity (200-201 CBROPS) envoyée par mail à l'issue du parcours",
+    "Certification Cisco Certified CCNA Cybersecurity (200-201 CCNACBR) envoyée par mail à l'issue du parcours",
     "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Examen final du cours Cisco Networking Academy intégré au programme — l'examen de certification surveillé reste optionnel et à la charge du candidat",
   ],
@@ -151,7 +151,7 @@ function CyberOpsPage() {
 
         <section style={{ background: 'var(--g-black)', padding: '3rem 2rem', borderTop: '4px solid var(--g-red)' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
-            <div><h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2><p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p></div>
+            <div><h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2><p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p></div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}><a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a><a href="/?f=cyberops#contact" className="btn-ghost"><Mail size={16} /> Demander un devis</a></div>
           </div>
         </section>

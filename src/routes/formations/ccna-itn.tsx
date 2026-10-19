@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/ccna-itn')({
   head: () => ({
     meta: [
       { title: "CCNA Module 1/3 — Introduction aux réseaux Cisco | GALACTUS Digital" },
-      { name: "description", content: "CCNA Introduction aux réseaux ITN Module 1/3. 70h. Certification CCNA 200-301. OSI TCP/IP IPv4 IPv6 CLI Cisco. Territoires ultramarins. Qualiopi." },
+      { name: "description", content: "CCNA Introduction aux réseaux ITN Module 1/3. 70 h. Certification CCNA 200-301. OSI TCP/IP IPv4 IPv6 CLI Cisco. Territoires ultramarins. Qualiopi." },
     ],
   }),
 })
@@ -44,7 +44,7 @@ const DATA = {
 
   // Objectifs pédagogiques
   objectifs: [
-    'Décrire le fonctionnement des réseaux et identifier les dispositifs majeurs (switchs, routeurs, pare-feux)',
+    'Décrire le fonctionnement des réseaux et identifier les dispositifs majeurs (commutateurs, routeurs, pare-feux)',
     'Expliquer le modèle OSI et le modèle TCP/IP, identifier le rôle de chaque couche',
     'Configurer l\'adressage IPv4 et IPv6, calculer des masques de sous-réseau (VLSM)',
     'Configurer des équipements Cisco IOS en ligne de commande (CLI)',
@@ -72,7 +72,7 @@ const DATA = {
   // Programme
   modules: [
     {
-      num: '01–03', titre: 'Connectivité réseau de base et communications', duree: '12h',
+      num: '01–03', titre: 'Connectivité réseau de base et communications', duree: '12 h',
       contenu: [
         'Composants, types et connexions réseau ; représentations et topologies',
         'Configuration initiale d\'un système d\'exploitation Cisco IOS (CLI)',
@@ -81,7 +81,7 @@ const DATA = {
       ],
     },
     {
-      num: '04–07', titre: 'Concepts Ethernet', duree: '16h',
+      num: '04–07', titre: 'Concepts Ethernet', duree: '16 h',
       contenu: [
         'Couche physique — supports cuivre, fibre, sans fil',
         'Systèmes de numération (binaire, hexadécimal) et couche liaison',
@@ -90,7 +90,7 @@ const DATA = {
       ],
     },
     {
-      num: '08–10', titre: 'Communication entre réseaux', duree: '12h',
+      num: '08–10', titre: 'Communication entre réseaux', duree: '12 h',
       contenu: [
         'Couche réseau — paquets IPv4/IPv6 et routage',
         'Résolution d\'adresses — ARP et découverte de voisins IPv6 (ND)',
@@ -99,7 +99,7 @@ const DATA = {
       ],
     },
     {
-      num: '11–13', titre: 'Adressage IP', duree: '16h',
+      num: '11–13', titre: 'Adressage IP', duree: '16 h',
       contenu: [
         'Structure et adressage IPv4 — public, privé, réservé',
         'Découpage en sous-réseaux VLSM (Variable Length Subnet Mask)',
@@ -108,7 +108,7 @@ const DATA = {
       ],
     },
     {
-      num: '14–15', titre: 'Communications applicatives', duree: '8h',
+      num: '14–15', titre: 'Communications applicatives', duree: '8 h',
       contenu: [
         'Couche transport — TCP (fiable) vs UDP, numéros de port',
         'Couche application — DNS, DHCP, HTTP/HTTPS, FTP, TFTP, SMTP',
@@ -117,7 +117,7 @@ const DATA = {
       ],
     },
     {
-      num: '16–17', titre: 'Créer et sécuriser un petit réseau', duree: '6h',
+      num: '16–17', titre: 'Créer et sécuriser un petit réseau', duree: '6 h',
       contenu: [
         'Conception d\'un petit réseau et bonnes pratiques',
         'Bases de la sécurité réseau — menaces et mesures d\'atténuation',
@@ -129,13 +129,13 @@ const DATA = {
 
   // Examen
   examen: {
-    code:       '200-301 CCNA v1.1',
+    code:       '200-301 CCNA (blueprint v1.1)',
     duree:      '120 minutes',
     langue:     'Français',
     organisme:  'Cisco Networking Academy',
     format:     'QCM, drag-and-drop, simulation réseau Cisco',
     score:      '825 / 1000',
-    note: 'Ce module est le 1er des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA. Le badge et le certificat Cisco Networking Academy sont délivrés à l\'issue du cours et compris dans le tarif. Le voucher d\'examen surveillé n\'est pas inclus : le candidat qui souhaite passer la certification de l\'éditeur l\'acquiert auprès du centre agréé.',
+    note: 'Ce module est le 1er des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA. Le badge et le certificat Cisco Networking Academy sont délivrés à l\'issue du cours et compris dans le tarif. Le voucher d\'examen surveillé n\'est pas inclus : le candidat qui souhaite passer la certification de l\'éditeur l\'acquiert auprès du centre agréé. Le blueprint v1.1 est proposé jusqu\'au 2 février 2027 ; la version v2.0 entre en vigueur le 3 février 2027, le code d\'examen restant 200-301.',
   },
 
   // Méthodes pédagogiques
@@ -464,7 +464,7 @@ function CcnaItnPage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                Devis sous 48h.
+                Devis sous 48 h.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

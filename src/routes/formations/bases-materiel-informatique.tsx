@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/bases-materiel-informatique')(
   head: () => ({
     meta: [
       { title: "Les bases du matériel informatique — Formation sans prérequis | GALACTUS Digital" },
-      { name: "description", content: "Formation Les bases du matériel informatique. 6h, aucun prérequis. Composants PC, portables, terminaux mobiles. Brique CCST Cybersecurity. Reconversion. Qualiopi." },
+      { name: "description", content: "Formation Les bases du matériel informatique. 6 h, aucun prérequis. Composants PC, portables, terminaux mobiles. Brique CCST Cybersecurity. Reconversion. Qualiopi." },
     ],
   }),
 })
@@ -70,7 +70,7 @@ const DATA = {
   // Programme
   modules: [
     {
-      num: '01', titre: 'Composants d\'un ordinateur de bureau', duree: '2h',
+      num: '01', titre: 'Composants d\'un ordinateur de bureau', duree: '2 h',
       contenu: [
         'Carte mère, processeur, mémoire vive, stockage, alimentation',
         'Cartes d\'extension, refroidissement et boîtier',
@@ -79,7 +79,7 @@ const DATA = {
       ],
     },
     {
-      num: '02', titre: 'Assemblage, réparation et mise à niveau', duree: '2h',
+      num: '02', titre: 'Assemblage, réparation et mise à niveau', duree: '2 h',
       contenu: [
         'Monter un PC composant par composant',
         'Diagnostiquer une panne matérielle simple',
@@ -88,7 +88,7 @@ const DATA = {
       ],
     },
     {
-      num: '03', titre: 'Portables et terminaux mobiles', duree: '2h',
+      num: '03', titre: 'Portables et terminaux mobiles', duree: '2 h',
       contenu: [
         'Spécificités des ordinateurs portables : batterie, écran, clavier, dissipation',
         'Tablettes et téléphones : architecture et composants',
@@ -452,7 +452,7 @@ function BasesMaterielInformatiquePage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

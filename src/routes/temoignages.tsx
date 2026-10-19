@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { SATISFACTION_GLOBALE } from '../data/resultats'
+import { SATISFACTION_GLOBALE, RESULTATS_TOTAL_FORMES } from '../data/resultats'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
 import { Quote } from 'lucide-react'
@@ -63,7 +63,7 @@ const temoignageVideo = {
 const temoignagesEcrits = [
   {
     initiales: 'P.B.',
-    fonction: 'Directeur & responsable des systèmes d’information',
+    fonction: 'Directeur & responsable des systèmes d\'information',
     entreprise: 'Biolab Martinique',
     lieu: 'Martinique',
     formation: 'Cybersécurité',
@@ -83,7 +83,7 @@ const temoignagesEcrits = [
   },
   {
     initiales: 'C-A.H.',
-    fonction: 'Directeur des systèmes d’information',
+    fonction: 'Directeur des systèmes d\'information',
     entreprise: 'Collectivité Territoriale de Martinique',
     lieu: 'Martinique',
     formation: 'Réseaux',
@@ -291,8 +291,8 @@ function TemoignagesPage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(200px,1fr))', gap: '2rem', textAlign: 'center' }}>
               {[
                 { num: SATISFACTION_GLOBALE, label: 'Note satisfaction', sub: 'Moyenne 2023-2025' },
-                { num: '100%', label: 'Taux de réussite', sub: 'Parmi les présentés' },
-                { num: '518', label: 'Apprenants formés', sub: '3 dernières années' },
+                { num: '100 %', label: 'Taux de réussite', sub: "Parmi les candidats présentés à l'examen" },
+                { num: String(RESULTATS_TOTAL_FORMES), label: 'Apprenants formés', sub: '3 dernières années' },
                 { num: '7', label: 'Territoires', sub: 'Caraïbes · Océan Indien · France' },
               ].map(s => (
                 <div key={s.label}>

@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/ccnp-encor')({
   head: () => ({
     meta: [
       { title: "CCNP Enterprise Core — ENCOR 350-401 v9 | GALACTUS Digital" },
-      { name: "description", content: "CCNP Enterprise : Core Networking (ENCOR 350-401) v9. 70h. SD-Access, LISP/VXLAN, assurance réseau, automatisation. Formateur CCNP/CCDP. Qualiopi." },
+      { name: "description", content: "CCNP Enterprise : Core Networking (ENCOR 350-401) v9. 70 h. SD-Access, LISP/VXLAN, assurance réseau, automatisation. Formateur CCNP/CCDP. Qualiopi." },
     ],
   }),
 })
@@ -59,26 +59,26 @@ const DATA = {
     "3 à 5 ans d'expérience réseau recommandés",
   ],
   modules: [
-    { num: '01', titre: 'Architecture & conception', duree: '16h', contenu: [
+    { num: '01', titre: 'Architecture & conception', duree: '16 h', contenu: [
       "Modèles hiérarchiques — 3-tier, collapsed core, campus",
       { text: "SD-Access Fabric — Fabric Edge, Control Plane node, Border node", neuf: true },
       { text: "LISP — enregistrement des mappages identité (EID) vers localisation (RLOC)", neuf: true },
       { text: "VXLAN — encapsulation et transport dans le fabric", neuf: true },
     ] as Item[] },
-    { num: '02', titre: 'Virtualisation & infrastructure', duree: '18h', contenu: [
+    { num: '02', titre: 'Virtualisation & infrastructure', duree: '18 h', contenu: [
       "Virtualisation — VRF, GRE, IPsec, tunnels",
       "Commutation avancée — STP, EtherChannel, first-hop redundancy (HSRP/VRRP)",
       "Routage — OSPF, EIGRP, BGP et redistribution",
       { text: "Sans-fil retiré d'ENCOR v1.2 → piste dédiée CCNP Wireless (350-101 WLCOR)", neuf: true },
     ] as Item[] },
-    { num: '03', titre: 'Assurance réseau & sécurité', duree: '18h', contenu: [
+    { num: '03', titre: 'Assurance réseau & sécurité', duree: '18 h', contenu: [
       { text: "Assurance réseau — télémétrie, monitoring, IP SLA, NetFlow", neuf: true },
       "Sécurité d'infrastructure — AAA, control plane policing, ACL",
       "Sécurité des équipements — durcissement, contrôle d'accès",
       { text: "Architecture de sécurité Zero Trust", neuf: true },
       "Dual-stack IPv4/IPv6 — bonnes pratiques",
     ] as Item[] },
-    { num: '04', titre: 'Automatisation & programmabilité', duree: '18h', contenu: [
+    { num: '04', titre: 'Automatisation & programmabilité', duree: '18 h', contenu: [
       "Automatisation — Python, REST API, JSON, EEM",
       { text: "Modèles de données et programmabilité (YANG, NETCONF/RESTCONF)", neuf: true },
       "Outils de gestion et contrôleurs (Catalyst Center)",
@@ -326,7 +326,7 @@ function FormationPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2>
-              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p>
+              <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>

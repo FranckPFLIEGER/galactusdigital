@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/sensibilisation-numerique')({
   head: () => ({
     meta: [
       { title: "Sensibilisation au numérique — Formation sans prérequis | GALACTUS Digital" },
-      { name: "description", content: "Formation Sensibilisation au numérique. 6h, aucun prérequis. Identité numérique, recherche, mots de passe, premiers réflexes IA. Reconversion. Territoires ultramarins. Qualiopi." },
+      { name: "description", content: "Formation Sensibilisation au numérique. 6 h, aucun prérequis. Identité numérique, recherche, mots de passe, premiers réflexes IA. Reconversion. Territoires ultramarins. Qualiopi." },
     ],
   }),
 })
@@ -70,7 +70,7 @@ const DATA = {
   // Programme
   modules: [
     {
-      num: '01', titre: 'Le monde numérique aujourd\'hui', duree: '1h',
+      num: '01', titre: 'Le monde numérique aujourd\'hui', duree: '1 h',
       contenu: [
         'Ce que recouvrent les technologies numériques et leur impact sur le travail',
         'Panorama des métiers accessibles par une reconversion IT',
@@ -78,7 +78,7 @@ const DATA = {
       ],
     },
     {
-      num: '02', titre: 'Rechercher et évaluer l\'information', duree: '1h',
+      num: '02', titre: 'Rechercher et évaluer l\'information', duree: '1 h',
       contenu: [
         'Construire une requête de recherche efficace',
         'Évaluer la fiabilité d\'une source en ligne',
@@ -86,7 +86,7 @@ const DATA = {
       ],
     },
     {
-      num: '03', titre: 'Communiquer par e-mail', duree: '1h',
+      num: '03', titre: 'Communiquer par e-mail', duree: '1 h',
       contenu: [
         'Envoi, réception et organisation des messages',
         'Pièces jointes, copies et copies cachées',
@@ -94,7 +94,7 @@ const DATA = {
       ],
     },
     {
-      num: '04', titre: 'Mots de passe et sécurité de base', duree: '1h',
+      num: '04', titre: 'Mots de passe et sécurité de base', duree: '1 h',
       contenu: [
         'Anatomie d\'un mot de passe solide',
         'Outil de vérification de la fiabilité des mots de passe',
@@ -102,7 +102,7 @@ const DATA = {
       ],
     },
     {
-      num: '05', titre: 'Identité numérique', duree: '1h',
+      num: '05', titre: 'Identité numérique', duree: '1 h',
       contenu: [
         'Ce que les autres voient de vous en ligne',
         'Paramètres de confidentialité des principaux services',
@@ -110,7 +110,7 @@ const DATA = {
       ],
     },
     {
-      num: '06', titre: 'Dépannage courant et première approche de l\'IA', duree: '1h',
+      num: '06', titre: 'Dépannage courant et première approche de l\'IA', duree: '1 h',
       contenu: [
         'Vidéos explicatives : lenteurs, Wi-Fi, problèmes de connectivité',
         'S\'initier à l\'intelligence artificielle et à ses usages quotidiens',
@@ -473,7 +473,7 @@ function SensibilisationNumeriquePage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

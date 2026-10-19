@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/notions-base-reseaux')({
   head: () => ({
     meta: [
       { title: "Notions de base sur les réseaux — Formation sans prérequis | GALACTUS Digital" },
-      { name: "description", content: "Formation Notions de base sur les réseaux (Networking Basics). 22h, aucun prérequis. Packet Tracer, adressage IP, réseau local. Brique CCST. Reconversion. Qualiopi." },
+      { name: "description", content: "Formation Notions de base sur les réseaux (Networking Basics). 22 h, aucun prérequis. Packet Tracer, adressage IP, réseau local. Brique CCST. Reconversion. Qualiopi." },
     ],
   }),
 })
@@ -70,7 +70,7 @@ const DATA = {
   // Programme
   modules: [
     {
-      num: '01–04', titre: 'Le réseau au quotidien', duree: '5h',
+      num: '01–04', titre: 'Le réseau au quotidien', duree: '5 h',
       contenu: [
         'À quoi sert un réseau et de quoi il est composé',
         'Types de réseaux : domestique, petit bureau, entreprise, Internet',
@@ -79,7 +79,7 @@ const DATA = {
       ],
     },
     {
-      num: '05–08', titre: 'Se connecter à Internet', duree: '5h',
+      num: '05–08', titre: 'Se connecter à Internet', duree: '5 h',
       contenu: [
         'Configuration d\'un routeur sans fil et d\'un hôte',
         'Paramétrage Wi-Fi et sécurisation d\'un accès domestique',
@@ -88,7 +88,7 @@ const DATA = {
       ],
     },
     {
-      num: '09–12', titre: 'Ethernet et communication locale', duree: '6h',
+      num: '09–12', titre: 'Ethernet et communication locale', duree: '6 h',
       contenu: [
         'Fonctionnement d\'Ethernet dans un réseau commuté',
         'Trames, adresses MAC et rôle du commutateur',
@@ -97,7 +97,7 @@ const DATA = {
       ],
     },
     {
-      num: '13–15', titre: 'Adressage IP', duree: '4h',
+      num: '13–15', titre: 'Adressage IP', duree: '4 h',
       contenu: [
         'Structure d\'une adresse IPv4 et d\'une adresse IPv6',
         'Masque de sous-réseau et passerelle par défaut',
@@ -106,7 +106,7 @@ const DATA = {
       ],
     },
     {
-      num: '16–17', titre: 'Services applicatifs et réseau local complet', duree: '2h',
+      num: '16–17', titre: 'Services applicatifs et réseau local complet', duree: '2 h',
       contenu: [
         'DNS, DHCP, HTTP : les services que l\'utilisateur voit',
         'Construire un réseau local de bout en bout',
@@ -472,7 +472,7 @@ function NotionsBaseReseauxPage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

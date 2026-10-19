@@ -81,7 +81,7 @@ function FoadPage() {
               Le parcours Juniper JNCIA-Junos se tient en classe virtuelle : sessions live sur WEBEX, maquette Junos accessible à distance, accompagnement individualisé documenté à chaque étape. La même qualité que le présentiel, sans contrainte géographique.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
-              {['Art. D.6313-3-1 Code du travail', 'Qualiopi — Indicateur 19', 'Qualiopi — Critère 3', 'Eligible OPCO', 'Formateur certifié éditeur'].map(b => (
+              {['Art. D.6313-3-1 Code du travail', 'Qualiopi — Indicateur 19', 'Qualiopi — Critère 3', 'Éligible OPCO', 'Formateur certifié éditeur'].map(b => (
                 <div key={b} style={{ padding: '0.35rem 0.9rem', background: 'rgba(228,31,38,0.10)', border: '1px solid rgba(228,31,38,0.25)', fontFamily: 'var(--font-title)', fontSize: '0.68rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.75)' }}>{b}</div>
               ))}
             </div>
@@ -228,7 +228,7 @@ function FoadPage() {
             </div>
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="/?f=jncia-junos#contact" className="btn-ghost-dark"><Mail size={16} /> Demander un devis sous 48h</a>
+              <a href="/?f=jncia-junos#contact" className="btn-ghost-dark"><Mail size={16} /> Demander un devis sous 48 h</a>
             </div>
           </div>
         </section>

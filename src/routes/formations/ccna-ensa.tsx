@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/ccna-ensa')({
   head: () => ({
     meta: [
       { title: "CCNA Module 3/3 — Réseaux entreprise Cisco | GALACTUS Digital" },
-      { name: "description", content: "CCNA Réseaux entreprise ENSA Module 3/3. 70h. Certification CCNA 200-301. QoS VPN automatisation réseau. Certifié Qualiopi." },
+      { name: "description", content: "CCNA Réseaux entreprise ENSA Module 3/3. 70 h. Certification CCNA 200-301. QoS VPN automatisation réseau. Certifié Qualiopi." },
     ],
   }),
 })
@@ -33,14 +33,14 @@ const DATA = {
   public: ['Administrateurs réseaux', 'Ingénieurs systèmes', 'Techniciens réseau', 'Candidats CCNA ayant validé les modules 1 et 2'],
   prerequis: ['Avoir validé les modules CCNA 1 (ITN) et CCNA 2 (SRWE)', 'Maîtrise du routage statique et des VLAN', 'Notions de sécurité réseau de base'],
   modules: [
-    { num: '01–02', titre: 'OSPF mono-zone et multi-zone', duree: '14h', contenu: ['OSPFv2 mono-zone — concepts, élection DR/BDR, types de réseaux', 'Configuration et vérification OSPF sur interfaces série et broadcast', 'OSPFv2 multi-zone — zone backbone, ABR, LSA types', 'TP — Déploiement OSPF sur topologie d\'entreprise'] },
-    { num: '03–05', titre: 'Sécurité réseau', duree: '14h', contenu: ['Concepts de sécurité — menaces, vulnérabilités, vecteurs d\'attaque', 'ACL IPv4 standard et étendues — syntaxe et placement', 'ACL nommées et ACL pour IPv6 (ACLv6)', 'TP — Sécurisation réseau avec ACL et bonnes pratiques'] },
-    { num: '06–08', titre: 'NAT, WAN et VPN', duree: '14h', contenu: ['NAT statique, dynamique et PAT (surcharge) — configuration et dépannage', 'Concepts WAN — MPLS, Metro Ethernet, broadband', 'VPN — types (site-to-site, accès distant) et protocoles IPsec/GRE', 'TP — Configuration NAT et simulation VPN'] },
-    { num: '09–12', titre: 'QoS, supervision et dépannage', duree: '14h', contenu: ['Concepts QoS — classification, marquage, mise en file d\'attente', 'Gestion réseau — SNMP, Syslog, NTP, CDP/LLDP', 'Conception réseau — hiérarchique (accès/distribution/cœur)', 'Méthodologie de dépannage — show, debug, analyse Packet Tracer'] },
-    { num: '13–14', titre: 'Virtualisation et automatisation réseau', duree: '14h', contenu: ['Virtualisation réseau — hyperviseurs, VMs, conteneurs', 'SDN et architectures basées sur contrôleur', 'APIs REST — opérations GET/POST/PUT/DELETE, format JSON', 'Automatisation de la configuration réseau — concepts et outils'] },
+    { num: '01–02', titre: 'OSPF mono-zone et multi-zone', duree: '14 h', contenu: ['OSPFv2 mono-zone — concepts, élection DR/BDR, types de réseaux', 'Configuration et vérification OSPF sur interfaces série et broadcast', 'OSPFv2 multi-zone — zone backbone, ABR, LSA types', 'TP — Déploiement OSPF sur topologie d\'entreprise'] },
+    { num: '03–05', titre: 'Sécurité réseau', duree: '14 h', contenu: ['Concepts de sécurité — menaces, vulnérabilités, vecteurs d\'attaque', 'ACL IPv4 standard et étendues — syntaxe et placement', 'ACL nommées et ACL pour IPv6 (ACLv6)', 'TP — Sécurisation réseau avec ACL et bonnes pratiques'] },
+    { num: '06–08', titre: 'NAT, WAN et VPN', duree: '14 h', contenu: ['NAT statique, dynamique et PAT (surcharge) — configuration et dépannage', 'Concepts WAN — MPLS, Metro Ethernet, broadband', 'VPN — types (site-to-site, accès distant) et protocoles IPsec/GRE', 'TP — Configuration NAT et simulation VPN'] },
+    { num: '09–12', titre: 'QoS, supervision et dépannage', duree: '14 h', contenu: ['Concepts QoS — classification, marquage, mise en file d\'attente', 'Gestion réseau — SNMP, Syslog, NTP, CDP/LLDP', 'Conception réseau — hiérarchique (accès/distribution/cœur)', 'Méthodologie de dépannage — show, debug, analyse Packet Tracer'] },
+    { num: '13–14', titre: 'Virtualisation et automatisation réseau', duree: '14 h', contenu: ['Virtualisation réseau — hyperviseurs, VMs, conteneurs', 'SDN et architectures basées sur contrôleur', 'APIs REST — opérations GET/POST/PUT/DELETE, format JSON', 'Automatisation de la configuration réseau — concepts et outils'] },
     { num: 'v1.1', titre: 'Module complémentaire CCNA v1.1', duree: '+', supplement: true, contenu: [{ text: 'IA générative et prédictive & machine learning dans les opérations réseau (obj. 6.4)', neuf: true }, { text: 'APIs REST — types d\'authentification, CRUD, verbes HTTP, encodage des données (obj. 6.5)', neuf: true }, { text: 'Outils de gestion de configuration : Ansible et Terraform (obj. 6.6) — Puppet et Chef retirés', neuf: true }, { text: 'Gestion réseau dans le cloud (cloud network management)', neuf: true }] },
   ],
-  examen: { code: '200-301 CCNA v1.1', duree: '120 minutes', langue: 'Français', organisme: 'Cisco (Pearson VUE)', format: 'QCM, drag-and-drop, simulation réseau Cisco', score: '825 / 1000', note: 'Ce module est le 3ème et dernier requis. La certification CCNA 200-301 est obtenue après validation des 3 modules ITN + SRWE + ENSA et passage de l\'examen Cisco Networking Academy. Depuis le 20 août 2024, l\'examen est en version v1.1 (ajout du cloud, de l\'automatisation et de l\'IA). Le badge et le certificat Cisco Networking Academy sont délivrés à l\'issue du cours et compris dans le tarif. Le voucher d\'examen surveillé n\'est pas inclus : le candidat qui souhaite passer la certification de l\'éditeur l\'acquiert auprès du centre agréé.' },
+  examen: { code: '200-301 CCNA (blueprint v1.1)', duree: '120 minutes', langue: 'Français', organisme: 'Cisco (Pearson VUE)', format: 'QCM, drag-and-drop, simulation réseau Cisco', score: '825 / 1000', note: 'Ce module est le 3e et dernier requis. La certification CCNA 200-301 est obtenue après validation des 3 modules ITN + SRWE + ENSA et passage de l\'examen Cisco Networking Academy. Depuis le 20 août 2024, l\'examen est en version v1.1 (ajout du cloud, de l\'automatisation et de l\'IA). Le badge et le certificat Cisco Networking Academy sont délivrés à l\'issue du cours et compris dans le tarif. Le voucher d\'examen surveillé n\'est pas inclus : le candidat qui souhaite passer la certification de l\'éditeur l\'acquiert auprès du centre agréé. Le blueprint v1.1 est proposé jusqu\'au 2 février 2027 ; la version v2.0 entre en vigueur le 3 février 2027, le code d\'examen restant 200-301.' },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
     "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
@@ -169,7 +169,7 @@ function CcnaEnsaPage() {
 
         <section style={{ background: 'var(--g-black)', padding: '3rem 2rem', borderTop: '4px solid var(--g-red)' }}>
           <div style={{ maxWidth: '900px', margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '2rem', flexWrap: 'wrap' }}>
-            <div><h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2><p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48h.</p></div>
+            <div><h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>S'inscrire à cette formation</h2><p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0 }}>Devis sous 48 h.</p></div>
             <div style={{ display: 'flex', gap: '1rem', flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
               <a href="/?f=ccna-ensa#contact" className="btn-ghost"><Mail size={16} /> Demander un devis</a>

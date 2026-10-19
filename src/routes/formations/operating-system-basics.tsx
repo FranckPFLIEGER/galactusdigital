@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/operating-system-basics')({
   head: () => ({
     meta: [
       { title: "Operating System Basics — Formation sans prérequis | GALACTUS Digital" },
-      { name: "description", content: "Formation Operating System Basics. 12h, aucun prérequis. Windows, Linux, Android, iOS. Outils d'administration, sécurité de base. Reconversion. Qualiopi." },
+      { name: "description", content: "Formation Operating System Basics. 12 h, aucun prérequis. Windows, Linux, Android, iOS. Outils d'administration, sécurité de base. Reconversion. Qualiopi." },
     ],
   }),
 })
@@ -70,7 +70,7 @@ const DATA = {
   // Programme
   modules: [
     {
-      num: '01–02', titre: 'Rôle et types de systèmes d\'exploitation', duree: '3h',
+      num: '01–02', titre: 'Rôle et types de systèmes d\'exploitation', duree: '3 h',
       contenu: [
         'Ce que fait un système d\'exploitation et pourquoi il est indispensable',
         'Panorama : Windows, macOS, Linux, Android, iOS',
@@ -79,7 +79,7 @@ const DATA = {
       ],
     },
     {
-      num: '03–04', titre: 'Administration Windows', duree: '3h',
+      num: '03–04', titre: 'Administration Windows', duree: '3 h',
       contenu: [
         'Gestionnaire de tâches, services et observateur d\'événements',
         'Panneau de configuration et paramètres système',
@@ -88,7 +88,7 @@ const DATA = {
       ],
     },
     {
-      num: '05–06', titre: 'Bases de la sécurité Linux', duree: '3h',
+      num: '05–06', titre: 'Bases de la sécurité Linux', duree: '3 h',
       contenu: [
         'Structure d\'un système Linux et arborescence des fichiers',
         'Utilisateurs, groupes et permissions',
@@ -97,7 +97,7 @@ const DATA = {
       ],
     },
     {
-      num: '07–08', titre: 'Systèmes d\'exploitation mobiles', duree: '3h',
+      num: '07–08', titre: 'Systèmes d\'exploitation mobiles', duree: '3 h',
       contenu: [
         'Architecture d\'Android et d\'iOS, points communs et différences',
         'Configuration de la connectivité réseau sur un mobile',
@@ -461,7 +461,7 @@ function OperatingSystemBasicsPage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

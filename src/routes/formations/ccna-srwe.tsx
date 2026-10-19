@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/ccna-srwe')({
   head: () => ({
     meta: [
       { title: "CCNA Module 2/3 — Commutation et routage Cisco | GALACTUS Digital" },
-      { name: "description", content: "CCNA Commutation Routage Wi-Fi SRWE Module 2/3. 70h. Certification CCNA 200-301. VLANs STP OSPF WAN. Certifié Qualiopi." },
+      { name: "description", content: "CCNA Commutation Routage Wi-Fi SRWE Module 2/3. 70 h. Certification CCNA 200-301. VLAN STP OSPF WAN. Certifié Qualiopi." },
     ],
   }),
 })
@@ -31,14 +31,14 @@ const DATA = {
   public: ['Administrateurs réseaux', 'Techniciens support IT', 'Ingénieurs systèmes', 'Candidats à la certification CCNA ayant validé le module 1'],
   prerequis: ['Avoir validé le module CCNA 1 (ITN) ou posséder les connaissances équivalentes', 'Maîtrise des concepts OSI, TCP/IP, adressage IPv4/IPv6', 'Bases de la configuration Cisco IOS (CLI)'],
   modules: [
-    { num: '01–04', titre: 'Commutation, VLANs et routage inter-VLAN', duree: '18h', contenu: ['Concepts de commutation — table CAM, transfert de trames', 'Configuration et dépannage des VLANs et du trunking (802.1Q)', 'Routage inter-VLAN : router-on-a-stick et couche 3 SVI', 'TP — Implémentation VLAN et routage inter-VLAN'] },
-    { num: '05–06', titre: 'Réseaux redondants (STP)', duree: '12h', contenu: ['Spanning Tree Protocol (STP) et Rapid PVST+', 'PortFast et sécurisation du spanning tree', 'EtherChannel (LACP / PAgP) — configuration et vérification', 'TP — Configuration STP et EtherChannel'] },
-    { num: '07–09', titre: 'Réseaux disponibles et fiables', duree: '14h', contenu: ['Protocoles FHRP — HSRP pour la redondance de passerelle', 'DHCPv4 — serveur, relai et client sur Cisco IOS', 'SLAAC et DHCPv6 stateless / stateful pour IPv6', 'TP — Déploiement DHCP et redondance de passerelle'] },
-    { num: '10–13', titre: 'Sécurité de couche 2 et WLANs', duree: '16h', contenu: ['Concepts et bonnes pratiques de sécurité LAN', 'Sécurité des commutateurs — port security, DHCP snooping, DAI', 'Concepts WLAN et architecture (AP autonome et contrôlé WLC)', 'Sécurité WLAN (WPA2/WPA3, 802.1X) et configuration WLC', 'TP — Sécurisation LAN et configuration WLAN'] },
-    { num: '14–16', titre: 'Concepts et configuration du routage', duree: '10h', contenu: ['Concepts de routage — table de routage, décision de transfert', 'Routes statiques IPv4 et IPv6 — types et cas d\'usage', 'Routes statiques par défaut et flottantes (failover)', 'TP — Topologie multi-routeurs avec routes statiques'] },
+    { num: '01–04', titre: 'Commutation, VLAN et routage inter-VLAN', duree: '18 h', contenu: ['Concepts de commutation — table CAM, transfert de trames', 'Configuration et dépannage des VLAN et du trunking (802.1Q)', 'Routage inter-VLAN : router-on-a-stick et couche 3 SVI', 'TP — Implémentation VLAN et routage inter-VLAN'] },
+    { num: '05–06', titre: 'Réseaux redondants (STP)', duree: '12 h', contenu: ['Spanning Tree Protocol (STP) et Rapid PVST+', 'PortFast et sécurisation du spanning tree', 'EtherChannel (LACP / PAgP) — configuration et vérification', 'TP — Configuration STP et EtherChannel'] },
+    { num: '07–09', titre: 'Réseaux disponibles et fiables', duree: '14 h', contenu: ['Protocoles FHRP — HSRP pour la redondance de passerelle', 'DHCPv4 — serveur, relais et client sur Cisco IOS', 'SLAAC et DHCPv6 stateless / stateful pour IPv6', 'TP — Déploiement DHCP et redondance de passerelle'] },
+    { num: '10–13', titre: 'Sécurité de couche 2 et WLAN', duree: '16 h', contenu: ['Concepts et bonnes pratiques de sécurité LAN', 'Sécurité des commutateurs — port security, DHCP snooping, DAI', 'Concepts WLAN et architecture (AP autonome et contrôlé WLC)', 'Sécurité WLAN (WPA2/WPA3, 802.1X) et configuration WLC', 'TP — Sécurisation LAN et configuration WLAN'] },
+    { num: '14–16', titre: 'Concepts et configuration du routage', duree: '10 h', contenu: ['Concepts de routage — table de routage, décision de transfert', 'Routes statiques IPv4 et IPv6 — types et cas d\'usage', 'Routes statiques par défaut et flottantes (failover)', 'TP — Topologie multi-routeurs avec routes statiques'] },
     { num: 'v1.1', titre: 'Module complémentaire CCNA v1.1', duree: '+', supplement: true, contenu: [{ text: 'Mécanismes de commutation : Root guard, loop guard, BPDU filter et BPDU guard', neuf: true }, { text: 'Accès de gestion des équipements réseau, y compris cloud-managed', neuf: true }] },
   ],
-  examen: { code: '200-301 CCNA v1.1', duree: '120 minutes', langue: 'Français', organisme: 'Cisco (Pearson VUE)', format: 'QCM, drag-and-drop, simulation réseau', score: '825 / 1000', note: 'Ce module est le 2ème des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA. Le badge et le certificat Cisco Networking Academy sont délivrés à l\'issue du cours et compris dans le tarif. Le voucher d\'examen surveillé n\'est pas inclus : le candidat qui souhaite passer la certification de l\'éditeur l\'acquiert auprès du centre agréé.' },
+  examen: { code: '200-301 CCNA (blueprint v1.1)', duree: '120 minutes', langue: 'Français', organisme: 'Cisco (Pearson VUE)', format: 'QCM, drag-and-drop, simulation réseau', score: '825 / 1000', note: 'Ce module est le 2e des 3 requis. La certification CCNA est obtenue après les modules ITN + SRWE + ENSA. Le badge et le certificat Cisco Networking Academy sont délivrés à l\'issue du cours et compris dans le tarif. Le voucher d\'examen surveillé n\'est pas inclus : le candidat qui souhaite passer la certification de l\'éditeur l\'acquiert auprès du centre agréé. Le blueprint v1.1 est proposé jusqu\'au 2 février 2027 ; la version v2.0 entre en vigueur le 3 février 2027, le code d\'examen restant 200-301.' },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",
     "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",

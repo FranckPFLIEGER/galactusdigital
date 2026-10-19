@@ -215,7 +215,7 @@ function FormationsPage() {
                 [String(nbSocle), "sans prérequis"],
                 ["2", "éditeurs officiels"],
                 [String(nbFamilles), "familles"],
-                ["100%", "de réussite (518 formés)"],
+                ["100 %", "de réussite parmi les présentés à l'examen"],
               ].map(([num, lbl]) => (
                 <div key={lbl}>
                   <div style={{ fontFamily: "var(--font-title)", fontSize: "1.8rem", fontWeight: 700, color: "var(--g-red)", lineHeight: 1 }}>{num}</div>

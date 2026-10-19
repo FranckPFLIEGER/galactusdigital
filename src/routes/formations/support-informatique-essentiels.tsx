@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/support-informatique-essentiel
   head: () => ({
     meta: [
       { title: "Essentiels du support informatique — Certification CCST IT Support | GALACTUS Digital" },
-      { name: "description", content: "Formation Essentiels du support informatique. 56h, aucun prérequis. Préparation certification Cisco CCST IT Support 100-140. 103 laboratoires. Reconversion. Qualiopi." },
+      { name: "description", content: "Formation Essentiels du support informatique. 56 h, aucun prérequis. Préparation certification Cisco CCST IT Support 100-140. 103 laboratoires. Reconversion. Qualiopi." },
     ],
   }),
 })
@@ -70,7 +70,7 @@ const DATA = {
   // Programme
   modules: [
     {
-      num: '01–02', titre: 'Le métier du support informatique', duree: '8h',
+      num: '01–02', titre: 'Le métier du support informatique', duree: '8 h',
       contenu: [
         'Rôle du technicien support et attentes des employeurs',
         'Gestion de la file d\'incidents, priorisation et gestion du temps',
@@ -79,7 +79,7 @@ const DATA = {
       ],
     },
     {
-      num: '03–04', titre: 'Matériel et périphériques', duree: '12h',
+      num: '03–04', titre: 'Matériel et périphériques', duree: '12 h',
       contenu: [
         'Composants d\'un poste de travail et de ses périphériques',
         'Assemblage, remplacement et mise à niveau',
@@ -88,7 +88,7 @@ const DATA = {
       ],
     },
     {
-      num: '05–06', titre: 'Systèmes d\'exploitation Windows et macOS', duree: '14h',
+      num: '05–06', titre: 'Systèmes d\'exploitation Windows et macOS', duree: '14 h',
       contenu: [
         'Installation, configuration et mise à jour',
         'Comptes, droits, profils et stratégies locales',
@@ -97,7 +97,7 @@ const DATA = {
       ],
     },
     {
-      num: '07–08', titre: 'Connectivité et dépannage réseau', duree: '12h',
+      num: '07–08', titre: 'Connectivité et dépannage réseau', duree: '12 h',
       contenu: [
         'Adressage IP, DHCP, DNS et passerelle par défaut',
         'Wi-Fi, câblage et équipements d\'accès',
@@ -106,7 +106,7 @@ const DATA = {
       ],
     },
     {
-      num: '09–10', titre: 'Sécurité et préparation à l\'examen', duree: '10h',
+      num: '09–10', titre: 'Sécurité et préparation à l\'examen', duree: '10 h',
       contenu: [
         'Menaces courantes : logiciels malveillants, hameçonnage, accès non autorisés',
         'Mesures de protection sur un poste utilisateur',
@@ -472,7 +472,7 @@ function SupportInformatiqueEssentielsPage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

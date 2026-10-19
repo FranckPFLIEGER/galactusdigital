@@ -5,87 +5,39 @@ import {
   MapPin, Users, CheckCircle, Clock, Phone, Mail,
   Network, Calendar, TrendingUp, Target, Settings, AlertCircle,
 } from 'lucide-react'
+import { getFormationsParModalite } from '../data/catalogue'
 
 export const Route = createFileRoute('/presentiel')({
   component: PresentielPage,
 })
 
-const FORMATIONS = [
-  {
-    editeur: 'Cisco — Réseaux',
-    formations: [
-      'Networking Essentials',
-      "CCNA 1 — Introduction aux réseaux (ITN)",
-      "CCNA 2 — Commutation & routage (SRWE)",
-      "CCNA 3 — Réseaux d'entreprise (ENSA)",
-    ],
-  },
-  {
-    editeur: 'Cisco — Cybersécurité',
-    formations: [
-      'Cybersecurity Essentials',
-      'CCNA Cybersecurity',
-      'Ethical Hacker',
-    ],
-  },
-  {
-    editeur: 'Cisco — Dev & Data',
-    formations: [
-      'Python Essentials 1 (PCEP)',
-      'Python Essentials 2 (PCAP)',
-      'CCNA Automation',
-      'Linux Essentials',
-      'Data Analytics Essentials',
-    ],
-  },
-  {
-    editeur: 'Cisco — IoT',
-    formations: [
-      'IoT — Introduction',
-      'IoT — Connecting Things',
-      'IoT — Big Data & Analytics',
-      'IoT — Security',
-      'IoT — Hackathon',
-    ],
-  },
-  {
-    editeur: 'Microsoft',
-    formations: [
-      'AZ-900 Azure Fundamentals',
-      'AZ-104 Azure Administrator',
-      'SC-900 Security Fundamentals',
-      'AI-901 Azure AI Fundamentals',
-      'AB-900 Microsoft 365 Copilot Fundamentals',
-    ],
-  },
-  {
-    editeur: 'IPv6 Forum',
-    formations: [
-      'IPv6 Certified Network Engineer',
-      'IPv6 Certified Security Engineer',
-      'IPv6 Fundamentals',
-    ],
-  },
-]
 
 const LIEUX = [
-  { zone: 'Martinique', badge: 'Siège régional Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: 'Centre régional principal des Caraïbes. Toutes nos formations Cisco, Microsoft, CompTIA et IPv6 disponibles en présentiel.', tel: '+33 7 81 07 47 46' },
+  { zone: 'Martinique', badge: 'Siège régional Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: 'Centre régional principal des Caraïbes. Catalogue Microsoft en présentiel, inter ou intra-entreprise.', tel: '+33 7 81 07 47 46' },
   { zone: 'Guadeloupe', badge: 'Présence active', adresse: 'Pointe de la Verdure\nGosier 97190', desc: 'Interventions en présentiel chez vos équipes ou en salle partenaire adaptée à vos besoins.', tel: '+33 7 81 07 47 46' },
   { zone: 'Paris — France hexagonale', badge: 'Siège social', adresse: '66 avenue des Champs Élysées\n75008 Paris', desc: 'Formations en présentiel à Paris et interventions intra-entreprise partout en France hexagonale sur demande.', tel: '+33 7 81 07 47 46' },
 ]
 
 function FormationGrid() {
+  // Pilotée par le catalogue : n'affiche que les formations déclarées en présentiel.
+  const formations = getFormationsParModalite('Présentiel')
+  const parEditeur = formations.reduce<Record<string, typeof formations>>((acc, f) => {
+    (acc[f.editeur] ||= []).push(f)
+    return acc
+  }, {})
   return (
     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginTop: '2rem' }}>
-      {FORMATIONS.map(f => (
-        <div key={f.editeur} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
+      {Object.entries(parEditeur).map(([editeur, liste]) => (
+        <div key={editeur} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-            <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>{f.editeur}</div>
+            <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>{editeur}</div>
+            <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.55rem' }}>{liste.length}</div>
           </div>
           <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-            {f.formations.map((item, i) => (
-              <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
-                <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
+            {liste.map(f => (
+              <li key={f.slug} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
+                <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
+                <a href={`/formations/${f.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>{f.titre}</a>
               </li>
             ))}
           </ul>
@@ -227,7 +179,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions planifiées au calendrier ou en intra à vos dates','Supports de cours officiels inclus','Accès aux plateformes NetAcad / Microsoft Learn','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Délai d'inscription : 2 semaines avant le démarrage"].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions planifiées au calendrier ou en intra à vos dates','Supports de cours officiels inclus','Accès aux plateformes NetAcad / Microsoft Learn','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Inscription possible jusqu'à une semaine avant le démarrage (art. 14 des CGV)"].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>

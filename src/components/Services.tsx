@@ -9,7 +9,7 @@ const services = [
     title: 'Formation en Présentiel',
     href: '/presentiel',
     badge: 'Art. L.6313-1',
-    desc: "Un formateur certifié intervient en face-à-face dans nos centres ou directement chez vous. Immersion totale, ateliers pratiques sur équipements réels, taux de certification maximum.",
+    desc: "Un formateur certifié intervient en face-à-face, en inter-entreprise ou directement chez vous. Immersion totale, ateliers pratiques sur équipements réels, passage de la certification intégré au programme.",
     features: [
       'Formateur certifié en face-à-face',
       'Ateliers pratiques sur équipements réels',

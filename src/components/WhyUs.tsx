@@ -14,7 +14,7 @@ const reasons = [
   {
     num: '03',
     title: 'Taux de réussite aux examens',
-    desc: "Notre ingénierie pédagogique est conçue pour maximiser la réussite. Nos apprenants atteignent un taux de passage aux certifications largement supérieur à la moyenne mondiale.",
+    desc: "Notre ingénierie pédagogique est conçue pour maximiser la réussite. Sur la période 2023-2025, 100 % des candidats effectivement présentés à l'examen ont obtenu la certification visée — modalités de calcul et pièces justificatives publiées sur la page Démarche qualité.",
   },
   {
     num: '04',

@@ -172,7 +172,7 @@ function GanttView() {
 
         {!hasAnyPlanned && (
           <div style={{ marginTop: '12px', padding: '10px 12px', background: 'rgba(239,159,39,0.06)', border: '1px solid rgba(239,159,39,0.25)', fontSize: '0.78rem', color: '#856404' }}>
-            <strong>Vue Gantt —</strong> Ajoutez une session dans <code>src/data/sessions.ts</code> pour la voir apparaître sur cette timeline.
+            <strong>Aucune session programmée sur cette période.</strong> Les dates sont publiées dès l'ouverture des inscriptions. Pour une session dédiée à vos équipes, à vos dates, demandez un devis en intra-entreprise.
           </div>
         )}
       </div>
@@ -368,7 +368,7 @@ function CalendrierPage() {
               <div style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.28)', padding: '1.5rem', marginBottom: '1rem' }}>
                 <GanttView />
                 <p style={{ fontSize: '0.72rem', color: '#aaa', marginTop: '1rem', fontStyle: 'italic' }}>
-                  Les barres apparaissent lorsque vous ajoutez une session dans src/data/sessions.ts.
+                  Chaque barre correspond à une session programmée. L'e-learning tutoré n'y figure pas : il fonctionne en entrées permanentes, sans date de démarrage commune.
                 </p>
               </div>
             )}

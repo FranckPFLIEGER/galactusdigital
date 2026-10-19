@@ -5,6 +5,17 @@ import {
   BookOpen, Award, Clock, CheckCircle, Phone, Mail,
   Zap, BarChart2, UserCheck, AlertCircle, Calendar,
 } from 'lucide-react'
+import { getFormationsParModalite } from '../data/catalogue'
+
+// Parcours affichés : dérivés du catalogue, groupés par famille, pour qu'aucune
+// formation annoncée ici ne puisse diverger de ce qui est réellement proposé.
+const PARCOURS_ELEARNING = (() => {
+  const parFamille: Record<string, { slug: string; titre: string; duree: string }[]> = {}
+  for (const f of getFormationsParModalite('E-learning')) {
+    (parFamille[f.famille] ||= []).push({ slug: f.slug, titre: f.titre, duree: f.duree })
+  }
+  return Object.entries(parFamille).map(([titre, items]) => ({ titre, items }))
+})()
 
 export const Route = createFileRoute('/elearning')({
   component: ElearningPage,
@@ -69,10 +80,10 @@ function ElearningPage() {
               {[
                 { icon: <Clock size={24} color="white" />, title: 'Rythme libre', desc: "Vous avancez selon vos disponibilités, sans contrainte d'horaire. Idéal pour les professionnels en activité dans les territoires ultramarins avec des contraintes opérationnelles fortes." },
                 { icon: <UserCheck size={24} color="white" />, title: 'Tuteur dédié', desc: 'Un tuteur certifié éditeur vous est assigné pour toute la durée du parcours. Il répond à vos questions, valide vos avancées et vous prépare à la certification officielle.' },
-                { icon: <Award size={24} color="white" />, title: 'Certifications officielles', desc: "Les parcours sont alignés sur les programmes officiels Cisco et Microsoft. Le passage de la certification est intégré au parcours avec accompagnement à l'examen." },
+                { icon: <Award size={24} color="white" />, title: 'Certifications officielles', desc: "Les parcours suivent les programmes officiels Cisco Networking Academy. Chaque cours délivre son badge et son certificat NetAcad, et le tuteur prépare à l'examen de certification de l'éditeur." },
                 { icon: <Zap size={24} color="white" />, title: 'Accès rapide', desc: 'Démarrage sous 72h après inscription. Les accès à la plateforme NetAcad sont activés dès la validation administrative.' },
                 { icon: <BarChart2 size={24} color="white" />, title: 'Suivi de progression', desc: 'Tableau de bord personnalisé sur chaque plateforme. Votre tuteur suit votre progression module par module et vous alerte si vous décrochez du rythme prévu.' },
-                { icon: <BookOpen size={24} color="white" />, title: 'Contenus officiels', desc: 'Accès aux contenus pédagogiques officiels des éditeurs : labs virtuels Cisco Packet Tracer, sandbox Azure, modules interactifs Microsoft, QCM de validation des acquis.' },
+                { icon: <BookOpen size={24} color="white" />, title: 'Contenus officiels', desc: 'Accès aux contenus pédagogiques officiels de Cisco Networking Academy : labs virtuels Packet Tracer, modules interactifs et QCM de validation des acquis.' },
               ].map(a => (
                 <div key={a.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ width: '44px', height: '44px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>{a.icon}</div>
@@ -156,20 +167,14 @@ function ElearningPage() {
             <h2 className="section-h2">Parcours disponibles</h2>
             <div className="g-rule" />
             <div className="el-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem', marginTop: '2rem' }}>
-              {[
-                { titre: 'Cisco — Réseaux', items: ['Networking Essentials (40h)', 'CCNA 1 — ITN (70h)', 'CCNA 2 — SRWE (70h)', 'CCNA 3 — ENSA (70h)'] },
-                { titre: 'Cisco — Cybersécurité', items: ['Cybersecurity Essentials (30h)', 'CCNA Cybersecurity (60h)', 'Ethical Hacker (40h)'] },
-                { titre: 'Cisco — Dev & Data', items: ["Python Essentials 1 — PCEP (35h)", "Python Essentials 2 — PCAP (40h)", 'CCNA Automation (50h)', 'Linux Essentials (40h)', 'Data Analytics Essentials (30h)'] },
-                { titre: 'Cisco — IoT', items: ['IoT — Introduction (25h)', 'IoT — Connecting Things (30h)', 'IoT — Big Data & Analytics (30h)', 'IoT — Security (25h)', 'IoT — Hackathon (20h)'] },
-                { titre: 'Microsoft', items: ['AZ-900 Azure Fundamentals (20h)', 'AZ-104 Azure Administrator (40h)', 'SC-900 Security Fundamentals (15h)', 'AI-901 Azure AI Fundamentals (15h)', 'AB-900 Microsoft 365 Copilot (18h)'] },
-                { titre: 'IPv6 Forum', items: ['IPv6 Certified Network Engineer', 'IPv6 Certified Security Engineer', 'IPv6 Fundamentals'] },
-              ].map(f => (
+              {PARCOURS_ELEARNING.map(f => (
                 <div key={f.titre} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>{f.titre}</div>
                   <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.4rem' }}>
-                    {f.items.map((item, i) => (
-                      <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
-                        <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />{item}
+                    {f.items.map(item => (
+                      <li key={item.slug} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.83rem', color: '#5a5a58' }}>
+                        <div style={{ width: '5px', height: '5px', background: 'var(--g-red)', flexShrink: 0, marginTop: '6px' }} />
+                        <a href={`/formations/${item.slug}`} style={{ color: 'inherit', textDecoration: 'none' }}>{item.titre} ({item.duree})</a>
                       </li>
                     ))}
                   </ul>
@@ -196,7 +201,7 @@ function ElearningPage() {
                     'Tuteur certifié éditeur assigné dès le démarrage',
                     'Accès 24h/24 à la plateforme NetAcad',
                     'Labs virtuels Cisco Packet Tracer inclus',
-                    'Sandbox Azure pour les parcours Microsoft',
+                    'Évaluations et QCM corrigés par le tuteur',
                     'Suivi documenté de la progression par module',
                     'Messagerie directe avec le tuteur sous 24h ouvrées',
                     'Passage de la certification intégré',

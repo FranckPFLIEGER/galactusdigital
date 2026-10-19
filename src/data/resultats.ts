@@ -34,8 +34,8 @@ export const SATISFACTION_METHODE =
   'Note moyenne attribuée à l\'item « Appréciation générale » du questionnaire de fin '  +
   'de formation, sur une échelle de 1 (insatisfaisant) à 5 (excellent) — données 2023 à ' +
   '2025, arrêtées au ' + RESULTATS_ARRETE_AU + '. Seuls les questionnaires effectivement ' +
-  'remis sont comptés. Aucune note inférieure à 4/5 n\'a été relevée sur les '           +
-  'questionnaires recueillis.'
+  'remis sont comptés. Aucune note d\'appréciation générale inférieure à 4/5 n\'a été '  +
+  'relevée sur les questionnaires recueillis.'
 
 /** Périmètre couvert par les indicateurs globaux */
 export const RESULTATS_PERIMETRE =
@@ -86,10 +86,16 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
       'poste de travail » sont des items distincts du même questionnaire, publiés séparément. ' +
       'Seuls les questionnaires effectivement remis sont comptés : un questionnaire non ' +
       'retourné n\'est pas compté comme une note, ni favorable ni défavorable, et n\'entre ' +
-      'donc ni au numérateur ni au dénominateur.',
+      'donc ni au numérateur ni au dénominateur. La moyenne globale porte sur l\'ensemble ' +
+      'des questionnaires remis sur la période ; le détail par année est publié au fur et à ' +
+      'mesure du dépouillement de l\'archive, session par session, et une année non encore ' +
+      'dépouillée ne publie aucune note.',
     source: 'Questionnaires d\'appréciation FQ-08a, remplis et signés par les apprenants, ' +
-      'archivés par session et communicables en audit. Aucune note inférieure à 4/5 n\'a été ' +
-      'relevée sur les questionnaires recueillis.',
+      'archivés par session et communicables en audit. Aucune note d\'appréciation générale ' +
+      'inférieure à 4/5 n\'a été relevée sur les questionnaires recueillis. Sur la dernière ' +
+      'session dépouillée — Workshop Cybersécurité WEB, 10 au 14 mars 2025, neuf ' +
+      'questionnaires remis — 97,6 % des 125 notes du questionnaire, toutes rubriques ' +
+      'confondues, sont supérieures ou égales à 4/5 ; trois notes sont à 3/5.',
   },
   {
     libelle: 'Évaluation des contenus et des enseignements',
@@ -107,15 +113,21 @@ export interface ResultatAnnee {
   abandons: number
   annulations: number
   reussiteParmiPresentes: string
-  noteFormation: string
-  noteFormateur: string
-  noteImpact: string
+  /** Nombre de questionnaires FQ-08a effectivement remis et dépouillés pour
+   *  l'année. null tant que le dépouillement n'est pas consolidé : aucune note
+   *  n'est alors publiée pour cette année (indicateur 1 — ne rien publier qui
+   *  ne soit justifiable sur pièces). */
+  questionnaires: number | null
+  /** Moyenne de l'item « Appréciation générale » sur ces questionnaires. */
+  noteMoyenne: string | null
 }
 
 export const RESULTATS_ANNUELS: ResultatAnnee[] = [
-  { annee: '2023', formes: 115, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', noteFormation: '4,8/5', noteFormateur: '5/5', noteImpact: '4,8/5' },
-  { annee: '2024', formes: 272, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', noteFormation: '4,8/5', noteFormateur: '5/5', noteImpact: '4,8/5' },
-  { annee: '2025', formes: 131, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', noteFormation: '5/5',   noteFormateur: '5/5', noteImpact: '5/5' },
+  { annee: '2023', formes: 115, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: null, noteMoyenne: null },
+  { annee: '2024', formes: 272, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: null, noteMoyenne: null },
+  // Session Workshop Cybersécurité WEB du 10 au 14 mars 2025 : neuf
+  // questionnaires remis et signés, moyenne de l'appréciation générale 4,78.
+  { annee: '2025', formes: 131, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: 9, noteMoyenne: '4,8/5' },
 ]
 
 export const RESULTATS_TOTAL_FORMES = RESULTATS_ANNUELS.reduce((s, r) => s + r.formes, 0)

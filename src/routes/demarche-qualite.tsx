@@ -85,7 +85,7 @@ function DemarcheQualitePage() {
               <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem', minWidth: '700px' }}>
                 <thead>
                   <tr style={{ background: 'var(--g-black)', color: '#fff' }}>
-                    {['Année', 'Candidats formés', 'Abandons', 'Annulations', 'Réussite parmi présentés à l\'examen', 'Note formation', 'Note formateur', 'Note impact travail'].map(h => (
+                    {['Année', 'Candidats formés', 'Abandons', 'Annulations', 'Réussite parmi présentés à l\'examen', 'Questionnaires recueillis', 'Note moyenne'].map(h => (
                       <th key={h} style={{ fontFamily: 'var(--font-title)', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', padding: '0.75rem 1rem', textAlign: 'center', borderRight: '1px solid rgba(255,255,255,0.08)' }}>{h}</th>
                     ))}
                   </tr>
@@ -98,9 +98,8 @@ function DemarcheQualitePage() {
                       <td style={{ padding: '0.75rem 1rem', textAlign: 'center', color: 'var(--g-black)', fontWeight: 700 }}>{r.abandons}</td>
                       <td style={{ padding: '0.75rem 1rem', textAlign: 'center', color: 'var(--g-black)', fontWeight: 700 }}>{r.annulations}</td>
                       <td style={{ padding: '0.75rem 1rem', textAlign: 'center', color: 'var(--g-red)', fontWeight: 700 }}>{r.reussiteParmiPresentes}</td>
-                      <td style={{ padding: '0.75rem 1rem', textAlign: 'center' }}>{r.noteFormation}</td>
-                      <td style={{ padding: '0.75rem 1rem', textAlign: 'center' }}>{r.noteFormateur}</td>
-                      <td style={{ padding: '0.75rem 1rem', textAlign: 'center' }}>{r.noteImpact}</td>
+                      <td style={{ padding: '0.75rem 1rem', textAlign: 'center' }}>{r.questionnaires ?? '—'}</td>
+                      <td style={{ padding: '0.75rem 1rem', textAlign: 'center', fontWeight: r.noteMoyenne ? 700 : 400 }}>{r.noteMoyenne ?? '—'}</td>
                     </tr>
                   ))}
                 </tbody>
@@ -108,7 +107,7 @@ function DemarcheQualitePage() {
             </div>
             <p style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.75rem', fontStyle: 'italic', lineHeight: 1.6 }}>
               * Taux de réussite calculé sur les seuls candidats ayant effectivement passé l'examen : il ne doit pas être lu comme un taux d'obtention rapporté aux entrants.
-              Abandons et annulations comptabilisés sur les parcours engagés (après entrée effective en formation), hors désistements antérieurs au démarrage. Données consignées au registre de suivi et justifiables sur pièces en audit.
+              Abandons et annulations comptabilisés sur les parcours engagés (après entrée effective en formation), hors désistements antérieurs au démarrage. Données consignées au registre de suivi et justifiables sur pièces en audit. La note moyenne d'une année est calculée sur les seuls questionnaires effectivement remis, dont le nombre est publié dans la colonne précédente. Un tiret signale une année dont les questionnaires archivés ne sont pas encore dépouillés : aucune note n'est alors publiée pour cette année, plutôt qu'un chiffre non justifiable sur pièces.
             </p>
           </div>
         </section>

@@ -96,6 +96,24 @@ const INIT: FormState = {
 
 const WEB3FORMS_KEY = "035246e2-1884-48e8-bc56-411d7aee84e6"
 
+// ─── Contrôles de format ─────────────────────────────────────────────────────
+// Le type="email" du navigateur accepte « jean@g » : il n'exige pas de domaine
+// de premier niveau. On impose donc un point et une extension, sinon la demande
+// arrive avec une adresse à laquelle on ne peut pas répondre.
+const RE_EMAIL = /^[^\s@]+@[^\s@.]+(?:\.[^\s@.]+)+$/
+
+function emailValide(v: string): boolean {
+  return RE_EMAIL.test(v.trim())
+}
+
+// 10 chiffres au moins — un numéro français ou ultramarin en compte 10, un
+// numéro international jusqu'à 15 (norme E.164). Les espaces, points, tirets
+// et parenthèses sont tolérés à la saisie.
+function telValide(v: string): boolean {
+  const chiffres = v.replace(/\D/g, "")
+  return chiffres.length >= 10 && chiffres.length <= 15
+}
+
 // ─── Listes de formations, construites depuis le catalogue ────────────────────
 // Une seule source de vérité : ajouter une formation au catalogue suffit.
 
@@ -130,6 +148,10 @@ export function ContactCTA() {
   const { ref, isVisible } = useIntersection()
   const [form, setForm]     = useState<FormState>(INIT)
   const [status, setStatus] = useState<"idle" | "sending" | "ok" | "err">("idle")
+  // Un champ n'est signalé en erreur qu'après avoir été quitté : on ne crie pas
+  // sur quelqu'un qui est en train de taper.
+  const [vu, setVu] = useState<Record<string, boolean>>({})
+  const quitte = (k: string) => () => setVu(p => ({ ...p, [k]: true }))
 
   // Pré-sélection depuis l'URL : /?f=<slug>#contact
   useEffect(() => {
@@ -210,25 +232,31 @@ export function ContactCTA() {
     })
   }
 
-  // Tous les champs renseignés ? L'entreprise et le format ne valent que pour
-  // le profil Entreprise.
-  const complet =
-    form.nom.trim() !== "" &&
-    form.prenom.trim() !== "" &&
-    form.email.trim() !== "" &&
-    form.telephone.trim() !== "" &&
-    form.profil !== "" &&
-    (!estEntreprise || (form.entreprise.trim() !== "" && form.format !== "")) &&
-    form.territoire !== "" &&
-    form.modalite !== "" &&
-    form.formation !== "" &&
-    // En inter sur calendrier, la session doit être choisie — sauf en alerte,
-    // où il n'y en a précisément aucune à choisir
-    (!surCalendrier || alerte || form.session !== "") &&
-    form.financement !== "" &&
-    (tarif === null || form.tarifLu) &&
-    form.message.trim() !== "" &&
-    form.rgpd
+  // Ce qui manque, nommément. Le bouton et le message en découlent tous les
+  // deux : impossible qu'ils se contredisent.
+  const manquants = useMemo(() => {
+    const m: string[] = []
+    if (form.nom.trim() === "")          m.push("le nom")
+    if (form.prenom.trim() === "")       m.push("le prénom")
+    if (form.email.trim() === "")        m.push("l'email")
+    else if (!emailValide(form.email))   m.push("un email valide")
+    if (form.telephone.trim() === "")    m.push("le téléphone")
+    else if (!telValide(form.telephone)) m.push("un téléphone complet")
+    if (form.profil === "")              m.push("votre profil")
+    if (estEntreprise && form.entreprise.trim() === "") m.push("le nom de votre organisation")
+    if (estEntreprise && form.format === "")            m.push("le format")
+    if (form.modalite === "")            m.push("la modalité")
+    if (surCalendrier && !alerte && form.session === "") m.push("la session")
+    if (form.formation === "")           m.push("la formation")
+    if (form.territoire === "")          m.push("le territoire")
+    if (form.financement === "")         m.push("la prise en charge")
+    if (tarif !== null && !form.tarifLu) m.push("la prise de connaissance du tarif")
+    if (form.message.trim() === "")      m.push("la description de votre projet")
+    if (!form.rgpd)                      m.push("votre accord sur l'usage de vos données")
+    return m
+  }, [form, estEntreprise, surCalendrier, alerte, tarif])
+
+  const complet = manquants.length === 0
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
@@ -289,6 +317,16 @@ export function ContactCTA() {
     fontSize: "0.72rem", color: "rgba(255,255,255,0.38)",
     marginTop: "0.3rem", lineHeight: 1.5,
   }
+  const err: React.CSSProperties = {
+    fontSize: "0.74rem", color: "#f87171",
+    marginTop: "0.35rem", lineHeight: 1.5,
+  }
+  const inpKo: React.CSSProperties = { ...inp, border: "1px solid rgba(248,113,113,0.65)" }
+
+  // Un champ est signalé fautif seulement s'il a été quitté et qu'il est rempli :
+  // un champ vide est déjà couvert par la liste sous le bouton.
+  const emailKo = vu.email && form.email.trim() !== "" && !emailValide(form.email)
+  const telKo   = vu.telephone && form.telephone.trim() !== "" && !telValide(form.telephone)
 
   return (
     <section className="contact-section" id="contact" ref={ref}>
@@ -346,11 +384,25 @@ export function ContactCTA() {
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                   <div style={fld}>
                     <label style={lbl}>Email *</label>
-                    <input style={inp} type="email" required value={form.email} onChange={set("email")} placeholder="jean.dupont@entreprise.com" />
+                    <input style={emailKo ? inpKo : inp} type="email" required autoComplete="email"
+                      value={form.email} onChange={set("email")} onBlur={quitte("email")}
+                      placeholder="jean.dupont@entreprise.com" />
+                    {emailKo && (
+                      <span style={err}>
+                        Adresse incomplète : il manque le domaine, par exemple <strong>.com</strong> ou <strong>.fr</strong>.
+                      </span>
+                    )}
                   </div>
                   <div style={fld}>
                     <label style={lbl}>Téléphone *</label>
-                    <input style={inp} type="tel" required value={form.telephone} onChange={set("telephone")} placeholder="+596 6 96 ..." />
+                    <input style={telKo ? inpKo : inp} type="tel" inputMode="tel" required autoComplete="tel"
+                      value={form.telephone} onChange={set("telephone")} onBlur={quitte("telephone")}
+                      placeholder="+596 6 96 ..." />
+                    {telKo && (
+                      <span style={err}>
+                        Numéro incomplet : 10 chiffres au minimum, indicatif compris.
+                      </span>
+                    )}
                   </div>
                 </div>
 
@@ -367,9 +419,10 @@ export function ContactCTA() {
                       (AIF ou POEI), une collectivité ou un employeur : indiquez-la ci-dessous, nous
                       montons le dossier avec vous. Si une part restait à votre charge, vous disposez
                       de 14 jours pour vous rétracter après signature.{" "}
-                      <a href="/retractation" style={{ color: "#E41F26", fontWeight: 600, textDecoration: "none" }}>
+                      <a href="/retractation" target="_blank" rel="noopener noreferrer"
+                        style={{ color: "#E41F26", fontWeight: 600, textDecoration: "none" }}>
                         Exercer ce droit en ligne
-                      </a>.
+                      </a>{" "}(nouvel onglet, votre saisie est conservée).
                     </span>
                   )}
                 </div>
@@ -553,8 +606,14 @@ export function ContactCTA() {
                 )}
 
                 {!complet && (
-                  <div style={{ fontSize: "0.76rem", color: "rgba(255,255,255,0.35)", fontStyle: "italic" }}>
-                    Renseignez tous les champs pour activer l&apos;envoi.
+                  <div style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.45)", lineHeight: 1.6 }}>
+                    <strong style={{ color: "rgba(255,255,255,0.70)", fontWeight: 600 }}>
+                      Envoi impossible pour l&apos;instant.
+                    </strong>{" "}
+                    Il manque {manquants.length > 1 ? "encore " : ""}
+                    {manquants.slice(0, -1).join(", ")}
+                    {manquants.length > 1 ? " et " : ""}
+                    {manquants[manquants.length - 1]}.
                   </div>
                 )}
 

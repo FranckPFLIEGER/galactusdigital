@@ -40,6 +40,7 @@ function RgpdPage() {
                 { icon: <Lock size={22} color="white" />, title: 'Droit à la limitation', desc: 'Vous pouvez demander la limitation du traitement de vos données dans certaines circonstances.' },
                 { icon: <Download size={22} color="white" />, title: 'Droit à la portabilité', desc: 'Vous pouvez demander à recevoir vos données dans un format structuré et lisible par machine.' },
                 { icon: <Mail size={22} color="white" />, title: 'Droit d\'opposition', desc: 'Vous pouvez vous opposer au traitement de vos données à des fins de prospection commerciale.' },
+                { icon: <Lock size={22} color="white" />, title: 'Retrait du consentement', desc: 'Lorsque le traitement repose sur votre consentement — formulaire de contact, prospection — vous pouvez le retirer à tout moment, sans que cela remette en cause la licéité du traitement déjà effectué.' },
               ].map(d => (
                 <div key={d.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '1.75rem' }}>
                   <div style={{ width: '42px', height: '42px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
@@ -108,6 +109,14 @@ function RgpdPage() {
                 </div>
               ))}
             </div>
+            <p style={{ fontSize: '0.82rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.55)', marginTop: '1.5rem' }}>
+              <strong style={{ color: '#fff' }}>Caractère obligatoire ou facultatif — </strong>
+              Les champs signalés comme obligatoires dans nos formulaires et nos dossiers d'inscription
+              sont nécessaires soit à l'exécution du contrat de formation, soit au respect d'une
+              obligation légale de l'organisme (registre de suivi, attestations, pièces d'audit).
+              À défaut, l'inscription ou la demande ne peut être traitée. Les autres champs sont
+              facultatifs et leur absence n'a aucune conséquence.
+            </p>
           </div>
         </section>
 

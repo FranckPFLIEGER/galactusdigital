@@ -42,7 +42,7 @@ function MentionsLegalesPage() {
                 <p><strong>Siège social :</strong> 66 avenue des Champs-Élysées, 75008 Paris</p>
                 <p><strong>Siège régional Caraïbes :</strong> Pointe Madeleine — CAP EST, 97240 Le François, Martinique</p>
                 <p><strong>Présence active Guadeloupe :</strong> Pointe de la Verdure, Gosier 97190</p>
-                <p><strong>RCS :</strong> Paris — SIRET : 880 430 418 00017</p>
+                <p><strong>RCS :</strong> 880 430 418 R.C.S. Paris — SIRET : 880 430 418 00017</p>
                 <p><strong>NDA :</strong> 11 75 59933 75 (préfet de la région Île-de-France). Cet enregistrement ne vaut pas agrément de l'État (art. L.6352-12 du code du travail).</p>
                 <p><strong>Certification Qualiopi :</strong> Certifopac — Certificat n° 951711-1 — Accréditation Cofrac n° 5-0620 (portée disponible sur www.cofrac.fr). Valide du 16/09/2024 au 15/09/2027</p>
                 <p><strong>TVA :</strong> Non applicable — Article 261-4-4° du CGI</p>
@@ -51,7 +51,7 @@ function MentionsLegalesPage() {
               </div>
               <div className="legal-block">
                 <h3 className="legal-h3">Hébergement</h3>
-                <p>Ce site est hébergé par Cloudflare Pages — 101 Townsend St, San Francisco, CA 94107, USA.</p>
+                <p>Ce site est hébergé sur Cloudflare Pages par Cloudflare, Inc. — 101 Townsend Street, San Francisco, CA 94107, États-Unis — téléphone : +1 888 993 5273.</p>
               </div>
             </div>
 

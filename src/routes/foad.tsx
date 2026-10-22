@@ -120,12 +120,12 @@ function FoadPage() {
               </div>
             </div>
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
-              Rejoignez nos sessions ouvertes planifiées depuis n'importe quel territoire. Le formateur et les participants se retrouvent en ligne sur WEBEX — même format que l'inter présentiel, sans contrainte de déplacement.
+              La session est montée à la demande, pour une personne seule comme pour un groupe, et se suit depuis n'importe quel territoire. Le formateur et les participants se retrouvent en ligne sur WEBEX — même format que l'inter présentiel, sans contrainte de déplacement.
             </p>
             <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '2.5rem' }}>
               {[
                 { icon: <Network size={24} color="white" />, title: 'Réseau professionnel', desc: "Échangez avec des professionnels d'horizons différents depuis tous les territoires. Opportunité unique de réseautage inter-îles." },
-                { icon: <Calendar size={24} color="white" />, title: 'Sessions planifiées', desc: "Inscrivez-vous à la session ouverte au calendrier. Accessible depuis tous les territoires, sans déplacement." },
+                { icon: <Calendar size={24} color="white" />, title: 'Session à la demande', desc: "Nous fixons les dates avec vous, y compris pour un parcours individuel. Les sessions ouvertes sont publiées au calendrier. Accessible depuis tous les territoires, sans déplacement." },
                 { icon: <TrendingUp size={24} color="white" />, title: 'Financement facilité', desc: 'Éligible OPCO, aides régionales DOM. Nous vous accompagnons dans le montage de votre dossier de financement.' },
               ].map(a => (
                 <div key={a.title} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
@@ -149,11 +149,11 @@ function FoadPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Sessions & disponibilités</h3>
                 <p style={{ fontSize: '0.87rem', color: 'rgba(255,255,255,0.65)', lineHeight: 1.7, marginBottom: '1rem' }}>
-                  Sessions ouvertes publiées au calendrier, accessibles depuis tous les territoires.
+                  Session montée à la demande ; les sessions ouvertes sont publiées au calendrier.
                 </p>
                 <div style={{ background: 'rgba(228,31,38,0.08)', border: '1px solid rgba(228,31,38,0.20)', padding: '0.9rem 1rem' }}>
                   <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.70)', margin: 0, lineHeight: 1.6 }}>
-                    Toutes les sessions sont accessibles depuis tous les territoires ultramarins et en France hexagonale. Consultez les prochaines dates sur notre <a href="/calendrier" style={{ color: '#E41F26', fontWeight: 600, textDecoration: 'none' }}>calendrier en ligne</a>.
+                    Toutes les sessions sont accessibles depuis tous les territoires ultramarins et en France hexagonale. Lorsqu'une session est ouverte, elle paraît au calendrier ; sinon nous la programmons avec vous. Consultez les dates publiées sur notre <a href="/calendrier" style={{ color: '#E41F26', fontWeight: 600, textDecoration: 'none' }}>calendrier en ligne</a>.
                   </p>
                 </div>
                 <DelaisAcces dark />

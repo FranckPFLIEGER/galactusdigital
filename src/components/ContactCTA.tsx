@@ -466,6 +466,12 @@ export function ContactCTA() {
                         ? "Une session est programmée. Elle détermine la formation et le territoire."
                         : `${ouvertes.length} sessions programmées. Celle que vous choisissez détermine la formation et le territoire.`}
                     </span>
+                    {estEntreprise && (
+                      <span style={aide}>
+                        Aucune date près de chez vous ? Le format intra-entreprise se tient à vos
+                        dates et dans vos locaux.
+                      </span>
+                    )}
                   </div>
                 )}
 

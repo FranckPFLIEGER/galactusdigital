@@ -1,7 +1,8 @@
 import { useState, useEffect, useMemo } from "react"
 import { Mail, Phone, MapPin, CheckCircle, AlertCircle, Send, Clock, Shield, Award } from "lucide-react"
 import { useIntersection } from "../hooks/useIntersection"
-import { FORMATIONS as CATALOGUE } from "../data/catalogue"
+import { FORMATIONS as CATALOGUE, getPrixElearning } from "../data/catalogue"
+import { SESSIONS_PLANIFIEES, labelPlage } from "../data/sessions"
 
 // ─────────────────────────────────────────────────────────────────────────────
 // ContactCTA — formulaire unique de demande de devis
@@ -40,25 +41,30 @@ const PROFILS = ["Particulier", "Entreprise / organisation"]
 const PROFIL_PARTICULIER = PROFILS[0]
 const PROFIL_ENTREPRISE  = PROFILS[1]
 
-// Format d'organisation — entreprise uniquement
+// Format d'organisation — entreprise uniquement.
+// L'inter rejoint une session du calendrier ; l'intra se tient aux dates et
+// dans les locaux du client, donc hors calendrier.
 const FORMATS = [
   "Inter-entreprise (vos salariés rejoignent une session)",
   "Intra-entreprise (session dédiée, sur votre site)",
 ]
+const FORMAT_INTRA = FORMATS[1]
 
 // Modes de prise en charge. Le CPF n'y figure pas : les certifications éditeur
 // ne sont enregistrées ni au RNCP ni au Répertoire spécifique.
+// Listes fermées : toute entrée en formation est adossée à un employeur ou à
+// un financeur tiers (art. 2 des CGV). L'autofinancement n'y figure donc pas,
+// et il n'y a pas d'option « autre » — un financement non identifié ne permet
+// pas d'instruire un dossier.
 const FINANCEMENT_ENTREPRISE = [
+  "Plan de développement des compétences de l'employeur",
   "OPCO — prise en charge à instruire",
-  "Plan de développement des compétences (fonds propres)",
   "Dispositif régional ou FSE+",
-  "À définir ensemble",
 ]
 const FINANCEMENT_PARTICULIER = [
   "AIF France Travail (demandeur d'emploi)",
   "POEI France Travail",
-  "Financement personnel",
-  "À définir ensemble",
+  "Dispositif régional ou FSE+ d'une collectivité",
 ]
 
 type FormState = {
@@ -72,16 +78,20 @@ type FormState = {
   territoire: string
   modalite: string
   formation: string
+  /** Session du calendrier retenue — inter en présentiel ou FOAD uniquement */
+  session: string
   financement: string
   message: string
   rgpd: boolean
+  /** Tarif e-learning porté à la connaissance du demandeur */
+  tarifLu: boolean
 }
 
 const INIT: FormState = {
   nom: "", prenom: "", email: "", telephone: "",
   profil: "", entreprise: "", format: "",
-  territoire: "", modalite: "", formation: "",
-  financement: "", message: "", rgpd: false,
+  territoire: "", modalite: "", formation: "", session: "",
+  financement: "", message: "", rgpd: false, tarifLu: false,
 }
 
 const WEB3FORMS_KEY = "035246e2-1884-48e8-bc56-411d7aee84e6"
@@ -92,6 +102,29 @@ const WEB3FORMS_KEY = "035246e2-1884-48e8-bc56-411d7aee84e6"
 const F_ELEARNING  = CATALOGUE.filter(f => f.modalites.includes("E-learning")).map(f => f.titre)
 const F_PRESENTIEL = CATALOGUE.filter(f => f.modalites.includes("Présentiel")).map(f => f.titre)
 const F_FOAD       = CATALOGUE.filter(f => f.modalites.includes("FOAD")).map(f => f.titre)
+
+// ─── Sessions réellement ouvertes ────────────────────────────────────────────
+// Une session n'est proposable que si elle est à venir ET non complète :
+// l'indicateur 1 du RNQ interdit d'appeler à s'inscrire à une session qui ne
+// peut plus accueillir personne.
+type Ouverte = { cle: string; slug: string; titre: string; territoire: string }
+
+function sessionsOuvertes(modalite: "Présentiel" | "FOAD"): Ouverte[] {
+  const today = new Date()
+  today.setHours(0, 0, 0, 0)
+  return SESSIONS_PLANIFIEES
+    .filter(s => s.modalite === modalite && !s.complet && new Date(s.debut) >= today)
+    .sort((a, b) => a.debut.localeCompare(b.debut))
+    .map(s => {
+      const f = CATALOGUE.find(x => x.slug === s.slug)
+      return {
+        cle: `${f ? f.titre : s.slug} — ${labelPlage(s)} · ${s.territoire}`,
+        slug: s.slug,
+        titre: f ? f.titre : s.slug,
+        territoire: s.territoire,
+      }
+    })
+}
 
 export function ContactCTA() {
   const { ref, isVisible } = useIntersection()
@@ -125,6 +158,28 @@ export function ContactCTA() {
 
   const financements = estEntreprise ? FINANCEMENT_ENTREPRISE : FINANCEMENT_PARTICULIER
 
+  // Un particulier rejoint nécessairement une session inter : il ne commande
+  // pas de session dédiée. Une entreprise choisit son format d'abord.
+  const estIntra      = estEntreprise && form.format === FORMAT_INTRA
+  const attendFormat  = estEntreprise && form.format === ""
+  const surCalendrier = !estIntra && (form.modalite === MOD_PRESENTIEL || form.modalite === MOD_FOAD)
+
+  const ouvertes = useMemo(
+    () => surCalendrier
+      ? sessionsOuvertes(form.modalite === MOD_FOAD ? "FOAD" : "Présentiel")
+      : [],
+    [surCalendrier, form.modalite])
+
+  // Aucune session inter programmée : la demande devient une alerte.
+  const alerte = surCalendrier && !attendFormat && ouvertes.length === 0
+
+  // Tarif public, e-learning seulement — le présentiel et la FOAD sont sur devis.
+  const tarif = useMemo(() => {
+    if (form.modalite !== MOD_ELEARNING || form.formation === "") return null
+    const f = CATALOGUE.find(x => x.titre === form.formation)
+    return f ? getPrixElearning(f) : null
+  }, [form.modalite, form.formation])
+
   const set = (k: keyof FormState) => (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const val = e.target.type === "checkbox" ? (e.target as HTMLInputElement).checked : e.target.value
     setForm(prev => {
@@ -140,6 +195,16 @@ export function ContactCTA() {
       if (k === "profil") {
         next.financement = ""
         if (val === PROFIL_PARTICULIER) { next.entreprise = ""; next.format = "" }
+      }
+      // La session retenue dépend de la modalité et du format
+      if (k === "modalite" || k === "format") { next.session = ""; next.territoire = "" }
+      // Le tarif porté à connaissance vaut pour une formation donnée
+      if (k === "modalite" || k === "formation") next.tarifLu = false
+      // La session impose son territoire : on ne le laisse pas en contradiction
+      if (k === "session") {
+        const s = sessionsOuvertes(prev.modalite === MOD_FOAD ? "FOAD" : "Présentiel")
+          .find(x => x.cle === val)
+        if (s) { next.territoire = s.territoire; next.formation = s.titre }
       }
       return next
     })
@@ -157,7 +222,11 @@ export function ContactCTA() {
     form.territoire !== "" &&
     form.modalite !== "" &&
     form.formation !== "" &&
+    // En inter sur calendrier, la session doit être choisie — sauf en alerte,
+    // où il n'y en a précisément aucune à choisir
+    (!surCalendrier || alerte || form.session !== "") &&
     form.financement !== "" &&
+    (tarif === null || form.tarifLu) &&
     form.message.trim() !== "" &&
     form.rgpd
 
@@ -168,7 +237,9 @@ export function ContactCTA() {
     try {
       const payload = {
         access_key: WEB3FORMS_KEY,
-        subject: `[GALACTUS Digital] ${form.formation} — ${form.profil}`,
+        subject: alerte
+          ? `[ALERTE SESSION] ${form.formation} — ${form.profil}`
+          : `[GALACTUS Digital] ${form.formation} — ${form.profil}`,
         from_name: `${form.prenom} ${form.nom}`,
         email: form.email,
         message: `DEMANDE REÇUE VIA GALACTUSDIGITAL.COM\n\n`
@@ -182,6 +253,9 @@ export function ContactCTA() {
           + `Territoire : ${form.territoire}\n\n`
           + `Modalité : ${form.modalite}\n`
           + `Formation souhaitée : ${form.formation}\n`
+          + (form.session ? `Session retenue : ${form.session}\n` : ``)
+          + (alerte ? `DEMANDE D'ALERTE — aucune session inter n'est programmée pour cette formation\n` : ``)
+          + (tarif !== null ? `Tarif porté à connaissance : ${tarif.toLocaleString("fr-FR")} €\n` : ``)
           + `Prise en charge envisagée : ${form.financement}\n\n`
           + `Message :\n${form.message}`,
       }
@@ -317,15 +391,6 @@ export function ContactCTA() {
                   </div>
                 )}
 
-                {/* Territoire */}
-                <div style={fld}>
-                  <label style={lbl}>Territoire *</label>
-                  <select style={sel} required value={form.territoire} onChange={set("territoire")}>
-                    <option value="" disabled>-- Choisir un territoire --</option>
-                    {TERRITOIRES.map(t => <option key={t} value={t}>{t}</option>)}
-                  </select>
-                </div>
-
                 {/* Modalité — commande la liste des formations */}
                 <div style={fld}>
                   <label style={lbl}>Modalité souhaitée *</label>
@@ -335,24 +400,108 @@ export function ContactCTA() {
                   </select>
                 </div>
 
-                {/* Formation — filtrée par la modalité */}
-                <div style={fld}>
-                  <label style={lbl}>Formation souhaitée *</label>
-                  <select style={sel} required value={form.formation} onChange={set("formation")}
-                    disabled={form.modalite === ""}>
-                    <option value="" disabled>
-                      {form.modalite === "" ? "-- Choisissez d'abord la modalité --" : "-- Choisir une formation --"}
-                    </option>
-                    {formationsProposees.map(f => <option key={f} value={f}>{f}</option>)}
-                  </select>
-                  {form.modalite !== "" && (
+                {/* Session du calendrier — inter en présentiel ou FOAD */}
+                {surCalendrier && !alerte && !attendFormat && (
+                  <div style={fld}>
+                    <label style={lbl}>Session *</label>
+                    <select style={sel} required value={form.session} onChange={set("session")}>
+                      <option value="" disabled>-- Choisir une session programmée --</option>
+                      {ouvertes.map(s => <option key={s.cle} value={s.cle}>{s.cle}</option>)}
+                    </select>
                     <span style={aide}>
-                      {form.modalite === MOD_ELEARNING
-                        ? `${F_ELEARNING.length} formations Cisco Networking Academy — e-learning tutoré, tarif public.`
-                        : form.modalite === MOD_FOAD
-                        ? `${F_FOAD.length} parcours Juniper en classe virtuelle WEBEX — sur devis.`
-                        : `${F_PRESENTIEL.length} formations Microsoft et CCNA accéléré — présentiel, sur devis.`}
+                      {ouvertes.length === 1
+                        ? "Une session est programmée. Elle détermine la formation et le territoire."
+                        : `${ouvertes.length} sessions programmées. Celle que vous choisissez détermine la formation et le territoire.`}
                     </span>
+                  </div>
+                )}
+
+                {/* Le format commande tout le reste : on le dit plutôt que de laisser un vide */}
+                {surCalendrier && attendFormat && (
+                  <span style={aide}>
+                    Choisissez le format ci-dessus : l'inter-entreprise rejoint une session
+                    programmée, l'intra-entreprise se tient à vos dates et dans vos locaux.
+                  </span>
+                )}
+
+                {/* Aucune session inter programmée — la demande devient une alerte */}
+                {alerte && (
+                  <div style={{ background: "rgba(228,31,38,0.08)", border: "1px solid rgba(228,31,38,0.30)", borderLeft: "4px solid var(--g-red)", padding: "1.1rem 1.25rem" }}>
+                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", marginBottom: "0.5rem" }}>
+                      <AlertCircle size={15} color="#E41F26" />
+                      <span style={{ fontFamily: "var(--font-title)", fontSize: "0.72rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--g-red)" }}>
+                        Aucune session programmée
+                      </span>
+                    </div>
+                    <p style={{ fontSize: "0.86rem", lineHeight: 1.7, color: "rgba(255,255,255,0.70)", margin: 0 }}>
+                      Aucune session inter-entreprises n'est programmée pour cette modalité
+                      actuellement. Indiquez la formation qui vous intéresse : nous vous
+                      préviendrons dès qu'une session sera ouverte.
+                      {estEntreprise && " Pour une session à vos dates, choisissez le format intra-entreprise."}
+                    </p>
+                  </div>
+                )}
+
+                {/* Formation — libre en e-learning et en intra, informative en alerte */}
+                {(!surCalendrier || alerte) && (
+                  <div style={fld}>
+                    <label style={lbl}>{alerte ? "Formation à suivre *" : "Formation souhaitée *"}</label>
+                    <select style={sel} required value={form.formation} onChange={set("formation")}
+                      disabled={form.modalite === "" || attendFormat}>
+                      <option value="" disabled>
+                        {form.modalite === "" ? "-- Choisissez d'abord la modalité --"
+                         : attendFormat      ? "-- Choisissez d'abord le format --"
+                         : "-- Choisir une formation --"}
+                      </option>
+                      {formationsProposees.map(f => <option key={f} value={f}>{f}</option>)}
+                    </select>
+                    {form.modalite !== "" && !attendFormat && (
+                      <span style={aide}>
+                        {form.modalite === MOD_ELEARNING
+                          ? `${F_ELEARNING.length} formations Cisco Networking Academy — e-learning tutoré, tarif public.`
+                          : estIntra
+                          ? "Session dédiée : vous fixez les dates et le lieu, précisez-les dans votre projet."
+                          : "Nous vous préviendrons de l'ouverture d'une session."}
+                      </span>
+                    )}
+                  </div>
+                )}
+
+                {/* Tarif public — e-learning uniquement */}
+                {tarif !== null && (
+                  <div style={{ background: "rgba(255,255,255,0.04)", border: "1px solid rgba(255,255,255,0.10)", borderLeft: "4px solid var(--g-red)", padding: "1.1rem 1.25rem" }}>
+                    <div style={{ display: "flex", alignItems: "baseline", gap: "0.6rem", marginBottom: "0.5rem" }}>
+                      <span style={{ fontFamily: "var(--font-title)", fontSize: "1.6rem", fontWeight: 700, color: "var(--g-red)", lineHeight: 1 }}>
+                        {tarif.toLocaleString("fr-FR")} €
+                      </span>
+                      <span style={{ fontFamily: "var(--font-title)", fontSize: "0.66rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "rgba(255,255,255,0.55)" }}>
+                        par personne · TVA non applicable
+                      </span>
+                    </div>
+                    <label style={{ display: "flex", alignItems: "flex-start", gap: "0.7rem", cursor: "pointer" }}>
+                      <input type="checkbox" required checked={form.tarifLu} onChange={set("tarifLu")}
+                        style={{ marginTop: "3px", width: "16px", height: "16px", accentColor: "#E41F26", flexShrink: 0 }} />
+                      <span style={{ fontSize: "0.82rem", lineHeight: 1.6, color: "rgba(255,255,255,0.70)" }}>
+                        J'ai pris connaissance de ce tarif. Il sera repris sur le devis, seul
+                        document qui engage les parties.
+                      </span>
+                    </label>
+                  </div>
+                )}
+
+                {/* Territoire — imposé par la session choisie, libre sinon */}
+                <div style={fld}>
+                  <label style={lbl}>Territoire *</label>
+                  <select style={sel} required value={form.territoire} onChange={set("territoire")}
+                    disabled={form.session !== ""}>
+                    <option value="" disabled>-- Choisir un territoire --</option>
+                    {TERRITOIRES.map(t => <option key={t} value={t}>{t}</option>)}
+                  </select>
+                  {form.session !== "" && (
+                    <span style={aide}>Territoire déterminé par la session choisie.</span>
+                  )}
+                  {estIntra && (
+                    <span style={aide}>Lieu de la session dédiée, dans vos locaux ou en salle retenue pour l'occasion.</span>
                   )}
                 </div>
 
@@ -367,8 +516,10 @@ export function ContactCTA() {
                     {form.profil !== "" && financements.map(f => <option key={f} value={f}>{f}</option>)}
                   </select>
                   <span style={aide}>
-                    Nos formations ne sont pas éligibles au CPF : les certifications éditeur ne sont
-                    enregistrées ni au RNCP ni au Répertoire spécifique.
+                    Toute entrée en formation est adossée à un employeur ou à un financeur tiers
+                    (art. 2 des CGV). Nos formations ne sont pas éligibles au CPF : les
+                    certifications éditeur ne sont enregistrées ni au RNCP ni au Répertoire
+                    spécifique.
                   </span>
                 </div>
 

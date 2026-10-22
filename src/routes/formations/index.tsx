@@ -1,5 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router"
-import { useState, useMemo } from "react"
+import { useState, useMemo, useEffect } from "react"
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { ParcoursMetier } from "../../components/ParcoursMetier"
@@ -139,6 +139,17 @@ function Card({ f }: { f: Formation }) {
 function FormationsPage() {
   const [editeurFilter, setEditeurFilter] = useState<string>("Tout")
   const [familleFilter, setFamilleFilter] = useState<string>("Tout")
+
+  // Le fil d'Ariane des fiches renvoie ici avec ?editeur=… Certaines fiches
+  // portent le libellé court « Cisco » : on l'accepte aussi.
+  useEffect(() => {
+    if (typeof window === "undefined") return
+    const v = new URLSearchParams(window.location.search).get("editeur")
+    if (!v) return
+    if (/^cisco/i.test(v))    setEditeurFilter("Cisco Networking Academy")
+    else if (/^microsoft/i.test(v)) setEditeurFilter("Microsoft")
+    else if (/^juniper/i.test(v))   setEditeurFilter("Juniper Networks")
+  }, [])
 
   const editeurs = ["Tout", "Cisco Networking Academy", "Microsoft", "Juniper Networks"]
   const familles = useMemo(() => {

@@ -215,9 +215,16 @@ function OperatingSystemBasicsPage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
               {['Formations', DATA.editeur, DATA.famille].map((crumb, i, arr) => (
                 <span key={crumb} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                  <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: i === arr.length - 1 ? 'var(--g-red)' : 'rgba(255,255,255,0.35)' }}>
-                    {crumb}
-                  </span>
+                  {i < arr.length - 1 ? (
+                    <a href={i === 0 ? '/formations' : `/formations?editeur=${encodeURIComponent(DATA.editeur)}`}
+                      style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', textDecoration: 'none', borderBottom: '1px solid rgba(255,255,255,0.18)' }}>
+                      {crumb}
+                    </a>
+                  ) : (
+                    <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)' }}>
+                      {crumb}
+                    </span>
+                  )}
                   {i < arr.length - 1 && <span style={{ color: 'rgba(255,255,255,0.20)', fontSize: '0.7rem' }}>›</span>}
                 </span>
               ))}

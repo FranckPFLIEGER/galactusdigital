@@ -142,6 +142,89 @@ function FinancementsPage() {
           </div>
         </section>
 
+        {/* ── Pour les prescripteurs et financeurs ──
+            Un conseiller France Travail, un gestionnaire OPCO ou un service
+            formation cherche d'abord des identifiants et des pièces. Les avoir
+            sur la page du financement lui évite de parcourir le site. */}
+        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem', borderTop: '3px solid var(--g-red)' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>
+              Prescripteurs et financeurs
+            </span>
+            <h2 className="section-h2">Monter un dossier avec nous</h2>
+            <div className="g-rule" />
+            <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48', margin: '1.5rem 0 2.5rem', maxWidth: '760px' }}>
+              Conseiller France Travail, gestionnaire OPCO ou service formation : voici les
+              références de l'organisme et les pièces dont vous avez besoin pour instruire une
+              prise en charge.
+            </p>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.5rem' }}>
+              <div style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '1.75rem' }}>
+                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>
+                  Références de l'organisme
+                </h3>
+                {[
+                  ['Raison sociale', 'PFLIEGER SASU — enseigne GALACTUS Digital'],
+                  ['SIRET', '880 430 418 00017'],
+                  ['Déclaration d\'activité', '11 75 59933 75 (préfet d\'Île-de-France)'],
+                  ['Qualiopi', 'Certifopac n° 951711-1 — valide jusqu\'au 15/09/2027'],
+                  ['Catalogue AFDAS', 'Référencé au titre de l\'art. R.6316-2'],
+                  ['France Travail — Kairos', 'Organisme référencé sous le SIRET 880 430 418 00017 (Île-de-France)'],
+                ].map(([k, v]) => (
+                  <p key={k} style={{ fontSize: '0.83rem', lineHeight: 1.6, color: '#4a4a48', margin: '0 0 0.6rem' }}>
+                    <strong style={{ color: 'var(--g-black)' }}>{k} — </strong>{v}
+                  </p>
+                ))}
+              </div>
+
+              <div style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '1.75rem' }}>
+                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>
+                  Pièces à télécharger
+                </h3>
+                {[
+                  ['Certificat Qualiopi', '/certificat-qualiopi.pdf'],
+                  ['Conditions générales de vente', '/cgv.pdf'],
+                  ['Règlement intérieur', '/reglement-interieur.pdf'],
+                ].map(([t, h]) => (
+                  <p key={t} style={{ fontSize: '0.86rem', margin: '0 0 0.7rem' }}>
+                    <a href={h} target="_blank" rel="noopener noreferrer"
+                      style={{ color: 'var(--g-red)', fontWeight: 600, textDecoration: 'none' }}>
+                      {t} (PDF)
+                    </a>
+                  </p>
+                ))}
+                <p style={{ fontSize: '0.80rem', lineHeight: 1.6, color: '#777', marginTop: '1rem', marginBottom: 0 }}>
+                  Programme détaillé, objectifs, prérequis, durée et tarif : sur la fiche de
+                  chaque formation. Devis et convention établis sous 48 h ouvrées.
+                </p>
+              </div>
+
+              <div style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '1.75rem' }}>
+                <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>
+                  Justification de l'assiduité
+                </h3>
+                <p style={{ fontSize: '0.83rem', lineHeight: 1.7, color: '#4a4a48', margin: '0 0 0.7rem' }}>
+                  <strong style={{ color: 'var(--g-black)' }}>Présentiel et classe virtuelle — </strong>
+                  feuilles d'émargement par demi-journée, signées par les participants et le
+                  formateur.
+                </p>
+                <p style={{ fontSize: '0.83rem', lineHeight: 1.7, color: '#4a4a48', margin: '0 0 0.7rem' }}>
+                  <strong style={{ color: 'var(--g-black)' }}>E-learning tutoré — </strong>
+                  traces d'activité de la plateforme de l'éditeur (temps passé, modules
+                  complétés, résultats aux évaluations), conformément à l'article D.6313-3-1 du
+                  code du travail. L'émargement par demi-journée n'a pas de sens en asynchrone.
+                </p>
+                <p style={{ fontSize: '0.83rem', lineHeight: 1.7, color: '#4a4a48', margin: 0 }}>
+                  <strong style={{ color: 'var(--g-black)' }}>En fin de parcours — </strong>
+                  attestation d'assiduité, attestation de fin de formation et certificat de
+                  réalisation, transmis au financeur qui en fait la demande.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         <section style={{ background: 'var(--g-black)', padding: '3rem 2rem', borderTop: '4px solid var(--g-red)' }}>
           <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
             <h2 className="section-h2-light" style={{ marginBottom: '1rem' }}>Besoin d'aide pour le financement ?</h2>

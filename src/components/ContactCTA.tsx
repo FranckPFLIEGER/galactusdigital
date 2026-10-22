@@ -656,7 +656,7 @@ export function ContactCTA() {
                   Microsoft · Juniper
                 </div>
                 <div style={{ fontSize: "0.80rem", color: "rgba(255,255,255,0.60)", lineHeight: 1.6 }}>
-                  Présentiel uniquement, en inter ou en intra sur votre site. Devis sur mesure.
+                  Présentiel uniquement : en inter sur une session programmée, ou en intra chez vous. Devis sur mesure.
                 </div>
               </div>
             </div>

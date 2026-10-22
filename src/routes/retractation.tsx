@@ -306,8 +306,13 @@ function RetractationPage() {
             <h2 className="section-h2">Qui peut se rétracter</h2>
             <div className="g-rule" />
             <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48', marginTop: '1.5rem' }}>
-              Ce droit est ouvert au <strong>stagiaire personne physique qui se forme à titre
-              individuel et finance sa formation de ses propres deniers</strong>.
+              GALACTUS Digital ne vend pas ses formations en direct à un particulier qui les
+              financerait lui-même : toute entrée en formation est adossée à un employeur ou à un
+              financeur tiers (article 2 des CGV). Ce formulaire couvre donc deux situations :
+              le <strong>cas résiduel</strong> d'un contrat néanmoins conclu avec un stagiaire
+              finançant sa formation de ses propres deniers, et la <strong>part restée à la charge
+              personnelle du stagiaire</strong> lorsqu'une prise en charge ne couvre pas la
+              totalité du coût.
             </p>
             <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48' }}>
               Il ne s'applique pas aux employeurs ni aux clients professionnels, régis par une

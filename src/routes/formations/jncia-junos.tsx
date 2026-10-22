@@ -334,7 +334,7 @@ function FormationPage() {
               <div style={{ marginTop: '1rem', background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '4px solid var(--g-red)', padding: '1.25rem 1.5rem' }}>
                 <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.5rem' }}>Financement</div>
                 <p style={{ fontSize: '0.84rem', color: '#4a4a48', margin: 0, lineHeight: 1.7 }}>
-                  Action finançable par l'employeur au titre du plan de développement des compétences, par un OPCO, par France Travail (AIF ou POEI) ou en autofinancement.
+                  Action finançable par l'employeur au titre du plan de développement des compétences, par un OPCO ou par France Travail (AIF ou POEI).
                   Certification éditeur que GALACTUS Digital n'est pas habilité à délivrer au titre d'un enregistrement au RNCP ou au Répertoire spécifique : <strong style={{ color: 'var(--g-black)' }}>non éligible au CPF</strong>.
                 </p>
               </div>

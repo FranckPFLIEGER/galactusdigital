@@ -41,7 +41,7 @@ export const LIEUX: Record<Territoire, string> = {
 // ── Sessions programmées ─────────────────────────────────────────────────────
 export const SESSIONS_PLANIFIEES: SessionPlanifiee[] = [
   // FOAD — classe virtuelle Juniper
-  { slug: 'jncia-junos', territoire: 'Tous territoires', modalite: 'FOAD', debut: '2026-10-20', fin: '2026-10-30', complet: true, inscrits: 2 },
+  { slug: 'jncia-junos', territoire: 'Tous territoires', modalite: 'FOAD', debut: '2026-10-20', fin: '2026-10-30', complet: true, inscrits: 1 },
 
   // Présentiel Martinique — planning 2027
   { slug: 'md-102',     territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-01-25', fin: '2027-01-29' },

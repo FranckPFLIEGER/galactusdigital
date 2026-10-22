@@ -29,8 +29,7 @@ const certPrograms = [
   { name: 'Cisco — CCNA v2.0 200-301 & CCNP ENCOR 350-401 & ENARSI 300-410',  meta: 'n° 3018982' },
   { name: 'Cisco — Cybersécurité 200-201 ',  meta: 'n° 3018982' },
   { name: 'Cisco — IoT & Automation 200-901', meta: 'n° 3018982' },
-  { name: 'IPv6 Forum - Certified Network Engineer', meta: 'Official' },
-  { name: 'Linux & Python (LPI / PCAP)',  meta: 'Official' },
+  { name: 'Linux & Python (LPI / PCAP) — via Networking Academy',  meta: 'n° 3018982' },
 ]
 
 export function About() {

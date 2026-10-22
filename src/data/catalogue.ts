@@ -99,7 +99,7 @@ export const FAMILLES: Record<string, { label: string; icon: string }> = {
 export const EDITEURS: Record<string, { label: string; badge?: string }> = {
   'Cisco Networking Academy': { label: 'Cisco Networking Academy', badge: 'Partenaire n° 3018982' },
   'Microsoft':     { label: 'Microsoft',     badge: 'Partenaire Microsoft n° 4653557' },
-  'Juniper Networks': { label: 'Juniper Networks', badge: 'Formateur certifié — parcours JNCIA' },
+  'Juniper Networks': { label: 'Juniper Networks', badge: 'Formateur réseau CCNP / CCDP — parcours JNCIA' },
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -952,7 +952,10 @@ export const MENTION_PRIX_ELEARNING =
   "et pour les deux parcours CCNP Enterprise ; aucun frais supplémentaire pour la première " +
   "présentation à cet examen. " +
   "Pour les autres cours, l'examen de certification de l'éditeur reste à la charge du candidat " +
-  "s'il choisit de le passer."
+  "s'il choisit de le passer. " +
+  "Tarif communiqué aux employeurs, opérateurs de compétences et financeurs publics : "
+  + "toute entrée en formation est adossée à un employeur ou à un financeur tiers "
+  + "(art. 2 des CGV)."
 
 /** Mention courte, pour les listes et le calendrier */
 export const MENTION_PRIX_COURTE =

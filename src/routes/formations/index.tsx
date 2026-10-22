@@ -12,7 +12,6 @@ export const Route = createFileRoute("/formations/")({
   component: FormationsPage,
 })
 
-const GMAIL = "https://mail.google.com/mail/?view=cm&to=president@galactusdigital.com&su=Demande%20de%20formation"
 
 const EDITEUR_COLOR: Record<string, string> = {
   "Cisco Networking Academy": "#E41F26",
@@ -374,7 +373,7 @@ function FormationsPage() {
             </div>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", flexShrink: 0 }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href={GMAIL} target="_blank" rel="noopener noreferrer" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
+              <a href="/#contact" className="btn-ghost"><Mail size={16} /> Demander un devis</a>
             </div>
           </div>
         </section>

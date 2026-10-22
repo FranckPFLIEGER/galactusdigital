@@ -13,9 +13,9 @@ export const Route = createFileRoute('/presentiel')({
 
 
 const LIEUX = [
-  { zone: 'Martinique', badge: 'Siège régional Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: 'Centre régional principal des Caraïbes. Catalogue Microsoft en présentiel, inter ou intra-entreprise.', tel: '+33 7 81 07 47 46' },
+  { zone: 'Martinique', badge: 'Siège régional Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: 'Bureau administratif. Les formations se tiennent dans vos locaux ou en salle retenue pour la session — catalogue Microsoft en présentiel, inter ou intra-entreprise.', tel: '+33 7 81 07 47 46' },
   { zone: 'Guadeloupe', badge: 'Présence active', adresse: 'Pointe de la Verdure\nGosier 97190', desc: 'Interventions en présentiel chez vos équipes ou en salle partenaire adaptée à vos besoins.', tel: '+33 7 81 07 47 46' },
-  { zone: 'Paris — France hexagonale', badge: 'Siège social', adresse: '66 avenue des Champs-Élysées\n75008 Paris', desc: 'Formations en présentiel à Paris et interventions intra-entreprise partout en France hexagonale sur demande.', tel: '+33 7 81 07 47 46' },
+  { zone: 'Paris — France hexagonale', badge: 'Siège social', adresse: '66 avenue des Champs-Élysées\n75008 Paris', desc: 'Siège administratif. Interventions en présentiel dans vos locaux ou en salle retenue pour la session, partout en France hexagonale.', tel: '+33 7 81 07 47 46' },
 ]
 
 function FormationGrid() {
@@ -179,7 +179,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions planifiées au calendrier ou en intra à vos dates','Supports de cours officiels inclus','Accès aux plateformes NetAcad / Microsoft Learn','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Inscription possible jusqu'à une semaine avant le démarrage (art. 14 des CGV)"].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions planifiées au calendrier ou en intra à vos dates','Supports de cours officiels inclus','Accès à Microsoft Learn — Cisco Networking Academy pour le CCNA v2.0 accéléré','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Inscription possible jusqu'à une semaine avant le démarrage (art. 14 des CGV)"].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -189,9 +189,9 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Sessions & lieux</h3>
                 {[
-                  { zone: 'Martinique', badge: 'Siège régional Caraïbes', desc: "Sessions régulières tout au long de l'année. Pointe Madeleine — CAP EST, 97240 Le François." },
-                  { zone: 'Guadeloupe', badge: 'Présence active', desc: 'Sessions organisées en salle partenaire. Pointe de la Verdure, Gosier 97190.' },
-                  { zone: 'Paris — France', badge: 'Siège social', desc: '66 avenue des Champs-Élysées, 75008 Paris. Sessions en régions sur demande.' },
+                  { zone: 'Martinique', badge: 'Bureau — Caraïbes', desc: "Sessions régulières tout au long de l'année, dans vos locaux ou en salle retenue pour la session. Bureau : Pointe Madeleine — CAP EST, 97240 Le François." },
+                  { zone: 'Guadeloupe', badge: 'Présence active', desc: 'Sessions organisées en salle partenaire ou dans vos locaux. Bureau : Pointe de la Verdure, Gosier 97190.' },
+                  { zone: 'Paris — France', badge: 'Siège social', desc: 'Siège administratif : 66 avenue des Champs-Élysées, 75008 Paris. Interventions en régions dans vos locaux, sur demande.' },
                 ].map(l => (
                   <div key={l.zone} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
                     <div style={{ flexShrink: 0, width: '8px', height: '8px', background: 'var(--g-red)', marginTop: '5px' }} />
@@ -264,7 +264,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 15 participants','Formateur certifié dédié à votre groupe','Programme entièrement personnalisé','Formation dans vos locaux ou en salle partenaire','Supports de cours officiels éditeurs inclus','Accès aux plateformes NetAcad / Microsoft Learn','Passage de la certification intégré au programme','Attestation de formation et de présence','Financement via OPCO ou plan de développement des compétences'].map((item, i) => (
+                  {['Groupes de 4 à 15 participants','Formateur certifié dédié à votre groupe','Programme entièrement personnalisé','Formation dans vos locaux ou en salle partenaire','Supports de cours officiels éditeurs inclus','Accès à Microsoft Learn — Cisco Networking Academy pour le CCNA v2.0 accéléré','Passage de la certification intégré au programme','Attestation de formation et de présence','Financement via OPCO ou plan de développement des compétences'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.70)' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -314,7 +314,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Ce que nous apportons</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  {['Supports de cours officiels éditeurs','Accès à la plateforme NetAcad (Cisco) ou équivalent','Simulateurs et environnements de test','Matériel pédagogique inclus','Attestation de formation et de présence','Convocation avec règlement intérieur','Passage de la certification éditeur intégré','Accompagnement post-formation si nécessaire'].map((item, i) => (
+                  {['Supports de cours officiels éditeurs','Accès à la plateforme officielle de l\'éditeur — Microsoft Learn, ou Cisco Networking Academy pour le CCNA v2.0 accéléré','Simulateurs et environnements de test','Matériel pédagogique inclus','Attestation de formation et de présence','Convocation avec règlement intérieur','Passage de la certification éditeur intégré','Accompagnement post-formation si nécessaire'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>

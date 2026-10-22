@@ -40,7 +40,6 @@ export const MODES_FINANCEMENT: string[] = [
   'OPCO (AFDAS, AKTO, ATLAS, OPCO 2i… selon la branche du client)',
   'France Travail — AIF ou POEI, via Kairos, pour les demandeurs d\'emploi',
   'Aides régionales et dispositifs FSE+ des collectivités ultramarines',
-  'Autofinancement par le particulier',
 ]
 
 /** Mention de transparence exigée par l'indicateur 1 du RNQ V2 */

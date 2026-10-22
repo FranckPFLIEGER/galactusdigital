@@ -289,8 +289,10 @@ export function ContactCTA() {
                   </select>
                   {form.profil === PROFIL_PARTICULIER && (
                     <span style={aide}>
-                      En vous inscrivant à titre individuel, vous disposez de 14 jours pour vous
-                      rétracter après signature du contrat, sans frais ni justification.{" "}
+                      Une inscription individuelle suppose une prise en charge par France Travail
+                      (AIF ou POEI), une collectivité ou un employeur : indiquez-la ci-dessous, nous
+                      montons le dossier avec vous. Si une part restait à votre charge, vous disposez
+                      de 14 jours pour vous rétracter après signature.{" "}
                       <a href="/retractation" style={{ color: "#E41F26", fontWeight: 600, textDecoration: "none" }}>
                         Exercer ce droit en ligne
                       </a>.

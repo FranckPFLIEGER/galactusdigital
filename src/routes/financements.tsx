@@ -7,7 +7,7 @@ export const Route = createFileRoute('/financements')({
   head: () => ({
     meta: [
       { title: 'Guide du financement des formations — GALACTUS Digital' },
-      { name: 'description', content: "Financer une formation GALACTUS Digital : OPCO, plan de développement des compétences, France Travail AIF et POEI via Kairos, dispositifs régionaux et FSE+ des territoires ultramarins, autofinancement. Formations non éligibles au CPF." },
+      { name: 'description', content: "Financer une formation GALACTUS Digital : OPCO, plan de développement des compétences, France Travail AIF et POEI via Kairos, dispositifs régionaux et FSE+ des territoires ultramarins. Formations non éligibles au CPF." },
       { property: 'og:title', content: 'Guide du financement des formations — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/financements' },
     ],
@@ -16,7 +16,6 @@ export const Route = createFileRoute('/financements')({
   component: FinancementsPage,
 })
 
-const GMAIL = 'https://mail.google.com/mail/?view=cm&to=president@galactusdigital.com&su=Demande%20de%20financement%20formation'
 
 function FinancementsPage() {
   return (
@@ -66,7 +65,7 @@ function FinancementsPage() {
                     'En cas de prise en charge partielle, le reste est facturé au client',
                   ],
                   cta: 'Nous contacter pour identifier votre OPCO',
-                  href: GMAIL,
+                  href: '/#contact',
                 },
                 {
                   title: 'Plan de Développement des Compétences',
@@ -78,7 +77,7 @@ function FinancementsPage() {
                     'Convention de formation établie par GALACTUS Digital',
                   ],
                   cta: 'Demander un devis',
-                  href: GMAIL,
+                  href: '/#contact',
                 },
                 {
                   title: 'France Travail',
@@ -102,19 +101,19 @@ function FinancementsPage() {
                     'GALACTUS Digital vous oriente vers les bons interlocuteurs',
                   ],
                   cta: 'Nous consulter',
-                  href: GMAIL,
+                  href: '/#contact',
                 },
                 {
-                  title: 'Financement personnel',
-                  tag: 'Particuliers',
+                  title: 'Périmètre et reste à charge',
+                  tag: 'À lire avant toute demande',
                   items: [
-                    "Paiement à l'issue de la formation, à réception de facture",
-                    "TVA non applicable — l'article 261-4-4° du CGI",
-                    'Paiement échelonné possible sur demande',
-                    'Devis gratuit et sans engagement',
+                    "Les formations ne sont pas vendues en direct à un particulier qui les financerait lui-même",
+                    "Toute entrée en formation est adossée à un employeur ou à un financeur tiers",
+                    "Lorsque la prise en charge est partielle, le solde est réglé par l'employeur ou un financeur complémentaire",
+                    "TVA non applicable — article 261-4-4°-a du CGI",
                   ],
-                  cta: 'Demander un devis',
-                  href: GMAIL,
+                  cta: 'Vérifier mon éligibilité',
+                  href: '/#contact',
                 },
               ].map(f => (
                 <div key={f.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
@@ -151,7 +150,7 @@ function FinancementsPage() {
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href={GMAIL} target="_blank" rel="noopener noreferrer" className="btn-red"><Mail size={16} /> Nous écrire</a>
+              <a href="/#contact" className="btn-red"><Mail size={16} /> Nous écrire</a>
             </div>
           </div>
         </section>

@@ -9,8 +9,8 @@ const floatingBadges = [
   },
   {
     cls: 'badge-b',
-    label: 'Juniper Networks',
-    sub: 'JNCIA-Junos · JN0-106',
+    label: 'Juniper Junos',
+    sub: 'Préparation à l\'examen JN0-106',
     Icon: Globe,
   },
   {

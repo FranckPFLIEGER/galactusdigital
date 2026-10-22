@@ -6,7 +6,7 @@ import { Target, Globe, BookOpen, Linkedin } from 'lucide-react'
 // et remplace l'URL LinkedIn ci-dessous par ton profil réel.
 const PRESIDENT_PHOTO = '/president.jpg'
 const PRESIDENT_LINKEDIN = 'https://www.linkedin.com/in/franckpflieger'
-const PRESIDENT_TITLES = ['CCNP / CCDP', '15 ans instructeur Cisco', 'IPv6 Hall of Fame 2025']
+const PRESIDENT_TITLES = ['CCNP / CCDP', 'IPv6 Forum — Certified Network Engineer', '15 ans instructeur Cisco', 'IPv6 Hall of Fame 2025']
 
 const values = [
   {

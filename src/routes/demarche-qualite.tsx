@@ -107,7 +107,7 @@ function DemarcheQualitePage() {
             </div>
             <p style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.75rem', fontStyle: 'italic', lineHeight: 1.6 }}>
               * Taux de réussite calculé sur les seuls candidats ayant effectivement passé l'examen : il ne doit pas être lu comme un taux d'obtention rapporté aux entrants.
-              Abandons et annulations comptabilisés sur les parcours engagés (après entrée effective en formation), hors désistements antérieurs au démarrage. Données consignées au registre de suivi et justifiables sur pièces en audit. La note moyenne d'une année est calculée sur les seuls questionnaires effectivement remis, dont le nombre est publié dans la colonne précédente. Un tiret signale une année dont les questionnaires archivés ne sont pas encore dépouillés : aucune note n'est alors publiée pour cette année, plutôt qu'un chiffre non justifiable sur pièces.
+              Abandons et annulations comptabilisés sur les parcours engagés (après entrée effective en formation), hors désistements antérieurs au démarrage. Données consignées au registre de suivi et justifiables sur pièces en audit. La note moyenne d'une année est calculée sur les seuls questionnaires effectivement remis, dont le nombre est publié dans la colonne précédente : 39 questionnaires signés sur l'ensemble de la période, tous dépouillés, chacun consultable en audit. Un tiret signalerait une année dont les questionnaires archivés ne sont pas encore dépouillés : aucune note ne serait alors publiée pour cette année, plutôt qu'un chiffre non justifiable sur pièces.
             </p>
           </div>
         </section>

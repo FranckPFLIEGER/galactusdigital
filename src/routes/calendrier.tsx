@@ -19,6 +19,15 @@ interface Session {
   dateLabel: string
   placesMax: number
   statut: 'sur_demande' | 'en_preparation'
+  /**
+   * Repris de SESSIONS_PLANIFIEES. Sans ces deux champs, la ligne affichait
+   * « Max N participants » et le bouton d'inscription pour une session dont
+   * l'effectif est atteint, alors que le formulaire de devis, lui, la masque
+   * déjà : deux pages du site se contredisaient. Indicateur 1 — ne pas
+   * appeler à s'inscrire à une session qui ne peut plus accueillir personne.
+   */
+  complet?: boolean
+  inscrits?: number
 }
 
 // ── Sessions ────────────────────────────────────────────────────────────────
@@ -56,6 +65,8 @@ const SESSIONS: Session[] = SESSIONS_PLANIFIEES.flatMap(p => {
     dateLabel: labelPlage(p),
     placesMax: places(p),
     statut: 'en_preparation' as const,
+    complet: p.complet,
+    inscrits: p.inscrits,
   }]
 })
 

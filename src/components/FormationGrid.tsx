@@ -100,7 +100,14 @@ export function FormationGrid({ modalite, dark = false }: Props) {
                   </div>
                 </div>
                 {/* Point niveau */}
-                <div style={{ width: '8px', height: '8px', borderRadius: '50%', background: nCol, flexShrink: 0, marginTop: '4px', title: f.niveau }} />
+                {/* `title` est un attribut, pas une propriété CSS : placé dans style
+                    il était silencieusement ignoré et la pastille n'avait aucune
+                    infobulle — le niveau n'était lisible que par la couleur. */}
+                <div
+                  title={`Niveau : ${f.niveau}`}
+                  aria-label={`Niveau : ${f.niveau}`}
+                  style={{ width: '8px', height: '8px', borderRadius: '50%', background: nCol, flexShrink: 0, marginTop: '4px' }}
+                />
               </div>
 
               {/* Description */}

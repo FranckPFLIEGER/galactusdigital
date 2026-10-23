@@ -26,16 +26,24 @@ export const RESULTATS_ARRETE_AU = '31 mai 2026'
 /** Note de satisfaction globale publiée — source unique pour toutes les pages.
  *  Moyenne de l'item « Appréciation générale » du questionnaire FQ-08a,
  *  période 2023-2025, arrêtée à la date ci-dessus. Le détail par année et
- *  par item est publié dans RESULTATS_ANNUELS. */
+ *  par item est publié dans RESULTATS_ANNUELS.
+ *
+ *  Dépouillement complet de l'archive, arrêté le 23/10/2026 :
+ *  39 questionnaires remis et signés, somme des notes 187, moyenne 4,79.
+ *    2023 — 7 questionnaires, somme 32, moyenne 4,57
+ *    2024 — 23 questionnaires, somme 112, moyenne 4,87
+ *    2025 — 9 questionnaires, somme 43, moyenne 4,78
+ *  Aucune note inférieure à 4/5 sur les 39 : 31 notes à 5/5, 8 notes à 4/5. */
 export const SATISFACTION_GLOBALE = '4,8/5'
 
 /** Phrase de méthode affichée à côté du chiffre, partout où il apparaît. */
 export const SATISFACTION_METHODE =
   'Note moyenne attribuée à l\'item « Appréciation générale » du questionnaire de fin '  +
-  'de formation, sur une échelle de 1 (insatisfaisant) à 5 (excellent) — données 2023 à ' +
-  '2025, arrêtées au ' + RESULTATS_ARRETE_AU + '. Seuls les questionnaires effectivement ' +
-  'remis sont comptés. Aucune note d\'appréciation générale inférieure à 4/5 n\'a été '  +
-  'relevée sur les questionnaires recueillis.'
+  'de formation, sur une échelle de 1 (insatisfaisant) à 5 (excellent) — 39 questionnaires ' +
+  'remis et signés sur la période 2023-2025, arrêtés au ' + RESULTATS_ARRETE_AU + '. ' +
+  'Seuls les questionnaires effectivement remis sont comptés. ' +
+  'Aucune note d\'appréciation générale inférieure à 4/5 n\'a été relevée : ' +
+  '31 notes à 5/5 et 8 notes à 4/5.'
 
 /** Périmètre couvert par les indicateurs globaux */
 export const RESULTATS_PERIMETRE =
@@ -87,15 +95,16 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
       'Seuls les questionnaires effectivement remis sont comptés : un questionnaire non ' +
       'retourné n\'est pas compté comme une note, ni favorable ni défavorable, et n\'entre ' +
       'donc ni au numérateur ni au dénominateur. La moyenne globale porte sur l\'ensemble ' +
-      'des questionnaires remis sur la période ; le détail par année est publié au fur et à ' +
-      'mesure du dépouillement de l\'archive, session par session, et une année non encore ' +
-      'dépouillée ne publie aucune note.',
+      'des questionnaires remis sur la période ; le détail par année est publié dans le ' +
+      'tableau des résultats annuels.',
     source: 'Questionnaires d\'appréciation FQ-08a, remplis et signés par les apprenants, ' +
-      'archivés par session et communicables en audit. Aucune note d\'appréciation générale ' +
-      'inférieure à 4/5 n\'a été relevée sur les questionnaires recueillis. Sur la dernière ' +
-      'session dépouillée — Workshop Cybersécurité WEB, 10 au 14 mars 2025, neuf ' +
-      'questionnaires remis — 97,6 % des 125 notes du questionnaire, toutes rubriques ' +
-      'confondues, sont supérieures ou égales à 4/5 ; trois notes sont à 3/5.',
+      'archivés par session et communicables en audit. L\'archive est dépouillée en ' +
+      'intégralité : 39 questionnaires remis sur 2023-2025 (7 en 2023, 23 en 2024, 9 en 2025), ' +
+      'soit une moyenne d\'appréciation générale de 4,79/5. Aucune note d\'appréciation ' +
+      'générale inférieure à 4/5 : 31 notes à 5/5 et 8 notes à 4/5. Sur la session du ' +
+      'Workshop Cybersécurité WEB du 10 au 14 mars 2025, neuf questionnaires remis, ' +
+      '97,6 % des 125 notes du questionnaire, toutes rubriques confondues, sont supérieures ' +
+      'ou égales à 4/5 ; trois notes sont à 3/5.',
   },
   {
     libelle: 'Évaluation des contenus et des enseignements',
@@ -122,11 +131,18 @@ export interface ResultatAnnee {
   noteMoyenne: string | null
 }
 
+// Dépouillement intégral de l'archive, arrêté le 23/10/2026. Chaque note ci-dessous
+// est relevée sur le questionnaire signé, pièce par pièce — jamais extrapolée.
+//   2023 : 7 questionnaires (sessions Juniper JN0-104 d'octobre et novembre 2023)
+//          somme 32, moyenne 4,571 — 4 notes à 5/5, 3 notes à 4/5
+//   2024 : 23 questionnaires (JNCIA février, CCNA mars, CCNA septembre)
+//          somme 112, moyenne 4,870 — 20 notes à 5/5, 3 notes à 4/5
+//   2025 : 9 questionnaires (Workshop Cybersécurité WEB, 10 au 14 mars 2025)
+//          somme 43, moyenne 4,778
+// Total 39 questionnaires, somme 187, moyenne 4,795 → SATISFACTION_GLOBALE.
 export const RESULTATS_ANNUELS: ResultatAnnee[] = [
-  { annee: '2023', formes: 115, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: null, noteMoyenne: null },
-  { annee: '2024', formes: 272, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: null, noteMoyenne: null },
-  // Session Workshop Cybersécurité WEB du 10 au 14 mars 2025 : neuf
-  // questionnaires remis et signés, moyenne de l'appréciation générale 4,78.
+  { annee: '2023', formes: 115, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: 7, noteMoyenne: '4,6/5' },
+  { annee: '2024', formes: 272, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: 23, noteMoyenne: '4,9/5' },
   { annee: '2025', formes: 131, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: 9, noteMoyenne: '4,8/5' },
 ]
 

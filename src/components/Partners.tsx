@@ -8,10 +8,16 @@ const partners = [
     level: 'Academy Partner',
   },
   {
-    file: 'microsoft-partner.jpg',
+    // Remplace microsoft-partner.jpg, qui portait le badge « Silver Microsoft
+    // Partner ». Microsoft a fermé les paliers Silver et Gold fin 2022 et les a
+    // remplacés par les désignations Solutions Partner : afficher un palier
+    // supprimé revenait à revendiquer une qualité qui n'existe plus
+    // (indicateur 1 du RNQ V2). L'ancien fichier est à supprimer de
+    // public/partners/ après mise en ligne.
+    file: 'microsoft-solutions-partner.png',
     name: 'Microsoft',
-    desc: 'Partenaire officiel n° 4653557 depuis 2016 — formations Azure, M365, Power BI, Copilot',
-    level: 'Microsoft Partner',
+    desc: 'Partenaire officiel n° 4653557 depuis 2016 — désignations Microsoft Cloud et Training Services : formations Azure, M365, Power BI, Intune, Copilot',
+    level: 'Solutions Partner — Training Services',
   },
   {
     file: 'ipv6-council.png',

@@ -68,17 +68,35 @@ const temoignageVideo = {
 // La Cisco Networking Academy a sollicité l'organisme pour documenter ces
 // parcours et les a repris dans ses propres supports de communication.
 //
-// ⚠️ AUCUN NOM N'EST PUBLIÉ — décision de l'organisme, octobre 2026.
-// Les trois apprenantes ont témoigné pour une publication Cisco, mais le site
-// ne les nomme pas et ne les réduit pas non plus à des initiales : elles sont
-// identifiées par le métier qu'elles quittaient, qui est le sujet même de
-// l'histoire. Noms, employeurs et pièces figurent au dossier et sont
-// communicables en audit.
+// ⚠️ UNE APPRENANTE N'EST NOMMÉE QU'AVEC SON ACCORD ÉCRIT.
+// L'accord est recueilli parcours par parcours : l'apprenante lit le texte
+// exact qui sera publié, répond par écrit, et peut faire retirer la page à tout
+// moment sans se justifier. L'accord donné en son temps à Cisco pour SA
+// publication ne vaut pas pour celle-ci — finalité différente, responsable de
+// traitement différent.
+//   • Parcours 1 — accord de l'intéressée du 24/10/2026 par courriel, en
+//     réponse au texte exact reproduit ci-dessous. Courriel archivé au dossier.
+//   • Parcours 2 et 3 — accord non encore recueilli : ni nom, ni initiales.
+//     Elles sont identifiées par le métier qu'elles quittaient, qui est le sujet
+//     même de l'histoire. Pour les nommer : recueillir l'accord d'abord,
+//     renseigner `nom` et `entreprise` ensuite. Jamais l'inverse.
+// Noms, employeurs et pièces figurent au dossier et sont communicables en audit.
+//
+// SOURCE DES CITATIONS — à relire avant toute retouche :
+//   http://netacad.eu/fr/5014/impact-pour-les-etudiants-et-parcours-professionnels.html
+//   (page Cisco Networking Academy France, retirée depuis ; copie archivée au
+//   dossier de l'organisme). Les citations sont reprises MOT POUR MOT. Une
+//   coupure interne se marque par […] : deux passages distincts d'un même
+//   entretien ne sont jamais recollés en une phrase continue.
+//   Les photographies publiées par Cisco ne sont PAS reprises : le droit à
+//   l'image fait l'objet d'une autorisation distincte, non recueillie à ce jour.
 // ─────────────────────────────────────────────────────────────────────────────
-const RECONVERSION_PERIODE = '2013 — 2019'
+const RECONVERSION_PERIODE = '2013 à 2019'
 
 const reconversions = [
   {
+    nom: 'Paula Q.',
+    entreprise: 'Air France — Direction Générale des Systèmes d\'Information',
     avantMetier: 'Vingt ans personnel navigant commercial',
     versMetier: 'Gestionnaire de ressources — direction des systèmes d\'information',
     formation: 'IT Essentials',
@@ -90,6 +108,11 @@ const reconversions = [
     resultat:
       'Elle démonte et remonte un poste de travail en quatorze minutes devant ses collègues, ' +
       'et prend en charge des actes techniques dans ses nouvelles fonctions.',
+    // TEXTE CONSENTI, à ne pas retoucher. C'est mot pour mot ce que
+    // l'intéressée a lu avant de donner son accord le 24/10/2026. Il diffère de
+    // l'étude de cas Cisco par un adverbe (« se reconvertir » au lieu de « se
+    // reconvertir professionnellement ») : on publie ce qu'elle a approuvé, pas
+    // une version « plus exacte » qu'elle n'a pas relue.
     citation:
       'Je ne croyais pas vraiment pouvoir faire ce virage à 180 degrés à mon âge, et pourtant ' +
       'la NetAcad a rendu cela possible. Si j\'avais un message à délivrer, et notamment aux ' +
@@ -107,10 +130,12 @@ const reconversions = [
     resultat:
       'Un savoir-faire reconnu dans son entreprise, où la certification Cisco est valorisée, ' +
       'et l\'accès à des missions techniques qu\'elle n\'aurait pas pu prendre auparavant.',
+    // Segment continu de l'entretien, simplement tronqué à la fin.
     citation:
       'Aujourd\'hui, je dispose d\'un réel savoir-faire qui me met sur un pied d\'égalité avec ' +
       'mes collègues, ce qui est très important dans un univers très majoritairement masculin. ' +
-      'Je regrette même de ne pas avoir suivi cette formation plus tôt.',
+      'Je regrette même de ne pas avoir suivi cette formation plus tôt car j\'aurais sûrement ' +
+      'progressé plus vite.',
   },
   {
     avantMetier: 'Études de langues étrangères, support en CDD',
@@ -123,11 +148,14 @@ const reconversions = [
     resultat:
       'Le CDI obtenu, et l\'ouverture vers un poste de technicienne en communications ' +
       'unifiées via les niveaux supérieurs du programme.',
+    // Deux passages distincts de l'entretien d'origine, séparés par […] : ils ne
+    // se suivaient pas. Les recoller sans marquer la coupure fabriquerait une
+    // phrase qu'elle n'a pas prononcée d'un trait.
     citation:
-      'Avant de démarrer le cursus, ça me paraissait impossible car je ne possédais pas de ' +
-      'connaissances technologiques particulières. Finalement, je reconnais que je suis ' +
-      'plutôt fière de moi : ma formation initiale ne m\'aurait pas permis d\'envisager cette ' +
-      'évolution professionnelle.',
+      'J\'avoue qu\'avant de démarrer le cursus, ça me paraissait impossible car je ne ' +
+      'possédais pas de connaissances technologiques particulières. […] Finalement, je ' +
+      'reconnais que je suis plutôt fière de moi car ma formation initiale ne m\'aurait pas ' +
+      'permis d\'envisager cette évolution professionnelle.',
   },
 ]
 
@@ -365,19 +393,34 @@ function TemoignagesPage() {
 
                   <div style={{ borderTop: '1px solid rgba(187,187,187,0.3)', paddingTop: '1.25rem', marginTop: 'auto', display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
                     <Quote size={22} color="rgba(228,31,38,0.25)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                    <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: '#3a3a38', margin: 0, fontStyle: 'italic' }}>
-                      "{r.citation}"
-                    </p>
+                    <div>
+                      <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: '#3a3a38', margin: 0, fontStyle: 'italic' }}>
+                        "{r.citation}"
+                      </p>
+                      {/* Nom affiché uniquement si l'accord écrit est au dossier. */}
+                      {'nom' in r && (r as any).nom && (
+                        <div style={{ marginTop: '0.85rem' }}>
+                          <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.82rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>
+                            {(r as any).nom}
+                          </div>
+                          <div style={{ fontSize: '0.76rem', color: '#888', marginTop: '0.15rem' }}>
+                            {(r as any).entreprise}
+                          </div>
+                        </div>
+                      )}
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
 
             <p style={{ fontSize: '0.78rem', color: '#9a9a98', lineHeight: 1.7, marginTop: '1.75rem', marginBottom: 0, fontStyle: 'italic', maxWidth: '760px' }}>
-              Parcours suivis entre {RECONVERSION_PERIODE} et documentés par la Cisco Networking
-              Academy. Les apprenantes ne sont pas nommées, pas même par leurs initiales : leur
-              identité et celle de leur employeur figurent au dossier de formation et sont
-              communicables en audit.
+              Parcours suivis de {RECONVERSION_PERIODE}, documentés par la Cisco Networking
+              Academy. Une apprenante n'est nommée ici qu'avec son accord écrit, recueilli après
+              lui avoir soumis le texte exact, et révocable à tout moment sans justification. À
+              défaut d'accord, elle n'est identifiée ni par son nom ni par ses initiales : son
+              identité et celle de son employeur figurent alors au seul dossier de formation,
+              communicable en audit.
             </p>
           </div>
         </section>

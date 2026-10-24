@@ -10,12 +10,16 @@ const pillars = [
     items: [
       "Référent Handicap GALACTUS Digital : adaptation systématique des modalités pédagogiques à chaque situation individuelle, dès l'inscription",
       "Cisco Networking Academy accompagne depuis 2019 les apprenants en situation de handicap — plus de 188 000 personnes ont atteint leurs objectifs via les dispositifs d'accessibilité NetAcad (source : Cisco Networking Academy)",
-      "Contenus officiels Cisco conformes aux standards d'accessibilité internationaux — handicaps visuels, auditifs, cognitifs et de mobilité physique pris en compte",
+      // Cisco ne cite aucune norme nommée sur sa page d'accessibilité : affirmer une
+      // conformité « aux standards internationaux » à sa place serait invérifiable
+      // (indicateur 1). On s'en tient à ce que l'éditeur déclare lui-même.
+      "Cisco déclare un suivi actif des mesures d'assistance pour les handicaps visuels, auditifs, cognitifs et moteurs — engagement et périmètre consultables sur sa page d'accessibilité",
       "FOAD et e-learning tutoré : solution adaptée pour les apprenants à mobilité réduite ou ne pouvant se déplacer en centre",
       "Aménagements des évaluations disponibles sur demande — délais supplémentaires, supports adaptés, tiers-temps",
     ],
     link: { label: "Notre politique Handicap complète", url: "/handicap" },
-    source: "Cisco Networking Academy — netacad.com/fr/accessibility",
+    source: "Cisco Networking Academy",
+    sourceUrl: "https://www.netacad.com/fr/accessibility",
   },
   {
     icon: <Leaf size={24} color="white" />,
@@ -144,7 +148,12 @@ export function RSE() {
               </ul>
               {p.source && (
                 <div style={{ marginTop: '0.75rem', fontSize: '0.65rem', color: 'rgba(255,255,255,0.30)', fontStyle: 'italic', lineHeight: 1.4 }}>
-                  Source : {p.source}
+                  Source : {p.sourceUrl ? (
+                    <a href={p.sourceUrl} target="_blank" rel="noopener noreferrer"
+                       style={{ color: 'rgba(255,255,255,0.55)', textDecoration: 'underline' }}>
+                      {p.source}
+                    </a>
+                  ) : p.source}
                 </div>
               )}
               {p.link && (

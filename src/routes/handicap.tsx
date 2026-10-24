@@ -1,7 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../components/Header'
 import { Footer } from '../components/Footer'
-import { Phone, Mail, CheckCircle } from 'lucide-react'
+import { Phone, Mail, CheckCircle, ExternalLink } from 'lucide-react'
 
 export const Route = createFileRoute('/handicap')({
   head: () => ({
@@ -176,6 +176,44 @@ function HandicapPage() {
                   </div>
                 ))}
               </div>
+            </div>
+
+            {/* ── Accessibilité de la plateforme éditeur ──
+                La ligne « logiciels d'assistance compatibles avec nos plateformes »
+                ci-dessus porte sur un outil que nous n'éditons pas. Elle n'est
+                justifiable qu'en renvoyant l'apprenant à l'engagement de l'éditeur
+                lui-même, qu'il peut vérifier sans passer par nous. On ne publie ici
+                que ce que Cisco déclare, attribué à Cisco. */}
+            <div style={{ marginTop: '3rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '4px solid var(--g-red)', padding: '2rem' }}>
+              <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginTop: 0, marginBottom: '1rem' }}>
+                L'accessibilité de la plateforme de formation
+              </h3>
+              <p style={{ fontSize: '0.92rem', lineHeight: 1.85, color: '#4a4a48', marginBottom: '1rem' }}>
+                Les parcours certifiants que nous dispensons s'appuient sur la plateforme de la
+                Cisco Networking Academy. Son accessibilité relève de l'éditeur, pas de nous :
+                nous vous donnons donc directement sa source, afin que vous puissiez la vérifier
+                par vous-même avant de vous engager.
+              </p>
+              <p style={{ fontSize: '0.92rem', lineHeight: 1.85, color: '#4a4a48', marginBottom: '1.25rem' }}>
+                Cisco déclare poursuivre, depuis le lancement du programme en 1997, l'objectif de
+                rendre accessible à tous les apprenants chaque aspect de celui-ci, et assurer
+                depuis 2019 un suivi actif des mesures d'assistance destinées aux personnes en
+                situation de handicap visuel, auditif, cognitif ou moteur.
+              </p>
+              <a
+                href="https://www.netacad.com/fr/accessibility"
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.7rem 1.2rem', textDecoration: 'none' }}
+              >
+                <ExternalLink size={14} /> Accessibilité Cisco Networking Academy
+              </a>
+              <p style={{ fontSize: '0.78rem', color: '#9a9a98', lineHeight: 1.7, marginTop: '1rem', marginBottom: 0, fontStyle: 'italic' }}>
+                Page publiée par Cisco Systems — netacad.com (nouvel onglet). Un besoin
+                d'aménagement sur la plateforme se signale à notre référent handicap, qui fait
+                l'intermédiaire avec l'éditeur et le réseau RHF : toute situation de handicap
+                signalée donne lieu à un entretien préalable (article 13 des CGV).
+              </p>
             </div>
           </div>
         </section>

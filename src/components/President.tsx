@@ -6,7 +6,17 @@ import { Target, Globe, BookOpen, Linkedin } from 'lucide-react'
 // et remplace l'URL LinkedIn ci-dessous par ton profil réel.
 const PRESIDENT_PHOTO = '/president.jpg'
 const PRESIDENT_LINKEDIN = 'https://www.linkedin.com/in/franckpflieger'
-const PRESIDENT_TITLES = ['CCNP / CCDP', 'IPv6 Forum — Certified Network Engineer', '15 ans instructeur Cisco', 'IPv6 Hall of Fame 2025']
+// Titres et distinctions de Franck PFLIEGER. Ils ont toute leur place ici, sous
+// sa signature. Ce qu'on garde distinct, c'est la liste des PROGRAMMES de
+// l'organisme (About.tsx) : celle-là porte des numéros de partenariat délivrés à
+// PFLIEGER SASU, et un titre personnel n'en est pas un.
+const PRESIDENT_TITLES = [
+  'CCNP / CCDP',
+  'IPv6 Forum — Certified Network Engineer',
+  '15 ans instructeur Cisco',
+  'Cisco NetAcad Advisory Board',
+  'IPv6 Hall of Fame 2025',
+]
 
 const values = [
   {

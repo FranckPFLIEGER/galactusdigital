@@ -228,6 +228,10 @@ function ElearningPage() {
                     { ref: 'Ind. 19 — preuves', title: 'Effectivité du suivi', desc: "L'effectivité du suivi ne repose pas sur la seule connexion : elle est établie pour chaque apprenant et chaque module par le relevé de progression de la plateforme, l'historique des sessions de tutorat Webex et le compte rendu écrit de chaque point d'étape, consignés au registre de suivi. Article 13 bis des CGV." },
                     { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé documenté', desc: "Un relevé de progression module par module est généré automatiquement par la plateforme et archivé dans le dossier de formation de l'apprenant." },
                     { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Réalité des actions documentée', desc: "Les bilans de progression constituent la preuve de réalité des actions conformément aux priorités de contrôle 2026-2027." },
+                    { ref: 'Ind. 26 Qualiopi', title: 'Accessibilité et handicap', desc: "Référent handicap désigné : Franck PFLIEGER, certificat de Référent Handicap OF/CFA du "
+                      + "20 février 2023. Toute situation signalée donne lieu à un entretien préalable (article 13 des CGV). "
+                      + "L'accessibilité de la plateforme relève de l'éditeur et se vérifie sur sa page dédiée : "
+                      + "netacad.com/fr/accessibility. Nos aménagements et nos partenaires du réseau RHF sont détaillés sur la page Accessibilité & Handicap." },
                   ].map(c => (
                     <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.25rem', display: 'flex', gap: '0.75rem' }}>
                       <div style={{ flexShrink: 0 }}>

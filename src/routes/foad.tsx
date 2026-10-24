@@ -285,6 +285,11 @@ function FoadPage() {
                 { ref: 'Ind. 19 — preuves', title: 'Effectivité du suivi', desc: "L'effectivité du suivi ne repose pas sur la seule connexion : elle est établie pour chaque apprenant et chaque module par le relevé de progression de la plateforme, l'historique des sessions de tutorat Webex et le compte rendu écrit de chaque point d'étape, consignés au registre de suivi. Article 13 bis des CGV." },
                 { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Réalité des actions documentée', desc: "La réalité de nos actions de formation à distance est attestée par les bilans pédagogiques et les feuilles de présence numériques." },
                 { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé', desc: "Un suivi individualisé est mis en place pour chaque apprenant en FOAD, avec évaluation des acquis à chaque module via ateliers pratiques sur maquette Junos et QCM d'entraînement à l'examen JN0-106." },
+                { ref: 'Ind. 26 Qualiopi', title: 'Accessibilité et handicap', desc: "Référent handicap désigné : "
+                  + "Franck PFLIEGER, certificat de Référent Handicap OF/CFA du 20 février 2023. Toute situation signalée "
+                  + "donne lieu à un entretien préalable (article 13 des CGV). L'accessibilité des plateformes éditeurs se "
+                  + "vérifie sur leur page dédiée, netacad.com/fr/accessibility pour la Cisco Networking Academy. Nos "
+                  + "aménagements et nos partenaires du réseau RHF sont détaillés sur la page Accessibilité & Handicap." },
                 { ref: 'RNQ V2 — déc. 2026-728', title: 'Effectivité du suivi pédagogique', desc: "Au-delà de la simple connexion, l'effectivité du suivi est attestée par les comptes rendus d'ateliers sur maquette Junos, l'historique des sessions Webex et les comptes rendus de points d'étape individuels. Les seuils que préciseront les arrêtés d'application du décret n° 2026-728 seront intégrés dès leur parution." },
               ].map(c => (
                 <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>

@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useLocation } from '@tanstack/react-router'
 import { Menu, X, ChevronDown, ChevronRight, Linkedin } from 'lucide-react'
-import { FORMATIONS, getFormationsParFamille, getTarifAffiche } from '../data/catalogue'
+import { FORMATIONS, getFormationsParFamille, getTarifAffiche, getSanctionCourte } from '../data/catalogue'
 
 // ─── Couleurs par famille — déclinaison 100% chartée (rouge / noir / gris) ─────
 // Toutes les familles partagent le rouge de marque #E41F26.
@@ -138,7 +138,7 @@ function MegaMenu({ visible, onClose }: { visible: boolean; onClose: () => void 
                   {f.titre}
                 </div>
                 <div style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                  {f.examCode !== 'Certificat Cisco Networking Academy' ? `${f.examCode} · ` : ''}{f.duree}
+                  {f.examCode ? `${f.examCode} · ` : ''}{f.duree} · {getSanctionCourte(f)}
                 </div>
               </div>
               {/* Tarif public, ou « Sur devis » si aucun n'est affiché (indicateur 1 RNQ) */}

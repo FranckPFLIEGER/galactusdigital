@@ -12,8 +12,8 @@ export const Route = createFileRoute('/formations/it-essentials')({
   component: ItEssentialsPage,
   head: () => ({
     meta: [
-      { title: "IT Essentials — Cours Cisco Networking Academy sans prérequis | GALACTUS Digital" },
-      { name: "description", content: "Formation IT Essentials. 70 h, aucun prérequis. Matériel, systèmes, dépannage. 14 chapitres, 99 TP. Certificat et badge Cisco Networking Academy. Reconversion. Qualiopi." },
+      { title: "IT Essentials — Matériel, systèmes et dépannage | GALACTUS Digital" },
+      { name: "description", content: "Formation IT Essentials. 70 h en e-learning tutoré. Matériel, systèmes, dépannage. 14 chapitres, 99 TP. Badge et certificat Cisco Networking Academy. Qualiopi." },
     ],
   }),
 })
@@ -38,7 +38,7 @@ const DATA = {
   lieux:          ['Martinique', 'Guadeloupe', 'Paris'],
 
   // Description
-  description: 'Le cursus historique d\'entrée dans le métier. Installer, configurer et dépanner ordinateurs, terminaux mobiles et logiciels, puis se connecter aux réseaux. 14 chapitres, 99 travaux pratiques, ordinateur portable virtuel et Cisco Packet Tracer. Aucun prérequis, et le socle attendu avant d\'aborder le CCNA.',
+  description: 'Le cursus historique d\'entrée dans le métier. Installer, configurer et dépanner ordinateurs, terminaux mobiles et logiciels, puis se connecter aux réseaux. 14 chapitres, 99 travaux pratiques, ordinateur portable virtuel et Cisco Packet Tracer. Le socle attendu avant d\'aborder le CCNA.',
 
   // Objectifs pédagogiques
   objectifs: [
@@ -61,10 +61,11 @@ const DATA = {
 
   // Prérequis
   prerequis: [
-    'Aucun prérequis technique',
-    'Aucune connaissance informatique préalable requise',
+    'Avoir suivi le Bloc 0 du parcours Support informatique & Helpdesk, ou disposer d\'une pratique équivalente du poste de travail',
+    'Savoir identifier les composants d\'un ordinateur et installer un logiciel',
     'Savoir lire et écrire le français',
     'Disposer d\'un ordinateur et d\'une connexion Internet pour suivre le parcours e-learning',
+    'Le test de positionnement préalable confirme le niveau d\'entrée',
   ],
 
   // Programme
@@ -186,11 +187,11 @@ function SansPrerequisBanner() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
         <CheckCircle size={15} color="#E41F26" />
         <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)' }}>
-          Formation d'entrée — aucun prérequis
+          Bloc 2 du parcours — prérequis à valider
         </span>
       </div>
       <p style={{ fontSize: '0.86rem', color: '#4a4a48', margin: 0, lineHeight: 1.65 }}>
-        Cette formation ouvre le <strong style={{ color: 'var(--g-black)' }}>Bloc 0</strong> des parcours métier GALACTUS Digital. Elle est conçue pour les personnes en reconversion professionnelle, sans expérience informatique préalable. <a href="/formations#parcours" style={{ color: 'var(--g-red)', fontWeight: 600 }}>Voir les parcours →</a>
+        Cette formation se situe au <strong style={{ color: 'var(--g-black)' }}>Bloc 2</strong> du parcours Support informatique &amp; Helpdesk : elle suppose les acquis du Bloc 0, ou une pratique équivalente validée par le test de positionnement. <a href="/formations#parcours" style={{ color: 'var(--g-red)', fontWeight: 600 }}>Voir les parcours →</a>
       </p>
     </div>
   )
@@ -259,7 +260,7 @@ function ItEssentialsPage() {
             {/* Badges */}
             <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
               {[
-                { label: 'Aucun prérequis', main: true },
+                { label: 'Prérequis à valider', main: true },
                 { label: `Certification : ${DATA.certification}` },
                 { label: `Niveau ${DATA.niveau}` },
                 { label: `Réf. ${DATA.ref}` },
@@ -454,7 +455,7 @@ function ItEssentialsPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {[
                   { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail.' },
-                  { ref: 'Critère 1 Qualiopi', title: 'Analyse du besoin', desc: 'Test de positionnement préalable : il détermine le bloc d\'entrée et confirme qu\'aucun prérequis n\'est nécessaire.' },
+                  { ref: 'Critère 1 Qualiopi', title: 'Analyse du besoin', desc: 'Test de positionnement préalable : il vérifie les prérequis et détermine le bloc d\'entrée dans le parcours.' },
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation avec programme, lieu, horaires et règlement intérieur envoyée avant démarrage.' },
                   { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + auto-évaluation formateur selon 4 niveaux : non acquis → acquis.' },
                   { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de toute formation à distance, conformément à la circulaire DGEFP du 17 février 2026." },

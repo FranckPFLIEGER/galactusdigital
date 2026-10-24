@@ -2,7 +2,7 @@
 // Props : modalite + dark (fond sombre ou clair)
 import { useState } from 'react'
 import { ChevronRight, Euro, Calendar } from 'lucide-react'
-import { FORMATIONS, getFormationsParFamille, getTarifAffiche, type Modalite } from '../data/catalogue'
+import { FORMATIONS, getFormationsParFamille, getTarifAffiche, getSanctionCourte, type Modalite } from '../data/catalogue'
 import { getProchaineSession } from '../data/sessions'
 
 const FC: Record<string, string> = {
@@ -122,11 +122,14 @@ export function FormationGrid({ modalite, dark = false }: Props) {
                 <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: nCol, background: `${nCol}18`, padding: '0.18rem 0.45rem' }}>
                   {f.niveau}
                 </span>
-                {f.examCode !== 'Badge NetAcad' && (
+                {f.examCode && (
                   <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: metaCol, background: metaBg, padding: '0.18rem 0.45rem' }}>
                     {f.examCode}
                   </span>
                 )}
+                <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.08em', textTransform: 'uppercase', color: metaCol, background: metaBg, padding: '0.18rem 0.45rem' }}>
+                  {getSanctionCourte(f)}
+                </span>
               </div>
 
               {/* Prochaine session (pulsation douce) */}

@@ -195,8 +195,9 @@ const OVERRIDES: Record<string, Override> = {
 }
 
 /** Formations sanctionnées par un badge seul, sans examen surveillé */
-function estBadgeSeul(f: Formation): boolean {
-  return /badge/i.test(f.certification) || /badge/i.test(f.examCode)
+/** true = le cours ne prépare aucun examen de certification éditeur */
+function estSansExamen(f: Formation): boolean {
+  return f.examCode.trim() === ''
 }
 
 // ─── Index inverse slug → positions dans les parcours métier ─────────────────
@@ -263,13 +264,14 @@ export function getInfoCertifiante(slug: string): InfoCertifiante | null {
   // ── Validation par blocs / validation partielle
   const blocs =
     o.blocs ??
-    (estBadgeSeul(f)
-      ? 'Formation sanctionnée par une attestation de formation et un badge numérique de ' +
-        `${f.editeur}, acquis définitivement. Aucun découpage en blocs de compétences au sens ` +
-        'de l\'article L.6113-1 du code du travail : la certification visée n\'est pas enregistrée ' +
-        'aux répertoires nationaux. En cas d\'interruption du parcours, une attestation de ' +
-        'formation partielle mentionnant les compétences effectivement acquises est délivrée ' +
-        '(procédure FQ-15).'
+    (estSansExamen(f)
+      ? 'Formation sanctionnée par l\'attestation de formation de l\'organisme, ainsi que par le ' +
+        `badge numérique et le certificat de fin de cours ${f.editeur}, acquis définitivement. ` +
+        'Elle ne prépare aucun examen de certification éditeur. Aucun découpage en blocs de ' +
+        'compétences au sens de l\'article L.6113-1 du code du travail : aucune certification ' +
+        'enregistrée aux répertoires nationaux n\'est visée. En cas d\'interruption du parcours, ' +
+        'une attestation de formation partielle mentionnant les compétences effectivement ' +
+        'acquises est délivrée (procédure FQ-15).'
       : `La certification ${f.examCode} s'obtient par un examen unique et n'est pas découpée en ` +
         'blocs de compétences au sens de l\'article L.6113-1 du code du travail. En cas ' +
         'd\'interruption du parcours, une attestation de formation partielle mentionnant les ' +

@@ -13,7 +13,7 @@ export const Route = createFileRoute('/formations/support-informatique-essentiel
   head: () => ({
     meta: [
       { title: "Essentiels du support informatique — Certification CCST IT Support | GALACTUS Digital" },
-      { name: "description", content: "Formation Essentiels du support informatique. 56 h, aucun prérequis. Préparation certification Cisco CCST IT Support 100-140. 103 laboratoires. Reconversion. Qualiopi." },
+      { name: "description", content: "Formation Essentiels du support informatique. 56 h en e-learning tutoré. Préparation à la certification Cisco CCST IT Support. 103 laboratoires. Qualiopi." },
     ],
   }),
 })
@@ -38,7 +38,7 @@ const DATA = {
   lieux:          ['Martinique', 'Guadeloupe', 'Paris'],
 
   // Description
-  description: 'La formation d\'entrée dans l\'emploi la plus directe du catalogue. Sans aucun prérequis, elle amène à une certification Cisco reconnue par les employeurs et à un poste de support de niveau 1. Le programme couvre le matériel, les systèmes Windows et macOS, le dépannage réseau, la gestion de la file d\'incidents et les menaces de sécurité courantes. 103 laboratoires pratiques et 82 vidéos.',
+  description: 'La formation la plus directe du catalogue vers l\'emploi : elle amène à une certification Cisco reconnue par les employeurs et à un poste de support de niveau 1. Le programme couvre le matériel, les systèmes Windows et macOS, le dépannage réseau, la gestion de la file d\'incidents et les menaces de sécurité courantes. 103 laboratoires pratiques et 82 vidéos.',
 
   // Objectifs pédagogiques
   objectifs: [
@@ -61,10 +61,11 @@ const DATA = {
 
   // Prérequis
   prerequis: [
-    'Aucun prérequis technique',
-    'Aucune connaissance informatique préalable requise',
+    'Avoir suivi le Bloc 0 du parcours Support informatique & Helpdesk, ou disposer d\'une pratique équivalente du poste de travail',
+    'Savoir identifier les composants d\'un ordinateur et naviguer dans un système de fichiers',
     'Savoir lire et écrire le français',
     'Disposer d\'un ordinateur et d\'une connexion Internet pour suivre le parcours e-learning',
+    'Le test de positionnement préalable confirme le niveau d\'entrée',
   ],
 
   // Programme
@@ -178,11 +179,11 @@ function SansPrerequisBanner() {
       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.5rem' }}>
         <CheckCircle size={15} color="#E41F26" />
         <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)' }}>
-          Formation d'entrée — aucun prérequis
+          Bloc 1 du parcours — prérequis à valider
         </span>
       </div>
       <p style={{ fontSize: '0.86rem', color: '#4a4a48', margin: 0, lineHeight: 1.65 }}>
-        Cette formation ouvre le <strong style={{ color: 'var(--g-black)' }}>Bloc 0</strong> des parcours métier GALACTUS Digital. Elle est conçue pour les personnes en reconversion professionnelle, sans expérience informatique préalable. <a href="/formations#parcours" style={{ color: 'var(--g-red)', fontWeight: 600 }}>Voir les parcours →</a>
+        Cette formation constitue le <strong style={{ color: 'var(--g-black)' }}>Bloc 1</strong> du parcours Support informatique &amp; Helpdesk : elle suppose les acquis du Bloc 0, ou une pratique équivalente validée par le test de positionnement. <a href="/formations#parcours" style={{ color: 'var(--g-red)', fontWeight: 600 }}>Voir les parcours →</a>
       </p>
     </div>
   )
@@ -251,7 +252,7 @@ function SupportInformatiqueEssentielsPage() {
             {/* Badges */}
             <div style={{ display: 'flex', gap: '0.6rem', flexWrap: 'wrap', marginBottom: '1.5rem' }}>
               {[
-                { label: 'Aucun prérequis', main: true },
+                { label: 'Prérequis à valider', main: true },
                 { label: `Certification : ${DATA.certification}` },
                 { label: `Niveau ${DATA.niveau}` },
                 { label: `Réf. ${DATA.ref}` },
@@ -446,7 +447,7 @@ function SupportInformatiqueEssentielsPage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {[
                   { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail.' },
-                  { ref: 'Critère 1 Qualiopi', title: 'Analyse du besoin', desc: 'Test de positionnement préalable : il détermine le bloc d\'entrée et confirme qu\'aucun prérequis n\'est nécessaire.' },
+                  { ref: 'Critère 1 Qualiopi', title: 'Analyse du besoin', desc: 'Test de positionnement préalable : il vérifie les prérequis et détermine le bloc d\'entrée dans le parcours.' },
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation avec programme, lieu, horaires et règlement intérieur envoyée avant démarrage.' },
                   { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + auto-évaluation formateur selon 4 niveaux : non acquis → acquis.' },
                   { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de toute formation à distance, conformément à la circulaire DGEFP du 17 février 2026." },

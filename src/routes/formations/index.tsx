@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect } from "react"
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { ParcoursMetier } from "../../components/ParcoursMetier"
-import { FORMATIONS, FAMILLES, MENTION_PRIX_ELEARNING, getDetailPrixElearning } from "../../data/catalogue"
+import { FORMATIONS, FAMILLES, MENTION_PRIX_ELEARNING, getDetailPrixElearning, getSanction } from "../../data/catalogue"
 import type { Formation } from "../../data/catalogue"
 import { ArrowRight, Clock, Award, Phone, Mail, Filter, Calendar, Check } from "lucide-react"
 import { getProchaineSession } from "../../data/sessions"
@@ -93,8 +93,9 @@ function Card({ f }: { f: Formation }) {
         <span style={{ display: "flex", alignItems: "center", gap: ".3rem", fontSize: ".78rem", color: "#666" }}>
           <Clock size={13} color={color} /> {f.duree}
         </span>
+        {/* Symbole diplôme = ce que l'apprenant reçoit, puis l'examen préparé */}
         <span style={{ display: "flex", alignItems: "center", gap: ".3rem", fontSize: ".78rem", color: "#666" }}>
-          <Award size={13} color={color} /> {f.examCode || f.certification}
+          <Award size={13} color={color} /> {getSanction(f)}{f.examCode ? ` · ${f.examCode}` : ""}
         </span>
       </div>
 
@@ -124,7 +125,9 @@ function Card({ f }: { f: Formation }) {
           </span>
           {detail && (
             <span style={{ fontFamily: "var(--font-title)", fontSize: ".54rem", fontWeight: 600, letterSpacing: ".08em", textTransform: "uppercase", color: "#999" }}>
-              E-learning tutoré{detail.titre > 0 ? " · voucher Pearson VUE inclus" : " · badge et certificat Cisco NetAcad"}
+              {/* La sanction est portée par le symbole diplôme ; ici, la modalité
+                  et, le cas échéant, le voucher d'examen compris dans le tarif. */}
+              E-learning tutoré{detail.titre > 0 ? ` · voucher ${f.examCode} inclus` : ""}
             </span>
           )}
         </div>

@@ -67,7 +67,13 @@ export interface Formation {
   duree: string                // Ex: "70 heures"
   dureeJours: number           // Pour le calendrier
   certification: string        // Intitulé certification officielle
-  examCode: string             // Ex: "200-301", "AZ-900"
+  /**
+   * Référence de l'examen de certification PRÉPARÉ par le cours, et rien
+   * d'autre. Chaîne vide quand le cours ne prépare aucun examen éditeur.
+   * Ne jamais y mettre une sanction de fin de cours : c'est le rôle de
+   * `getSanction()`.
+   */
+  examCode: string             // Ex: "200-301", "AZ-900", "" si aucun examen
   modalites: Modalite[]        // Modalités disponibles
   description: string          // Courte description (2 lignes max)
   // Prix par modalité (€, organisme exonéré de TVA — null = sur demande)
@@ -126,9 +132,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
     certification: 'Badge numérique Cisco Networking Academy',
-    examCode: 'Badge Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Première marche du parcours : outils numériques, identité en ligne, recherche, mots de passe et premiers réflexes IA. Aucun prérequis.',
+    description: 'Première marche du parcours : prise en main des outils numériques du quotidien, identité en ligne, recherche d\'information, mots de passe et premiers réflexes face à l\'IA générative.',
     prix: { presentiel: null, foad: null, elearning: 180 },
     prixPublicElearning: true,
     voucher: 0,
@@ -141,9 +147,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
     certification: 'Badge numérique Cisco Networking Academy',
-    examCode: 'Badge Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Poste de travail et mobile : matériel, systèmes, logiciels, fichiers et connectivité Wi-Fi, Bluetooth et cellulaire. Aucun prérequis.',
+    description: 'Poste de travail et terminal mobile : matériel, systèmes d\'exploitation, installation de logiciels, organisation des fichiers et connectivité Wi-Fi, Bluetooth et cellulaire.',
     prix: { presentiel: null, foad: null, elearning: 180 },
     prixPublicElearning: true,
     voucher: 0,
@@ -156,9 +162,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
     certification: 'Badge numérique — brique CCST Cybersecurity',
-    examCode: 'Badge Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Monter, réparer et faire évoluer un PC. Composants d\'un poste fixe, d\'un portable et d\'un terminal mobile. Aucun prérequis.',
+    description: 'Monter, réparer et faire évoluer un poste : composants d\'un PC fixe, d\'un portable et d\'un terminal mobile, choix des pièces et gestes de démontage.',
     prix: { presentiel: null, foad: null, elearning: 180 },
     prixPublicElearning: true,
     voucher: 0,
@@ -171,9 +177,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Grand débutant', duree: '12 heures', dureeJours: 2,
     certification: 'Badge numérique Cisco Networking Academy',
-    examCode: 'Badge Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Rôle et caractéristiques des systèmes d\'exploitation, outils d\'administration Windows, bases de la sécurité Linux. Aucun prérequis.',
+    description: 'Rôle et fonctionnement des systèmes d\'exploitation, outils d\'administration Windows, premières commandes et notions de sécurité sous Linux.',
     prix: { presentiel: null, foad: null, elearning: 210 },
     prixPublicElearning: true,
     voucher: 0,
@@ -186,9 +192,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Grand débutant', duree: '22 heures', dureeJours: 3,
     certification: 'Badge numérique — brique CCST Cybersecurity',
-    examCode: 'Badge Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Périphériques, supports et protocoles réseau avec Packet Tracer. Construire un réseau local simple. Aucun prérequis.',
+    description: 'Périphériques, supports et protocoles réseau manipulés dans Packet Tracer, jusqu\'à la construction et au test d\'un réseau local simple.',
     prix: { presentiel: null, foad: null, elearning: 270 },
     prixPublicElearning: true,
     voucher: 0,
@@ -201,9 +207,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
     certification: 'Badge numérique — brique CCST Cybersecurity',
-    examCode: 'Badge Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Cybermenaces, protection des données personnelles et professionnelles, panorama des métiers de la cybersécurité. Aucun prérequis.',
+    description: 'Panorama des cybermenaces, protection des données personnelles et professionnelles, bonnes pratiques en entreprise et découverte des métiers de la cybersécurité.',
     prix: { presentiel: null, foad: null, elearning: 180 },
     prixPublicElearning: true,
     voucher: 0,
@@ -216,9 +222,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Grand débutant', duree: '8 heures', dureeJours: 1,
     certification: 'Badge numérique Cisco Networking Academy',
-    examCode: 'Badge Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Installation, configuration de base et ligne de commande Linux. Porte d\'entrée vers Linux Essentials et le LPIC-1. Aucun prérequis.',
+    description: 'Installation, configuration de base et premières commandes Linux en ligne de commande, dans un environnement guidé pas à pas.',
     prix: { presentiel: null, foad: null, elearning: 190 },
     prixPublicElearning: true,
     voucher: 0,
@@ -231,9 +237,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
     certification: 'Badge numérique Cisco Networking Academy',
-    examCode: 'Badge Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Bases de l\'IA en pratique : vision par ordinateur, traduction automatique, chatbots et rédaction de prompts. Aucun prérequis.',
+    description: 'L\'IA en pratique : vision par ordinateur, traduction automatique, agents conversationnels et rédaction de prompts, avec des ateliers sur cas concrets.',
     prix: { presentiel: null, foad: null, elearning: 180 },
     prixPublicElearning: true,
     voucher: 0,
@@ -246,9 +252,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
     certification: 'Badge numérique Cisco Networking Academy',
-    examCode: 'Badge Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Bases de la science des données, de l\'analyse et de l\'ingénierie de la donnée. Rôle du machine learning en entreprise. Aucun prérequis.',
+    description: 'Bases de la science des données : collecte, nettoyage et analyse, rôle de l\'ingénierie de la donnée et place du machine learning dans l\'entreprise.',
     prix: { presentiel: null, foad: null, elearning: 180 },
     prixPublicElearning: true,
     voucher: 0,
@@ -263,11 +269,10 @@ export const FORMATIONS: Formation[] = [
     certification: 'Cisco Certified Support Technician (CCST) IT Support',
     examCode: 'CCST IT Support',
     modalites: ['E-learning'],
-    description: 'Entrée directe dans l\'emploi : matériel, Windows et macOS, dépannage réseau. 103 laboratoires pratiques. Aucun prérequis.',
+    description: 'Préparation au métier de technicien support : matériel, Windows et macOS, dépannage réseau et relation utilisateur, appuyés sur 103 laboratoires pratiques.',
     prix: { presentiel: null, foad: null, elearning: 455 },
     prixPublicElearning: true,
     voucher: 0,
-    socle: true,
   },
   {
     slug: 'it-essentials',
@@ -276,13 +281,12 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Fondamental', duree: '70 heures', dureeJours: 9,
     certification: 'Certificat de fin de cours Cisco Networking Academy — IT Essentials',
-    examCode: 'IT Essentials',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Installer, configurer et dépanner ordinateurs, terminaux mobiles et logiciels. 14 chapitres, 99 TP. Aucun prérequis.',
+    description: 'Installer, configurer et dépanner ordinateurs, terminaux mobiles et logiciels : postes fixes, portables, périphériques, Windows et macOS, et mise en réseau du poste. 14 chapitres et 99 travaux pratiques, avec ordinateur portable virtuel et Packet Tracer.',
     prix: { presentiel: null, foad: null, elearning: 530 },
     prixPublicElearning: true,
     voucher: 0,
-    socle: true,
   },
 
   // ── CISCO — Réseaux & CCNA ─────────────────────────────────────────────────
@@ -293,9 +297,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'CCNA et CCNP',
     niveau: 'Fondamental', duree: '35 heures', dureeJours: 4,
     certification: 'Cisco Networking Essentials Certificat',
-    examCode: 'Certificat Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Introduction complète aux réseaux sans prérequis. Base recommandée avant le cursus CCNA.',
+    description: 'Fondamentaux des réseaux : adressage IP, commutation, routage, Wi-Fi et sécurité de base, avec configuration d\'équipements dans Packet Tracer. Base recommandée avant le cursus CCNA.',
     prix: { presentiel: null, foad: null, elearning: 340 },
     prixPublicElearning: true,
     voucher: 0,
@@ -399,7 +403,7 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Cybersécurité',
     niveau: 'Fondamental', duree: '30 heures', dureeJours: 4,
     certification: 'Cisco Cybersecurity Essentials Certificat',
-    examCode: 'Certificat Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
     description: 'CIA Triad, cryptographie, sécurité OS, firewalls et réponse aux incidents.',
     prix: { presentiel: null, foad: null, elearning: 310 },
@@ -427,7 +431,7 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Cybersécurité',
     niveau: 'Avancé', duree: '30 heures', dureeJours: 4,
     certification: 'Cisco Ethical Hacker Certificat',
-    examCode: 'Certificat Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
     description: 'Méthodologie pentest, Kali Linux, Nmap, Metasploit, Burp Suite et rapport.',
     prix: { presentiel: null, foad: null, elearning: 310 },
@@ -487,9 +491,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'IoT',
     niveau: 'Fondamental', duree: '20 heures', dureeJours: 3,
     certification: 'Certificate of Completion — Introduction to IoT',
-    examCode: 'Cisco Networking Academy — Certificate of Completion',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'Comprendre l\'IoT et la transformation digitale sans prérequis technique.',
+    description: 'Comprendre l\'Internet des objets et la transformation digitale : capteurs, connectivité, flux de données et cas d\'usage en entreprise et en collectivité.',
     prix: { presentiel: null, foad: null, elearning: 260 },
     prixPublicElearning: true,
     voucher: 0,
@@ -501,7 +505,7 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'IoT',
     niveau: 'Intermédiaire', duree: '70 heures', dureeJours: 9,
     certification: 'Certificate of Completion — IoT Fundamentals: Connecting Things',
-    examCode: 'Cisco Networking Academy — Certificate of Completion',
+    examCode: '',
     modalites: ['E-learning'],
     description: 'Arduino, Raspberry Pi, MQTT, protocoles IoT et sécurisation des déploiements.',
     prix: { presentiel: null, foad: null, elearning: 530 },
@@ -515,7 +519,7 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'IoT',
     niveau: 'Intermédiaire', duree: '70 heures', dureeJours: 9,
     certification: 'Certificate of Completion — IoT Fundamentals: Big Data & Analytics',
-    examCode: 'Cisco Networking Academy — Certificate of Completion',
+    examCode: '',
     modalites: ['E-learning'],
     description: 'Collecte, stockage, analyse et visualisation des données IoT avec Python.',
     prix: { presentiel: null, foad: null, elearning: 530 },
@@ -529,7 +533,7 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'IoT',
     niveau: 'Avancé', duree: '60 heures', dureeJours: 8,
     certification: 'Certificate of Completion — IoT Fundamentals: IoT Security',
-    examCode: 'Cisco Networking Academy — Certificate of Completion',
+    examCode: '',
     modalites: ['E-learning'],
     description: 'Menaces IoT, cryptographie embarquée, segmentation réseau et audits de sécurité.',
     prix: { presentiel: null, foad: null, elearning: 480 },
@@ -543,7 +547,7 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'IoT',
     niveau: 'Avancé', duree: '40 heures', dureeJours: 5,
     certification: 'Certificate of Completion — IoT Fundamentals: Hackathon Playbook',
-    examCode: 'Cisco Networking Academy — Certificate of Completion',
+    examCode: '',
     modalites: ['E-learning'],
     description: 'Projet IoT en équipe — design thinking, prototype fonctionnel et pitch jury.',
     prix: { presentiel: null, foad: null, elearning: 370 },
@@ -579,9 +583,9 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'Data & Analytics',
     niveau: 'Fondamental', duree: '30 heures', dureeJours: 4,
     certification: 'Cisco Data Analytics Essentials Certificat',
-    examCode: 'Certificat Cisco Networking Academy',
+    examCode: '',
     modalites: ['E-learning'],
-    description: 'SQL, Python Pandas, visualisation et storytelling data sans prérequis avancé.',
+    description: 'Analyse de données de bout en bout : interrogation SQL, manipulation avec Python Pandas, visualisation et restitution des résultats aux décideurs.',
     prix: { presentiel: null, foad: null, elearning: 310 },
     prixPublicElearning: true,
     voucher: 0,
@@ -895,6 +899,34 @@ export function getTarifsModalites(f: Formation): TarifModalite[] {
       surDevis: !v,
     }
   })
+}
+
+/**
+ * Ce que l'apprenant REÇOIT à l'issue du cours, par opposition à l'examen
+ * qu'il prépare (`examCode`). C'est cette mention qui s'affiche au symbole
+ * diplôme des cartes et du méga-menu.
+ *
+ * Tous les cours Cisco Networking Academy délivrent le badge numérique ET le
+ * certificat de fin de cours de l'éditeur (confirmé le 24/10/2026) : la règle
+ * est uniforme, sans exception par niveau.
+ *
+ * Les cours Microsoft et Juniper ne délivrent aucune sanction d'éditeur du
+ * seul fait de les suivre : la certification s'obtient en passant l'examen.
+ * Le cours est sanctionné par l'attestation de formation de l'organisme.
+ */
+export function getSanction(f: Formation): string {
+  if (f.editeur === 'Cisco Networking Academy') {
+    return 'Badge et certificat Cisco Networking Academy'
+  }
+  return 'Attestation de formation'
+}
+
+/** Forme courte pour les listes denses (méga-menu) */
+export function getSanctionCourte(f: Formation): string {
+  if (f.editeur === 'Cisco Networking Academy') {
+    return 'Badge et certificat NetAcad'
+  }
+  return 'Attestation de formation'
 }
 
 /**

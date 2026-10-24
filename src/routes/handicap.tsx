@@ -58,8 +58,9 @@ function HandicapPage() {
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48', marginBottom: '1.5rem' }}>
                   Notre référent contribue à offrir un environnement inclusif et l'accès
                   à un parcours pédagogique optimal. Nous mettons tout en œuvre pour rendre
-                  accessibles nos formations, en présentiel comme à distance (FOAD),
-                  et sommes en capacité de proposer des solutions personnalisées adaptées à chaque situation.
+                  accessibles nos formations, quelle que soit leur modalité — e-learning tutoré,
+                  classe virtuelle ou présentiel — et sommes en capacité de proposer des solutions
+                  personnalisées adaptées à chaque situation.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48' }}>
                   Nous pouvons également compter sur un réseau de partenaires spécialisés
@@ -154,10 +155,19 @@ function HandicapPage() {
                   de notre offre de formation certifiante IT.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48', marginBottom: '1.5rem' }}>
-                  Notre plateforme FOAD (NetAcad, WEBEX) permet notamment aux personnes
-                  à mobilité réduite de suivre nos formations certifiantes depuis leur domicile,
-                  quelle que soit leur localisation aux Caraïbes, dans l'Océan Indien
-                  ou en France hexagonale.
+                  Les formations Cisco Networking Academy se suivent en e-learning tutoré sur la
+                  plateforme NetAcad, et le parcours Juniper JNCIA-Junos en classe virtuelle Webex :
+                  une personne à mobilité réduite peut les suivre depuis son domicile, quelle que
+                  soit sa localisation aux Caraïbes, dans l'Océan Indien ou en France hexagonale.
+                </p>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48', marginBottom: '1.5rem' }}>
+                  Les formations Microsoft, en revanche, ne sont dispensées qu'en présentiel. Elles
+                  ne peuvent donc pas être suivies à distance : l'accessibilité y repose sur le
+                  choix de la salle et sur les aménagements convenus avec le bénéficiaire. Le lieu
+                  étant retenu session par session, ses conditions d'accès sont vérifiées avant
+                  l'engagement et portées sur la convocation. Lorsqu'aucune salle accessible ne peut
+                  être trouvée sur le territoire concerné, l'organisme le dit, oriente vers un
+                  partenaire du réseau RHF et ne maintient pas l'inscription.
                 </p>
                 <div style={{ borderLeft: '3px solid var(--g-red)', paddingLeft: '1.1rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--g-black)', marginBottom: '0.5rem' }}>
@@ -193,9 +203,10 @@ function HandicapPage() {
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {[
-                  'Formations disponibles en FOAD pour les personnes à mobilité réduite',
+                  'Catalogue Cisco suivi à distance, sans déplacement, en e-learning tutoré',
                   'Supports de cours adaptables (grands caractères sur demande)',
-                  'Sessions WEBEX avec sous-titrage possible',
+                  'Classes virtuelles Webex avec sous-titrage possible',
+                  'Formations Microsoft en présentiel : salle vérifiée avant engagement',
                   'Temps supplémentaire pour les examens sur demande',
                   'Accompagnement renforcé par le formateur',
                   'Pauses adaptées selon les besoins individuels',

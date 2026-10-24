@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/networking-essentials')({
   head: () => ({
     meta: [
       { title: "Networking Essentials Cisco Networking Academy — Formation réseaux | GALACTUS Digital" },
-      { name: "description", content: "Formation Cisco Networking Academy Networking Essentials. 35 h. Badge certifiant. Fondamentaux réseaux sans prérequis. E-learning tutoré. Certifié Qualiopi." },
+      { name: "description", content: "Formation Cisco Networking Academy Networking Essentials. 35 h en e-learning tutoré. Fondamentaux des réseaux, adressage IP, Packet Tracer. Badge et certificat NetAcad. Certifié Qualiopi." },
     ],
   }),
 })
@@ -28,10 +28,10 @@ const DATA = {
   groupeMin: 4,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Formation d'introduction complète aux réseaux informatiques. Sans prérequis technique, elle couvre les appareils réseau, les médias, les protocoles et la configuration de base. Idéale avant d'attaquer le cursus CCNA ou une spécialisation cybersécurité / IoT.`,
+  description: `Formation d'introduction complète aux réseaux informatiques : appareils et médias réseau, protocoles, adressage IP et configuration de base dans Packet Tracer. Premier bloc technique des parcours Réseaux et Cybersécurité, à suivre avant le cursus CCNA.`,
   objectifs: ["Décrire les composants d'un réseau — appareils, médias, topologies et architectures", "Configurer des équipements réseau Cisco de base via Cisco Packet Tracer", "Expliquer le rôle des protocoles réseau et les couches du modèle TCP/IP", "Configurer manuellement et automatiquement les adresses IP (IPv4 et IPv6)", "Tester et dépanner la connectivité réseau avec ping, traceroute et Packet Tracer", "Décrire les caractéristiques du cloud et de la virtualisation réseau"],
-  public: ["Débutants complets en informatique", "Étudiants BTS / Licence Pro", "Professionnels IT en reconversion", "Prérequis d'entrée pour CCNA ou CCNA Cybersecurity"],
-  prerequis: ["Aucun prérequis technique", "Utilisation basique d'un PC et d'Internet"],
+  public: ["Personnes ayant validé le Bloc 0 d'un parcours métier", "Étudiants BTS / Licence Pro", "Professionnels IT en reconversion", "Candidats préparant le CCNA ou le CCNA Cybersecurity"],
+  prerequis: ["Avoir suivi le Bloc 0 du parcours Réseaux & Infrastructure, ou disposer d'une pratique équivalente", "Savoir utiliser un ordinateur, un navigateur et un système de fichiers", "Le test de positionnement préalable confirme le niveau d'entrée"],
   examen: {
     code: 'Networking Essentials Final Exam',
     duree: 'Évaluation continue',

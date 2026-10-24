@@ -657,8 +657,9 @@ export function ContactCTA() {
                   Cisco Networking Academy
                 </div>
                 <div style={{ fontSize: "0.80rem", color: "rgba(255,255,255,0.60)", lineHeight: 1.6 }}>
-                  E-learning tutoré, tarif public affiché, titre officiel de l&apos;éditeur compris.
-                  Accès plateforme ouvert un an.
+                  E-learning tutoré, tarif public affiché, badge et certificat Cisco Networking
+                  Academy compris. Accès plateforme ouvert un an. Le voucher d&apos;examen surveillé
+                  Pearson VUE n&apos;est compris que sur les parcours certifiants, indiqué sur leur fiche.
                 </div>
               </div>
               <div>

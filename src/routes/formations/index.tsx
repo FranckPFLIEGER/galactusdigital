@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect } from "react"
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { ParcoursMetier } from "../../components/ParcoursMetier"
-import { FORMATIONS, FAMILLES, MENTION_PRIX_ELEARNING, getDetailPrixElearning, getSanction } from "../../data/catalogue"
+import { FORMATIONS, FAMILLES, MENTION_PRIX_ELEARNING, getDetailPrixElearning, getLigneDiplome } from "../../data/catalogue"
 import type { Formation } from "../../data/catalogue"
 import { ArrowRight, Clock, Award, Phone, Mail, Filter, Calendar, Check } from "lucide-react"
 import { getProchaineSession } from "../../data/sessions"
@@ -95,7 +95,7 @@ function Card({ f }: { f: Formation }) {
         </span>
         {/* Symbole diplôme = ce que l'apprenant reçoit, puis l'examen préparé */}
         <span style={{ display: "flex", alignItems: "center", gap: ".3rem", fontSize: ".78rem", color: "#666" }}>
-          <Award size={13} color={color} /> {getSanction(f)}{f.examCode ? ` · ${f.examCode}` : ""}
+          <Award size={13} color={color} /> {getLigneDiplome(f)}
         </span>
       </div>
 

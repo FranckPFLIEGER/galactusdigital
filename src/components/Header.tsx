@@ -138,7 +138,7 @@ function MegaMenu({ visible, onClose }: { visible: boolean; onClose: () => void 
                   {f.titre}
                 </div>
                 <div style={{ fontSize: '0.68rem', color: 'rgba(255,255,255,0.35)', lineHeight: 1.3, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
-                  {f.examCode ? `${f.examCode} · ` : ''}{f.duree} · {getSanctionCourte(f)}
+                  {f.examCode ? `${f.examCode} · ` : ''}{f.duree}{getSanctionCourte(f) ? ` · ${getSanctionCourte(f)}` : ''}
                 </div>
               </div>
               {/* Tarif public, ou « Sur devis » si aucun n'est affiché (indicateur 1 RNQ) */}

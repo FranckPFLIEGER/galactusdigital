@@ -96,6 +96,14 @@ export interface Formation {
   voucher?: number
   /** true = cours d'entrée sans aucun prérequis (Bloc 0 des parcours) */
   socle?: boolean
+  /**
+   * true = au symbole diplôme, n'afficher que la référence de l'examen, sans
+   * la sanction de fin de cours. Réservé aux parcours vendus pour la
+   * certification éditeur elle-même — CCNA v2.0 complet, CCNA Cybersecurity,
+   * CCNP ENCOR et ENARSI : c'est l'examen qui est l'objet de l'achat, le badge
+   * et le certificat NetAcad n'y sont qu'accessoires.
+   */
+  examenSeul?: boolean
 }
 
 // ─── Familles pour l'affichage groupé ────────────────────────────────────────
@@ -311,7 +319,7 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'CCNA et CCNP',
     niveau: 'Fondamental', duree: '70 heures', dureeJours: 9,
     certification: 'Cisco CCNA v2.0 200-301',
-    examCode: '200-301',
+    examCode: '200-301 1/3',
     modalites: ['E-learning'],
     description: 'Premiers modules du cursus CCNA officiel — OSI, TCP/IP, IPv4, IPv6, CLI Cisco.',
     prix: { presentiel: null, foad: null, elearning: 530 },
@@ -325,7 +333,7 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'CCNA et CCNP',
     niveau: 'Intermédiaire', duree: '70 heures', dureeJours: 9,
     certification: 'Cisco CCNA v2.0 200-301',
-    examCode: '200-301',
+    examCode: '200-301 2/3',
     modalites: ['E-learning'],
     description: 'VLAN, STP, EtherChannel, DHCP, Wi-Fi 802.11 et routage statique avancé.',
     prix: { presentiel: null, foad: null, elearning: 530 },
@@ -339,7 +347,7 @@ export const FORMATIONS: Formation[] = [
     editeur: 'Cisco Networking Academy', famille: 'CCNA et CCNP',
     niveau: 'Avancé', duree: '70 heures', dureeJours: 9,
     certification: 'Cisco CCNA v2.0 200-301',
-    examCode: '200-301',
+    examCode: '200-301 3/3',
     modalites: ['E-learning'],
     description: 'OSPF, ACL, NAT, VPN, SDN et automatisation réseau. Dernier module avant l\'examen CCNA.',
     prix: { presentiel: null, foad: null, elearning: 530 },
@@ -364,6 +372,7 @@ export const FORMATIONS: Formation[] = [
     prixPublic: true,
     prixPublicElearning: true,
     voucher: 350,
+    examenSeul: true,
   },
 
   {
@@ -379,6 +388,7 @@ export const FORMATIONS: Formation[] = [
     prix: { presentiel: null, foad: null, elearning: 1310 },
     prixPublicElearning: true,
     voucher: 390,
+    examenSeul: true,
   },
   {
     slug: 'ccnp-enarsi',
@@ -393,6 +403,7 @@ export const FORMATIONS: Formation[] = [
     prix: { presentiel: null, foad: null, elearning: 1110 },
     prixPublicElearning: true,
     voucher: 290,
+    examenSeul: true,
   },
 
   // ── CISCO — Cybersécurité ──────────────────────────────────────────────────
@@ -420,9 +431,10 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-201 CCNACBR v1.2',
     modalites: ['E-learning'],
     description: 'Formation SOC complète — surveillance réseau, forensique, réponse aux incidents et IA appliquée à la détection. Anciennement CyberOps Associate, renommée CCNA Cybersecurity par Cisco le 3 février 2026 ; examen 200-201 inchangé, blueprint v1.2.',
-    prix: { presentiel: null, foad: null, elearning: 480 },
+    prix: { presentiel: null, foad: null, elearning: 1990 },
     prixPublicElearning: true,
-    voucher: 0,
+    voucher: 350,
+    examenSeul: true,
   },
   {
     slug: 'ethical-hacker',
@@ -478,9 +490,10 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-901 CCNAAUTO',
     modalites: ['E-learning'],
     description: 'APIs REST, Python réseau, YANG/NETCONF, Ansible, Terraform et automatisation IA-ready (ex-DevNet, blueprint 2026).',
-    prix: { presentiel: null, foad: null, elearning: 420 },
+    prix: { presentiel: null, foad: null, elearning: 1880 },
     prixPublicElearning: true,
-    voucher: 0,
+    voucher: 350,
+    examenSeul: true,
   },
 
   // ── CISCO — IoT ───────────────────────────────────────────────────────────
@@ -915,6 +928,7 @@ export function getTarifsModalites(f: Formation): TarifModalite[] {
  * Le cours est sanctionné par l'attestation de formation de l'organisme.
  */
 export function getSanction(f: Formation): string {
+  if (f.examenSeul) return ''
   if (f.editeur === 'Cisco Networking Academy') {
     return 'Badge et certificat Cisco Networking Academy'
   }
@@ -923,10 +937,22 @@ export function getSanction(f: Formation): string {
 
 /** Forme courte pour les listes denses (méga-menu) */
 export function getSanctionCourte(f: Formation): string {
+  if (f.examenSeul) return ''
   if (f.editeur === 'Cisco Networking Academy') {
     return 'Badge et certificat NetAcad'
   }
   return 'Attestation de formation'
+}
+
+/**
+ * Ligne complète du symbole diplôme : la sanction, puis la référence de
+ * l'examen préparé. Sur les parcours vendus pour la certification elle-même
+ * (`examenSeul`), seule la référence de l'examen s'affiche.
+ */
+export function getLigneDiplome(f: Formation): string {
+  const sanction = getSanction(f)
+  if (!sanction) return f.examCode
+  return f.examCode ? `${sanction} · ${f.examCode}` : sanction
 }
 
 /**

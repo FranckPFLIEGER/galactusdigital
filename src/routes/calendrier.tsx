@@ -452,7 +452,7 @@ function CalendrierPage() {
                 ) : (
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>{results.map(s => <SessionRow key={s.id} s={s} />)}</div>
                 )}
-                <p style={{ fontSize: '0.76rem', color: '#aaa', marginTop: '1.5rem', fontStyle: 'italic', textAlign: 'center' }}>* Dates confirmées sur devis. Prix nets de taxe — TVA non applicable. Devis sous 48 h.</p>
+                <p style={{ fontSize: '0.76rem', color: '#aaa', marginTop: '1.5rem', fontStyle: 'italic', textAlign: 'center' }}>* Dates confirmées sur devis. Prix nets de taxe — TVA non applicable. Devis sous 48 h ouvrées.</p>
               </>
             )}
           </div>

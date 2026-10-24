@@ -12,8 +12,8 @@ export const Route = createFileRoute('/formations/it-essentials')({
   component: ItEssentialsPage,
   head: () => ({
     meta: [
-      { title: "IT Essentials — Préparation CompTIA A+ sans prérequis | GALACTUS Digital" },
-      { name: "description", content: "Formation IT Essentials. 70 h, aucun prérequis. Matériel, systèmes, dépannage. Préparation CompTIA A+ (220-1201 et 220-1202). 99 TP. Reconversion. Qualiopi." },
+      { title: "IT Essentials — Cours Cisco Networking Academy sans prérequis | GALACTUS Digital" },
+      { name: "description", content: "Formation IT Essentials. 70 h, aucun prérequis. Matériel, systèmes, dépannage. 14 chapitres, 99 TP. Certificat et badge Cisco Networking Academy. Reconversion. Qualiopi." },
     ],
   }),
 })
@@ -25,11 +25,11 @@ const DATA = {
   editeur:        'Cisco',
   famille:        'Cisco Networking Academy — Socle & Reconversion',
   titre:          'IT Essentials',
-  sousTitre:      'Préparation à la certification CompTIA A+ (Core 1 220-1201 · Core 2 220-1202)',
+  sousTitre:      'Matériel, systèmes d\'exploitation et dépannage — cours officiel Cisco Networking Academy',
   ref:            'SOCLE-ITE-011',
   niveau:         'Fondamental',
   partenaire:     'Partenaire Cisco n° 3018982',
-  certification:  'CompTIA A+ (Core 1 et Core 2)',
+  certification:  'Certificat de fin de cours Cisco Networking Academy — IT Essentials',
 
   // Logistique
   duree:          '70 heures',
@@ -38,7 +38,7 @@ const DATA = {
   lieux:          ['Martinique', 'Guadeloupe', 'Paris'],
 
   // Description
-  description: 'Le cursus historique d\'entrée dans le métier, et la certification la plus demandée par les employeurs sur un premier poste IT. Installer, configurer et dépanner ordinateurs, terminaux mobiles et logiciels, puis se connecter aux réseaux. 14 chapitres, 99 travaux pratiques, ordinateur portable virtuel et Cisco Packet Tracer. Aucun prérequis, et le socle attendu avant d\'aborder le CCNA.',
+  description: 'Le cursus historique d\'entrée dans le métier. Installer, configurer et dépanner ordinateurs, terminaux mobiles et logiciels, puis se connecter aux réseaux. 14 chapitres, 99 travaux pratiques, ordinateur portable virtuel et Cisco Packet Tracer. Aucun prérequis, et le socle attendu avant d\'aborder le CCNA.',
 
   // Objectifs pédagogiques
   objectifs: [
@@ -118,21 +118,21 @@ const DATA = {
       contenu: [
         'Méthodologie de dépannage en 6 étapes',
         'Documentation, ticketing et communication professionnelle',
-        'Révision par domaine d\'examen CompTIA A+',
-        '2 examens de certification pratique + examen final du cours',
+        'Révision par domaine de compétence du cours',
+        '2 examens pratiques + examen final du cours sur la plateforme NetAcad',
       ],
     },
   ],
 
   // Examen
   examen: {
-    code:       '220-1201 (Core 1) et 220-1202 (Core 2)',
-    duree:      '90 minutes par examen',
-    langue:     'Anglais',
-    organisme:  'CompTIA / Pearson VUE',
-    format:     'Maximum 90 questions par examen : QCM, glisser-déposer et questions par simulation',
-    score:      '675/900 pour le Core 1 · 700/900 pour le Core 2',
-    note: 'La certification CompTIA A+ exige la réussite des deux examens, à passer dans un intervalle de trois ans. Série V15 en vigueur depuis mars 2025. Cours suivant recommandé : CCNA v2.0 — ITN (1/3). Prévoir l\'inscription aux examens auprès d\'un centre Pearson VUE.',
+    code:       'IT Essentials — examen final de cours',
+    duree:      'Examen final en ligne, sans limite de session imposée',
+    langue:     'Français (plateforme) · supports en français et en anglais',
+    organisme:  'Cisco Networking Academy',
+    format:     'Quiz de fin de chapitre, deux examens pratiques et un examen final, passés sur la plateforme NetAcad',
+    score:      'Seuil de réussite fixé par l\'éditeur sur l\'examen final du cours',
+    note: 'Le cours est sanctionné par le certificat de fin de cours et le badge numérique Cisco Networking Academy, partageable sur Credly et LinkedIn. Aucun examen de certification éditeur n\'est compris dans le tarif ni organisé par GALACTUS Digital au titre de cette formation. Cours suivant recommandé : CCNA v2.0 — ITN (1/3).',
   },
 
   // Méthodes pédagogiques
@@ -487,7 +487,7 @@ function ItEssentialsPage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h ouvrées, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

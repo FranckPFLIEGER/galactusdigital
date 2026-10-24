@@ -113,7 +113,7 @@ const DATA = {
     organisme:  'Cisco Networking Academy (en collaboration avec NDG)',
     format:     '22 sections, exercices interactifs et examen final',
     score:      'Selon barème NetAcad',
-    note: 'Ce cours n\'est pas aligné sur une certification, il en prépare l\'accès. Cours suivant recommandé : Linux Essentials (LPI 010-160), puis NDG Linux I et II vers le LPIC-1.',
+    note: 'Ce cours n\'est pas aligné sur une certification, il en prépare l\'accès. Cours suivant recommandé : Linux Essentials (LPI 010-160).',
   },
 
   // Méthodes pédagogiques
@@ -466,7 +466,7 @@ function LinuxUnhatchedPage() {
             <div>
               <h2 className="section-h2-light" style={{ marginBottom: '0.4rem' }}>Vous partez de zéro ?</h2>
               <p style={{ fontSize: '0.90rem', color: 'rgba(255,255,255,0.55)', margin: 0, lineHeight: 1.7 }}>
-                C'est le cas prévu. Devis sous 48 h, accompagnement au financement OPCO et aides régionales DOM.
+                C'est le cas prévu. Devis sous 48 h ouvrées, accompagnement au financement OPCO et aides régionales DOM.
               </p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap', flexShrink: 0 }}>

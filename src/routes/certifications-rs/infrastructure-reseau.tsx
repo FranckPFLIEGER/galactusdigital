@@ -115,7 +115,7 @@ function CertifInfraReseau() {
             <h3 style={{ fontSize: '1rem', margin: '1.1rem 0 0.35rem', color: 'var(--g-black)' }}>Prérequis</h3>
             <p style={{ color: '#333', lineHeight: 1.8 }}>Maîtrise des opérations informatiques de base et compréhension écrite du français permettant de suivre des supports techniques. Aucun diplôme ni certification préalable n'est exigé.</p>
             <h3 style={{ fontSize: '1rem', margin: '1.1rem 0 0.35rem', color: 'var(--g-black)' }}>Voie d'accès</h3>
-            <p style={{ color: '#333', lineHeight: 1.8 }}>Après un parcours de formation continue. La certification est délivrée par GALACTUS Digital (PFLIEGER SASU), organisme certificateur.</p>
+            <p style={{ color: '#333', lineHeight: 1.8 }}>Après un parcours de formation continue. En cas d'enregistrement au Répertoire spécifique, la certification serait délivrée par GALACTUS Digital (PFLIEGER SASU) en qualité de certificateur. Le dossier étant en cours d'instruction, aucune certification n'est délivrée à ce titre à ce jour.</p>
           </section>
 
           {/* ── Informations pratiques ── */}

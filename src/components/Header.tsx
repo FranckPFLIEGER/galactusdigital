@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { useLocation } from '@tanstack/react-router'
 import { Menu, X, ChevronDown, ChevronRight, Linkedin } from 'lucide-react'
-import { FORMATIONS, getFormationsParFamille } from '../data/catalogue'
+import { FORMATIONS, getFormationsParFamille, getTarifAffiche } from '../data/catalogue'
 
 // ─── Couleurs par famille — déclinaison 100% chartée (rouge / noir / gris) ─────
 // Toutes les familles partagent le rouge de marque #E41F26.
@@ -11,7 +11,6 @@ const FC: Record<string, string> = {
   'Cybersécurité':       '#E41F26',
   'Programmation':       '#E41F26',
   'IoT':                 '#E41F26',
-  'Linux & Open Source': '#E41F26',
   'Data & Analytics':    '#E41F26',
   'Azure & Cloud':       '#E41F26',
   'Microsoft 365':       '#E41F26',
@@ -142,9 +141,9 @@ function MegaMenu({ visible, onClose }: { visible: boolean; onClose: () => void 
                   {f.examCode !== 'Certificat Cisco Networking Academy' ? `${f.examCode} · ` : ''}{f.duree}
                 </div>
               </div>
-              {/* Tarif sur devis */}
+              {/* Tarif public, ou « Sur devis » si aucun n'est affiché (indicateur 1 RNQ) */}
               <div style={{ flexShrink: 0, fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.62rem', fontWeight: 700, color: '#E41F26', background: 'rgba(228,31,38,0.10)', padding: '0.1rem 0.4rem', letterSpacing: '0.06em', whiteSpace: 'nowrap' }}>
-                Sur devis
+                {getTarifAffiche(f)}
               </div>
             </a>
           ))}

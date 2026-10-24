@@ -40,7 +40,7 @@ function RgpdPage() {
                 { icon: <Lock size={22} color="white" />, title: 'Droit à la limitation', desc: 'Vous pouvez demander la limitation du traitement de vos données dans certaines circonstances.' },
                 { icon: <Download size={22} color="white" />, title: 'Droit à la portabilité', desc: 'Vous pouvez demander à recevoir vos données dans un format structuré et lisible par machine.' },
                 { icon: <Mail size={22} color="white" />, title: 'Droit d\'opposition', desc: 'Vous pouvez vous opposer au traitement de vos données à des fins de prospection commerciale.' },
-                { icon: <Lock size={22} color="white" />, title: 'Retrait du consentement', desc: 'Lorsque le traitement repose sur votre consentement — formulaire de contact, prospection — vous pouvez le retirer à tout moment, sans que cela remette en cause la licéité du traitement déjà effectué.' },
+                { icon: <Lock size={22} color="white" />, title: 'Retrait du consentement', desc: 'Lorsque le traitement repose sur votre consentement — lettre d\'information et prospection — vous pouvez le retirer à tout moment, par le lien de désinscription de chaque message ou sur simple demande, sans que cela remette en cause la licéité du traitement déjà effectué.' },
               ].map(d => (
                 <div key={d.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '1.75rem' }}>
                   <div style={{ width: '42px', height: '42px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1rem' }}>
@@ -62,11 +62,25 @@ function RgpdPage() {
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
               {[
                 {
+                  titre: 'Demande de devis et d\'information',
+                  base: 'Mesures précontractuelles',
+                  donnees: "Nom, prénom, email, téléphone, profil (particulier ou entreprise), entreprise, territoire, "
+                    + "modalité et formation souhaitées, prise en charge envisagée, description du projet.",
+                  duree: "3 ans à compter du dernier contact, sauf entrée en formation : le dossier bascule alors "
+                    + "dans le traitement « gestion des formations » ci-dessous.",
+                  dest: "GALACTUS Digital. Sous-traitant : Web3Forms (relais technique du formulaire, qui transmet "
+                    + "la demande à la messagerie de l'organisme). La messagerie professionnelle est opérée par "
+                    + "Google (Google Workspace / Gmail).",
+                },
+                {
                   titre: 'Données de gestion des formations',
                   base: 'Exécution du contrat',
                   donnees: 'Nom, prénom, email, téléphone, entreprise, données de parcours de formation, résultats aux évaluations.',
                   duree: '3 ans pour les dossiers pédagogiques (Art. R6352-9 Code du travail). 5 ans pour les pièces comptables.',
-                  dest: 'GALACTUS Digital, éditeurs certifiant (Cisco Networking Academy, Microsoft, Juniper Networks), OPCO le cas échéant.',
+                  dest: "GALACTUS Digital, éditeurs certifiant (Cisco Networking Academy, Microsoft, Juniper Networks), "
+                    + "OPCO, France Travail ou tout autre financeur du dossier. Sous-traitants : Cisco Webex "
+                    + "(classes virtuelles, émargement et historique de connexion), Google Workspace (messagerie "
+                    + "et stockage des dossiers).",
                 },
                 {
                   titre: 'Données de satisfaction et d\'amélioration continue',
@@ -76,20 +90,24 @@ function RgpdPage() {
                   dest: 'GALACTUS Digital uniquement.',
                 },
                 {
-                  titre: 'Données de contact et de prospection',
-                  base: 'Consentement ou intérêt légitime',
-                  donnees: 'Nom, prénom, email professionnel, entreprise, demandes de contact.',
-                  duree: '3 ans à compter du dernier contact.',
-                  dest: 'GALACTUS Digital uniquement.',
+                  titre: 'Prospection et lettre d\'information',
+                  base: 'Consentement (prospect) ou intérêt légitime (client)',
+                  donnees: "Nom, prénom, email professionnel, entreprise, fonction, historique d'ouverture et de clic "
+                    + "des messages envoyés.",
+                  duree: "3 ans à compter du dernier contact. Chaque message comporte un lien de désinscription, "
+                    + "dont l'usage vaut retrait immédiat du consentement.",
+                  dest: "GALACTUS Digital. Sous-traitant : Brevo (Sendinblue SAS, France) pour l'envoi et le suivi "
+                    + "des campagnes — données hébergées dans l'Union européenne.",
                 },
                 {
                   titre: 'Navigation sur le site',
                   base: 'Intérêt légitime (sécurité et disponibilité du service)',
                   donnees: "Journaux techniques de l'hébergeur : adresse IP, horodatage, ressource demandée. "
                     + "Le site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience ni de publicité ; "
-                    + "aucun consentement n'a donc à être recueilli.",
+                    + "les polices de caractères sont auto-hébergées et aucune ressource n'est appelée sur un "
+                    + "serveur tiers. Aucun consentement n'a donc à être recueilli.",
                   duree: "Selon la politique de conservation des journaux de l'hébergeur.",
-                  dest: 'GALACTUS Digital — hébergeur Cloudflare Pages.',
+                  dest: 'PFLIEGER SASU (GALACTUS Digital) — hébergeur Cloudflare, Inc.',
                 },
               ].map(t => (
                 <div key={t.titre} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', padding: '1.5rem', display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1.5rem', alignItems: 'start' }}>
@@ -131,8 +149,9 @@ function RgpdPage() {
                   Responsable du traitement
                 </h3>
                 <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.70)' }}>
-                  <div><strong style={{ color: '#fff' }}>Organisme :</strong> GALACTUS Digital</div>
-                  <div><strong style={{ color: '#fff' }}>Responsable :</strong> PFLIEGER SASU (GALACTUS Digital) — Franck PFLIEGER, Président</div>
+                  <div><strong style={{ color: '#fff' }}>Responsable du traitement :</strong> PFLIEGER SASU, société par actions simplifiée unipersonnelle exerçant sous l'enseigne GALACTUS Digital</div>
+                  <div><strong style={{ color: '#fff' }}>Représentant légal :</strong> Franck PFLIEGER, Président</div>
+                  <div><strong style={{ color: '#fff' }}>Délégué à la protection des données :</strong> aucun DPO désigné — l'organisme n'entre dans aucun des cas de désignation obligatoire de l'article 37 du RGPD. Les demandes sont traitées par le représentant légal.</div>
                   <div><strong style={{ color: '#fff' }}>Siège :</strong> 66 avenue des Champs-Élysées, 75008 Paris</div>
                   <div><strong style={{ color: '#fff' }}>Email :</strong> <a href="mailto:president@galactusdigital.com" style={{ color: 'var(--g-red)' }}>president@galactusdigital.com</a></div>
                   <div><strong style={{ color: '#fff' }}>Téléphone :</strong> +33 7 81 07 47 46</div>
@@ -172,26 +191,50 @@ function RgpdPage() {
           <div style={{ maxWidth: '900px', margin: '0 auto' }}>
             <h2 className="section-h2" style={{ marginBottom: '0.5rem' }}>Transferts hors Union Européenne</h2>
             <div className="g-rule" />
-            <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1rem' }}>
-              Ce site est hébergé par <strong>Cloudflare Pages</strong> (États-Unis). Cloudflare est certifié
-              Data Privacy Framework (DPF), garantissant un niveau de protection adéquat des données
-              transférées vers les États-Unis.
+            <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
+              Les transferts ci-dessous sont les seuls mis en œuvre par l'organisme. Chacun est
+              encadré soit par une décision d'adéquation de la Commission européenne (Data Privacy
+              Framework, décision du 10 juillet 2023), soit par les clauses contractuelles types
+              approuvées par la Commission.
             </p>
-          <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1rem' }}>
-              Les <strong>polices de caractères</strong> utilisées sur ce site (Barlow Condensed et Nunito)
-              sont chargées via <strong>Google Fonts</strong> (Alphabet Inc., États-Unis). Ce chargement
-              implique la transmission de votre adresse IP aux serveurs de Google afin de servir
-              les fichiers de polices. Google est certifié Data Privacy Framework (DPF) — décision
-              d'adéquation de la Commission européenne du 10 juillet 2023.
-              Pour éviter ce transfert, vous pouvez utiliser un bloqueur de polices tierces ou
-              nous contacter pour activer une version du site avec polices auto-hébergées.
-            </p>
-            <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1rem' }}>
-              La plateforme pédagogique <strong>Cisco Networking Academy</strong> est opérée par Cisco Systems (États-Unis),
-              dont les traitements sont encadrés par des clauses contractuelles types approuvées par la Commission européenne.
-            </p>
+            {[
+              {
+                nom: 'Cloudflare, Inc. (États-Unis)',
+                role: "Hébergement du site et journaux techniques de connexion.",
+                cadre: 'Data Privacy Framework.',
+              },
+              {
+                nom: 'Web3Forms (États-Unis)',
+                role: "Relais technique du formulaire de demande de devis : le service reçoit les champs "
+                  + "du formulaire et les transmet à la messagerie de l'organisme, sans les exploiter "
+                  + "pour son propre compte.",
+                cadre: 'Clauses contractuelles types.',
+              },
+              {
+                nom: 'Google LLC — Google Workspace (États-Unis)',
+                role: "Messagerie professionnelle et stockage des dossiers de formation.",
+                cadre: 'Data Privacy Framework.',
+              },
+              {
+                nom: 'Cisco Systems, Inc. (États-Unis)',
+                role: "Plateforme pédagogique Cisco Networking Academy et classes virtuelles Webex : "
+                  + "compte apprenant, progression, résultats aux évaluations, historique de connexion.",
+                cadre: 'Clauses contractuelles types.',
+              },
+            ].map(t => (
+              <div key={t.nom} style={{ borderLeft: '3px solid var(--g-red)', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
+                <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--g-black)', marginBottom: '0.3rem' }}>{t.nom}</div>
+                <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: '#4a4a48', margin: 0 }}>{t.role}</p>
+                <p style={{ fontSize: '0.80rem', lineHeight: 1.6, color: '#888', margin: '0.2rem 0 0', fontStyle: 'italic' }}>Encadrement : {t.cadre}</p>
+              </div>
+            ))}
             <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48' }}>
-              Aucune autre donnée n'est transférée en dehors de l'Union Européenne.
+              Les <strong>polices de caractères</strong> du site sont auto-hébergées sur notre propre
+              domaine : leur affichage n'entraîne aucune requête vers Google Fonts, ni aucune
+              transmission d'adresse IP à Google. L'envoi de nos campagnes d'information est confié à
+              <strong> Brevo</strong> (Sendinblue SAS), dont les données sont hébergées dans l'Union
+              européenne. En dehors des quatre transferts listés ci-dessus, aucune donnée n'est
+              transférée hors de l'Union européenne.
             </p>
           </div>
         </section>

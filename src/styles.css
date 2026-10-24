@@ -1,3 +1,18 @@
+/* ───────────────────────────────────────────────────────────────────────────
+   Polices auto-hébergées — RGPD
+   Les fichiers sont servis depuis notre propre domaine via les paquets
+   @fontsource. Le site n'appelle plus fonts.googleapis.com ni fonts.gstatic.com :
+   aucune adresse IP de visiteur n'est transmise à Google.
+   Graisses retenues : Barlow Condensed 400/600/700, Nunito Sans 400/500/600/700.
+   ─────────────────────────────────────────────────────────────────────────── */
+@import '@fontsource/barlow-condensed/400.css';
+@import '@fontsource/barlow-condensed/600.css';
+@import '@fontsource/barlow-condensed/700.css';
+@import '@fontsource/nunito-sans/400.css';
+@import '@fontsource/nunito-sans/500.css';
+@import '@fontsource/nunito-sans/600.css';
+@import '@fontsource/nunito-sans/700.css';
+
 :root {
   --g-black   : #1D1D1B;
   --g-gray    : #BBBBBB;

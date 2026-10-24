@@ -2,7 +2,7 @@
 // Props : modalite + dark (fond sombre ou clair)
 import { useState } from 'react'
 import { ChevronRight, Euro, Calendar } from 'lucide-react'
-import { FORMATIONS, getFormationsParFamille, type Modalite } from '../data/catalogue'
+import { FORMATIONS, getFormationsParFamille, getTarifAffiche, type Modalite } from '../data/catalogue'
 import { getProchaineSession } from '../data/sessions'
 
 const FC: Record<string, string> = {
@@ -10,7 +10,6 @@ const FC: Record<string, string> = {
   'Cybersécurité':       '#E41F26',
   'Programmation':       '#E41F26',
   'IoT':                 '#E41F26',
-  'Linux & Open Source': '#E41F26',
   'Data & Analytics':    '#E41F26',
   'Azure & Cloud':       '#E41F26',
   'Microsoft 365':       '#E41F26',
@@ -145,7 +144,7 @@ export function FormationGrid({ modalite, dark = false }: Props) {
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem' }}>
                   <Euro size={11} color={metaCol} />
                   <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 700, color: metaCol, fontStyle: 'italic', letterSpacing: '0.04em' }}>
-                    {f.prixPublic && f.prix?.presentiel ? `${f.prix.presentiel.toLocaleString('fr-FR')} €` : 'Sur devis'}
+                    {getTarifAffiche(f)}
                   </span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.2rem', fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#E41F26' }}>
@@ -160,7 +159,7 @@ export function FormationGrid({ modalite, dark = false }: Props) {
       {/* Note prix */}
       <p style={{ fontSize: '0.73rem', color: metaCol, marginTop: '1rem', fontStyle: 'italic', lineHeight: 1.6 }}>
         * Tarifs sur devis — TVA non applicable (Art. 261-4-4° CGI, organisme certifié Qualiopi).
-        Devis sous 48 h. Financement OPCO et aides régionales DOM disponibles —{' '}
+        Devis sous 48 h ouvrées. Financement OPCO et aides régionales DOM disponibles —{' '}
         <a href="/financements" style={{ color: '#E41F26', textDecoration: 'none' }}>voir les financements</a>.
       </p>
     </div>

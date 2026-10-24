@@ -1,182 +1,118 @@
 # AGENTS.md
 
-Site vitrine pour **Archipel Formation**, organisme de formation certifiée IT aux Caraïbes.
-Construit avec TanStack Start (React SSR) et Tailwind CSS v4, déployé sur Netlify.
+Site vitrine de **GALACTUS Digital** (PFLIEGER SASU), organisme de formation IT
+certifié Qualiopi. Interface entièrement en français.
+
+Construit avec **TanStack Start** (React 19, SSR), déployé sur **Cloudflare Workers**.
+
+---
+
+## Lancer le projet
+
+```bash
+npm install
+npm run dev     # http://localhost:3000
+npm run build   # build de production
+```
+
+Node 22 (`.nvmrc`). Il n'y a pas de script de test ni de lint.
+
+---
 
 ## Architecture
 
 ```
 src/
-  routes/
-    __root.tsx          # Shell HTML, meta SEO, chargement polices Google Fonts
-    index.tsx           # Page d'accueil one-page (assemble tous les composants)
-  components/
-    Header.tsx          # Nav fixe, transparente → navy au scroll
-    Hero.tsx            # Plein écran avec badges flottants (CSS @keyframes)
-    Stats.tsx           # 4 chiffres clés avec animation reveal au scroll
-    About.tsx           # Expertise + liste des programmes certifiants
-    Services.tsx        # Intra-entreprise / Inter-entreprise
-    Certifications.tsx  # Grille des 8 éditeurs officiels
-    WhyUs.tsx           # 4 raisons + présence 11 territoires
-    ContactCTA.tsx      # CTA + coordonnées
-    Footer.tsx          # Pied de page multi-colonnes
-  hooks/
-    useIntersection.ts  # IntersectionObserver — déclenche les animations one-shot
-  styles.css            # Design system : tokens CSS, keyframes, classes composants
+  data/                   # SOURCE UNIQUE DE VÉRITÉ — à lire avant tout le reste
+    catalogue.ts          # 49 formations : tarifs, modalités, certifications, vouchers
+    parcours.ts           # Parcours métier par blocs, renvoient aux slugs du catalogue
+    sessions.ts           # Sessions programmées au calendrier
+    resultats.ts          # Indicateurs Qualiopi publiés (formés, réussite, satisfaction)
+    infoCertifiante.ts    # Passerelles, équivalences, blocs de compétences par formation
+  routes/                 # Routing par fichiers (TanStack Router)
+    __root.tsx            # Shell HTML, meta SEO, JSON-LD
+    index.tsx             # Accueil
+    formations/           # 49 fiches + index.tsx (catalogue)
+    certifications-rs/    # Dossiers France Compétences déposés
+    ...                   # Pages légales, modalités, qualité
+  components/             # Header, Footer, et sections de l'accueil
+  hooks/useIntersection.ts  # Animations au scroll, one-shot
+  styles.css              # Tokens CSS, polices, classes partagées
+  routeTree.gen.ts        # GÉNÉRÉ — ne jamais éditer à la main
 ```
+
+`routeTree.gen.ts` est régénéré par `npm run build` ou `npm run dev` : après avoir
+ajouté ou supprimé un fichier de route, lancer un build plutôt que de le modifier.
+
+---
+
+## Règles du projet
+
+### Les données ne se dupliquent pas
+
+Tarifs, durées, intitulés de certification et modalités vivent dans
+`src/data/catalogue.ts`. Une valeur affichée ailleurs doit venir d'un helper
+(`getTarifAffiche`, `getTarifsModalites`, `getPrixElearning`,
+`getDetailPrixElearning`, `getVoucher`), jamais d'une constante recopiée.
+
+**`prix.elearning` est le prix total à payer, voucher compris.** La mention légale
+affichée sous les tarifs l'annonce ainsi (art. L.112-1 du code de la consommation).
+
+**Ajouter une formation :** une entrée dans `FORMATIONS[]` et un fichier dans
+`src/routes/formations/`. Les deux listes doivent rester alignées — une fiche sans
+entrée catalogue est invisible dans la navigation, une entrée sans fiche produit un
+lien mort.
+
+**Supprimer une formation :** retirer l'entrée du catalogue, supprimer la fiche,
+nettoyer `public/sitemap.xml`, puis vérifier les mentions dans `parcours.ts`,
+`infoCertifiante.ts` et les « cours suivant recommandé » des autres fiches.
+
+### Contraintes de conformité
+
+Ce site est une pièce d'audit Qualiopi, pas seulement une vitrine. Avant de modifier
+un contenu :
+
+- **Aucun chiffre non justifiable sur pièces.** Les indicateurs publiés viennent de
+  `resultats.ts` et sont consignés au registre de suivi. Ne jamais extrapoler, arrondir
+  à l'avantage de l'organisme, ni reporter d'un périmètre à un autre.
+- **Tarif visible partout où une formation est présentée** — méga-menu, grille,
+  fiche (indicateur 1 du Référentiel National Qualité).
+- **Aucune allégation de certificateur.** Les deux dossiers France Compétences sont
+  en cours d'instruction : rien n'est enregistré, et les pages le disent.
+- **L'organisme ne vend pas à des particuliers qui se financeraient eux-mêmes.**
+  Toute entrée en formation est adossée à un employeur ou à un financeur tiers
+  (article 2 des CGV). Ne jamais réintroduire d'autofinancement particulier.
+- **Les intitulés de certification sont exacts.** Ne jamais attribuer une certification
+  à un éditeur qui ne la délivre pas.
+- **Pas de ressource tierce.** Les polices sont auto-hébergées via `@fontsource` et
+  le site ne dépose aucun cookie : ne pas réintroduire Google Fonts, de mesure
+  d'audience ou de CDN externe, sous peine de rendre la page RGPD inexacte.
+
+Les mentions légales, CGV et la page RGPD sont des textes juridiques : les faire
+relire plutôt que les reformuler spontanément.
+
+---
 
 ## Conventions
 
-- **Design system** : custom properties CSS dans `:root` (`--navy`, `--gold`, `--teal`, `--cream`). Pas de couleurs hardcodées dans les composants.
-- **Polices** : Cormorant Garamond (titres, `var(--font-display)`) + Outfit (corps, `var(--font-body)`), chargées via le `head()` TanStack Router dans `__root.tsx`.
-- **Animations** : classes `reveal` / `reveal-left` / `reveal-scale` + hook `useIntersection`. L'observer se désabonne après le premier déclenchement (one-shot).
-- **Routing** : one-page avec ancres (`#expertise`, `#services`, `#certifications`, `#pourquoi`, `#contact`).
-- **Langue** : interface entièrement en français.
+- **Styles inline** dans les composants, avec les tokens CSS de `:root`
+  (`--g-black`, `--g-red`, `--g-white`, `--g-offwhite`, `--font-title`, `--font-body`).
+  Tailwind est présent dans la chaîne de build mais n'est pas la méthode employée.
+- **Polices** : Barlow Condensed (titres) et Nunito Sans (corps), importées en haut
+  de `styles.css`.
+- **Icônes** : `lucide-react` uniquement.
+- **Nommage** : composants en PascalCase, fichiers de route en kebab-case.
+- **Animations** : classes `reveal` / `reveal-left` / `reveal-scale` avec le hook
+  `useIntersection`, qui se désabonne au premier déclenchement.
+- **TypeScript strict.** `npx tsc --noEmit` remonte beaucoup de TS6133 (imports
+  inutilisés) préexistants : ne pas les confondre avec une régression.
 
 ## Palette
 
-| Var | Hex | Usage |
+| Token | Hex | Usage |
 |---|---|---|
-| `--navy` | `#0C1A30` | Fond hero, nav, services |
-| `--gold` | `#C4872B` | Accent principal, CTA |
-| `--teal` | `#0D7A6D` | Section contact |
-| `--cream` | `#F6F1E8` | Fond stats, certifications |
-
-### Tech Stack
-
-| Layer | Technology |
-|-------|------------|
-| Framework | TanStack Start |
-| Frontend | React 19, TanStack Router v1 |
-| Build | Vite 7 |
-| Styling | Tailwind CSS 4 |
-| UI Components | Radix UI + custom components |
-| Content | Content Collections (type-safe markdown) |
-| AI | TanStack AI with multi-provider support |
-| Language | TypeScript 5.7 (strict mode) |
-| Deployment | Netlify |
-
-## Directory Structure
-
-```
-├── public
-│   ├── favicon.ico
-│   ├── logo.png
-│   ├── tanstack-circle-logo.png
-│   └── tanstack-word-logo-white.svg  # TanStack wordmark logo (white) used in header/nav.
-├── src
-│   ├── components
-│   │   ├── Header.tsx  # Header.
-│   │   ├── HeaderNav.tsx  # Navigation sidebar template: mobile menu, Home link, add-on routes; EJS-driven for dynamic route generation.
-│   │   ├── ProductAIAssistant.tsx  # AI marketing assistant.
-│   │   └── ProductRecommendation.tsx  # Product recommendation card.
-│   ├── data
-│   │   └── products.ts  # Product catalog data template.
-│   ├── lib
-│   │   ├── product-ai-hook.ts  # useProductChat hook.
-│   │   └── product-tools.ts  # AI tools: getProducts, recommendProduct.
-│   ├── routes
-│   │   ├── products
-│   │   │   └── $productId.tsx  # Product detail page with recommendation.
-│   │   ├── __root.tsx  # Root layout: Header, styles.
-│   │   ├── api.product-chat.ts  # POST handler for product AI chat.
-│   │   └── index.tsx  # Marketing home with ProductAIAssistant.
-│   ├── store
-│   │   └── product-assistant.ts  # Zustand store for assistant state.
-│   ├── router.tsx  # TanStack Router setup: creates router from generated routeTree with scroll restoration.
-│   └── styles.css  # Global styles.
-├── .gitignore  # Template for .gitignore: node_modules, dist, .env, .netlify, .tanstack, etc.
-├── AGENTS.md  # This document provides an overview of the project structure for developers and AI agents working on this codebase.
-├── netlify.toml  # Netlify deployment config: build command (vite build), publish directory (dist/client), and dev server settings (port 8888, target 3000).
-├── package.json  # Project manifest with TanStack Start, React 19, Vite 7, Tailwind CSS 4, and Netlify plugin dependencies; defines dev and build scripts.
-├── pnpm-lock.yaml
-├── tsconfig.json  # TypeScript config: ES2022 target, strict mode, @/* path alias for src/*, bundler module resolution.
-└── vite.config.ts  # Vite config template: TanStack Start, React, Tailwind, Netlify plugin, and optional add-on integrations; processed by EJS.
-```
-
-## Key Concepts
-
-### File-Based Routing (TanStack Router)
-
-Routes are defined by files in `src/routes/`:
-
-- `__root.tsx` - Root layout wrapping all pages
-- `index.tsx` - Route for `/`
-- `api.*.ts` - Server API endpoints (e.g., `api.resume-chat.ts` → `/api/resume-chat`)
-
-### Component Architecture
-
-**UI Primitives** (`src/components/ui/`):
-- Radix UI-based, Tailwind-styled
-- Card, Badge, Checkbox, Separator, HoverCard
-
-**Feature Components** (`src/components/`):
-- Header, HeaderNav, ResumeAssistant
-
-## Configuration Files
-
-| File | Purpose |
-|------|---------|
-| `vite.config.ts` | Vite plugins: TanStack Start, Netlify, Tailwind, Content Collections |
-| `tsconfig.json` | TypeScript config with `@/*` path alias for `src/*` |
-| `netlify.toml` | Build command, output directory, dev server settings |
-| `content-collections.ts` | Zod schemas for jobs and education frontmatter |
-| `styles.css` | Tailwind imports + CSS custom properties (oklch colors) |
-
-## Development Commands
-
-```bash
-npm run dev      # Start dev server
-npm run build    # Production build
-npm run preview  # Preview production build
-```
-
-## Conventions
-
-### Naming
-- Components: PascalCase
-- Utilities/hooks: camelCase
-- Routes: kebab-case files
-
-### Styling
-- Tailwind CSS utility classes
-- `cn()` helper for conditional class merging
-- CSS variables for theme tokens in `styles.css`
-
-### TypeScript
-- Strict mode enabled
-- Import paths use `@/` alias
-- Zod for runtime validation
-- Type-only imports with `type` keyword
-
-### State Management
-- React hooks for local state
-- Zustand if you need it for global state
-### Marketing Site with AI Assistant
-
-Marketing site with TanStack AI chat assistant. No Stripe checkout.
-
-**AI tools available:**
-- `getProducts` - Get all products from catalog
-- `recommendProduct` - Display product recommendation card (MUST use for recommendations)
-
-**Components:** ProductAIAssistant, ProductRecommendation
-
-**Dependencies:** @tanstack/ai, streamdown
-
-## Environment Variables
-
-For AI: ANTHROPIC_API_KEY, OPENAI_API_KEY, GEMINI_API_KEY, or OLLAMA_BASE_URL (same as ai add-on).
-
-## Application Name
-
-This starter uses "Application Name" as a placeholder throughout the UI and metadata. Replace it with the user's desired application name in the following locations:
-
-### UI Components
-- `src/components/Header.tsx` — app name displayed in the header
-- `src/components/HeaderNav.tsx` — app name in the mobile navigation header
-
-### SEO Metadata
-- `src/routes/__root.tsx` — the `title` field in the `head()` configuration
-
-Search for all occurrences of "Application Name" in the `src/` directory and replace with the user's application name.
+| `--g-black` | `#1D1D1B` | Fonds sombres, en-têtes de section |
+| `--g-red` | `#E41F26` | Accent unique, filets, CTA |
+| `--g-white` | `#FFFFFF` | Fond principal |
+| `--g-offwhite` | `#F7F7F6` | Fond alterné |
+| `--g-gray` | `#BBBBBB` | Bordures, texte secondaire |

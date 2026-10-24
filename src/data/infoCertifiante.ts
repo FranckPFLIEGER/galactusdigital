@@ -69,9 +69,6 @@ const DEBOUCHES_FAMILLE: Record<string, string[]> = {
   'IoT': [
     'Technicien IoT', 'Chargé de déploiement objets connectés', 'Technicien réseaux industriels',
   ],
-  'Linux & Open Source': [
-    'Administrateur systèmes Linux', 'Technicien exploitation', 'Technicien support niveau 2',
-  ],
   'Data & Analytics': [
     'Data analyst junior', 'Référent reporting et tableaux de bord',
   ],
@@ -164,6 +161,20 @@ const OVERRIDES: Record<string, Override> = {
       'réussi est capitalisé par Cisco et reste acquis — mécanisme de validation partielle propre ' +
       'à l\'éditeur, distinct des blocs de compétences de l\'article L.6113-1.',
   },
+  // Linux Essentials est rattaché à « Socle & Reconversion » depuis le
+  // 24/10/2026. Ses débouchés sont déclarés ici, sans quoi la fiche hériterait
+  // de ceux de la famille, qui ne lui correspondent pas.
+  'linux-essentials': {
+    debouches: [
+      'Technicien exploitation',
+      'Technicien support niveau 2',
+      'Entrée en parcours d\'administration systèmes Linux',
+    ],
+    passerelles: [
+      'Aucun prérequis : accessible après Linux Unhatched ou directement',
+      'Socle système utile avant le parcours Cybersécurité comme avant le CCNA',
+    ],
+  },
   'jncia-junos': {
     passerelles: [
       'Accessible aux titulaires du CCNA ou d\'une expérience réseau équivalente, après positionnement',
@@ -172,13 +183,14 @@ const OVERRIDES: Record<string, Override> = {
   },
   'it-essentials': {
     passerelles: [
-      'Prépare aux deux examens CompTIA A+ (Core 1 et Core 2), passés séparément',
       'Dispense du Bloc 0 pour les titulaires d\'un diplôme ou d\'une expérience en support informatique',
+      'Socle attendu avant d\'aborder le parcours CCNA v2.0',
     ],
     blocs:
-      'La certification CompTIA A+ s\'obtient par deux examens distincts (Core 1 220-1201 et ' +
-      'Core 2 220-1202), chacun capitalisable séparément chez l\'éditeur — mécanisme de validation ' +
-      'partielle propre à CompTIA, distinct des blocs de compétences de l\'article L.6113-1.',
+      'Le cours est sanctionné par le certificat de fin de cours et le badge numérique Cisco ' +
+      'Networking Academy, délivrés par l\'éditeur au vu des évaluations de la plateforme. Il ne ' +
+      's\'agit pas d\'une certification professionnelle enregistrée : aucune validation par blocs ' +
+      'de compétences au sens de l\'article L.6113-1 n\'y est attachée.',
   },
 }
 

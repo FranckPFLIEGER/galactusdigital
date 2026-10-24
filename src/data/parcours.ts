@@ -73,7 +73,7 @@ export const PARCOURS: Parcours[] = [
         titre: 'Bloc 2 — Aller plus loin',
         intention: 'Élargir vers le matériel et le réseau pour évoluer en technicien.',
         etapes: [
-          { titre: 'IT Essentials (CompTIA A+)', slug: 'it-essentials', heures: 70, nouveau: true },
+          { titre: 'IT Essentials', slug: 'it-essentials', heures: 70, nouveau: true },
           { titre: 'Networking Essentials', slug: 'networking-essentials', heures: 35 },
         ],
       },

@@ -184,6 +184,12 @@ export function Presence() {
             "Présents là où les autres ne vont pas,
             pour ceux qui méritent les mêmes opportunités."
           </p>
+          <p style={{ fontSize: '0.78rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.45)', textAlign: 'center', maxWidth: '680px', margin: '1.25rem auto 0', fontStyle: 'italic' }}>
+            Ces implantations sont des bureaux administratifs, sans accueil du public et sans salle
+            de formation en propre. Les formations se tiennent à distance, ou en intra dans les
+            locaux du client, ou en inter dans une salle louée pour la session — le lieu exact est
+            indiqué sur la convocation.
+          </p>
         </div>
       </div>
     </section>

@@ -24,6 +24,17 @@
 // complet et dans les deux parcours CCNP Enterprise (ENCOR, ENARSI). Tous les
 // autres cours Networking Academy délivrent le badge et le certificat Cisco
 // Networking Academy, et leur tarif ne comprend aucun voucher.
+//
+// MAJ 24 octobre 2026 — Le champ `prix.elearning` est le PRIX TOTAL À PAYER,
+// voucher compris (art. L.112-1 du code de la consommation). Les tarifs CCNP
+// Enterprise étaient saisis hors voucher : ENCOR passe de 920 à 1 310 € et
+// ENARSI de 820 à 1 110 €, soit le tarif pédagogique inchangé plus le voucher
+// déjà déclaré. Toute nouvelle entrée doit suivre la même règle : si le
+// voucher est annoncé compris, il est DANS `prix.elearning`.
+//
+// MAJ 24 octobre 2026 — IT Essentials ne prépare plus la certification
+// CompTIA A+ : le cours délivre le certificat de fin de cours Cisco Networking
+// Academy. Aucun examen éditeur n'est compris ni annoncé.
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -88,7 +99,6 @@ export const FAMILLES: Record<string, { label: string; icon: string }> = {
   'Cybersécurité':         { label: 'Cybersécurité',          icon: 'Shield'   },
   'Programmation':         { label: 'Programmation',          icon: 'Code'     },
   'IoT':                   { label: 'IoT & Objets Connectés', icon: 'Wifi'     },
-  'Linux & Open Source':   { label: 'Linux & Open Source',    icon: 'Terminal' },
   'Data & Analytics':      { label: 'Data & Analytics',       icon: 'BarChart2'},
   'Azure & Cloud':         { label: 'Azure & Cloud',          icon: 'Cloud'    },
   'Microsoft 365':         { label: 'Microsoft 365',          icon: 'Grid'     },
@@ -262,11 +272,11 @@ export const FORMATIONS: Formation[] = [
   {
     slug: 'it-essentials',
     titre: 'IT Essentials',
-    titreLong: 'IT Essentials — Matériel, systèmes et dépannage (préparation CompTIA A+)',
+    titreLong: 'IT Essentials — Matériel, systèmes et dépannage',
     editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Fondamental', duree: '70 heures', dureeJours: 9,
-    certification: 'CompTIA A+',
-    examCode: 'CompTIA A+',
+    certification: 'Certificat de fin de cours Cisco Networking Academy — IT Essentials',
+    examCode: 'IT Essentials',
     modalites: ['E-learning'],
     description: 'Installer, configurer et dépanner ordinateurs, terminaux mobiles et logiciels. 14 chapitres, 99 TP. Aucun prérequis.',
     prix: { presentiel: null, foad: null, elearning: 530 },
@@ -362,7 +372,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '350-401 ENCOR v1.2',
     modalites: ['E-learning'],
     description: 'Cœur du CCNP Enterprise (v9) : architecture SD-Access, LISP/VXLAN, dual-stack, virtualisation, assurance réseau, sécurité et automatisation.',
-    prix: { presentiel: null, foad: null, elearning: 920 },
+    prix: { presentiel: null, foad: null, elearning: 1310 },
     prixPublicElearning: true,
     voucher: 390,
   },
@@ -376,7 +386,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '300-410 ENARSI v1.2',
     modalites: ['E-learning'],
     description: 'Concentration Advanced Routing (v9) : Layer 3 (EIGRP, OSPF, BGP), MPLS L3 VPN, DMVPN, sécurité d\'infrastructure et services, dépannage avancé.',
-    prix: { presentiel: null, foad: null, elearning: 820 },
+    prix: { presentiel: null, foad: null, elearning: 1110 },
     prixPublicElearning: true,
     voucher: 290,
   },
@@ -541,46 +551,22 @@ export const FORMATIONS: Formation[] = [
     voucher: 0,
   },
 
-  // ── CISCO — Linux & Open Source ───────────────────────────────────────────
+  // ── CISCO — Linux ─────────────────────────────────────────────────────────
+  // Rattaché à « Socle & Reconversion » depuis le 24/10/2026 : après le retrait
+  // de NDG Linux I et II, la famille « Linux & Open Source » n'aurait plus
+  // compté qu'une entrée. Linux Essentials rejoint Linux Unhatched, les deux
+  // cours Linux sans prérequis étant désormais présentés ensemble.
   {
     slug: 'linux-essentials',
     titre: 'Linux Essentials',
     titreLong: 'NDG Linux Essentials — Introduction à Linux (LPI 010)',
-    editeur: 'Cisco Networking Academy', famille: 'Linux & Open Source',
+    editeur: 'Cisco Networking Academy', famille: 'Socle & Reconversion',
     niveau: 'Fondamental', duree: '40 heures', dureeJours: 5,
     certification: 'LPI Linux Essentials 010-160',
     examCode: '010-160',
     modalites: ['E-learning'],
     description: 'Commandes Linux, gestion des fichiers, utilisateurs, processus et scripts Bash.',
     prix: { presentiel: null, foad: null, elearning: 370 },
-    prixPublicElearning: true,
-    voucher: 0,
-  },
-  {
-    slug: 'ndg-linux-1',
-    titre: 'NDG Linux I',
-    titreLong: 'NDG Linux I — Administration Linux, préparation LPIC-1 (Exam 101)',
-    editeur: 'Cisco Networking Academy', famille: 'Linux & Open Source',
-    niveau: 'Intermédiaire', duree: '70 heures', dureeJours: 9,
-    certification: 'LPIC-1 — Linux Administrator (Exam 101)',
-    examCode: '101-500',
-    modalites: ['E-learning'],
-    description: 'Architecture système, installation et gestion de paquets, commandes GNU/Unix, périphériques et systèmes de fichiers. Premier des deux cours vers le LPIC-1.',
-    prix: { presentiel: null, foad: null, elearning: 534 },
-    prixPublicElearning: true,
-    voucher: 0,
-  },
-  {
-    slug: 'ndg-linux-2',
-    titre: 'NDG Linux II',
-    titreLong: 'NDG Linux II — Administration Linux, préparation LPIC-1 (Exam 102)',
-    editeur: 'Cisco Networking Academy', famille: 'Linux & Open Source',
-    niveau: 'Avancé', duree: '70 heures', dureeJours: 9,
-    certification: 'LPIC-1 — Linux Administrator (Exam 102)',
-    examCode: '102-500',
-    modalites: ['E-learning'],
-    description: 'Shells et scripts, interfaces et bureaux, tâches d\'administration, services système, réseau et sécurité. Second cours vers le LPIC-1. Prérequis : NDG Linux I.',
-    prix: { presentiel: null, foad: null, elearning: 534 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -909,6 +895,20 @@ export function getTarifsModalites(f: Formation): TarifModalite[] {
       surDevis: !v,
     }
   })
+}
+
+/**
+ * Tarif public à afficher dans les listes (méga-menu, grille du catalogue).
+ * RNQ V2, indicateur 1 : le tarif doit être accessible partout où la formation
+ * est présentée, pas seulement sur sa fiche. Retourne le prix public le plus
+ * bas parmi les modalités déclarées, ou « Sur devis » si aucun n'est public.
+ */
+export function getTarifAffiche(f: Formation): string {
+  const montants = getTarifsModalites(f)
+    .map(t => t.montant)
+    .filter((m): m is number => m !== null)
+  if (montants.length === 0) return 'Sur devis'
+  return `${Math.min(...montants).toLocaleString('fr-FR')} €`
 }
 
 /** Prix e-learning affichable, ou null si la formation n'est pas proposée en e-learning */

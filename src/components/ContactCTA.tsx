@@ -252,7 +252,7 @@ export function ContactCTA() {
     if (form.financement === "")         m.push("la prise en charge")
     if (tarif !== null && !form.tarifLu) m.push("la prise de connaissance du tarif")
     if (form.message.trim() === "")      m.push("la description de votre projet")
-    if (!form.rgpd)                      m.push("votre accord sur l'usage de vos données")
+    if (!form.rgpd)                      m.push("la prise de connaissance de la notice de protection des données")
     return m
   }, [form, estEntreprise, surCalendrier, alerte, tarif])
 
@@ -347,7 +347,7 @@ export function ContactCTA() {
             </h2>
             <p className={`contact-sub reveal${isVisible ? " visible" : ""} delay-2`}
               style={{ textAlign: "left", margin: "0 0 2rem" }}>
-              Remplissez ce formulaire — nous vous répondons sous 48 h avec un devis personnalisé.
+              Remplissez ce formulaire — nous vous répondons sous 48 h ouvrées avec un devis personnalisé.
               Tous les champs sont nécessaires pour établir le devis et instruire votre financement.
             </p>
 
@@ -594,16 +594,26 @@ export function ContactCTA() {
                   </span>
                 </div>
 
-                {/* RGPD */}
+                {/* RGPD — information, et non consentement :
+                    le traitement repose sur les mesures précontractuelles
+                    (art. 6.1.b du RGPD), la case ne vaut que prise de connaissance. */}
                 <label style={{ display: "flex", alignItems: "flex-start", gap: "0.75rem", cursor: "pointer" }}>
                   <input type="checkbox" required checked={form.rgpd} onChange={set("rgpd")}
                     style={{ marginTop: "3px", accentColor: "var(--g-red)", flexShrink: 0 }} />
                   <span style={{ fontSize: "0.78rem", color: "rgba(255,255,255,0.5)", lineHeight: 1.5 }}>
-                    J&apos;accepte que GALACTUS Digital conserve mes données pour traiter ma demande.
-                    Conformément au RGPD, je peux exercer mes droits en contactant
-                    president@galactusdigital.com. *
+                    J&apos;ai pris connaissance de la{" "}
+                    <a href="/rgpd" style={{ color: "var(--g-red)" }}>notice de protection des données</a>.
+                    Les informations ci-dessus sont traitées par PFLIEGER SASU (GALACTUS Digital) à la
+                    seule fin d&apos;établir le devis demandé et d&apos;instruire le financement, et
+                    conservées 3 ans à compter du dernier contact. Vous pouvez exercer vos droits
+                    d&apos;accès, de rectification, d&apos;effacement, de limitation, de portabilité et
+                    d&apos;opposition auprès de president@galactusdigital.com, et saisir la CNIL. *
                   </span>
                 </label>
+                <p style={{ fontSize: "0.72rem", color: "rgba(255,255,255,0.32)", lineHeight: 1.6, margin: 0 }}>
+                  Cette demande ne vous inscrit pas à notre lettre d&apos;information : celle-ci fait
+                  l&apos;objet d&apos;une adhésion distincte et volontaire.
+                </p>
 
                 {status === "err" && (
                   <div style={{ display: "flex", alignItems: "center", gap: "0.5rem", color: "#f87171", fontSize: "0.83rem" }}>

@@ -12,6 +12,7 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as TemoignagesRouteImport } from './routes/temoignages'
 import { Route as RseRouteImport } from './routes/rse'
 import { Route as RgpdRouteImport } from './routes/rgpd'
+import { Route as RetractationRouteImport } from './routes/retractation'
 import { Route as PresentielRouteImport } from './routes/presentiel'
 import { Route as MentionsLegalesRouteImport } from './routes/mentions-legales'
 import { Route as IntraRouteImport } from './routes/intra'
@@ -43,8 +44,6 @@ import { Route as FormationsPl300RouteImport } from './routes/formations/pl-300'
 import { Route as FormationsOperatingSystemBasicsRouteImport } from './routes/formations/operating-system-basics'
 import { Route as FormationsNotionsBaseReseauxRouteImport } from './routes/formations/notions-base-reseaux'
 import { Route as FormationsNetworkingEssentialsRouteImport } from './routes/formations/networking-essentials'
-import { Route as FormationsNdgLinux2RouteImport } from './routes/formations/ndg-linux-2'
-import { Route as FormationsNdgLinux1RouteImport } from './routes/formations/ndg-linux-1'
 import { Route as FormationsMs4017RouteImport } from './routes/formations/ms-4017'
 import { Route as FormationsMs4010RouteImport } from './routes/formations/ms-4010'
 import { Route as FormationsMd102RouteImport } from './routes/formations/md-102'
@@ -67,8 +66,6 @@ import { Route as FormationsCybersecurityEssentialsRouteImport } from './routes/
 import { Route as FormationsCyberopsRouteImport } from './routes/formations/cyberops'
 import { Route as FormationsCcnpEncorRouteImport } from './routes/formations/ccnp-encor'
 import { Route as FormationsCcnpEnarsiRouteImport } from './routes/formations/ccnp-enarsi'
-import { Route as FormationsCcnpCybersecurityCbrfirRouteImport } from './routes/formations/ccnp-cybersecurity-cbrfir'
-import { Route as FormationsCcnpCybersecurityCbrcorRouteImport } from './routes/formations/ccnp-cybersecurity-cbrcor'
 import { Route as FormationsCcnaSrweRouteImport } from './routes/formations/ccna-srwe'
 import { Route as FormationsCcnaItnRouteImport } from './routes/formations/ccna-itn'
 import { Route as FormationsCcnaEnsaRouteImport } from './routes/formations/ccna-ensa'
@@ -97,6 +94,11 @@ const RseRoute = RseRouteImport.update({
 const RgpdRoute = RgpdRouteImport.update({
   id: '/rgpd',
   path: '/rgpd',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RetractationRoute = RetractationRouteImport.update({
+  id: '/retractation',
+  path: '/retractation',
   getParentRoute: () => rootRouteImport,
 } as any)
 const PresentielRoute = PresentielRouteImport.update({
@@ -262,16 +264,6 @@ const FormationsNetworkingEssentialsRoute =
     path: '/formations/networking-essentials',
     getParentRoute: () => rootRouteImport,
   } as any)
-const FormationsNdgLinux2Route = FormationsNdgLinux2RouteImport.update({
-  id: '/formations/ndg-linux-2',
-  path: '/formations/ndg-linux-2',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsNdgLinux1Route = FormationsNdgLinux1RouteImport.update({
-  id: '/formations/ndg-linux-1',
-  path: '/formations/ndg-linux-1',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const FormationsMs4017Route = FormationsMs4017RouteImport.update({
   id: '/formations/ms-4017',
   path: '/formations/ms-4017',
@@ -393,18 +385,6 @@ const FormationsCcnpEnarsiRoute = FormationsCcnpEnarsiRouteImport.update({
   path: '/formations/ccnp-enarsi',
   getParentRoute: () => rootRouteImport,
 } as any)
-const FormationsCcnpCybersecurityCbrfirRoute =
-  FormationsCcnpCybersecurityCbrfirRouteImport.update({
-    id: '/formations/ccnp-cybersecurity-cbrfir',
-    path: '/formations/ccnp-cybersecurity-cbrfir',
-    getParentRoute: () => rootRouteImport,
-  } as any)
-const FormationsCcnpCybersecurityCbrcorRoute =
-  FormationsCcnpCybersecurityCbrcorRouteImport.update({
-    id: '/formations/ccnp-cybersecurity-cbrcor',
-    path: '/formations/ccnp-cybersecurity-cbrcor',
-    getParentRoute: () => rootRouteImport,
-  } as any)
 const FormationsCcnaSrweRoute = FormationsCcnaSrweRouteImport.update({
   id: '/formations/ccna-srwe',
   path: '/formations/ccna-srwe',
@@ -494,6 +474,7 @@ export interface FileRoutesByFullPath {
   '/intra': typeof IntraRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/presentiel': typeof PresentielRoute
+  '/retractation': typeof RetractationRoute
   '/rgpd': typeof RgpdRoute
   '/rse': typeof RseRoute
   '/temoignages': typeof TemoignagesRoute
@@ -511,8 +492,6 @@ export interface FileRoutesByFullPath {
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
   '/formations/ccna-srwe': typeof FormationsCcnaSrweRoute
-  '/formations/ccnp-cybersecurity-cbrcor': typeof FormationsCcnpCybersecurityCbrcorRoute
-  '/formations/ccnp-cybersecurity-cbrfir': typeof FormationsCcnpCybersecurityCbrfirRoute
   '/formations/ccnp-enarsi': typeof FormationsCcnpEnarsiRoute
   '/formations/ccnp-encor': typeof FormationsCcnpEncorRoute
   '/formations/cyberops': typeof FormationsCyberopsRoute
@@ -535,8 +514,6 @@ export interface FileRoutesByFullPath {
   '/formations/md-102': typeof FormationsMd102Route
   '/formations/ms-4010': typeof FormationsMs4010Route
   '/formations/ms-4017': typeof FormationsMs4017Route
-  '/formations/ndg-linux-1': typeof FormationsNdgLinux1Route
-  '/formations/ndg-linux-2': typeof FormationsNdgLinux2Route
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
   '/formations/notions-base-reseaux': typeof FormationsNotionsBaseReseauxRoute
   '/formations/operating-system-basics': typeof FormationsOperatingSystemBasicsRoute
@@ -570,6 +547,7 @@ export interface FileRoutesByTo {
   '/intra': typeof IntraRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/presentiel': typeof PresentielRoute
+  '/retractation': typeof RetractationRoute
   '/rgpd': typeof RgpdRoute
   '/rse': typeof RseRoute
   '/temoignages': typeof TemoignagesRoute
@@ -587,8 +565,6 @@ export interface FileRoutesByTo {
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
   '/formations/ccna-srwe': typeof FormationsCcnaSrweRoute
-  '/formations/ccnp-cybersecurity-cbrcor': typeof FormationsCcnpCybersecurityCbrcorRoute
-  '/formations/ccnp-cybersecurity-cbrfir': typeof FormationsCcnpCybersecurityCbrfirRoute
   '/formations/ccnp-enarsi': typeof FormationsCcnpEnarsiRoute
   '/formations/ccnp-encor': typeof FormationsCcnpEncorRoute
   '/formations/cyberops': typeof FormationsCyberopsRoute
@@ -611,8 +587,6 @@ export interface FileRoutesByTo {
   '/formations/md-102': typeof FormationsMd102Route
   '/formations/ms-4010': typeof FormationsMs4010Route
   '/formations/ms-4017': typeof FormationsMs4017Route
-  '/formations/ndg-linux-1': typeof FormationsNdgLinux1Route
-  '/formations/ndg-linux-2': typeof FormationsNdgLinux2Route
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
   '/formations/notions-base-reseaux': typeof FormationsNotionsBaseReseauxRoute
   '/formations/operating-system-basics': typeof FormationsOperatingSystemBasicsRoute
@@ -647,6 +621,7 @@ export interface FileRoutesById {
   '/intra': typeof IntraRoute
   '/mentions-legales': typeof MentionsLegalesRoute
   '/presentiel': typeof PresentielRoute
+  '/retractation': typeof RetractationRoute
   '/rgpd': typeof RgpdRoute
   '/rse': typeof RseRoute
   '/temoignages': typeof TemoignagesRoute
@@ -664,8 +639,6 @@ export interface FileRoutesById {
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
   '/formations/ccna-srwe': typeof FormationsCcnaSrweRoute
-  '/formations/ccnp-cybersecurity-cbrcor': typeof FormationsCcnpCybersecurityCbrcorRoute
-  '/formations/ccnp-cybersecurity-cbrfir': typeof FormationsCcnpCybersecurityCbrfirRoute
   '/formations/ccnp-enarsi': typeof FormationsCcnpEnarsiRoute
   '/formations/ccnp-encor': typeof FormationsCcnpEncorRoute
   '/formations/cyberops': typeof FormationsCyberopsRoute
@@ -688,8 +661,6 @@ export interface FileRoutesById {
   '/formations/md-102': typeof FormationsMd102Route
   '/formations/ms-4010': typeof FormationsMs4010Route
   '/formations/ms-4017': typeof FormationsMs4017Route
-  '/formations/ndg-linux-1': typeof FormationsNdgLinux1Route
-  '/formations/ndg-linux-2': typeof FormationsNdgLinux2Route
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
   '/formations/notions-base-reseaux': typeof FormationsNotionsBaseReseauxRoute
   '/formations/operating-system-basics': typeof FormationsOperatingSystemBasicsRoute
@@ -725,6 +696,7 @@ export interface FileRouteTypes {
     | '/intra'
     | '/mentions-legales'
     | '/presentiel'
+    | '/retractation'
     | '/rgpd'
     | '/rse'
     | '/temoignages'
@@ -742,8 +714,6 @@ export interface FileRouteTypes {
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
     | '/formations/ccna-srwe'
-    | '/formations/ccnp-cybersecurity-cbrcor'
-    | '/formations/ccnp-cybersecurity-cbrfir'
     | '/formations/ccnp-enarsi'
     | '/formations/ccnp-encor'
     | '/formations/cyberops'
@@ -766,8 +736,6 @@ export interface FileRouteTypes {
     | '/formations/md-102'
     | '/formations/ms-4010'
     | '/formations/ms-4017'
-    | '/formations/ndg-linux-1'
-    | '/formations/ndg-linux-2'
     | '/formations/networking-essentials'
     | '/formations/notions-base-reseaux'
     | '/formations/operating-system-basics'
@@ -801,6 +769,7 @@ export interface FileRouteTypes {
     | '/intra'
     | '/mentions-legales'
     | '/presentiel'
+    | '/retractation'
     | '/rgpd'
     | '/rse'
     | '/temoignages'
@@ -818,8 +787,6 @@ export interface FileRouteTypes {
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
     | '/formations/ccna-srwe'
-    | '/formations/ccnp-cybersecurity-cbrcor'
-    | '/formations/ccnp-cybersecurity-cbrfir'
     | '/formations/ccnp-enarsi'
     | '/formations/ccnp-encor'
     | '/formations/cyberops'
@@ -842,8 +809,6 @@ export interface FileRouteTypes {
     | '/formations/md-102'
     | '/formations/ms-4010'
     | '/formations/ms-4017'
-    | '/formations/ndg-linux-1'
-    | '/formations/ndg-linux-2'
     | '/formations/networking-essentials'
     | '/formations/notions-base-reseaux'
     | '/formations/operating-system-basics'
@@ -877,6 +842,7 @@ export interface FileRouteTypes {
     | '/intra'
     | '/mentions-legales'
     | '/presentiel'
+    | '/retractation'
     | '/rgpd'
     | '/rse'
     | '/temoignages'
@@ -894,8 +860,6 @@ export interface FileRouteTypes {
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
     | '/formations/ccna-srwe'
-    | '/formations/ccnp-cybersecurity-cbrcor'
-    | '/formations/ccnp-cybersecurity-cbrfir'
     | '/formations/ccnp-enarsi'
     | '/formations/ccnp-encor'
     | '/formations/cyberops'
@@ -918,8 +882,6 @@ export interface FileRouteTypes {
     | '/formations/md-102'
     | '/formations/ms-4010'
     | '/formations/ms-4017'
-    | '/formations/ndg-linux-1'
-    | '/formations/ndg-linux-2'
     | '/formations/networking-essentials'
     | '/formations/notions-base-reseaux'
     | '/formations/operating-system-basics'
@@ -954,6 +916,7 @@ export interface RootRouteChildren {
   IntraRoute: typeof IntraRoute
   MentionsLegalesRoute: typeof MentionsLegalesRoute
   PresentielRoute: typeof PresentielRoute
+  RetractationRoute: typeof RetractationRoute
   RgpdRoute: typeof RgpdRoute
   RseRoute: typeof RseRoute
   TemoignagesRoute: typeof TemoignagesRoute
@@ -971,8 +934,6 @@ export interface RootRouteChildren {
   FormationsCcnaEnsaRoute: typeof FormationsCcnaEnsaRoute
   FormationsCcnaItnRoute: typeof FormationsCcnaItnRoute
   FormationsCcnaSrweRoute: typeof FormationsCcnaSrweRoute
-  FormationsCcnpCybersecurityCbrcorRoute: typeof FormationsCcnpCybersecurityCbrcorRoute
-  FormationsCcnpCybersecurityCbrfirRoute: typeof FormationsCcnpCybersecurityCbrfirRoute
   FormationsCcnpEnarsiRoute: typeof FormationsCcnpEnarsiRoute
   FormationsCcnpEncorRoute: typeof FormationsCcnpEncorRoute
   FormationsCyberopsRoute: typeof FormationsCyberopsRoute
@@ -995,8 +956,6 @@ export interface RootRouteChildren {
   FormationsMd102Route: typeof FormationsMd102Route
   FormationsMs4010Route: typeof FormationsMs4010Route
   FormationsMs4017Route: typeof FormationsMs4017Route
-  FormationsNdgLinux1Route: typeof FormationsNdgLinux1Route
-  FormationsNdgLinux2Route: typeof FormationsNdgLinux2Route
   FormationsNetworkingEssentialsRoute: typeof FormationsNetworkingEssentialsRoute
   FormationsNotionsBaseReseauxRoute: typeof FormationsNotionsBaseReseauxRoute
   FormationsOperatingSystemBasicsRoute: typeof FormationsOperatingSystemBasicsRoute
@@ -1037,6 +996,13 @@ declare module '@tanstack/react-router' {
       path: '/rgpd'
       fullPath: '/rgpd'
       preLoaderRoute: typeof RgpdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/retractation': {
+      id: '/retractation'
+      path: '/retractation'
+      fullPath: '/retractation'
+      preLoaderRoute: typeof RetractationRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/presentiel': {
@@ -1256,20 +1222,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsNetworkingEssentialsRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/formations/ndg-linux-2': {
-      id: '/formations/ndg-linux-2'
-      path: '/formations/ndg-linux-2'
-      fullPath: '/formations/ndg-linux-2'
-      preLoaderRoute: typeof FormationsNdgLinux2RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/ndg-linux-1': {
-      id: '/formations/ndg-linux-1'
-      path: '/formations/ndg-linux-1'
-      fullPath: '/formations/ndg-linux-1'
-      preLoaderRoute: typeof FormationsNdgLinux1RouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/formations/ms-4017': {
       id: '/formations/ms-4017'
       path: '/formations/ms-4017'
@@ -1424,20 +1376,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsCcnpEnarsiRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/formations/ccnp-cybersecurity-cbrfir': {
-      id: '/formations/ccnp-cybersecurity-cbrfir'
-      path: '/formations/ccnp-cybersecurity-cbrfir'
-      fullPath: '/formations/ccnp-cybersecurity-cbrfir'
-      preLoaderRoute: typeof FormationsCcnpCybersecurityCbrfirRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/ccnp-cybersecurity-cbrcor': {
-      id: '/formations/ccnp-cybersecurity-cbrcor'
-      path: '/formations/ccnp-cybersecurity-cbrcor'
-      fullPath: '/formations/ccnp-cybersecurity-cbrcor'
-      preLoaderRoute: typeof FormationsCcnpCybersecurityCbrcorRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/formations/ccna-srwe': {
       id: '/formations/ccna-srwe'
       path: '/formations/ccna-srwe'
@@ -1554,6 +1492,7 @@ const rootRouteChildren: RootRouteChildren = {
   IntraRoute: IntraRoute,
   MentionsLegalesRoute: MentionsLegalesRoute,
   PresentielRoute: PresentielRoute,
+  RetractationRoute: RetractationRoute,
   RgpdRoute: RgpdRoute,
   RseRoute: RseRoute,
   TemoignagesRoute: TemoignagesRoute,
@@ -1574,10 +1513,6 @@ const rootRouteChildren: RootRouteChildren = {
   FormationsCcnaEnsaRoute: FormationsCcnaEnsaRoute,
   FormationsCcnaItnRoute: FormationsCcnaItnRoute,
   FormationsCcnaSrweRoute: FormationsCcnaSrweRoute,
-  FormationsCcnpCybersecurityCbrcorRoute:
-    FormationsCcnpCybersecurityCbrcorRoute,
-  FormationsCcnpCybersecurityCbrfirRoute:
-    FormationsCcnpCybersecurityCbrfirRoute,
   FormationsCcnpEnarsiRoute: FormationsCcnpEnarsiRoute,
   FormationsCcnpEncorRoute: FormationsCcnpEncorRoute,
   FormationsCyberopsRoute: FormationsCyberopsRoute,
@@ -1604,8 +1539,6 @@ const rootRouteChildren: RootRouteChildren = {
   FormationsMd102Route: FormationsMd102Route,
   FormationsMs4010Route: FormationsMs4010Route,
   FormationsMs4017Route: FormationsMs4017Route,
-  FormationsNdgLinux1Route: FormationsNdgLinux1Route,
-  FormationsNdgLinux2Route: FormationsNdgLinux2Route,
   FormationsNetworkingEssentialsRoute: FormationsNetworkingEssentialsRoute,
   FormationsNotionsBaseReseauxRoute: FormationsNotionsBaseReseauxRoute,
   FormationsOperatingSystemBasicsRoute: FormationsOperatingSystemBasicsRoute,

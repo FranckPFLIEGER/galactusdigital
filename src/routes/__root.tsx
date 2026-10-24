@@ -45,17 +45,9 @@ export const Route = createRootRoute({
     ],
     links: [
       { rel: 'icon', type: 'image/png', href: '/galactus-icon.png' },
-      { rel: 'preconnect', href: 'https://fonts.googleapis.com' },
-      { rel: 'preconnect', href: 'https://fonts.gstatic.com', crossOrigin: 'anonymous' },
-      {
-        rel: 'preload',
-        as: 'style',
-        href: 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap',
-      },
-      {
-        rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700&family=Nunito+Sans:wght@400;500;600;700&display=swap',
-      },
+      // Polices auto-hébergées (paquets @fontsource importés dans styles.css) :
+      // aucune requête vers fonts.googleapis.com ni fonts.gstatic.com, donc
+      // aucune transmission d'adresse IP à Google au chargement des pages.
     ],
   }),
   shellComponent: RootDocument,

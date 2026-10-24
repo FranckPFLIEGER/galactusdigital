@@ -329,7 +329,7 @@ function CertificationsPage() {
                 Prêt à passer votre certification ?
               </h2>
               <p style={{ fontSize: "0.90rem", color: "rgba(255,255,255,0.55)", margin: 0, lineHeight: 1.7 }}>
-                Caraïbes · Océan Indien · France hexagonale · OnVUE partout. Devis sous 48 h.
+                Caraïbes · Océan Indien · France hexagonale · OnVUE partout. Devis sous 48 h ouvrées.
               </p>
             </div>
             <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", flexShrink: 0 }}>

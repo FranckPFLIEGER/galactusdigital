@@ -8,7 +8,7 @@ export const Route = createFileRoute('/certifications-rs/')({
   head: () => ({
     meta: [
       { title: 'Certifications professionnelles RS — GALACTUS Digital' },
-      { name: 'description', content: "Les certifications professionnelles de GALACTUS Digital au Répertoire spécifique de France Compétences : infrastructure réseau et incidents de sécurité. Organisme certificateur des territoires ultramarins." },
+      { name: 'description', content: "Les deux dossiers de certification professionnelle déposés par GALACTUS Digital au Répertoire spécifique de France Compétences — infrastructure réseau (n° 53224) et incidents de sécurité (n° 53693) — en cours d'instruction. Aucune des deux n'est enregistrée à ce jour." },
       { property: 'og:title', content: 'Certifications professionnelles RS — GALACTUS Digital' },
       { property: 'og:description', content: "Certifications professionnelles au Répertoire spécifique de France Compétences — GALACTUS Digital, territoires ultramarins." },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications-rs' },

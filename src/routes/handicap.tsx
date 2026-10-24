@@ -153,12 +153,43 @@ function HandicapPage() {
                   de leurs capacités, puissent accéder à nos contenus et bénéficier pleinement
                   de notre offre de formation certifiante IT.
                 </p>
-                <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48' }}>
+                <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48', marginBottom: '1.5rem' }}>
                   Notre plateforme FOAD (NetAcad, WEBEX) permet notamment aux personnes
                   à mobilité réduite de suivre nos formations certifiantes depuis leur domicile,
                   quelle que soit leur localisation aux Caraïbes, dans l'Océan Indien
                   ou en France hexagonale.
                 </p>
+                <div style={{ borderLeft: '3px solid var(--g-red)', paddingLeft: '1.1rem' }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.08em', color: 'var(--g-black)', marginBottom: '0.5rem' }}>
+                    Déclaration d'accessibilité du site
+                  </div>
+                  <p style={{ fontSize: '0.86rem', lineHeight: 1.8, color: '#5a5a58', marginBottom: '0.75rem' }}>
+                    PFLIEGER SASU est une entreprise privée dont le chiffre d'affaires est très
+                    inférieur au seuil de 250 millions d'euros fixé à l'article 47 de la loi
+                    n° 2005-102 du 11 février 2005 : galactusdigital.com n'entre donc pas dans le
+                    champ de la mise en conformité obligatoire au RGAA. Nous publions néanmoins
+                    l'état réel du site, au titre de la charte Agefiph que nous avons signée.
+                  </p>
+                  <p style={{ fontSize: '0.86rem', lineHeight: 1.8, color: '#5a5a58', marginBottom: '0.75rem' }}>
+                    <strong>État de conformité :</strong> non audité. Aucun audit RGAA n'a été conduit
+                    à ce jour ; aucun taux de conformité n'est donc affiché, faute de résultat
+                    justifiable sur pièces.
+                  </p>
+                  <p style={{ fontSize: '0.86rem', lineHeight: 1.8, color: '#5a5a58', marginBottom: '0.75rem' }}>
+                    <strong>Dispositions déjà en place :</strong> navigation au clavier, structure de
+                    titres hiérarchisée, textes alternatifs sur les images porteuses d'information,
+                    contrastes conformes au niveau AA sur les textes courants, aucun contenu en
+                    défilement ou clignotement automatique, aucune information portée par la seule
+                    couleur, et aucun cookie ni bandeau à franchir pour accéder au contenu.
+                  </p>
+                  <p style={{ fontSize: '0.86rem', lineHeight: 1.8, color: '#5a5a58', margin: 0 }}>
+                    <strong>Signaler une difficulté :</strong> si une page vous est inaccessible,
+                    écrivez à president@galactusdigital.com ou appelez le 07 81 07 47 46. Le contenu
+                    concerné vous est transmis sous un autre format sous 48 h ouvrées, et la
+                    correction est inscrite au plan d'actions accessibilité actualisé chaque année.
+                    À défaut de réponse satisfaisante, vous pouvez saisir le Défenseur des droits.
+                  </p>
+                </div>
               </div>
               <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                 {[

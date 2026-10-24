@@ -221,14 +221,14 @@ function FoadPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '0.5rem' }}>Audit gratuit</h3>
                 <p style={{ fontSize: '0.87rem', color: '#5a5a58', lineHeight: 1.7, marginBottom: '1rem' }}>
-                  Contactez-nous pour un audit gratuit de vos besoins en formation. Nous vous proposons un programme et un devis sous 48 heures.
+                  Contactez-nous pour un audit gratuit de vos besoins en formation. Nous vous proposons un programme et un devis sous 48 heures ouvrées.
                 </p>
                 <DelaisAcces dark={false} />
               </div>
             </div>
             <div style={{ marginTop: '2rem', display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="/?f=jncia-junos#contact" className="btn-ghost-dark"><Mail size={16} /> Demander un devis sous 48 h</a>
+              <a href="/?f=jncia-junos#contact" className="btn-ghost-dark"><Mail size={16} /> Demander un devis sous 48 h ouvrées</a>
             </div>
           </div>
         </section>

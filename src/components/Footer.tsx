@@ -6,14 +6,13 @@ const FC: Record<string, string> = {
   'Cybersécurité':       '#E41F26',
   'Programmation':       '#E41F26',
   'IoT':                 '#E41F26',
-  'Linux & Open Source': '#E41F26',
   'Data & Analytics':    '#E41F26',
   'Azure & Cloud':       '#E41F26',
   'Microsoft 365':       '#E41F26',
 }
 
 const PAR_FAMILLE = getFormationsParFamille()
-const CISCO_FAMILLES     = ['Réseaux & CCNA', 'Cybersécurité', 'Programmation', 'IoT', 'Linux & Open Source', 'Data & Analytics']
+const CISCO_FAMILLES     = ['Réseaux & CCNA', 'Cybersécurité', 'Programmation', 'IoT', 'Data & Analytics']
 const MICROSOFT_FAMILLES = ['Azure & Cloud', 'Microsoft 365']
 
 function GalactusLogo() {

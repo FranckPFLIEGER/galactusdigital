@@ -58,8 +58,12 @@ const pillars = [
       "Formations flexibles (FOAD, e-learning tutoré, rythme adapté) : concilier vie professionnelle, familiale et montée en compétences IT",
       "Mêmes certifications mondiales pour tous — les femmes obtiennent exactement les mêmes titres reconnus qu'en Europe ou en Amérique du Nord",
       "Financement OPCO accessible sans discrimination — aucune barrière financière à l'entrée dans les métiers du numérique",
+      "Trois reconversions de femmes vers des métiers techniques, documentées par la Cisco Networking Academy, qui nous a sollicités pour les recueillir — aucune n'avait de formation initiale en informatique",
     ],
-    link: { label: "Connected Girls 2025 — Cisco France", url: "https://gblogs.cisco.com/fr/rse/inclusion-et-diversite/connected-girls-2025/" },
+    link: { label: "Lire les trois parcours de reconversion", url: "/temoignages#reconversion" },
+    // Second lien : la référence Cisco reste accessible, mais la preuve maison
+    // passe devant. Un lecteur vient chercher ce que NOUS avons fait.
+    link2: { label: "Connected Girls 2025 — Cisco France", url: "https://gblogs.cisco.com/fr/rse/inclusion-et-diversite/connected-girls-2025/" },
   },
   {
     icon: <Users size={24} color="white" />,
@@ -156,15 +160,15 @@ export function RSE() {
                   ) : p.source}
                 </div>
               )}
-              {p.link && (
-                <a href={p.link.url}
-                  target={p.link.url.startsWith('http') ? '_blank' : undefined}
-                  rel={p.link.url.startsWith('http') ? 'noopener noreferrer' : undefined}
-                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginTop: '1rem', fontSize: '0.72rem', color: 'var(--g-red)', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.06em' }}>
-                  {p.link.url.startsWith('http') ? <ExternalLink size={12} /> : <ArrowRight size={12} />}
-                  {p.link.label}
+              {[p.link, p.link2].filter(Boolean).map((l: any) => (
+                <a key={l.url} href={l.url}
+                  target={l.url.startsWith('http') ? '_blank' : undefined}
+                  rel={l.url.startsWith('http') ? 'noopener noreferrer' : undefined}
+                  style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginTop: '1rem', marginRight: '1.25rem', fontSize: '0.72rem', color: 'var(--g-red)', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.06em' }}>
+                  {l.url.startsWith('http') ? <ExternalLink size={12} /> : <ArrowRight size={12} />}
+                  {l.label}
                 </a>
-              )}
+              ))}
             </div>
           ))}
         </div>

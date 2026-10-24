@@ -57,51 +57,79 @@ const temoignageVideo = {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// PARCOURS DE RECONVERSION — étude de cas Cisco Networking Academy
+// PARCOURS DE RECONVERSION — trois apprenantes, documentées par Cisco
 //
-// Toutes les autres pièces de cette page sont des témoignages d'ACHETEURS
-// (DSI, responsables, chefs de projet). Celui-ci est le seul qui donne la
-// parole à une APPRENANTE sur ce que la formation a changé pour elle : c'est
-// exactement ce que mesure l'enquête à froid de l'article 19 des CGV, et c'est
-// ce qu'un prescripteur France Travail cherche à lire.
+// Tout le reste de cette page donne la parole à des ACHETEURS (DSI,
+// responsables, chefs de projet). Ces trois parcours sont les seuls où une
+// APPRENANTE dit ce que la formation a changé pour elle : c'est ce que mesure
+// l'enquête à froid de l'article 19 des CGV, et c'est ce qu'un prescripteur
+// cherche à lire.
 //
-// ⚠️ PUBLICATION NOMINATIVE — volontairement non activée.
-// L'étude de cas rédigée par la Cisco Networking Academy cite l'apprenante par
-// son nom, son employeur et sa trajectoire, avec une citation directe. Tant
-// que la publication de cette étude par Cisco n'est pas vérifiée (ou l'accord
-// de l'intéressée recueilli), le site n'en publie que la version anonyme :
-// republier une personne nommée sur la foi d'un document de travail
-// l'exposerait sans son consentement. Pour activer la version nominative :
-// renseigner `nom`, `source` et `sourceUrl` ci-dessous — l'affichage suit.
+// La Cisco Networking Academy a sollicité l'organisme pour documenter ces
+// parcours et les a repris dans ses propres supports de communication.
+//
+// ⚠️ AUCUN NOM N'EST PUBLIÉ — décision de l'organisme, octobre 2026.
+// Les trois apprenantes ont témoigné pour une publication Cisco, mais le site
+// ne les nomme pas et ne les réduit pas non plus à des initiales : elles sont
+// identifiées par le métier qu'elles quittaient, qui est le sujet même de
+// l'histoire. Noms, employeurs et pièces figurent au dossier et sont
+// communicables en audit.
 // ─────────────────────────────────────────────────────────────────────────────
-const reconversion = {
-  nom: null as string | null,
-  attribution: 'Une apprenante',
-  fonction: 'Gestionnaire de ressources',
-  entreprise: 'Air France — Direction Générale des Systèmes d\'Information',
-  formation: 'Cisco Networking Academy — IT Essentials',
-  source: null as string | null,
-  sourceUrl: null as string | null,
-  avant:
-    'Vingt ans de carrière comme personnel navigant commercial, aucune connaissance ' +
-    'préalable en informatique, et une mobilité interne vers la direction des systèmes ' +
-    'd\'information.',
-  declic:
-    'La rencontre avec le formateur réseau intervenant auprès des équipes, qui l\'oriente ' +
-    'vers le cursus Networking Academy.',
-  apres:
-    'Un parcours mêlant théorie et travaux pratiques, repris depuis les fondamentaux, ' +
-    'avec l\'appui du formateur en cas de difficulté. À l\'issue, elle démonte et remonte ' +
-    'un poste de travail en quatorze minutes devant ses collègues, et prend en charge des ' +
-    'actes techniques dans ses nouvelles fonctions.',
-  citation:
-    'Cette démarche de reconversion a été très enrichissante pour moi, tant ' +
-    'professionnellement que personnellement. Je ne croyais pas vraiment pouvoir faire ce ' +
-    'virage à 180 degrés à mon âge, et pourtant la NetAcad a rendu cela possible. Si ' +
-    'j\'avais un message à délivrer, et notamment aux femmes qui souhaitent se reconvertir ' +
-    'professionnellement : croyez en vous et n\'écoutez pas ce qui se dit autour de vous. ' +
-    'Nous avons toutes et tous un potentiel caché, il suffit de se lancer !',
-}
+const RECONVERSION_PERIODE = '2013 — 2019'
+
+const reconversions = [
+  {
+    avantMetier: 'Vingt ans personnel navigant commercial',
+    versMetier: 'Gestionnaire de ressources — direction des systèmes d\'information',
+    formation: 'IT Essentials',
+    parcours:
+      'Aucune connaissance préalable en informatique, et une mobilité interne vers la ' +
+      'direction des systèmes d\'information d\'une compagnie aérienne. Le cursus est repris ' +
+      'depuis les fondamentaux — usage du clavier, câblage — puis alterne théorie et travaux ' +
+      'pratiques avec l\'appui du formateur.',
+    resultat:
+      'Elle démonte et remonte un poste de travail en quatorze minutes devant ses collègues, ' +
+      'et prend en charge des actes techniques dans ses nouvelles fonctions.',
+    citation:
+      'Je ne croyais pas vraiment pouvoir faire ce virage à 180 degrés à mon âge, et pourtant ' +
+      'la NetAcad a rendu cela possible. Si j\'avais un message à délivrer, et notamment aux ' +
+      'femmes qui souhaitent se reconvertir : croyez en vous et n\'écoutez pas ce qui se dit ' +
+      'autour de vous. Nous avons toutes et tous un potentiel caché, il suffit de se lancer !',
+  },
+  {
+    avantMetier: 'École de commerce, consultante en société de services',
+    versMetier: 'Consultante technique — missions chez un industriel',
+    formation: 'CCNA',
+    parcours:
+      'Des missions devenues de plus en plus techniques, et le besoin d\'un socle ' +
+      'technologique solide pour continuer à évoluer. Formation suivie en e-learning, le soir ' +
+      'et le week-end, sans agenda imposé.',
+    resultat:
+      'Un savoir-faire reconnu dans son entreprise, où la certification Cisco est valorisée, ' +
+      'et l\'accès à des missions techniques qu\'elle n\'aurait pas pu prendre auparavant.',
+    citation:
+      'Aujourd\'hui, je dispose d\'un réel savoir-faire qui me met sur un pied d\'égalité avec ' +
+      'mes collègues, ce qui est très important dans un univers très majoritairement masculin. ' +
+      'Je regrette même de ne pas avoir suivi cette formation plus tôt.',
+  },
+  {
+    avantMetier: 'Études de langues étrangères, support en CDD',
+    versMetier: 'Technicienne communications unifiées — en CDI',
+    formation: 'CCNA — premier module',
+    parcours:
+      'Un poste de support en visioconférence décroché après des études de langues, et un ' +
+      'CDI conditionné à des compétences techniques que sa formation initiale ne donnait pas. ' +
+      'Révisions en autonomie, pour l\'essentiel le dimanche, avec un formateur joignable.',
+    resultat:
+      'Le CDI obtenu, et l\'ouverture vers un poste de technicienne en communications ' +
+      'unifiées via les niveaux supérieurs du programme.',
+    citation:
+      'Avant de démarrer le cursus, ça me paraissait impossible car je ne possédais pas de ' +
+      'connaissances technologiques particulières. Finalement, je reconnais que je suis ' +
+      'plutôt fière de moi : ma formation initiale ne m\'aurait pas permis d\'envisager cette ' +
+      'évolution professionnelle.',
+  },
+]
 
 // ─────────────────────────────────────────────────────────────────────────────
 // TÉMOIGNAGES ÉCRITS — issus de lettres de recommandation réelles
@@ -290,63 +318,67 @@ function TemoignagesPage() {
         </section>
 
         {/* Parcours de reconversion */}
-        <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
+        <section id="reconversion" style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>
               Parcours de reconversion
             </span>
-            <h2 className="section-h2" style={{ marginBottom: '0.5rem' }}>Une carrière changée de bout en bout</h2>
+            <h2 className="section-h2" style={{ marginBottom: '0.5rem' }}>Trois femmes, trois carrières changées</h2>
             <div className="g-rule" />
-            <p style={{ fontSize: '0.95rem', color: '#5a5a58', lineHeight: 1.8, marginTop: '1rem', marginBottom: '2.5rem', maxWidth: '680px' }}>
-              Les autres pages de ce site donnent la parole aux directions qui achètent la
-              formation. Celle-ci la donne à une apprenante, sur ce que la formation a changé
-              dans son métier — c'est la question que pose tout financeur.
+            <p style={{ fontSize: '0.95rem', color: '#5a5a58', lineHeight: 1.8, marginTop: '1rem', marginBottom: '1rem', maxWidth: '700px' }}>
+              Partout ailleurs sur ce site, ce sont les directions qui achètent la formation qui
+              parlent. Ici, ce sont les apprenantes — sur ce que la formation a changé dans leur
+              métier. C'est la question que pose tout financeur, et la seule à laquelle un
+              témoignage d'acheteur ne répond pas.
+            </p>
+            <p style={{ fontSize: '0.95rem', color: '#5a5a58', lineHeight: 1.8, marginBottom: '2.5rem', maxWidth: '700px' }}>
+              Aucune n'avait de formation initiale en informatique. Toutes trois exercent
+              aujourd'hui un métier technique. <strong style={{ color: 'var(--g-black)' }}>La Cisco
+              Networking Academy nous a sollicités pour documenter ces parcours</strong> et les a
+              repris dans ses propres supports.
             </p>
 
-            <div style={{ background: '#fff', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '4px solid var(--g-red)', padding: '2.5rem' }}>
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(220px,1fr))', gap: '2rem', marginBottom: '2rem' }}>
-                {[
-                  { etape: 'Au départ', texte: reconversion.avant },
-                  { etape: 'Le déclic', texte: reconversion.declic },
-                  { etape: 'À l\'arrivée', texte: reconversion.apres },
-                ].map(e => (
-                  <div key={e.etape}>
-                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.68rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.6rem' }}>
-                      {e.etape}
-                    </div>
-                    <p style={{ fontSize: '0.88rem', lineHeight: 1.75, color: '#4a4a48', margin: 0 }}>{e.texte}</p>
-                  </div>
-                ))}
-              </div>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(320px,1fr))', gap: '1.5rem' }}>
+              {reconversions.map((r, i) => (
+                <div key={i} style={{ background: '#fff', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '4px solid var(--g-red)', padding: '2rem', display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
 
-              <div style={{ borderTop: '1px solid rgba(187,187,187,0.3)', paddingTop: '2rem', display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
-                <Quote size={32} color="rgba(228,31,38,0.25)" style={{ flexShrink: 0 }} />
-                <div>
-                  <p style={{ fontSize: '1rem', lineHeight: 1.85, color: '#3a3a38', margin: '0 0 1rem', fontStyle: 'italic' }}>
-                    "{reconversion.citation}"
-                  </p>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)' }}>
-                    {reconversion.nom ?? reconversion.attribution} — {reconversion.fonction}
+                  <div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.64rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#9a9a98', marginBottom: '0.3rem' }}>
+                      Avant
+                    </div>
+                    <div style={{ fontSize: '0.92rem', color: '#5a5a58', lineHeight: 1.5 }}>{r.avantMetier}</div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '1.1rem', color: 'var(--g-red)', lineHeight: 1, margin: '0.6rem 0' }}>↓</div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.64rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.3rem' }}>
+                      Aujourd'hui
+                    </div>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.95rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--g-black)', lineHeight: 1.35 }}>
+                      {r.versMetier}
+                    </div>
                   </div>
-                  <div style={{ fontSize: '0.80rem', color: '#888', marginTop: '0.2rem' }}>
-                    {reconversion.entreprise}
+
+                  <div style={{ display: 'inline-block', alignSelf: 'flex-start', fontFamily: 'var(--font-title)', fontSize: '0.64rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.2rem 0.65rem' }}>
+                    {r.formation}
                   </div>
-                  <div style={{ display: 'inline-block', fontFamily: 'var(--font-title)', fontSize: '0.66rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.2rem 0.65rem', marginTop: '0.75rem' }}>
-                    {reconversion.formation}
+
+                  <p style={{ fontSize: '0.86rem', lineHeight: 1.75, color: '#4a4a48', margin: 0 }}>{r.parcours}</p>
+                  <p style={{ fontSize: '0.86rem', lineHeight: 1.75, color: '#4a4a48', margin: 0, fontWeight: 600 }}>{r.resultat}</p>
+
+                  <div style={{ borderTop: '1px solid rgba(187,187,187,0.3)', paddingTop: '1.25rem', marginTop: 'auto', display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
+                    <Quote size={22} color="rgba(228,31,38,0.25)" style={{ flexShrink: 0, marginTop: '2px' }} />
+                    <p style={{ fontSize: '0.9rem', lineHeight: 1.8, color: '#3a3a38', margin: 0, fontStyle: 'italic' }}>
+                      "{r.citation}"
+                    </p>
                   </div>
                 </div>
-              </div>
-
-              <p style={{ fontSize: '0.75rem', color: '#9a9a98', lineHeight: 1.7, marginTop: '1.75rem', marginBottom: 0, fontStyle: 'italic' }}>
-                {reconversion.source && reconversion.sourceUrl ? (
-                  <>Étude de cas publiée par la <a href={reconversion.sourceUrl} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--g-red)' }}>{reconversion.source}</a>.</>
-                ) : (
-                  <>Parcours documenté par la Cisco Networking Academy. L'apprenante n'est pas nommée
-                  ici : son identité et celle de son employeur figurent au dossier et sont communicables
-                  en audit, mais ne sont pas publiées sans son accord.</>
-                )}
-              </p>
+              ))}
             </div>
+
+            <p style={{ fontSize: '0.78rem', color: '#9a9a98', lineHeight: 1.7, marginTop: '1.75rem', marginBottom: 0, fontStyle: 'italic', maxWidth: '760px' }}>
+              Parcours suivis entre {RECONVERSION_PERIODE} et documentés par la Cisco Networking
+              Academy. Les apprenantes ne sont pas nommées, pas même par leurs initiales : leur
+              identité et celle de leur employeur figurent au dossier de formation et sont
+              communicables en audit.
+            </p>
           </div>
         </section>
 

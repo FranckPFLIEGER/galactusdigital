@@ -53,7 +53,7 @@ export function Satisfaction() {
               textAlign: 'center',
               maxWidth: '220px',
             }}>
-              Certification Qualiopi Certifopac — Accréditation Cofrac n° 5-0620
+              Certification Qualiopi Certifopac — certificat n° 951711-1, accréditation Cofrac n° 5-0620
             </div>
           </div>
 

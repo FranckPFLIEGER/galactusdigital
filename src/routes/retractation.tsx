@@ -272,6 +272,30 @@ function RetractationPage() {
                   </span>
                 </label>
 
+                {/* Information du RGPD, art. 13 : due au moment même de la collecte.
+                    Le renvoi à la page /rgpd ne suffit pas, la mention figure ici. */}
+                <div style={{ borderLeft: '3px solid rgba(187,187,187,0.6)', paddingLeft: '1rem' }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#888', marginBottom: '0.4rem' }}>
+                    Protection de vos données
+                  </div>
+                  <p style={{ fontSize: '0.80rem', lineHeight: 1.7, color: '#5a5a58', margin: 0 }}>
+                    Les informations saisies dans ce formulaire sont traitées par PFLIEGER SASU
+                    (GALACTUS Digital), 66 avenue des Champs-Élysées, 75008 Paris, aux seules fins
+                    d'enregistrer votre rétractation, d'en accuser réception et d'en conserver la
+                    preuve. Ce traitement repose sur une obligation légale, l'article L.6353-5 du
+                    code du travail. Les champs signalés par une astérisque sont nécessaires à
+                    l'identification de votre contrat : sans eux, la déclaration ne peut être
+                    rattachée à votre dossier. Les données sont conservées 5 ans. Elles sont
+                    transmises par notre prestataire technique Web3Forms à la messagerie de
+                    l'organisme, et ne sont communiquées à aucun autre tiers à des fins commerciales.
+                    Vous disposez d'un droit d'accès, de rectification, d'effacement, de limitation,
+                    de portabilité et d'opposition, à exercer auprès de
+                    president@galactusdigital.com, ainsi que du droit d'introduire une réclamation
+                    auprès de la CNIL. Le détail de nos traitements figure sur notre{' '}
+                    <a href="/rgpd" style={{ color: 'var(--g-red)', fontWeight: 600 }}>page Protection des données</a>.
+                  </p>
+                </div>
+
                 {status === 'err' && (
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', padding: '0.9rem 1.1rem', background: 'rgba(228,31,38,0.06)', border: '1px solid rgba(228,31,38,0.25)' }}>
                     <AlertCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />

@@ -12,7 +12,7 @@ export const Route = createFileRoute('/demarche-qualite')({
   head: () => ({
     meta: [
       { title: 'Notre démarche qualité Qualiopi — GALACTUS Digital' },
-      { name: 'description', content: 'GALACTUS Digital est certifié Qualiopi par Certifopac — certificat n° 5-0620. Référentiel national qualité V2 (décret n° 2026-728 du 1er août 2026, en vigueur le 1er novembre 2026) : 7 critères, 33 indicateurs, modalités de calcul des résultats publiées, prévention des violences et du harcèlement, ruptures de parcours, évaluation des enseignements. NDA 11 75 59933 75.' },
+      { name: 'description', content: 'GALACTUS Digital est certifié Qualiopi par Certifopac — certificat n° 951711-1, accréditation Cofrac n° 5-0620. Référentiel national qualité V2 (décret n° 2026-728 du 1er août 2026, en vigueur le 1er novembre 2026) : 7 critères, 33 indicateurs, modalités de calcul des résultats publiées, prévention des violences et du harcèlement, ruptures de parcours, évaluation des enseignements. NDA 11 75 59933 75.' },
       { property: 'og:title', content: 'Notre démarche qualité Qualiopi — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/demarche-qualite' },
     ],

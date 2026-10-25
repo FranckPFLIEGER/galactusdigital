@@ -79,7 +79,7 @@ const jsonLd = {
     '@type': 'EducationalOccupationalCredential',
     name: 'Certification Qualiopi',
     credentialCategory: 'Actions de formation',
-    recognizedBy: { '@type': 'Organization', name: 'Certifopac — Accréditation Cofrac n° 5-0620' },
+    recognizedBy: { '@type': 'Organization', name: 'Certifopac — certificat Qualiopi n° 951711-1, accréditation Cofrac n° 5-0620' },
   },
 }
 

@@ -100,13 +100,26 @@ function RgpdPage() {
                     + "des campagnes — données hébergées dans l'Union européenne.",
                 },
                 {
+                  titre: 'Déclarations de rétractation',
+                  base: 'Obligation légale (art. L.6353-5 du code du travail et L.221-18 du code de la consommation)',
+                  donnees: "Nom, prénom, email, téléphone, formation concernée, date de signature du contrat, "
+                    + "référence du devis ou du contrat, et horodatage de la déclaration. Ces données sont celles "
+                    + "strictement nécessaires pour identifier le contrat et dater la rétractation ; aucun motif "
+                    + "n'est demandé, la rétractation n'ayant pas à être justifiée.",
+                  duree: "5 ans à compter de la déclaration, durée de la prescription applicable à la preuve de "
+                    + "son traitement.",
+                  dest: "PFLIEGER SASU (GALACTUS Digital). Sous-traitant : Web3Forms, relais technique du "
+                    + "formulaire. La messagerie de réception est opérée par Google (Google Workspace).",
+                },
+                {
                   titre: 'Navigation sur le site',
                   base: 'Intérêt légitime (sécurité et disponibilité du service)',
                   donnees: "Journaux techniques de l'hébergeur : adresse IP, horodatage, ressource demandée. "
                     + "Le site ne dépose aucun cookie et n'utilise aucun outil de mesure d'audience ni de publicité ; "
                     + "les polices de caractères sont auto-hébergées et aucune ressource n'est appelée sur un "
                     + "serveur tiers. Aucun consentement n'a donc à être recueilli.",
-                  duree: "Selon la politique de conservation des journaux de l'hébergeur.",
+                  duree: "Journaux conservés au maximum 12 mois, conformément à la durée retenue par l'hébergeur "
+                    + "pour ses journaux de sécurité.",
                   dest: 'PFLIEGER SASU (GALACTUS Digital) — hébergeur Cloudflare, Inc.',
                 },
               ].map(t => (
@@ -178,6 +191,12 @@ function RgpdPage() {
                   <a href="https://www.cnil.fr" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--g-red)' }}>www.cnil.fr</a> —
                   3 Place de Fontenoy, TSA 80715, 75334 Paris Cedex 07
                 </p>
+                <p style={{ fontSize: '0.90rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
+                  Conformément à l'article 85 de la loi Informatique et Libertés, vous pouvez définir
+                  des directives relatives au sort de vos données après votre décès, et désigner la
+                  personne chargée de les exécuter. Ces directives peuvent nous être adressées à tout
+                  moment par écrit, et modifiées ou révoquées de la même façon.
+                </p>
                 <a href="mailto:president@galactusdigital.com" className="btn-red" style={{ fontSize: '0.85rem' }}>
                   <Mail size={15} /> Exercer mes droits
                 </a>
@@ -221,6 +240,18 @@ function RgpdPage() {
                   + "compte apprenant, progression, résultats aux évaluations, historique de connexion.",
                 cadre: 'Clauses contractuelles types.',
               },
+              {
+                nom: 'Microsoft Corporation (États-Unis)',
+                role: "Inscription aux parcours Microsoft Learn et suivi des acquis, pour les seules "
+                  + "formations Microsoft : identité de l'apprenant, compte de formation, progression.",
+                cadre: 'Data Privacy Framework.',
+              },
+              {
+                nom: 'Juniper Networks, Inc. (États-Unis)',
+                role: "Accès à la plateforme de formation et aux ressources Junos pour le seul parcours "
+                  + "JNCIA-Junos : identité de l'apprenant, compte de formation.",
+                cadre: 'Clauses contractuelles types.',
+              },
             ].map(t => (
               <div key={t.nom} style={{ borderLeft: '3px solid var(--g-red)', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
                 <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--g-black)', marginBottom: '0.3rem' }}>{t.nom}</div>
@@ -233,7 +264,7 @@ function RgpdPage() {
               domaine : leur affichage n'entraîne aucune requête vers Google Fonts, ni aucune
               transmission d'adresse IP à Google. L'envoi de nos campagnes d'information est confié à
               <strong> Brevo</strong> (Sendinblue SAS), dont les données sont hébergées dans l'Union
-              européenne. En dehors des quatre transferts listés ci-dessus, aucune donnée n'est
+              européenne. En dehors des six transferts listés ci-dessus, aucune donnée n'est
               transférée hors de l'Union européenne.
             </p>
           </div>

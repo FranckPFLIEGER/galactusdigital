@@ -32,7 +32,7 @@ const DATA = {
   objectifs: ["Déployer et gérer un tenant M365", "Administrer identité et accès (Entra ID)", "Gérer sécurité et menaces (Defender)", "Assurer la conformité (Purview)", "Gérer Exchange, Teams, SharePoint", "Superviser les services"],
   public: ["Administrateurs Microsoft 365", "Ingénieurs systèmes et cloud", "Responsables IT M365", "Certifiés AB-900 (ou MS-900)"],
   prerequis: ["Expérience administration M365", "Connaissance Entra ID et DNS", "Notions sécurité et conformité", "Pratique d un tenant recommandée"],
-  examen: { code: 'AB-650', duree: '120 minutes', langue: 'Français / Anglais', organisme: 'Microsoft (Pearson VUE)', format: 'QCM, études de cas et scénarios', score: '700 / 1000', note: `AB-650 remplace l'examen MS-102, retiré le 31 octobre 2026 : la certification Microsoft 365 Administrator Expert (2 examens) laisse place à AI Services Administrator Associate, obtenue avec ce seul examen, sans prérequis de certification. Valable 12 mois, renouvelable gratuitement via Microsoft Learn. L'examen certifiant est proposé en option.` },
+  examen: { code: 'AB-650', duree: '120 minutes', langue: 'Français / Anglais', organisme: 'Microsoft (Pearson VUE)', format: 'QCM, études de cas et scénarios', score: "Défini par l'éditeur (variable)", note: `AB-650 remplace l'examen MS-102, retiré le 31 octobre 2026 : la certification Microsoft 365 Administrator Expert (2 examens) laisse place à AI Services Administrator Associate, obtenue avec ce seul examen, sans prérequis de certification. Valable 12 mois, renouvelable gratuitement via Microsoft Learn. L'examen certifiant est proposé en option.` },
   methodes: ["Formation dispensée par un formateur certifié Microsoft (MCT)", "Accès à Microsoft Learn 24h/24", "Labs pratiques sur environnement Microsoft réel", "Badge numérique Microsoft — Credly et LinkedIn", "Quiz de validation à chaque fin de module", "Auto-évaluation formative en début et fin de formation", "Évaluation formateur : non évalué · non acquis · en cours · acquis", "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)", "Supports officiels Microsoft inclus", "Attestation de formation, de présence et plan de travail individuel", "Passage de l examen certifiant Microsoft intégré (Pearson VUE)"],
 }
 
@@ -95,11 +95,11 @@ function FormationPage() {
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
                                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=ab-650' },
+                { icon: <Calendar size={14} />, text: 'Voir le calendrier', href: '/calendrier?f=ab-650' },
               ].map((m, i) => (
                 m.href ? (
                   <a key={i} href={m.href} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: 'var(--g-red)', padding: '0.35rem 0.8rem' }}>
-                    {m.icon}<span>Voir le calendrier</span>
+                    {m.icon}<span>{m.text}</span>
                   </a>
                 ) : (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>

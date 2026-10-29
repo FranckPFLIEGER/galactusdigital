@@ -14,7 +14,7 @@ const PRESIDENT_TITLES = [
   'CCNP / CCDP',
   'IPv6 Forum — Certified Network Engineer',
   '15 ans instructeur Cisco',
-  'Cisco NetAcad Advisory Board',
+  'Cisco Networking Academy Advisory Board',
   'IPv6 Hall of Fame 2025',
 ]
 

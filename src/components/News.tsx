@@ -20,7 +20,7 @@ const articles = [
   {
     date: 'Août 2026',
     title: "CCNA v2.0 : la plus grande refonte depuis 2020 — nos parcours sont à jour",
-    desc: "Cisco fait évoluer l'examen CCNA 200-301 vers le blueprint v2.0 : la v1.1 reste disponible jusqu'au 2 février 2027, la v2.0 s'impose à partir du 3 février 2027. Ce qui change vraiment : une nouvelle section dédiée à l'IA dans les opérations réseau, le retour du troubleshooting — absent depuis 2020 et qui pèse désormais près de 30 % de l'examen — une automatisation modernisée autour d'Ansible et Terraform (Puppet et Chef sont retirés), et un allègement de la théorie au profit de la pratique. Nos fiches CCNA (ITN · SRWE · ENSA) et notre parcours accéléré CCNA v2.0 sont déjà alignés sur le programme officiel v7.02 et ses modules complémentaires v1.1, avec chaque nouveauté identifiée.",
+    desc: "Cisco fait évoluer l'examen CCNA 200-301 vers le blueprint v2.0 : la v1.1 reste disponible jusqu'au 2 février 2027, la v2.0 s'impose à partir du 3 février 2027. Ce qui change vraiment : une nouvelle section dédiée à l'IA dans les opérations réseau, le retour du troubleshooting — absent depuis 2020 et qui pèse désormais près de 30 % de l'examen — une automatisation modernisée autour d'Ansible et Terraform (Puppet et Chef sont retirés), et un allègement de la théorie au profit de la pratique. Nos fiches CCNA (ITN · SRWE · ENSA) et notre parcours complet CCNA v2.0 sont déjà alignés sur le programme officiel v7.02 et ses modules complémentaires v1.1, avec chaque nouveauté identifiée.",
     tag: 'Veille',
     link: '/formations/ccna-cisco',
     linkLabel: 'Voir le parcours CCNA v2.0',

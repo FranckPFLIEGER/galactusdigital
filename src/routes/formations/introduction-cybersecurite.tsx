@@ -114,12 +114,12 @@ const DATA = {
 
   // Examen
   examen: {
-    code:       'Badge NetAcad — Introduction to Cybersecurity',
+    code:       'Badge Cisco Networking Academy — Introduction to Cybersecurity',
     duree:      'Examen final intégré au cours',
     langue:     'Français',
     organisme:  'Cisco Networking Academy',
     format:     '5 modules, 7 exercices pratiques, quiz et examen final',
-    score:      'Selon barème NetAcad',
+    score:      'Selon barème Cisco Networking Academy',
     note: 'Ce cours fait partie du parcours Cybersecurity Career Path et s\'aligne sur la certification CCST Cybersecurity. Cours suivant recommandé : Networking Essentials ou Cybersecurity Essentials.',
   },
 
@@ -127,11 +127,11 @@ const DATA = {
   methodes: [
     'Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)',
     'Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation',
-    'Supports de cours officiels Cisco inclus (version numérique NetAcad)',
+    'Supports de cours officiels Cisco inclus (version numérique Cisco Networking Academy)',
     'Rythme adapté aux personnes sans expérience informatique — aucun jargon présupposé',
     'Test de positionnement préalable pour confirmer le point d\'entrée dans le parcours',
     'Badge numérique Cisco Networking Academy remis à l\'issue du cours — partageable sur Credly et LinkedIn',
-    'Quiz de validation des acquis à chaque fin de module sur NetAcad',
+    'Quiz de validation des acquis à chaque fin de module sur Cisco Networking Academy',
     'Auto-évaluation formative en début et en fin de formation',
     'Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis',
     'Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)',
@@ -267,12 +267,18 @@ function IntroductionCybersecuritePage() {
             <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
-                { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=introduction-cybersecurite' },
+                /* E-learning tutoré : un apprenant, un tuteur, entrées permanentes.
+                   Annoncer « 4 à 12 participants » décrivait une session de groupe
+                   qui n'existe pas dans cette modalité. Corrigé le 29 octobre 2026. */
+                { icon: <Users size={14} />, text: 'Parcours individuel' },
+                /* L'e-learning tutoré n'a pas de session au calendrier : entrées
+                   permanentes, accès ouvert sous 72 h. Le bouton mène donc à la
+                   demande de devis. Seuls le présentiel et la FOAD sont calendés. */
+                { icon: <Mail size={14} />, text: 'Demander un devis', href: '/#contact' },
               ].map((m, i) => (
                 m.href ? (
                   <a key={i} href={m.href} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: 'var(--g-red)', padding: '0.35rem 0.8rem' }}>
-                    {m.icon}<span>Voir le calendrier</span>
+                    {m.icon}<span>{m.text}</span>
                   </a>
                 ) : (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>
@@ -442,9 +448,9 @@ function IntroductionCybersecuritePage() {
                   { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail.' },
                   { ref: 'Critère 1 Qualiopi', title: 'Analyse du besoin', desc: 'Test de positionnement préalable : il détermine le bloc d\'entrée et confirme qu\'aucun prérequis n\'est nécessaire.' },
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation avec programme, lieu, horaires et règlement intérieur envoyée avant démarrage.' },
-                  { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + auto-évaluation formateur selon 4 niveaux : non acquis → acquis.' },
+                  { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz Cisco Networking Academy + auto-évaluation formateur selon 4 niveaux : non acquis → acquis.' },
                   { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de toute formation à distance, conformément à la circulaire DGEFP du 17 février 2026." },
-                  { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès NetAcad vérifié avant démarrage. Un poste de travail et une connexion Internet suffisent.' },
+                  { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès Cisco Networking Academy vérifié avant démarrage. Un poste de travail et une connexion Internet suffisent.' },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
                     <div style={{ flexShrink: 0 }}>

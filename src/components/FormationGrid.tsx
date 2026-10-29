@@ -163,8 +163,13 @@ export function FormationGrid({ modalite, dark = false }: Props) {
 
       {/* Note prix */}
       <p style={{ fontSize: '0.73rem', color: metaCol, marginTop: '1rem', fontStyle: 'italic', lineHeight: 1.6 }}>
-        * Tarifs sur devis — TVA non applicable (Art. 261-4-4° CGI, organisme certifié Qualiopi).
-        Devis sous 48 h ouvrées. Financement OPCO et aides régionales DOM disponibles —{' '}
+        {/* La note disait « Tarifs sur devis » sous une grille qui affiche
+            désormais le prix de chaque formation : elle contredisait les tarifs
+            situés juste au-dessus, et son astérisque ne renvoyait à rien.
+            Réécrite le 29 octobre 2026. */}
+        Tarifs nets de taxe, par personne — TVA non applicable (art. 261-4-4°-a du CGI).
+        Les formations sans tarif affiché sont établies sur devis. Devis sous 48 h ouvrées.
+        Toute entrée en formation est adossée à un employeur ou à un financeur tiers —{' '}
         <a href="/financements" style={{ color: '#E41F26', textDecoration: 'none' }}>voir les financements</a>.
       </p>
     </div>

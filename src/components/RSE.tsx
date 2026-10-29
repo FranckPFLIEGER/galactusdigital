@@ -1,15 +1,16 @@
 import { useIntersection } from '../hooks/useIntersection'
+import { FORMATIONS } from '../data/catalogue'
 import { Globe, Users, Leaf, BookOpen, Heart, ShieldCheck, ExternalLink, ArrowRight } from 'lucide-react'
 
 const pillars = [
   {
     icon: <ShieldCheck size={24} color="white" />,
     title: "Handicap & Accessibilité",
-    fc: "Fiche 21 — Vademecum France Compétences 2026",
+    fc: "Fiche 21 — Vadémécum France Compétences 2026",
     badge: "Procédures documentées — Référent dédié",
     items: [
       "Référent Handicap GALACTUS Digital : adaptation systématique des modalités pédagogiques à chaque situation individuelle, dès l'inscription",
-      "Cisco Networking Academy accompagne depuis 2019 les apprenants en situation de handicap — plus de 188 000 personnes ont atteint leurs objectifs via les dispositifs d'accessibilité NetAcad (source : Cisco Networking Academy)",
+      "Cisco Networking Academy accompagne depuis 2019 les apprenants en situation de handicap — plus de 200 000 personnes ont atteint leurs objectifs via ses dispositifs d'accessibilité (source : Cisco Networking Academy, netacad.com/fr/accessibility)",
       // Cisco ne cite aucune norme nommée sur sa page d'accessibilité : affirmer une
       // conformité « aux standards internationaux » à sa place serait invérifiable
       // (indicateur 1). On s'en tient à ce que l'éditeur déclare lui-même.
@@ -24,7 +25,7 @@ const pillars = [
   {
     icon: <Leaf size={24} color="white" />,
     title: "Transition écologique",
-    fc: "Fiche 22 — Vademecum France Compétences 2026",
+    fc: "Fiche 22 — Vadémécum France Compétences 2026",
     badge: "Intégré aux référentiels IoT & Data Analytics",
     items: [
       "Formations dispensées en Martinique et Guadeloupe : chaque stagiaire évite un aller-retour Paris–Antilles, soit plus d'une tonne de CO₂ par personne (source : calculateur ADEME)",
@@ -38,8 +39,8 @@ const pillars = [
   {
     icon: <Globe size={24} color="white" />,
     title: "Transition numérique",
-    fc: "Fiche 23 — Vademecum France Compétences 2026",
-    badge: "Cœur de métier — 22 formations certifiantes",
+    fc: "Fiche 23 — Vadémécum France Compétences 2026",
+    badge: `Cœur de métier — ${FORMATIONS.length} formations certifiantes`,
     items: [
       "100 % de notre catalogue est dédié à la montée en compétences numériques : réseaux, cybersécurité, cloud, IoT, IA, Python, automatisation — certifications mondiales Cisco et Microsoft",
       "Accompagnement des entreprises ultramarines dans leur transformation numérique : de l'infrastructure réseau (CCNA) à l'intelligence artificielle (Copilot, AI-901)",
@@ -68,9 +69,13 @@ const pillars = [
   {
     icon: <Users size={24} color="white" />,
     title: "Ancrage territorial & ASPIK",
-    badge: "6 territoires ultramarins — Association loi 1901 depuis 2018",
+    badge: "6 territoires ultramarins — Association loi 1901 depuis 2015",
     items: [
-      "ASPIK — Association Spécialisée dans la Protection Informatique de la Karaïbe : fondée en 2018 à Le François, Martinique, pour développer la cybersécurité et la coopération IT aux Caraïbes",
+      // Récépissé de déclaration de CRÉATION n° W9M2001329, sous-préfecture de Trinité :
+    // décision du 22 novembre 2015. Récépissé de MODIFICATION du 17 février 2020,
+    // sous-préfecture du Marin : siège social transféré à Pointe Madeleine, Le François.
+    // Le site annonçait 2018, ce qui faisait perdre trois ans d'ancienneté.
+    "ASPIK — Association Spécialisée dans la Protection Informatique de la Karaïbe : fondée le 22 novembre 2015, assemblée générale constitutive à l'Îlet à Eau, déclarée sous le n° W9M2001329. Siège social à Pointe Madeleine — Cap Est, 97240 Le François",
       "Formateurs locaux certifiés en priorité — vous êtes formés par des professionnels qui connaissent votre réalité terrain, votre marché, vos contraintes",
       "Mêmes certifications mondiales qu'à Paris ou New York — sans quitter votre territoire, sans financer un séjour en métropole",
       "Sessions de veille IT ouvertes à tous via ASPIK — réseau d'alumni ultramarins, partage d'opportunités et d'expériences entre certifiés des territoires ultramarins",
@@ -102,7 +107,7 @@ export function RSE() {
         <p className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '2.5rem' }}>
           Former aux métiers du numérique implique une responsabilité sociale, écologique et éthique.
-          Notre démarche RSE s'articule autour des trois axes du vade-mecum France Compétences 2026 —
+          Notre démarche RSE s'articule autour des trois axes du vadémécum France Compétences 2026 —
           handicap, transition écologique, transition numérique — documentés et intégrés dans nos référentiels.
         </p>
 
@@ -110,7 +115,7 @@ export function RSE() {
         <div className={`reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ display: 'flex', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '3rem', padding: '1.25rem 1.5rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)' }}>
           <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.16em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.40)', alignSelf: 'center', marginRight: '0.5rem' }}>
-            Vademecum France Compétences 01/2026
+            Vadémécum France Compétences 01/2026
           </div>
           {[
             { ref: 'F21', label: 'Handicap & Accessibilité' },
@@ -179,7 +184,7 @@ export function RSE() {
               "Réduire la fracture numérique dans les territoires ultramarins, former sur place
               plutôt que d'envoyer les gens en métropole, ouvrir les certifications mondiales
               à ceux qu'on croyait trop loin pour y accéder —
-              c'est notre mission depuis 2018. Chaque certification obtenue aux Antilles,
+              c'est notre mission depuis 2015. Chaque certification obtenue aux Antilles,
               à la Réunion, en Guyane, c'est une victoire collective."
             </p>
             <div className="rse-commitment-author">— Le président, GALACTUS Digital &amp; ASPIK</div>

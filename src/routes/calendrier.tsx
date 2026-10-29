@@ -103,7 +103,12 @@ function GanttView() {
     return Math.max(0, Math.min(100, ((d.getTime() - start6.getTime()) / totalMs) * 100))
   }
 
-  const familles = Object.entries(FAMILLES)
+  // Même règle que pour les filtres : le diagramme ne montre que les familles qui
+  // comportent au moins une formation programmable (présentiel ou FOAD).
+  const familles = Object.entries(FAMILLES).filter(([famKey]) =>
+    FORMATIONS.some(f => f.famille === famKey
+      && (f.modalites.includes('Présentiel') || f.modalites.includes('FOAD'))),
+  )
 
   const prepBySlug: Record<string, Array<{ start: Date; end: Date; territoire: Territoire; modalite: Modalite; label: string }>> = {}
   for (const sess of plannedSessions) {
@@ -134,7 +139,8 @@ function GanttView() {
 
         {/* Lignes par famille */}
         {familles.map(([famKey, fam]) => {
-          const formsFamille = FORMATIONS.filter(f => f.famille === famKey)
+          const formsFamille = FORMATIONS.filter(f => f.famille === famKey
+            && (f.modalites.includes('Présentiel') || f.modalites.includes('FOAD')))
           const hasPlanned = formsFamille.some(f => prepBySlug[f.slug])
           const editeurColor = formsFamille[0]?.editeur === 'Microsoft' ? '#1D1D1B' : '#E41F26'
           return (
@@ -172,7 +178,7 @@ function GanttView() {
                 ) : (
                   <div style={{ position: 'absolute', inset: '8px 4px', border: '1px dashed rgba(187,187,187,0.5)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
                     <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.52rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: '#ccc' }}>
-                      Dates à planifier
+                      En attente de programmation
                     </span>
                   </div>
                 )}
@@ -295,8 +301,15 @@ function CalendrierPage() {
   const [fFormation,   setFFormation]   = useState(initialF)
   const [query,        setQuery]        = useState('')
 
-  const familles  = ['Toutes', ...Array.from(new Set(FORMATIONS.map(f => f.famille)))]
-  const titres    = ['Toutes', ...FORMATIONS.map(f => f.titre)]
+  // Le calendrier ne concerne que les formations programmables : présentiel et FOAD.
+  // L'e-learning tutoré fonctionne en entrées permanentes — faire figurer le socle,
+  // l'IoT ou la Data dans les filtres et dans le diagramme donnait des lignes
+  // perpétuellement « en attente de programmation ». Demandé le 28 octobre 2026.
+  const FORMATIONS_CAL = FORMATIONS.filter(
+    f => f.modalites.includes('Présentiel') || f.modalites.includes('FOAD'),
+  )
+  const familles  = ['Toutes', ...Array.from(new Set(FORMATIONS_CAL.map(f => f.famille)))]
+  const titres    = ['Toutes', ...FORMATIONS_CAL.map(f => f.titre)]
   const hasFilter = fModalite !== 'Toutes' || fTerritoire !== 'Tous' || fEditeur !== 'Tous' || fFamille !== 'Toutes' || fFormation !== 'Toutes' || query.trim() !== ''
   const reset = () => { setFModalite('Toutes'); setFTerritoire('Tous'); setFEditeur('Tous'); setFFamille('Toutes'); setFFormation('Toutes'); setQuery('') }
 
@@ -330,11 +343,24 @@ function CalendrierPage() {
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,3vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '0.75rem' }}>Calendrier des sessions</h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.62)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.75rem' }}>
               {SESSIONS.length > 0
-                ? `${SESSIONS.length} sessions disponibles — Cisco Networking Academy, Microsoft et Juniper. Dates confirmées sur convocation.`
-                : "Prochaines sessions en cours de planification. Toutes nos formations Cisco Networking Academy et Microsoft sont disponibles à la demande — contactez-nous pour convenir d'une date."}
+                ? `${SESSIONS.length} sessions programmées. Dates confirmées sur convocation.`
+                : "Prochaines sessions en cours de planification — contactez-nous pour convenir d'une date."}
+            </p>
+            {/* Ce calendrier ne concerne que les formations qui ont une date de
+                démarrage commune. L'e-learning tutoré n'en a pas : les accès
+                s'ouvrent 72 h après validation, à la date choisie par
+                l'apprenant. Le dire ici évite qu'un candidat e-learning attende
+                une session qui n'existera jamais. */}
+            <p style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.55)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.75rem' }}>
+              Le calendrier porte sur le <strong style={{ color: 'rgba(255,255,255,0.80)' }}>présentiel</strong> — catalogue
+              Microsoft, CCNA v2.0 parcours complet, CCNP Enterprise ENCOR et ENARSI, en inter
+              comme en intra — et sur la <strong style={{ color: 'rgba(255,255,255,0.80)' }}>FOAD Juniper</strong>.
+              L'<strong style={{ color: 'rgba(255,255,255,0.80)' }}>e-learning tutoré</strong> n'a pas de session :
+              le parcours démarre 72 h après la validation administrative de votre inscription,
+              quelle que soit la date.
             </p>
             <div style={{ display: 'flex', gap: '2.5rem', flexWrap: 'wrap' }}>
-              {[ {val:FORMATIONS.length.toString(),label:'Formations'}, {val:SESSIONS.filter(x=>x.modalite==='Présentiel').length.toString(),label:'Présentiel'}, {val:SESSIONS.filter(x=>x.modalite==='E-learning').length.toString(),label:'E-learning'}, {val:(SESSIONS.filter(x=>x.statut==='en_preparation').length + SESSIONS_PREP.length) > 0 ? (SESSIONS.filter(x=>x.statut==='en_preparation').length + SESSIONS_PREP.length).toString() : '—',label:'Planifiées'} ].map(st => (
+              {[ {val:FORMATIONS.length.toString(),label:'Formations'}, {val:SESSIONS.filter(x=>x.modalite==='Présentiel').length.toString(),label:'Présentiel'}, {val:SESSIONS.filter(x=>x.modalite==='FOAD').length.toString(),label:'FOAD'}, {val:(SESSIONS.filter(x=>x.statut==='en_preparation').length + SESSIONS_PREP.length) > 0 ? (SESSIONS.filter(x=>x.statut==='en_preparation').length + SESSIONS_PREP.length).toString() : '—',label:'Planifiées'} ].map(st => (
                 <div key={st.label}><div style={{ fontFamily: 'var(--font-title)', fontSize: '1.9rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1 }}>{st.val}</div><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.60rem', fontWeight: 600, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.35)', marginTop: '0.2rem' }}>{st.label}</div></div>
               ))}
             </div>
@@ -400,8 +426,8 @@ function CalendrierPage() {
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
                     {[
-                      { label: 'Modalité',   vals: ['Toutes','Présentiel','FOAD','E-learning'], state: fModalite, set: setFModalite },
-                      { label: 'Territoire', vals: ['Tous','Martinique','Guadeloupe','Paris','Tous territoires'], state: fTerritoire, set: setFTerritoire, labels: {'Tous territoires':'FOAD / Partout'} },
+                      { label: 'Modalité',   vals: ['Toutes','Présentiel','FOAD'], state: fModalite, set: setFModalite },
+                      { label: 'Territoire', vals: ['Tous','Martinique','Guadeloupe','Tous territoires'], state: fTerritoire, set: setFTerritoire, labels: {'Tous territoires':'FOAD / Partout'} },
                       { label: 'Éditeur',    vals: ['Tous','Cisco Networking Academy','Microsoft','Juniper Networks'], state: fEditeur, set: setFEditeur },
                       { label: 'Famille',    vals: familles, state: fFamille, set: setFFamille },
                     ].map(row => (
@@ -464,7 +490,7 @@ function CalendrierPage() {
             <h2 className="section-h2-light">Vous ne trouvez pas la session souhaitée ?</h2>
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem' }}>
-              {[ {titre:'Présentiel',desc:"Catalogue Microsoft — en inter-entreprises (sessions planifiées au calendrier) ou en intra sur mesure, dans vos locaux.",href:'/presentiel',cta:'En savoir plus'}, {titre:'FOAD — classe virtuelle',desc:"Le parcours Juniper JNCIA-Junos en sessions live sur WEBEX, depuis n'importe quel territoire.",href:'/foad',cta:'Voir la FOAD'}, {titre:'E-learning tutoré',desc:'Catalogue Cisco Networking Academy — avancez à votre rythme avec un tuteur certifié, accès plateforme un an.',href:'/elearning',cta:"Voir l'e-learning"} ].map(b => (
+              {[ {titre:'Présentiel',desc:"Catalogue Microsoft — en inter-entreprises (sessions planifiées au calendrier) ou en intra sur mesure, dans vos locaux.",href:'/presentiel',cta:'En savoir plus'}, {titre:'FOAD — Juniper',desc:"Le parcours Juniper JNCIA-Junos en sessions live sur WEBEX, depuis n'importe quel territoire.",href:'/foad',cta:'En savoir plus'}, {titre:'E-learning tutoré',desc:'Catalogue Cisco Networking Academy — avancez à votre rythme avec un tuteur certifié, accès plateforme un an.',href:'/elearning',cta:'En savoir plus'} ].map(b => (
                 <div key={b.titre} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '0.75rem' }}>{b.titre}</div>
                   <p style={{ fontSize: '0.85rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.50)', marginBottom: '1.5rem' }}>{b.desc}</p>

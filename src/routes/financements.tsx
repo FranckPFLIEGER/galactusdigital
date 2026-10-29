@@ -7,7 +7,7 @@ export const Route = createFileRoute('/financements')({
   head: () => ({
     meta: [
       { title: 'Guide du financement des formations — GALACTUS Digital' },
-      { name: 'description', content: "Financer une formation GALACTUS Digital : OPCO, plan de développement des compétences, France Travail AIF et POEI via Kairos, dispositifs régionaux et FSE+ des territoires ultramarins. Formations non éligibles au CPF." },
+      { name: 'description', content: "Financer une formation GALACTUS Digital : OPCO, plan de développement des compétences, France Travail AIF via Kairos, dispositifs régionaux et FSE+ des territoires ultramarins. Formations non éligibles au CPF." },
       { property: 'og:title', content: 'Guide du financement des formations — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/financements' },
     ],
@@ -53,6 +53,38 @@ function FinancementsPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2">Dispositifs de financement</h2>
             <div className="g-rule" />
+
+            {/* BANNIÈRE PÉRIMÈTRE — se lit avant les dispositifs, pas après.
+                C'était une carte parmi les autres : un lecteur pouvait monter
+                un dossier entier avant de découvrir qu'il n'entre pas dans le
+                périmètre. Remontée en bandeau, la règle est lue d'abord. */}
+            <div style={{ marginTop: '2rem', background: 'var(--g-black)', borderLeft: '4px solid var(--g-red)', padding: '1.75rem 2rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap', marginBottom: '1rem' }}>
+                <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.95rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff' }}>
+                  Périmètre et reste à charge
+                </span>
+                <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.2rem 0.65rem' }}>
+                  À lire avant toute demande
+                </span>
+              </div>
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '0.75rem 2rem' }}>
+                {[
+                  "Vous êtes un particulier ? Votre place est ici dès lors que votre formation est prise en charge — France Travail, employeur, OPCO ou collectivité. Nous montons le dossier avec vous.",
+                  "Nous ne vendons pas de formation à un particulier sur ses fonds propres : nos tarifs ne constituent pas une offre de vente au consommateur (article 2 des CGV).",
+                  "Lorsque la prise en charge est partielle, le solde est réglé par l'employeur ou un financeur complémentaire.",
+                  "Aucun tarif du catalogue ne dépasse 1 950 €. TVA non applicable — article 261-4-4°-a du CGI.",
+                ].map((s, i) => (
+                  <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.86rem', color: 'rgba(255,255,255,0.78)', lineHeight: 1.7 }}>
+                    <CheckCircle size={14} color="#E41F26" style={{ flexShrink: 0, marginTop: '4px' }} />
+                    <span>{s}</span>
+                  </div>
+                ))}
+              </div>
+              <a href="/#contact" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', marginTop: '1.25rem', fontFamily: 'var(--font-title)', fontSize: '0.75rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--g-red)', textDecoration: 'none' }}>
+                <ArrowRight size={14} /> Faire une demande
+              </a>
+            </div>
+
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(280px,1fr))', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 {
@@ -60,11 +92,11 @@ function FinancementsPage() {
                   tag: 'Entreprises',
                   items: [
                     'Prise en charge partielle ou totale selon votre branche',
-                    'Organisme inscrit au catalogue de référence des prestataires AFDAS (art. R.6316-2)',
+                    'Organisme inscrit au catalogue de référence des prestataires AFDAS et AKTO (art. R.6316-2)',
                     "L'accord de financement doit être communiqué avant le démarrage",
                     'En cas de prise en charge partielle, le reste est facturé au client',
                   ],
-                  cta: 'Nous contacter pour identifier votre OPCO',
+                  cta: 'Faire une demande',
                   href: '/#contact',
                 },
                 {
@@ -76,7 +108,7 @@ function FinancementsPage() {
                     'Déductible des obligations de participation à la formation',
                     'Convention de formation établie par GALACTUS Digital',
                   ],
-                  cta: 'Demander un devis',
+                  cta: 'Faire une demande',
                   href: '/#contact',
                 },
                 {
@@ -84,12 +116,20 @@ function FinancementsPage() {
                   tag: "Demandeurs d'emploi",
                   items: [
                     'AIF — Aide Individuelle à la Formation, instruite via Kairos',
-                    'POEI — Préparation Opérationnelle à l\'Emploi Individuelle, en lien avec un employeur',
                     'Dossier à constituer avec votre conseiller France Travail',
-                    'GALACTUS Digital est référencé sur Kairos et monte le dossier avec vous',
+                    'GALACTUS Digital est référencé sur Kairos et établit le devis à joindre à votre demande',
+                    // L'organisme ne promet aucune prise en charge : la décision
+                    // d'attribution d'une AIF appartient au conseiller France Travail,
+                    // formation par formation. Annoncer que « tout le catalogue reste
+                    // dans le périmètre d'une AIF » revenait à engager un financeur
+                    // tiers sur une décision qui n'appartient pas à l'organisme
+                    // (indicateur 1 du RNQ V2 : information exacte sur l'offre et
+                    // ses conditions de financement). Retiré le 29 octobre 2026.
+                    'La décision d\'attribution appartient à votre conseiller France Travail : l\'organisme de formation ne la préjuge pas',
+                    'Si l\'aide est accordée, elle est versée à l\'organisme sur facture déposée dans Chorus, au prorata des heures réalisées',
                   ],
-                  cta: 'Contactez votre conseiller France Travail',
-                  href: 'https://www.francetravail.fr',
+                  cta: 'Faire une demande',
+                  href: '/#contact',
                 },
                 {
                   title: 'Financement Régional & DOM',
@@ -100,19 +140,7 @@ function FinancementsPage() {
                     'Dispositifs régionaux selon votre territoire',
                     'GALACTUS Digital vous oriente vers les bons interlocuteurs',
                   ],
-                  cta: 'Nous consulter',
-                  href: '/#contact',
-                },
-                {
-                  title: 'Périmètre et reste à charge',
-                  tag: 'À lire avant toute demande',
-                  items: [
-                    "Les formations ne sont pas vendues en direct à un particulier qui les financerait lui-même",
-                    "Toute entrée en formation est adossée à un employeur ou à un financeur tiers",
-                    "Lorsque la prise en charge est partielle, le solde est réglé par l'employeur ou un financeur complémentaire",
-                    "TVA non applicable — article 261-4-4°-a du CGI",
-                  ],
-                  cta: 'Vérifier mon éligibilité',
+                  cta: 'Faire une demande',
                   href: '/#contact',
                 },
               ].map(f => (
@@ -131,8 +159,6 @@ function FinancementsPage() {
                   </ul>
                   <a
                     href={f.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
                     style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', fontFamily: 'var(--font-title)', fontSize: '0.75rem', letterSpacing: '0.10em', textTransform: 'uppercase', color: 'var(--g-red)', textDecoration: 'none' }}>
                     <ArrowRight size={14} /> {f.cta}
                   </a>
@@ -205,7 +231,7 @@ function FinancementsPage() {
                   Justification de l'assiduité
                 </h3>
                 <p style={{ fontSize: '0.83rem', lineHeight: 1.7, color: '#4a4a48', margin: '0 0 0.7rem' }}>
-                  <strong style={{ color: 'var(--g-black)' }}>Présentiel et classe virtuelle — </strong>
+                  <strong style={{ color: 'var(--g-black)' }}>Présentiel et FOAD — </strong>
                   feuilles d'émargement par demi-journée, signées par les participants et le
                   formateur.
                 </p>

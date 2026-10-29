@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../components/Header'
+import { TroisModalites } from '../components/TroisModalites'
 import { Footer } from '../components/Footer'
 import {
   Monitor, Wifi, Users, CheckCircle, Phone, Mail,
@@ -78,7 +79,7 @@ function FoadPage() {
               Formation à Distance (FOAD)
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
-              Le parcours Juniper JNCIA-Junos se tient en classe virtuelle : sessions live sur WEBEX, maquette Junos accessible à distance, accompagnement individualisé documenté à chaque étape. La même qualité que le présentiel, sans contrainte géographique.
+              Le parcours Juniper JNCIA-Junos se tient en FOAD : sessions live sur WEBEX, maquette Junos accessible à distance, accompagnement individualisé documenté à chaque étape. La même qualité que le présentiel, sans contrainte géographique.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
               {['Art. D.6313-3-1 Code du travail', 'Qualiopi — Indicateur 19', 'Qualiopi — Critère 3', 'Éligible OPCO', 'Formateur certifié éditeur'].map(b => (
@@ -198,7 +199,7 @@ function FoadPage() {
                 { num: '01', title: 'Audit des besoins', desc: 'Entretien avec votre responsable formation pour identifier les compétences à développer et les certifications visées.' },
                 { num: '02', title: 'Programme personnalisé', desc: 'Nous concevons un programme adapté à vos outils, vos processus et le niveau de vos équipes.' },
                 { num: '03', title: 'Convention & devis', desc: 'Signature de la convention de formation. Accompagnement sur les dispositifs de financement OPCO/PDC.' },
-                { num: '04', title: 'Formation & certification', desc: 'Sessions live WEBEX dédiées. Passage des examens officiels. Attestations remises à chaque participant.' },
+                { num: '04', title: 'Formation & certification', desc: "Sessions live WEBEX dédiées. Passage de l'examen officiel JN0-106, dont le voucher est compris dans le prix du devis. Attestations remises à chaque participant." },
               ].map(s => (
                 <div key={s.num} style={{ border: '1px solid rgba(187,187,187,0.3)', borderTop: '3px solid var(--g-red)', padding: '1.75rem', background: 'var(--g-white)' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.75rem' }}>{s.num}</div>
@@ -331,6 +332,7 @@ function FoadPage() {
           }
         `}</style>
 
+      <TroisModalites active="/foad" />
       </main>
       <Footer />
     </>

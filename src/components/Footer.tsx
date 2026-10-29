@@ -106,7 +106,7 @@ export function Footer() {
             <div style={{ fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#E41F26', marginBottom: '0.4rem' }}>Modalités</div>
             <ul className="footer-links" style={{ marginBottom: '0.75rem' }}>
               <li><a href="/elearning">E-learning tutoré — Cisco</a></li>
-              <li><a href="/foad">Classe virtuelle FOAD — Juniper</a></li>
+              <li><a href="/foad">FOAD — Juniper JNCIA-Junos</a></li>
               <li><a href="/presentiel">Présentiel — Microsoft</a></li>
             </ul>
             <div style={{ fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#E41F26', marginBottom: '0.4rem' }}>Formats</div>

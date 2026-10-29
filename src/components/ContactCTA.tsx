@@ -30,8 +30,8 @@ const TERRITOIRES = [
 // Les trois axes commerciaux. Le choix détermine la liste des formations.
 const MODALITES = [
   "E-learning tutoré — Cisco Networking Academy",
-  "Présentiel — Microsoft, CCNA accéléré",
-  "FOAD classe virtuelle — Juniper JNCIA-Junos",
+  "Présentiel — Microsoft, CCNA v2.0 complet, CCNP ENCOR et ENARSI",
+  "FOAD — Juniper JNCIA-Junos",
 ]
 const MOD_ELEARNING  = MODALITES[0]
 const MOD_PRESENTIEL = MODALITES[1]
@@ -63,7 +63,6 @@ const FINANCEMENT_ENTREPRISE = [
 ]
 const FINANCEMENT_PARTICULIER = [
   "AIF France Travail (demandeur d'emploi)",
-  "POEI France Travail",
   "Dispositif régional ou FSE+ d'une collectivité",
 ]
 
@@ -81,6 +80,7 @@ type FormState = {
   /** Session du calendrier retenue — inter en présentiel ou FOAD uniquement */
   session: string
   financement: string
+  identifiantFT: string
   message: string
   rgpd: boolean
   /** Tarif e-learning porté à la connaissance du demandeur */
@@ -91,7 +91,7 @@ const INIT: FormState = {
   nom: "", prenom: "", email: "", telephone: "",
   profil: "", entreprise: "", format: "",
   territoire: "", modalite: "", formation: "", session: "",
-  financement: "", message: "", rgpd: false, tarifLu: false,
+  financement: "", identifiantFT: "", message: "", rgpd: false, tarifLu: false,
 }
 
 const WEB3FORMS_KEY = "035246e2-1884-48e8-bc56-411d7aee84e6"
@@ -180,6 +180,11 @@ export function ContactCTA() {
 
   const financements = estEntreprise ? FINANCEMENT_ENTREPRISE : FINANCEMENT_PARTICULIER
 
+  // Sur une AIF, le conseiller France Travail ne peut rattacher le devis déposé
+  // dans Kairos au dossier du candidat sans son identifiant. Une demande sans
+  // identifiant oblige à un aller-retour : on le réclame tout de suite.
+  const aif = form.financement.startsWith("AIF France Travail")
+
   // Un particulier rejoint nécessairement une session inter : il ne commande
   // pas de session dédiée. Une entreprise choisit son format d'abord.
   const estIntra      = estEntreprise && form.format === FORMAT_INTRA
@@ -216,7 +221,12 @@ export function ContactCTA() {
       // Changer de profil remet à zéro les champs qui en dépendent
       if (k === "profil") {
         next.financement = ""
+        next.identifiantFT = ""
         if (val === PROFIL_PARTICULIER) { next.entreprise = ""; next.format = "" }
+      }
+      // Quitter l'AIF vide l'identifiant : le champ disparaît, sa valeur aussi.
+      if (k === "financement" && !String(val).startsWith("AIF France Travail")) {
+        next.identifiantFT = ""
       }
       // La session retenue dépend de la modalité et du format
       if (k === "modalite" || k === "format") { next.session = ""; next.territoire = "" }
@@ -250,11 +260,12 @@ export function ContactCTA() {
     if (form.formation === "")           m.push("la formation")
     if (form.territoire === "")          m.push("le territoire")
     if (form.financement === "")         m.push("la prise en charge")
+    if (aif && form.identifiantFT.trim() === "") m.push("votre identifiant France Travail")
     if (tarif !== null && !form.tarifLu) m.push("la prise de connaissance du tarif")
     if (form.message.trim() === "")      m.push("la description de votre projet")
     if (!form.rgpd)                      m.push("la prise de connaissance de la notice de protection des données")
     return m
-  }, [form, estEntreprise, surCalendrier, alerte, tarif])
+  }, [form, estEntreprise, surCalendrier, alerte, tarif, aif])
 
   const complet = manquants.length === 0
 
@@ -284,7 +295,9 @@ export function ContactCTA() {
           + (form.session ? `Session retenue : ${form.session}\n` : ``)
           + (alerte ? `DEMANDE D'ALERTE — aucune session inter n'est programmée pour cette formation\n` : ``)
           + (tarif !== null ? `Tarif porté à connaissance : ${tarif.toLocaleString("fr-FR")} €\n` : ``)
-          + `Prise en charge envisagée : ${form.financement}\n\n`
+          + `Prise en charge envisagée : ${form.financement}\n`
+          + (aif ? `Identifiant France Travail : ${form.identifiantFT}\n` : ``)
+          + `\n`
           + `Message :\n${form.message}`,
       }
       const res = await fetch("https://api.web3forms.com/submit", {
@@ -416,7 +429,7 @@ export function ContactCTA() {
                   {form.profil === PROFIL_PARTICULIER && (
                     <span style={aide}>
                       Une inscription individuelle suppose une prise en charge par France Travail
-                      (AIF ou POEI), une collectivité ou un employeur : indiquez-la ci-dessous, nous
+                      (AIF), une collectivité ou un employeur : indiquez-la ci-dessous, nous
                       montons le dossier avec vous. Si une part restait à votre charge, vous disposez
                       de 14 jours pour vous rétracter après signature.{" "}
                       <a href="/retractation" target="_blank" rel="noopener noreferrer"
@@ -582,6 +595,30 @@ export function ContactCTA() {
                   </span>
                 </div>
 
+                {/* Identifiant France Travail — n'apparaît que sur une AIF */}
+                {aif && (
+                  <div style={fld}>
+                    <label style={lbl}>Votre identifiant France Travail *</label>
+                    <input
+                      style={{ ...inp, ...(vu.identifiantFT && form.identifiantFT.trim() === "" ? inpKo : {}) }}
+                      type="text"
+                      required
+                      value={form.identifiantFT}
+                      onChange={set("identifiantFT")}
+                      onBlur={quitte("identifiantFT")}
+                      placeholder="Identifiant de votre espace France Travail"
+                    />
+                    {vu.identifiantFT && form.identifiantFT.trim() === "" && (
+                      <span style={err}>Sans cet identifiant, votre conseiller ne peut pas rattacher le devis à votre dossier.</span>
+                    )}
+                    <span style={aide}>
+                      Il figure sur votre espace personnel France Travail et sur vos courriers.
+                      C'est lui qui permet à votre conseiller de rattacher à votre dossier le devis
+                      que nous déposons dans Kairos.
+                    </span>
+                  </div>
+                )}
+
                 {/* Message */}
                 <div style={fld}>
                   <label style={lbl}>Votre projet *</label>
@@ -717,7 +754,7 @@ export function ContactCTA() {
               </div>
               {[
                 ["OPCO", "Entreprise — prise en charge possible"],
-                ["AIF · POEI", "France Travail — demandeur d'emploi"],
+                ["AIF", "France Travail — demandeur d'emploi"],
                 ["Plan de formation", "Entreprise — toutes tailles"],
               ].map(([label, detail]) => (
                 <div key={label} style={{ display: "flex", justifyContent: "space-between", alignItems: "center", padding: "0.45rem 0", borderBottom: "1px solid rgba(255,255,255,0.05)" }}>

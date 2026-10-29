@@ -3,7 +3,7 @@ import { useState, useMemo, useEffect } from "react"
 import { Header } from "../../components/Header"
 import { Footer } from "../../components/Footer"
 import { ParcoursMetier } from "../../components/ParcoursMetier"
-import { FORMATIONS, FAMILLES, MENTION_PRIX_ELEARNING, getDetailPrixElearning, getLigneDiplome } from "../../data/catalogue"
+import { FORMATIONS, FAMILLES, MENTION_PRIX_ELEARNING, getDetailPrixElearning, getLigneDiplome, getMentionCertification } from "../../data/catalogue"
 import type { Formation } from "../../data/catalogue"
 import { ArrowRight, Clock, Award, Phone, Mail, Filter, Calendar, Check } from "lucide-react"
 import { getProchaineSession } from "../../data/sessions"
@@ -97,6 +97,12 @@ function Card({ f }: { f: Formation }) {
         <span style={{ display: "flex", alignItems: "center", gap: ".3rem", fontSize: ".78rem", color: "#666" }}>
           <Award size={13} color={color} /> {getLigneDiplome(f)}
         </span>
+        {/* Comprise ou en option : l'acheteur doit le savoir avant d'ouvrir la fiche. */}
+        {getMentionCertification(f) && (
+          <span style={{ fontSize: ".72rem", color: f.voucher ? "var(--g-red)" : "#8a8a88", fontWeight: f.voucher ? 600 : 400, marginTop: ".15rem", display: "block" }}>
+            {getMentionCertification(f)}
+          </span>
+        )}
       </div>
 
       {/* modalités */}
@@ -217,9 +223,9 @@ function FormationsPage() {
               Certifications IT
             </h1>
             <p style={{ fontSize: "1rem", color: "rgba(255,255,255,.65)", maxWidth: "720px", lineHeight: 1.8, marginBottom: "2rem" }}>
-              {FORMATIONS.length} formations certifiantes officielles dispensées par des formateurs accrédités éditeurs,
+              {FORMATIONS.length} formations certifiantes officielles répondant aux exigences des éditeurs,
               dont {nbSocle} formations d'entrée sans aucun prérequis pour les personnes en reconversion.
-              Présentiel, FOAD et E-learning — dans les territoires ultramarins et en France hexagonale.
+              Présentiel, FOAD et e-learning tutoré — dans les territoires ultramarins et en France hexagonale.
             </p>
             {/* Stats */}
             <div style={{ display: "flex", gap: "2.5rem", flexWrap: "wrap" }}>

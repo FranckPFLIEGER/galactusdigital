@@ -1,10 +1,10 @@
 import { useIntersection } from '../hooks/useIntersection'
 
-const reasons = [
+const reasons: { num: string; title: string; desc: string; lien?: { label: string; href: string } }[] = [
   {
     num: '01',
     title: 'Expertise certifiée par les éditeurs',
-    desc: "Nos formateurs sont eux-mêmes certifiés au plus haut niveau par chaque éditeur. Pas de sous-traitance — un expert dédié par domaine, reconnu officiellement.",
+    desc: "Nos formations respectent les exigences des éditeurs : programmes officiels, plateformes officielles, examens officiels. Le formateur qui anime est lui-même certifié au plus haut niveau par l'éditeur du domaine.",
   },
   {
     num: '02',
@@ -14,12 +14,13 @@ const reasons = [
   {
     num: '03',
     title: 'Taux de réussite aux examens',
-    desc: "Notre ingénierie pédagogique est conçue pour maximiser la réussite. Sur la période 2023-2025, 100 % des candidats effectivement présentés à l'examen ont obtenu la certification visée — modalités de calcul et pièces justificatives publiées sur la page Démarche qualité.",
+    desc: "Notre ingénierie pédagogique est conçue pour maximiser la réussite. Sur la période 2023-2025, 100 % des candidats effectivement présentés à l'examen ont obtenu la certification visée — modalités de calcul et pièces justificatives publiées sur la page ",
+    lien: { label: 'Démarche qualité', href: '/demarche-qualite' },
   },
   {
     num: '04',
     title: 'Accompagnement de bout en bout',
-    desc: "De l'audit des besoins à la présentation de l'examen, nous accompagnons chaque apprenant et chaque entreprise à chaque étape du parcours.",
+    desc: "Du positionnement écrit à la présentation de l'examen, nous accompagnons chaque apprenant et chaque entreprise à chaque étape — en présentiel, en FOAD comme en e-learning tutoré, un référent pédagogique est désigné et joignable.",
   },
 ]
 
@@ -55,7 +56,15 @@ export function WhyUs() {
                   <div className="whyus-num">{r.num}</div>
                   <div>
                     <p className="whyus-item-title">{r.title}</p>
-                    <p className="whyus-item-desc">{r.desc}</p>
+                    <p className="whyus-item-desc">
+                      {r.desc}
+                      {r.lien && (
+                        <a href={r.lien.href} style={{ color: 'var(--g-red)', textDecoration: 'underline', textUnderlineOffset: '2px' }}>
+                          {r.lien.label}
+                        </a>
+                      )}
+                      {r.lien && '.'}
+                    </p>
                   </div>
                 </div>
               ))}

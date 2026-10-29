@@ -7,7 +7,7 @@ import { CalendarClock, ArrowRight } from 'lucide-react'
 //
 // Remplace le bloc dupliqué dans les 50 fiches. Tout vient du catalogue :
 //  - Cisco Networking Academy  : e-learning tutoré, prix public
-//  - Microsoft / Juniper / CCNA accéléré : présentiel, sur devis
+//  - Microsoft / Juniper / CCNA v2.0 complet : présentiel, sur devis
 // Si une session est programmée, un lien vers le calendrier apparaît.
 // Le lien devis mène au formulaire avec la formation pré-sélectionnée.
 //

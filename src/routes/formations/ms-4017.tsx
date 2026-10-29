@@ -95,11 +95,11 @@ function FormationPage() {
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
                                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=ms-4017' },
+                { icon: <Calendar size={14} />, text: 'Voir le calendrier', href: '/calendrier?f=ms-4017' },
               ].map((m, i) => (
                 m.href ? (
                   <a key={i} href={m.href} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: 'var(--g-red)', padding: '0.35rem 0.8rem' }}>
-                    {m.icon}<span>Voir le calendrier</span>
+                    {m.icon}<span>{m.text}</span>
                   </a>
                 ) : (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>

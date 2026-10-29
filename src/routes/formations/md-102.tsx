@@ -38,8 +38,8 @@ const DATA = {
     langue: 'Français / Anglais',
     organisme: 'Microsoft (Pearson VUE)',
     format: 'QCM, scénarios et questions à réponses multiples',
-    score: '700 / 1000',
-    note: "La certification MD-102 est valable 12 mois. Renouvellement gratuit via une évaluation en ligne sur Microsoft Learn. S'associe naturellement à AZ-104 (admin cloud) ou SC-900 (sécurité). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.",
+    score: "Défini par l'éditeur (variable)",
+    note: "La certification MD-102 est valable 12 mois. Renouvellement gratuit via une évaluation en ligne sur Microsoft Learn. S'associe naturellement à AZ-104 (admin cloud) ou SC-900 (sécurité). Le passage de l'examen de certification est proposé en option : le voucher Pearson VUE n'est pas compris dans le tarif de la formation.",
   },
   methodes: [
     "Formation dispensée par un formateur certifié Microsoft (Microsoft Certified Trainer — MCT)",
@@ -116,12 +116,12 @@ function FormationPage() {
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
                                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Award size={14} />, text: '2 390 € (présentiel)' },
-                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=md-102' },
+                { icon: <Award size={14} />, text: '1 690 € (présentiel)' },
+                { icon: <Calendar size={14} />, text: 'Voir le calendrier', href: '/calendrier?f=md-102' },
               ].map((m, i) => (
                 m.href ? (
                   <a key={i} href={m.href} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: 'var(--g-red)', padding: '0.35rem 0.8rem' }}>
-                    {m.icon}<span>Voir le calendrier</span>
+                    {m.icon}<span>{m.text}</span>
                   </a>
                 ) : (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>

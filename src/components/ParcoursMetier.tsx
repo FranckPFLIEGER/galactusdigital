@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ChevronDown, ArrowRight, Check, RefreshCw } from "lucide-react"
+import { ArrowRight, Check, ChevronDown, Monitor, RefreshCw } from "lucide-react"
 import { PARCOURS, heuresParcours, heuresSocle } from "../data/parcours"
 import type { Parcours, BlocParcours } from "../data/parcours"
 
@@ -56,6 +56,18 @@ function BlocBloc({ bloc, col }: { bloc: BlocParcours; col: string }) {
       <div style={{ fontSize: ".74rem", color: "#8a8a88", fontStyle: "italic", lineHeight: 1.45, marginTop: ".15rem" }}>
         {bloc.intention}
       </div>
+
+      {/* Modalité du bloc — « comment ça se passe » se lit avant « combien ça
+          coûte » chez quelqu'un qui se reconvertit. Une seule ligne, au même
+          endroit sur tous les blocs, pour que l'œil la trouve sans chercher. */}
+      {bloc.modalite && (
+        <div style={{ display: "flex", alignItems: "flex-start", gap: ".35rem", marginTop: ".4rem" }}>
+          <Monitor size={11} color="#E41F26" style={{ flexShrink: 0, marginTop: "3px" }} />
+          <span style={{ fontSize: ".70rem", color: "#6a6a68", lineHeight: 1.5 }}>
+            {bloc.modalite}
+          </span>
+        </div>
+      )}
 
       {socle && (
         <div style={{ display: "inline-flex", alignItems: "center", gap: ".3rem", marginTop: ".45rem", padding: ".2rem .5rem", background: "rgba(228,31,38,.08)", border: "1px solid rgba(228,31,38,.25)" }}>

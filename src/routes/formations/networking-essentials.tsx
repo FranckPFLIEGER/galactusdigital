@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/networking-essentials')({
   head: () => ({
     meta: [
       { title: "Networking Essentials Cisco Networking Academy — Formation réseaux | GALACTUS Digital" },
-      { name: "description", content: "Formation Cisco Networking Academy Networking Essentials. 35 h en e-learning tutoré. Fondamentaux des réseaux, adressage IP, Packet Tracer. Badge et certificat NetAcad. Certifié Qualiopi." },
+      { name: "description", content: "Formation Cisco Networking Academy Networking Essentials. 35 h en e-learning tutoré. Fondamentaux des réseaux, adressage IP, Packet Tracer. Badge et certificat Cisco Networking Academy. Certifié Qualiopi." },
     ],
   }),
 })
@@ -38,7 +38,7 @@ const DATA = {
     langue: 'Français',
     organisme: 'Cisco Networking Academy (certificat de complétion)',
     format: 'QCM et questions pratiques',
-    score: '700 sur 1000',
+    score: "70 % (évaluation finale)",
     note: ``,
   },
   methodes: [
@@ -46,11 +46,11 @@ const DATA = {
     "Accès à la plateforme Cisco Networking Academy 24h/24 pendant et après la formation",
     "Travaux pratiques sur Cisco Packet Tracer (simulateur officiel Cisco)",
     "Badge numérique Cisco Networking Academy remis à l'issue du parcours — visible sur Credly",
-    "Quiz de validation des acquis à chaque fin de module sur NetAcad",
+    "Quiz de validation des acquis à chaque fin de module sur Cisco Networking Academy",
     "Auto-évaluation formative en début et en fin de formation",
     "Évaluation formateur selon 4 niveaux : non évalué · non acquis · en cours · acquis",
     "Plan de travail individuel remis avant démarrage (Circ. DGEFP/MOC/2026/30 Art. 3)",
-    "Supports de cours officiels Cisco inclus (version numérique NetAcad)",
+    "Supports de cours officiels Cisco inclus (version numérique Cisco Networking Academy)",
     "Certification Cisco Networking Essentials envoyée par mail à l'issue du parcours",
     "Attestation de formation, de présence et plan de travail individuel (Circ. DGEFP/MOC/2026/30 Art. 3)",
     "Examen final du cours Cisco Networking Academy intégré au programme — l'examen de certification surveillé reste optionnel et à la charge du candidat",
@@ -115,12 +115,18 @@ function FormationPage() {
             <div style={{ display: 'flex', gap: '2rem', flexWrap: 'wrap' }}>
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
-                                { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=networking-essentials' },
+                /* E-learning tutoré : un apprenant, un tuteur, entrées permanentes.
+                   Annoncer « 4 à 12 participants » décrivait une session de groupe
+                   qui n'existe pas dans cette modalité. Corrigé le 29 octobre 2026. */
+                                { icon: <Users size={14} />, text: 'Parcours individuel' },
+                /* L'e-learning tutoré n'a pas de session au calendrier : entrées
+                   permanentes, accès ouvert sous 72 h. Le bouton mène donc à la
+                   demande de devis. Seuls le présentiel et la FOAD sont calendés. */
+                { icon: <Mail size={14} />, text: 'Demander un devis', href: '/#contact' },
               ].map((m, i) => (
                 m.href ? (
                   <a key={i} href={m.href} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: 'var(--g-red)', padding: '0.35rem 0.8rem' }}>
-                    {m.icon}<span>Voir le calendrier</span>
+                    {m.icon}<span>{m.text}</span>
                   </a>
                 ) : (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>
@@ -303,9 +309,9 @@ function FormationPage() {
                 {[
                   { ref: 'Art. L.6313-1', title: 'Action de formation', desc: 'Formation reconnue au sens du Code du travail.' },
                   { ref: 'Qualiopi Ind. 4', title: 'Convocation', desc: 'Convocation complète envoyée avant démarrage.' },
-                  { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz NetAcad + auto-évaluation selon 4 niveaux.' },
+                  { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: 'Quiz Cisco Networking Academy + auto-évaluation selon 4 niveaux.' },
                                     { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de toute formation à distance, conformément à la circulaire DGEFP du 17 février 2026." },
-                  { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès NetAcad vérifié avant démarrage.' },
+                  { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Accès Cisco Networking Academy vérifié avant démarrage.' },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
                     <div style={{ flexShrink: 0 }}><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.55rem', whiteSpace: 'nowrap' }}>{c.ref}</div></div>

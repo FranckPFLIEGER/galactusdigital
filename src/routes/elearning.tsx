@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../components/Header'
+import { TroisModalites } from '../components/TroisModalites'
 import { Footer } from '../components/Footer'
 import {
   BookOpen, Award, Clock, CheckCircle, Phone, Mail,
@@ -80,8 +81,8 @@ function ElearningPage() {
               {[
                 { icon: <Clock size={24} color="white" />, title: 'Rythme libre', desc: "Vous avancez selon vos disponibilités, sans contrainte d'horaire. Idéal pour les professionnels en activité dans les territoires ultramarins avec des contraintes opérationnelles fortes." },
                 { icon: <UserCheck size={24} color="white" />, title: 'Tuteur dédié', desc: 'Un tuteur certifié éditeur vous est assigné pour toute la durée du parcours. Il répond à vos questions, valide vos avancées et vous prépare à la certification officielle.' },
-                { icon: <Award size={24} color="white" />, title: 'Certifications officielles', desc: "Les parcours suivent les programmes officiels Cisco Networking Academy. Chaque cours délivre son badge et son certificat NetAcad, et le tuteur prépare à l'examen de certification de l'éditeur." },
-                { icon: <Zap size={24} color="white" />, title: 'Accès rapide', desc: 'Démarrage sous 72 h après inscription. Les accès à la plateforme NetAcad sont activés dès la validation administrative.' },
+                { icon: <Award size={24} color="white" />, title: 'Certifications officielles', desc: "Les parcours suivent les programmes officiels Cisco Networking Academy. Chaque cours délivre son badge et son certificat Cisco Networking Academy, et le tuteur prépare à l'examen de certification de l'éditeur." },
+                { icon: <Zap size={24} color="white" />, title: 'Accès rapide', desc: 'Démarrage sous 72 h après inscription. Les accès à la plateforme Cisco Networking Academy sont activés dès la validation administrative.' },
                 { icon: <BarChart2 size={24} color="white" />, title: 'Suivi de progression', desc: 'Tableau de bord personnalisé sur chaque plateforme. Votre tuteur suit votre progression module par module et vous alerte si vous décrochez du rythme prévu.' },
                 { icon: <BookOpen size={24} color="white" />, title: 'Contenus officiels', desc: 'Accès aux contenus pédagogiques officiels de Cisco Networking Academy : labs virtuels Packet Tracer, modules interactifs et QCM de validation des acquis.' },
               ].map(a => (
@@ -95,50 +96,7 @@ function ElearningPage() {
           </div>
         </section>
 
-        {/* ── E-learning vs Présentiel ── */}
-        <section style={{ background: 'var(--g-black)', padding: '4rem 2rem' }}>
-          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
-            <h2 className="section-h2-light">Nos trois modalités</h2>
-            <div className="g-rule" />
-            <div className="el-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
-              {[
-                {
-                  titre: 'E-learning tutoré', href: '/elearning', active: true,
-                  items: ['Catalogue Cisco Networking Academy','Parcours asynchrone — avancez quand vous voulez','Tuteur certifié disponible par messagerie','Accès plateforme ouvert un an','Tarif public ; badge et certificat de l\'éditeur compris'],
-                },
-                {
-                  titre: 'FOAD — classe virtuelle', href: '/foad', active: false,
-                  items: ['Parcours Juniper JNCIA-Junos','Sessions live à horaires fixes sur WEBEX','Interaction directe avec le formateur','17 ateliers sur maquette Junos à distance','Devis sur mesure'],
-                },
-                {
-                  titre: 'Présentiel', href: '/presentiel', active: false,
-                  items: ['Catalogue Microsoft','Sessions en salle, inter ou intra-entreprise','Interaction directe avec le formateur','Ateliers pratiques sur équipements réels','Devis sur mesure selon le territoire'],
-                },
-              ].map(c => (
-                <div key={c.titre} style={{ background: c.active ? 'rgba(228,31,38,0.07)' : 'rgba(255,255,255,0.03)', border: c.active ? '1px solid rgba(228,31,38,0.25)' : '1px solid rgba(255,255,255,0.06)', borderTop: `3px solid ${c.active ? 'var(--g-red)' : 'rgba(255,255,255,0.12)'}`, padding: '2rem' }}>
-                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: c.active ? '#fff' : 'rgba(255,255,255,0.45)', marginBottom: '1.25rem', display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                    {c.titre}
-                    {c.active && <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.12em', background: 'var(--g-red)', color: '#fff', padding: '0.15rem 0.5rem' }}>Cette page</span>}
-                  </div>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                    {c.items.map((item, i) => (
-                      <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.86rem', color: c.active ? 'rgba(255,255,255,0.75)' : 'rgba(255,255,255,0.35)' }}>
-                        <CheckCircle size={15} color={c.active ? '#E41F26' : 'rgba(255,255,255,0.2)'} style={{ flexShrink: 0, marginTop: '2px' }} />
-                        {item}
-                      </li>
-                    ))}
-                  </ul>
-                  {!c.active && (
-                    <a href={c.href} style={{ display: 'inline-block', marginTop: '1.25rem', fontSize: '0.78rem', color: 'rgba(255,255,255,0.40)', textDecoration: 'underline' }}>
-                      Voir cette modalité →
-                    </a>
-                  )}
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
-
+        <TroisModalites active="/elearning" />
         {/* ── Comment ça se passe ── */}
         <section style={{ background: 'var(--g-offwhite)', padding: '4rem 2rem' }}>
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
@@ -147,9 +105,9 @@ function ElearningPage() {
             <div className="el-grid-4" style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem', marginTop: '2rem' }}>
               {[
                 { num: '01', title: 'Inscription', desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement OPCO monté avec vous.' },
-                { num: '02', title: 'Accès activé', desc: 'Sous 72 h, vous recevez vos accès NetAcad. Votre tuteur vous contacte pour un échange de cadrage.' },
+                { num: '02', title: 'Accès activé', desc: 'Sous 72 h, vous recevez vos accès Cisco Networking Academy. Votre tuteur vous contacte pour un échange de cadrage.' },
                 { num: '03', title: 'Parcours tutoré', desc: 'Vous avancez à votre rythme. Votre tuteur suit votre progression, répond à vos questions et valide chaque module complété.' },
-                { num: '04', title: 'Certification', desc: 'Examen final du cours, badge et certificat Cisco Networking Academy. Attestation de formation et relevé de complétion remis. Le voucher d\'examen surveillé Pearson VUE est compris sur le CCNA v2.0 parcours complet et les deux parcours CCNP Enterprise ; sur les autres cours, le candidat qui souhaite présenter la certification de l\'éditeur acquiert son voucher auprès du centre agréé.' },
+                { num: '04', title: 'Certification', desc: 'Examen final du cours, badge et certificat Cisco Networking Academy. Attestation de formation et relevé de complétion remis. Le voucher d\'examen surveillé Pearson VUE est compris sur le CCNA v2.0 parcours complet, les deux parcours CCNP Enterprise, CCNA Cybersecurity et CCNA Automation.' },
               ].map(s => (
                 <div key={s.num} style={{ border: '1px solid rgba(187,187,187,0.3)', borderTop: '3px solid var(--g-red)', padding: '1.75rem 1.5rem', background: 'var(--g-white)' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.75rem' }}>{s.num}</div>
@@ -182,7 +140,7 @@ function ElearningPage() {
               ))}
             </div>
             <p style={{ fontSize: '0.82rem', color: '#888', marginTop: '1.25rem', fontStyle: 'italic' }}>
-              * {"D'autres parcours sont disponibles — consultez notre"} <a href="/calendrier" style={{ color: 'var(--g-red)', fontWeight: 600, textDecoration: 'none' }}>calendrier en ligne</a> {" ou contactez-nous."}
+              * {"D'autres parcours sont disponibles — "} <a href="/#contact" style={{ color: 'var(--g-red)', fontWeight: 600, textDecoration: 'none' }}>demandez un devis</a> {". L'e-learning tutoré n'a pas de session au calendrier : les entrées sont permanentes et les accès ouverts sous 72 heures."}
             </p>
           </div>
         </section>
@@ -197,14 +155,19 @@ function ElearningPage() {
                 <div className="g-rule" />
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                   {[
-                    'Parcours individuel ou petit groupe (2 à 6 apprenants)',
+                    'Parcours individuel — rythme et plan de travail propres à chaque apprenant',
                     'Tuteur certifié éditeur assigné dès le démarrage',
-                    'Accès 24h/24 à la plateforme NetAcad',
+                    'Accès 24h/24 à la plateforme Cisco Networking Academy',
                     'Labs virtuels Cisco Packet Tracer inclus',
                     'Évaluations et QCM corrigés par le tuteur',
                     'Suivi documenté de la progression par module',
                     'Messagerie directe avec le tuteur sous 24 h ouvrées',
                     'Badge et certificat Cisco Networking Academy délivrés à chaque cours',
+                    // Demandé le 28/10/2026 : la liste ne disait pas que le voucher est
+                    // compris sur les parcours certifiants. Les cinq parcours concernés
+                    // sont ceux dont le catalogue porte un voucher.
+                    "Voucher d'examen Pearson VUE compris sur le CCNA v2.0 parcours complet, "
+                    + 'les deux parcours CCNP Enterprise, CCNA Cybersecurity et CCNA Automation',
                     'Attestation de formation et relevé de complétion',
                     'Éligible OPCO, plan de développement des compétences',
                   ].map((item, i) => (
@@ -258,7 +221,7 @@ function ElearningPage() {
             </p>
             <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' }}>
               <a href="tel:+33781074746" className="btn-red"><Phone size={16} /> Nous appeler</a>
-              <a href="/calendrier" className="btn-ghost"><Calendar size={16} /> Voir le calendrier</a>
+              <a href="/#contact" className="btn-ghost"><Calendar size={16} /> Demander un devis</a>
             </div>
           </div>
         </section>

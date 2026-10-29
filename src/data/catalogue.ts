@@ -9,7 +9,7 @@
 // Elles ouvrent le Bloc 0 de chaque parcours métier (voir data/parcours.ts).
 //
 // MAJ septembre 2026 — CCNP Security retiré. Les formations
-// Cisco Networking Academy, sauf le CCNA v2.0 accéléré, sont proposées en
+// Cisco Networking Academy, sauf le CCNA v2.0 complet, sont proposées en
 // e-learning tutoré, à un tarif public. Le catalogue Microsoft n'est PAS
 // proposé en e-learning : ces formations restent en présentiel, sur devis,
 // leur coût dépendant du territoire et de la taille du groupe.
@@ -20,17 +20,32 @@
 // s'arrête donc au CCNA Cybersecurity pour la voie défensive, et à Ethical
 // Hacker pour la voie offensive.
 //
-// Voucher d'examen surveillé Pearson VUE : compris dans le CCNA v2.0 parcours
-// complet et dans les deux parcours CCNP Enterprise (ENCOR, ENARSI). Tous les
-// autres cours Networking Academy délivrent le badge et le certificat Cisco
-// Networking Academy, et leur tarif ne comprend aucun voucher.
+// VOUCHER D'EXAMEN SURVEILLÉ PEARSON VUE — liste à jour au 28 octobre 2026.
+// Compris dans :
+//   · CCNA v2.0 parcours complet          (champ voucher: 350)
+//   · CCNP Enterprise ENCOR               (champ voucher: 390)
+//   · CCNP Enterprise ENARSI              (champ voucher: 290)
+//   · CCNA Cybersecurity                  (champ voucher: 350)
+//   · CCNA Automation                     (champ voucher: 350)
+//   · JNCIA-Junos                         (vendu sur devis, voucher intégré)
 //
-// MAJ 24 octobre 2026 — Le champ `prix.elearning` est le PRIX TOTAL À PAYER,
-// voucher compris (art. L.112-1 du code de la consommation). Les tarifs CCNP
-// Enterprise étaient saisis hors voucher : ENCOR passe de 920 à 1 310 € et
-// ENARSI de 820 à 1 110 €, soit le tarif pédagogique inchangé plus le voucher
-// déjà déclaré. Toute nouvelle entrée doit suivre la même règle : si le
-// voucher est annoncé compris, il est DANS `prix.elearning`.
+// PAS compris : tout le catalogue Microsoft (décision du 28 octobre 2026). Les
+// prix par niveau — 890 € Applied Skills, 990 € Fundamentals, 1 690 € Associate,
+// 1 890 € Associate avancé — rémunèrent la formation seule. Le candidat acquiert
+// son voucher Pearson VUE séparément.
+// Tous les autres cours Networking Academy délivrent le badge et le certificat
+// Cisco Networking Academy, et leur tarif ne comprend aucun voucher.
+//
+// Cette liste est reprise telle quelle sur /certifications, /elearning et
+// /demarche-pedagogique. Toute modification ici doit être répercutée sur ces
+// trois pages, sinon le site promet un voucher à un endroit et le refuse à un
+// autre — c'est arrivé jusqu'au 28 octobre 2026 pour CCNA Cybersecurity et
+// CCNA Automation, dont les fiches disaient « non compris » alors que leur
+// prix et leur champ voucher disaient l'inverse.
+//
+// Le champ `prix.elearning` est le PRIX TOTAL À PAYER, voucher compris
+// (art. L.112-1 du code de la consommation). Toute nouvelle entrée suit la
+// même règle : si le voucher est annoncé compris, il est DANS le prix.
 //
 // MAJ 24 octobre 2026 — IT Essentials ne prépare plus la certification
 // CompTIA A+ : le cours délivre le certificat de fin de cours Cisco Networking
@@ -46,7 +61,7 @@
 //
 // Une seule exception : le CCNA v2.0 parcours complet (ccna-cisco) déclare les
 // deux modalités. L'e-learning est l'offre standard — le pack des 3 modules
-// ITN · SRWE · ENSA. Le présentiel accéléré de 5 jours reste proposé lors des
+// ITN · SRWE · ENSA. Le présentiel de 5 jours reste proposé lors des
 // sessions programmées, visibles au calendrier.
 //
 // La FOAD est réservée au parcours Juniper (JNCIA-Junos), seule entrée du
@@ -101,7 +116,7 @@ export interface Formation {
    * la sanction de fin de cours. Réservé aux parcours vendus pour la
    * certification éditeur elle-même — CCNA v2.0 complet, CCNA Cybersecurity,
    * CCNP ENCOR et ENARSI : c'est l'examen qui est l'objet de l'achat, le badge
-   * et le certificat NetAcad n'y sont qu'accessoires.
+   * et le certificat Cisco Networking Academy n'y sont qu'accessoires.
    */
   examenSeul?: boolean
 }
@@ -127,7 +142,10 @@ export const EDITEURS: Record<string, { label: string; badge?: string }> = {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CATALOGUE PRINCIPAL — 51 formations
+// CATALOGUE PRINCIPAL — 49 formations
+// Le commentaire annonçait 51 : il datait d'avant le retrait de deux entrées et
+// contredisait le décompte réel, celui que publient les pages du site. Corrigé
+// le 29 octobre 2026 — à mettre à jour en même temps que FORMATIONS[].
 // prix: null = sur demande / 0 = inclus dans pack / nombre = tarif public en €
 // ─────────────────────────────────────────────────────────────────────────────
 export const FORMATIONS: Formation[] = [
@@ -188,7 +206,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Rôle et fonctionnement des systèmes d\'exploitation, outils d\'administration Windows, premières commandes et notions de sécurité sous Linux.',
-    prix: { presentiel: null, foad: null, elearning: 210 },
+    prix: { presentiel: null, foad: null, elearning: 180 },
     prixPublicElearning: true,
     voucher: 0,
     socle: true,
@@ -203,7 +221,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Périphériques, supports et protocoles réseau manipulés dans Packet Tracer, jusqu\'à la construction et au test d\'un réseau local simple.',
-    prix: { presentiel: null, foad: null, elearning: 270 },
+    prix: { presentiel: null, foad: null, elearning: 240 },
     prixPublicElearning: true,
     voucher: 0,
     socle: true,
@@ -233,7 +251,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Installation, configuration de base et premières commandes Linux en ligne de commande, dans un environnement guidé pas à pas.',
-    prix: { presentiel: null, foad: null, elearning: 190 },
+    prix: { presentiel: null, foad: null, elearning: 180 },
     prixPublicElearning: true,
     voucher: 0,
     socle: true,
@@ -278,7 +296,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'CCST IT Support',
     modalites: ['E-learning'],
     description: 'Préparation au métier de technicien support : matériel, Windows et macOS, dépannage réseau et relation utilisateur, appuyés sur 103 laboratoires pratiques.',
-    prix: { presentiel: null, foad: null, elearning: 455 },
+    prix: { presentiel: null, foad: null, elearning: 500 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -292,7 +310,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Installer, configurer et dépanner ordinateurs, terminaux mobiles et logiciels : postes fixes, portables, périphériques, Windows et macOS, et mise en réseau du poste. 14 chapitres et 99 travaux pratiques, avec ordinateur portable virtuel et Packet Tracer.',
-    prix: { presentiel: null, foad: null, elearning: 530 },
+    prix: { presentiel: null, foad: null, elearning: 630 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -308,7 +326,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Fondamentaux des réseaux : adressage IP, commutation, routage, Wi-Fi et sécurité de base, avec configuration d\'équipements dans Packet Tracer. Base recommandée avant le cursus CCNA.',
-    prix: { presentiel: null, foad: null, elearning: 340 },
+    prix: { presentiel: null, foad: null, elearning: 380 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -322,7 +340,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301 1/3',
     modalites: ['E-learning'],
     description: 'Premiers modules du cursus CCNA officiel — OSI, TCP/IP, IPv4, IPv6, CLI Cisco.',
-    prix: { presentiel: null, foad: null, elearning: 530 },
+    prix: { presentiel: null, foad: null, elearning: 630 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -336,7 +354,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301 2/3',
     modalites: ['E-learning'],
     description: 'VLAN, STP, EtherChannel, DHCP, Wi-Fi 802.11 et routage statique avancé.',
-    prix: { presentiel: null, foad: null, elearning: 530 },
+    prix: { presentiel: null, foad: null, elearning: 630 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -350,7 +368,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-301 3/3',
     modalites: ['E-learning'],
     description: 'OSPF, ACL, NAT, VPN, SDN et automatisation réseau. Dernier module avant l\'examen CCNA.',
-    prix: { presentiel: null, foad: null, elearning: 530 },
+    prix: { presentiel: null, foad: null, elearning: 630 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -364,11 +382,11 @@ export const FORMATIONS: Formation[] = [
     certification: 'Cisco CCNA 200-301 (blueprint v2.0)',
     examCode: '200-301 v2.0',
     // Double modalité, seule exception du catalogue :
-    //  · E-learning tutoré — le pack des 3 modules NetAcad (210 h), offre standard
-    //  · Présentiel — format accéléré Cisco de 5 jours (35 h), session exceptionnelle
+    //  · E-learning tutoré — le pack des 3 modules Cisco Networking Academy (210 h), offre standard
+    //  · Présentiel — parcours complet condensé sur 5 jours (35 h), session programmée
     modalites: ['E-learning', 'Présentiel'],
-    description: 'Les trois modules du cursus CCNA réunis en un seul parcours — ITN, SRWE et ENSA — avec l\'accès à Packet Tracer : 210 heures en e-learning tutoré, voucher d\'examen 200-301 compris. Également proposé en format accéléré de 5 jours (35 h) lors des sessions présentielles programmées.',
-    prix: { presentiel: 2590, foad: null, elearning: 1880 },
+    description: 'Les trois modules du cursus CCNA réunis en un seul parcours — ITN, SRWE et ENSA — avec l\'accès à Packet Tracer : 210 heures en e-learning tutoré, voucher d\'examen 200-301 compris. Également proposé en présentiel, parcours complet condensé sur 5 jours (35 h), lors des sessions programmées.',
+    prix: { presentiel: 1950, foad: null, elearning: 1880 },
     prixPublic: true,
     prixPublicElearning: true,
     voucher: 350,
@@ -383,9 +401,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Avancé', duree: '70 heures', dureeJours: 10,
     certification: 'Cisco Certified Specialist – Enterprise Core',
     examCode: '350-401 ENCOR v1.2',
-    modalites: ['E-learning'],
+    modalites: ['E-learning', 'Présentiel'],
     description: 'Cœur du CCNP Enterprise (v9) : architecture SD-Access, LISP/VXLAN, dual-stack, virtualisation, assurance réseau, sécurité et automatisation.',
-    prix: { presentiel: null, foad: null, elearning: 1990 },
+    prix: { presentiel: 1950, foad: null, elearning: 1950 },
     prixPublicElearning: true,
     voucher: 390,
     examenSeul: true,
@@ -398,9 +416,9 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Avancé', duree: '70 heures', dureeJours: 10,
     certification: 'Cisco Certified Specialist – Enterprise Advanced Infrastructure',
     examCode: '300-410 ENARSI v1.2',
-    modalites: ['E-learning'],
+    modalites: ['E-learning', 'Présentiel'],
     description: 'Concentration Advanced Routing (v9) : Layer 3 (EIGRP, OSPF, BGP), MPLS L3 VPN, DMVPN, sécurité d\'infrastructure et services, dépannage avancé.',
-    prix: { presentiel: null, foad: null, elearning: 1990 },
+    prix: { presentiel: 1950, foad: null, elearning: 1950 },
     prixPublicElearning: true,
     voucher: 290,
     examenSeul: true,
@@ -417,7 +435,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'CIA Triad, cryptographie, sécurité OS, firewalls et réponse aux incidents.',
-    prix: { presentiel: null, foad: null, elearning: 310 },
+    prix: { presentiel: null, foad: null, elearning: 330 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -431,7 +449,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-201 CCNACBR v1.2',
     modalites: ['E-learning'],
     description: 'Formation SOC complète — surveillance réseau, forensique, réponse aux incidents et IA appliquée à la détection. Anciennement CyberOps Associate, renommée CCNA Cybersecurity par Cisco le 3 février 2026 ; examen 200-201 inchangé, blueprint v1.2.',
-    prix: { presentiel: null, foad: null, elearning: 1990 },
+    prix: { presentiel: null, foad: null, elearning: 1950 },
     prixPublicElearning: true,
     voucher: 350,
     examenSeul: true,
@@ -446,7 +464,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Méthodologie pentest, Kali Linux, Nmap, Metasploit, Burp Suite et rapport.',
-    prix: { presentiel: null, foad: null, elearning: 310 },
+    prix: { presentiel: null, foad: null, elearning: 330 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -462,7 +480,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PCEP-30-02',
     modalites: ['E-learning'],
     description: 'Python from scratch — types, boucles, fonctions, collections, fichiers.',
-    prix: { presentiel: null, foad: null, elearning: 371 },
+    prix: { presentiel: null, foad: null, elearning: 440 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -476,7 +494,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PCAP-31-03',
     modalites: ['E-learning'],
     description: 'POO, modules, exceptions, générateurs, décorateurs et programmation fonctionnelle.',
-    prix: { presentiel: null, foad: null, elearning: 375 },
+    prix: { presentiel: null, foad: null, elearning: 440 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -507,7 +525,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Comprendre l\'Internet des objets et la transformation digitale : capteurs, connectivité, flux de données et cas d\'usage en entreprise et en collectivité.',
-    prix: { presentiel: null, foad: null, elearning: 260 },
+    prix: { presentiel: null, foad: null, elearning: 180 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -521,7 +539,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Arduino, Raspberry Pi, MQTT, protocoles IoT et sécurisation des déploiements.',
-    prix: { presentiel: null, foad: null, elearning: 530 },
+    prix: { presentiel: null, foad: null, elearning: 630 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -535,7 +553,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Collecte, stockage, analyse et visualisation des données IoT avec Python.',
-    prix: { presentiel: null, foad: null, elearning: 530 },
+    prix: { presentiel: null, foad: null, elearning: 630 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -549,7 +567,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Menaces IoT, cryptographie embarquée, segmentation réseau et audits de sécurité.',
-    prix: { presentiel: null, foad: null, elearning: 480 },
+    prix: { presentiel: null, foad: null, elearning: 540 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -563,7 +581,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Projet IoT en équipe — design thinking, prototype fonctionnel et pitch jury.',
-    prix: { presentiel: null, foad: null, elearning: 370 },
+    prix: { presentiel: null, foad: null, elearning: 440 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -583,7 +601,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '010-160',
     modalites: ['E-learning'],
     description: 'Commandes Linux, gestion des fichiers, utilisateurs, processus et scripts Bash.',
-    prix: { presentiel: null, foad: null, elearning: 370 },
+    prix: { presentiel: null, foad: null, elearning: 440 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -599,7 +617,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '',
     modalites: ['E-learning'],
     description: 'Analyse de données de bout en bout : interrogation SQL, manipulation avec Python Pandas, visualisation et restitution des résultats aux décideurs.',
-    prix: { presentiel: null, foad: null, elearning: 310 },
+    prix: { presentiel: null, foad: null, elearning: 330 },
     prixPublicElearning: true,
     voucher: 0,
   },
@@ -615,7 +633,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AZ-900',
     modalites: ['Présentiel'],
     description: 'IaaS, PaaS, SaaS, services Azure principaux, sécurité et tarification cloud.',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 990, foad: null, elearning: null },
   },
   {
     slug: 'az-104',
@@ -627,7 +645,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AZ-104',
     modalites: ['Présentiel'],
     description: 'Entra ID, stockage, VM, VNet, supervision et gouvernance Azure.',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 1690, foad: null, elearning: null },
   },
   {
     slug: 'sc-900',
@@ -639,7 +657,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'SC-900',
     modalites: ['Présentiel'],
     description: 'Zero Trust, Entra ID, Defender, Purview et conformité réglementaire Microsoft.',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 990, foad: null, elearning: null },
   },
   {
     slug: 'ai-901',
@@ -651,7 +669,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AI-901',
     modalites: ['Présentiel'],
     description: 'ML, vision, NLP, IA générative et Azure OpenAI Service (AI-901, remplace AI-900).',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 990, foad: null, elearning: null },
   },
   {
     slug: 'ab-900',
@@ -663,7 +681,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AB-900',
     modalites: ['Présentiel'],
     description: 'Fondamentaux Microsoft 365, Copilot et administration d\'agents IA, sécurité, conformité et gouvernance (AB-900, remplace MS-900).',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 990, foad: null, elearning: null },
   },
   {
     slug: 'pl-300',
@@ -675,7 +693,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PL-300',
     modalites: ['Présentiel'],
     description: 'Power Query, modélisation en étoile, DAX, visualisations et déploiement sécurisé de rapports Power BI.',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 1690, foad: null, elearning: null },
   },
   {
     slug: 'md-102',
@@ -687,7 +705,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'MD-102',
     modalites: ['Présentiel'],
     description: 'Intune, Windows Autopilot, conformité, Conditional Access, Defender for Endpoint et gestion des appareils à grande échelle.',
-    prix: { presentiel: 2390, foad: null, elearning: null },
+    prix: { presentiel: 1690, foad: null, elearning: null },
     prixPublic: true,
   },
   {
@@ -700,7 +718,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'MS-4010',
     modalites: ['Présentiel'],
     description: 'Déploiement, configuration, sécurité et adoption de Microsoft 365 Copilot en entreprise (Teams, SharePoint, DLP, gouvernance).',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 1690, foad: null, elearning: null },
   },
   {
     slug: 'az-802',
@@ -712,7 +730,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AZ-802',
     modalites: ['Présentiel'],
     description: 'Administration Windows Server hybride : identité, stockage, calcul, haute disponibilité, migration et reprise d activité.',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 1690, foad: null, elearning: null },
   },
   {
     slug: 'ab-650',
@@ -724,7 +742,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AB-650',
     modalites: ['Présentiel'],
     description: 'Administration d un tenant Microsoft 365 et des services IA : identité Entra ID, Defender, Purview, Copilot et gouvernance des agents (AB-650, remplace MS-102 retiré le 31/10/2026).',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 1690, foad: null, elearning: null },
   },
   {
     slug: 'sc-300',
@@ -736,7 +754,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'SC-300',
     modalites: ['Présentiel'],
     description: 'Gestion des identités et des accès avec Microsoft Entra ID : authentification, gouvernance, accès conditionnel et identités externes.',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 1690, foad: null, elearning: null },
   },
   {
     slug: 'sc-401',
@@ -748,7 +766,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'SC-401',
     modalites: ['Présentiel'],
     description: 'Protection des informations sensibles avec Microsoft Purview à l ère de l IA : étiquettes, DLP, chiffrement et gestion des risques internes.',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 1690, foad: null, elearning: null },
   },
   {
     slug: 'sc-500',
@@ -760,7 +778,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'SC-500',
     modalites: ['Présentiel'],
     description: 'Sécurisation des charges cloud et des services IA : Defender for Cloud, protection des workloads, sécurité des agents et de Copilot, gouvernance des données IA (nouvelle certification 2026).',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 1890, foad: null, elearning: null },
   },
 
   {
@@ -773,7 +791,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PL-7002',
     modalites: ['Présentiel'],
     description: 'Créer et gérer des processus automatisés avec Power Automate : flux cloud, connecteurs, approbations et intégration Microsoft 365.',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 890, foad: null, elearning: null },
   },
   {
     slug: 'pl-7008',
@@ -785,7 +803,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'PL-7008',
     modalites: ['Présentiel'],
     description: 'Créer des agents dans Microsoft Copilot Studio : sujets, actions, connaissances, déploiement et gouvernance des agents IA.',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 890, foad: null, elearning: null },
   },
   {
     slug: 'ms-4017',
@@ -797,7 +815,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'MS-4017',
     modalites: ['Présentiel'],
     description: 'Gérer et étendre Microsoft 365 Copilot : agents déclaratifs, connecteurs Graph, extensibilité et personnalisation.',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 890, foad: null, elearning: null },
   },
   {
     slug: 'az-1008',
@@ -809,7 +827,7 @@ export const FORMATIONS: Formation[] = [
     examCode: 'AZ-1008',
     modalites: ['Présentiel'],
     description: 'Administrer Active Directory Domain Services : domaines, OU, GPO, réplication et sécurisation de l annuaire.',
-    prix: { presentiel: 1790, foad: null, elearning: null },
+    prix: { presentiel: 890, foad: null, elearning: null },
   },
   // ── Juniper Networks ───────────────────────────────────────────────────────
   // MAJ octobre 2026 — ouverture du catalogue Juniper. Certification éditeur,
@@ -932,16 +950,52 @@ export function getSanction(f: Formation): string {
   if (f.editeur === 'Cisco Networking Academy') {
     return 'Badge et certificat Cisco Networking Academy'
   }
-  return 'Attestation de formation'
+  // Au symbole diplôme, on nomme la certification préparée plutôt que
+  // « Attestation de formation » : l'attestation est un livrable administratif,
+  // elle ne dit rien de ce que l'apprenant vient chercher. Ce que la
+  // certification coûte, et si elle est comprise, est dit juste à côté par
+  // getMentionCertification() — jamais sous-entendu.
+  return f.certification
 }
 
-/** Forme courte pour les listes denses (méga-menu) */
+/**
+ * Forme courte pour les listes denses (cartes du catalogue, méga-menu).
+ * Le nom complet d'une certification Microsoft fait jusqu'à soixante
+ * caractères : il déborde d'une pastille de carte. Comme le code d'examen est
+ * déjà affiché juste à côté, la pastille porte l'information que l'acheteur
+ * cherche vraiment — la certification est-elle comprise ou non.
+ */
 export function getSanctionCourte(f: Formation): string {
   if (f.examenSeul) return ''
-  if (f.editeur === 'Cisco Networking Academy') {
-    return 'Badge et certificat NetAcad'
+  if (f.editeur === 'Cisco Networking Academy' && !f.voucher) {
+    return 'Badge et certificat Cisco Networking Academy'
   }
-  return 'Attestation de formation'
+  return f.voucher ? 'Certification comprise' : 'Certification en option'
+}
+
+/**
+ * Mention affichée sous la ligne diplôme : la certification de l'éditeur est-elle
+ * comprise dans le prix, ou passée séparément ?
+ *
+ * Un voucher déclaré signifie que GALACTUS Digital achète le code d'examen et le
+ * remet à l'apprenant, qui passe l'épreuve en centre agréé ou en ligne via OnVUE.
+ * Sans voucher, le cours prépare la certification sans l'inclure : le dire
+ * explicitement évite qu'un acheteur découvre le coût de l'examen après coup
+ * (indicateur 1 du RNQ V2 — information exhaustive avant engagement).
+ */
+export function getMentionCertification(f: Formation): string {
+  if (f.editeur === 'Cisco Networking Academy' && !f.voucher) return ''
+  if (f.voucher) return 'Certification officielle comprise dans le prix — voucher Pearson VUE fourni'
+  // Parcours vendu sur devis : le voucher y est intégré, mais aucun montant n'est
+  // publié puisqu'aucun prix ne l'est. Sans ce cas, le JNCIA-Junos affichait
+  // « certification en option » alors que sa fiche annonce l'inverse.
+  const aucunPrixPublie = !f.prix || (!f.prix.presentiel && !f.prix.foad && !f.prix.elearning)
+  if (aucunPrixPublie) return 'Certification officielle comprise dans le devis'
+  // Microsoft : le voucher n'est PAS compris (décision du 28 octobre 2026). Les
+  // prix par niveau rémunèrent la formation seule ; le candidat acquiert son
+  // voucher Pearson VUE séparément. Les 10 fiches qui annonçaient l'inverse ont
+  // été corrigées le même jour — si l'une le réaffirme, c'est elle qui a tort.
+  return 'Certification officielle en option — examen Pearson VUE non compris'
 }
 
 /**
@@ -952,6 +1006,11 @@ export function getSanctionCourte(f: Formation): string {
 export function getLigneDiplome(f: Formation): string {
   const sanction = getSanction(f)
   if (!sanction) return f.examCode
+  // Juniper : la carte affichait « Attestation de formation · JN0-106 », ce qui
+  // mélangeait l'attestation de l'organisme et l'examen de l'éditeur. Franck a
+  // demandé le code d'examen seul. L'intitulé complet de la certification reste
+  // affiché sur la fiche, où il y a la place de l'écrire en entier.
+  if (f.editeur === 'Juniper Networks' && f.examCode) return f.examCode
   return f.examCode ? `${sanction} · ${f.examCode}` : sanction
 }
 

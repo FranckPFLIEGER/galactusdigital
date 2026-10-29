@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/ccna-cisco')({
   head: () => ({
     meta: [
       { title: "CCNA v2.0 — Parcours complet ITN · SRWE · ENSA (200-301) | GALACTUS Digital" },
-      { name: "description", content: "CCNA v2.0 (200-301) — les 3 modules ITN, SRWE et ENSA réunis. 210 h en e-learning tutoré, voucher d'examen compris. Format accéléré 5 jours en présentiel. Qualiopi." },
+      { name: "description", content: "CCNA v2.0 (200-301) — les 3 modules ITN, SRWE et ENSA réunis. 210 h en e-learning tutoré, voucher d'examen compris. Parcours complet 5 jours en présentiel. Qualiopi." },
     ],
   }),
 })
@@ -31,7 +31,7 @@ const DATA = {
   niveau: 'Fondamental à intermédiaire',
   partenaire: 'Formateur Cisco CCNP / CCDP certifié',
   certification: 'Cisco Certified Network Associate (CCNA 200-301)',
-  duree: '210 heures (e-learning) · 35 heures (présentiel accéléré)',
+  duree: '210 heures (e-learning) · 35 heures (présentiel)',
   groupeMin: 3,
   groupeMax: 12,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
@@ -39,7 +39,7 @@ const DATA = {
 
 **En e-learning tutoré** — 210 heures sur la plateforme Cisco Networking Academy, accès ouvert un an, tutorat par un instructeur certifié CCNP/CCDP et voucher d'examen Pearson VUE compris dans le tarif.
 
-**En présentiel** — format accéléré de 5 jours (35 heures, 7 h par jour) lors des sessions programmées, pour les professionnels des réseaux disposant déjà d'une première expérience du routage et de la commutation.
+**En présentiel** — parcours complet sur 5 jours (35 heures, 7 h par jour) lors des sessions programmées, pour les professionnels des réseaux disposant déjà d'une première expérience du routage et de la commutation.
 
 La v2.0 marque la plus importante refonte du CCNA depuis 2020 : retour du dépannage à un niveau approfondi, nouvelle section sur l'IA dans les opérations réseau, et allègement de la théorie au profit de la pratique.`,
   // Répartition officielle Cisco du blueprint d'examen 200-301 v2.0 (en vigueur au 3 février 2027).
@@ -115,7 +115,7 @@ La v2.0 marque la plus importante refonte du CCNA depuis 2020 : retour du dépan
   methodes: [
     "Le parcours comprend les trois modules du cursus Cisco Networking Academy — ITN, SRWE et ENSA — ainsi que l'accès à Packet Tracer",
     "Formation dispensée par un formateur Cisco CCNP / CCDP certifié (15+ ans d'expérience, administrateur VUE Pearson)",
-    "Deux rythmes : e-learning tutoré sur un an, ou format accéléré 5 jours en présentiel",
+    "Deux rythmes : e-learning tutoré sur un an, ou parcours complet 5 jours en présentiel",
     "Labs pratiques sur simulateurs et équipements (Packet Tracer / CML)",
     "Supports officiels Cisco et QCM d'entraînement à l'examen",
     "Quiz de validation des acquis à chaque fin de journée",
@@ -191,7 +191,7 @@ function FormationPage() {
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Award size={14} />, text: '2 590 € (présentiel)' },
+                { icon: <Award size={14} />, text: '1 950 € (présentiel)' },
               ].map((m, i) => (
                 <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>
                   <span style={{ color: 'var(--g-red)' }}>{m.icon}</span>{m.text}

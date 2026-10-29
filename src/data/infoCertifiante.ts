@@ -38,7 +38,7 @@ export interface InfoCertifiante {
 export const MODES_FINANCEMENT: string[] = [
   'Plan de développement des compétences de l\'employeur',
   'OPCO (AFDAS, AKTO, ATLAS, OPCO 2i… selon la branche du client)',
-  'France Travail — AIF ou POEI, via Kairos, pour les demandeurs d\'emploi',
+  'France Travail — AIF, via Kairos, pour les demandeurs d\'emploi',
   'Aides régionales et dispositifs FSE+ des collectivités ultramarines',
 ]
 

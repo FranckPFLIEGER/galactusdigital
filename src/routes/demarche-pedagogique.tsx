@@ -58,7 +58,7 @@ function DemarchePedagogiquePage() {
                   { icon: <Target size={20} color="white" />, title: 'Objectifs opérationnels', desc: "Définis sous forme de verbes d'action, alignés sur les besoins de l'apprenant et vérifiés tout au long du parcours." },
                   { icon: <BookOpen size={20} color="white" />, title: 'Contenus officiels éditeurs', desc: 'Programmes alignés sur les référentiels exacts des éditeurs, sans intermédiaire. Supports officiels Cisco Networking Academy, Microsoft et Juniper.' },
                   { icon: <CheckCircle size={20} color="white" />, title: 'Évaluation continue', desc: "QCM, ateliers pratiques et mises en situation à chaque module pour vérifier l'acquisition des compétences." },
-                  { icon: <Award size={20} color="white" />, title: 'Certification officielle', desc: "Chaque cours délivre le badge et le certificat de l'éditeur. Le voucher d'examen surveillé est compris dans le CCNA v2.0 parcours complet et dans les deux parcours CCNP Enterprise, ainsi que dans les formations en présentiel ou en classe virtuelle, dont le devis l'intègre. 100 % de réussite parmi les candidats présentés sur 2023-2025." },
+                  { icon: <Award size={20} color="white" />, title: 'Certification officielle', desc: "Chaque cours délivre le badge et le certificat de l'éditeur. Le voucher d'examen surveillé est compris dans le CCNA v2.0 parcours complet, les deux parcours CCNP Enterprise, CCNA Cybersecurity et CCNA Automation, ainsi que dans les parcours vendus sur devis, qui l'intègrent. Sur le catalogue Microsoft, l'examen de certification est proposé en option. 100 % de réussite parmi les candidats présentés sur 2023-2025." },
                 ].map(item => (
                   <div key={item.title} style={{ display: 'flex', gap: '1rem', alignItems: 'flex-start', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '3px solid var(--g-red)', padding: '1.25rem' }}>
                     <div style={{ width: '36px', height: '36px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>{item.icon}</div>
@@ -70,6 +70,76 @@ function DemarchePedagogiquePage() {
                 ))}
               </div>
             </div>
+          </div>
+        </section>
+
+
+        {/* ── POSITIONNEMENT À L'ENTRÉE — procédure FQ-27 ──
+            Ce bloc répond au critère 1.3 des Conditions générales de financement
+            de l'AIF (« positionnement en amont permettant d'individualiser le
+            parcours ») et aux indicateurs 4 et 8 du RNQ V2.
+
+            On publie LA PROCÉDURE, jamais un cas : pas de nom d'apprenant, pas de
+            score, pas d'employeur. Ce qui fait preuve devant un conseiller, c'est
+            qu'une méthode soit écrite, référencée et opposable. Les pièces
+            individuelles restent au dossier, communicables en audit. */}
+        <section style={{ background: 'var(--g-white)', padding: '4rem 2rem' }}>
+          <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
+            <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', fontWeight: 600, letterSpacing: '0.20em', textTransform: 'uppercase', color: 'var(--g-red)', display: 'block', marginBottom: '0.6rem' }}>
+              Avant l'entrée en formation
+            </span>
+            <h2 className="section-h2" style={{ marginBottom: '0.5rem' }}>Le positionnement</h2>
+            <div className="g-rule" />
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.85, color: '#4a4a48', marginTop: '1rem', marginBottom: '2.5rem', maxWidth: '760px' }}>
+              Aucune entrée en formation ne se fait sans positionnement écrit. La procédure
+              <strong> FQ-27</strong> se déroule en trois étapes, et chaque pièce est signée par
+              le candidat puis versée à son dossier.
+            </p>
+
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.5rem' }}>
+              {[
+                {
+                  ref: 'FQ-27-A',
+                  titre: 'Test de positionnement',
+                  desc: "Un questionnaire écrit couvrant les domaines de la certification visée, réalisé en autonomie et sans documentation. Le candidat est invité à répondre « je ne sais pas » plutôt qu'à deviner : un positionnement sincère produit un plan de travail juste.",
+                },
+                {
+                  ref: 'FQ-27-B',
+                  titre: 'Complément écrit',
+                  desc: "Les questions restées sans réponse et celles à préciser font l'objet d'un second questionnaire. Il mesure la progression entre les deux épreuves autant que le niveau atteint.",
+                },
+                {
+                  ref: 'FQ-27-C',
+                  titre: "Décision d'admission et plan de travail",
+                  desc: "Le dépouillement est consolidé par domaine sur une grille à quatre niveaux — non évalué, non acquis, en cours d'acquisition, acquis. Un seuil indicatif de 60 % déclenche l'instruction de l'admission ; il n'est pas éliminatoire. La décision est motivée par écrit et s'accompagne d'un plan de travail individuel construit sur les domaines les plus faibles.",
+                },
+              ].map(e => (
+                <div key={e.ref} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '4px solid var(--g-red)', padding: '1.75rem' }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.64rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.2rem 0.6rem', display: 'inline-block', marginBottom: '0.9rem' }}>
+                    {e.ref}
+                  </div>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.95rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em', color: 'var(--g-black)', marginBottom: '0.6rem', lineHeight: 1.3 }}>
+                    {e.titre}
+                  </div>
+                  <p style={{ fontSize: '0.86rem', lineHeight: 1.75, color: '#4a4a48', margin: 0 }}>{e.desc}</p>
+                </div>
+              ))}
+            </div>
+
+            <div style={{ background: 'var(--g-black)', borderLeft: '4px solid var(--g-red)', padding: '1.75rem 2rem', marginTop: '1.5rem' }}>
+              <p style={{ fontSize: '0.95rem', lineHeight: 1.85, color: 'rgba(255,255,255,0.85)', margin: 0 }}>
+                Des lacunes portant sur le périmètre même de la formation ne sont pas un obstacle
+                à l'entrée — elles en sont l'objet. Ce que le positionnement écarte, c'est un
+                parcours mal calibré.
+              </p>
+            </div>
+
+            <p style={{ fontSize: '0.78rem', color: '#9a9a98', fontStyle: 'italic', lineHeight: 1.7, marginTop: '1.25rem', marginBottom: 0 }}>
+              Critère 1.3 des Conditions générales de financement de l'Aide Individuelle à la
+              Formation (France Travail) · indicateurs 4 et 8 du Référentiel National Qualité.
+              Les pièces de positionnement sont nominatives, conservées au dossier de formation
+              et communicables en audit ; aucune n'est publiée.
+            </p>
           </div>
         </section>
 

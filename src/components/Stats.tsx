@@ -5,7 +5,10 @@ const derniere = RESULTATS_ANNUELS[RESULTATS_ANNUELS.length - 1]
 
 // Source unique : les effectifs viennent de data/resultats.ts.
 const stats = [
-  { num: '+25', label: "ans d'expérience du fondateur" },
+  // « +25 » contredisait la page À propos, qui annonce « plus de 20 ans », et
+  // les 15 ans d'instructeur Cisco affichés ailleurs. Aligné sur +20, la seule
+  // formulation retenue pour les documents commerciaux. Corrigé le 29/10/2026.
+  { num: '+20', label: "ans d'expérience du fondateur" },
   { num: String(derniere.formes), label: `stagiaires en ${derniere.annee}` },
   { num: String(RESULTATS_TOTAL_FORMES), label: 'candidats formés, toutes formations, en 3 ans' },
   { num: '0', label: 'abandon en cours de parcours (2023-2025)' },

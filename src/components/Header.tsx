@@ -178,7 +178,7 @@ const NAV_LINKS = [
     children: [
       { label: '— Modalités de formation', isHeading: true },
       { label: 'E-learning tutoré — Cisco',    href: '/elearning' },
-      { label: 'Classe virtuelle FOAD — Juniper', href: '/foad' },
+      { label: 'FOAD — Juniper JNCIA-Junos', href: '/foad' },
       { label: 'Présentiel — Microsoft',       href: '/presentiel' },
       { label: "— Formats d'organisation",     isHeading: true },
       { label: 'Inter-entreprise',             href: '/presentiel#inter' },
@@ -310,7 +310,7 @@ export function Header() {
       {/* Ticker */}
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
-          <span>Prochaine formation en présentielle à la Martinique : MICROSOFT MD-102 Endpoint Administrator du 25/01/27 au 29/01/27</span>
+          <span>Prochaine formation en présentiel à la Martinique : MICROSOFT MD-102 Endpoint Administrator du 25/01/27 au 29/01/27</span>
           <span>Référentiel National Qualité V2 — décret n° 2026-728 du 1er août 2026, applicable au 1er novembre 2026 : nos fiches formation publient taux, blocs, passerelles et débouchés</span>
           <span>Certifications professionnelles : deux dossiers déposés au Répertoire spécifique de France Compétences, n° 53224 et n° 53693, en cours d'instruction</span>
         </div>

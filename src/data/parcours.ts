@@ -28,6 +28,20 @@ export interface BlocParcours {
   rang: 0 | 1 | 2 | 3
   titre: string
   intention: string
+  /**
+   * Comment ce bloc se suit. Rédigé comme un avantage, pas comme une contrainte :
+   * « 100 % à distance, à votre rythme » dit la même chose que « e-learning
+   * uniquement » et ne ferme pas la porte.
+   *
+   * Règle de l'offre : le catalogue Cisco Networking Academy se suit en
+   * e-learning tutoré ; le CCNA v2.0 parcours complet et les deux CCNP
+   * Enterprise se suivent au choix en e-learning ou en présentiel ; Microsoft
+   * se suit en présentiel ; Juniper se suit en FOAD.
+   *
+   * La phrase est calculée depuis les éditeurs réels des étapes du bloc, pas
+   * depuis son rang : un bloc Microsoft est en présentiel même au rang 1.
+   */
+  modalite: string
   etapes: EtapeParcours[]
 }
 
@@ -52,6 +66,7 @@ export const PARCOURS: Parcours[] = [
     blocs: [
       {
         rang: 0,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 0 — Se remettre à niveau',
         intention: 'Prendre en main un poste de travail et le vocabulaire du métier.',
         etapes: [
@@ -62,6 +77,7 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 1,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 1 — Le métier',
         intention: 'Tenir un poste de support de niveau 1 et décrocher une certification.',
         etapes: [
@@ -70,6 +86,7 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 2,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 2 — Aller plus loin',
         intention: 'Élargir vers le matériel et le réseau pour évoluer en technicien.',
         etapes: [
@@ -89,6 +106,7 @@ export const PARCOURS: Parcours[] = [
     blocs: [
       {
         rang: 0,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 0 — Se remettre à niveau',
         intention: 'Poste de travail, systèmes d\'exploitation et premiers réseaux.',
         etapes: [
@@ -100,12 +118,14 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 1,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 1 — Les fondamentaux réseau',
         intention: 'Comprendre une architecture réseau et la manipuler en Packet Tracer.',
         etapes: [{ titre: 'Networking Essentials', slug: 'networking-essentials', heures: 35 }],
       },
       {
         rang: 2,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 2 — CCNA',
         intention: 'Le référentiel d\'entrée du marché, en trois modules.',
         etapes: [
@@ -116,6 +136,7 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 3,
+        modalite: "À distance à votre rythme, ou en immersion — ce bloc se suit aussi en présentiel, voucher d'examen compris",
         titre: 'Bloc 3 — Niveau professionnel',
         intention: 'Passer d\'exécutant à concepteur d\'infrastructure. RS en cours d\'enregistrement.',
         etapes: [
@@ -135,6 +156,7 @@ export const PARCOURS: Parcours[] = [
     blocs: [
       {
         rang: 0,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 0 — Se remettre à niveau',
         intention: 'Découvrir la menace, le poste de travail et le réseau avant d\'aborder la défense.',
         etapes: [
@@ -146,6 +168,7 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 1,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 1 — Le socle défensif',
         intention: 'Réseau puis principes de sécurité : la séquence exigée par le blueprint Cisco.',
         etapes: [
@@ -155,12 +178,14 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 2,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 2 — Analyste SOC',
         intention: 'Surveillance, forensique et réponse à incident.',
         etapes: [{ titre: 'CCNA Cybersecurity', slug: 'cyberops', heures: 60, maj: 'Ex-CyberOps Associate · blueprint v1.2' }],
       },
       {
         rang: 3,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 3 — La voie offensive',
         intention: 'Passer de la défense à l\'attaque : comprendre les techniques adverses pour mieux les contrer.',
         etapes: [
@@ -179,6 +204,7 @@ export const PARCOURS: Parcours[] = [
     blocs: [
       {
         rang: 0,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 0 — Se remettre à niveau',
         intention: 'Comprendre le numérique, l\'IA et le réseau avant la première ligne de code.',
         etapes: [
@@ -189,6 +215,7 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 1,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 1 — Réseau et code',
         intention: 'Les deux jambes du métier, menées en parallèle.',
         etapes: [
@@ -198,6 +225,7 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 2,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 2 — Consolidation',
         intention: 'Programmation objet et fondamentaux CCNA.',
         etapes: [
@@ -207,6 +235,7 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 3,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 3 — Automatisation',
         intention: 'APIs, YANG/NETCONF, Ansible, Terraform et pipelines IA-ready.',
         etapes: [{ titre: 'CCNA Automation (ex-DevNet)', slug: 'devnet-associate', heures: 50, maj: 'Ex-DevNet · blueprint 2026' }],
@@ -223,6 +252,7 @@ export const PARCOURS: Parcours[] = [
     blocs: [
       {
         rang: 0,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 0 — Se remettre à niveau',
         intention: 'Systèmes et réseau : sans eux, le cloud reste abstrait.',
         etapes: [
@@ -233,18 +263,21 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 1,
+        modalite: "En immersion — de une à cinq journées dans vos locaux ou en salle retenue pour la session, certification comprise",
         titre: 'Bloc 1 — Fondamentaux cloud',
         intention: 'Vocabulaire, modèles de service et tarification.',
         etapes: [{ titre: 'AZ-900 Azure Fundamentals', slug: 'az-900', heures: 20 }],
       },
       {
         rang: 2,
+        modalite: "En immersion — de une à cinq journées dans vos locaux ou en salle retenue pour la session, certification comprise",
         titre: 'Bloc 2 — Administration',
         intention: 'Le cœur du métier d\'administrateur Azure.',
         etapes: [{ titre: 'AZ-104 Azure Administrator', slug: 'az-104', heures: 40 }],
       },
       {
         rang: 3,
+        modalite: "En immersion — de une à cinq journées dans vos locaux ou en salle retenue pour la session, certification comprise",
         titre: 'Bloc 3 — Infrastructure hybride',
         intention: 'Serveurs et annuaire : la réalité des SI d\'entreprise.',
         etapes: [
@@ -264,6 +297,7 @@ export const PARCOURS: Parcours[] = [
     blocs: [
       {
         rang: 0,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 0 — Se remettre à niveau',
         intention: 'Poste de travail et systèmes vus cette fois côté administrateur.',
         etapes: [
@@ -274,18 +308,21 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 1,
+        modalite: "En immersion — de une à cinq journées dans vos locaux ou en salle retenue pour la session, certification comprise",
         titre: 'Bloc 1 — Fondamentaux M365 & Copilot',
         intention: 'Le tenant, les services et l\'IA générative en entreprise.',
         etapes: [{ titre: 'AB-900 Microsoft 365 Copilot', slug: 'ab-900', heures: 18, maj: 'Remplace MS-900' }],
       },
       {
         rang: 2,
+        modalite: "En immersion — de une à cinq journées dans vos locaux ou en salle retenue pour la session, certification comprise",
         titre: 'Bloc 2 — Gestion du parc',
         intention: 'Intune, Autopilot, conformité et accès conditionnel.',
         etapes: [{ titre: 'MD-102 Endpoint Administrator', slug: 'md-102', heures: 35 }],
       },
       {
         rang: 3,
+        modalite: "En immersion — de une à cinq journées dans vos locaux ou en salle retenue pour la session, certification comprise",
         titre: 'Bloc 3 — Administration du tenant',
         intention: 'Identité, Defender, Purview et gouvernance des agents IA.',
         etapes: [{ titre: 'AB-650 Microsoft 365 & AI Services', slug: 'ab-650', heures: 35, maj: 'Remplace MS-102' }],
@@ -302,6 +339,7 @@ export const PARCOURS: Parcours[] = [
     blocs: [
       {
         rang: 0,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 0 — Se remettre à niveau',
         intention: 'Comprendre la menace et le système avant d\'aborder les outils Microsoft.',
         etapes: [
@@ -312,12 +350,14 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 1,
+        modalite: "En immersion — de une à cinq journées dans vos locaux ou en salle retenue pour la session, certification comprise",
         titre: 'Bloc 1 — Fondamentaux sécurité',
         intention: 'Zero Trust, Entra ID, Defender, Purview et conformité.',
         etapes: [{ titre: 'SC-900 Security Fundamentals', slug: 'sc-900', heures: 15 }],
       },
       {
         rang: 2,
+        modalite: "En immersion — de une à cinq journées dans vos locaux ou en salle retenue pour la session, certification comprise",
         titre: 'Bloc 2 — Identité et information',
         intention: 'Les deux briques les plus demandées sur le marché.',
         etapes: [
@@ -327,6 +367,7 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 3,
+        modalite: "En immersion — de une à cinq journées dans vos locaux ou en salle retenue pour la session, certification comprise",
         titre: 'Bloc 3 — Cloud & IA',
         intention: 'Sécuriser les charges cloud, les agents et Copilot.',
         etapes: [{ titre: 'SC-500 Cloud & AI Security Engineer', slug: 'sc-500', heures: 28, maj: 'Nouveau 2026' }],
@@ -343,6 +384,7 @@ export const PARCOURS: Parcours[] = [
     blocs: [
       {
         rang: 0,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
         titre: 'Bloc 0 — Se remettre à niveau',
         intention: 'Situer la donnée et l\'IA avant de manipuler les outils.',
         etapes: [
@@ -353,6 +395,7 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 1,
+        modalite: "À distance à votre rythme, ou en immersion — ce bloc se suit aussi en présentiel, voucher d'examen compris",
         titre: 'Bloc 1 — Fondamentaux',
         intention: 'Premiers traitements de données et vocabulaire IA Azure.',
         etapes: [
@@ -362,12 +405,14 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 2,
+        modalite: "En immersion — de une à cinq journées dans vos locaux ou en salle retenue pour la session, certification comprise",
         titre: 'Bloc 2 — Analyste Power BI',
         intention: 'Power Query, modélisation en étoile, DAX et publication sécurisée.',
         etapes: [{ titre: 'PL-300 Power BI Data Analyst', slug: 'pl-300', heures: 35 }],
       },
       {
         rang: 3,
+        modalite: "En immersion — de une à cinq journées dans vos locaux ou en salle retenue pour la session, certification comprise",
         titre: 'Bloc 3 — Automatisation & agents',
         intention: 'Déployer Copilot et construire des agents en entreprise.',
         etapes: [

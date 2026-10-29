@@ -38,8 +38,8 @@ const DATA = {
     langue: 'Français / Anglais',
     organisme: 'Microsoft (Pearson VUE)',
     format: 'QCM, études de cas et questions à réponses multiples',
-    score: '700 / 1000',
-    note: `La certification PL-300 est valable 12 mois. Renouvellement gratuit via une évaluation en ligne sur Microsoft Learn. Passerelle naturelle vers DP-600 (Fabric Analytics Engineer). Le passage de l'examen (voucher officiel) est inclus dans le tarif de la formation.`,
+    score: "Défini par l'éditeur (variable)",
+    note: `La certification PL-300 est valable 12 mois. Renouvellement gratuit via une évaluation en ligne sur Microsoft Learn. Passerelle naturelle vers DP-600 (Fabric Analytics Engineer). Le passage de l'examen de certification est proposé en option : le voucher Pearson VUE n'est pas compris dans le tarif de la formation.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Microsoft (Microsoft Certified Trainer — MCT)",
@@ -116,11 +116,11 @@ function FormationPage() {
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
                                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=pl-300' },
+                { icon: <Calendar size={14} />, text: 'Voir le calendrier', href: '/calendrier?f=pl-300' },
               ].map((m, i) => (
                 m.href ? (
                   <a key={i} href={m.href} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: 'var(--g-red)', padding: '0.35rem 0.8rem' }}>
-                    {m.icon}<span>Voir le calendrier</span>
+                    {m.icon}<span>{m.text}</span>
                   </a>
                 ) : (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>

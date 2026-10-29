@@ -126,7 +126,7 @@ const reconversions = [
     // une version « plus exacte » qu'elle n'a pas relue.
     citation:
       'Je ne croyais pas vraiment pouvoir faire ce virage à 180 degrés à mon âge, et pourtant ' +
-      'la NetAcad a rendu cela possible. Si j\'avais un message à délivrer, et notamment aux ' +
+      'la Cisco Networking Academy a rendu cela possible. Si j\'avais un message à délivrer, et notamment aux ' +
       'femmes qui souhaitent se reconvertir : croyez en vous et n\'écoutez pas ce qui se dit ' +
       'autour de vous. Nous avons toutes et tous un potentiel caché, il suffit de se lancer !',
   },

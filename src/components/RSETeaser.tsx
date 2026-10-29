@@ -19,8 +19,8 @@ export function RSETeaser() {
         <p className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '2rem', maxWidth: '780px' }}>
           Former sur place plutôt que d'envoyer les gens en métropole, ouvrir les certifications
-          mondiales à ceux qu'on croyait trop loin pour y accéder — c'est notre mission depuis 2018.
-          Notre démarche RSE s'articule autour des trois axes du vade-mecum France Compétences 2026 :
+          mondiales à ceux qu'on croyait trop loin pour y accéder — c'est notre mission depuis 2015.
+          Notre démarche RSE s'articule autour des trois axes du vadémécum France Compétences 2026 :
           handicap, transition écologique, transition numérique.
         </p>
         <a href="/rse"

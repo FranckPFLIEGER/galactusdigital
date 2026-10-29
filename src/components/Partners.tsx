@@ -17,7 +17,12 @@ const partners = [
     file: 'microsoft-solutions-partner.png',
     name: 'Microsoft',
     desc: 'Partenaire officiel n° 4653557 depuis 2016 — désignations Microsoft Cloud et Training Services : formations Azure, M365, Power BI, Intune, Copilot',
-    level: 'Solutions Partner — Training Services',
+    // Le libellé est affiché dans une étiquette rouge, à côté de « Academy
+    // Partner » et « Membre actif » : « Solutions Partner — Training Services »
+    // y faisait deux fois la longueur des deux autres et occupait toute la
+    // largeur sur mobile. La désignation Training Services reste énoncée dans
+    // la description juste en dessous. Raccourci le 29 octobre 2026.
+    level: 'Solutions Partner',
   },
   {
     file: 'ipv6-council.png',

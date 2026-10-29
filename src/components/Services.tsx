@@ -24,10 +24,10 @@ const services = [
   },
   {
     icon: <Monitor size={22} color="white" />,
-    title: 'Classe virtuelle — FOAD',
+    title: 'FOAD — Juniper',
     href: '/foad',
     badge: 'Art. D.6313-3-1',
-    desc: "Le parcours Juniper JNCIA-Junos en classe virtuelle, depuis n'importe quel territoire. Sessions live sur WEBEX, maquette Junos à distance, accompagnement individualisé documenté.",
+    desc: "Le parcours Juniper JNCIA-Junos en FOAD, depuis n'importe quel territoire. Sessions live sur WEBEX, maquette Junos à distance, accompagnement individualisé documenté.",
     features: [
       'Parcours Juniper JNCIA-Junos — examen JN0-106',
       'Sessions live avec le formateur sur WEBEX',
@@ -49,7 +49,7 @@ const services = [
     features: [
       'Parcours asynchrone — rythme libre',
       'Tuteur certifié éditeur dédié',
-      'Plateforme NetAcad accessible 24h/24',
+      'Plateforme Cisco Networking Academy accessible 24h/24',
       'Labs virtuels Cisco Packet Tracer inclus',
       'Accès sous 72 h après validation administrative',
     ],
@@ -82,6 +82,22 @@ export function Services() {
           dans les territoires ultramarins ou en France hexagonale, nous adaptons notre
           ingénierie pédagogique à votre situation. Chaque modalité est disponible en
           format inter-entreprise (sessions ouvertes) ou intra-entreprise (groupe dédié).
+        </p>
+        {/* Le site disait « pas de particulier » sans distinguer, ce qui faisait fuir
+            les candidats à l'AIF — précisément le public que l'organisme vise. La
+            nuance qui compte n'est pas le statut de la personne mais l'origine du
+            financement. Formulation alignée sur l'article 2 des CGV. */}
+        <p
+          className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}
+          style={{ marginTop: '1rem', marginBottom: 0 }}
+        >
+          <strong>Vous êtes un particulier ?</strong> Votre place est ici dès lors que votre
+          formation est prise en charge par un tiers : votre employeur au titre de son plan
+          de développement des compétences, votre OPCO, votre collectivité, ou France Travail
+          au titre de l'Aide Individuelle à la Formation. Nous établissons le devis et montons
+          le dossier avec vous et avec votre conseiller — la décision de financement lui
+          appartient. Nous ne vendons pas de formation à un particulier sur ses fonds propres :
+          nos tarifs ne constituent pas une offre de vente au consommateur (article 2 des CGV).
         </p>
 
         {/* ── Grille 3 cartes ── */}

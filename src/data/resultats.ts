@@ -65,7 +65,7 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
       'constatée par feuille d\'émargement (présentiel et FOAD synchrone) ou par les traces ' +
       'd\'activité de la plateforme (e-learning tutoré, art. D.6313-3-1 du code du travail). ' +
       'Un apprenant inscrit à plusieurs modules est compté une fois par module suivi.',
-    source: 'Registre de suivi des actions — émargements, relevés NetAcad « Mes statistiques »',
+    source: 'Registre de suivi des actions — émargements, relevés Cisco Networking Academy « Mes statistiques »',
   },
   {
     libelle: 'Taux de réussite parmi les candidats présentés',
@@ -102,9 +102,16 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
       'intégralité : 39 questionnaires remis sur 2023-2025 (7 en 2023, 23 en 2024, 9 en 2025), ' +
       'soit une moyenne d\'appréciation générale de 4,79/5. Aucune note d\'appréciation ' +
       'générale inférieure à 4/5 : 31 notes à 5/5 et 8 notes à 4/5. Sur la session du ' +
-      'Workshop Cybersécurité WEB du 10 au 14 mars 2025, neuf questionnaires remis, ' +
-      '97,6 % des 125 notes du questionnaire, toutes rubriques confondues, sont supérieures ' +
-      'ou égales à 4/5 ; trois notes sont à 3/5.',
+      'Workshop Cybersécurité WEB du 10 au 14 mars 2025, neuf questionnaires ont été remis. ' +
+      // Le « 125 » était incompréhensible sans faire le calcul : 9 × 14 = 126 notes
+      // possibles, dont une case laissée vide. Le compte est désormais écrit en
+      // toutes lettres plutôt que ramené à un pourcentage. Corrigé le 29/10/2026.
+      'Chaque questionnaire comporte quatorze items notés — accueil, cours, instructeur, ' +
+      'impact — soit 126 notes possibles pour neuf questionnaires. 125 ont été renseignées, ' +
+      'un item ayant été laissé vide par un apprenant : sur ces 125 notes, 122 sont ' +
+      'supérieures ou égales à 4/5 et trois sont à 3/5. Cette lecture, item par item, ' +
+      'est distincte de la note d\'appréciation générale publiée plus haut, qui est une ' +
+      'note unique par questionnaire.',
   },
   {
     libelle: 'Évaluation des contenus et des enseignements',

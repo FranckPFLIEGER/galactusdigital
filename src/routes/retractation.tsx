@@ -342,7 +342,7 @@ function RetractationPage() {
               Il ne s'applique pas aux employeurs ni aux clients professionnels, régis par une
               convention de formation et par l'article 5 des CGV. Il ne s'applique pas davantage
               aux parcours pris en charge par un <strong>tiers financeur</strong> — France Travail
-              (AIF, POEI), OPCO, collectivité, dispositif FSE+ : le stagiaire n'y engage pas ses
+              (AIF), OPCO, collectivité, dispositif FSE+ : le stagiaire n'y engage pas ses
               frais, la relation est régie par le devis valant convention une fois accepté par le
               financeur, et les conditions d'abandon sont celles de ce financeur, généralement un
               règlement au prorata des heures effectivement suivies.

@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/jncia-junos')({
   head: () => ({
     meta: [
       { title: "JNCIA-Junos — Introduction to the Junos OS (JN0-106) | GALACTUS Digital" },
-      { name: "description", content: "JNCIA-Junos (IJOS) — préparation à l'examen Juniper JN0-106. 35 h en classe virtuelle (FOAD), 17 travaux pratiques sur maquette Junos. Organisme certifié Qualiopi." },
+      { name: "description", content: "JNCIA-Junos (IJOS) — préparation à l'examen Juniper JN0-106. 35 h en FOAD, 17 travaux pratiques sur maquette Junos. Organisme certifié Qualiopi." },
     ],
   }),
 })
@@ -178,11 +178,11 @@ function FormationPage() {
               {[
                 { icon: <Clock size={14} />, text: DATA.duree },
                 { icon: <Users size={14} />, text: `${DATA.groupeMin} à ${DATA.groupeMax} participants` },
-                { icon: <Calendar size={14} />, text: 'Voir calendrier', href: '/calendrier?f=jncia-junos' },
+                { icon: <Calendar size={14} />, text: 'Voir le calendrier', href: '/calendrier?f=jncia-junos' },
               ].map((m, i) => (
                 m.href ? (
                   <a key={i} href={m.href} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: '#fff', textDecoration: 'none', fontFamily: 'var(--font-title)', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', background: 'var(--g-red)', padding: '0.35rem 0.8rem' }}>
-                    {m.icon}<span>Voir le calendrier</span>
+                    {m.icon}<span>{m.text}</span>
                   </a>
                 ) : (
                   <div key={i} style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', fontSize: '0.84rem', color: 'rgba(255,255,255,0.65)' }}>
@@ -339,7 +339,7 @@ function FormationPage() {
               <div style={{ marginTop: '1rem', background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', borderLeft: '4px solid var(--g-red)', padding: '1.25rem 1.5rem' }}>
                 <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.5rem' }}>Financement</div>
                 <p style={{ fontSize: '0.84rem', color: '#4a4a48', margin: 0, lineHeight: 1.7 }}>
-                  Action finançable par l'employeur au titre du plan de développement des compétences, par un OPCO ou par France Travail (AIF ou POEI).
+                  Action finançable par l'employeur au titre du plan de développement des compétences, par un OPCO ou par France Travail (AIF).
                   Certification éditeur que GALACTUS Digital n'est pas habilité à délivrer au titre d'un enregistrement au RNCP ou au Répertoire spécifique : <strong style={{ color: 'var(--g-black)' }}>non éligible au CPF</strong>.
                 </p>
               </div>

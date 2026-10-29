@@ -59,7 +59,7 @@ function HandicapPage() {
                   Notre référent contribue à offrir un environnement inclusif et l'accès
                   à un parcours pédagogique optimal. Nous mettons tout en œuvre pour rendre
                   accessibles nos formations, quelle que soit leur modalité — e-learning tutoré,
-                  classe virtuelle ou présentiel — et sommes en capacité de proposer des solutions
+                  FOAD ou présentiel — et sommes en capacité de proposer des solutions
                   personnalisées adaptées à chaque situation.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48' }}>
@@ -105,10 +105,22 @@ function HandicapPage() {
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '1rem' }}>
                     Nos partenaires RHF
                   </div>
+                  {/* Contacts repris de la liste officielle Agefiph « Ressource Handicap
+                      Formation — vos contacts en région », version du 09/01/2026, pour les
+                      cinq territoires où l'organisme intervient.
+
+                      On ne publie QUE les adresses et standards institutionnels. La liste
+                      Agefiph nomme les référentes et donne leurs portables : les exposer sur
+                      un site public n'est ni correct pour elles ni durable — elles changent
+                      de poste et le site devient faux. Le nom du référent du dossier est au
+                      dossier, pas en vitrine. */}
                   {[
-                    { name: 'RHF Martinique — AGEFMA', zone: 'Caraïbes & Guyane', detail: 'Réseau partenaire officiel — conseiller RHF dédié' },
-                    { name: 'RHF Île-de-France — Agefiph', zone: 'France hexagonale', detail: 'Réseau Handicap Formation — lettre d\'information et plateforme d\'autoformation' },
-                    { name: 'AGEFIPH Antilles-Guyane', zone: 'Caraïbes & Guyane', detail: 'Financement et accompagnement — charte d\'engagement signée le 4 novembre 2024' },
+                    { name: 'RHF Martinique — AGEFMA', zone: 'Martinique', detail: 'rhfmartinique@agefma.fr · 05 96 71 11 04' },
+                    { name: 'RHF Guadeloupe — Agefiph', zone: 'Guadeloupe', detail: 'rhf-guadeloupe@agefiph.asso.fr' },
+                    { name: 'RHF Guyane — LV Consultants', zone: 'Guyane', detail: 'rhf-guyane@lvconsultants.fr · 06 94 95 79 29 — Cayenne, Kourou, Saint-Laurent-du-Maroni' },
+                    { name: 'RHF La Réunion — Agefiph', zone: 'La Réunion', detail: 'rhf-lareunion-mayotte@agefiph.asso.fr' },
+                    { name: 'RHF Île-de-France — Agefiph', zone: 'France hexagonale', detail: 'rhf-idf@agefiph.asso.fr — contact par courriel' },
+                    { name: 'AGEFIPH Antilles-Guyane', zone: 'Financement', detail: 'Charte d\'engagement signée le 4 novembre 2024 · demandes d\'aide sur agefiph.fr/aides-handicap/depot-demande' },
                   ].map(p => (
                     <div key={p.name} style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', padding: '0.75rem 0', borderBottom: '1px solid rgba(187,187,187,0.25)' }}>
                       <div>
@@ -118,6 +130,22 @@ function HandicapPage() {
                       <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.55rem', flexShrink: 0, marginLeft: '1rem', marginTop: '3px' }}>{p.zone}</div>
                     </div>
                   ))}
+                  {/* Accompagnement RHF Île-de-France engagé depuis l'entretien du
+                      20 octobre 2026. C'est un fait daté et vérifiable : il vaut mieux
+                      qu'une déclaration d'intention devant un auditeur (indicateur 26). */}
+                  <p style={{ fontSize: '0.78rem', color: '#6a6a68', lineHeight: 1.7, marginTop: '1.25rem', marginBottom: 0 }}>
+                    Un accompagnement est engagé avec la Ressource Handicap Formation
+                    Île-de-France depuis notre entretien du <strong>20 octobre 2026</strong> :
+                    outils d'auto-positionnement transmis, échanges en cours sur les suites à
+                    donner — second point à distance, atelier ou mise en relation avec un
+                    prestataire d'appui spécifique. Les pièces de cet accompagnement sont
+                    versées au dossier de certification au titre de la mobilisation des
+                    expertises du champ du handicap.
+                  </p>
+                  <p style={{ fontSize: '0.72rem', color: '#9a9a98', fontStyle: 'italic', lineHeight: 1.6, marginTop: '0.75rem', marginBottom: 0 }}>
+                    Contacts repris de la liste officielle Agefiph « Ressource Handicap
+                    Formation — vos contacts en région », version du 9 janvier 2026.
+                  </p>
                 </div>
               </div>
             </div>
@@ -156,7 +184,7 @@ function HandicapPage() {
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48', marginBottom: '1.5rem' }}>
                   Les formations Cisco Networking Academy se suivent en e-learning tutoré sur la
-                  plateforme NetAcad, et le parcours Juniper JNCIA-Junos en classe virtuelle Webex :
+                  plateforme Cisco Networking Academy, et le parcours Juniper JNCIA-Junos en FOAD sur Webex :
                   une personne à mobilité réduite peut les suivre depuis son domicile, quelle que
                   soit sa localisation aux Caraïbes, dans l'Océan Indien ou en France hexagonale.
                 </p>

@@ -95,9 +95,17 @@ function CertificationsPage() {
                 </div>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.25rem", display: "flex", flexDirection: "column", gap: "0.6rem" }}>
                   {[
-                    "Évaluer le niveau de compétences et d'expertise de vos collaborateurs",
-                    "Accélérer les évolutions de carrière au sein de votre organisation",
-                    "Augmenter l'efficacité et l'employabilité de vos équipes IT",
+                    // Les six avantages, dans les termes de Franck (29/10/2026). Les
+                    // formulations conditionnelles — « certains éditeurs », « selon le
+                    // programme partenaire », « peut » — sont les siennes et sont
+                    // conservées telles quelles : elles disent une possibilité offerte par
+                    // les programmes éditeurs, pas un résultat promis par l'organisme.
+                    "Renforcer sa crédibilité — la certification prouve aux clients que l'entreprise possède des compétences reconnues sur une technologie donnée. Elle rassure les prospects et facilite la confiance lors des appels d'offres.",
+                    "Accéder à des opportunités commerciales — certains éditeurs réservent des projets, des appels d'offres ou certains niveaux de partenariat à leurs partenaires certifiés. Cela peut permettre à l'entreprise d'accéder à de nouveaux marchés.",
+                    "Augmenter son chiffre d'affaires — selon le programme partenaire, l'entreprise peut bénéficier de commissions, de remises, de revenus liés aux licences ou de prestations d'intégration, de conseil et de maintenance.",
+                    "Développer les compétences des équipes — les collaborateurs accèdent à des formations, des examens de certification, des documentations techniques et parfois à un support spécialisé de l'éditeur.",
+                    "Bénéficier du soutien de l'éditeur — certains programmes donnent accès à une assistance technique prioritaire, à des ressources commerciales, à des environnements de démonstration ou à des informations en avant-première sur les produits.",
+                    "Se différencier de la concurrence — le statut de partenaire certifié aide l'entreprise à se démarquer, à justifier son expertise et à répondre aux exigences de qualification de certains clients.",
                   ].map((item, i) => (
                     <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.6rem", fontSize: "0.87rem", color: "#4a4a48" }}>
                       <CheckCircle size={15} color="#E41F26" style={{ flexShrink: 0, marginTop: "2px" }} />
@@ -127,10 +135,17 @@ function CertificationsPage() {
                 </div>
                 <ul style={{ listStyle: "none", padding: 0, margin: "0 0 1.25rem", display: "flex", flexDirection: "column", gap: "0.6rem" }}>
                   {[
-                    "Officialiser vos compétences auprès des employeurs et recruteurs",
-                    "Affirmer votre expertise dans un domaine technologique reconnu",
-                    "Développer votre employabilité et votre valeur sur le marché",
-                    "Valoriser et sécuriser votre parcours professionnel",
+                    // Liste fournie par Franck le 29/10/2026, reprise dans ses termes.
+                    "Valoriser son CV — prouver ses compétences auprès des recruteurs grâce à une certification reconnue par l'éditeur.",
+                    "Se démarquer des autres candidats — apporter une preuve concrète de ses connaissances, au-delà d'une simple formation suivie.",
+                    "Faciliter l'accès à l'emploi — renforcer sa candidature pour un premier poste, une reconversion ou une évolution professionnelle.",
+                    "Valider ses compétences techniques — vérifier ses connaissances selon un référentiel officiel et structuré.",
+                    "Gagner en crédibilité — montrer aux employeurs et aux clients que l'on maîtrise des technologies précises.",
+                    "Évoluer professionnellement — préparer des certifications plus avancées et se spécialiser en réseau, cybersécurité, systèmes ou cloud.",
+                    "Rester à jour — suivre l'évolution des technologies et des pratiques du secteur informatique.",
+                    "Développer sa confiance en soi — disposer d'un objectif concret et mesurable pour progresser.",
+                    "Disposer d'une reconnaissance internationale — les certifications éditeurs sont connues dans de nombreux pays et peuvent faciliter une mobilité professionnelle.",
+                    "Entreprendre un projet personnel — approfondir un domaine par passion, relever un défi ou préparer une future reconversion.",
                   ].map((item, i) => (
                     <li key={i} style={{ display: "flex", alignItems: "flex-start", gap: "0.6rem", fontSize: "0.87rem", color: "#4a4a48" }}>
                       <CheckCircle size={15} color="#E41F26" style={{ flexShrink: 0, marginTop: "2px" }} />
@@ -144,6 +159,16 @@ function CertificationsPage() {
               </div>
 
             </div>
+            {/* Les avantages 2, 3 et 5 décrivent ce que font les programmes
+                partenaires des éditeurs. Une ligne de sources, discrète, permet à
+                un prospect — ou à un auditeur — de vérifier l'affirmation sans
+                qu'elle encombre le bloc. Remise le 29 octobre 2026. */}
+            <p style={{ fontSize: "0.76rem", lineHeight: 1.6, color: "#8a8a86", marginTop: "1.5rem" }}>
+              Conditions des programmes partenaires, relevées le 29 octobre 2026 :{" "}
+              <a href="https://learn.microsoft.com/partner-center/partner-capability-score" target="_blank" rel="noopener noreferrer" style={{ color: "#8a8a86", textDecoration: "underline", textUnderlineOffset: "2px" }}>Microsoft Partner capability score</a>
+              {" · "}
+              <a href="https://www.cisco.com/c/dam/en_us/partners/cisco-partner-program/cisco-360-partner-program-highlights.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#8a8a86", textDecoration: "underline", textUnderlineOffset: "2px" }}>Cisco 360 Partner Program</a>.
+            </p>
           </div>
         </section>
 
@@ -170,8 +195,14 @@ function CertificationsPage() {
                   <div style={{ fontFamily: "var(--font-title)", fontSize: "1.05rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--g-black)", marginBottom: "0.4rem" }}>
                     Certification GALACTUS Digital
                   </div>
+                  {/* « Certificateur » seul affirmait un statut que l'organisme
+                      n'a pas encore : les deux dossiers sont en instruction au
+                      Répertoire spécifique. Le bandeau noir plus bas le dit,
+                      mais l'étiquette, elle, l'affirmait sans réserve — et c'est
+                      elle qu'on lit en premier (indicateur 1 du RNQ V2).
+                      Qualifiée le 29 octobre 2026. */}
                   <div style={{ fontFamily: "var(--font-title)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#888" }}>
-                    Certificateur
+                    Certificateur — sous réserve d'enregistrement
                   </div>
                 </div>
 
@@ -199,6 +230,21 @@ function CertificationsPage() {
                 {/* Processus */}
                 <div style={{ padding: "1.5rem 2rem" }}>
                   <div style={{ display: "flex", flexDirection: "column", gap: "0.85rem" }}>
+                    {/* Tout ce qui suit décrit un dispositif qui n'existera qu'à
+                        l'enregistrement des deux certifications au Répertoire
+                        spécifique. Le bandeau du site dit « en cours d'instruction »
+                        sur chaque page, mais un lecteur qui arrive directement ici
+                        voyait un examen en service. Cette phrase fait le lien. */}
+                    <div style={{ background: "var(--g-black)", borderLeft: "3px solid var(--g-red)", padding: "0.9rem 1.1rem" }}>
+                      <p style={{ fontSize: "0.84rem", color: "rgba(255,255,255,0.88)", lineHeight: 1.7, margin: 0 }}>
+                        Ce dispositif entrera en service à l'enregistrement des certifications au
+                        Répertoire spécifique de France Compétences, aujourd'hui{" "}
+                        <a href="/certifications-rs" style={{ color: "var(--g-red)", textDecoration: "underline", textUnderlineOffset: "2px" }}>
+                          en cours d'instruction
+                        </a>. Les examens Cisco Networking Academy, eux, sont accessibles dès
+                        maintenant.
+                      </p>
+                    </div>
                     <p style={{ fontSize: "0.86rem", color: "#4a4a48", lineHeight: 1.7, margin: 0 }}>
                       Pour planifier votre examen à votre convenance, contactez un <strong>centre agréé Certification GALACTUS Digital</strong>.
                     </p>
@@ -211,11 +257,6 @@ function CertificationsPage() {
                     <p style={{ fontSize: "0.86rem", color: "#4a4a48", lineHeight: 1.7, margin: 0 }}>
                       À l'issue de l'examen, vous accédez directement à vos résultats : un <strong>score sur 1 000 points</strong> indiquant votre niveau de compétences. Votre Certificat et vos résultats détaillés vous sont envoyés par e-mail quelques jours après.
                     </p>
-                    <div style={{ background: "var(--g-offwhite)", border: "1px solid rgba(187,187,187,0.30)", borderLeft: "3px solid var(--g-red)", padding: "0.85rem 1rem" }}>
-                      <p style={{ fontSize: "0.82rem", color: "#5a5a58", lineHeight: 1.7, margin: 0, fontStyle: "italic" }}>
-                        <strong style={{ color: "var(--g-black)", fontStyle: "normal" }}>NB —</strong> Moyennant un coût supplémentaire, les examens peuvent être passés depuis chez vous ou votre entreprise avec une <strong>surveillance automatisée à distance</strong>. Cette modalité nécessite l'installation préalable d'une application qui procédera à votre admission (vérification de votre identité et de votre environnement), puis à l'enregistrement de votre webcam, écran et sons environnants pendant toute la durée de l'examen.
-                      </p>
-                    </div>
                   </div>
                 </div>
               </div>
@@ -253,6 +294,12 @@ function CertificationsPage() {
                 <div style={{ padding: "1.5rem 2rem" }}>
                   <p style={{ fontSize: "0.86rem", color: "#4a4a48", lineHeight: 1.7, marginBottom: "1.25rem" }}>
                     Le protocole d'admission des candidats aux examens de certification gérés par Pearson VUE diffère selon le mode de passation choisi : <strong>en ligne via OnVUE</strong> ou <strong>en centre d'examen physique</strong>.
+                  </p>
+                  {/* Point commercial le plus fort de la page, et il n'était dit nulle
+                      part : sur les parcours à voucher, l'organisme achète le code
+                      d'examen et le remet au candidat. Celui-ci n'a rien à avancer. */}
+                  <p style={{ fontSize: "0.9rem", color: "#4a4a48", lineHeight: 1.8, margin: "0.85rem 0 0" }}>
+                    <strong style={{ color: "var(--g-black)" }}>Sur nos parcours à certification comprise</strong> — CCNA v2.0 parcours complet, CCNP Enterprise ENCOR et ENARSI, CCNA Cybersecurity, CCNA Automation et JNCIA-Junos — GALACTUS Digital prend en charge le voucher d'examen et <strong>vous remet le code</strong>. Vous choisissez ensuite librement de passer l'épreuve en centre agréé ou en ligne via OnVUE. Rien à avancer, rien à commander vous-même.
                   </p>
 
                   {/* OnVUE */}

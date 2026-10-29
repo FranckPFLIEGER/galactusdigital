@@ -66,6 +66,9 @@ const awards = [
     // 2023. Le certificat du 28 septembre 2026 la reconduit, il ne l'ouvre pas —
     // c'est lui qui porte le Cert ID vérifiable ci-dessous.
     year: '2023 — 2026',
+    // Exception à l'harmonisation « Cisco Networking Academy » : l'intitulé exact
+    // porté par le certificat est « NetAcad Advisory Board ». C'est une pièce
+    // d'audit, elle se cite telle qu'elle est écrite. Choix de Franck, 29/10/2026.
     title: 'NetAcad Advisory Board Member',
     org: 'Cisco Networking Academy',
     desc: "Membre du conseil consultatif international de la Cisco Networking Academy depuis 2023, reconduit le 28 septembre 2026 par Lynn Bloomer, Director — Cisco Networking Academy. Une participation qui nous associe aux orientations du programme mondial et nous tient informés des évolutions de cursus avant leur publication.",

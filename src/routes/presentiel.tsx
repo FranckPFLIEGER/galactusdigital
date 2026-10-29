@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Header } from '../components/Header'
+import { TroisModalites } from '../components/TroisModalites'
 import { Footer } from '../components/Footer'
 import {
   MapPin, Users, CheckCircle, Clock, Phone, Mail,
@@ -12,10 +13,26 @@ export const Route = createFileRoute('/presentiel')({
 })
 
 
-const LIEUX = [
-  { zone: 'Martinique', badge: 'Siège régional Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: 'Bureau administratif. Les formations se tiennent dans vos locaux ou en salle retenue pour la session — catalogue Microsoft en présentiel, inter ou intra-entreprise.', tel: '+33 7 81 07 47 46' },
-  { zone: 'Guadeloupe', badge: 'Présence active', adresse: 'Pointe de la Verdure\nGosier 97190', desc: 'Interventions en présentiel chez vos équipes ou en salle partenaire adaptée à vos besoins.', tel: '+33 7 81 07 47 46' },
-  { zone: 'Paris — France hexagonale', badge: 'Siège social', adresse: '66 avenue des Champs-Élysées\n75008 Paris', desc: 'Siège administratif. Interventions en présentiel dans vos locaux ou en salle retenue pour la session, partout en France hexagonale.', tel: '+33 7 81 07 47 46' },
+// Les quatre territoires où les formations en présentiel se tiennent, décrits de
+// la même manière. Le siège social parisien a été retiré de cette liste : c'est
+// une adresse administrative, pas un lieu de formation, et la faire figurer sous
+// « Nos lieux de formation » laissait croire à une salle à Paris. Il reste
+// mentionné au pied de page et aux mentions légales, à sa place.
+// Guyane et La Réunion n'ont pas d'adresse de bureau publiée : la formation s'y
+// tient dans les locaux du client ou en salle retenue pour la session.
+const TEL = '+33 7 81 07 47 46'
+// La phrase de périmètre, dans les termes de Franck : elle dit où la formation se
+// tient ET ce qui se donne en présentiel, pour qu'un visiteur ne demande pas une
+// session présentielle sur un cours qui n'existe qu'en e-learning tutoré.
+const PERIMETRE_PRESENTIEL = 'Les formations se tiennent dans vos locaux ou en salle retenue pour '
+  + 'la session — uniquement le catalogue Microsoft, le CCNA v2.0 parcours complet et les CCNP '
+  + 'ENCOR et ENARSI en présentiel, en inter comme en intra-entreprise.'
+const DESC_COMMUNE = 'Interventions dans vos locaux ou en salle retenue pour la session, en inter comme en intra-entreprise.'
+const LIEUX: { zone: string; badge: string; adresse?: string; desc: string; tel: string }[] = [
+  { zone: 'Martinique', badge: 'Bureau — Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: DESC_COMMUNE, tel: TEL },
+  { zone: 'Guadeloupe', badge: 'Bureau — Caraïbes', adresse: 'Pointe de la Verdure\nGosier 97190', desc: DESC_COMMUNE, tel: TEL },
+  { zone: 'Guyane', badge: 'Intervention sur demande', desc: DESC_COMMUNE, tel: TEL },
+  { zone: 'La Réunion', badge: 'Intervention sur demande', desc: DESC_COMMUNE, tel: TEL },
 ]
 
 function FormationGrid() {
@@ -123,7 +140,12 @@ function PresentielPage() {
           <div style={{ maxWidth: '1280px', margin: '0 auto' }}>
             <h2 className="section-h2-light">Nos lieux de formation</h2>
             <div className="g-rule" />
-            <div className="pres-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
+            {/* Le périmètre, énoncé une fois : le répéter sur chacune des quatre
+                cartes alourdissait la lecture sans rien ajouter. */}
+            <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.62)', maxWidth: '760px', marginBottom: '2rem' }}>
+              {PERIMETRE_PRESENTIEL}
+            </p>
+            <div className="pres-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(225px, 1fr))', gap: '1.5rem' }}>
               {LIEUX.map(l => (
                 <div key={l.zone} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', marginBottom: '1rem' }}>
@@ -135,7 +157,9 @@ function PresentielPage() {
                       <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.15rem 0.6rem', display: 'inline-block', marginTop: '0.3rem' }}>{l.badge}</div>
                     </div>
                   </div>
-                  <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.50)', marginBottom: '1rem', lineHeight: 1.6, whiteSpace: 'pre-line' }}>{l.adresse}</p>
+                  {l.adresse && (
+                    <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.50)', marginBottom: '1rem', lineHeight: 1.6, whiteSpace: 'pre-line' }}>{l.adresse}</p>
+                  )}
                   <p style={{ fontSize: '0.84rem', lineHeight: 1.65, color: 'rgba(255,255,255,0.55)', marginBottom: '1rem' }}>{l.desc}</p>
                   <a href={`tel:${l.tel.replace(/\s/g,'')}`} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.82rem', color: 'var(--g-red)', textDecoration: 'none' }}>
                     <Phone size={13} /> {l.tel}
@@ -144,7 +168,7 @@ function PresentielPage() {
               ))}
             </div>
             <p style={{ fontSize: '0.82rem', color: 'rgba(255,255,255,0.35)', marginTop: '1.5rem', fontStyle: 'italic' }}>
-              * Nous intervenons également sur tous les autres territoires ultramarins (Guyane, Saint-Martin, Saint-Barthélemy, La Réunion) directement dans vos locaux sur demande.
+              * Nous intervenons également à Saint-Martin et à Saint-Barthélemy, directement dans vos locaux sur demande. Le siège social, 66 avenue des Champs-Élysées à Paris, est une adresse administrative : aucune formation ne s'y tient.
             </p>
           </div>
         </section>
@@ -179,7 +203,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions planifiées au calendrier ou en intra à vos dates','Supports de cours officiels inclus','Accès à Microsoft Learn — Cisco Networking Academy pour le CCNA v2.0 accéléré','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Inscription possible jusqu'à une semaine avant le démarrage (art. 14 des CGV)"].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions planifiées au calendrier ou en intra à vos dates','Supports de cours officiels inclus','Accès à Microsoft Learn — Cisco Networking Academy pour le CCNA v2.0 complet','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Inscription possible jusqu'à une semaine avant le démarrage (art. 14 des CGV)"].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -188,10 +212,15 @@ function PresentielPage() {
               </div>
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Sessions & lieux</h3>
+                {/* Deuxième liste de lieux de la page, distincte de « Nos lieux de
+                    formation » : elle portait elle aussi le siège parisien et ne disait
+                    pas quelles formations se tiennent en présentiel. Alignée sur les
+                    quatre territoires et sur le périmètre réel, le 29 octobre 2026. */}
                 {[
-                  { zone: 'Martinique', badge: 'Bureau — Caraïbes', desc: "Sessions régulières tout au long de l'année, dans vos locaux ou en salle retenue pour la session. Bureau : Pointe Madeleine — CAP EST, 97240 Le François." },
-                  { zone: 'Guadeloupe', badge: 'Présence active', desc: 'Sessions organisées en salle partenaire ou dans vos locaux. Bureau : Pointe de la Verdure, Gosier 97190.' },
-                  { zone: 'Paris — France', badge: 'Siège social', desc: 'Siège administratif : 66 avenue des Champs-Élysées, 75008 Paris. Interventions en régions dans vos locaux, sur demande.' },
+                  { zone: 'Martinique', badge: 'Bureau — Caraïbes', desc: PERIMETRE_PRESENTIEL + ' Bureau : Pointe Madeleine — CAP EST, 97240 Le François.' },
+                  { zone: 'Guadeloupe', badge: 'Bureau — Caraïbes', desc: PERIMETRE_PRESENTIEL + ' Bureau : Pointe de la Verdure, Gosier 97190.' },
+                  { zone: 'Guyane', badge: 'Intervention sur demande', desc: PERIMETRE_PRESENTIEL },
+                  { zone: 'La Réunion', badge: 'Intervention sur demande', desc: PERIMETRE_PRESENTIEL },
                 ].map(l => (
                   <div key={l.zone} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
                     <div style={{ flexShrink: 0, width: '8px', height: '8px', background: 'var(--g-red)', marginTop: '5px' }} />
@@ -251,7 +280,7 @@ function PresentielPage() {
                 { num: '01', title: 'Audit des besoins', desc: 'Entretien avec votre responsable formation pour identifier les compétences à développer et les certifications visées.' },
                 { num: '02', title: 'Programme personnalisé', desc: 'Nous concevons un programme aligné sur vos objectifs, vos outils et le niveau de vos équipes.' },
                 { num: '03', title: 'Convention & devis', desc: 'Signature de la convention de formation. Accompagnement sur les dispositifs de financement OPCO/PDC.' },
-                { num: '04', title: 'Formation & certification', desc: 'Déploiement chez vous. Passage des examens officiels éditeurs. Attestations remises à chaque participant.' },
+                { num: '04', title: 'Formation & certification', desc: "Déploiement chez vous. Passage de l'examen officiel de l'éditeur, voucher compris dans le prix du devis. Attestations remises à chaque participant." },
               ].map(s => (
                 <div key={s.num} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '1.75rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.75rem' }}>{s.num}</div>
@@ -264,7 +293,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 15 participants','Formateur certifié dédié à votre groupe','Programme entièrement personnalisé','Formation dans vos locaux ou en salle partenaire','Supports de cours officiels éditeurs inclus','Accès à Microsoft Learn — Cisco Networking Academy pour le CCNA v2.0 accéléré','Passage de la certification intégré au programme','Attestation de formation et de présence','Financement via OPCO ou plan de développement des compétences'].map((item, i) => (
+                  {['Groupes de 4 à 15 participants','Formateur certifié dédié à votre groupe','Programme entièrement personnalisé','Formation dans vos locaux ou en salle retenue pour la session','Supports de cours officiels éditeurs inclus','Accès à Microsoft Learn — Cisco Networking Academy pour le CCNA v2.0 complet','Passage de la certification intégré au programme','Attestation de formation et de présence','Financement via OPCO ou plan de développement des compétences'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.70)' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -314,7 +343,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Ce que nous apportons</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  {['Supports de cours officiels éditeurs','Accès à la plateforme officielle de l\'éditeur — Microsoft Learn, ou Cisco Networking Academy pour le CCNA v2.0 accéléré','Simulateurs et environnements de test','Matériel pédagogique inclus','Attestation de formation et de présence','Convocation avec règlement intérieur','Passage de la certification éditeur intégré','Accompagnement post-formation si nécessaire'].map((item, i) => (
+                  {['Supports de cours officiels éditeurs','Accès à la plateforme officielle de l\'éditeur — Microsoft Learn, ou Cisco Networking Academy pour le CCNA v2.0 complet','Simulateurs et environnements de test','Matériel pédagogique inclus','Attestation de formation et de présence','Convocation avec règlement intérieur','Passage de la certification éditeur intégré','Accompagnement post-formation si nécessaire'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -336,6 +365,14 @@ function PresentielPage() {
                 { ref: 'Qualiopi — Ind. 4', title: 'Convocation et règlement intérieur', desc: 'Chaque stagiaire reçoit une convocation précisant les dates, lieux, horaires et le règlement intérieur avant le démarrage de la formation.' },
                 { ref: 'Qualiopi — Ind. 19', title: 'Plateau technique et pédagogique', desc: 'Les équipements, simulateurs (Packet Tracer) et environnements de test sont mis à disposition avant le démarrage. Leur bon fonctionnement est vérifié au préalable.' },
                 { ref: 'Critère 3 Qualiopi', title: 'Suivi individualisé', desc: 'Un suivi individualisé est mis en place pour chaque apprenant avec évaluation des acquis à chaque journée de formation et feuilles de présence signées.' },
+                // Le volet handicap et les obligations réglementaires figuraient sur /foad et
+                // /elearning mais pas ici : un auditeur qui ouvre la page Présentiel n'y
+                // trouvait rien sur l'accessibilité. Ajouté le 29 octobre 2026, avec les
+                // spécificités du présentiel — accessibilité du lieu, et non de la plateforme.
+                { ref: 'Ind. 26 Qualiopi', title: 'Accessibilité et handicap', desc: "Référent handicap désigné : Franck PFLIEGER, certificat de Référent Handicap OF/CFA du 20 février 2023. Toute situation signalée donne lieu à un entretien préalable (article 13 des CGV). En présentiel, l'accessibilité du lieu retenu pour la session est vérifiée avant l'inscription, et la salle est changée si elle ne convient pas." },
+                { ref: 'Ind. 26 — réseau', title: 'Aménagements et partenaires', desc: "Aménagement de la durée, des supports et des conditions de passage de l'examen, le cas échéant avec l'appui du réseau Ressource Handicap Formation et de l'Agefiph. Le détail des aménagements possibles est publié sur la page Accessibilité & Handicap." },
+                { ref: 'Ind. 19 — preuves', title: 'Effectivité de la formation', desc: "Feuilles de présence signées par demi-journée, évaluation des acquis à chaque journée et compte rendu écrit, consignés au registre de suivi. Article 13 bis des CGV." },
+                { ref: 'RNQ V2 — déc. 2026-728', title: 'Référentiel National Qualité V2', desc: "Applicable au 1er novembre 2026. Les indicateurs 1, 2, 4, 8, 19, 26 et 33 sont documentés pour la modalité présentielle : information du public, prérequis, convocation, positionnement, moyens techniques, accessibilité et traitement des réclamations." },
               ].map(c => (
                 <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
                   <div style={{ flexShrink: 0 }}>
@@ -376,6 +413,7 @@ function PresentielPage() {
           }
         `}</style>
 
+      <TroisModalites active="/presentiel" />
       </main>
       <Footer />
     </>

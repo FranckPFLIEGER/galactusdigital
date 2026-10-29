@@ -835,10 +835,14 @@ export const FORMATIONS: Formation[] = [
   {
     slug: 'jncia-junos',
     titre: 'JNCIA-Junos',
-    titreLong: 'JNCIA-Junos — Introduction to the Junos Operating System (IJOS)',
+    // Intitulés repris du flyer d'examen Juniper (JN0-106) : la certification
+    // s'appelle « Junos, Associate (JNCIA-Junos) ». « IJOS — Introduction to the
+    // Junos Operating System » est le nom du cours Juniper, pas de la certification :
+    // il reste sur la fiche, en sous-titre. Corrigé le 29 octobre 2026.
+    titreLong: 'Junos, Associate (JNCIA-Junos) — examen JN0-106',
     editeur: 'Juniper Networks', famille: 'Juniper Junos',
     niveau: 'Fondamental', duree: '35 heures', dureeJours: 5,
-    certification: 'Juniper Networks Certified Associate — Junos (JNCIA-Junos)',
+    certification: 'Junos, Associate (JNCIA-Junos)',
     examCode: 'JN0-106',
     modalites: ['FOAD'],
     description: "Premier niveau du parcours de certification Juniper : architecture de Junos OS, interface en ligne de commande, interfaces réseau, routage, politiques et filtres, supervision et dépannage.",

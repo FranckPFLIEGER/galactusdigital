@@ -70,9 +70,12 @@ function FinancementsPage() {
               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(240px,1fr))', gap: '0.75rem 2rem' }}>
                 {[
                   "Vous êtes un particulier ? Votre place est ici dès lors que votre formation est prise en charge — France Travail, employeur, OPCO ou collectivité. Nous montons le dossier avec vous.",
+                  "Les particuliers s'inscrivent uniquement sur les formations en e-learning tutoré.",
                   "Nous ne vendons pas de formation à un particulier sur ses fonds propres : nos tarifs ne constituent pas une offre de vente au consommateur (article 2 des CGV).",
                   "Lorsque la prise en charge est partielle, le solde est réglé par l'employeur ou un financeur complémentaire.",
-                  "Aucun tarif du catalogue ne dépasse 1 950 €. TVA non applicable — article 261-4-4°-a du CGI.",
+                  // L'espace normale cassait « 1 950 € » en fin de colonne : le lecteur voyait
+                  // « 1 » puis « 950 € » à la ligne. Espace insécable fine (U+202F).
+                  "Aucun tarif du catalogue ne dépasse 1 950 €. TVA non applicable — article 261-4-4°-a du CGI.",
                 ].map((s, i) => (
                   <div key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.86rem', color: 'rgba(255,255,255,0.78)', lineHeight: 1.7 }}>
                     <CheckCircle size={14} color="#E41F26" style={{ flexShrink: 0, marginTop: '4px' }} />
@@ -144,12 +147,14 @@ function FinancementsPage() {
                   href: '/#contact',
                 },
               ].map(f => (
-                <div key={f.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
+                <div key={f.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
                   <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1rem', gap: '1rem', flexWrap: 'wrap' }}>
                     <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '1rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', margin: 0 }}>{f.title}</h3>
                     <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#fff', background: 'var(--g-red)', padding: '0.2rem 0.65rem', whiteSpace: 'nowrap' }}>{f.tag}</span>
                   </div>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
+                  {/* flex:1 — la liste absorbe la hauteur, les quatre flèches
+                      « Faire une demande » se retrouvent sur la même ligne. */}
+                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 1.25rem', display: 'flex', flexDirection: 'column', gap: '0.5rem', flex: 1 }}>
                     {f.items.map((item, i) => (
                       <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.85rem', color: '#4a4a48' }}>
                         <CheckCircle size={14} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />

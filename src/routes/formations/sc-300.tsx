@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/sc-300')({
   head: () => ({
     meta: [
       { title: "SC-300 Identity and Access Administrator | GALACTUS Digital" },
-      { name: "description", content: "Formation SC-300 Entra ID accès. 28 h. Certification. Voucher inclus. Qualiopi." },
+      { name: "description", content: "Formation SC-300 Entra ID accès. 28 h. Certification. Examen en option. Qualiopi." },
     ],
   }),
 })

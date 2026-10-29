@@ -75,7 +75,7 @@ const pillars = [
     // décision du 22 novembre 2015. Récépissé de MODIFICATION du 17 février 2020,
     // sous-préfecture du Marin : siège social transféré à Pointe Madeleine, Le François.
     // Le site annonçait 2018, ce qui faisait perdre trois ans d'ancienneté.
-    "ASPIK — Association Spécialisée dans la Protection Informatique de la Karaïbe : fondée le 22 novembre 2015, assemblée générale constitutive à l'Îlet à Eau, déclarée sous le n° W9M2001329. Siège social à Pointe Madeleine — Cap Est, 97240 Le François",
+    "ASPIK — Association Spécialisée dans la Protection Informatique de la Karaïbe : fondée le 22 novembre 2015, assemblée générale constitutive à l'Îlet à Eau, 97231 Le Robert, Martinique, déclarée sous le n° W9M2001329. Siège social à Pointe Madeleine — Cap Est, 97240 Le François",
       "Formateurs locaux certifiés en priorité — vous êtes formés par des professionnels qui connaissent votre réalité terrain, votre marché, vos contraintes",
       "Mêmes certifications mondiales qu'à Paris ou New York — sans quitter votre territoire, sans financer un séjour en métropole",
       "Sessions de veille IT ouvertes à tous via ASPIK — réseau d'alumni ultramarins, partage d'opportunités et d'expériences entre certifiés des territoires ultramarins",

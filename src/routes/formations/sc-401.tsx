@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/sc-401')({
   head: () => ({
     meta: [
       { title: "SC-401 Information Security Administrator | GALACTUS Digital" },
-      { name: "description", content: "Formation SC-401 Purview protection info IA. 28 h. Certification. Voucher inclus. Qualiopi." },
+      { name: "description", content: "Formation SC-401 Purview protection info IA. 28 h. Certification. Examen en option. Qualiopi." },
     ],
   }),
 })

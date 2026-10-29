@@ -61,7 +61,7 @@ function ElearningPage() {
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,3vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '1rem' }}>
               Formation E-learning Tutoré
             </h1>
-            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '100%', lineHeight: 1.8, marginBottom: '1.5rem' }}>
               Progressez à votre rythme sur la plateforme officielle Cisco Networking Academy. Un tuteur certifié vous accompagne tout au long du parcours avec un suivi individualisé documenté conforme Qualiopi.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -214,7 +214,7 @@ function ElearningPage() {
 
         {/* ── CTA ── */}
         <section style={{ background: 'var(--g-black)', padding: '3rem 2rem', borderTop: '4px solid var(--g-red)' }}>
-          <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ maxWidth: '100%', margin: '0 auto', textAlign: 'center' }}>
             <h2 className="section-h2-light" style={{ marginBottom: '1rem' }}>Démarrer un parcours e-learning tutoré</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.62)', lineHeight: 1.8, marginBottom: '2rem' }}>
               Contactez-nous pour choisir votre parcours, monter votre dossier de financement et recevoir vos accès sous 72 h.

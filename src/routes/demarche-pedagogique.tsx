@@ -176,7 +176,12 @@ function DemarchePedagogiquePage() {
               {[
                 { title: 'Méthodes actives', items: ['Exposé, démonstration et atelier pratique', 'Cas pratiques et études de cas', 'Quizz et évaluations interactives', 'Méthode interactive et intuitive'] },
                 { title: 'Outils numériques', items: ['Plateforme Cisco Networking Academy (LMS officiel)', 'Simulateur Packet Tracer (Cisco)', 'Outil WEBEX pour la FOAD', 'Supports stagiaires numériques'] },
-                { title: 'Modalités de formation', items: ["Formation en présentiel chez le client", "Formation à distance (FOAD) via WEBEX", "Formation hybride (blended learning)", "Intra-entreprise et inter-entreprise"] },
+                // Le cadre mélangeait la modalité (présentiel, FOAD) et le format
+                // d'organisation (intra, inter), oubliait l'e-learning tutoré — la
+                // modalité principale — et annonçait une formation « hybride » qu'aucune
+                // action du catalogue ne propose. Chaque ligne porte maintenant une
+                // modalité et son format. Revu le 29 octobre 2026.
+                { title: 'Modalités de formation', items: ["E-learning tutoré — 100 % à distance, parcours individuel, entrées permanentes", "FOAD — sessions live sur WEBEX, en inter comme en intra-entreprise", "Présentiel — dans vos locaux (intra-entreprise) ou en salle retenue pour la session (inter-entreprise)"] },
                 { title: 'Documents remis', items: ['Plan de formation détaillé', 'Convention de formation', "Convocation avec règlement intérieur", "Attestation de fin de formation", 'Attestation de présence'] },
               ].map(m => (
                 <div key={m.title} style={{ background: '#fff', border: '1px solid rgba(187,187,187,0.4)', padding: '1.75rem' }}>

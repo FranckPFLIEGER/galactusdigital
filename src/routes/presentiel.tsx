@@ -24,10 +24,18 @@ const TEL = '+33 7 81 07 47 46'
 // La phrase de périmètre, dans les termes de Franck : elle dit où la formation se
 // tient ET ce qui se donne en présentiel, pour qu'un visiteur ne demande pas une
 // session présentielle sur un cours qui n'existe qu'en e-learning tutoré.
-const PERIMETRE_PRESENTIEL = 'Les formations se tiennent dans vos locaux ou en salle retenue pour '
-  + 'la session — uniquement le catalogue Microsoft, le CCNA v2.0 parcours complet et les CCNP '
-  + 'ENCOR et ENARSI en présentiel, en inter comme en intra-entreprise.'
-const DESC_COMMUNE = 'Interventions dans vos locaux ou en salle retenue pour la session, en inter comme en intra-entreprise.'
+const PERIMETRE_PRESENTIEL = 'Interventions dans vos locaux (intra-entreprise) ou en salle retenue '
+  + 'pour la session (inter-entreprise) — uniquement le catalogue Microsoft, le CCNA v2.0 parcours '
+  + 'complet et les CCNP ENCOR et ENARSI en présentiel.'
+// Dans la rubrique inter-entreprise, la session se tient en salle retenue : parler
+// des locaux du client y mélangeait les deux formats. Phrase dédiée, sans adresse,
+// identique pour les quatre territoires. Demandé le 29 octobre 2026.
+const PERIMETRE_INTER = 'Les formations en présentiel inter-entreprise se tiennent dans une salle '
+  + 'retenue pour la session — uniquement le catalogue Microsoft, le CCNA v2.0 parcours complet '
+  + 'et les CCNP ENCOR et ENARSI.'
+// « en inter comme en intra » laissait le lecteur deviner ce qui va avec quoi.
+// Chaque format est désormais collé à son lieu. Demandé le 29 octobre 2026.
+const DESC_COMMUNE = 'Interventions dans vos locaux (intra-entreprise) ou en salle retenue pour la session (inter-entreprise).'
 const LIEUX: { zone: string; badge: string; adresse?: string; desc: string; tel: string }[] = [
   { zone: 'Martinique', badge: 'Bureau — Caraïbes', adresse: 'Pointe Madeleine — CAP EST\n97240 Le François', desc: DESC_COMMUNE, tel: TEL },
   { zone: 'Guadeloupe', badge: 'Bureau — Caraïbes', adresse: 'Pointe de la Verdure\nGosier 97190', desc: DESC_COMMUNE, tel: TEL },
@@ -103,7 +111,7 @@ function PresentielPage() {
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,3vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '1rem' }}>
               Formation en Présentiel
             </h1>
-            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '100%', lineHeight: 1.8, marginBottom: '1.5rem' }}>
               Un formateur certifié intervient en face-à-face chez vous ou dans une salle retenue pour la session. Immersion totale, ateliers pratiques sur équipements réels, progression maximale vers la certification.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -142,7 +150,7 @@ function PresentielPage() {
             <div className="g-rule" />
             {/* Le périmètre, énoncé une fois : le répéter sur chacune des quatre
                 cartes alourdissait la lecture sans rien ajouter. */}
-            <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.62)', maxWidth: '760px', marginBottom: '2rem' }}>
+            <p style={{ fontSize: '0.92rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.62)', maxWidth: '100%', marginBottom: '2rem' }}>
               {PERIMETRE_PRESENTIEL}
             </p>
             <div className="pres-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(225px, 1fr))', gap: '1.5rem' }}>
@@ -183,7 +191,7 @@ function PresentielPage() {
                 <h2 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, color: 'var(--g-black)', textTransform: 'uppercase', letterSpacing: '0.04em', margin: 0 }}>Inter-Entreprise</h2>
               </div>
             </div>
-            <p style={{ fontSize: '0.95rem', color: '#5a5a58', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+            <p style={{ fontSize: '0.95rem', color: '#5a5a58', maxWidth: '100%', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Rejoignez nos sessions ouvertes planifiées tout au long de l'année. Un format qui favorise les échanges entre professionnels de secteurs variés dans les territoires ultramarins et en France hexagonale.
             </p>
             <div className="pres-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
@@ -203,7 +211,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions planifiées au calendrier ou en intra à vos dates','Supports de cours officiels inclus','Accès à Microsoft Learn — Cisco Networking Academy pour le CCNA v2.0 complet','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Inscription possible jusqu'à une semaine avant le démarrage (art. 14 des CGV)"].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions planifiées au calendrier, ouvertes à plusieurs entreprises','Supports de cours officiels inclus','Accès à Microsoft Learn — Cisco Networking Academy pour le CCNA v2.0 complet','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Inscription possible jusqu'à une semaine avant le démarrage (art. 14 des CGV)"].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -216,12 +224,11 @@ function PresentielPage() {
                     formation » : elle portait elle aussi le siège parisien et ne disait
                     pas quelles formations se tiennent en présentiel. Alignée sur les
                     quatre territoires et sur le périmètre réel, le 29 octobre 2026. */}
-                {[
-                  { zone: 'Martinique', badge: 'Bureau — Caraïbes', desc: PERIMETRE_PRESENTIEL + ' Bureau : Pointe Madeleine — CAP EST, 97240 Le François.' },
-                  { zone: 'Guadeloupe', badge: 'Bureau — Caraïbes', desc: PERIMETRE_PRESENTIEL + ' Bureau : Pointe de la Verdure, Gosier 97190.' },
-                  { zone: 'Guyane', badge: 'Intervention sur demande', desc: PERIMETRE_PRESENTIEL },
-                  { zone: 'La Réunion', badge: 'Intervention sur demande', desc: PERIMETRE_PRESENTIEL },
-                ].map(l => (
+                {['Martinique', 'Guadeloupe', 'Guyane', 'La Réunion'].map(zone => ({
+                  zone,
+                  badge: 'Session inter-entreprise',
+                  desc: PERIMETRE_INTER,
+                })).map(l => (
                   <div key={l.zone} style={{ display: 'flex', gap: '0.75rem', marginBottom: '0.75rem' }}>
                     <div style={{ flexShrink: 0, width: '8px', height: '8px', background: 'var(--g-red)', marginTop: '5px' }} />
                     <div>
@@ -258,7 +265,7 @@ function PresentielPage() {
                 <h2 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', margin: 0 }}>Intra-Entreprise</h2>
               </div>
             </div>
-            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', maxWidth: '100%', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Nous intervenons directement dans vos locaux avec un programme conçu sur mesure pour vos équipes. Vos collaborateurs se forment sans quitter leur environnement de travail — où que vous soyez dans les territoires ultramarins ou en France hexagonale.
             </p>
             <div className="pres-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '3rem' }}>
@@ -280,7 +287,7 @@ function PresentielPage() {
                 { num: '01', title: 'Audit des besoins', desc: 'Entretien avec votre responsable formation pour identifier les compétences à développer et les certifications visées.' },
                 { num: '02', title: 'Programme personnalisé', desc: 'Nous concevons un programme aligné sur vos objectifs, vos outils et le niveau de vos équipes.' },
                 { num: '03', title: 'Convention & devis', desc: 'Signature de la convention de formation. Accompagnement sur les dispositifs de financement OPCO/PDC.' },
-                { num: '04', title: 'Formation & certification', desc: "Déploiement chez vous. Passage de l'examen officiel de l'éditeur, voucher compris dans le prix du devis. Attestations remises à chaque participant." },
+                { num: '04', title: 'Formation & certification', desc: "Déploiement chez vous. Passage de l'examen officiel de l'éditeur, voucher compris dans le prix du devis. Attestation remise à chaque participant." },
               ].map(s => (
                 <div key={s.num} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '1.75rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.75rem' }}>{s.num}</div>
@@ -390,7 +397,7 @@ function PresentielPage() {
 
         {/* ── CTA global ── */}
         <section style={{ background: 'var(--g-black)', padding: '3rem 2rem', borderTop: '4px solid var(--g-red)' }}>
-          <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ maxWidth: '100%', margin: '0 auto', textAlign: 'center' }}>
             <h2 className="section-h2-light" style={{ marginBottom: '1rem' }}>Organiser votre formation en présentiel</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.62)', lineHeight: 1.8, marginBottom: '2rem' }}>
               Contactez-nous pour connaître les prochaines sessions disponibles ou organiser une session intra dédiée à votre équipe — depuis n'importe quel territoire.

@@ -78,7 +78,7 @@ function FoadPage() {
             <h1 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.8rem,3vw,2.8rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', marginBottom: '1rem' }}>
               Formation à Distance (FOAD)
             </h1>
-            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
+            <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '100%', lineHeight: 1.8, marginBottom: '1.5rem' }}>
               Le parcours Juniper JNCIA-Junos se tient en FOAD : sessions live sur WEBEX, maquette Junos accessible à distance, accompagnement individualisé documenté à chaque étape. La même qualité que le présentiel, sans contrainte géographique.
             </p>
             <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
@@ -120,7 +120,7 @@ function FoadPage() {
                 <h2 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, color: '#fff', textTransform: 'uppercase', letterSpacing: '0.04em', margin: 0 }}>Inter-Entreprise à distance</h2>
               </div>
             </div>
-            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+            <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.65)', maxWidth: '100%', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               La session est montée à la demande, pour une personne seule comme pour un groupe, et se suit depuis n'importe quel territoire. Le formateur et les participants se retrouvent en ligne sur WEBEX — même format que l'inter présentiel, sans contrainte de déplacement.
             </p>
             <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '2.5rem' }}>
@@ -177,7 +177,7 @@ function FoadPage() {
                 <h2 style={{ fontFamily: 'var(--font-title)', fontSize: 'clamp(1.4rem,2.5vw,2rem)', fontWeight: 700, color: 'var(--g-black)', textTransform: 'uppercase', letterSpacing: '0.04em', margin: 0 }}>Intra-Entreprise à distance</h2>
               </div>
             </div>
-            <p style={{ fontSize: '0.95rem', color: '#5a5a58', maxWidth: '680px', lineHeight: 1.8, marginBottom: '2.5rem' }}>
+            <p style={{ fontSize: '0.95rem', color: '#5a5a58', maxWidth: '100%', lineHeight: 1.8, marginBottom: '2.5rem' }}>
               Un groupe dédié à votre organisation, un programme personnalisé, des sessions live réservées à vos équipes. Toute la flexibilité de l'intra, sans contrainte géographique.
             </p>
             <div className="foad-grid-3" style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem', marginBottom: '2.5rem' }}>
@@ -199,7 +199,7 @@ function FoadPage() {
                 { num: '01', title: 'Audit des besoins', desc: 'Entretien avec votre responsable formation pour identifier les compétences à développer et les certifications visées.' },
                 { num: '02', title: 'Programme personnalisé', desc: 'Nous concevons un programme adapté à vos outils, vos processus et le niveau de vos équipes.' },
                 { num: '03', title: 'Convention & devis', desc: 'Signature de la convention de formation. Accompagnement sur les dispositifs de financement OPCO/PDC.' },
-                { num: '04', title: 'Formation & certification', desc: "Sessions live WEBEX dédiées. Passage de l'examen officiel JN0-106, dont le voucher est compris dans le prix du devis. Attestations remises à chaque participant." },
+                { num: '04', title: 'Formation & certification', desc: "Sessions live WEBEX dédiées. Passage de l'examen officiel JN0-106, dont le voucher est compris dans le prix du devis. Attestation remise à chaque participant." },
               ].map(s => (
                 <div key={s.num} style={{ border: '1px solid rgba(187,187,187,0.3)', borderTop: '3px solid var(--g-red)', padding: '1.75rem', background: 'var(--g-white)' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.75rem' }}>{s.num}</div>
@@ -309,7 +309,7 @@ function FoadPage() {
 
         {/* ── CTA ── */}
         <section style={{ background: 'var(--g-black)', padding: '3rem 2rem', borderTop: '4px solid var(--g-red)' }}>
-          <div style={{ maxWidth: '700px', margin: '0 auto', textAlign: 'center' }}>
+          <div style={{ maxWidth: '100%', margin: '0 auto', textAlign: 'center' }}>
             <h2 className="section-h2-light" style={{ marginBottom: '1rem' }}>{"S'inscrire à une formation à distance"}</h2>
             <p style={{ fontSize: '0.95rem', color: 'rgba(255,255,255,0.62)', lineHeight: 1.8, marginBottom: '2rem' }}>
               Contactez-nous pour connaître les prochaines sessions disponibles ou organiser une session intra dédiée à votre équipe — depuis n'importe quel territoire.

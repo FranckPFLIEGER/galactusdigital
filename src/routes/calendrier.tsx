@@ -491,10 +491,12 @@ function CalendrierPage() {
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem' }}>
               {[ {titre:'Présentiel',desc:"Catalogue Microsoft — en inter-entreprises (sessions planifiées au calendrier) ou en intra sur mesure, dans vos locaux.",href:'/presentiel',cta:'En savoir plus'}, {titre:'FOAD — Juniper',desc:"Le parcours Juniper JNCIA-Junos en sessions live sur WEBEX, depuis n'importe quel territoire.",href:'/foad',cta:'En savoir plus'}, {titre:'E-learning tutoré',desc:'Catalogue Cisco Networking Academy — avancez à votre rythme avec un tuteur certifié, accès plateforme un an.',href:'/elearning',cta:'En savoir plus'} ].map(b => (
-                <div key={b.titre} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
+                /* Les trois descriptions n'ont pas la même longueur : sans flex,
+                   les boutons « En savoir plus » se décalaient d'une carte à l'autre. */
+                <div key={b.titre} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem', display: 'flex', flexDirection: 'column' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: '#fff', marginBottom: '0.75rem' }}>{b.titre}</div>
-                  <p style={{ fontSize: '0.85rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.50)', marginBottom: '1.5rem' }}>{b.desc}</p>
-                  <a href={b.href} className="btn-ghost" style={{ fontSize: '0.76rem' }}>{b.cta}</a>
+                  <p style={{ fontSize: '0.85rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.50)', marginBottom: '1.5rem', flex: 1 }}>{b.desc}</p>
+                  <a href={b.href} className="btn-ghost" style={{ fontSize: '0.76rem', alignSelf: 'flex-start' }}>{b.cta}</a>
                 </div>
               ))}
             </div>

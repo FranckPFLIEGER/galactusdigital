@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/ab-900')({
   head: () => ({
     meta: [
       { title: "AB-900 Microsoft 365 Copilot Fundamentals — Formation certifiante | GALACTUS Digital" },
-      { name: "description", content: "Formation Microsoft AB-900 Copilot & Agent Administration Fundamentals. 18 h. Certification officielle. M365, Copilot, agents IA, sécurité. Voucher inclus. Qualiopi." },
+      { name: "description", content: "Formation Microsoft AB-900 Copilot & Agent Administration Fundamentals. 18 h. Certification officielle. M365, Copilot, agents IA, sécurité. Examen en option. Qualiopi." },
     ],
   }),
 })

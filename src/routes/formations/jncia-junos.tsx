@@ -9,7 +9,7 @@ export const Route = createFileRoute('/formations/jncia-junos')({
   component: FormationPage,
   head: () => ({
     meta: [
-      { title: "JNCIA-Junos — Introduction to the Junos OS (JN0-106) | GALACTUS Digital" },
+      { title: "Junos, Associate (JNCIA-Junos) — examen JN0-106 | GALACTUS Digital" },
       { name: "description", content: "JNCIA-Junos (IJOS) — préparation à l'examen Juniper JN0-106. 35 h en FOAD, 17 travaux pratiques sur maquette Junos. Organisme certifié Qualiopi." },
     ],
   }),
@@ -18,17 +18,17 @@ export const Route = createFileRoute('/formations/jncia-junos')({
 const DATA = {
   editeur: 'Juniper Networks',
   famille: 'Juniper Junos',
-  titre: 'JNCIA-Junos — Introduction to the Junos Operating System',
-  sousTitre: "IJOS · Préparation à l'examen JN0-106 · Niveau associé du parcours Juniper",
+  titre: 'Junos, Associate (JNCIA-Junos)',
+  sousTitre: "Cours IJOS — Introduction to the Junos Operating System · Préparation à l'examen JN0-106",
   ref: 'JNCIA-JUNOS-001',
   niveau: 'Fondamental',
   partenaire: 'Formateur réseau certifié — 15 ans d\'expérience d\'instructeur',
-  certification: 'Juniper Networks Certified Associate — Junos (JNCIA-Junos)',
+  certification: 'Junos, Associate (JNCIA-Junos)',
   duree: '35 heures',
   groupeMin: 1,
   groupeMax: 8,
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
-  description: `Premier niveau du parcours de certification Juniper, JNCIA-Junos valide la capacité à exploiter un équipement fonctionnant sous Junos OS. La formation couvre l'architecture du système et la séparation du plan de contrôle et du plan de transfert, l'interface en ligne de commande, le cycle configuration candidate / commit / rollback, les interfaces physiques et logiques, les tables de routage et le routage statique et OSPF, les politiques de routage et les filtres pare-feu sans état, enfin la supervision, la journalisation et le dépannage. Les 35 heures se répartissent en 14 heures d'apports théoriques et 21 heures de travaux pratiques et d'évaluation, soit dix-sept laboratoires conduits sur une maquette Junos. La formation prépare à l'examen Juniper JN0-106, passé chez Pearson VUE.`,
+  description: `Premier niveau du parcours de certification Juniper, JNCIA-Junos valide la capacité à exploiter un équipement fonctionnant sous Junos OS. La formation couvre l'architecture du système et la séparation du plan de contrôle et du plan de transfert, l'interface en ligne de commande, le cycle configuration candidate / commit / rollback, les interfaces physiques et logiques, les tables de routage et le routage statique et OSPF, les politiques de routage et les filtres pare-feu sans état, enfin la supervision, la journalisation et le dépannage. Les 35 heures se répartissent en 14 heures d'apports théoriques et 21 heures de travaux pratiques et d'évaluation, soit dix-sept laboratoires conduits sur une maquette Junos. La formation prépare à l'examen Juniper JN0-106, passé chez Pearson VUE : 90 minutes, 65 questions à choix multiples, en anglais. Le voucher d'examen est compris dans le prix du devis — GALACTUS Digital le prend en charge et vous remet le code.`,
   objectifs: [
     "Identifier l'architecture de Junos OS et la séparation du plan de contrôle et du plan de transfert",
     "Naviguer dans la CLI Junos en mode opérationnel et en mode configuration",
@@ -52,43 +52,43 @@ const DATA = {
     "Notions de TCP et UDP — aucune expérience préalable de Junos OS n'est requise",
   ],
   modules: [
-    { num: '01', titre: 'Fondamentaux et architecture de Junos OS', duree: '4 h', contenu: [
+    { num: '01', titre: 'Fondamentaux et architecture de Junos OS', duree: '4 h', domaines: ['Junos OS Fundamentals', 'Networking Fundamentals'], contenu: [
       "Positionnement de Junos OS et gamme d'équipements",
       "Séparation du plan de contrôle et du plan de transfert",
       "Processus système et démarrage de l'équipement",
       "TP 1 et 2 — prise en main de la maquette et premiers relevés d'état",
     ] },
-    { num: '02', titre: 'Interface utilisateur : la CLI Junos', duree: '6 h', contenu: [
+    { num: '02', titre: 'Interface utilisateur : la CLI Junos', duree: '6 h', domaines: ['User Interfaces'], contenu: [
       "Modes opérationnel et configuration, hiérarchie de configuration",
       "Complétion, aide contextuelle et filtres de sortie",
       "Configuration candidate, commit, commit check, commit confirmed et rollback",
       "TP 3 à 5 — édition, validation et retour arrière d'une configuration",
     ] },
-    { num: '03', titre: 'Interfaces réseau', duree: '4 h', contenu: [
+    { num: '03', titre: 'Interfaces réseau', duree: '4 h', domaines: ['Networking Fundamentals', 'Configuration Basics'], contenu: [
       "Interfaces physiques et unités logiques, nommage",
       "Adressage IPv4 et IPv6, familles de protocoles",
       "Lecture de l'état d'une interface et diagnostic de niveau 1 et 2",
       "TP 6 et 7 — adressage, vérification et test de connectivité",
     ] },
-    { num: '04', titre: "Mise en service et administration de l'équipement", duree: '6 h', contenu: [
+    { num: '04', titre: "Mise en service et administration de l'équipement", duree: '6 h', domaines: ['Configuration Basics', 'Operational Monitoring and Maintenance'], contenu: [
       "Configuration initiale, comptes utilisateurs et classes d'autorisation",
       "Services système — NTP, DNS, SNMP, journalisation",
       "Sauvegarde, archivage et restauration de configuration",
       "TP 8 à 10 — mise en service complète d'un équipement",
     ] },
-    { num: '05', titre: 'Routage : tables, routes statiques et OSPF', duree: '6 h', contenu: [
+    { num: '05', titre: 'Routage : tables, routes statiques et OSPF', duree: '6 h', domaines: ['Routing Fundamentals'], contenu: [
       "Tables de routage et de transfert, préférence de route",
       "Correspondance du préfixe le plus long et routes par défaut",
       "Routage statique et OSPF monozone — adjacences et vérification",
       "TP 11 et 12 — routage statique puis OSPF, vérifié de bout en bout",
     ] },
-    { num: '06', titre: 'Commutation, politiques de routage et filtres pare-feu', duree: '5 h', contenu: [
-      "VLAN, ports d'accès et ports trunk",
+    { num: '06', titre: 'Commutation, politiques de routage et filtres pare-feu', duree: '5 h', domaines: ['Routing Policy and Firewall Filters'], contenu: [
+      "VLAN, ports d'accès et ports trunk — hors domaines d'examen, retenu pour l'exploitation",
       "Politiques de routage — termes, actions, sens d'application",
       "Filtres pare-feu sans état — termes, actions et compteurs",
-      "TP 13 à 15 — VLAN, politique d'import/export et filtre de protection",
+      "TP 13 à 15 — VLAN (hors examen), politique d'import/export et filtre de protection",
     ] },
-    { num: '07', titre: "Supervision, dépannage et préparation à l'examen", duree: '4 h', contenu: [
+    { num: '07', titre: "Supervision, dépannage et préparation à l'examen", duree: '4 h', domaines: ['Operational Monitoring and Maintenance'], contenu: [
       "Journalisation système, traceoptions et commandes monitor",
       "Démarche de dépannage structurée sur Junos OS",
       "Maintenance — mise à jour logicielle et gestion des fichiers",
@@ -99,10 +99,25 @@ const DATA = {
     code: 'JN0-106',
     duree: '90 minutes',
     langue: 'Anglais',
-    organisme: 'Juniper Networks (Pearson VUE)',
+    organisme: 'HPE Networking Certification (ex-Juniper) — Pearson VUE',
     format: '65 questions à choix multiples',
     score: 'Défini par Juniper (variable)',
-    note: `L'examen JN0-106 porte sur Junos OS 21.2 et délivre la certification JNCIA-Junos, valable trois ans. Il constitue le niveau associé du parcours Juniper et ouvre l'accès aux niveaux spécialiste (JNCIS). Il s'agit d'une certification éditeur : elle n'est enregistrée ni au Répertoire national des certifications professionnelles ni au Répertoire spécifique, et n'est donc pas mobilisable sur MonCompteFormation. Le voucher d'examen officiel est compris dans le tarif de la formation.`,
+    note: `L'examen JN0-106 porte sur Junos OS 21.2 et délivre la certification JNCIA-Junos, valable trois ans. Le programme Juniper Networks Certification a été renommé HPE Networking Certification Program le 15 septembre 2026 ; le code d'examen et l'intitulé de la certification restent inchangés (source : Pearson VUE, relevé le 29 octobre 2026). Il constitue le niveau associé du parcours Juniper et ouvre l'accès aux niveaux spécialiste (JNCIS). Il s'agit d'une certification éditeur : elle n'est enregistrée ni au Répertoire national des certifications professionnelles ni au Répertoire spécifique, et n'est donc pas mobilisable sur MonCompteFormation. Le voucher d'examen officiel est compris dans le prix du devis.`,
+  },
+  // Domaines de l'examen JN0-106, repris du flyer d'examen publié par Juniper.
+  // Intitulés laissés en anglais : ce sont ceux du référentiel, et un candidat les
+  // retrouve tels quels le jour de l'épreuve, qui se passe en anglais.
+  domainesExamen: {
+    source: "Juniper Networks — JNCIA-Junos exam flyer (JN0-106), relevé le 29 octobre 2026",
+    domaines: [
+      { nom: 'Networking Fundamentals', module: 'Module 01' },
+      { nom: 'Junos OS Fundamentals', module: 'Module 01' },
+      { nom: 'User Interfaces', module: 'Module 02' },
+      { nom: 'Configuration Basics', module: 'Modules 02 et 04' },
+      { nom: 'Operational Monitoring and Maintenance', module: 'Modules 04 et 07' },
+      { nom: 'Routing Fundamentals', module: 'Modules 03 et 05' },
+      { nom: 'Routing Policy and Firewall Filters', module: 'Module 06' },
+    ],
   },
   methodes: [
     "Formation dispensée par un formateur réseau certifié, quinze ans d'expérience d'instructeur",
@@ -253,6 +268,15 @@ function FormationPage() {
                     </div>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.3rem', fontSize: '0.78rem', color: 'rgba(255,255,255,0.75)' }}><Clock size={13} />{mod.duree}</div>
                   </div>
+                  {/* Le ou les domaines de l'examen servis par le module : l'apprenant
+                      voit, module par module, à quoi chaque heure sert le jour de
+                      l'épreuve. Ajouté le 29 octobre 2026. */}
+                  <div style={{ background: 'rgba(228,31,38,0.06)', borderBottom: '1px solid rgba(187,187,187,0.3)', padding: '0.5rem 1.25rem', display: 'flex', gap: '0.4rem', flexWrap: 'wrap', alignItems: 'baseline' }}>
+                    <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.58rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#8a8a86' }}>Domaine d'examen</span>
+                    {mod.domaines.map(d => (
+                      <span key={d} style={{ fontSize: '0.74rem', color: 'var(--g-black)', fontWeight: 600 }}>{d}</span>
+                    ))}
+                  </div>
                   <div style={{ padding: '1rem 1.25rem', background: 'var(--g-white)' }}>
                     <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
                       {mod.contenu.map((item, i) => (
@@ -294,6 +318,24 @@ function FormationPage() {
                 <div style={{ marginTop: '1rem', padding: '0.75rem 1rem', background: 'rgba(228,31,38,0.06)', border: '1px solid rgba(228,31,38,0.15)' }}>
                   <p style={{ fontSize: '0.84rem', color: '#5a5a58', margin: 0 }}><strong style={{ color: 'var(--g-black)' }}>Note — </strong>{DATA.examen.note}</p>
                 </div>
+                {/* Les sept domaines de l'examen, en regard des modules de la formation :
+                    le candidat voit ce que l'épreuve couvre et où il l'a travaillé. */}
+                <div style={{ marginTop: '1.5rem' }}>
+                  <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.72rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '0.75rem' }}>
+                    Domaines de l'examen
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.5rem' }} className="fiche-methodes">
+                    {DATA.domainesExamen.domaines.map(d => (
+                      <div key={d.nom} style={{ display: 'flex', justifyContent: 'space-between', gap: '0.75rem', padding: '0.6rem 0.75rem', background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.25)' }}>
+                        <span style={{ fontSize: '0.82rem', color: 'var(--g-black)', fontWeight: 600 }}>{d.nom}</span>
+                        <span style={{ fontFamily: 'var(--font-title)', fontSize: '0.64rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: '#8a8a86', whiteSpace: 'nowrap' }}>{d.module}</span>
+                      </div>
+                    ))}
+                  </div>
+                  <p style={{ fontSize: '0.74rem', color: '#8a8a86', marginTop: '0.75rem', marginBottom: 0 }}>
+                    Source : {DATA.domainesExamen.source}. Les sept domaines sont couverts par les sept modules, et chaque module sert au moins un domaine.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
@@ -325,6 +367,11 @@ function FormationPage() {
                   { ref: 'Critère 3 Qualiopi', title: 'Évaluation des acquis', desc: "QCM de module au seuil de 70 % et grille critériée à 4 niveaux à l'issue de chaque laboratoire." },
                   { ref: 'Circ. DGEFP/MOC/2026/30', title: 'Plan de travail individuel', desc: "Un plan de travail individuel est remis à chaque apprenant avant le démarrage de la formation FOAD, conformément à la circulaire DGEFP du 17 février 2026." },
                   { ref: 'Ind. 19 Qualiopi', title: 'Plateau technique', desc: 'Maquette Junos et accès vérifiés lors d\'un essai technique au plus tard 48 h ouvrées avant le démarrage.' },
+                  // Le bloc portait six cartes quand /foad et /elearning en portent huit :
+                  // l'accessibilité et le RNQ V2 manquaient sur cette fiche. Ajoutés le
+                  // 29 octobre 2026 — réponse à « en manque-t-il ou pas ? » : oui, deux.
+                  { ref: 'Ind. 26 Qualiopi', title: 'Accessibilité et handicap', desc: "Référent handicap désigné : Franck PFLIEGER, certificat de Référent Handicap OF/CFA du 20 février 2023. Toute situation signalée donne lieu à un entretien préalable (article 13 des CGV) : aménagement de la durée, des supports et des conditions de passage de l'examen, le cas échéant avec l'appui du réseau Ressource Handicap Formation et de l'Agefiph." },
+                  { ref: 'RNQ V2 — déc. 2026-728', title: 'Référentiel National Qualité V2', desc: "Applicable au 1er novembre 2026. Indicateurs 1, 2, 4, 8, 19, 26 et 33 documentés pour cette action : information du public, prérequis, convocation, positionnement, moyens techniques, accessibilité et traitement des réclamations." },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
                     <div style={{ flexShrink: 0 }}><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.55rem', whiteSpace: 'nowrap' }}>{c.ref}</div></div>

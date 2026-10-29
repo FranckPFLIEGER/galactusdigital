@@ -20,7 +20,11 @@ const reasons: { num: string; title: string; desc: string; lien?: { label: strin
   {
     num: '04',
     title: 'Accompagnement de bout en bout',
-    desc: "Du positionnement écrit à la présentation de l'examen, nous accompagnons chaque apprenant et chaque entreprise à chaque étape — en présentiel, en FOAD comme en e-learning tutoré, un référent pédagogique est désigné et joignable.",
+    // La phrase enchaînait les trois modalités et le référent sans qu'on voie le
+    // lien entre les deux. Elle dit maintenant l'essentiel : l'accompagnement est
+    // le même quelle que soit la modalité, et deux référents sont nommés — dont
+    // le référent handicap, que le visiteur cherchait ici. Réécrite le 29/10/2026.
+    desc: "Du positionnement écrit à la présentation de l'examen, nous accompagnons chaque apprenant et chaque entreprise à chaque étape. Quelle que soit la modalité — présentiel, FOAD ou e-learning tutoré — deux référents sont désignés et joignables : un référent pédagogique pour le parcours, un référent handicap pour les aménagements.",
   },
 ]
 

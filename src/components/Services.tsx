@@ -1,9 +1,22 @@
 import { MapPin, Monitor, BookOpen, ArrowRight, Users, Building2 } from 'lucide-react'
+import type { ReactNode } from 'react'
 import { useIntersection } from '../hooks/useIntersection'
 
 // ─── Données ──────────────────────────────────────────────────────────────────
 
-const services = [
+type Service = {
+  icon: ReactNode
+  title: string
+  href: string
+  badge: string
+  desc: string
+  features: string[]
+  formats: { label: string; href: string; icon: ReactNode }[]
+  /** Pour l'e-learning tutoré, qui n'a ni inter ni intra : la ligne équivalente. */
+  formatsNote?: string
+}
+
+const services: Service[] = [
   {
     icon: <MapPin size={22} color="white" />,
     title: 'Formation en Présentiel',
@@ -54,6 +67,7 @@ const services = [
       'Accès sous 72 h après validation administrative',
     ],
     formats: [],
+    formatsNote: 'Parcours individuel · entrées permanentes',
   },
 ]
 
@@ -78,26 +92,28 @@ export function Services() {
           className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: 0 }}
         >
-          Que vous représentiez une PME locale ou un grand groupe régional, que vous soyez
-          dans les territoires ultramarins ou en France hexagonale, nous adaptons notre
-          ingénierie pédagogique à votre situation. Chaque modalité est disponible en
-          format inter-entreprise (sessions ouvertes) ou intra-entreprise (groupe dédié).
+          PME locale, grand groupe régional ou particulier dont la formation est prise en
+          charge, dans les territoires ultramarins comme en France hexagonale : nous adaptons
+          notre ingénierie pédagogique à votre situation, en inter-entreprise (sessions
+          ouvertes) comme en intra-entreprise (groupe dédié).
         </p>
-        {/* Le site disait « pas de particulier » sans distinguer, ce qui faisait fuir
-            les candidats à l'AIF — précisément le public que l'organisme vise. La
-            nuance qui compte n'est pas le statut de la personne mais l'origine du
-            financement. Formulation alignée sur l'article 2 des CGV. */}
+        {/* Ce paragraphe portait la classe « section-body » : texte gris foncé et largeur
+            bridée à 600 px, donc illisible sur fond noir et décalé par rapport au
+            paragraphe au-dessus. Passé en « section-body-light », pleine largeur, et
+            raccourci : le périmètre e-learning est désormais dit ici, puisque c'est la
+            seule modalité ouverte à un particulier. Corrigé le 29 octobre 2026. */}
         <p
-          className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}
-          style={{ marginTop: '1rem', marginBottom: 0 }}
+          className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
+          style={{ marginTop: '1.1rem', marginBottom: 0 }}
         >
-          <strong>Vous êtes un particulier ?</strong> Votre place est ici dès lors que votre
-          formation est prise en charge par un tiers : votre employeur au titre de son plan
-          de développement des compétences, votre OPCO, votre collectivité, ou France Travail
-          au titre de l'Aide Individuelle à la Formation. Nous établissons le devis et montons
-          le dossier avec vous et avec votre conseiller — la décision de financement lui
-          appartient. Nous ne vendons pas de formation à un particulier sur ses fonds propres :
-          nos tarifs ne constituent pas une offre de vente au consommateur (article 2 des CGV).
+          <strong style={{ color: '#fff' }}>Vous êtes un particulier ?</strong> Votre place
+          est ici dès lors qu'un tiers finance — France&nbsp;Travail au titre de l'AIF, un
+          employeur, un OPCO ou une collectivité. Les particuliers s'inscrivent uniquement
+          sur les formations en <strong style={{ color: '#fff' }}>e-learning tutoré</strong>.
+          Nous établissons le devis et montons le dossier avec votre conseiller ; la décision
+          de financement lui appartient. Nous ne vendons pas de formation à un particulier sur
+          ses fonds propres : nos tarifs ne constituent pas une offre de vente au consommateur
+          (article&nbsp;2 des CGV).
         </p>
 
         {/* ── Grille 3 cartes ── */}
@@ -134,7 +150,10 @@ export function Services() {
               <h3 className="service-title">{s.title}</h3>
               <p className="service-desc">{s.desc}</p>
 
-              <ul className="service-features">
+              {/* flex:1 — la liste absorbe la hauteur disponible, de sorte que les
+                  blocs « Formats disponibles » et les boutons s'alignent d'une
+                  carte à l'autre quelle que soit la longueur des listes. */}
+              <ul className="service-features" style={{ flex: 1 }}>
                 {s.features.map(f => (
                   <li key={f} className="service-feature">
                     <span className="service-feature-dot" />
@@ -144,7 +163,7 @@ export function Services() {
               </ul>
 
               {/* Formats d'organisation (inter / intra) */}
-              {s.formats.length > 0 && (
+              {(s.formats.length > 0 || s.formatsNote) && (
                 <div style={{ marginTop: '1rem', paddingTop: '1rem', borderTop: '1px solid rgba(255,255,255,0.08)' }}>
                   <div style={{
                     fontFamily: 'var(--font-title)',
@@ -157,6 +176,11 @@ export function Services() {
                   }}>
                     Formats disponibles
                   </div>
+                  {s.formatsNote && (
+                    <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.55)' }}>
+                      {s.formatsNote}
+                    </div>
+                  )}
                   <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                     {s.formats.map(f => (
                       <a

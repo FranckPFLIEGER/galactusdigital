@@ -232,7 +232,17 @@ function FormationsPage() {
               {[
                 [String(FORMATIONS.length), "formations"],
                 [String(nbSocle), "sans prérequis"],
-                ["2", "éditeurs officiels"],
+                // « 2 éditeurs officiels » était faux — le catalogue en compte trois — et
+                // « 3 » mettait en avant un éditeur qui ne pèse qu'une formation sur 49.
+                // On compte donc les éditeurs principaux : ceux qui portent plus de cinq
+                // formations. Cisco (31) et Microsoft (17) les franchissent, Juniper (1)
+                // non. Le chiffre suit le catalogue si l'offre évolue. 29 octobre 2026.
+                [String(Object.values(
+                  FORMATIONS.reduce<Record<string, number>>((acc, f) => {
+                    acc[f.editeur] = (acc[f.editeur] ?? 0) + 1
+                    return acc
+                  }, {}),
+                ).filter(n => n > 5).length), "éditeurs principaux"],
                 [String(nbFamilles), "familles"],
                 ["100 %", "de réussite parmi les présentés à l'examen"],
               ].map(([num, lbl]) => (

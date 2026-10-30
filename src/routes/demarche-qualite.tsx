@@ -205,12 +205,26 @@ function DemarcheQualitePage() {
             </p>
             <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '2rem', maxWidth: '860px' }}>
               Les procédures correspondantes ont été formalisées dès juillet 2026 et sont aujourd'hui
-              en vigueur dans le kit qualité V2026.3. Les deux arrêtés d'application et le nouveau
-              guide de lecture restent attendus ; les modalités qu'ils préciseront — notamment les
-              seuils applicables à la formation à distance — seront intégrées dès leur parution.
+              en vigueur dans le kit qualité V2026.3. Le nouveau guide de lecture, dans sa
+              <strong> version V10 d'octobre 2026</strong>, est paru : il remplace le V9 du 8 janvier 2024
+              et précise la conduite de l'audit ainsi que les attendus de chaque indicateur. Seul
+              l'arrêté fixant le nombre d'intervenants au-delà duquel la désignation d'un référent
+              pédagogique par action devient obligatoire (indicateur 19) reste à paraître ;
+              GALACTUS Digital, qui compte un intervenant unique, désigne le sien par anticipation.
+            </p>
+            <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '2rem', maxWidth: '860px' }}>
+              Une période transitoire est ouverte par l'arrêté du 28 octobre 2026 : jusqu'au
+              <strong> 31 décembre 2026</strong>, un organisme déjà certifié peut être audité selon les
+              conditions applicables au 31 octobre 2026. À compter du 1<sup>er</sup> janvier 2027, tous
+              les audits sont conduits au nouveau référentiel. Le prochain audit de surveillance de
+              GALACTUS Digital intervenant après cette date, il se tiendra au référentiel à
+              33 indicateurs et au guide V10.
             </p>
 
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.25rem', marginBottom: '2rem' }}>
+            {/* alignItems: 'start' — sans lui, chaque carte s'étire à la hauteur de la plus
+                longue de sa rangée (celle du référent pédagogique, très fournie), ce qui laissait
+                400 px de blanc sous FQ-14 et FQ-15. Chaque carte se dimensionne sur son contenu. */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.25rem', marginBottom: '2rem', alignItems: 'start' }}>
               {[
                 {
                   ref: 'FQ-14',
@@ -239,8 +253,27 @@ function DemarcheQualitePage() {
                 {
                   ref: 'Ind. 1 · 2 · 3',
                   title: 'Information du public renforcée',
-                  desc: "Modalités de calcul des indicateurs publiées en clair, taux d'obtention, validation par blocs, équivalences, passerelles, suites de parcours et débouchés publiés sur chaque fiche formation, mention explicite de la non-éligibilité au CPF. Article 12 bis des CGV.",
+                  desc: "Modalités de calcul des indicateurs publiées en clair, taux d'obtention, validation par blocs, équivalences, passerelles, suites de parcours et débouchés publiés sur chaque fiche formation, mention explicite de la non-éligibilité au CPF. Le référentiel applicable au 1er novembre 2026 ajoute le type de reconnaissance de l'action, ses modalités pédagogiques et ses voies de financement, et proscrit toute mention de nature à induire le public en erreur : aucune prise en charge n'est annoncée comme acquise, seules les voies de financement mobilisables sont présentées. Article 12 bis des CGV.",
                   icon: '📣',
+                },
+                // Ind. 23 — le guide V10 ajoute la vérification du dépôt effectif des comptes
+                // annuels, sanctionnée en non-conformité majeure. PFLIEGER SASU dépose avec
+                // déclaration de confidentialité : les comptes ne sont pas publics, mais le dépôt
+                // est bien effectué et le récépissé du greffe en fait foi. Ajouté le 30/10/2026.
+                {
+                  ref: 'Ind. 23',
+                  title: 'Obligations légales — dépôt des comptes',
+                  desc: "Les comptes annuels de PFLIEGER SASU sont déposés chaque année au greffe du tribunal des activités économiques de Paris. Exercice clos le 31 décembre 2025 : dépôt du 16 avril 2026 sous le numéro 58542, récépissé délivré le même jour. Les comptes sont assortis d'une déclaration de confidentialité au titre des articles L. 232-25 et R. 123-154-1 du code de commerce — option ouverte aux micro-entreprises au sens de l'article L. 123-16-1 — et ne sont donc pas rendus publics. L'obligation porte sur le dépôt, non sur sa publicité : le récépissé du greffe est conservé au dossier et produit sur demande de l'auditeur ou d'un financeur.",
+                  icon: '🏛️',
+                },
+                // Ind. 27 — le guide V10 renforce la traçabilité des exigences qualité chez le
+                // sous-traitant. GALACTUS Digital n'en a aucun : la preuve est la déclaration
+                // d'absence de sous-traitance, confirmée par Franck PFLIEGER le 30 octobre 2026.
+                {
+                  ref: 'Ind. 27',
+                  title: 'Aucune sous-traitance',
+                  desc: "GALACTUS Digital ne sous-traite aucune action de formation, ni en totalité ni en partie. Toutes les prestations du catalogue sont conçues, animées et évaluées par l'intervenant unique de l'organisme. Aucun portage, aucune co-traitance, aucun formateur externe. L'indicateur 27, qui impose la traçabilité des exigences qualité auprès des sous-traitants et partenaires, est sans objet pour l'organisme ; cette absence est déclarée et documentée plutôt que laissée implicite.",
+                  icon: '🚫',
                 },
               ].map(p => (
                 <div key={p.ref} style={{ background: 'var(--g-offwhite)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', position: 'relative' }}>
@@ -261,7 +294,7 @@ function DemarcheQualitePage() {
               <AlertCircle size={18} color="#E41F26" style={{ flexShrink: 0 }} />
               <p style={{ fontSize: '0.82rem', color: '#4a4a48', margin: 0, lineHeight: 1.6 }}>
                 <strong style={{ color: 'var(--g-red)' }}>Statut :</strong> procédures en vigueur, intégrées au kit qualité V2026.3 (mise à jour du 8 août 2026),
-                figées après parution du décret au Journal officiel du 4 août 2026. Les seuils applicables à la formation à distance restent soumis aux arrêtés d'application et au guide de lecture à paraître.
+                figées après parution du décret au Journal officiel du 4 août 2026 et relues au regard du guide de lecture V10 d'octobre 2026. Seul le seuil d'intervenants de l'indicateur 19 reste soumis à un arrêté à paraître.
               </p>
             </div>
           </div>
@@ -316,7 +349,9 @@ function DemarcheQualitePage() {
                     'Arrêté du 31 mai 2023',
                     'Décret n° 2026-728 du 1er août 2026 (JO du 4 août 2026, NOR TRSD2619632D) — RNQ à 33 indicateurs, applicable au 1er novembre 2026',
                     'Guide de lecture Qualiopi V9 du 8 janvier 2024 — applicable jusqu\'au 31 octobre 2026',
-                    'Nouveau guide de lecture et arrêtés d\'application du RNQ V2 — à paraître',
+                    'Guide de lecture Qualiopi V10 d\'octobre 2026 — applicable au 1er novembre 2026',
+                    'Arrêté du 28 octobre 2026 — période transitoire jusqu\'au 31 décembre 2026',
+                    'Articles L. 232-25 et R. 123-154-1 du code de commerce (confidentialité des comptes annuels)',
                     'Article L. 6113-1 du Code du travail (blocs de compétences)',
                     'Article D. 6313-3-1 du Code du travail (FOAD)',
                     'Circulaire DGEFP n° MOC/2026/30 du 17 février 2026',

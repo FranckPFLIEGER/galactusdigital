@@ -371,7 +371,10 @@ function FormationPage() {
                   // l'accessibilité et le RNQ V2 manquaient sur cette fiche. Ajoutés le
                   // 29 octobre 2026 — réponse à « en manque-t-il ou pas ? » : oui, deux.
                   { ref: 'Ind. 26 Qualiopi', title: 'Accessibilité et handicap', desc: "Référent handicap désigné : Franck PFLIEGER, certificat de Référent Handicap OF/CFA du 20 février 2023. Toute situation signalée donne lieu à un entretien préalable (article 13 des CGV) : aménagement de la durée, des supports et des conditions de passage de l'examen, le cas échéant avec l'appui du réseau Ressource Handicap Formation et de l'Agefiph." },
-                  { ref: 'RNQ V2 — déc. 2026-728', title: 'Référentiel National Qualité V2', desc: "Applicable au 1er novembre 2026. Indicateurs 1, 2, 4, 8, 19, 26 et 33 documentés pour cette action : information du public, prérequis, convocation, positionnement, moyens techniques, accessibilité et traitement des réclamations." },
+                  // Même correction que sur /presentiel le 30 octobre 2026 : l'indicateur 33 ne
+                  // vise que l'apprentissage (CFA). L'indicateur du traitement des réclamations
+                  // est le 31.
+                  { ref: 'RNQ V2 — déc. 2026-728', title: 'Référentiel National Qualité V2', desc: "Applicable au 1er novembre 2026, guide de lecture V10 d'octobre 2026. Indicateurs 1, 2, 4, 8, 19, 26 et 31 documentés pour cette action : information du public, indicateurs de résultats, analyse du besoin, conditions d'accès, moyens pédagogiques et référent, accessibilité et traitement des réclamations." },
                 ].map(c => (
                   <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1rem', display: 'flex', gap: '0.75rem' }}>
                     <div style={{ flexShrink: 0 }}><div style={{ fontFamily: 'var(--font-title)', fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: 'var(--g-red)', background: 'rgba(228,31,38,0.08)', padding: '0.2rem 0.55rem', whiteSpace: 'nowrap' }}>{c.ref}</div></div>

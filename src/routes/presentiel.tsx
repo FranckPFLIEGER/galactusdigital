@@ -379,7 +379,11 @@ function PresentielPage() {
                 { ref: 'Ind. 26 Qualiopi', title: 'Accessibilité et handicap', desc: "Référent handicap désigné : Franck PFLIEGER, certificat de Référent Handicap OF/CFA du 20 février 2023. Toute situation signalée donne lieu à un entretien préalable (article 13 des CGV). En présentiel, l'accessibilité du lieu retenu pour la session est vérifiée avant l'inscription, et la salle est changée si elle ne convient pas." },
                 { ref: 'Ind. 26 — réseau', title: 'Aménagements et partenaires', desc: "Aménagement de la durée, des supports et des conditions de passage de l'examen, le cas échéant avec l'appui du réseau Ressource Handicap Formation et de l'Agefiph. Le détail des aménagements possibles est publié sur la page Accessibilité & Handicap." },
                 { ref: 'Ind. 19 — preuves', title: 'Effectivité de la formation', desc: "Feuilles de présence signées par demi-journée, évaluation des acquis à chaque journée et compte rendu écrit, consignés au registre de suivi. Article 13 bis des CGV." },
-                { ref: 'RNQ V2 — déc. 2026-728', title: 'Référentiel National Qualité V2', desc: "Applicable au 1er novembre 2026. Les indicateurs 1, 2, 4, 8, 19, 26 et 33 sont documentés pour la modalité présentielle : information du public, prérequis, convocation, positionnement, moyens techniques, accessibilité et traitement des réclamations." },
+                // L'indicateur 33 figurait ici par erreur : il ne vise que les actions de
+                // formation par apprentissage (CFA), seule colonne cochée au décret. GALACTUS
+                // Digital n'a pas d'apprentis. Remplacé par l'indicateur 31, qui est bien celui
+                // du traitement des réclamations. Corrigé le 30 octobre 2026.
+                { ref: 'RNQ V2 — déc. 2026-728', title: 'Référentiel National Qualité V2', desc: "Applicable au 1er novembre 2026, guide de lecture V10 d'octobre 2026. Les indicateurs 1, 2, 4, 8, 19, 26 et 31 sont documentés pour la modalité présentielle : information du public, indicateurs de résultats, analyse du besoin, conditions d'accès, moyens pédagogiques et référent, accessibilité et traitement des réclamations." },
               ].map(c => (
                 <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
                   <div style={{ flexShrink: 0 }}>

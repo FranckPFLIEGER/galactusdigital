@@ -221,10 +221,11 @@ function DemarcheQualitePage() {
               33 indicateurs et au guide V10.
             </p>
 
-            {/* alignItems: 'start' — sans lui, chaque carte s'étire à la hauteur de la plus
-                longue de sa rangée (celle du référent pédagogique, très fournie), ce qui laissait
-                400 px de blanc sous FQ-14 et FQ-15. Chaque carte se dimensionne sur son contenu. */}
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.25rem', marginBottom: '2rem', alignItems: 'start' }}>
+            {/* Pas d'alignItems : les cartes s'étirent à la hauteur de leur rangée, donc le bas de
+                tous les cadres est aligné. Essai d'alignItems:'start' le 30/10/2026 — cadres
+                dimensionnés sur leur contenu, bas en escalier — écarté : « cela ne fait pas beau ».
+                Un peu de blanc dans un cadre vaut mieux que des cadres de hauteurs inégales. */}
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.25rem', marginBottom: '2rem' }}>
               {[
                 {
                   ref: 'FQ-14',

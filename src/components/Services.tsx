@@ -1,4 +1,4 @@
-import { MapPin, Monitor, BookOpen, ArrowRight, Users, Building2 } from 'lucide-react'
+import { MapPin, Monitor, BookOpen, ArrowRight, Users, Building2, User } from 'lucide-react'
 import type { ReactNode } from 'react'
 import { useIntersection } from '../hooks/useIntersection'
 
@@ -176,12 +176,26 @@ export function Services() {
                   }}>
                     Formats disponibles
                   </div>
-                  {s.formatsNote && (
-                    <div style={{ fontSize: '0.72rem', color: 'rgba(255,255,255,0.55)' }}>
-                      {s.formatsNote}
-                    </div>
-                  )}
                   <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+                    {/* L'e-learning n'a ni inter ni intra : sa mention équivalente prend la même
+                        pastille grise que « Inter à distance » et « Intra à distance », pour que
+                        les trois cartes se ressemblent. Ce n'est pas un lien — il n'y a pas de
+                        page de format à ouvrir — donc un <span>, sans survol. Demandé le 30/10/2026. */}
+                    {s.formatsNote && (
+                      <span style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.35rem',
+                        fontSize: '0.72rem',
+                        color: 'rgba(255,255,255,0.55)',
+                        background: 'rgba(255,255,255,0.06)',
+                        border: '1px solid rgba(255,255,255,0.10)',
+                        padding: '0.25rem 0.65rem',
+                      }}>
+                        <User size={13} />
+                        {s.formatsNote}
+                      </span>
+                    )}
                     {s.formats.map(f => (
                       <a
                         key={f.label}

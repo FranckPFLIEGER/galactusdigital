@@ -714,7 +714,13 @@ export function ContactCTA() {
               {[
                 [Clock, "Réponse sous 48 h ouvrées"],
                 [Shield, "Devis gratuit et sans engagement"],
-                [Award, "Certification Qualiopi garantie"],
+                // « Certification Qualiopi garantie » : formulation fausse et ambiguë, relevée
+                // en relecture externe le 31/10/2026. Qualiopi certifie l'organisme, pas
+                // l'apprenant, et rien n'est « garanti » à qui que ce soit. Placée dans une liste
+                // d'arguments commerciaux, elle pouvait se lire comme une promesse de résultat ou
+                // de financement — exactement la mention de nature à induire le public en erreur
+                // que proscrit l'indicateur 1 du RNQ.
+                [Award, "Organisme certifié Qualiopi"],
                 [CheckCircle, "Accompagnement au financement"],
               ].map(([Icon, text]) => (
                 <div key={text as string} style={{ display: "flex", alignItems: "center", gap: "0.75rem", marginBottom: "0.85rem" }}>

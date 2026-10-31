@@ -82,7 +82,15 @@ function HandicapPage() {
                     Président — Référent Handicap et Santé<br />
                     Certificat Référent Handicap OF/CFA délivré le 20 février 2023 par DFD Consulting<br />
                     Formation financée par l'Agefiph Antilles-Guyane<br />
-                    Également référent violences, harcèlement et discriminations de l'organisme
+                    Également référent violences, harcèlement et discriminations de l'organisme<br />
+                    {/* L'article L. 6231-2 du code du travail n'impose la désignation d'un référent
+                        handicap qu'aux centres de formation d'apprentis. GALACTUS Digital n'est pas
+                        CFA : la désignation est volontaire, comme le dispositif d'évaluation des
+                        enseignements de l'indicateur 33. Ajouté le 30/10/2026. */}
+                    <span style={{ color: 'rgba(255,255,255,0.38)' }}>
+                      Désignation volontaire : l'article L. 6231-2 du code du travail ne l'impose
+                      qu'aux centres de formation d'apprentis
+                    </span>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
                     <a href="tel:+33781074746" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', color: 'rgba(255,255,255,0.80)', textDecoration: 'none', fontSize: '0.90rem' }}>
@@ -133,14 +141,35 @@ function HandicapPage() {
                   {/* Accompagnement RHF Île-de-France engagé depuis l'entretien du
                       20 octobre 2026. C'est un fait daté et vérifiable : il vaut mieux
                       qu'une déclaration d'intention devant un auditeur (indicateur 26). */}
+                  {/* Mise à jour du 30/10/2026 : « échanges en cours sur les suites à donner »
+                      était en dessous de la réalité. La référente RHF Île-de-France a confirmé
+                      par écrit le 27 octobre que l'auto-positionnement et le plan de progrès sont
+                      complétés intégralement et qu'ils sont présentables en audit. Une attestation
+                      écrite du réseau vaut mieux qu'une déclaration d'intention (indicateur 26). */}
                   <p style={{ fontSize: '0.78rem', color: '#6a6a68', lineHeight: 1.7, marginTop: '1.25rem', marginBottom: 0 }}>
                     Un accompagnement est engagé avec la Ressource Handicap Formation
-                    Île-de-France depuis notre entretien du <strong>20 octobre 2026</strong> :
-                    outils d'auto-positionnement transmis, échanges en cours sur les suites à
-                    donner — second point à distance, atelier ou mise en relation avec un
-                    prestataire d'appui spécifique. Les pièces de cet accompagnement sont
-                    versées au dossier de certification au titre de la mobilisation des
-                    expertises du champ du handicap.
+                    Île-de-France depuis notre entretien du <strong>20 octobre 2026</strong>.
+                    L'<strong>auto-positionnement accessibilité</strong> et le{' '}
+                    <strong>plan de progrès</strong> attendus sur la plateforme de l'Agefiph sont
+                    renseignés intégralement : la référente du réseau l'a confirmé par écrit le{' '}
+                    <strong>27 octobre 2026</strong> et a indiqué que ces deux pièces peuvent être
+                    présentées lors de l'audit. Elles sont versées au dossier de certification au
+                    titre de la mobilisation des expertises du champ du handicap.
+                  </p>
+                  {/* Outil d'analyse des besoins. La référente RHF Île-de-France a indiqué le
+                      27/10/2026 que c'est le document utilisé par le réseau pour toutes les
+                      situations individuelles, et celui à déposer sur la plateforme à l'appui
+                      d'une demande d'aide Agefiph. On nomme l'outil plutôt que de décrire
+                      vaguement un « entretien » : un auditeur peut le demander. */}
+                  <p style={{ fontSize: '0.78rem', color: '#6a6a68', lineHeight: 1.7, marginTop: '1.25rem', marginBottom: 0 }}>
+                    L'analyse des besoins d'une situation individuelle s'appuie sur la{' '}
+                    <strong>grille d'évaluation des besoins d'un apprenant</strong> publiée par
+                    l'Agefiph, utilisée par le réseau Ressource Handicap Formation pour toutes les
+                    situations individuelles. Elle recense les besoins au regard de la formation
+                    visée, formalise le plan d'adaptation et sert de support à une demande d'aide
+                    auprès de l'Agefiph. Elle est renseignée avec l'apprenant lors de l'entretien
+                    préalable prévu à l'article 13 des CGV — étant entendu que chaque situation est
+                    singulière et que l'apprenant reste libre de ce qu'il souhaite indiquer.
                   </p>
                   <p style={{ fontSize: '0.72rem', color: '#9a9a98', fontStyle: 'italic', lineHeight: 1.6, marginTop: '0.75rem', marginBottom: 0 }}>
                     Contacts repris de la liste officielle Agefiph « Ressource Handicap

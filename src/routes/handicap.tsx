@@ -113,6 +113,14 @@ function HandicapPage() {
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '1rem' }}>
                     Nos partenaires RHF
                   </div>
+                  {/* Le réseau mobilisable, la démarche de progrès RHF et le tableau de bord des
+                      adaptations sont formalisés dans la pièce FQ-0-05 du kit qualité. On cite le
+                      numéro : c'est ce qui rend la page opposable en audit. */}
+                  <p style={{ fontSize: '0.82rem', color: '#5a5a58', lineHeight: 1.7, marginBottom: '1.25rem' }}>
+                    Ce réseau, la démarche de progrès engagée auprès du RHF Île-de-France et le suivi
+                    des adaptations mises en œuvre sont formalisés dans la pièce <strong>FQ-0-05</strong>{' '}
+                    du kit qualité.
+                  </p>
                   {/* Contacts repris de la liste officielle Agefiph « Ressource Handicap
                       Formation — vos contacts en région », version du 09/01/2026, pour les
                       cinq territoires où l'organisme intervient.

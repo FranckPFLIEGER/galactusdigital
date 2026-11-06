@@ -20,32 +20,38 @@
 // s'arrête donc au CCNA Cybersecurity pour la voie défensive, et à Ethical
 // Hacker pour la voie offensive.
 //
-// VOUCHER D'EXAMEN SURVEILLÉ PEARSON VUE — liste à jour au 28 octobre 2026.
-// Compris dans :
-//   · CCNA v2.0 parcours complet          (champ voucher: 350)
-//   · CCNP Enterprise ENCOR               (champ voucher: 390)
-//   · CCNP Enterprise ENARSI              (champ voucher: 290)
-//   · CCNA Cybersecurity                  (champ voucher: 350)
-//   · CCNA Automation                     (champ voucher: 350)
-//   · JNCIA-Junos                         (vendu sur devis, voucher intégré)
+// VOUCHER D'EXAMEN SURVEILLÉ PEARSON VUE — POLITIQUE AU 31 OCTOBRE 2026.
+// Le voucher n'est COMPRIS dans AUCUN tarif du catalogue. Il est proposé en
+// option et ajouté au devis sur demande. Les tarifs publiés rémunèrent la
+// formation seule : plateforme, supports officiels, tutorat, suivi individuel,
+// badge et certificat Cisco Networking Academy.
 //
-// PAS compris : tout le catalogue Microsoft (décision du 28 octobre 2026). Les
-// prix par niveau — 890 € Applied Skills, 990 € Fundamentals, 1 690 € Associate,
-// 1 890 € Associate avancé — rémunèrent la formation seule. Le candidat acquiert
-// son voucher Pearson VUE séparément.
-// Tous les autres cours Networking Academy délivrent le badge et le certificat
-// Cisco Networking Academy, et leur tarif ne comprend aucun voucher.
+// Le champ `voucher` conserve le montant de l'option, à titre indicatif, pour
+// les cours qui préparent un examen surveillé :
+//   · CCNA v2.0 parcours complet          (option : 350)
+//   · CCNP Enterprise ENCOR               (option : 390)
+//   · CCNP Enterprise ENARSI              (option : 290)
+//   · CCNA Cybersecurity                  (option : 350)
+//   · CCNA Automation                     (option : 350)
+//   · JNCIA-Junos                         (vendu sur devis, option au devis)
+// Tous les autres cours ne préparent aucun examen surveillé : voucher 0.
 //
-// Cette liste est reprise telle quelle sur /certifications, /elearning et
+// Changement du 31 octobre 2026 : les tarifs des cinq cours ci-dessus ont été
+// revus à la baisse en conséquence, le voucher en sortant, puis alignés par
+// niveau — 1 290 € au niveau associate, 1 490 € au niveau professional. Ils sont par
+// ailleurs alignés sur les deux offres CPF adossées aux certifications RS
+// n° 53224 et n° 53693, à déclarer après décision de France Compétences.
+//
+// Cette politique est reprise telle quelle sur /certifications, /elearning et
 // /demarche-pedagogique. Toute modification ici doit être répercutée sur ces
 // trois pages, sinon le site promet un voucher à un endroit et le refuse à un
 // autre — c'est arrivé jusqu'au 28 octobre 2026 pour CCNA Cybersecurity et
-// CCNA Automation, dont les fiches disaient « non compris » alors que leur
-// prix et leur champ voucher disaient l'inverse.
+// CCNA Automation.
 //
-// Le champ `prix.elearning` est le PRIX TOTAL À PAYER, voucher compris
-// (art. L.112-1 du code de la consommation). Toute nouvelle entrée suit la
-// même règle : si le voucher est annoncé compris, il est DANS le prix.
+// Le champ `prix.elearning` est le PRIX TOTAL À PAYER de la FORMATION
+// (art. L.112-1 du code de la consommation). Il ne comprend aucun voucher
+// depuis le 31 octobre 2026. Toute nouvelle entrée suit la même règle :
+// le voucher est une option, jamais une composante du prix.
 //
 // MAJ 24 octobre 2026 — IT Essentials ne prépare plus la certification
 // CompTIA A+ : le cours délivre le certificat de fin de cours Cisco Networking
@@ -102,11 +108,10 @@ export interface Formation {
   /** true = le tarif e-learning tutoré est affiché publiquement */
   prixPublicElearning?: boolean
   /** Coût du titre officiel compris dans le prix e-learning (€, 0 = certificat éditeur sans examen surveillé) */
-  /** Coût du voucher d'examen surveillé Pearson VUE, compris dans le tarif.
-   *  RÈGLE : le CCNA v2.0 parcours complet et les deux parcours CCNP
-   *  Enterprise (ENCOR, ENARSI) comprennent un voucher d'examen surveillé.
-   *  Tous les autres cours Networking Academy délivrent le badge et le
-   *  certificat Cisco Networking Academy — voucher: 0.
+  /** Montant indicatif de l'OPTION voucher d'examen surveillé Pearson VUE.
+   *  RÈGLE depuis le 31/10/2026 : le voucher n'est compris dans aucun tarif.
+   *  Il est ajouté au devis sur demande. Une valeur > 0 signale seulement que
+   *  le cours prépare un examen surveillé et que l'option existe.
    *  Usage interne : le montant n'est jamais affiché sur le site. */
   voucher?: number
   /** true = cours d'entrée sans aucun prérequis (Bloc 0 des parcours) */
@@ -386,7 +391,7 @@ export const FORMATIONS: Formation[] = [
     //  · Présentiel — parcours complet condensé sur 5 jours (35 h), session programmée
     modalites: ['E-learning', 'Présentiel'],
     description: 'Les trois modules du cursus CCNA réunis en un seul parcours — ITN, SRWE et ENSA — avec l\'accès à Packet Tracer : 210 heures en e-learning tutoré, voucher d\'examen 200-301 compris. Également proposé en présentiel, parcours complet condensé sur 5 jours (35 h), lors des sessions programmées.',
-    prix: { presentiel: 1950, foad: null, elearning: 1880 },
+    prix: { presentiel: 1950, foad: null, elearning: 1290 },
     prixPublic: true,
     prixPublicElearning: true,
     voucher: 350,
@@ -403,7 +408,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '350-401 ENCOR v1.2',
     modalites: ['E-learning', 'Présentiel'],
     description: 'Cœur du CCNP Enterprise (v9) : architecture SD-Access, LISP/VXLAN, dual-stack, virtualisation, assurance réseau, sécurité et automatisation.',
-    prix: { presentiel: 1950, foad: null, elearning: 1950 },
+    prix: { presentiel: 1950, foad: null, elearning: 1490 },
     prixPublicElearning: true,
     voucher: 390,
     examenSeul: true,
@@ -418,7 +423,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '300-410 ENARSI v1.2',
     modalites: ['E-learning', 'Présentiel'],
     description: 'Concentration Advanced Routing (v9) : Layer 3 (EIGRP, OSPF, BGP), MPLS L3 VPN, DMVPN, sécurité d\'infrastructure et services, dépannage avancé.',
-    prix: { presentiel: 1950, foad: null, elearning: 1950 },
+    prix: { presentiel: 1950, foad: null, elearning: 1490 },
     prixPublicElearning: true,
     voucher: 290,
     examenSeul: true,
@@ -449,7 +454,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-201 CCNACBR v1.2',
     modalites: ['E-learning'],
     description: 'Formation SOC complète — surveillance réseau, forensique, réponse aux incidents et IA appliquée à la détection. Anciennement CyberOps Associate, renommée CCNA Cybersecurity par Cisco le 3 février 2026 ; examen 200-201 inchangé, blueprint v1.2.',
-    prix: { presentiel: null, foad: null, elearning: 1950 },
+    prix: { presentiel: null, foad: null, elearning: 1160 },
     prixPublicElearning: true,
     voucher: 350,
     examenSeul: true,
@@ -508,7 +513,7 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-901 CCNAAUTO',
     modalites: ['E-learning'],
     description: 'APIs REST, Python réseau, YANG/NETCONF, Ansible, Terraform et automatisation IA-ready (ex-DevNet, blueprint 2026).',
-    prix: { presentiel: null, foad: null, elearning: 1880 },
+    prix: { presentiel: null, foad: null, elearning: 1290 },
     prixPublicElearning: true,
     voucher: 350,
     examenSeul: true,
@@ -989,7 +994,7 @@ export function getSanctionCourte(f: Formation): string {
  */
 export function getMentionCertification(f: Formation): string {
   if (f.editeur === 'Cisco Networking Academy' && !f.voucher) return ''
-  if (f.voucher) return 'Certification officielle comprise dans le prix — voucher Pearson VUE fourni'
+  if (f.voucher) return 'Examen en option — voucher Pearson VUE ajouté au devis sur demande'
   // Parcours vendu sur devis : le voucher y est intégré, mais aucun montant n'est
   // publié puisqu'aucun prix ne l'est. Sans ce cas, le JNCIA-Junos affichait
   // « certification en option » alors que sa fiche annonce l'inverse.
@@ -1054,8 +1059,10 @@ export function getDetailPrixElearning(f: Formation):
   { total: number; formation: number; titre: number } | null {
   const total = getPrixElearning(f)
   if (total === null) return null
-  const titre = getVoucher(f)
-  return { total, formation: total - titre, titre }
+  // Le voucher n'est plus compris dans le prix (31/10/2026) : la totalité du
+  // tarif rémunère la formation. La part « titre » reste à 0 pour ne pas
+  // casser les appelants, qui affichent un détail désormais sans objet.
+  return { total, formation: total, titre: 0 }
 }
 
 /**
@@ -1069,11 +1076,8 @@ export const MENTION_PRIX_ELEARNING =
   "Prix total à payer, par personne. TVA non applicable — art. 261-4-4°-a du CGI. " +
   "Comprend l'accès à la plateforme, les supports officiels, le tutorat et le suivi individuel. " +
   "Le badge et le certificat Cisco Networking Academy sont délivrés à l'issue de chaque cours. " +
-  "Le voucher d'examen surveillé Pearson VUE est compris pour le CCNA v2.0 parcours complet " +
-  "et pour les deux parcours CCNP Enterprise ; aucun frais supplémentaire pour la première " +
-  "présentation à cet examen. " +
-  "Pour les autres cours, l'examen de certification de l'éditeur reste à la charge du candidat " +
-  "s'il choisit de le passer. " +
+  "L'examen de certification de l'éditeur n'est pas compris : lorsqu'il existe un examen " +
+  "surveillé Pearson VUE, le voucher est proposé en option et ajouté au devis sur demande. " +
   "Tarif communiqué aux employeurs, opérateurs de compétences et financeurs publics : "
   + "toute entrée en formation est adossée à un employeur ou à un financeur tiers "
   + "(art. 2 des CGV)."

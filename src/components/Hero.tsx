@@ -47,7 +47,7 @@ export function Hero() {
             de formation certifiante, nous proposons les certifications officielles{' '}
             <strong style={{ color: '#fff' }}>Cisco, Microsoft et Juniper</strong>
             {' — en e-learning tutoré, en FOAD ou en présentiel —'}
-            {' pour vous accompagner vers des certifications reconnues dans plus de 170 pays. Badge et certificat de l\'éditeur compris ; voucher d\'examen Pearson VUE inclus sur le CCNA v2.0 parcours complet et les parcours CCNP Enterprise.'}
+            {' pour vous accompagner vers des certifications reconnues dans plus de 170 pays. Badge et certificat de l\'éditeur compris ; examen de certification en option, le voucher Pearson VUE étant ajouté au devis sur demande.'}
           </p>
           <div className="hero-actions" style={{ animation: 'fadeUp 0.7s ease-out 0.36s both' }}>
             <a href="/formations" className="btn-red">

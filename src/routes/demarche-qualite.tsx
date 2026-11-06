@@ -65,9 +65,9 @@ function DemarcheQualitePage() {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
-                { num: String(RESULTATS_TOTAL_FORMES), label: 'Candidats formés 2023-2025', sub: 'Entrées effectives en formation, toutes certifications IT' },
+                { num: String(RESULTATS_TOTAL_FORMES), label: 'Candidats formés 2023-2026', sub: 'Entrées effectives en formation, toutes certifications IT' },
                 { num: '100 %',  label: 'Taux de réussite',    sub: "Parmi les seuls candidats présentés à l'examen" },
-                { num: '0 %',    label: "Taux d'abandon",      sub: 'Interruptions définitives après entrée en formation, 2023-2025' },
+                { num: '0 %',    label: "Taux d'abandon",      sub: 'Interruptions définitives après entrée en formation, 2023-2026' },
                 { num: SATISFACTION_GLOBALE, label: 'Note de satisfaction', sub: "Moyenne de l'appréciation générale, 2023-2025" },
               ].map(s => (
                 <div key={s.label} style={{ background: 'var(--g-black)', borderTop: '3px solid var(--g-red)', padding: '2rem', textAlign: 'center' }}>
@@ -107,7 +107,8 @@ function DemarcheQualitePage() {
             </div>
             <p style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.75rem', fontStyle: 'italic', lineHeight: 1.6 }}>
               * Taux de réussite calculé sur les seuls candidats ayant effectivement passé l'examen : il ne doit pas être lu comme un taux d'obtention rapporté aux entrants.
-              Abandons et annulations comptabilisés sur les parcours engagés (après entrée effective en formation), hors désistements antérieurs au démarrage. Données consignées au registre de suivi et justifiables sur pièces en audit. La note moyenne d'une année est calculée sur les seuls questionnaires effectivement remis, dont le nombre est publié dans la colonne précédente : 39 questionnaires signés sur l'ensemble de la période, tous dépouillés, chacun consultable en audit. Un tiret signalerait une année dont les questionnaires archivés ne sont pas encore dépouillés : aucune note ne serait alors publiée pour cette année, plutôt qu'un chiffre non justifiable sur pièces.
+              Abandons et annulations comptabilisés sur les parcours engagés (après entrée effective en formation), hors désistements antérieurs au démarrage. Données consignées au registre de suivi et justifiables sur pièces en audit. La note moyenne d'une année est calculée sur les seuls questionnaires effectivement remis, dont le nombre est publié dans la colonne précédente : 39 questionnaires signés sur l'ensemble de la période, tous dépouillés, chacun consultable en audit. Un tiret signale une donnée qui n'est pas justifiable sur pièces à la date d'arrêté : aucun chiffre n'est alors publié pour cette case, plutôt qu'une valeur approchée.
+              {' '}L'exercice 2026 est en cours : l'entrée en formation y est comptabilisée, mais aucun candidat 2026 ne s'est encore présenté à un examen de certification — la colonne « réussite » reste donc vide, faute d'attestation éditeur à produire. Le questionnaire d'appréciation générale de cette session n'est pas encore recueilli, d'où le tiret des deux dernières colonnes. L'évaluation des enseignements de la session, elle, a bien été recueillie : c'est un instrument distinct, dont le détail figure au paragraphe « Évaluation des contenus et des enseignements » des modalités de calcul.
             </p>
           </div>
         </section>
@@ -126,7 +127,10 @@ function DemarcheQualitePage() {
               accueillis, et que leurs modalités de calcul soient précisées de façon transparente.
               Chaque chiffre publié sur ce site est défini ci-dessous, avec la pièce qui le justifie
               en audit. Aucun indicateur n'est extrapolé, arrondi à l'avantage de l'organisme, ni
-              reporté d'un périmètre à un autre.
+              reporté d'un périmètre à un autre. La méthode complète — cohorte, période, numérateur,
+              dénominateur, source, règle d'arrondi et seuil d'effectif en dessous duquel aucun taux
+              n'est publié — est formalisée dans la pièce <strong>FQ-0-07</strong> du kit qualité,
+              tenue à disposition de tout bénéficiaire, financeur ou auditeur qui en fait la demande.
             </p>
 
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
@@ -208,10 +212,12 @@ function DemarcheQualitePage() {
               Les procédures correspondantes ont été formalisées dès juillet 2026 et sont aujourd'hui
               en vigueur dans le kit qualité V2026.5. Le nouveau guide de lecture, dans sa
               <strong> version de novembre 2026</strong>, est paru : il remplace le V9 du 8 janvier 2024
-              et précise la conduite de l'audit ainsi que les attendus de chaque indicateur. Seul
-              l'arrêté fixant le nombre d'intervenants au-delà duquel la désignation d'un référent
-              pédagogique par action devient obligatoire (indicateur 19) reste à paraître ;
-              GALACTUS Digital, qui compte un intervenant unique, désigne le sien par anticipation.
+              et précise la conduite de l'audit ainsi que les attendus de chaque indicateur :
+              vingt-six indicateurs sur trente-deux sont reformulés, seuls les indicateurs 4, 5, 6,
+              22, 24 et 31 restent inchangés. L'arrêté du 28 octobre 2026 a fixé à huit intervenants
+              par formation le seuil au-delà duquel la coordination doit être formalisée (indicateur
+              19) ; GALACTUS Digital, qui compte un intervenant unique et ne sous-traite aucune
+              action, n'est pas concerné et désigne malgré tout son référent pédagogique.
             </p>
             <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '2rem', maxWidth: '860px' }}>
               Une période transitoire est ouverte par l'arrêté du 28 octobre 2026 : jusqu'au
@@ -296,7 +302,7 @@ function DemarcheQualitePage() {
               <AlertCircle size={18} color="#E41F26" style={{ flexShrink: 0 }} />
               <p style={{ fontSize: '0.82rem', color: '#4a4a48', margin: 0, lineHeight: 1.6 }}>
                 <strong style={{ color: 'var(--g-red)' }}>Statut :</strong> procédures en vigueur, intégrées au kit qualité V2026.5 (mise à jour du 6 novembre 2026),
-                figées après parution du décret au Journal officiel du 4 août 2026 et relues au regard du guide de lecture de novembre 2026. Seul le seuil d'intervenants de l'indicateur 19 reste soumis à un arrêté à paraître.
+                figées après parution du décret au Journal officiel du 4 août 2026 et relues au regard du guide de lecture de novembre 2026. Le seuil de l'indicateur 19 a été fixé à huit intervenants par formation par l'arrêté du 28 octobre 2026 : GALACTUS Digital, qui dispense ses actions avec un intervenant unique et sans sous-traitance, n'est pas concerné par l'exigence de coordination qu'il déclenche.
               </p>
             </div>
           </div>

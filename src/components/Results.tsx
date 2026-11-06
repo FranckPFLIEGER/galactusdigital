@@ -55,7 +55,7 @@ export function Results() {
           <div className="results-total-inner">
             <div style={{ textAlign: 'center' }}>
               <div style={{ fontFamily: 'var(--font-title)', fontSize: '3.5rem', fontWeight: 700, color: '#E41F26', lineHeight: 1 }}>{RESULTATS_TOTAL_FORMES}</div>
-              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>candidats formés, toutes formations (2023-2025)</div>
+              <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.80rem', letterSpacing: '0.15em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.5)', marginTop: '0.4rem' }}>candidats formés, toutes formations (2023-2026)</div>
             </div>
             <div style={{ width: '1px', height: '60px', background: 'rgba(228,31,38,0.3)' }} />
             <div style={{ textAlign: 'center' }}>

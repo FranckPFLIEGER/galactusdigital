@@ -199,7 +199,7 @@ function FoadPage() {
                 { num: '01', title: 'Audit des besoins', desc: 'Entretien avec votre responsable formation pour identifier les compétences à développer et les certifications visées.' },
                 { num: '02', title: 'Programme personnalisé', desc: 'Nous concevons un programme adapté à vos outils, vos processus et le niveau de vos équipes.' },
                 { num: '03', title: 'Convention & devis', desc: 'Signature de la convention de formation. Accompagnement sur les dispositifs de financement OPCO/PDC.' },
-                { num: '04', title: 'Formation & certification', desc: "Sessions live WEBEX dédiées. Passage de l'examen officiel JN0-106, dont le voucher est compris dans le prix du devis. Attestation remise à chaque participant." },
+                { num: '04', title: 'Formation & certification', desc: "Sessions live WEBEX dédiées. Passage de l'examen officiel JN0-106 en option, le voucher étant ajouté au devis sur demande. Attestation remise à chaque participant." },
               ].map(s => (
                 <div key={s.num} style={{ border: '1px solid rgba(187,187,187,0.3)', borderTop: '3px solid var(--g-red)', padding: '1.75rem', background: 'var(--g-white)' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.75rem' }}>{s.num}</div>

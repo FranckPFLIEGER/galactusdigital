@@ -10,7 +10,7 @@ export const Route = createFileRoute('/formations/ccna-cisco')({
   head: () => ({
     meta: [
       { title: "CCNA v2.0 — Parcours complet ITN · SRWE · ENSA (200-301) | GALACTUS Digital" },
-      { name: "description", content: "CCNA v2.0 (200-301) — les 3 modules ITN, SRWE et ENSA réunis. 210 h en e-learning tutoré, voucher d'examen compris. Parcours complet 5 jours en présentiel. Qualiopi." },
+      { name: "description", content: "CCNA v2.0 (200-301) — les 3 modules ITN, SRWE et ENSA réunis. 210 h en e-learning tutoré, examen en option. Parcours complet 5 jours en présentiel. Qualiopi." },
     ],
   }),
 })
@@ -37,7 +37,7 @@ const DATA = {
   lieux: ['Martinique', 'Guadeloupe', 'Paris'],
   description: `Les trois modules du cursus CCNA réunis en un seul parcours : Introduction aux réseaux (ITN), Commutation, routage et Wi-Fi (SRWE), puis Réseaux d'entreprise, sécurité et automatisation (ENSA). C'est le parcours le plus demandé : il couvre l'intégralité du programme 200-301 et mène à la certification sans rupture.
 
-**En e-learning tutoré** — 210 heures sur la plateforme Cisco Networking Academy, accès ouvert un an, tutorat par un instructeur certifié CCNP/CCDP et voucher d'examen Pearson VUE compris dans le tarif.
+**En e-learning tutoré** — 210 heures sur la plateforme Cisco Networking Academy, accès ouvert un an, tutorat par un instructeur certifié CCNP/CCDP. Examen Pearson VUE en option, ajouté au devis sur demande.
 
 **En présentiel** — parcours complet sur 5 jours (35 heures, 7 h par jour) lors des sessions programmées, pour les professionnels des réseaux disposant déjà d'une première expérience du routage et de la commutation.
 
@@ -110,7 +110,7 @@ La v2.0 marque la plus importante refonte du CCNA depuis 2020 : retour du dépan
     organisme: 'Cisco (Pearson VUE)',
     format: 'QCM, glisser-déposer, simulations et dépannage',
     score: 'Défini par Cisco (variable)',
-    note: `« CCNA v2.0 » désigne la version du blueprint d'examen 200-301 (à ne pas confondre avec la version du courseware officiel, numérotée séparément). Le blueprint v2.0 entre en vigueur le 3 février 2027 (la v1.1 est proposée jusqu'au 2 février 2027) ; le code d'examen reste 200-301. La certification CCNA est valable 3 ans. Le passage de l'examen (voucher officiel Pearson VUE) est inclus dans le tarif de la formation.`,
+    note: `« CCNA v2.0 » désigne la version du blueprint d'examen 200-301 (à ne pas confondre avec la version du courseware officiel, numérotée séparément). Le blueprint v2.0 entre en vigueur le 3 février 2027 (la v1.1 est proposée jusqu'au 2 février 2027) ; le code d'examen reste 200-301. La certification CCNA est valable 3 ans. Le passage de l'examen (voucher officiel Pearson VUE) est proposé en option, ajouté au devis sur demande.`,
   },
   methodes: [
     "Le parcours comprend les trois modules du cursus Cisco Networking Academy — ITN, SRWE et ENSA — ainsi que l'accès à Packet Tracer",

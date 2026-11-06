@@ -287,7 +287,7 @@ function PresentielPage() {
                 { num: '01', title: 'Audit des besoins', desc: 'Entretien avec votre responsable formation pour identifier les compétences à développer et les certifications visées.' },
                 { num: '02', title: 'Programme personnalisé', desc: 'Nous concevons un programme aligné sur vos objectifs, vos outils et le niveau de vos équipes.' },
                 { num: '03', title: 'Convention & devis', desc: 'Signature de la convention de formation. Accompagnement sur les dispositifs de financement OPCO/PDC.' },
-                { num: '04', title: 'Formation & certification', desc: "Déploiement chez vous. Passage de l'examen officiel de l'éditeur, voucher compris dans le prix du devis. Attestation remise à chaque participant." },
+                { num: '04', title: 'Formation & certification', desc: "Déploiement chez vous. Passage de l'examen officiel de l'éditeur en option, le voucher étant ajouté au devis sur demande. Attestation remise à chaque participant." },
               ].map(s => (
                 <div key={s.num} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '1.75rem' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.75rem' }}>{s.num}</div>
@@ -383,7 +383,7 @@ function PresentielPage() {
                 // formation par apprentissage (CFA), seule colonne cochée au décret. GALACTUS
                 // Digital n'a pas d'apprentis. Remplacé par l'indicateur 31, qui est bien celui
                 // du traitement des réclamations. Corrigé le 30 octobre 2026.
-                { ref: 'RNQ V2 — déc. 2026-728', title: 'Référentiel National Qualité V2', desc: "Applicable au 1er novembre 2026, guide de lecture V10 d'octobre 2026. Les indicateurs 1, 2, 4, 8, 19, 26 et 31 sont documentés pour la modalité présentielle : information du public, indicateurs de résultats, analyse du besoin, conditions d'accès, moyens pédagogiques et référent, accessibilité et traitement des réclamations." },
+                { ref: 'RNQ V2 — déc. 2026-728', title: 'Référentiel National Qualité V2', desc: "Applicable au 1er novembre 2026, guide de lecture de novembre 2026. Les indicateurs 1, 2, 4, 8, 19, 26 et 31 sont documentés pour la modalité présentielle : information du public, indicateurs de résultats, analyse du besoin, conditions d'accès, moyens pédagogiques et référent, accessibilité et traitement des réclamations." },
               ].map(c => (
                 <div key={c.ref} style={{ background: 'var(--g-white)', border: '1px solid rgba(187,187,187,0.3)', padding: '1.5rem', display: 'flex', gap: '1rem' }}>
                   <div style={{ flexShrink: 0 }}>

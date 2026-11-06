@@ -21,7 +21,7 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 /** Date d'arrêté des données publiées sur le site */
-export const RESULTATS_ARRETE_AU = '31 mai 2026'
+export const RESULTATS_ARRETE_AU = '30 octobre 2026'
 
 /** Note de satisfaction globale publiée — source unique pour toutes les pages.
  *  Moyenne de l'item « Appréciation générale » du questionnaire FQ-10a,
@@ -117,7 +117,13 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
     libelle: 'Évaluation des contenus et des enseignements',
     formule:
       'Questionnaire dédié à la qualité pédagogique (FQ-10b), distinct de l\'enquête de ' +
-      'satisfaction générale, exploité en revue d\'amélioration continue.',
+      'satisfaction générale, exploité en revue d\'amélioration continue. ' +
+      'Il porte treize items répartis en trois rubriques — qualité des contenus, qualité ' +
+      'des méthodes, qualité de l\'évaluation des acquis — notés de 1 (insuffisant) à ' +
+      '5 (excellent). Les notes relevées ici ne sont pas versées à la note de satisfaction ' +
+      'publiée plus haut : les deux instruments sont distincts et comptés séparément. ' +
+      'Sur la session JNCIA-Junos du 20 au 30 octobre 2026, un questionnaire a été recueilli ' +
+      'et signé : treize items renseignés, tous notés 5/5.',
     source: 'FQ-10b — dispositif formalisé (indicateur 33 : applicable aux CFA, mis en œuvre volontairement)',
   },
 ]
@@ -151,6 +157,16 @@ export const RESULTATS_ANNUELS: ResultatAnnee[] = [
   { annee: '2023', formes: 115, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: 7, noteMoyenne: '4,6/5' },
   { annee: '2024', formes: 272, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: 23, noteMoyenne: '4,9/5' },
   { annee: '2025', formes: 131, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: 9, noteMoyenne: '4,8/5' },
+  // 2026 — exercice en cours, arrêté au 30 octobre 2026. Une seule entrée effective :
+  // JNCIA-Junos (IJOS, préparation JN0-106), 35 h en 9 séances de visioconférence
+  // synchrone du 20 au 30 octobre 2026, session individuelle, financement OPCO.
+  // Réussite : aucun candidat 2026 ne s'est encore présenté à l'examen — la case reste
+  // vide plutôt que d'afficher un 100 % qui ne reposerait sur aucune attestation éditeur.
+  // Questionnaire FQ-10a : non recueilli à ce jour, donc null (cf. commentaire du type).
+  // L'évaluation des enseignements de cette session, elle, est recueillie et exploitée :
+  // treize items notés, tous à 5/5. C'est un instrument distinct du FQ-10a et il n'entre
+  // pas dans la colonne « note moyenne ». Publié le 30/10/2026 — « qualité oblige ».
+  { annee: '2026', formes: 1, abandons: 0, annulations: 0, reussiteParmiPresentes: '—', questionnaires: null, noteMoyenne: null },
 ]
 
 export const RESULTATS_TOTAL_FORMES = RESULTATS_ANNUELS.reduce((s, r) => s + r.formes, 0)
@@ -286,7 +302,7 @@ export function getTauxObtention(slug: string): TauxObtentionAffichage {
     detail:
       'Aucune donnée consolidée n\'est publiée à ce jour pour cette certification prise isolément : ' +
       'nous préférons l\'écrire plutôt que de reporter le taux global, ce qui induirait le public en erreur. ' +
-      `Résultats consolidés tous dispositifs confondus : ${RESULTATS_TOTAL_FORMES} candidats formés sur 2023-2025, ` +
+      `Résultats consolidés tous dispositifs confondus : ${RESULTATS_TOTAL_FORMES} candidats formés sur 2023-2026, ` +
       '100 % de réussite parmi les candidats présentés à l\'examen. ' +
       'Méthode de calcul et périmètre publiés sur la page Démarche qualité.',
   }

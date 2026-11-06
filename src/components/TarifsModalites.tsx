@@ -83,7 +83,9 @@ export function TarifsModalites({ slug }: { slug: string }) {
 
         <p style={{ fontSize: '0.72rem', color: '#999', lineHeight: 1.55, margin: '0.6rem 0 0', maxWidth: '900px' }}>
           {MENTION_PRIX_COURTE}
-          {voucher > 0 && " Le tarif e-learning comprend le voucher d'examen surveillé Pearson VUE."}
+          {/* 31/10/2026 : le voucher sort du prix partout. Une valeur > 0 ne veut plus
+              dire « compris » mais « une option existe ». */}
+          {voucher > 0 && " Examen en option : le voucher d'examen surveillé Pearson VUE n'est pas compris dans ce tarif, il est ajouté au devis sur demande."}
           {voucher === 0 && f.modalites.includes('E-learning') && " Le tarif e-learning comprend le badge et le certificat Cisco Networking Academy."}
         </p>
 

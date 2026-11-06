@@ -695,8 +695,8 @@ export function ContactCTA() {
                 </div>
                 <div style={{ fontSize: "0.80rem", color: "rgba(255,255,255,0.60)", lineHeight: 1.6 }}>
                   E-learning tutoré, tarif public affiché, badge et certificat Cisco Networking
-                  Academy compris. Accès plateforme ouvert un an. Le voucher d&apos;examen surveillé
-                  Pearson VUE n&apos;est compris que sur les parcours certifiants, indiqué sur leur fiche.
+                  Academy compris. Accès plateforme ouvert un an. L&apos;examen de certification est
+                  en option : le voucher Pearson VUE est ajouté au devis sur demande.
                 </div>
               </div>
               <div>

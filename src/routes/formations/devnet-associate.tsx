@@ -39,7 +39,7 @@ const DATA = {
     organisme: 'Cisco (Pearson VUE)',
     format: 'QCM et questions pratiques',
     score: "Défini par l'éditeur (variable)",
-    note: ` Le badge et le certificat Cisco Networking Academy sont délivrés à l'issue du cours et compris dans le tarif. Le voucher d'examen surveillé Pearson VUE est compris dans le tarif : GALACTUS Digital vous remet le code, vous passez l'épreuve en centre agréé ou en ligne via OnVUE.`,
+    note: ` Le badge et le certificat Cisco Networking Academy sont délivrés à l'issue du cours et compris dans le tarif. L'examen de certification est en option : le voucher d'examen surveillé Pearson VUE n'est pas compris dans le tarif, il est ajouté au devis sur demande. GALACTUS Digital achète alors le code et vous le remet, vous passez l'épreuve en centre agréé ou en ligne via OnVUE.`,
   },
   methodes: [
     "Formation dispensée par un formateur certifié Cisco (instructeur Cisco Networking Academy officiel)",

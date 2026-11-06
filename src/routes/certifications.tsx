@@ -295,11 +295,12 @@ function CertificationsPage() {
                   <p style={{ fontSize: "0.86rem", color: "#4a4a48", lineHeight: 1.7, marginBottom: "1.25rem" }}>
                     Le protocole d'admission des candidats aux examens de certification gérés par Pearson VUE diffère selon le mode de passation choisi : <strong>en ligne via OnVUE</strong> ou <strong>en centre d'examen physique</strong>.
                   </p>
-                  {/* Point commercial le plus fort de la page, et il n'était dit nulle
-                      part : sur les parcours à voucher, l'organisme achète le code
-                      d'examen et le remet au candidat. Celui-ci n'a rien à avancer. */}
+                  {/* 31/10/2026 : le voucher sort du prix. Ce paragraphe disait l'inverse —
+                      il annonçait que l'organisme achète le code et que le candidat n'avance
+                      rien. Réécrit en option, pour ne pas promettre ce que le tarif ne couvre
+                      plus. */}
                   <p style={{ fontSize: "0.9rem", color: "#4a4a48", lineHeight: 1.8, margin: "0.85rem 0 0" }}>
-                    <strong style={{ color: "var(--g-black)" }}>Sur nos parcours à certification comprise</strong> — CCNA v2.0 parcours complet, CCNP Enterprise ENCOR et ENARSI, CCNA Cybersecurity, CCNA Automation et JNCIA-Junos — GALACTUS Digital prend en charge le voucher d'examen et <strong>vous remet le code</strong>. Vous choisissez ensuite librement de passer l'épreuve en centre agréé ou en ligne via OnVUE. Rien à avancer, rien à commander vous-même.
+                    <strong style={{ color: "var(--g-black)" }}>L'examen est en option sur nos parcours certifiants</strong> — CCNA v2.0 parcours complet, CCNP Enterprise ENCOR et ENARSI, CCNA Cybersecurity, CCNA Automation et JNCIA-Junos. Le tarif publié rémunère la formation seule. Si vous souhaitez passer l'examen, le voucher Pearson VUE est ajouté au devis sur demande : l'organisme achète alors le code et vous le remet, vous n'avancez rien.
                   </p>
 
                   {/* OnVUE */}

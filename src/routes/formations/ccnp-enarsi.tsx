@@ -89,7 +89,7 @@ const DATA = {
     organisme: 'Cisco (Pearson VUE)',
     format: 'QCM, glisser-déposer et simulations',
     score: 'Défini par Cisco (variable)',
-    note: `ENARSI 300-410 est une concentration du CCNP Enterprise. Sa réussite octroie la certification Cisco Certified Specialist – Enterprise Advanced Infrastructure Implementation et satisfait l'exigence de concentration du CCNP Enterprise (à combiner avec l'examen cœur ENCOR 350-401). Le badge et le certificat Cisco Networking Academy sont délivrés à l'issue du cours. Le voucher d'examen surveillé Pearson VUE est compris dans le tarif : aucun frais supplémentaire pour la première présentation à l'examen.`,
+    note: `ENARSI 300-410 est une concentration du CCNP Enterprise. Sa réussite octroie la certification Cisco Certified Specialist – Enterprise Advanced Infrastructure Implementation et satisfait l'exigence de concentration du CCNP Enterprise (à combiner avec l'examen cœur ENCOR 350-401). Le badge et le certificat Cisco Networking Academy sont délivrés à l'issue du cours. L'examen de certification est en option : le voucher d'examen surveillé Pearson VUE n'est pas compris dans le tarif, il est ajouté au devis sur demande. GALACTUS Digital achète alors le code et vous le remet, vous passez l'épreuve en centre agréé ou en ligne via OnVUE.`,
   },
   methodes: [
     "Formation dispensée par un formateur Cisco CCNP / CCDP certifié (15+ ans d'expérience)",

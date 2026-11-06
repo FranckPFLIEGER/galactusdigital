@@ -107,7 +107,7 @@ function ElearningPage() {
                 { num: '01', title: 'Inscription', desc: 'Choix du parcours et validation administrative. Convention de formation signée. Dossier de financement OPCO monté avec vous.' },
                 { num: '02', title: 'Accès activé', desc: 'Sous 72 h, vous recevez vos accès Cisco Networking Academy. Votre tuteur vous contacte pour un échange de cadrage.' },
                 { num: '03', title: 'Parcours tutoré', desc: 'Vous avancez à votre rythme. Votre tuteur suit votre progression, répond à vos questions et valide chaque module complété.' },
-                { num: '04', title: 'Certification', desc: 'Examen final du cours, badge et certificat Cisco Networking Academy. Attestation de formation et relevé de complétion remis. Le voucher d\'examen surveillé Pearson VUE est compris sur le CCNA v2.0 parcours complet, les deux parcours CCNP Enterprise, CCNA Cybersecurity et CCNA Automation.' },
+                { num: '04', title: 'Certification', desc: 'Examen final du cours, badge et certificat Cisco Networking Academy. Attestation de formation et relevé de complétion remis. L\'examen surveillé Pearson VUE est en option sur le CCNA v2.0 parcours complet, les deux parcours CCNP Enterprise, CCNA Cybersecurity et CCNA Automation : le voucher est ajouté au devis sur demande.' },
               ].map(s => (
                 <div key={s.num} style={{ border: '1px solid rgba(187,187,187,0.3)', borderTop: '3px solid var(--g-red)', padding: '1.75rem 1.5rem', background: 'var(--g-white)' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2.2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, marginBottom: '0.75rem' }}>{s.num}</div>
@@ -163,10 +163,10 @@ function ElearningPage() {
                     'Suivi documenté de la progression par module',
                     'Messagerie directe avec le tuteur sous 24 h ouvrées',
                     'Badge et certificat Cisco Networking Academy délivrés à chaque cours',
-                    // Demandé le 28/10/2026 : la liste ne disait pas que le voucher est
-                    // compris sur les parcours certifiants. Les cinq parcours concernés
-                    // sont ceux dont le catalogue porte un voucher.
-                    "Voucher d'examen Pearson VUE compris sur le CCNA v2.0 parcours complet, "
+                    // 31/10/2026 : le voucher n'est plus compris dans aucun tarif. Les
+                    // cinq parcours ci-dessous sont ceux qui préparent un examen surveillé
+                    // et pour lesquels l'option existe.
+                    "Examen en option : le voucher Pearson VUE est ajouté au devis sur demande, sur le CCNA v2.0 parcours complet, "
                     + 'les deux parcours CCNP Enterprise, CCNA Cybersecurity et CCNA Automation',
                     'Attestation de formation et relevé de complétion',
                     'Éligible OPCO, plan de développement des compétences',

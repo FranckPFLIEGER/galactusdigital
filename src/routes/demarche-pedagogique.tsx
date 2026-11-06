@@ -100,17 +100,17 @@ function DemarchePedagogiquePage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.5rem' }}>
               {[
                 {
-                  ref: 'FQ-0-15 · A',
+                  ref: 'Étape A',
                   titre: 'Test de positionnement',
                   desc: "Un questionnaire écrit couvrant les domaines de la certification visée, réalisé en autonomie et sans documentation. Le candidat est invité à répondre « je ne sais pas » plutôt qu'à deviner : un positionnement sincère produit un plan de travail juste.",
                 },
                 {
-                  ref: 'FQ-0-15 · B',
+                  ref: 'Étape B',
                   titre: 'Complément écrit',
                   desc: "Les questions restées sans réponse et celles à préciser font l'objet d'un second questionnaire. Il mesure la progression entre les deux épreuves autant que le niveau atteint.",
                 },
                 {
-                  ref: 'FQ-0-15 · C',
+                  ref: 'Étape C',
                   titre: "Décision d'admission et plan de travail",
                   desc: "Le dépouillement est consolidé par domaine sur une grille à quatre niveaux — non évalué, non acquis, en cours d'acquisition, acquis. Un seuil indicatif de 60 % déclenche l'instruction de l'admission ; il n'est pas éliminatoire. La décision est motivée par écrit et s'accompagne d'un plan de travail individuel construit sur les domaines les plus faibles.",
                 },

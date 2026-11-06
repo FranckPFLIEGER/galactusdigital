@@ -157,17 +157,40 @@ export const RESULTATS_ANNUELS: ResultatAnnee[] = [
   { annee: '2023', formes: 115, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: 7, noteMoyenne: '4,6/5' },
   { annee: '2024', formes: 272, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: 23, noteMoyenne: '4,9/5' },
   { annee: '2025', formes: 131, abandons: 0, annulations: 0, reussiteParmiPresentes: '100 %', questionnaires: 9, noteMoyenne: '4,8/5' },
-  // 2026 — exercice en cours, arrêté au 30 octobre 2026. Une seule entrée effective :
-  // JNCIA-Junos (IJOS, préparation JN0-106), 35 h en 9 séances de visioconférence
-  // synchrone du 20 au 30 octobre 2026, session individuelle, financement OPCO.
-  // Réussite : aucun candidat 2026 ne s'est encore présenté à l'examen — la case reste
-  // vide plutôt que d'afficher un 100 % qui ne reposerait sur aucune attestation éditeur.
-  // Questionnaire FQ-10a : non recueilli à ce jour, donc null (cf. commentaire du type).
-  // L'évaluation des enseignements de cette session, elle, est recueillie et exploitée :
-  // treize items notés, tous à 5/5. C'est un instrument distinct du FQ-10a et il n'entre
-  // pas dans la colonne « note moyenne ». Publié le 30/10/2026 — « qualité oblige ».
-  { annee: '2026', formes: 1, abandons: 0, annulations: 0, reussiteParmiPresentes: '—', questionnaires: null, noteMoyenne: null },
+  // 2026 — EXERCICE EN COURS, VOLONTAIREMENT NON PUBLIÉ.
+  //
+  // La période couverte par les indicateurs est 2023-2025 : trois années closes.
+  // L'année en cours n'est pas publiée tant qu'elle n'est pas close, pour deux raisons.
+  //
+  // D'abord la règle de la pièce 0-07 du kit qualité : en dessous de trois stagiaires
+  // ou de trois répondants, aucun taux n'est publié. Une année non close n'a de toute
+  // façon aucun taux calculable.
+  //
+  // Ensuite parce qu'un effectif partiel induit le lecteur en erreur : affiché à côté
+  // de 272 entrées en 2024, il se lit comme une chute d'activité alors qu'il ne mesure
+  // qu'un arrêt de comptage. L'indicateur 1 proscrit la communication susceptible
+  // d'induire le public en erreur ; publier ce chiffre y contreviendrait autant que
+  // le dissimuler, si la période couverte n'était pas annoncée. Elle l'est.
+  //
+  // RESULTATS_ARRETE_AU ci-dessus est la DATE D'EXTRACTION des données, pas la période
+  // couverte. Les deux sont distinctes et toutes deux affichées. Ne pas les confondre.
+  //
+  // Données 2026 au registre de suivi, à publier dès la clôture de l'exercice et au
+  // plus tard le 31 janvier 2027 : JNCIA-Junos (IJOS, préparation JN0-106), 35 h en
+  // 9 séances de visioconférence synchrone du 20 au 30 octobre 2026, session
+  // individuelle, financement OPCO. Évaluation des enseignements recueillie :
+  // treize items notés, tous à 5/5.
 ]
+
+/** Période couverte par les indicateurs publiés — distincte de la date d'extraction. */
+export const RESULTATS_PERIODE = '2023-2025'
+
+/** Mention affichée sous le tableau des résultats annuels. */
+export const RESULTATS_ANNEE_EN_COURS =
+  'L\'année 2026 est en cours. Ses résultats seront publiés une fois l\'exercice clos, ' +
+  'au plus tard le 31 janvier 2027. Aucun effectif partiel ni aucun taux provisoire ' +
+  'n\'est diffusé : un chiffre arrêté en cours d\'année ne mesure pas une activité, ' +
+  'il mesure une date de comptage.'
 
 export const RESULTATS_TOTAL_FORMES = RESULTATS_ANNUELS.reduce((s, r) => s + r.formes, 0)
 
@@ -302,7 +325,7 @@ export function getTauxObtention(slug: string): TauxObtentionAffichage {
     detail:
       'Aucune donnée consolidée n\'est publiée à ce jour pour cette certification prise isolément : ' +
       'nous préférons l\'écrire plutôt que de reporter le taux global, ce qui induirait le public en erreur. ' +
-      `Résultats consolidés tous dispositifs confondus : ${RESULTATS_TOTAL_FORMES} candidats formés sur 2023-2026, ` +
+      `Résultats consolidés tous dispositifs confondus : ${RESULTATS_TOTAL_FORMES} candidats formés sur 2023-2025, ` +
       '100 % de réussite parmi les candidats présentés à l\'examen. ' +
       'Méthode de calcul et périmètre publiés sur la page Démarche qualité.',
   }

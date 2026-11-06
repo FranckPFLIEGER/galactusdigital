@@ -19,7 +19,7 @@ const stats = [
   // page Démarche qualité — rien n'est masqué, seule la vitrine prend l'année close.
   { num: String(derniereClose.formes), label: `stagiaires en ${derniereClose.annee}` },
   { num: String(RESULTATS_TOTAL_FORMES), label: 'candidats formés, toutes formations, en 4 ans' },
-  { num: '0', label: 'abandon en cours de parcours (2023-2026)' },
+  { num: '0', label: 'abandon en cours de parcours (2023-2025)' },
 ]
 
 export function Stats() {

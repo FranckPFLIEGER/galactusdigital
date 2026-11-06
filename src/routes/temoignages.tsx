@@ -486,7 +486,7 @@ function TemoignagesPage() {
               {[
                 { num: SATISFACTION_GLOBALE, label: 'Note satisfaction', sub: 'Moyenne 2023-2025' },
                 { num: '100 %', label: 'Taux de réussite', sub: "Parmi les candidats présentés à l'examen" },
-                { num: String(RESULTATS_TOTAL_FORMES), label: 'Apprenants formés', sub: '2023-2026' },
+                { num: String(RESULTATS_TOTAL_FORMES), label: 'Apprenants formés', sub: '2023-2025' },
                 { num: '7', label: 'Territoires', sub: 'Caraïbes · Océan Indien · France' },
               ].map(s => (
                 <div key={s.label}>

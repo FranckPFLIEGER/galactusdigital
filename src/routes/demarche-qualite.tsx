@@ -6,6 +6,7 @@ import { CheckCircle, AlertCircle } from 'lucide-react'
 import {
   RESULTATS_ANNUELS, RESULTATS_ARRETE_AU, RESULTATS_PERIMETRE,
   RESULTATS_TOTAL_FORMES, METHODE_CALCUL, SATISFACTION_GLOBALE,
+  RESULTATS_PERIODE, RESULTATS_ANNEE_EN_COURS,
 } from '../data/resultats'
 
 export const Route = createFileRoute('/demarche-qualite')({
@@ -51,7 +52,8 @@ function DemarcheQualitePage() {
             <h2 className="section-h2">Indicateurs de résultats</h2>
             <div className="g-rule" />
             <p style={{ fontSize: '0.85rem', color: '#5a5a58', marginBottom: '0.75rem', fontStyle: 'italic', lineHeight: 1.6 }}>
-              Données arrêtées au {RESULTATS_ARRETE_AU}. {RESULTATS_PERIMETRE}
+              Période couverte : {RESULTATS_PERIODE} — trois exercices clos.
+              Données extraites au {RESULTATS_ARRETE_AU}. {RESULTATS_PERIMETRE}
             </p>
             <p style={{ fontSize: '0.85rem', color: '#4a4a48', marginBottom: '2rem', lineHeight: 1.7 }}>
               Conformément à l'<strong>indicateur 2</strong> du Référentiel National Qualité dans sa
@@ -65,9 +67,9 @@ function DemarcheQualitePage() {
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(200px,1fr))', gap: '1.5rem', marginBottom: '3rem' }}>
               {[
-                { num: String(RESULTATS_TOTAL_FORMES), label: 'Candidats formés 2023-2026', sub: 'Entrées effectives en formation, toutes certifications IT' },
+                { num: String(RESULTATS_TOTAL_FORMES), label: 'Candidats formés 2023-2025', sub: 'Entrées effectives en formation, toutes certifications IT' },
                 { num: '100 %',  label: 'Taux de réussite',    sub: "Parmi les seuls candidats présentés à l'examen" },
-                { num: '0 %',    label: "Taux d'abandon",      sub: 'Interruptions définitives après entrée en formation, 2023-2026' },
+                { num: '0 %',    label: "Taux d'abandon",      sub: 'Interruptions définitives après entrée en formation, 2023-2025' },
                 { num: SATISFACTION_GLOBALE, label: 'Note de satisfaction', sub: "Moyenne de l'appréciation générale, 2023-2025" },
               ].map(s => (
                 <div key={s.label} style={{ background: 'var(--g-black)', borderTop: '3px solid var(--g-red)', padding: '2rem', textAlign: 'center' }}>
@@ -108,7 +110,7 @@ function DemarcheQualitePage() {
             <p style={{ fontSize: '0.75rem', color: '#888', marginTop: '0.75rem', fontStyle: 'italic', lineHeight: 1.6 }}>
               * Taux de réussite calculé sur les seuls candidats ayant effectivement passé l'examen : il ne doit pas être lu comme un taux d'obtention rapporté aux entrants.
               Abandons et annulations comptabilisés sur les parcours engagés (après entrée effective en formation), hors désistements antérieurs au démarrage. Données consignées au registre de suivi et justifiables sur pièces en audit. La note moyenne d'une année est calculée sur les seuls questionnaires effectivement remis, dont le nombre est publié dans la colonne précédente : 39 questionnaires signés sur l'ensemble de la période, tous dépouillés, chacun consultable en audit. Un tiret signale une donnée qui n'est pas justifiable sur pièces à la date d'arrêté : aucun chiffre n'est alors publié pour cette case, plutôt qu'une valeur approchée.
-              {' '}L'exercice 2026 est en cours : l'entrée en formation y est comptabilisée, mais aucun candidat 2026 ne s'est encore présenté à un examen de certification — la colonne « réussite » reste donc vide, faute d'attestation éditeur à produire. Le questionnaire d'appréciation générale de cette session n'est pas encore recueilli, d'où le tiret des deux dernières colonnes. L'évaluation des enseignements de la session, elle, a bien été recueillie : c'est un instrument distinct, dont le détail figure au paragraphe « Évaluation des contenus et des enseignements » des modalités de calcul.
+              {' '}{RESULTATS_ANNEE_EN_COURS}
             </p>
           </div>
         </section>

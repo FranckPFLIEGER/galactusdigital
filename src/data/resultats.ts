@@ -24,7 +24,7 @@
 export const RESULTATS_ARRETE_AU = '31 mai 2026'
 
 /** Note de satisfaction globale publiée — source unique pour toutes les pages.
- *  Moyenne de l'item « Appréciation générale » du questionnaire FQ-08a,
+ *  Moyenne de l'item « Appréciation générale » du questionnaire FQ-10a,
  *  période 2023-2025, arrêtée à la date ci-dessus. Le détail par année et
  *  par item est publié dans RESULTATS_ANNUELS.
  *
@@ -83,13 +83,13 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
       'effective en formation ÷ nombre d\'apprenants entrés en formation. ' +
       'Les désistements survenus avant le démarrage sont comptabilisés séparément en ' +
       '« annulations » et n\'entrent pas dans ce taux.',
-    source: 'Registre de suivi — procédure FQ-15 « Prévention et traitement des ruptures de parcours »',
+    source: 'Registre de suivi — procédure FQ-0-11 « Prévention et traitement des ruptures de parcours »',
   },
   {
     libelle: 'Note de satisfaction',
     formule:
       'Moyenne arithmétique des notes portées à l\'item « Appréciation générale » du ' +
-      'questionnaire de fin de formation FQ-08a, sur une échelle de 1 (insatisfaisant) à ' +
+      'questionnaire de fin de formation FQ-10a, sur une échelle de 1 (insatisfaisant) à ' +
       '5 (excellent), tous répondants confondus. Les notes « formateur » et « impact sur le ' +
       'poste de travail » sont des items distincts du même questionnaire, publiés séparément. ' +
       'Seuls les questionnaires effectivement remis sont comptés : un questionnaire non ' +
@@ -97,7 +97,7 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
       'donc ni au numérateur ni au dénominateur. La moyenne globale porte sur l\'ensemble ' +
       'des questionnaires remis sur la période ; le détail par année est publié dans le ' +
       'tableau des résultats annuels.',
-    source: 'Questionnaires d\'appréciation FQ-08a, remplis et signés par les apprenants, ' +
+    source: 'Questionnaires d\'appréciation FQ-10a, remplis et signés par les apprenants, ' +
       'archivés par session et communicables en audit. L\'archive est dépouillée en ' +
       'intégralité : 39 questionnaires remis sur 2023-2025 (7 en 2023, 23 en 2024, 9 en 2025), ' +
       'soit une moyenne d\'appréciation générale de 4,79/5. Aucune note d\'appréciation ' +
@@ -116,9 +116,9 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
   {
     libelle: 'Évaluation des contenus et des enseignements',
     formule:
-      'Questionnaire dédié à la qualité pédagogique (FQ-08c), distinct de l\'enquête de ' +
+      'Questionnaire dédié à la qualité pédagogique (FQ-10b), distinct de l\'enquête de ' +
       'satisfaction générale, exploité en revue d\'amélioration continue.',
-    source: 'FQ-08c — dispositif formalisé (indicateur 33 : applicable aux CFA, mis en œuvre volontairement)',
+    source: 'FQ-10b — dispositif formalisé (indicateur 33 : applicable aux CFA, mis en œuvre volontairement)',
   },
 ]
 
@@ -129,7 +129,7 @@ export interface ResultatAnnee {
   abandons: number
   annulations: number
   reussiteParmiPresentes: string
-  /** Nombre de questionnaires FQ-08a effectivement remis et dépouillés pour
+  /** Nombre de questionnaires FQ-10a effectivement remis et dépouillés pour
    *  l'année. null tant que le dépouillement n'est pas consolidé : aucune note
    *  n'est alors publiée pour cette année (indicateur 1 — ne rien publier qui
    *  ne soit justifiable sur pièces). */

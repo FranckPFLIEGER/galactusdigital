@@ -74,7 +74,7 @@ function DemarchePedagogiquePage() {
         </section>
 
 
-        {/* ── POSITIONNEMENT À L'ENTRÉE — procédure FQ-27 ──
+        {/* ── POSITIONNEMENT À L'ENTRÉE — procédure FQ-0-15 ──
             Ce bloc répond au critère 1.3 des Conditions générales de financement
             de l'AIF (« positionnement en amont permettant d'individualiser le
             parcours ») et aux indicateurs 4 et 8 du RNQ V2.
@@ -92,24 +92,25 @@ function DemarchePedagogiquePage() {
             <div className="g-rule" />
             <p style={{ fontSize: '0.95rem', lineHeight: 1.85, color: '#4a4a48', marginTop: '1rem', marginBottom: '2.5rem', maxWidth: '760px' }}>
               Aucune entrée en formation ne se fait sans positionnement écrit. La procédure
-              <strong> FQ-27</strong> se déroule en trois étapes, et chaque pièce est signée par
-              le candidat puis versée à son dossier.
+              <strong> FQ-0-15</strong> se déroule en trois étapes. Elles donnent lieu à une pièce unique,
+              le questionnaire de positionnement <strong>FQ-5c</strong>, signée par le candidat
+              puis versée à son dossier.
             </p>
 
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.5rem' }}>
               {[
                 {
-                  ref: 'FQ-27-A',
+                  ref: 'FQ-0-15 · A',
                   titre: 'Test de positionnement',
                   desc: "Un questionnaire écrit couvrant les domaines de la certification visée, réalisé en autonomie et sans documentation. Le candidat est invité à répondre « je ne sais pas » plutôt qu'à deviner : un positionnement sincère produit un plan de travail juste.",
                 },
                 {
-                  ref: 'FQ-27-B',
+                  ref: 'FQ-0-15 · B',
                   titre: 'Complément écrit',
                   desc: "Les questions restées sans réponse et celles à préciser font l'objet d'un second questionnaire. Il mesure la progression entre les deux épreuves autant que le niveau atteint.",
                 },
                 {
-                  ref: 'FQ-27-C',
+                  ref: 'FQ-0-15 · C',
                   titre: "Décision d'admission et plan de travail",
                   desc: "Le dépouillement est consolidé par domaine sur une grille à quatre niveaux — non évalué, non acquis, en cours d'acquisition, acquis. Un seuil indicatif de 60 % déclenche l'instruction de l'admission ; il n'est pas éliminatoire. La décision est motivée par écrit et s'accompagne d'un plan de travail individuel construit sur les domaines les plus faibles.",
                 },

@@ -36,7 +36,7 @@ function DemarcheQualitePage() {
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
               GALACTUS Digital est certifié Qualiopi par Certifopac (accréditation Cofrac n° 5-0620, certificat n° 951711-1) pour les actions de formation.
               Notre démarche s'appuie sur le Référentiel National Qualité dans sa version issue du <strong style={{ color: 'rgba(255,255,255,0.90)' }}>décret n° 2026-728 du 1er août 2026</strong>, publié au Journal officiel du 4 août 2026 (NOR TRSD2619632D) et <strong style={{ color: 'rgba(255,255,255,0.90)' }}>applicable au 1er novembre 2026</strong> : 7 critères inchangés, 33 indicateurs.
-              Les procédures correspondantes sont formalisées et en vigueur dans notre kit qualité V2026.3.
+              Les procédures correspondantes sont formalisées et en vigueur dans notre kit qualité V2026.5.
             </p>
             <p style={{ fontSize: '0.80rem', color: 'rgba(255,255,255,0.40)', fontStyle: 'italic', maxWidth: '680px', lineHeight: 1.7 }}>
               Note importante : la présence de ces éléments sur notre site améliore la visibilité publique de notre démarche qualité.
@@ -170,11 +170,11 @@ function DemarcheQualitePage() {
               {[
                 { num: '01', title: 'Information du public', desc: "Diffusion d'informations accessibles, détaillées et vérifiables : prérequis, objectifs, durée, modalités pédagogiques, tarifs, délais d'accès, accessibilité aux personnes en situation de handicap, modes de financement et résultats. Pour chaque action certifiante : taux d'obtention, validation par blocs, équivalences, passerelles, suites de parcours et débouchés, publiés sur la fiche de la formation. Aucune communication susceptible d'induire le public en erreur." },
                 { num: '02', title: 'Identification des objectifs & adaptation', desc: "Objectifs définis sous forme de verbes d'action dans le plan de formation. Analyse des besoins via questionnaire d'évaluation des attentes. Prise en compte des situations de handicap signalées, dès l'entretien préalable." },
-                { num: '03', title: 'Adaptation aux publics bénéficiaires', desc: "Convocation avec règlement intérieur. Évaluation des acquis par ateliers pratiques et QCM (seuil 70 %). Procédure de prévention et traitement des ruptures de parcours (FQ-15). Procédure de prévention des violences, harcèlement et discriminations (FQ-14), communiquée dès la convocation." },
+                { num: '03', title: 'Adaptation aux publics bénéficiaires', desc: "Convocation avec règlement intérieur. Évaluation des acquis par ateliers pratiques et QCM (seuil 70 %). Procédure de prévention et traitement des ruptures de parcours (FQ-0-11). Procédure de prévention des violences, harcèlement et discriminations (FQ-0-12), communiquée dès la convocation." },
                 { num: '04', title: 'Adéquation des moyens', desc: "Formateur certifié Cisco, instructeur Cisco Networking Academy depuis 15 ans — CCNP, CCDP. Référent pédagogique désigné : Franck PFLIEGER (indicateur 19). Plateforme Cisco Networking Academy officielle pour l'e-learning tutoré, maquette Junos à distance pour la FOAD Juniper, WEBEX pour le tutorat. Effectivité du suivi tracée pour chaque apprenant à distance par trois pièces : relevé de progression de la plateforme, historique des sessions Webex et compte rendu des points d'étape. En présentiel, la formation se tient dans vos locaux ou en salle retenue pour la session ; son accessibilité est vérifiée avant le démarrage avec le référent handicap." },
                 { num: '05', title: 'Qualification des personnels', desc: "Certifications CCNP et CCDP Cisco. Programme IPD Cisco Networking Academy. Vérification annuelle des compétences. Inscription à la communauté des formateurs Cisco Networking Academy." },
                 { num: '06', title: "Inscription dans l'environnement professionnel", desc: "Veille réglementaire (CARIF, Centre Inffo, AFDAS, AKTO, Service public). Veille métier (APEC, LinkedIn Cisco). Partenaire Cisco n° 3018982. Partenaire Microsoft n° 4653557. Membre IPv6 Forum. Association ASPIK." },
-                { num: '07', title: 'Recueil et traitement des appréciations', desc: "Évaluation apprenants et hiérarchie en fin de formation. Évaluation des enseignements (FQ-08c) distincte de l'enquête de satisfaction. Sollicitation à froid 2 mois après. Tableau de suivi : points forts, axes d'amélioration, réclamations, actions correctives." },
+                { num: '07', title: 'Recueil et traitement des appréciations', desc: "Évaluation apprenants et hiérarchie en fin de formation. Évaluation des enseignements (FQ-10b) distincte de l'enquête de satisfaction. Sollicitation à froid 2 mois après. Tableau de suivi : points forts, axes d'amélioration, réclamations, actions correctives." },
               ].map(c => (
                 <div key={c.num} style={{ background: 'rgba(255,255,255,0.04)', border: '1px solid rgba(255,255,255,0.06)', padding: '1.5rem', display: 'flex', gap: '1.25rem', alignItems: 'flex-start' }}>
                   <div style={{ fontFamily: 'var(--font-title)', fontSize: '2rem', fontWeight: 700, color: 'var(--g-red)', lineHeight: 1, flexShrink: 0 }}>{c.num}</div>
@@ -200,13 +200,14 @@ function DemarcheQualitePage() {
               les 7 critères, inchangés. Il s'applique aux audits initiaux à compter du
               1<sup>er</sup> novembre 2026, puis aux audits de surveillance au début de l'année 2027 et aux
               audits de renouvellement à partir de l'été 2027. Le certificat n° 951711-1 de
-              GALACTUS Digital, valable jusqu'au 15 septembre 2027, reste en vigueur : la mise à
-              jour est vérifiée lors de notre prochain audit de surveillance.
+              GALACTUS Digital, valable jusqu'au 15 septembre 2027, reste en vigueur. L'audit de
+              surveillance du cycle s'est tenu le 4 juin 2026 ; la mise à jour sera donc vérifiée
+              lors de l'audit de renouvellement, prévu en juin 2027.
             </p>
             <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '2rem', maxWidth: '860px' }}>
               Les procédures correspondantes ont été formalisées dès juillet 2026 et sont aujourd'hui
-              en vigueur dans le kit qualité V2026.3. Le nouveau guide de lecture, dans sa
-              <strong> version V10 d'octobre 2026</strong>, est paru : il remplace le V9 du 8 janvier 2024
+              en vigueur dans le kit qualité V2026.5. Le nouveau guide de lecture, dans sa
+              <strong> version de novembre 2026</strong>, est paru : il remplace le V9 du 8 janvier 2024
               et précise la conduite de l'audit ainsi que les attendus de chaque indicateur. Seul
               l'arrêté fixant le nombre d'intervenants au-delà duquel la désignation d'un référent
               pédagogique par action devient obligatoire (indicateur 19) reste à paraître ;
@@ -216,9 +217,9 @@ function DemarcheQualitePage() {
               Une période transitoire est ouverte par l'arrêté du 28 octobre 2026 : jusqu'au
               <strong> 31 décembre 2026</strong>, un organisme déjà certifié peut être audité selon les
               conditions applicables au 31 octobre 2026. À compter du 1<sup>er</sup> janvier 2027, tous
-              les audits sont conduits au nouveau référentiel. Le prochain audit de surveillance de
+              les audits sont conduits au nouveau référentiel. L'audit de renouvellement de
               GALACTUS Digital intervenant après cette date, il se tiendra au référentiel à
-              33 indicateurs et au guide V10.
+              33 indicateurs et au guide de lecture de novembre 2026.
             </p>
 
             {/* Pas d'alignItems : les cartes s'étirent à la hauteur de leur rangée, donc le bas de
@@ -228,21 +229,21 @@ function DemarcheQualitePage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(280px,1fr))', gap: '1.25rem', marginBottom: '2rem' }}>
               {[
                 {
-                  ref: 'FQ-14',
+                  ref: 'FQ-0-12',
                   title: 'Violences, harcèlement, discriminations',
                   desc: "Procédure complète de prévention, signalement et traitement. Intégrée au règlement intérieur (art. 10 bis), aux CGV (art. 6 ter) et à la convocation. Registre de suivi dédié.",
                   icon: '🛡️',
                 },
                 {
-                  ref: 'FQ-15',
+                  ref: 'FQ-0-11',
                   title: 'Ruptures de parcours',
                   desc: "Dispositif de détection (J+0), entretien (J+1), plan d'action (J+3) et formalisation (J+5). Intégré aux CGV (art. 6 bis) et à la convention (art. 4 ter).",
                   icon: '🔗',
                 },
                 {
-                  ref: 'FQ-08c',
+                  ref: 'FQ-10b',
                   title: 'Évaluation des enseignements',
-                  desc: "Questionnaire dédié à la qualité pédagogique (contenus, méthodes, évaluation des acquis), distinct de l'enquête de satisfaction générale (FQ-08a), exploité en revue d'amélioration continue. Le nouvel indicateur 33 ne vise que la catégorie apprentissage (CFA) : GALACTUS Digital n'est pas concerné et met ce dispositif en œuvre volontairement.",
+                  desc: "Questionnaire dédié à la qualité pédagogique (contenus, méthodes, évaluation des acquis), distinct de l'enquête de satisfaction générale (FQ-10a), exploité en revue d'amélioration continue. Le nouvel indicateur 33 ne vise que la catégorie apprentissage (CFA) : GALACTUS Digital n'est pas concerné et met ce dispositif en œuvre volontairement.",
                   icon: '📋',
                 },
                 {
@@ -294,8 +295,8 @@ function DemarcheQualitePage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '1rem 1.5rem', background: 'rgba(228,31,38,0.06)', border: '1px solid rgba(228,31,38,0.15)' }}>
               <AlertCircle size={18} color="#E41F26" style={{ flexShrink: 0 }} />
               <p style={{ fontSize: '0.82rem', color: '#4a4a48', margin: 0, lineHeight: 1.6 }}>
-                <strong style={{ color: 'var(--g-red)' }}>Statut :</strong> procédures en vigueur, intégrées au kit qualité V2026.3 (mise à jour du 8 août 2026),
-                figées après parution du décret au Journal officiel du 4 août 2026 et relues au regard du guide de lecture V10 d'octobre 2026. Seul le seuil d'intervenants de l'indicateur 19 reste soumis à un arrêté à paraître.
+                <strong style={{ color: 'var(--g-red)' }}>Statut :</strong> procédures en vigueur, intégrées au kit qualité V2026.5 (mise à jour du 6 novembre 2026),
+                figées après parution du décret au Journal officiel du 4 août 2026 et relues au regard du guide de lecture de novembre 2026. Seul le seuil d'intervenants de l'indicateur 19 reste soumis à un arrêté à paraître.
               </p>
             </div>
           </div>

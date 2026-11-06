@@ -271,11 +271,11 @@ export function getInfoCertifiante(slug: string): InfoCertifiante | null {
         'compétences au sens de l\'article L.6113-1 du code du travail : aucune certification ' +
         'enregistrée aux répertoires nationaux n\'est visée. En cas d\'interruption du parcours, ' +
         'une attestation de formation partielle mentionnant les compétences effectivement ' +
-        'acquises est délivrée (procédure FQ-15).'
+        'acquises est délivrée (procédure FQ-0-11).'
       : `La certification ${f.examCode} s'obtient par un examen unique et n'est pas découpée en ` +
         'blocs de compétences au sens de l\'article L.6113-1 du code du travail. En cas ' +
         'd\'interruption du parcours, une attestation de formation partielle mentionnant les ' +
-        'compétences effectivement acquises est délivrée (procédure FQ-15).')
+        'compétences effectivement acquises est délivrée (procédure FQ-0-11).')
 
   // ── Passerelles et équivalences
   let passerelles = o.passerelles ?? []

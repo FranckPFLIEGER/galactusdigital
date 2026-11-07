@@ -76,7 +76,7 @@ function RgpdPage() {
                   titre: 'Données de gestion des formations',
                   base: 'Exécution du contrat',
                   donnees: 'Nom, prénom, email, téléphone, entreprise, données de parcours de formation, résultats aux évaluations.',
-                  duree: '3 ans pour les dossiers pédagogiques (Art. R6352-9 Code du travail). 5 ans pour les pièces comptables.',
+                  duree: '3 ans pour les dossiers pédagogiques (art. R.6352-9 du code du travail). 10 ans pour les pièces comptables et les justificatifs de financement (art. L.123-22 du code de commerce). 4 ans après la fin de la formation pour les dossiers financés par France Travail, l\'organisme disposant de 5 jours ouvrés pour les produire en contrôle de service fait.',
                   dest: "GALACTUS Digital, éditeurs certifiant (Cisco Networking Academy, Microsoft, Juniper Networks), "
                     + "OPCO, France Travail ou tout autre financeur du dossier. Sous-traitants : Cisco Webex "
                     + "(classes virtuelles, émargement et historique de connexion), Google Workspace (messagerie "

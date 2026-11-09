@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/ccnp-enarsi')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ccnp-enarsi' },
       { title: "CCNP Enterprise Advanced Routing — ENARSI 300-410 v9 | GALACTUS Digital" },
       { name: "description", content: "CCNP Enterprise : Advanced Routing (ENARSI 300-410) v9. 70 h. EIGRP, OSPF, BGP, MPLS L3 VPN, DMVPN, sécurité et services, dépannage. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ccnp-enarsi' }],
   }),
 })
 

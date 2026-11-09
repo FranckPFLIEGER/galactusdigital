@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/ethical-hacker')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ethical-hacker' },
       { title: "Ethical Hacker Cisco Networking Academy — Cybersécurité offensive | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco Ethical Hacker. 30 h. Badge certifiant. Tests intrusion pentest sécurité offensive. Certifié Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ethical-hacker' }],
   }),
 })
 

@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/ms-4010')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ms-4010' },
       { title: "MS-4010 Microsoft 365 Copilot Specialist — Formation certifiante | GALACTUS Digital" },
       { name: "description", content: "Formation Microsoft MS-4010 Copilot Specialist. 21 h. Certification officielle. Déploiement configuration sécurité adoption Copilot. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ms-4010' }],
   }),
 })
 

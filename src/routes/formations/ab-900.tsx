@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/ab-900')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ab-900' },
       { title: "AB-900 Microsoft 365 Copilot Fundamentals — Formation certifiante | GALACTUS Digital" },
       { name: "description", content: "Formation Microsoft AB-900 Copilot & Agent Administration Fundamentals. 18 h. Certification officielle. M365, Copilot, agents IA, sécurité. Examen en option. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ab-900' }],
   }),
 })
 

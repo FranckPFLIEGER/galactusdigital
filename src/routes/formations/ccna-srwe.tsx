@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/ccna-srwe')({
   component: CcnaSrwePage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ccna-srwe' },
       { title: "CCNA Module 2/3 — Commutation et routage Cisco | GALACTUS Digital" },
       { name: "description", content: "CCNA Commutation Routage Wi-Fi SRWE Module 2/3. 70 h. Certification CCNA 200-301. VLAN STP OSPF WAN. Certifié Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ccna-srwe' }],
   }),
 })
 

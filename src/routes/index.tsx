@@ -22,6 +22,12 @@ import { ContactCTA }     from '@/components/ContactCTA'
 import { Footer }         from '@/components/Footer'
 
 export const Route = createFileRoute('/')({
+  head: () => ({
+    meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/' }],
+  }),
   component: HomePage,
 })
 

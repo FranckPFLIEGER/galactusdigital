@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/cyberops')({
   component: CyberOpsPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/cyberops' },
       { title: "CCNA Cybersecurity Cisco — Certification 200-201 CCNACBR | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco CCNA Cybersecurity (ex-CyberOps). 60 h. Certification 200-201 CCNACBR. Analyste SOC détection intrusion réponse incidents. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/cyberops' }],
   }),
 })
 

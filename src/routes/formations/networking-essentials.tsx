@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/networking-essentials')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/networking-essentials' },
       { title: "Networking Essentials Cisco Networking Academy — Formation réseaux | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco Networking Academy Networking Essentials. 35 h en e-learning tutoré. Fondamentaux des réseaux, adressage IP, Packet Tracer. Badge et certificat Cisco Networking Academy. Certifié Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/networking-essentials' }],
   }),
 })
 

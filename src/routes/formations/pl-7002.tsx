@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/pl-7002')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/pl-7002' },
       { title: "PL-7002 Power Automate — Applied Skills | GALACTUS Digital" },
       { name: "description", content: "Formation PL-7002 Power Automate. Applied Skills. Lab Microsoft Learn. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/pl-7002' }],
   }),
 })
 

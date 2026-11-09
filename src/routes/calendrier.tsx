@@ -7,6 +7,15 @@ import { FORMATIONS, FAMILLES, getTarifsModalites, MENTION_PRIX_COURTE, type For
 import { SESSIONS_PLANIFIEES, LIEUX, labelPlage, places } from '../data/sessions'
 
 export const Route = createFileRoute('/calendrier')({
+  head: () => ({
+    meta: [
+      { title: 'Calendrier des sessions de formation — GALACTUS Digital' },
+      { name: 'description', content: "Sessions programmées en présentiel, FOAD et e-learning tutoré. Calendrier indicatif : dates et lieux confirmés sur la convocation. Délais d'accès : 1 mois en standard, 3 mois en financement OPCO. Prix nets de taxe, TVA non applicable (art. 261-4-4°-a du CGI)." },
+      { property: 'og:title', content: 'Calendrier des sessions de formation — GALACTUS Digital' },
+      { property: 'og:url', content: 'https://galactusdigital.com/calendrier' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/calendrier' }],
+  }),
   component: CalendrierPage,
 })
 

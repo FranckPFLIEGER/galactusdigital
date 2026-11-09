@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/sc-900')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/sc-900' },
       { title: "SC-900 Security Fundamentals Microsoft — Formation certifiante | GALACTUS Digital" },
       { name: "description", content: "Formation Microsoft SC-900 Security Compliance Identity. 15 h. Certification officielle. Sécurité cloud conformité. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/sc-900' }],
   }),
 })
 

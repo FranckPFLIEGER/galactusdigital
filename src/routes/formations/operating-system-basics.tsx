@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/operating-system-basics')({
   component: OperatingSystemBasicsPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/operating-system-basics' },
       { title: "Operating System Basics — Formation sans prérequis | GALACTUS Digital" },
       { name: "description", content: "Formation Operating System Basics. 12 h, aucun prérequis. Windows, Linux, Android, iOS. Outils d'administration, sécurité de base. Reconversion. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/operating-system-basics' }],
   }),
 })
 

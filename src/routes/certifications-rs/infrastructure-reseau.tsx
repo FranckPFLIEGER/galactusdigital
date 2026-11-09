@@ -13,6 +13,7 @@ export const Route = createFileRoute('/certifications-rs/infrastructure-reseau')
       { property: 'og:description', content: "Certification professionnelle RS : installer, sécuriser et superviser une infrastructure réseau d'entreprise. Territoires ultramarins." },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications-rs/infrastructure-reseau' },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/certifications-rs/infrastructure-reseau' }],
   }),
   component: CertifInfraReseau,
 })

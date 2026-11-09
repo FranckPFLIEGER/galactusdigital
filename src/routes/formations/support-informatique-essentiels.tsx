@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/support-informatique-essentiel
   component: SupportInformatiqueEssentielsPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/support-informatique-essentiels' },
       { title: "Essentiels du support informatique — Certification CCST IT Support | GALACTUS Digital" },
       { name: "description", content: "Formation Essentiels du support informatique. 56 h en e-learning tutoré. Préparation à la certification Cisco CCST IT Support. 103 laboratoires. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/support-informatique-essentiels' }],
   }),
 })
 

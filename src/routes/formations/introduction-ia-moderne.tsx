@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/introduction-ia-moderne')({
   component: IntroductionIaModernePage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/introduction-ia-moderne' },
       { title: "Introduction à l'IA moderne — Formation sans prérequis | GALACTUS Digital" },
       { name: "description", content: "Formation Introduction à l'IA moderne. 6 h, aucun prérequis. Chatbots, vision par ordinateur, rédaction de prompts. Reconversion. Territoires ultramarins. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/introduction-ia-moderne' }],
   }),
 })
 

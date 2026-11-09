@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/linux-unhatched')({
   component: LinuxUnhatchedPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/linux-unhatched' },
       { title: "Linux Unhatched — Formation Linux sans prérequis | GALACTUS Digital" },
       { name: "description", content: "Formation Linux Unhatched. 8 h, aucun prérequis. Installation, ligne de commande, premiers pas Linux. Porte d'entrée vers Linux Essentials et LPIC-1. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/linux-unhatched' }],
   }),
 })
 

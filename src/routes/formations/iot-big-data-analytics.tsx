@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/iot-big-data-analytics')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/iot-big-data-analytics' },
       { title: "IoT Big Data Analytics Cisco Networking Academy | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco IoT Big Data Analytics. 70 h. Badge certifiant. Analyse données IoT visualisation machine learning. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/iot-big-data-analytics' }],
   }),
 })
 

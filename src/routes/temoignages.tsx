@@ -5,6 +5,15 @@ import { Footer } from '../components/Footer'
 import { Quote } from 'lucide-react'
 
 export const Route = createFileRoute('/temoignages')({
+  head: () => ({
+    meta: [
+      { title: 'Témoignages de nos apprenants — GALACTUS Digital' },
+      { name: 'description', content: 'Des professionnels des territoires ultramarins et de France hexagonale racontent leur formation et leur certification avec GALACTUS Digital, ainsi que nos passages dans les médias régionaux.' },
+      { property: 'og:title', content: 'Témoignages de nos apprenants — GALACTUS Digital' },
+      { property: 'og:url', content: 'https://galactusdigital.com/temoignages' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/temoignages' }],
+  }),
   component: TemoignagesPage,
 })
 

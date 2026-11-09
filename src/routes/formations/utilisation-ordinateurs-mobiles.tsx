@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/utilisation-ordinateurs-mobile
   component: UtilisationOrdinateursMobilesPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/utilisation-ordinateurs-mobiles' },
       { title: "Utilisation d'ordinateurs et de mobiles — Formation sans prérequis | GALACTUS Digital" },
       { name: "description", content: "Formation Utilisation d'ordinateurs et d'équipements mobiles. 6 h, aucun prérequis. Fichiers, logiciels, connectivité Wi-Fi et Bluetooth. Reconversion. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/utilisation-ordinateurs-mobiles' }],
   }),
 })
 

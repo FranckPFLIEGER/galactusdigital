@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/ms-4017')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ms-4017' },
       { title: "MS-4017 Étendre M365 Copilot — Applied Skills | GALACTUS Digital" },
       { name: "description", content: "Formation MS-4017 étendre Copilot. Applied Skills. Lab Microsoft Learn. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ms-4017' }],
   }),
 })
 

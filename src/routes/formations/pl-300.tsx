@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/pl-300')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/pl-300' },
       { title: "PL-300 Power BI Data Analyst Microsoft — Formation certifiante | GALACTUS Digital" },
       { name: "description", content: "Formation Microsoft PL-300 Power BI Data Analyst. 35 h. Certification officielle. Power Query DAX modélisation visualisation. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/pl-300' }],
   }),
 })
 

@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/jncia-junos')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/jncia-junos' },
       { title: "Junos, Associate (JNCIA-Junos) — examen JN0-106 | GALACTUS Digital" },
       { name: "description", content: "JNCIA-Junos (IJOS) — préparation à l'examen Juniper JN0-106. 35 h en FOAD, 17 travaux pratiques sur maquette Junos. Organisme certifié Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/jncia-junos' }],
   }),
 })
 

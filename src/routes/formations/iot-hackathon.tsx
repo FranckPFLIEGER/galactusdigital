@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/iot-hackathon')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/iot-hackathon' },
       { title: "IoT Hackathon Cisco Networking Academy — Projet IoT certifiant | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco IoT Hackathon. 35 h. Badge certifiant. Projet IoT complet bout en bout en équipe. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/iot-hackathon' }],
   }),
 })
 

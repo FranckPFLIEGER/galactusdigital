@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/az-802')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/az-802' },
       { title: "AZ-802 Administer Windows Server | GALACTUS Digital" },
       { name: "description", content: "Formation AZ-802 Windows Server hybride. 35 h. Certification. Examen en option. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/az-802' }],
   }),
 })
 

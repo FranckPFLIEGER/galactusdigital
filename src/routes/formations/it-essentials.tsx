@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/it-essentials')({
   component: ItEssentialsPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/it-essentials' },
       { title: "IT Essentials — Matériel, systèmes et dépannage | GALACTUS Digital" },
       { name: "description", content: "Formation IT Essentials. 70 h en e-learning tutoré. Matériel, systèmes, dépannage. 14 chapitres, 99 TP. Badge et certificat Cisco Networking Academy. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/it-essentials' }],
   }),
 })
 

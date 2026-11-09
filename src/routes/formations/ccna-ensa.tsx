@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/ccna-ensa')({
   component: CcnaEnsaPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ccna-ensa' },
       { title: "CCNA Module 3/3 — Réseaux entreprise Cisco | GALACTUS Digital" },
       { name: "description", content: "CCNA Réseaux entreprise ENSA Module 3/3. 70 h. Certification CCNA 200-301. QoS VPN automatisation réseau. Certifié Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ccna-ensa' }],
   }),
 })
 

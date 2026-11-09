@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/introduction-science-donnees')
   component: IntroductionScienceDonneesPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/introduction-science-donnees' },
       { title: "Introduction à la science des données — Formation sans prérequis | GALACTUS Digital" },
       { name: "description", content: "Formation Introduction à la science des données. 6 h, aucun prérequis. Donnée, analyse, machine learning, métiers de la data. Reconversion. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/introduction-science-donnees' }],
   }),
 })
 

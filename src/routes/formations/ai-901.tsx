@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/ai-901')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ai-901' },
       { title: "AI-901 Azure AI Fundamentals Microsoft — Formation certifiante | GALACTUS Digital" },
       { name: "description", content: "Formation Microsoft AI-901 Azure AI Fundamentals. 15 h. Certification officielle. IA machine learning Cognitive Services. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ai-901' }],
   }),
 })
 

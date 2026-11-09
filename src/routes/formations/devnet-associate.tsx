@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/devnet-associate')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/devnet-associate' },
       { title: "CCNA Automation Cisco — Automatisation réseau 200-901 | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco CCNA Automation (ex-DevNet). 50 h. Certification 200-901 CCNAAUTO. APIs REST Python réseau automatisation IA-ready. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/devnet-associate' }],
   }),
 })
 

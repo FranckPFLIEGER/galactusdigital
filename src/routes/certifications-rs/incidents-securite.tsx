@@ -13,6 +13,7 @@ export const Route = createFileRoute('/certifications-rs/incidents-securite')({
       { property: 'og:description', content: "Certification professionnelle RS : surveiller, analyser une intrusion, qualifier une alerte et traiter un incident de sécurité. Sans prérequis de diplôme." },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications-rs/incidents-securite' },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/certifications-rs/incidents-securite' }],
   }),
   component: CertifIncidentsSecurite,
 })

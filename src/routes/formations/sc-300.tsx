@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/sc-300')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/sc-300' },
       { title: "SC-300 Identity and Access Administrator | GALACTUS Digital" },
       { name: "description", content: "Formation SC-300 Entra ID accès. 28 h. Certification. Examen en option. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/sc-300' }],
   }),
 })
 

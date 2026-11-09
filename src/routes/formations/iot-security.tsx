@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/iot-security')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/iot-security' },
       { title: "IoT Security Cisco Networking Academy — Sécurité objets connectés | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco IoT Security. 30 h. Badge certifiant. Vulnérabilités IoT chiffrement gestion identités. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/iot-security' }],
   }),
 })
 

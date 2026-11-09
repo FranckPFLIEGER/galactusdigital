@@ -9,6 +9,15 @@ import { ArrowRight, Clock, Award, Phone, Mail, Filter, Calendar, Check } from "
 import { getProchaineSession } from "../../data/sessions"
 
 export const Route = createFileRoute("/formations/")({
+  head: () => ({
+    meta: [
+      { title: 'Catalogue des formations certifiantes IT — GALACTUS Digital' },
+      { name: 'description', content: "Formations certifiantes officielles Cisco, Microsoft et Juniper répondant aux exigences des éditeurs, dont des formations d'entrée sans prérequis pour les personnes en reconversion. Présentiel, FOAD et e-learning tutoré." },
+      { property: 'og:title', content: 'Catalogue des formations certifiantes IT — GALACTUS Digital' },
+      { property: 'og:url', content: 'https://galactusdigital.com/formations' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations' }],
+  }),
   component: FormationsPage,
 })
 

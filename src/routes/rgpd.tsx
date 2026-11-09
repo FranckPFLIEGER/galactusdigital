@@ -4,6 +4,15 @@ import { Footer } from '../components/Footer'
 import { Shield, Lock, Eye, Trash2, Download, Mail } from 'lucide-react'
 
 export const Route = createFileRoute('/rgpd')({
+  head: () => ({
+    meta: [
+      { title: 'Protection des données personnelles — RGPD — GALACTUS Digital' },
+      { name: 'description', content: 'GALACTUS Digital protège vos données personnelles conformément au Règlement général sur la protection des données (règlement UE 2016/679) et à la loi Informatique et Libertés n° 78-17 du 6 janvier 1978.' },
+      { property: 'og:title', content: 'Protection des données personnelles — RGPD — GALACTUS Digital' },
+      { property: 'og:url', content: 'https://galactusdigital.com/rgpd' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/rgpd' }],
+  }),
   component: RgpdPage,
 })
 

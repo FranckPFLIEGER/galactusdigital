@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/ccnp-encor')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ccnp-encor' },
       { title: "CCNP Enterprise Core — ENCOR 350-401 v9 | GALACTUS Digital" },
       { name: "description", content: "CCNP Enterprise : Core Networking (ENCOR 350-401) v9. 70 h. SD-Access, LISP/VXLAN, assurance réseau, automatisation. Formateur CCNP/CCDP. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ccnp-encor' }],
   }),
 })
 

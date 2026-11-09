@@ -19,6 +19,15 @@ const PARCOURS_ELEARNING = (() => {
 })()
 
 export const Route = createFileRoute('/elearning')({
+  head: () => ({
+    meta: [
+      { title: 'Formation e-learning tutoré — GALACTUS Digital' },
+      { name: 'description', content: 'Progressez à votre rythme sur la plateforme officielle Cisco Networking Academy. Un tuteur certifié accompagne le parcours avec un suivi individualisé documenté conforme Qualiopi.' },
+      { property: 'og:title', content: 'Formation e-learning tutoré — GALACTUS Digital' },
+      { property: 'og:url', content: 'https://galactusdigital.com/elearning' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/elearning' }],
+  }),
   component: ElearningPage,
 })
 

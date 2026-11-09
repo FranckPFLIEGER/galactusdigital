@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/sc-500')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/sc-500' },
       { title: "SC-500 Cloud & AI Security Engineer | GALACTUS Digital" },
       { name: "description", content: "Formation SC-500 Cloud and AI Security Engineer. Defender for Cloud, sécurité des workloads et des services IA, gouvernance Copilot. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/sc-500' }],
   }),
 })
 

@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/md-102')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/md-102' },
       { title: "MD-102 Endpoint Administrator Microsoft — Formation certifiante | GALACTUS Digital" },
       { name: "description", content: "Formation Microsoft MD-102 Endpoint Administrator. 35 h. Certification officielle. Intune Autopilot conformité Defender. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/md-102' }],
   }),
 })
 

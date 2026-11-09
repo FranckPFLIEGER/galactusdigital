@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/az-900')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/az-900' },
       { title: "AZ-900 Azure Fundamentals Microsoft — Formation certifiante | GALACTUS Digital" },
       { name: "description", content: "Formation Microsoft AZ-900 Azure Fundamentals. 20 h. Certification officielle. Cloud Azure services sécurité. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/az-900' }],
   }),
 })
 

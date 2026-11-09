@@ -9,6 +9,15 @@ import {
 import { getFormationsParModalite } from '../data/catalogue'
 
 export const Route = createFileRoute('/presentiel')({
+  head: () => ({
+    meta: [
+      { title: 'Formation en présentiel, inter et intra-entreprise — GALACTUS Digital' },
+      { name: 'description', content: 'Un formateur certifié intervient en face-à-face chez vous ou dans une salle retenue pour la session. Ateliers pratiques sur équipements réels et progression vers la certification.' },
+      { property: 'og:title', content: 'Formation en présentiel, inter et intra-entreprise — GALACTUS Digital' },
+      { property: 'og:url', content: 'https://galactusdigital.com/presentiel' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/presentiel' }],
+  }),
   component: PresentielPage,
 })
 

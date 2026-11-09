@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/iot-connecting-things')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/iot-connecting-things' },
       { title: "IoT Connecting Things Cisco — Programmation IoT | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco IoT Connecting Things. 70 h. Badge certifiant. Raspberry Pi Arduino protocoles IoT. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/iot-connecting-things' }],
   }),
 })
 

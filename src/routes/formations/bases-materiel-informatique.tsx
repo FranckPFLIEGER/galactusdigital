@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/bases-materiel-informatique')(
   component: BasesMaterielInformatiquePage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/bases-materiel-informatique' },
       { title: "Les bases du matériel informatique — Formation sans prérequis | GALACTUS Digital" },
       { name: "description", content: "Formation Les bases du matériel informatique. 6 h, aucun prérequis. Composants PC, portables, terminaux mobiles. Brique CCST Cybersecurity. Reconversion. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/bases-materiel-informatique' }],
   }),
 })
 

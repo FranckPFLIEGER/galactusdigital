@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/az-104')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/az-104' },
       { title: "AZ-104 Azure Administrator Microsoft — Formation certifiante | GALACTUS Digital" },
       { name: "description", content: "Formation Microsoft AZ-104 Azure Administrator. 40 h. Certification officielle. Gestion Azure réseaux virtuels stockage. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/az-104' }],
   }),
 })
 

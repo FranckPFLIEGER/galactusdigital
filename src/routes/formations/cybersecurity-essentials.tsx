@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/cybersecurity-essentials')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/cybersecurity-essentials' },
       { title: "Cybersecurity Essentials Cisco Networking Academy | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco Cybersecurity Essentials. 30 h. Badge certifiant. Fondamentaux cybersécurité menaces cryptographie défenses. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/cybersecurity-essentials' }],
   }),
 })
 

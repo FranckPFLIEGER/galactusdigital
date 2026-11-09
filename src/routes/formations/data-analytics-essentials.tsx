@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/data-analytics-essentials')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/data-analytics-essentials' },
       { title: "Data Analytics Essentials Cisco Networking Academy | GALACTUS Digital" },
       { name: "description", content: "Formation Cisco Data Analytics Essentials. 30 h. Badge certifiant. Analyse données SQL visualisation éthique data. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/data-analytics-essentials' }],
   }),
 })
 

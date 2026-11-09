@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/linux-essentials')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/linux-essentials' },
       { title: "Linux Essentials Cisco Networking Academy — Certification LPI 010-160 | GALACTUS Digital" },
       { name: "description", content: "Formation Linux Essentials Cisco Networking Academy. 70 h. Certification LPI 010-160. CLI systèmes fichiers scripting shell. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/linux-essentials' }],
   }),
 })
 

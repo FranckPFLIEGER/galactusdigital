@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/ab-650')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ab-650' },
       { title: "AB-650 Microsoft 365 & AI Services (remplace MS-102) | GALACTUS Digital" },
       { name: "description", content: "Formation AB-650 Administering Microsoft 365 and AI Services. 35 h. Remplace MS-102 retiré le 31/10/2026. Copilot, Entra ID, Purview. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ab-650' }],
   }),
 })
 

@@ -24,6 +24,7 @@ import { CheckCircle, Send, AlertCircle, FileText, Clock, Mail } from 'lucide-re
 export const Route = createFileRoute('/retractation')({
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/retractation' },
       { title: 'Exercer mon droit de rétractation — GALACTUS Digital' },
       {
         name: 'description',
@@ -34,6 +35,7 @@ export const Route = createFileRoute('/retractation')({
       },
       { name: 'robots', content: 'index, follow' },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/retractation' }],
   }),
   component: RetractationPage,
 })

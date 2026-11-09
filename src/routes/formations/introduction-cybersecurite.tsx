@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/introduction-cybersecurite')({
   component: IntroductionCybersecuritePage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/introduction-cybersecurite' },
       { title: "Introduction à la cybersécurité — Formation sans prérequis | GALACTUS Digital" },
       { name: "description", content: "Formation Introduction à la cybersécurité. 6 h, aucun prérequis. Cybermenaces, protection des données, métiers de la cyber. Brique CCST. Reconversion. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/introduction-cybersecurite' }],
   }),
 })
 

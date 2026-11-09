@@ -9,6 +9,15 @@ import {
 import { getFormationsParModalite } from '../data/catalogue'
 
 export const Route = createFileRoute('/foad')({
+  head: () => ({
+    meta: [
+      { title: 'Formation à distance FOAD — GALACTUS Digital' },
+      { name: 'description', content: 'Parcours Juniper JNCIA-Junos en FOAD : sessions live sur WEBEX, maquette Junos accessible à distance, accompagnement individualisé documenté à chaque étape. La même qualité que le présentiel, sans contrainte géographique.' },
+      { property: 'og:title', content: 'Formation à distance FOAD — GALACTUS Digital' },
+      { property: 'og:url', content: 'https://galactusdigital.com/foad' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/foad' }],
+  }),
   component: FoadPage,
 })
 

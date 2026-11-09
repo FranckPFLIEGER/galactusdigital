@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/python-essentials-1')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/python-essentials-1' },
       { title: "Python Essentials 1 Cisco Networking Academy — Programmation Python | GALACTUS Digital" },
       { name: "description", content: "Formation Python Essentials 1 Cisco Networking Academy. 40 h. Certification PCEP OpenEDG. Bases Python structures données fonctions. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/python-essentials-1' }],
   }),
 })
 

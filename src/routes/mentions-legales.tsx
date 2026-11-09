@@ -4,6 +4,15 @@ import { Footer } from '../components/Footer'
 import { ExternalLink } from 'lucide-react'
 
 export const Route = createFileRoute('/mentions-legales')({
+  head: () => ({
+    meta: [
+      { title: 'Mentions légales, CGV et protection des données — GALACTUS Digital' },
+      { name: 'description', content: 'PFLIEGER SASU (enseigne GALACTUS Digital), organisme de formation professionnelle. Mentions légales, conditions générales de vente, médiation de la consommation et traitement des données personnelles. NDA 11 75 59933 75.' },
+      { property: 'og:title', content: 'Mentions légales, CGV et protection des données — GALACTUS Digital' },
+      { property: 'og:url', content: 'https://galactusdigital.com/mentions-legales' },
+    ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/mentions-legales' }],
+  }),
   component: MentionsLegalesPage,
 })
 

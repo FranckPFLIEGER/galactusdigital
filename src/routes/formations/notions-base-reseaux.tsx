@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/notions-base-reseaux')({
   component: NotionsBaseReseauxPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/notions-base-reseaux' },
       { title: "Notions de base sur les réseaux — Formation sans prérequis | GALACTUS Digital" },
       { name: "description", content: "Formation Notions de base sur les réseaux (Networking Basics). 22 h, aucun prérequis. Packet Tracer, adressage IP, réseau local. Brique CCST. Reconversion. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/notions-base-reseaux' }],
   }),
 })
 

@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/ccna-itn')({
   component: CcnaItnPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ccna-itn' },
       { title: "CCNA Module 1/3 — Introduction aux réseaux Cisco | GALACTUS Digital" },
       { name: "description", content: "CCNA Introduction aux réseaux ITN Module 1/3. 70 h. Certification CCNA 200-301. OSI TCP/IP IPv4 IPv6 CLI Cisco. Territoires ultramarins. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ccna-itn' }],
   }),
 })
 

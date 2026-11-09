@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/az-1008')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/az-1008' },
       { title: "AZ-1008 Active Directory DS — Applied Skills | GALACTUS Digital" },
       { name: "description", content: "Formation AZ-1008 AD DS. Applied Skills. Lab Microsoft Learn. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/az-1008' }],
   }),
 })
 

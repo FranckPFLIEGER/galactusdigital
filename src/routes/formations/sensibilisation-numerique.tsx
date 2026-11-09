@@ -12,9 +12,11 @@ export const Route = createFileRoute('/formations/sensibilisation-numerique')({
   component: SensibilisationNumeriquePage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/sensibilisation-numerique' },
       { title: "Sensibilisation au numérique — Formation sans prérequis | GALACTUS Digital" },
       { name: "description", content: "Formation Sensibilisation au numérique. 6 h, aucun prérequis. Identité numérique, recherche, mots de passe, premiers réflexes IA. Reconversion. Territoires ultramarins. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/sensibilisation-numerique' }],
   }),
 })
 

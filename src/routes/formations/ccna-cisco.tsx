@@ -9,9 +9,11 @@ export const Route = createFileRoute('/formations/ccna-cisco')({
   component: FormationPage,
   head: () => ({
     meta: [
+      { property: 'og:url', content: 'https://galactusdigital.com/formations/ccna-cisco' },
       { title: "CCNA v2.0 — Parcours complet ITN · SRWE · ENSA (200-301) | GALACTUS Digital" },
       { name: "description", content: "CCNA v2.0 (200-301) — les 3 modules ITN, SRWE et ENSA réunis. 210 h en e-learning tutoré, examen en option. Parcours complet 5 jours en présentiel. Qualiopi." },
     ],
+    links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/ccna-cisco' }],
   }),
 })
 

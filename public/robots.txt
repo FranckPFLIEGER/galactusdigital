@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.galactusdigital.com/sitemap.xml
+Sitemap: https://galactusdigital.com/sitemap.xml

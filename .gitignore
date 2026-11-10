@@ -1,0 +1,34 @@
+# GALACTUS Digital — galactusdigital.com
+#
+# Sans ce fichier, un build local fait apparaître environ 12 700 fichiers dans
+# GitHub Desktop et le moindre `git add -A` les embarque. Posé le 10/11/2026.
+#
+# ATTENTION : dist/ était versionné jusqu'ici. Après avoir ajouté ce fichier,
+# lancer une fois, à la racine du dépôt :
+#     git rm -r --cached dist
+# sans quoi dist/ reste suivi malgré l'exclusion.
+
+# Dépendances
+node_modules/
+
+# Sorties de build
+dist/
+.output/
+.vinxi/
+.wrangler/
+.tanstack/
+.nitro/
+
+# Variables d'environnement — ne jamais versionner
+.env
+.env.*
+!.env.example
+
+# Système et éditeurs
+.DS_Store
+Thumbs.db
+*.log
+npm-debug.log*
+yarn-error.log*
+.vscode/
+.idea/

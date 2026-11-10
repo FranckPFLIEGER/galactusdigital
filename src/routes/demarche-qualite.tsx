@@ -13,7 +13,7 @@ export const Route = createFileRoute('/demarche-qualite')({
   head: () => ({
     meta: [
       { title: 'Notre démarche qualité Qualiopi — GALACTUS Digital' },
-      { name: 'description', content: 'GALACTUS Digital est certifié Qualiopi par Certifopac — certificat n° 951711-1, accréditation Cofrac n° 5-0620. Référentiel national qualité V2 (décret n° 2026-728 du 1er août 2026, en vigueur le 1er novembre 2026) : 7 critères, 33 indicateurs, modalités de calcul des résultats publiées, prévention des violences et du harcèlement, ruptures de parcours, évaluation des enseignements. NDA 11 75 59933 75.' },
+      { name: 'description', content: "GALACTUS Digital est certifié Qualiopi par Certifopac — certificat n° 951711-1, accréditation Cofrac n° 5-0620. Référentiel national qualité V2 (décret n° 2026-728 du 1er août 2026, en vigueur le 1er novembre 2026) : 7 critères, 33 indicateurs dont 32 applicables à l'organisme, modalités de calcul des résultats publiées, prévention des violences et du harcèlement, ruptures de parcours, évaluation des enseignements. NDA 11 75 59933 75." },
       { property: 'og:title', content: 'Notre démarche qualité Qualiopi — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/demarche-qualite' },
     ],
@@ -36,8 +36,8 @@ function DemarcheQualitePage() {
             </h1>
             <p style={{ fontSize: '1rem', color: 'rgba(255,255,255,0.65)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.5rem' }}>
               GALACTUS Digital est certifié Qualiopi par Certifopac (accréditation Cofrac n° 5-0620, certificat n° 951711-1) pour les actions de formation.
-              Notre démarche s'appuie sur le Référentiel National Qualité dans sa version issue du <strong style={{ color: 'rgba(255,255,255,0.90)' }}>décret n° 2026-728 du 1er août 2026</strong>, publié au Journal officiel du 4 août 2026 (NOR TRSD2619632D) et <strong style={{ color: 'rgba(255,255,255,0.90)' }}>applicable au 1er novembre 2026</strong> : 7 critères inchangés, 33 indicateurs.
-              Les procédures correspondantes sont formalisées et en vigueur dans notre kit qualité V2026.5.
+              Notre démarche s'appuie sur le Référentiel National Qualité dans sa version issue du <strong style={{ color: 'rgba(255,255,255,0.90)' }}>décret n° 2026-728 du 1er août 2026</strong>, publié au Journal officiel du 4 août 2026 (NOR TRSD2619632D) et <strong style={{ color: 'rgba(255,255,255,0.90)' }}>applicable au 1er novembre 2026</strong> : 7 critères inchangés, 33 indicateurs au référentiel, dont 32 applicables à l'organisme — l'indicateur 33 ne vise que les actions de formation par apprentissage, et GALACTUS Digital n'est pas centre de formation d'apprentis.
+              Les procédures correspondantes sont formalisées et en vigueur dans notre kit qualité V2026.6.
             </p>
             <p style={{ fontSize: '0.80rem', color: 'rgba(255,255,255,0.40)', fontStyle: 'italic', maxWidth: '680px', lineHeight: 1.7 }}>
               Note importante : la présence de ces éléments sur notre site améliore la visibilité publique de notre démarche qualité.
@@ -203,16 +203,18 @@ function DemarcheQualitePage() {
             <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem', maxWidth: '860px' }}>
               Le décret n° 2026-728 du 1<sup>er</sup> août 2026, publié au Journal officiel du 4 août 2026
               (NOR TRSD2619632D), porte le Référentiel National Qualité à 33 indicateurs répartis sur
-              les 7 critères, inchangés. Il s'applique aux audits initiaux à compter du
-              1<sup>er</sup> novembre 2026, puis aux audits de surveillance au début de l'année 2027 et aux
-              audits de renouvellement à partir de l'été 2027. Le certificat n° 951711-1 de
+              les 7 critères, inchangés. Trente-deux d'entre eux s'appliquent à GALACTUS Digital :
+              le trente-troisième ne vise que la catégorie des actions de formation par apprentissage,
+              dont l'organisme ne relève pas. Il s'applique aux audits initiaux à compter du
+              1<sup>er</sup> novembre 2026, selon le calendrier de transition rappelé plus bas.
+              Le certificat n° 951711-1 de
               GALACTUS Digital, valable jusqu'au 15 septembre 2027, reste en vigueur. L'audit de
               surveillance du cycle s'est tenu le 4 juin 2026 ; la mise à jour sera donc vérifiée
               lors de l'audit de renouvellement, prévu en juin 2027.
             </p>
             <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '2rem', maxWidth: '860px' }}>
               Les procédures correspondantes ont été formalisées dès juillet 2026 et sont aujourd'hui
-              en vigueur dans le kit qualité V2026.5. Le nouveau guide de lecture, dans sa
+              en vigueur dans le kit qualité V2026.6. Le nouveau guide de lecture, dans sa
               <strong> version de novembre 2026</strong>, est paru : il remplace le V9 du 8 janvier 2024
               et précise la conduite de l'audit ainsi que les attendus de chaque indicateur :
               vingt-six indicateurs sur trente-deux sont reformulés, seuls les indicateurs 4, 5, 6,
@@ -227,7 +229,7 @@ function DemarcheQualitePage() {
               conditions applicables au 31 octobre 2026. À compter du 1<sup>er</sup> janvier 2027, tous
               les audits sont conduits au nouveau référentiel. L'audit de renouvellement de
               GALACTUS Digital intervenant après cette date, il se tiendra au référentiel à
-              33 indicateurs et au guide de lecture de novembre 2026.
+              33 indicateurs — dont 32 lui sont applicables — et au guide de lecture de novembre 2026.
             </p>
 
             {/* Pas d'alignItems : les cartes s'étirent à la hauteur de leur rangée, donc le bas de
@@ -257,7 +259,7 @@ function DemarcheQualitePage() {
                 {
                   ref: 'Ind. 18 · 19 · 26',
                   title: 'Référent pédagogique et suivi à distance',
-                  desc: "Référent pédagogique désigné : Franck PFLIEGER, président — president@galactusdigital.com — 07 81 07 47 46. Il coordonne les actions et répond sous deux jours ouvrés pendant toute la durée d'ouverture des accès. L'effectivité du suivi des modules à distance ne repose pas sur la seule connexion : elle est établie par apprenant et par module par le relevé de progression de la plateforme éditeur, l'historique des sessions de tutorat Webex et le compte rendu écrit de chaque point d'étape. Article 13 bis des CGV, registre des référents de l'organisme — désignation du 6 janvier 2026. La fonction se démontre aux indicateurs 18 et 26 du référentiel en vigueur et devient un attendu exprès de l'indicateur 19 au 1er novembre 2026. Le guide de lecture admet qu'un prestataire indépendant assure seul ces fonctions ; le seuil d'intervenants imposant la désignation reste fixé par arrêté à paraître, et l'organisme désigne son référent par anticipation.",
+                  desc: "Référent pédagogique désigné : Franck PFLIEGER, président — president@galactusdigital.com — 07 81 07 47 46. Il coordonne les actions et répond sous deux jours ouvrés pendant toute la durée d'ouverture des accès. L'effectivité du suivi des modules à distance ne repose pas sur la seule connexion : elle est établie par apprenant et par module par le relevé de progression de la plateforme éditeur, l'historique des sessions de tutorat Webex et le compte rendu écrit de chaque point d'étape. Article 13 bis des CGV, registre des référents de l'organisme — désignation du 6 janvier 2026. La fonction se démontre aux indicateurs 18 et 26 du référentiel en vigueur et devient un attendu exprès de l'indicateur 19 au 1er novembre 2026. Le guide de lecture admet qu'un prestataire indépendant assure seul ces fonctions. Le seuil au-delà duquel la coordination doit être formalisée a été fixé à huit intervenants par formation par l'arrêté du 28 octobre 2026 : l'organisme, qui en compte un seul et ne sous-traite aucune action, n'est pas concerné par cette exigence et désigne malgré tout son référent pédagogique.",
                   icon: '🎓',
                 },
                 {
@@ -303,7 +305,7 @@ function DemarcheQualitePage() {
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', padding: '1rem 1.5rem', background: 'rgba(228,31,38,0.06)', border: '1px solid rgba(228,31,38,0.15)' }}>
               <AlertCircle size={18} color="#E41F26" style={{ flexShrink: 0 }} />
               <p style={{ fontSize: '0.82rem', color: '#4a4a48', margin: 0, lineHeight: 1.6 }}>
-                <strong style={{ color: 'var(--g-red)' }}>Statut :</strong> procédures en vigueur, intégrées au kit qualité V2026.5 (mise à jour du 6 novembre 2026),
+                <strong style={{ color: 'var(--g-red)' }}>Statut :</strong> procédures en vigueur, intégrées au kit qualité V2026.6 (mise à jour du 10 novembre 2026),
                 figées après parution du décret au Journal officiel du 4 août 2026 et relues au regard du guide de lecture de novembre 2026. Le seuil de l'indicateur 19 a été fixé à huit intervenants par formation par l'arrêté du 28 octobre 2026 : GALACTUS Digital, qui dispense ses actions avec un intervenant unique et sans sous-traitance, n'est pas concerné par l'exigence de coordination qu'il déclenche.
               </p>
             </div>

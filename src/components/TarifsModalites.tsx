@@ -1,4 +1,4 @@
-import { getFormationBySlug, getTarifsModalites, getVoucher, MENTION_PRIX_COURTE } from '../data/catalogue'
+import { getFormationBySlug, getTarifsModalites, getVoucher, MENTION_PRIX_COURTE, MENTION_ECART_PRESENTIEL } from '../data/catalogue'
 import { getSessionsFormation, labelPlage } from '../data/sessions'
 import { CalendarClock, ArrowRight } from 'lucide-react'
 
@@ -22,6 +22,9 @@ export function TarifsModalites({ slug }: { slug: string }) {
   const voucher = getVoucher(f)
   const sessions = getSessionsFormation(slug)
   const prochaine = sessions[0]
+  // Vrai seulement quand la fiche affiche un prix en présentiel ET un prix en
+  // e-learning : c'est le seul cas où le lecteur peut comparer et s'étonner.
+  const deuxModalites = f.prix.presentiel != null && f.prix.elearning != null
 
   return (
     <section style={{ background: 'var(--g-white)', padding: '1.5rem 2rem', borderBottom: '1px solid rgba(187,187,187,0.25)' }}>
@@ -88,6 +91,21 @@ export function TarifsModalites({ slug }: { slug: string }) {
           {voucher > 0 && " Examen en option : le voucher d'examen surveillé Pearson VUE n'est pas compris dans ce tarif, il est ajouté au devis sur demande."}
           {voucher === 0 && f.modalites.includes('E-learning') && " Le tarif e-learning comprend le badge et le certificat Cisco Networking Academy."}
         </p>
+
+        {/* Quand la fiche propose les deux modalités, le lecteur voit côte à côte un
+            présentiel plus court et plus cher qu'un e-learning plus long. L'écart est
+            justifié, mais il doit être écrit : un financeur qui compare deux lignes du
+            même devis pose la question. Indicateur 1. Ajouté le 10/11/2026. */}
+        {deuxModalites && (
+          <details style={{ marginTop: '0.7rem', maxWidth: '900px' }}>
+            <summary style={{ fontSize: '0.74rem', color: 'var(--g-red)', cursor: 'pointer', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.04em' }}>
+              {MENTION_ECART_PRESENTIEL.titre}
+            </summary>
+            <p style={{ fontSize: '0.78rem', color: '#4a4a48', lineHeight: 1.7, margin: '0.5rem 0 0', paddingLeft: '0.9rem', borderLeft: '2px solid rgba(187,187,187,0.5)' }}>
+              {MENTION_ECART_PRESENTIEL.texte}
+            </p>
+          </details>
+        )}
 
       </div>
     </section>

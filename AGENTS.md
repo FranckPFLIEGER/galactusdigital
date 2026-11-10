@@ -55,8 +55,16 @@ Tarifs, durées, intitulés de certification et modalités vivent dans
 (`getTarifAffiche`, `getTarifsModalites`, `getPrixElearning`,
 `getDetailPrixElearning`, `getVoucher`), jamais d'une constante recopiée.
 
-**`prix.elearning` est le prix total à payer, voucher compris.** La mention légale
-affichée sous les tarifs l'annonce ainsi (art. L.112-1 du code de la consommation).
+**`prix.elearning` est le prix de la formation seule.** Le voucher d'examen n'est
+compris dans aucun tarif du catalogue (décision du 31/10/2026) : l'examen est proposé
+« en option » et le voucher ajouté au devis sur demande. Le champ `voucher` conserve le
+montant de l'option à titre indicatif — une valeur `> 0` signifie « une option existe »,
+jamais « compris ». La mention affichée sous les tarifs l'annonce ainsi, le prix affiché
+restant la dépense totale au sens de l'article L.112-1 du code de la consommation.
+
+**Les CGV ont deux exemplaires qui doivent rester identiques** — `mentions-legales.tsx`
+et la pièce `FQ-2c` du kit qualité, annexée au devis. Toute modification de l'un se
+porte dans l'autre le même jour : c'est le texte du kit qui engage le Client.
 
 **Ajouter une formation :** une entrée dans `FORMATIONS[]` et un fichier dans
 `src/routes/formations/`. Les deux listes doivent rester alignées — une fiche sans

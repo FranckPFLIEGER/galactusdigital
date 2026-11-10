@@ -85,11 +85,40 @@ function RgpdPage() {
                   titre: 'Données de gestion des formations',
                   base: 'Exécution du contrat',
                   donnees: 'Nom, prénom, email, téléphone, entreprise, données de parcours de formation, résultats aux évaluations.',
-                  duree: '3 ans pour les dossiers pédagogiques (art. R.6352-9 du code du travail). 10 ans pour les pièces comptables et les justificatifs de financement (art. L.123-22 du code de commerce). 4 ans après la fin de la formation pour les dossiers financés par France Travail, l\'organisme disposant de 5 jours ouvrés pour les produire en contrôle de service fait.',
+                  duree: '3 ans pour les dossiers pédagogiques — durée retenue par l\'organisme au titre du principe de limitation de la conservation (art. 5.1.e du RGPD), au regard de la durée utile du suivi pédagogique. 10 ans pour les pièces comptables et les justificatifs de financement (art. L.123-22 du code de commerce). 4 ans après la fin de la formation pour les dossiers financés par France Travail, l\'organisme disposant de 5 jours ouvrés pour les produire en contrôle de service fait.',
                   dest: "GALACTUS Digital, éditeurs certifiant (Cisco Networking Academy, Microsoft, Juniper Networks), "
                     + "OPCO, France Travail ou tout autre financeur du dossier. Sous-traitants : Cisco Webex "
                     + "(classes virtuelles, émargement et historique de connexion), Google Workspace (messagerie "
                     + "et stockage des dossiers).",
+                },
+                // Traitement fondé sur l'article 9.2.a — donnée de catégorie particulière.
+                // Il figurait au registre FQ-0-10 sans être publié ici : l'apprenant qui
+                // remplit le formulaire 6c doit pouvoir lire en ligne ce qu'il advient de
+                // sa déclaration. Ajouté le 10/11/2026. Les mentions reprennent celles du
+                // registre mot pour mot : les deux pièces ne doivent plus diverger.
+                {
+                  titre: 'Adaptation liée à une situation de handicap',
+                  base: 'Consentement explicite (art. 9.2.a du RGPD)',
+                  donnees: "Description de la gêne rencontrée et de l'adaptation souhaitée, au regard de la "
+                    + "formation visée. Aucun diagnostic, aucune pathologie et aucun justificatif médical n'est "
+                    + "demandé ni conservé. La déclaration est libre : l'apprenant reste maître de ce qu'il "
+                    + "souhaite indiquer, et une formation peut être suivie sans rien déclarer.",
+                  duree: "Durée de la formation, plus six mois. Les données du formulaire de recueil du "
+                    + "consentement font l'objet d'une suppression programmée à ce terme. Le tableau de bord des "
+                    + "adaptations ne conserve ensuite que des données agrégées, sans aucun élément nominatif.",
+                  dest: "GALACTUS Digital — le référent Handicap et Santé en est le seul destinataire. Un "
+                    + "partenaire d'appui du réseau Ressource Handicap Formation ou l'Agefiph peut être saisi du "
+                    + "besoin exprimé, uniquement sur consentement exprès recueilli au préalable et révocable à "
+                    + "tout moment. Pour un aménagement d'épreuve de certification, la demande est déposée par "
+                    + "l'apprenant lui-même auprès du centre d'examen, avec l'appui de l'organisme.",
+                },
+                {
+                  titre: 'Gestion des réclamations',
+                  base: 'Obligation légale et intérêt légitime',
+                  donnees: "Identité du réclamant, objet de la réclamation, échanges et suites données.",
+                  duree: "5 ans à compter de la clôture de la réclamation.",
+                  dest: "GALACTUS Digital uniquement. En cas de saisine du médiateur de la consommation, les "
+                    + "pièces nécessaires à l'examen du litige sont transmises à CM2C.",
                 },
                 {
                   titre: 'Données de satisfaction et d\'amélioration continue',
@@ -261,6 +290,17 @@ function RgpdPage() {
                   + "JNCIA-Junos : identité de l'apprenant, compte de formation.",
                 cadre: 'Clauses contractuelles types.',
               },
+              // Pearson VUE figurait au registre FQ-0-10 comme destinataire hors UE sans
+              // apparaître ici, alors que la phrase de conclusion affirmait qu'il n'y avait
+              // pas d'autre transfert que les six listés. Ajouté le 10/11/2026.
+              {
+                nom: 'Pearson VUE — Pearson Education, Inc. (États-Unis)',
+                role: "Centre d'examen des certifications éditeur : inscription à une session d'examen, à la "
+                  + "seule demande de l'apprenant et lorsqu'un voucher a été commandé. Données transmises : "
+                  + "identité et adresse de courriel. Une demande d'aménagement d'épreuve est déposée par "
+                  + "l'apprenant lui-même auprès du centre d'examen, avec l'appui de l'organisme.",
+                cadre: 'Clauses contractuelles types.',
+              },
             ].map(t => (
               <div key={t.nom} style={{ borderLeft: '3px solid var(--g-red)', paddingLeft: '1rem', marginBottom: '1.25rem' }}>
                 <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.88rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em', color: 'var(--g-black)', marginBottom: '0.3rem' }}>{t.nom}</div>
@@ -273,7 +313,7 @@ function RgpdPage() {
               domaine : leur affichage n'entraîne aucune requête vers Google Fonts, ni aucune
               transmission d'adresse IP à Google. L'envoi de nos campagnes d'information est confié à
               <strong> Brevo</strong> (Sendinblue SAS), dont les données sont hébergées dans l'Union
-              européenne. En dehors des six transferts listés ci-dessus, aucune donnée n'est
+              européenne. En dehors des sept transferts listés ci-dessus, aucune donnée n'est
               transférée hors de l'Union européenne.
             </p>
           </div>

@@ -1085,3 +1085,33 @@ export const MENTION_PRIX_ELEARNING =
 /** Mention courte, pour les listes et le calendrier */
 export const MENTION_PRIX_COURTE =
   "Prix total à payer, par personne — TVA non applicable, art. 261-4-4°-a du CGI."
+
+/**
+ * POURQUOI LE PRÉSENTIEL COÛTE PLUS CHER QUE L'E-LEARNING À DURÉE AFFICHÉE PLUS LONGUE
+ *
+ * Sur le parcours CCNA complet : 1 950 € pour 35 h en présentiel, 1 290 € pour 210 h
+ * en e-learning tutoré. Rapporté à l'heure, l'écart saute aux yeux — et un financeur
+ * qui compare deux lignes d'un même devis pose la question. Sans réponse écrite, la
+ * prise en charge se discute.
+ *
+ * Les deux durées ne mesurent pas la même chose. Les 210 h de l'e-learning sont la
+ * charge de travail estimée de l'apprenant, en autonomie, sur une plateforme ouverte
+ * plusieurs mois, avec un tutorat sollicité au besoin. Les 35 h du présentiel sont
+ * 35 heures de formateur mobilisé en continu, sur équipements réels, à un rythme
+ * imposé. Ce que le prix rémunère n'est pas la durée : c'est la mobilisation.
+ *
+ * Affiché sur les fiches qui proposent les deux modalités (indicateur 1 : une
+ * information claire et vérifiable sur les tarifs). Ajouté le 10/11/2026.
+ */
+export const MENTION_ECART_PRESENTIEL = {
+  titre: "Pourquoi le présentiel et l'e-learning n'ont pas le même tarif",
+  texte:
+    "Les deux durées affichées ne mesurent pas la même chose. Les heures d'e-learning tutoré "
+    + "correspondent à la charge de travail estimée de l'apprenant, en autonomie, sur une plateforme "
+    + "ouverte plusieurs mois, avec un tuteur qu'il sollicite au besoin. Les heures de présentiel sont "
+    + "des heures de formateur mobilisé en continu, sur équipements réels, à un rythme soutenu et en "
+    + "petit effectif. Le tarif ne rémunère donc pas une durée mais une mobilisation : c'est ce qui "
+    + "explique qu'un parcours présentiel plus court soit facturé davantage. Les deux modalités "
+    + "préparent au même examen et ouvrent au même badge éditeur ; le choix se fait sur le rythme "
+    + "souhaité, la disponibilité et le besoin d'accompagnement, non sur le nombre d'heures.",
+}

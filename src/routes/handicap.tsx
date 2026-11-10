@@ -135,6 +135,11 @@ function HandicapPage() {
                     { name: 'RHF Guadeloupe — Agefiph', zone: 'Guadeloupe', detail: 'rhf-guadeloupe@agefiph.asso.fr' },
                     { name: 'RHF Guyane — LV Consultants', zone: 'Guyane', detail: 'rhf-guyane@lvconsultants.fr · 06 94 95 79 29 — Cayenne, Kourou, Saint-Laurent-du-Maroni' },
                     { name: 'RHF La Réunion — Agefiph', zone: 'La Réunion', detail: 'rhf-lareunion-mayotte@agefiph.asso.fr' },
+                  // Saint-Martin et Saint-Barthélemy figuraient sur la carte des territoires
+                  // couverts sans qu'aucun contact RHF ne soit publié. Les deux collectivités
+                  // relèvent de la délégation Agefiph Antilles-Guyane et du réseau RHF
+                  // Guadeloupe. Ajouté le 10/11/2026.
+                  { name: 'RHF Saint-Martin et Saint-Barthélemy', zone: 'Îles du Nord', detail: 'Rattachées au réseau RHF Guadeloupe — rhf-guadeloupe@agefiph.asso.fr' },
                     { name: 'RHF Île-de-France — Agefiph', zone: 'France hexagonale', detail: 'rhf-idf@agefiph.asso.fr — contact par courriel' },
                     { name: 'AGEFIPH Antilles-Guyane', zone: 'Financement', detail: 'Charte d\'engagement signée le 4 novembre 2024 · demandes d\'aide sur agefiph.fr/aides-handicap/depot-demande' },
                   ].map(p => (

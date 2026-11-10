@@ -1,14 +1,18 @@
 import { useIntersection } from '../hooks/useIntersection'
 import { useEffect, useRef, useCallback } from 'react'
 
+// Trois adresses réelles, quatre territoires couverts sans adresse. Parler
+// d'« implantation » ou de « présence active » là où l'organisme n'a aucun bureau
+// serait une mention de nature à induire le public en erreur, que l'indicateur 1
+// proscrit et que l'auditeur teste en demandant le bail. Corrigé le 10/11/2026.
 const territories = [
-  { name: 'France Hexagonale', code: 'FR',  desc: 'Siège administratif',        lon:   2.2137, lat:  46.2276 },
+  { name: 'France Hexagonale', code: 'FR',  desc: 'Siège social',               lon:   2.2137, lat:  46.2276 },
   { name: 'Martinique',        code: 'MQ',  desc: 'Siège régional Caraïbes',    lon: -61.0240, lat:  14.6410 },
-  { name: 'Guadeloupe',        code: 'GP',  desc: 'Présence active',             lon: -61.5510, lat:  16.2650 },
-  { name: 'Guyane',            code: 'GF',  desc: 'Présence active',             lon: -53.1258, lat:   3.9339 },
-  { name: 'Saint-Martin',      code: 'SXM', desc: 'Présence active',             lon: -63.0523, lat:  18.0708 },
-  { name: 'Saint-Barthélemy',  code: 'BL',  desc: 'Présence active',             lon: -62.8333, lat:  17.9000 },
-  { name: 'Réunion',           code: 'RE',  desc: 'Présence active',             lon:  55.5364, lat: -21.1151 },
+  { name: 'Guadeloupe',        code: 'GP',  desc: 'Bureau administratif',       lon: -61.5510, lat:  16.2650 },
+  { name: 'Guyane',            code: 'GF',  desc: "Zone d'intervention",        lon: -53.1258, lat:   3.9339 },
+  { name: 'Saint-Martin',      code: 'SXM', desc: "Zone d'intervention",        lon: -63.0523, lat:  18.0708 },
+  { name: 'Saint-Barthélemy',  code: 'BL',  desc: "Zone d'intervention",        lon: -62.8333, lat:  17.9000 },
+  { name: 'Réunion',           code: 'RE',  desc: "Zone d'intervention",        lon:  55.5364, lat: -21.1151 },
 ]
 
 const W = 960
@@ -166,13 +170,13 @@ export function Presence() {
           </div>
           <div className="presence-map-stats">
             <div className="presence-stat">
-              <span className="presence-stat-num">7</span>
-              <span className="presence-stat-label">implantations</span>
+              <span className="presence-stat-num">3</span>
+              <span className="presence-stat-label">adresses</span>
             </div>
             <div className="presence-stat-divider" />
             <div className="presence-stat">
-              <span className="presence-stat-num">3</span>
-              <span className="presence-stat-label">zones géographiques</span>
+              <span className="presence-stat-num">7</span>
+              <span className="presence-stat-label">territoires couverts</span>
             </div>
             <div className="presence-stat-divider" />
             <div className="presence-stat">
@@ -185,10 +189,12 @@ export function Presence() {
             pour ceux qui méritent les mêmes opportunités."
           </p>
           <p style={{ fontSize: '0.78rem', lineHeight: 1.7, color: 'rgba(255,255,255,0.45)', textAlign: 'center', maxWidth: '680px', margin: '1.25rem auto 0', fontStyle: 'italic' }}>
-            Ces implantations sont des bureaux administratifs, sans accueil du public et sans salle
-            de formation en propre. Les formations se tiennent à distance, ou en intra dans les
-            locaux du client, ou en inter dans une salle louée pour la session — le lieu exact est
-            indiqué sur la convocation.
+            L'organisme dispose de trois adresses — Paris, Le François en Martinique, Le Gosier en
+            Guadeloupe — qui sont des bureaux administratifs, sans accueil du public et sans salle de
+            formation en propre. La Guyane, Saint-Martin, Saint-Barthélemy et La Réunion sont des
+            zones où l'organisme intervient, sans y tenir d'adresse. Les formations se tiennent à
+            distance, ou en intra dans les locaux du client, ou en inter dans une salle louée pour la
+            session — le lieu exact est indiqué sur la convocation.
           </p>
         </div>
       </div>

@@ -96,7 +96,18 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
       'retourné n\'est pas compté comme une note, ni favorable ni défavorable, et n\'entre ' +
       'donc ni au numérateur ni au dénominateur. La moyenne globale porte sur l\'ensemble ' +
       'des questionnaires remis sur la période ; le détail par année est publié dans le ' +
-      'tableau des résultats annuels.',
+      'tableau des résultats annuels. ' +
+      // Le nombre de questionnaires et le nombre de candidats formés ne couvrent pas la
+      // même réalité : le premier court depuis que le recueil existe, le second depuis
+      // 2023. Rapporter l'un à l'autre produit un « taux de retour » qui n'a jamais été
+      // mesuré. On le dit ici pour que personne n'ait à faire la division. 10/11/2026.
+      'Le nombre de questionnaires n\'est pas un taux de retour : le recueil des ' +
+      'appréciations n\'était pas systématique sur la période 2023-2025, il a été formalisé ' +
+      'au fil de la démarche qualité de l\'organisme. Les questionnaires comptabilisés sont ' +
+      'ceux effectivement recueillis, et non une fraction des candidats formés sur la même ' +
+      'période. Un dispositif de recueil systématique vient d\'être mis en place ; aucun taux ' +
+      'de retour ne sera publié tant qu\'il ne portera pas sur un exercice complet, suivant la ' +
+      'règle appliquée à l\'ensemble des indicateurs de l\'organisme.',
     source: 'Questionnaires d\'appréciation FQ-10a, remplis et signés par les apprenants, ' +
       'archivés par session et communicables en audit. L\'archive est dépouillée en ' +
       'intégralité : 39 questionnaires remis sur 2023-2025 (7 en 2023, 23 en 2024, 9 en 2025), ' +

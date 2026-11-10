@@ -112,6 +112,22 @@ function DemarcheQualitePage() {
               Abandons et annulations comptabilisés sur les parcours engagés (après entrée effective en formation), hors désistements antérieurs au démarrage. Données consignées au registre de suivi et justifiables sur pièces en audit. La note moyenne d'une année est calculée sur les seuls questionnaires effectivement remis, dont le nombre est publié dans la colonne précédente : 39 questionnaires signés sur l'ensemble de la période, tous dépouillés, chacun consultable en audit. Un tiret signale une donnée qui n'est pas justifiable sur pièces à la date d'arrêté : aucun chiffre n'est alors publié pour cette case, plutôt qu'une valeur approchée.
               {' '}{RESULTATS_ANNEE_EN_COURS}
             </p>
+            {/* Le lecteur voit 518 formés et 39 questionnaires dans le même tableau et
+                fait spontanément la division. Elle n'a pas de sens : les deux colonnes
+                ne courent pas sur la même période. Dit ici pour qu'il n'ait pas à le
+                demander. Ajouté le 10/11/2026. */}
+            <p style={{ fontSize: '0.78rem', color: '#4a4a48', lineHeight: 1.75, marginTop: '1.1rem', padding: '0.9rem 1.1rem', background: 'var(--g-offwhite)', borderLeft: '3px solid var(--g-red)' }}>
+              <strong>Le nombre de questionnaires n'est pas un taux de retour.</strong> Le recueil
+              systématique des appréciations est le fruit de la démarche qualité de l'organisme : il
+              n'existait pas sous cette forme au début de la période publiée. Les questionnaires
+              comptabilisés sont ceux qui ont effectivement été recueillis, et non une fraction des
+              candidats formés sur les mêmes années — rapporter l'un à l'autre reviendrait à
+              comparer deux périodes différentes. Un dispositif de recueil systématique vient d'être
+              mis en place. Conformément à la règle que l'organisme s'applique à tous ses
+              indicateurs, aucun taux de retour ne sera publié tant qu'il ne portera pas sur un
+              exercice complet : un chiffre arrêté sur quelques semaines de fonctionnement ne
+              mesurerait pas une pratique, il mesurerait une date de mise en service.
+            </p>
           </div>
         </section>
 

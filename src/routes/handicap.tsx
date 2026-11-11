@@ -263,6 +263,39 @@ function HandicapPage() {
                         </a>
                       ))}
                     </div>
+                    {/* La charte est un document scanné : une image, sans texte sélectionnable,
+                        qu'aucun lecteur d'écran ne peut restituer. Publier un PDF inaccessible
+                        sur la page accessibilité serait une contradiction ; ses six engagements
+                        sont donc repris ici en texte, intégralement, pour que le contenu soit
+                        lisible par tout le monde sans ouvrir le fichier. Ajouté le 11/11/2026.
+                        Si la charte est un jour republiée dans une version avec texte, ce bloc
+                        reste utile : il évite d'avoir à télécharger pour savoir ce qu'elle dit. */}
+                    <details style={{ marginTop: '1rem' }}>
+                      <summary style={{ fontSize: '0.76rem', color: 'var(--g-red)', cursor: 'pointer', fontFamily: 'var(--font-title)', fontWeight: 600, letterSpacing: '0.04em' }}>
+                        Les six engagements de la charte, en texte
+                      </summary>
+                      <div style={{ fontSize: '0.78rem', color: '#4a4a48', lineHeight: 1.75, margin: '0.6rem 0 0', paddingLeft: '0.9rem', borderLeft: '2px solid rgba(187,187,187,0.5)' }}>
+                        <p style={{ margin: '0 0 0.5rem' }}>
+                          En signant cette charte le 4 novembre 2024, l'organisme certifie engager sa
+                          démarche de progrès continue pour une accessibilité généralisée de l'offre de
+                          formation, et s'engage à :
+                        </p>
+                        <ol style={{ margin: 0, paddingLeft: '1.1rem' }}>
+                          <li>associer à l'ensemble de la démarche les membres du « Groupe Projet Accessibilité » piloté par le référent handicap ;</li>
+                          <li>déposer cette charte signée sur la plateforme Accessibilité ;</li>
+                          <li>réaliser un état des lieux du niveau d'accessibilité de son offre de formation, pour chacun des sites de formation, en répondant aux 21 questions proposées dans l'espace « S'auto-positionner » de la plateforme ;</li>
+                          <li>co-réaliser un plan d'actions annuel permettant de définir des axes de progrès de l'accessibilité des formations ;</li>
+                          <li>actualiser chaque année l'auto-positionnement de son accessibilité et partager les progrès réalisés ;</li>
+                          <li>communiquer auprès des publics sur ces engagements et sur les progrès réalisés, en utilisant tout support ou kit de communication proposé par l'Agefiph.</li>
+                        </ol>
+                        <p style={{ margin: '0.6rem 0 0', fontSize: '0.74rem', color: '#6a6a68' }}>
+                          La signature manuscrite a été occultée sur l'exemplaire publié en ligne ;
+                          l'original signé est communicable sur demande. Le dépôt de la charte,
+                          daté du 4 novembre 2024, est attesté par la Ressource Handicap Formation
+                          sur le lien de vérification ci-dessus.
+                        </p>
+                      </div>
+                    </details>
                   </div>
                   <p style={{ fontSize: '0.72rem', color: '#9a9a98', fontStyle: 'italic', lineHeight: 1.6, marginTop: '0.75rem', marginBottom: 0 }}>
                     Contacts repris de la liste officielle Agefiph « Ressource Handicap

@@ -7,7 +7,7 @@ export const Route = createFileRoute('/handicap')({
   head: () => ({
     meta: [
       { title: 'Accessibilité & Handicap — GALACTUS Digital' },
-      { name: 'description', content: "GALACTUS Digital s'engage pour l'accessibilité des formations IT. Référent handicap certifié, partenaires RHF, aménagements sur mesure dans les territoires ultramarins." },
+      { name: 'description', content: "GALACTUS Digital s'engage pour l'accessibilité des formations IT. Référent handicap certifié, partenaires RHF, aménagements sur mesure dans les territoires ultramarins. Auto-positionnement et plan de progrès clôturés le 11 novembre 2026 sur la plateforme de l'Agefiph, attestation de suivi vérifiable en ligne." },
       { property: 'og:title', content: 'Accessibilité & Handicap — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/handicap' },
     ],
@@ -115,11 +115,18 @@ function HandicapPage() {
                   </div>
                   {/* Le réseau mobilisable, la démarche de progrès RHF et le tableau de bord des
                       adaptations sont formalisés dans la pièce FQ-0-05 du kit qualité. On cite le
-                      numéro : c'est ce qui rend la page opposable en audit. */}
+                      numéro : c'est ce qui rend la page opposable en audit.
+                      Nomenclature, 11/11/2026 : le cartouche porte « Réf. : FQ-0-05-RESEAU-HANDICAP »,
+                      le site écrit FQ-0-05 comme FQ-0-07, FQ-0-10, FQ-0-11, FQ-0-12 et FQ-0-15, et le
+                      dossier RHF écrit 0-05. Basculer la seule pièce 0-05 sur la forme courte
+                      réglerait l'écart avec le dossier RHF en en créant un à l'intérieur du site.
+                      On nomme donc les deux formes une fois, ici : l'auditeur retrouve la pièce
+                      quelle que soit celle qu'il a sous les yeux. */}
                   <p style={{ fontSize: '0.82rem', color: '#5a5a58', lineHeight: 1.7, marginBottom: '1.25rem' }}>
                     Ce réseau, la démarche de progrès engagée auprès du RHF Île-de-France et le suivi
                     des adaptations mises en œuvre sont formalisés dans la pièce <strong>FQ-0-05</strong>{' '}
-                    du kit qualité.
+                    du kit qualité — désignée <strong>0-05</strong> dans le dossier déposé auprès de
+                    la Ressource Handicap Formation : il s'agit de la même pièce.
                   </p>
                   {/* Contacts repris de la liste officielle Agefiph « Ressource Handicap
                       Formation — vos contacts en région », version du 09/01/2026, pour les
@@ -154,20 +161,40 @@ function HandicapPage() {
                   {/* Accompagnement RHF Île-de-France engagé depuis l'entretien du
                       20 octobre 2026. C'est un fait daté et vérifiable : il vaut mieux
                       qu'une déclaration d'intention devant un auditeur (indicateur 26). */}
-                  {/* Mise à jour du 30/10/2026 : « échanges en cours sur les suites à donner »
-                      était en dessous de la réalité. La référente RHF Île-de-France a confirmé
-                      par écrit le 27 octobre que l'auto-positionnement et le plan de progrès sont
-                      complétés intégralement et qu'ils sont présentables en audit. Une attestation
-                      écrite du réseau vaut mieux qu'une déclaration d'intention (indicateur 26). */}
+                  {/* Mise à jour du 11/11/2026. « Renseignés intégralement » décrivait l'état
+                      du 27 octobre. Depuis le 11 novembre à 16 h 40, l'auto-positionnement et le
+                      plan de progrès sont CLÔTURÉS : la plateforme a délivré une attestation de
+                      suivi et un code de vérification opposable. On passe d'une confirmation par
+                      courriel à une preuve vérifiable par un tiers — c'est ce que l'indicateur 26
+                      attend, et c'est ce qu'un auditeur peut contrôler sans nous croire sur parole. */}
                   <p style={{ fontSize: '0.78rem', color: '#6a6a68', lineHeight: 1.7, marginTop: '1.25rem', marginBottom: 0 }}>
                     Un accompagnement est engagé avec la Ressource Handicap Formation
                     Île-de-France depuis notre entretien du <strong>20 octobre 2026</strong>.
                     L'<strong>auto-positionnement accessibilité</strong> et le{' '}
-                    <strong>plan de progrès</strong> attendus sur la plateforme de l'Agefiph sont
-                    renseignés intégralement : la référente du réseau l'a confirmé par écrit le{' '}
-                    <strong>27 octobre 2026</strong> et a indiqué que ces deux pièces peuvent être
-                    présentées lors de l'audit. Elles sont versées au dossier de certification au
-                    titre de la mobilisation des expertises du champ du handicap.
+                    <strong>plan de progrès</strong> ont été <strong>clôturés le 11 novembre 2026</strong>{' '}
+                    sur la plateforme de l'Agefiph, qui a délivré une{' '}
+                    <strong>attestation de suivi</strong> datée du même jour. L'avancement s'établit
+                    à <strong>72 %</strong> sur l'axe « Organiser une accessibilité pour tous » et à{' '}
+                    <strong>64 %</strong> sur l'axe « S'adapter à chacun », contre 63 % et 55 % lors
+                    du relevé du 4 octobre 2026. Les onze items portent désormais un objectif de
+                    progrès daté, avec ses actions et ses indicateurs.
+                  </p>
+                  {/* Le code de vérification est le cœur de la preuve : il permet à un auditeur
+                      ou à un financeur de contrôler l'attestation sur le site de l'Agefiph, sans
+                      passer par nous. Le publier, c'est accepter d'être vérifié — et c'est
+                      précisément pour cela qu'il vaut mieux qu'une déclaration. */}
+                  <p style={{ fontSize: '0.78rem', color: '#6a6a68', lineHeight: 1.7, marginTop: '1rem', marginBottom: 0 }}>
+                    L'attestation est vérifiable par toute personne, sans passer par nous, sur le
+                    site de la Ressource Handicap Formation — code de vérification{' '}
+                    <strong style={{ fontFamily: 'monospace', fontSize: '0.74rem', wordBreak: 'break-all' }}>fb263fcc80d577e97726e8d4e38fa494</strong>.{' '}
+                    <a
+                      href="https://idf.rhf-accessibilite.fr/espace-personnel/verification-attestation-structure/fb263fcc80d577e97726e8d4e38fa494"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      style={{ color: 'var(--g-red)', textDecoration: 'underline' }}
+                    >
+                      Vérifier l'attestation
+                    </a>
                   </p>
                   {/* Outil d'analyse des besoins. La référente RHF Île-de-France a indiqué le
                       27/10/2026 que c'est le document utilisé par le réseau pour toutes les
@@ -184,6 +211,59 @@ function HandicapPage() {
                     préalable prévu à l'article 13 des CGV — étant entendu que chaque situation est
                     singulière et que l'apprenant reste libre de ce qu'il souhaite indiquer.
                   </p>
+                  {/* Fiche 9 du plan de progrès, échéance 31/01/2027 : rendre l'engagement
+                      visible. Les trois pièces demandées — logo RHF, charte Agefiph
+                      téléchargeable, objectifs du plan de progrès publiés — sont ici, au même
+                      endroit, au lieu d'être dispersées. Publié le 11/11/2026, soit deux mois
+                      et demi avant l'échéance. Les engagements et les axes sont repris mot pour
+                      mot de l'affiche de communication 2026 délivrée par la plateforme : on ne
+                      reformule pas un document officiel. */}
+                  <div style={{ marginTop: '1.75rem', paddingTop: '1.5rem', borderTop: '1px solid rgba(187,187,187,0.4)' }}>
+                    <div style={{ fontFamily: 'var(--font-title)', fontSize: '0.70rem', letterSpacing: '0.18em', textTransform: 'uppercase', color: 'var(--g-red)', marginBottom: '1rem' }}>
+                      Nos engagements et nos axes de progrès
+                    </div>
+                    <p style={{ fontSize: '0.78rem', color: '#6a6a68', lineHeight: 1.7, marginBottom: '1rem' }}>
+                      Le groupe projet accessibilité mesure régulièrement le niveau d'accessibilité
+                      des formations et s'engage sur des actions concrètes d'amélioration. Ces
+                      engagements et ces axes sont ceux déclarés sur la plateforme de l'Agefiph et
+                      repris sur notre affiche de communication 2026.
+                    </p>
+                    <div style={{ fontSize: '0.78rem', color: '#4a4a48', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+                      <strong style={{ display: 'block', marginBottom: '0.4rem' }}>Nos engagements auprès des publics</strong>
+                      <ul style={{ margin: 0, paddingLeft: '1.1rem' }}>
+                        <li>Le référent Handicap et Santé est le président et le formateur : un seul interlocuteur, de la demande au bilan, sans rupture de chaîne.</li>
+                        <li>Chaque apprenant est sollicité, sans exception : c'est l'absence de sollicitation, et non l'absence de besoin, qui constitue l'écart.</li>
+                        <li>Nous traçons l'adaptation, jamais sa cause : ni diagnostic, ni pathologie, ni justificatif médical demandé, reçu ou conservé.</li>
+                      </ul>
+                    </div>
+                    <div style={{ fontSize: '0.78rem', color: '#4a4a48', lineHeight: 1.75, marginBottom: '1.25rem' }}>
+                      <strong style={{ display: 'block', marginBottom: '0.4rem' }}>Nos axes de progrès, avec leur échéance</strong>
+                      <ul style={{ margin: 0, paddingLeft: '1.1rem' }}>
+                        <li>Audit RGAA du site au <strong>30/06/2027</strong>, et liste des moyens de compensation annexée au livret d'accueil.</li>
+                        <li>Logo RHF, charte Agefiph téléchargeable et objectifs du plan de progrès publiés sur le site au <strong>31/01/2027</strong>.</li>
+                        <li>Tableau de bord des adaptations renseigné au <strong>31/12/2026</strong> : taux de sollicitation, besoins signalés, effet vérifié.</li>
+                      </ul>
+                    </div>
+                    {/* Les trois documents sont publiés en PDF, consultables sans nous écrire.
+                        C'est ce que « téléchargeable » veut dire dans la fiche 9. */}
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.6rem' }}>
+                      {[
+                        { href: '/rhf/attestation-de-suivi-2026-11-11.pdf', label: 'Attestation de suivi — 11 novembre 2026' },
+                        { href: '/rhf/affiche-accessibilite-2026.pdf', label: 'Affiche de communication 2026' },
+                        { href: '/rhf/charte-agefiph-engagement-2024-11-04.pdf', label: "Charte d'engagement Agefiph — 4 novembre 2024" },
+                      ].map(d => (
+                        <a
+                          key={d.href}
+                          href={d.href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{ fontSize: '0.74rem', fontFamily: 'var(--font-title)', letterSpacing: '0.04em', color: 'var(--g-black)', border: '1px solid var(--g-gray)', padding: '0.5rem 0.85rem', textDecoration: 'none', background: '#fff' }}
+                        >
+                          {d.label} <span aria-hidden="true">↓</span> <span style={{ color: '#9a9a98' }}>PDF</span>
+                        </a>
+                      ))}
+                    </div>
+                  </div>
                   <p style={{ fontSize: '0.72rem', color: '#9a9a98', fontStyle: 'italic', lineHeight: 1.6, marginTop: '0.75rem', marginBottom: 0 }}>
                     Contacts repris de la liste officielle Agefiph « Ressource Handicap
                     Formation — vos contacts en région », version du 9 janvier 2026.

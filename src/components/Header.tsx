@@ -1,7 +1,19 @@
 import { useState, useEffect, useRef } from 'react'
 import { useLocation } from '@tanstack/react-router'
 import { Menu, X, ChevronDown, ChevronRight, Linkedin } from 'lucide-react'
-import { FORMATIONS, getFormationsParFamille, getTarifAffiche, getSanctionCourte } from '../data/catalogue'
+import { FORMATIONS, getFormationsParFamille, getTarifAffiche, getSanctionCourte, getFormationBySlug } from '../data/catalogue'
+import { getSessionsAVenir, labelPlage } from '../data/sessions'
+
+// Annonce de la prochaine session — calculée depuis sessions.ts, jamais écrite
+// en dur : une session retirée du calendrier disparaît aussitôt du bandeau.
+function annonceProchaineSession(): string | null {
+  const s = getSessionsAVenir()[0]
+  if (!s) return null
+  const f = getFormationBySlug(s.slug)
+  if (!f) return null
+  const lieu = s.territoire === 'Tous territoires' ? 'à distance' : `à la ${s.territoire}`
+  return `Prochaine session en ${s.modalite.toLowerCase()} ${lieu} : ${f.titre}, ${labelPlage(s).toLowerCase()}`
+}
 
 // ─── Couleurs par famille — déclinaison 100% chartée (rouge / noir / gris) ─────
 // Toutes les familles partagent le rouge de marque #E41F26.
@@ -307,7 +319,7 @@ export function Header() {
       {/* Ticker */}
       <div className="nav-ticker">
         <div className="nav-ticker-inner">
-          <span>Prochaine formation en présentiel à la Martinique : MICROSOFT MD-102 Endpoint Administrator du 25/01/27 au 29/01/27</span>
+          {annonceProchaineSession() && <span>{annonceProchaineSession()}</span>}
           <span>Référentiel National Qualité V2 — décret n° 2026-728 du 1er août 2026, applicable au 1er novembre 2026 : nos fiches formation publient taux, blocs, passerelles et débouchés</span>
           <span>Certifications professionnelles : deux dossiers déposés au Répertoire spécifique de France Compétences, n° 53224 et n° 53693, en cours d'instruction</span>
         </div>

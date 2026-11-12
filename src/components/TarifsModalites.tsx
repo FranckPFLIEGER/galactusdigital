@@ -5,7 +5,7 @@ import { CalendarClock, ArrowRight } from 'lucide-react'
 // ─────────────────────────────────────────────────────────────────────────────
 // TarifsModalites — bandeau « Modalités & tarifs » des fiches formation
 //
-// Remplace le bloc dupliqué dans les 50 fiches. Tout vient du catalogue :
+// Remplace le bloc dupliqué dans les 32 fiches. Tout vient du catalogue :
 //  - Cisco Networking Academy  : e-learning tutoré, prix public
 //  - Juniper / CCNA v2.0 complet : présentiel, sur devis
 // Si une session est programmée, un lien vers le calendrier apparaît.

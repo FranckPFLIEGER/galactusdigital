@@ -137,6 +137,7 @@ export const FAMILLES: Record<string, { label: string; icon: string }> = {
   'Programmation':         { label: 'Programmation',          icon: 'Code'     },
   'IoT':                   { label: 'IoT & Objets Connectés', icon: 'Wifi'     },
   'Data & Analytics':      { label: 'Data & Analytics',       icon: 'BarChart2'},
+  'Intelligence artificielle': { label: 'Intelligence artificielle', icon: 'Sparkles' },
   'Juniper Junos':         { label: 'Juniper Junos',          icon: 'Router'   },
 }
 
@@ -147,7 +148,7 @@ export const EDITEURS: Record<string, { label: string; badge?: string }> = {
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CATALOGUE PRINCIPAL — 32 formations
+// CATALOGUE PRINCIPAL — 37 formations
 // Le commentaire annonçait 51 : il datait d'avant le retrait de deux entrées et
 // contredisait le décompte réel, celui que publient les pages du site. Corrigé
 // le 29 octobre 2026 — à mettre à jour en même temps que FORMATIONS[].
@@ -645,7 +646,98 @@ export const FORMATIONS: Formation[] = [
     modalites: ['FOAD'],
     description: "Premier niveau du parcours de certification Juniper : architecture de Junos OS, interface en ligne de commande, interfaces réseau, routage, politiques et filtres, supervision et dépannage.",
     prix: { presentiel: null, foad: null, elearning: null },
-  }
+  },
+
+  // ── INTELLIGENCE ARTIFICIELLE — catalogue Cisco AI relevé le 12/11/2026
+  // dans la console instructeur NetAcad. Les cours IBM SkillsBuild (AI
+  // Fundamentals) ne figurent pas dans l'offre de l'académie : ils ne sont
+  // pas proposés. La langue de chaque cours est indiquée sur sa fiche.
+  {
+    slug: 'find-insights-ai',
+    titre: 'Trouver des informations utiles avec l\'IA',
+    titreLong: 'Find Insights with AI — analyse thématique de données textuelles assistée par IA',
+    editeur: 'Cisco Networking Academy', famille: 'Intelligence artificielle',
+    niveau: 'Grand débutant', duree: '6 heures', dureeJours: 1,
+    certification: 'Badge numérique Cisco Networking Academy',
+    examCode: '',
+    modalites: ['E-learning'],
+    // Langue de dispension du cours sur la plateforme Cisco Networking Academy,
+    // relevée le 12/11/2026 dans la console instructeur et sur netacad.com.
+    description: 'Transformer des avis, des retours clients ou des signalements en informations exploitables, par analyse thématique assistée par IA. Choisir le bon outil pour chaque tâche — modèle de langage, agent capable d\'exécuter du code, tableur, éditeur de texte — fiabiliser les résultats et garder l\'humain dans la boucle de décision.',
+    prix: { presentiel: null, foad: null, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
+    socle: true,
+  },
+  {
+    slug: 'build-resume-ai',
+    titre: 'Construire son CV avec l\'IA',
+    titreLong: 'Build your Resume with AI — rédaction et personnalisation de CV assistées par IA, avec protection des données',
+    editeur: 'Cisco Networking Academy', famille: 'Intelligence artificielle',
+    niveau: 'Grand débutant', duree: '9 heures', dureeJours: 2,
+    certification: 'Badge numérique Cisco Networking Academy',
+    examCode: '',
+    modalites: ['E-learning'],
+    // Langue de dispension du cours sur la plateforme Cisco Networking Academy,
+    // relevée le 12/11/2026 dans la console instructeur et sur netacad.com.
+    description: 'Améliorer et personnaliser son CV à l\'aide de l\'IA, sans exposer ses données personnelles. Le cours enseigne un flux de travail qui combine un modèle local pour les informations sensibles et un agent public pour les tâches générales, puis l\'adaptation du CV à une offre précise et sa lecture par les systèmes de tri automatisés.',
+    prix: { presentiel: null, foad: null, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
+    socle: true,
+  },
+  {
+    slug: 'data-science-python',
+    titre: 'Data Science Essentials with Python',
+    titreLong: 'Data Science Essentials with Python — Pandas, Matplotlib et modélisation statistique sur projets',
+    editeur: 'Cisco Networking Academy', famille: 'Intelligence artificielle',
+    niveau: 'Intermédiaire', duree: '40 heures', dureeJours: 8,
+    certification: 'Badge numérique Cisco Networking Academy',
+    examCode: '',
+    modalites: ['E-learning'],
+    // Langue de dispension du cours sur la plateforme Cisco Networking Academy,
+    // relevée le 12/11/2026 dans la console instructeur et sur netacad.com.
+    description: 'Le cycle complet du travail sur données, de la première instruction Python jusqu\'au récit chiffré : nettoyage, analyse, visualisation et modélisation sur des jeux de données réels, avec Pandas et Matplotlib. Six chapitres, quinze projets guidés et cinq projets ouverts. Cours dispensé en anglais.',
+    prix: { presentiel: null, foad: null, elearning: 440 },
+    prixPublicElearning: true,
+    voucher: 0,
+    socle: false,
+  },
+  {
+    slug: 'aitech',
+    titre: 'Cisco AI Technical Practitioner (AITECH)',
+    titreLong: 'Cisco AI Technical Practitioner (AITECH) — préparation à la certification Cisco 810-110',
+    editeur: 'Cisco Networking Academy', famille: 'Intelligence artificielle',
+    niveau: 'Avancé', duree: '16 heures', dureeJours: 3,
+    certification: 'Cisco AI Technical Practitioner (810-110 AITECH)',
+    examCode: '810-110',
+    modalites: ['Présentiel', 'FOAD'],
+    // Langue de dispension du cours sur la plateforme Cisco Networking Academy,
+    // relevée le 12/11/2026 dans la console instructeur et sur netacad.com.
+    description: 'Le parcours technique complet de Cisco sur l\'IA générative appliquée au travail d\'ingénieur : écosystème et outillage, ingénierie de prompt pour la précision technique, sécurité et confidentialité, correction des sorties de modèle, recherche et synthèse assistées, ingénierie logicielle et données, personnalisation de modèles et agents. Prépare à l\'examen Cisco 810-110. Cours et examen dispensés en anglais.',
+    prix: { presentiel: null, foad: 690, elearning: null },
+    prixPublicElearning: false,
+    voucher: 150,
+    socle: false,
+  },
+  {
+    slug: 'prompt-like-an-engineer',
+    titre: 'Prompt Like an Engineer',
+    titreLong: 'Prompt Like an Engineer — concevoir, vérifier et réutiliser des prompts comme un processus d\'ingénierie',
+    editeur: 'Cisco Networking Academy', famille: 'Intelligence artificielle',
+    niveau: 'Fondamental', duree: '9 heures', dureeJours: 2,
+    certification: 'Badge numérique Cisco Networking Academy',
+    examCode: '',
+    modalites: ['E-learning'],
+    // Langue de dispension du cours sur la plateforme Cisco Networking Academy,
+    // relevée le 12/11/2026 dans la console instructeur et sur netacad.com.
+    description: 'Appliquer une méthode d\'ingénieur au travail avec l\'IA : concevoir, itérer, vérifier et réutiliser des prompts comme un processus reproductible. Plutôt que de traiter le modèle comme une boîte noire, l\'apprenant comprend ce qui se passe à l\'intérieur et se place en chef d\'orchestre d\'une équipe mixte, humaine et logicielle. Il reste responsable de la qualité de son travail. Cours dispensé en anglais.',
+    prix: { presentiel: null, foad: null, elearning: 180 },
+    prixPublicElearning: true,
+    voucher: 0,
+    socle: false,
+  },
+
 ]
 
 // ─── Helpers ──────────────────────────────────────────────────────────────────

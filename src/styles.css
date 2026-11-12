@@ -271,7 +271,11 @@ a { color: inherit; }
 .nav-ticker-inner span { font-family: var(--font-title); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: #FFFFFF; flex-shrink: 0; display: inline-flex; align-items: center; gap: 0.5rem; }
 .nav-ticker-inner span::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: #FFFFFF; flex-shrink: 0; animation: red-pulse 2s ease-in-out infinite; }
 .nav-ticker:hover .nav-ticker-inner { animation-play-state: paused; }
-@media (max-width: 900px) { .nav-ticker { height: 28px; } .nav-ticker-inner span { font-size: 0.65rem; } }
+.nav-ticker-inner .nav-ticker-flash { font-family: var(--font-title); font-size: 0.80rem; font-weight: 700; letter-spacing: 0.10em; text-transform: uppercase; color: var(--g-red); background: var(--g-black); padding: 0.28rem 0.95rem; border-radius: 2px; flex-shrink: 0; display: inline-flex; align-items: center; gap: 0.5rem; text-decoration: none; }
+.nav-ticker-inner .nav-ticker-flash::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--g-red); flex-shrink: 0; animation: red-pulse 2s ease-in-out infinite; }
+.nav-ticker-inner .nav-ticker-flash:hover { color: #FFFFFF; }
+
+@media (max-width: 900px) { .nav-ticker { height: 28px; } .nav-ticker-inner span { font-size: 0.65rem; } .nav-ticker-inner .nav-ticker-flash { font-size: 0.70rem; padding: 0.2rem 0.7rem; } }
 
 .section-inner { max-width: 1280px; margin: 0 auto; padding: 6rem 2rem; }
 .section-label { display: block; font-family: var(--font-title); font-size: 0.70rem; font-weight: 600; letter-spacing: 0.20em; text-transform: uppercase; color: var(--g-red); margin-bottom: 0.6rem; }

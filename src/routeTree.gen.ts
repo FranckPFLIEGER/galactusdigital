@@ -34,6 +34,7 @@ import { Route as FormationsSupportInformatiqueEssentielsRouteImport } from './r
 import { Route as FormationsSensibilisationNumeriqueRouteImport } from './routes/formations/sensibilisation-numerique'
 import { Route as FormationsPythonEssentials2RouteImport } from './routes/formations/python-essentials-2'
 import { Route as FormationsPythonEssentials1RouteImport } from './routes/formations/python-essentials-1'
+import { Route as FormationsPromptLikeAnEngineerRouteImport } from './routes/formations/prompt-like-an-engineer'
 import { Route as FormationsOperatingSystemBasicsRouteImport } from './routes/formations/operating-system-basics'
 import { Route as FormationsNotionsBaseReseauxRouteImport } from './routes/formations/notions-base-reseaux'
 import { Route as FormationsNetworkingEssentialsRouteImport } from './routes/formations/networking-essentials'
@@ -49,8 +50,10 @@ import { Route as FormationsIotBigDataAnalyticsRouteImport } from './routes/form
 import { Route as FormationsIntroductionScienceDonneesRouteImport } from './routes/formations/introduction-science-donnees'
 import { Route as FormationsIntroductionIaModerneRouteImport } from './routes/formations/introduction-ia-moderne'
 import { Route as FormationsIntroductionCybersecuriteRouteImport } from './routes/formations/introduction-cybersecurite'
+import { Route as FormationsFindInsightsAiRouteImport } from './routes/formations/find-insights-ai'
 import { Route as FormationsEthicalHackerRouteImport } from './routes/formations/ethical-hacker'
 import { Route as FormationsDevnetAssociateRouteImport } from './routes/formations/devnet-associate'
+import { Route as FormationsDataSciencePythonRouteImport } from './routes/formations/data-science-python'
 import { Route as FormationsDataAnalyticsEssentialsRouteImport } from './routes/formations/data-analytics-essentials'
 import { Route as FormationsCybersecurityEssentialsRouteImport } from './routes/formations/cybersecurity-essentials'
 import { Route as FormationsCyberopsRouteImport } from './routes/formations/cyberops'
@@ -60,7 +63,9 @@ import { Route as FormationsCcnaSrweRouteImport } from './routes/formations/ccna
 import { Route as FormationsCcnaItnRouteImport } from './routes/formations/ccna-itn'
 import { Route as FormationsCcnaEnsaRouteImport } from './routes/formations/ccna-ensa'
 import { Route as FormationsCcnaCiscoRouteImport } from './routes/formations/ccna-cisco'
+import { Route as FormationsBuildResumeAiRouteImport } from './routes/formations/build-resume-ai'
 import { Route as FormationsBasesMaterielInformatiqueRouteImport } from './routes/formations/bases-materiel-informatique'
+import { Route as FormationsAitechRouteImport } from './routes/formations/aitech'
 import { Route as CertificationsRsInfrastructureReseauRouteImport } from './routes/certifications-rs/infrastructure-reseau'
 import { Route as CertificationsRsIncidentsSecuriteRouteImport } from './routes/certifications-rs/incidents-securite'
 
@@ -194,6 +199,12 @@ const FormationsPythonEssentials1Route =
     path: '/formations/python-essentials-1',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FormationsPromptLikeAnEngineerRoute =
+  FormationsPromptLikeAnEngineerRouteImport.update({
+    id: '/formations/prompt-like-an-engineer',
+    path: '/formations/prompt-like-an-engineer',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FormationsOperatingSystemBasicsRoute =
   FormationsOperatingSystemBasicsRouteImport.update({
     id: '/formations/operating-system-basics',
@@ -280,6 +291,12 @@ const FormationsIntroductionCybersecuriteRoute =
     path: '/formations/introduction-cybersecurite',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FormationsFindInsightsAiRoute =
+  FormationsFindInsightsAiRouteImport.update({
+    id: '/formations/find-insights-ai',
+    path: '/formations/find-insights-ai',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 const FormationsEthicalHackerRoute = FormationsEthicalHackerRouteImport.update({
   id: '/formations/ethical-hacker',
   path: '/formations/ethical-hacker',
@@ -289,6 +306,12 @@ const FormationsDevnetAssociateRoute =
   FormationsDevnetAssociateRouteImport.update({
     id: '/formations/devnet-associate',
     path: '/formations/devnet-associate',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const FormationsDataSciencePythonRoute =
+  FormationsDataSciencePythonRouteImport.update({
+    id: '/formations/data-science-python',
+    path: '/formations/data-science-python',
     getParentRoute: () => rootRouteImport,
   } as any)
 const FormationsDataAnalyticsEssentialsRoute =
@@ -338,12 +361,22 @@ const FormationsCcnaCiscoRoute = FormationsCcnaCiscoRouteImport.update({
   path: '/formations/ccna-cisco',
   getParentRoute: () => rootRouteImport,
 } as any)
+const FormationsBuildResumeAiRoute = FormationsBuildResumeAiRouteImport.update({
+  id: '/formations/build-resume-ai',
+  path: '/formations/build-resume-ai',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const FormationsBasesMaterielInformatiqueRoute =
   FormationsBasesMaterielInformatiqueRouteImport.update({
     id: '/formations/bases-materiel-informatique',
     path: '/formations/bases-materiel-informatique',
     getParentRoute: () => rootRouteImport,
   } as any)
+const FormationsAitechRoute = FormationsAitechRouteImport.update({
+  id: '/formations/aitech',
+  path: '/formations/aitech',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const CertificationsRsInfrastructureReseauRoute =
   CertificationsRsInfrastructureReseauRouteImport.update({
     id: '/certifications-rs/infrastructure-reseau',
@@ -378,7 +411,9 @@ export interface FileRoutesByFullPath {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/incidents-securite': typeof CertificationsRsIncidentsSecuriteRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
+  '/formations/aitech': typeof FormationsAitechRoute
   '/formations/bases-materiel-informatique': typeof FormationsBasesMaterielInformatiqueRoute
+  '/formations/build-resume-ai': typeof FormationsBuildResumeAiRoute
   '/formations/ccna-cisco': typeof FormationsCcnaCiscoRoute
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
@@ -388,8 +423,10 @@ export interface FileRoutesByFullPath {
   '/formations/cyberops': typeof FormationsCyberopsRoute
   '/formations/cybersecurity-essentials': typeof FormationsCybersecurityEssentialsRoute
   '/formations/data-analytics-essentials': typeof FormationsDataAnalyticsEssentialsRoute
+  '/formations/data-science-python': typeof FormationsDataSciencePythonRoute
   '/formations/devnet-associate': typeof FormationsDevnetAssociateRoute
   '/formations/ethical-hacker': typeof FormationsEthicalHackerRoute
+  '/formations/find-insights-ai': typeof FormationsFindInsightsAiRoute
   '/formations/introduction-cybersecurite': typeof FormationsIntroductionCybersecuriteRoute
   '/formations/introduction-ia-moderne': typeof FormationsIntroductionIaModerneRoute
   '/formations/introduction-science-donnees': typeof FormationsIntroductionScienceDonneesRoute
@@ -405,6 +442,7 @@ export interface FileRoutesByFullPath {
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
   '/formations/notions-base-reseaux': typeof FormationsNotionsBaseReseauxRoute
   '/formations/operating-system-basics': typeof FormationsOperatingSystemBasicsRoute
+  '/formations/prompt-like-an-engineer': typeof FormationsPromptLikeAnEngineerRoute
   '/formations/python-essentials-1': typeof FormationsPythonEssentials1Route
   '/formations/python-essentials-2': typeof FormationsPythonEssentials2Route
   '/formations/sensibilisation-numerique': typeof FormationsSensibilisationNumeriqueRoute
@@ -434,7 +472,9 @@ export interface FileRoutesByTo {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/incidents-securite': typeof CertificationsRsIncidentsSecuriteRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
+  '/formations/aitech': typeof FormationsAitechRoute
   '/formations/bases-materiel-informatique': typeof FormationsBasesMaterielInformatiqueRoute
+  '/formations/build-resume-ai': typeof FormationsBuildResumeAiRoute
   '/formations/ccna-cisco': typeof FormationsCcnaCiscoRoute
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
@@ -444,8 +484,10 @@ export interface FileRoutesByTo {
   '/formations/cyberops': typeof FormationsCyberopsRoute
   '/formations/cybersecurity-essentials': typeof FormationsCybersecurityEssentialsRoute
   '/formations/data-analytics-essentials': typeof FormationsDataAnalyticsEssentialsRoute
+  '/formations/data-science-python': typeof FormationsDataSciencePythonRoute
   '/formations/devnet-associate': typeof FormationsDevnetAssociateRoute
   '/formations/ethical-hacker': typeof FormationsEthicalHackerRoute
+  '/formations/find-insights-ai': typeof FormationsFindInsightsAiRoute
   '/formations/introduction-cybersecurite': typeof FormationsIntroductionCybersecuriteRoute
   '/formations/introduction-ia-moderne': typeof FormationsIntroductionIaModerneRoute
   '/formations/introduction-science-donnees': typeof FormationsIntroductionScienceDonneesRoute
@@ -461,6 +503,7 @@ export interface FileRoutesByTo {
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
   '/formations/notions-base-reseaux': typeof FormationsNotionsBaseReseauxRoute
   '/formations/operating-system-basics': typeof FormationsOperatingSystemBasicsRoute
+  '/formations/prompt-like-an-engineer': typeof FormationsPromptLikeAnEngineerRoute
   '/formations/python-essentials-1': typeof FormationsPythonEssentials1Route
   '/formations/python-essentials-2': typeof FormationsPythonEssentials2Route
   '/formations/sensibilisation-numerique': typeof FormationsSensibilisationNumeriqueRoute
@@ -491,7 +534,9 @@ export interface FileRoutesById {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/incidents-securite': typeof CertificationsRsIncidentsSecuriteRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
+  '/formations/aitech': typeof FormationsAitechRoute
   '/formations/bases-materiel-informatique': typeof FormationsBasesMaterielInformatiqueRoute
+  '/formations/build-resume-ai': typeof FormationsBuildResumeAiRoute
   '/formations/ccna-cisco': typeof FormationsCcnaCiscoRoute
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
   '/formations/ccna-itn': typeof FormationsCcnaItnRoute
@@ -501,8 +546,10 @@ export interface FileRoutesById {
   '/formations/cyberops': typeof FormationsCyberopsRoute
   '/formations/cybersecurity-essentials': typeof FormationsCybersecurityEssentialsRoute
   '/formations/data-analytics-essentials': typeof FormationsDataAnalyticsEssentialsRoute
+  '/formations/data-science-python': typeof FormationsDataSciencePythonRoute
   '/formations/devnet-associate': typeof FormationsDevnetAssociateRoute
   '/formations/ethical-hacker': typeof FormationsEthicalHackerRoute
+  '/formations/find-insights-ai': typeof FormationsFindInsightsAiRoute
   '/formations/introduction-cybersecurite': typeof FormationsIntroductionCybersecuriteRoute
   '/formations/introduction-ia-moderne': typeof FormationsIntroductionIaModerneRoute
   '/formations/introduction-science-donnees': typeof FormationsIntroductionScienceDonneesRoute
@@ -518,6 +565,7 @@ export interface FileRoutesById {
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
   '/formations/notions-base-reseaux': typeof FormationsNotionsBaseReseauxRoute
   '/formations/operating-system-basics': typeof FormationsOperatingSystemBasicsRoute
+  '/formations/prompt-like-an-engineer': typeof FormationsPromptLikeAnEngineerRoute
   '/formations/python-essentials-1': typeof FormationsPythonEssentials1Route
   '/formations/python-essentials-2': typeof FormationsPythonEssentials2Route
   '/formations/sensibilisation-numerique': typeof FormationsSensibilisationNumeriqueRoute
@@ -549,7 +597,9 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/incidents-securite'
     | '/certifications-rs/infrastructure-reseau'
+    | '/formations/aitech'
     | '/formations/bases-materiel-informatique'
+    | '/formations/build-resume-ai'
     | '/formations/ccna-cisco'
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
@@ -559,8 +609,10 @@ export interface FileRouteTypes {
     | '/formations/cyberops'
     | '/formations/cybersecurity-essentials'
     | '/formations/data-analytics-essentials'
+    | '/formations/data-science-python'
     | '/formations/devnet-associate'
     | '/formations/ethical-hacker'
+    | '/formations/find-insights-ai'
     | '/formations/introduction-cybersecurite'
     | '/formations/introduction-ia-moderne'
     | '/formations/introduction-science-donnees'
@@ -576,6 +628,7 @@ export interface FileRouteTypes {
     | '/formations/networking-essentials'
     | '/formations/notions-base-reseaux'
     | '/formations/operating-system-basics'
+    | '/formations/prompt-like-an-engineer'
     | '/formations/python-essentials-1'
     | '/formations/python-essentials-2'
     | '/formations/sensibilisation-numerique'
@@ -605,7 +658,9 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/incidents-securite'
     | '/certifications-rs/infrastructure-reseau'
+    | '/formations/aitech'
     | '/formations/bases-materiel-informatique'
+    | '/formations/build-resume-ai'
     | '/formations/ccna-cisco'
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
@@ -615,8 +670,10 @@ export interface FileRouteTypes {
     | '/formations/cyberops'
     | '/formations/cybersecurity-essentials'
     | '/formations/data-analytics-essentials'
+    | '/formations/data-science-python'
     | '/formations/devnet-associate'
     | '/formations/ethical-hacker'
+    | '/formations/find-insights-ai'
     | '/formations/introduction-cybersecurite'
     | '/formations/introduction-ia-moderne'
     | '/formations/introduction-science-donnees'
@@ -632,6 +689,7 @@ export interface FileRouteTypes {
     | '/formations/networking-essentials'
     | '/formations/notions-base-reseaux'
     | '/formations/operating-system-basics'
+    | '/formations/prompt-like-an-engineer'
     | '/formations/python-essentials-1'
     | '/formations/python-essentials-2'
     | '/formations/sensibilisation-numerique'
@@ -661,7 +719,9 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/incidents-securite'
     | '/certifications-rs/infrastructure-reseau'
+    | '/formations/aitech'
     | '/formations/bases-materiel-informatique'
+    | '/formations/build-resume-ai'
     | '/formations/ccna-cisco'
     | '/formations/ccna-ensa'
     | '/formations/ccna-itn'
@@ -671,8 +731,10 @@ export interface FileRouteTypes {
     | '/formations/cyberops'
     | '/formations/cybersecurity-essentials'
     | '/formations/data-analytics-essentials'
+    | '/formations/data-science-python'
     | '/formations/devnet-associate'
     | '/formations/ethical-hacker'
+    | '/formations/find-insights-ai'
     | '/formations/introduction-cybersecurite'
     | '/formations/introduction-ia-moderne'
     | '/formations/introduction-science-donnees'
@@ -688,6 +750,7 @@ export interface FileRouteTypes {
     | '/formations/networking-essentials'
     | '/formations/notions-base-reseaux'
     | '/formations/operating-system-basics'
+    | '/formations/prompt-like-an-engineer'
     | '/formations/python-essentials-1'
     | '/formations/python-essentials-2'
     | '/formations/sensibilisation-numerique'
@@ -718,7 +781,9 @@ export interface RootRouteChildren {
   TemoignagesRoute: typeof TemoignagesRoute
   CertificationsRsIncidentsSecuriteRoute: typeof CertificationsRsIncidentsSecuriteRoute
   CertificationsRsInfrastructureReseauRoute: typeof CertificationsRsInfrastructureReseauRoute
+  FormationsAitechRoute: typeof FormationsAitechRoute
   FormationsBasesMaterielInformatiqueRoute: typeof FormationsBasesMaterielInformatiqueRoute
+  FormationsBuildResumeAiRoute: typeof FormationsBuildResumeAiRoute
   FormationsCcnaCiscoRoute: typeof FormationsCcnaCiscoRoute
   FormationsCcnaEnsaRoute: typeof FormationsCcnaEnsaRoute
   FormationsCcnaItnRoute: typeof FormationsCcnaItnRoute
@@ -728,8 +793,10 @@ export interface RootRouteChildren {
   FormationsCyberopsRoute: typeof FormationsCyberopsRoute
   FormationsCybersecurityEssentialsRoute: typeof FormationsCybersecurityEssentialsRoute
   FormationsDataAnalyticsEssentialsRoute: typeof FormationsDataAnalyticsEssentialsRoute
+  FormationsDataSciencePythonRoute: typeof FormationsDataSciencePythonRoute
   FormationsDevnetAssociateRoute: typeof FormationsDevnetAssociateRoute
   FormationsEthicalHackerRoute: typeof FormationsEthicalHackerRoute
+  FormationsFindInsightsAiRoute: typeof FormationsFindInsightsAiRoute
   FormationsIntroductionCybersecuriteRoute: typeof FormationsIntroductionCybersecuriteRoute
   FormationsIntroductionIaModerneRoute: typeof FormationsIntroductionIaModerneRoute
   FormationsIntroductionScienceDonneesRoute: typeof FormationsIntroductionScienceDonneesRoute
@@ -745,6 +812,7 @@ export interface RootRouteChildren {
   FormationsNetworkingEssentialsRoute: typeof FormationsNetworkingEssentialsRoute
   FormationsNotionsBaseReseauxRoute: typeof FormationsNotionsBaseReseauxRoute
   FormationsOperatingSystemBasicsRoute: typeof FormationsOperatingSystemBasicsRoute
+  FormationsPromptLikeAnEngineerRoute: typeof FormationsPromptLikeAnEngineerRoute
   FormationsPythonEssentials1Route: typeof FormationsPythonEssentials1Route
   FormationsPythonEssentials2Route: typeof FormationsPythonEssentials2Route
   FormationsSensibilisationNumeriqueRoute: typeof FormationsSensibilisationNumeriqueRoute
@@ -931,6 +999,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsPythonEssentials1RouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/formations/prompt-like-an-engineer': {
+      id: '/formations/prompt-like-an-engineer'
+      path: '/formations/prompt-like-an-engineer'
+      fullPath: '/formations/prompt-like-an-engineer'
+      preLoaderRoute: typeof FormationsPromptLikeAnEngineerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/formations/operating-system-basics': {
       id: '/formations/operating-system-basics'
       path: '/formations/operating-system-basics'
@@ -1036,6 +1111,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsIntroductionCybersecuriteRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/formations/find-insights-ai': {
+      id: '/formations/find-insights-ai'
+      path: '/formations/find-insights-ai'
+      fullPath: '/formations/find-insights-ai'
+      preLoaderRoute: typeof FormationsFindInsightsAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/formations/ethical-hacker': {
       id: '/formations/ethical-hacker'
       path: '/formations/ethical-hacker'
@@ -1048,6 +1130,13 @@ declare module '@tanstack/react-router' {
       path: '/formations/devnet-associate'
       fullPath: '/formations/devnet-associate'
       preLoaderRoute: typeof FormationsDevnetAssociateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/data-science-python': {
+      id: '/formations/data-science-python'
+      path: '/formations/data-science-python'
+      fullPath: '/formations/data-science-python'
+      preLoaderRoute: typeof FormationsDataSciencePythonRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/formations/data-analytics-essentials': {
@@ -1113,11 +1202,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsCcnaCiscoRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/formations/build-resume-ai': {
+      id: '/formations/build-resume-ai'
+      path: '/formations/build-resume-ai'
+      fullPath: '/formations/build-resume-ai'
+      preLoaderRoute: typeof FormationsBuildResumeAiRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/formations/bases-materiel-informatique': {
       id: '/formations/bases-materiel-informatique'
       path: '/formations/bases-materiel-informatique'
       fullPath: '/formations/bases-materiel-informatique'
       preLoaderRoute: typeof FormationsBasesMaterielInformatiqueRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/formations/aitech': {
+      id: '/formations/aitech'
+      path: '/formations/aitech'
+      fullPath: '/formations/aitech'
+      preLoaderRoute: typeof FormationsAitechRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/certifications-rs/infrastructure-reseau': {
@@ -1160,8 +1263,10 @@ const rootRouteChildren: RootRouteChildren = {
     CertificationsRsIncidentsSecuriteRoute,
   CertificationsRsInfrastructureReseauRoute:
     CertificationsRsInfrastructureReseauRoute,
+  FormationsAitechRoute: FormationsAitechRoute,
   FormationsBasesMaterielInformatiqueRoute:
     FormationsBasesMaterielInformatiqueRoute,
+  FormationsBuildResumeAiRoute: FormationsBuildResumeAiRoute,
   FormationsCcnaCiscoRoute: FormationsCcnaCiscoRoute,
   FormationsCcnaEnsaRoute: FormationsCcnaEnsaRoute,
   FormationsCcnaItnRoute: FormationsCcnaItnRoute,
@@ -1173,8 +1278,10 @@ const rootRouteChildren: RootRouteChildren = {
     FormationsCybersecurityEssentialsRoute,
   FormationsDataAnalyticsEssentialsRoute:
     FormationsDataAnalyticsEssentialsRoute,
+  FormationsDataSciencePythonRoute: FormationsDataSciencePythonRoute,
   FormationsDevnetAssociateRoute: FormationsDevnetAssociateRoute,
   FormationsEthicalHackerRoute: FormationsEthicalHackerRoute,
+  FormationsFindInsightsAiRoute: FormationsFindInsightsAiRoute,
   FormationsIntroductionCybersecuriteRoute:
     FormationsIntroductionCybersecuriteRoute,
   FormationsIntroductionIaModerneRoute: FormationsIntroductionIaModerneRoute,
@@ -1192,6 +1299,7 @@ const rootRouteChildren: RootRouteChildren = {
   FormationsNetworkingEssentialsRoute: FormationsNetworkingEssentialsRoute,
   FormationsNotionsBaseReseauxRoute: FormationsNotionsBaseReseauxRoute,
   FormationsOperatingSystemBasicsRoute: FormationsOperatingSystemBasicsRoute,
+  FormationsPromptLikeAnEngineerRoute: FormationsPromptLikeAnEngineerRoute,
   FormationsPythonEssentials1Route: FormationsPythonEssentials1Route,
   FormationsPythonEssentials2Route: FormationsPythonEssentials2Route,
   FormationsSensibilisationNumeriqueRoute:

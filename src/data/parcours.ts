@@ -243,6 +243,84 @@ export const PARCOURS: Parcours[] = [
     ],
     debouche: 'Ingénieur automatisation, NetDevOps, développeur réseau',
   },
+  {
+    id: 'ia-au-quotidien',
+    titre: 'IA au quotidien',
+    couleur: '#1D1D1B',
+    pitch: 'L\'IA appliquée au travail de tous les jours, en français, sans aucun prérequis.',
+    entree: 'Ouvert sans prérequis. Aucune connaissance informatique ni anglophone n\'est demandée.',
+    blocs: [
+      {
+        rang: 0,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, en français, un tuteur certifié vous suit module par module",
+        titre: 'Bloc 0 — Découvrir',
+        intention: 'Voir ce que l\'IA fait réellement, et ce qu\'elle ne fait pas.',
+        etapes: [
+          { titre: 'Introduction à l\'IA moderne', slug: 'introduction-ia-moderne', heures: 6 },
+        ],
+      },
+      {
+        rang: 1,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, en français, un tuteur certifié vous suit module par module",
+        titre: 'Bloc 1 — Appliquer',
+        intention: 'Deux usages professionnels immédiats : analyser des retours, et porter sa candidature.',
+        etapes: [
+          { titre: 'Trouver des informations utiles avec l\'IA', slug: 'find-insights-ai', heures: 6 },
+          { titre: 'Construire son CV avec l\'IA', slug: 'build-resume-ai', heures: 9 },
+        ],
+      },
+      {
+        rang: 2,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré ; le dernier cours est dispensé en anglais",
+        titre: 'Bloc 2 — Aller vers la donnée',
+        intention: 'La suite naturelle : comprendre et exploiter les données sur lesquelles l\'IA travaille.',
+        etapes: [
+          { titre: 'Introduction à la science des données', slug: 'introduction-science-donnees', heures: 6 },
+          { titre: 'Data Analytics Essentials', slug: 'data-analytics-essentials', heures: 30 },
+          { titre: 'Data Science Essentials with Python', slug: 'data-science-python', heures: 40 },
+        ],
+      },
+    ],
+    debouche: 'Usage professionnel autonome et encadré de l\'IA, premier pas vers les métiers de la donnée',
+  },
+  {
+    id: 'ai-technical-practitioner',
+    titre: 'AI Technical Practitioner',
+    couleur: '#1D1D1B',
+    pitch: 'La voie certifiante de Cisco sur l\'IA générative appliquée au travail d\'ingénieur.',
+    entree: 'Destiné aux professionnels de l\'informatique en poste. Lecture de l\'anglais indispensable : cours et examen ne sont proposés qu\'en anglais.',
+    blocs: [
+      {
+        rang: 0,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, en français",
+        titre: 'Bloc 0 — Se situer',
+        intention: 'Comprendre les usages avant d\'entrer dans la voie technique.',
+        etapes: [
+          { titre: 'Introduction à l\'IA moderne', slug: 'introduction-ia-moderne', heures: 6 },
+        ],
+      },
+      {
+        rang: 1,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré ; cours dispensé en anglais",
+        titre: 'Bloc 1 — Structurer sa pratique',
+        intention: 'La méthode avant l\'outil : concevoir, vérifier et réutiliser ses prompts.',
+        etapes: [
+          { titre: 'Prompt Like an Engineer', slug: 'prompt-like-an-engineer', heures: 9 },
+        ],
+      },
+      {
+        rang: 2,
+        modalite: "En présentiel ou en FOAD, avec un formateur — ce bloc n'est pas proposé en e-learning tutoré, et il est dispensé en anglais",
+        titre: 'Bloc 2 — Certifier',
+        intention: 'Les trois cours techniques de Cisco, jusqu\'à l\'examen 810-110.',
+        etapes: [
+          { titre: 'Cisco AI Technical Practitioner (AITECH)', slug: 'aitech', heures: 16 },
+        ],
+      },
+    ],
+    debouche: 'Praticien IA en environnement technique, référent IA d\'équipe',
+  },
+
 ]
 
 /** Heures totales d'un parcours, Bloc 0 compris */

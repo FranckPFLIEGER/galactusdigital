@@ -6,9 +6,9 @@ import { CheckCircle, Phone, Mail, Award, Shield, TrendingUp, Users, ExternalLin
 export const Route = createFileRoute('/certifications')({
   head: () => ({
     meta: [
-      { title: 'Certifications IT Cisco, Microsoft, Linux — GALACTUS Digital' },
-      { name: 'description', content: 'Passez vos certifications IT officielles Cisco CCNA, Microsoft Azure, Linux LPI. Centre agréé Cisco Networking Academy n° 3018982. Qualiopi.' },
-      { property: 'og:title', content: 'Certifications IT Cisco, Microsoft, Linux — GALACTUS Digital' },
+      { title: 'Certifications IT Cisco, Juniper, Linux — GALACTUS Digital' },
+      { name: 'description', content: 'Passez vos certifications IT officielles Cisco CCNA, Juniper JNCIA, Linux LPI. Centre agréé Cisco Networking Academy n° 3018982. Qualiopi.' },
+      { property: 'og:title', content: 'Certifications IT Cisco, Juniper, Linux — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/certifications' },
     ],
     links: [{ rel: 'canonical', href: 'https://galactusdigital.com/certifications' }],
@@ -165,7 +165,7 @@ function CertificationsPage() {
                 qu'elle encombre le bloc. Remise le 29 octobre 2026. */}
             <p style={{ fontSize: "0.76rem", lineHeight: 1.6, color: "#8a8a86", marginTop: "1.5rem" }}>
               Conditions des programmes partenaires, relevées le 29 octobre 2026 :{" "}
-              <a href="https://learn.microsoft.com/partner-center/partner-capability-score" target="_blank" rel="noopener noreferrer" style={{ color: "#8a8a86", textDecoration: "underline", textUnderlineOffset: "2px" }}>Microsoft Partner capability score</a>
+              <a href="https://www.netacad.com" target="_blank" rel="noopener noreferrer" style={{ color: "#8a8a86", textDecoration: "underline", textUnderlineOffset: "2px" }}>Cisco Networking Academy</a>
               {" · "}
               <a href="https://www.cisco.com/c/dam/en_us/partners/cisco-partner-program/cisco-360-partner-program-highlights.pdf" target="_blank" rel="noopener noreferrer" style={{ color: "#8a8a86", textDecoration: "underline", textUnderlineOffset: "2px" }}>Cisco 360 Partner Program</a>.
             </p>
@@ -269,7 +269,7 @@ function CertificationsPage() {
                     Pour les examens
                   </div>
                   <div style={{ fontFamily: "var(--font-title)", fontSize: "1.05rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.04em", color: "var(--g-black)", marginBottom: "0.25rem" }}>
-                    Microsoft, Cisco, Juniper…
+                    Cisco, Juniper…
                   </div>
                   <div style={{ fontFamily: "var(--font-title)", fontSize: "0.62rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "#888" }}>
                     Certificateur

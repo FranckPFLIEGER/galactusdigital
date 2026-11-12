@@ -1,6 +1,6 @@
 # GALACTUS Digital
 
-Site vitrine pour **GALACTUS Digital**, organisme de formation IT certifié Qualiopi. Le site présente l'offre de formations officielles éditeurs (Cisco Networking Academy, Microsoft, IPv6 Forum) en modalités présentiel, FOAD et e-learning tutoré, inter et intra-entreprise, avec une couverture de 6 territoires ultramarins et de la France hexagonale.
+Site vitrine pour **GALACTUS Digital**, organisme de formation IT certifié Qualiopi. Le site présente l'offre de formations officielles éditeurs (Cisco Networking Academy, Juniper, IPv6 Forum) en modalités présentiel, FOAD et e-learning tutoré, inter et intra-entreprise, avec une couverture de 6 territoires ultramarins et de la France hexagonale.
 
 ## Technologies
 

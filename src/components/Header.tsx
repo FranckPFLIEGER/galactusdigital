@@ -12,8 +12,6 @@ const FC: Record<string, string> = {
   'Programmation':       '#E41F26',
   'IoT':                 '#E41F26',
   'Data & Analytics':    '#E41F26',
-  'Azure & Cloud':       '#E41F26',
-  'Microsoft 365':       '#E41F26',
 }
 // Niveaux — nuances chartées : gris (fondamental) → rouge atténué → rouge plein
 const NC: Record<string, string> = {
@@ -26,7 +24,6 @@ const NC: Record<string, string> = {
 // de la famille affichée, les ancres par famille n'existant pas sur cette page.
 const ANCRE_EDITEUR: Record<string, string> = {
   'Cisco Networking Academy': 'cisco',
-  'Microsoft':                'microsoft',
   'Juniper Networks':         'juniper',
 }
 
@@ -156,7 +153,7 @@ function MegaMenu({ visible, onClose }: { visible: boolean; onClose: () => void 
             { label: 'Financer ma formation', href: '/financements' },
             { label: 'E-learning tutoré — Cisco', href: '/elearning' },
             { label: 'FOAD — Juniper', href: '/foad' },
-            { label: 'Présentiel — Microsoft', href: '/presentiel' },
+            { label: 'Présentiel — inter et intra', href: '/presentiel' },
           ].map(l => (
             <a key={l.label} href={l.href} onClick={onClose}
               style={{ fontFamily: "'Barlow Condensed',sans-serif", fontSize: '0.62rem', fontWeight: 700, letterSpacing: '0.10em', textTransform: 'uppercase', color: 'rgba(255,255,255,0.30)', textDecoration: 'none', transition: 'color 0.15s' }}
@@ -179,7 +176,7 @@ const NAV_LINKS = [
       { label: '— Modalités de formation', isHeading: true },
       { label: 'E-learning tutoré — Cisco',    href: '/elearning' },
       { label: 'FOAD — Juniper JNCIA-Junos', href: '/foad' },
-      { label: 'Présentiel — Microsoft',       href: '/presentiel' },
+      { label: 'Présentiel — inter et intra', href: '/presentiel' },
       { label: "— Formats d'organisation",     isHeading: true },
       { label: 'Inter-entreprise',             href: '/presentiel#inter' },
       { label: 'Intra-entreprise',             href: '/presentiel#intra' },

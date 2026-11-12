@@ -86,7 +86,7 @@ function RgpdPage() {
                   base: 'Exécution du contrat',
                   donnees: 'Nom, prénom, email, téléphone, entreprise, données de parcours de formation, résultats aux évaluations.',
                   duree: '3 ans pour les dossiers pédagogiques — durée retenue par l\'organisme au titre du principe de limitation de la conservation (art. 5.1.e du RGPD), au regard de la durée utile du suivi pédagogique. 10 ans pour les pièces comptables et les justificatifs de financement (art. L.123-22 du code de commerce). 4 ans après la fin de la formation pour les dossiers financés par France Travail, l\'organisme disposant de 5 jours ouvrés pour les produire en contrôle de service fait.',
-                  dest: "GALACTUS Digital, éditeurs certifiant (Cisco Networking Academy, Microsoft, Juniper Networks), "
+                  dest: "GALACTUS Digital, éditeurs certifiant (Cisco Networking Academy, Juniper Networks), "
                     + "OPCO, France Travail ou tout autre financeur du dossier. Sous-traitants : Cisco Webex "
                     + "(classes virtuelles, émargement et historique de connexion), Google Workspace (messagerie "
                     + "et stockage des dossiers).",
@@ -279,12 +279,6 @@ function RgpdPage() {
                 cadre: 'Clauses contractuelles types.',
               },
               {
-                nom: 'Microsoft Corporation (États-Unis)',
-                role: "Inscription aux parcours Microsoft Learn et suivi des acquis, pour les seules "
-                  + "formations Microsoft : identité de l'apprenant, compte de formation, progression.",
-                cadre: 'Data Privacy Framework.',
-              },
-              {
                 nom: 'Juniper Networks, Inc. (États-Unis)',
                 role: "Accès à la plateforme de formation et aux ressources Junos pour le seul parcours "
                   + "JNCIA-Junos : identité de l'apprenant, compte de formation.",
@@ -313,7 +307,7 @@ function RgpdPage() {
               domaine : leur affichage n'entraîne aucune requête vers Google Fonts, ni aucune
               transmission d'adresse IP à Google. L'envoi de nos campagnes d'information est confié à
               <strong> Brevo</strong> (Sendinblue SAS), dont les données sont hébergées dans l'Union
-              européenne. En dehors des sept transferts listés ci-dessus, aucune donnée n'est
+              européenne. En dehors des six transferts listés ci-dessus, aucune donnée n'est
               transférée hors de l'Union européenne.
             </p>
           </div>

@@ -344,8 +344,8 @@ function HandicapPage() {
                   soit sa localisation aux Caraïbes, dans l'Océan Indien ou en France hexagonale.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.9, color: '#4a4a48', marginBottom: '1.5rem' }}>
-                  Les formations Microsoft, en revanche, ne sont dispensées qu'en présentiel. Elles
-                  ne peuvent donc pas être suivies à distance : l'accessibilité y repose sur le
+                  Les sessions en présentiel, en revanche, ne peuvent pas être suivies à distance :
+                  l'accessibilité y repose sur le
                   choix de la salle et sur les aménagements convenus avec le bénéficiaire. Le lieu
                   étant retenu session par session, ses conditions d'accès sont vérifiées avant
                   l'engagement et portées sur la convocation. Lorsqu'aucune salle accessible ne peut
@@ -389,7 +389,7 @@ function HandicapPage() {
                   'Catalogue Cisco suivi à distance, sans déplacement, en e-learning tutoré',
                   'Supports de cours adaptables (grands caractères sur demande)',
                   'Classes virtuelles Webex avec sous-titrage possible',
-                  'Formations Microsoft en présentiel : salle vérifiée avant engagement',
+                  'Sessions en présentiel : salle vérifiée avant engagement',
                   'Temps supplémentaire pour les examens sur demande',
                   'Accompagnement renforcé par le formateur',
                   'Pauses adaptées selon les besoins individuels',

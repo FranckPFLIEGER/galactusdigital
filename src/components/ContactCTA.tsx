@@ -30,7 +30,7 @@ const TERRITOIRES = [
 // Les trois axes commerciaux. Le choix détermine la liste des formations.
 const MODALITES = [
   "E-learning tutoré — Cisco Networking Academy",
-  "Présentiel — Microsoft, CCNA v2.0 complet, CCNP ENCOR et ENARSI",
+  "Présentiel — CCNA v2.0 parcours complet, CCNP ENCOR et ENARSI",
   "FOAD — Juniper JNCIA-Junos",
 ]
 const MOD_ELEARNING  = MODALITES[0]
@@ -701,7 +701,7 @@ export function ContactCTA() {
               </div>
               <div>
                 <div style={{ fontFamily: "var(--font-title)", fontSize: "0.80rem", fontWeight: 700, color: "#fff", textTransform: "uppercase", letterSpacing: "0.04em", marginBottom: "0.3rem" }}>
-                  Microsoft · Juniper
+                  Cisco · Juniper
                 </div>
                 <div style={{ fontSize: "0.80rem", color: "rgba(255,255,255,0.60)", lineHeight: 1.6 }}>
                   Présentiel uniquement : en inter sur une session programmée, ou en intra chez vous. Devis sur mesure.

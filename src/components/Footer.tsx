@@ -7,13 +7,10 @@ const FC: Record<string, string> = {
   'Programmation':       '#E41F26',
   'IoT':                 '#E41F26',
   'Data & Analytics':    '#E41F26',
-  'Azure & Cloud':       '#E41F26',
-  'Microsoft 365':       '#E41F26',
 }
 
 const PAR_FAMILLE = getFormationsParFamille()
 const CISCO_FAMILLES     = ['Réseaux & CCNA', 'Cybersécurité', 'Programmation', 'IoT', 'Data & Analytics']
-const MICROSOFT_FAMILLES = ['Azure & Cloud', 'Microsoft 365']
 
 function GalactusLogo() {
   return (
@@ -97,8 +94,7 @@ export function Footer() {
             <ul className="footer-links">
               <li><a href="/formations">Tout le catalogue</a></li>
               <li><a href="/formations#cisco">Cisco Networking Academy</a></li>
-              <li><a href="/formations#microsoft">Microsoft Azure, M365 &amp; Copilot</a></li>
-              <li><a href="/certifications">Passer une certification</a></li>
+                            <li><a href="/certifications">Passer une certification</a></li>
               <li><a href="/calendrier">Calendrier des sessions</a></li>
               <li><a href="/financements">Guide du financement</a></li>
             </ul>
@@ -107,7 +103,7 @@ export function Footer() {
             <ul className="footer-links" style={{ marginBottom: '0.75rem' }}>
               <li><a href="/elearning">E-learning tutoré — Cisco</a></li>
               <li><a href="/foad">FOAD — Juniper JNCIA-Junos</a></li>
-              <li><a href="/presentiel">Présentiel — Microsoft</a></li>
+              <li><a href="/presentiel">Présentiel — inter et intra</a></li>
             </ul>
             <div style={{ fontSize: '0.60rem', fontWeight: 700, letterSpacing: '0.14em', textTransform: 'uppercase', color: '#E41F26', marginBottom: '0.4rem' }}>Formats</div>
             <ul className="footer-links">

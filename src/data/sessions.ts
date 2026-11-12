@@ -44,19 +44,7 @@ export const SESSIONS_PLANIFIEES: SessionPlanifiee[] = [
   { slug: 'jncia-junos', territoire: 'Tous territoires', modalite: 'FOAD', debut: '2026-10-20', fin: '2026-10-30', complet: true, inscrits: 1 },
 
   // Présentiel Martinique — planning 2027
-  { slug: 'md-102',     territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-01-25', fin: '2027-01-29' },
-  { slug: 'pl-7002',    territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-02-25', fin: '2027-02-25' },
-  { slug: 'az-802',     territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-03-08', fin: '2027-03-12' },
-  { slug: 'ccna-cisco', territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-03-15', fin: '2027-03-19' },
-  { slug: 'ab-650',     territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-04-05', fin: '2027-04-09' },
-  { slug: 'pl-7008',    territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-04-20', fin: '2027-04-20' },
-  { slug: 'sc-300',     territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-05-04', fin: '2027-05-07' },
-  { slug: 'ms-4017',    territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-05-18', fin: '2027-05-18' },
-  { slug: 'az-1008',    territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-06-03', fin: '2027-06-03' },
-  { slug: 'az-104',     territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-06-14', fin: '2027-06-17' },
-  { slug: 'sc-401',     territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-10-04', fin: '2027-10-07' },
-  { slug: 'pl-300',     territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-11-15', fin: '2027-11-18' },
-  { slug: 'sc-500',     territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-11-22', fin: '2027-11-25' },
+{ slug: 'ccna-cisco', territoire: 'Martinique', modalite: 'Présentiel', debut: '2027-03-15', fin: '2027-03-19' },
 ]
 
 // ── Libellés ─────────────────────────────────────────────────────────────────

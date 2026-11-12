@@ -12,7 +12,7 @@ export const Route = createFileRoute("/formations/")({
   head: () => ({
     meta: [
       { title: 'Catalogue des formations certifiantes IT — GALACTUS Digital' },
-      { name: 'description', content: "Formations certifiantes officielles Cisco, Microsoft et Juniper répondant aux exigences des éditeurs, dont des formations d'entrée sans prérequis pour les personnes en reconversion. Présentiel, FOAD et e-learning tutoré." },
+      { name: 'description', content: "Formations certifiantes officielles Cisco et Juniper répondant aux exigences des éditeurs, dont des formations d'entrée sans prérequis pour les personnes en reconversion. Présentiel, FOAD et e-learning tutoré." },
       { property: 'og:title', content: 'Catalogue des formations certifiantes IT — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/formations' },
     ],
@@ -24,7 +24,6 @@ export const Route = createFileRoute("/formations/")({
 
 const EDITEUR_COLOR: Record<string, string> = {
   "Cisco Networking Academy": "#E41F26",
-  "Microsoft": "#1D1D1B",
   "Juniper Networks": "#E41F26",
 }
 
@@ -165,11 +164,10 @@ function FormationsPage() {
     const v = new URLSearchParams(window.location.search).get("editeur")
     if (!v) return
     if (/^cisco/i.test(v))    setEditeurFilter("Cisco Networking Academy")
-    else if (/^microsoft/i.test(v)) setEditeurFilter("Microsoft")
     else if (/^juniper/i.test(v))   setEditeurFilter("Juniper Networks")
   }, [])
 
-  const editeurs = ["Tout", "Cisco Networking Academy", "Microsoft", "Juniper Networks"]
+  const editeurs = ["Tout", "Cisco Networking Academy", "Juniper Networks"]
   const familles = useMemo(() => {
     const base = editeurFilter === "Tout"
       ? FORMATIONS
@@ -187,7 +185,6 @@ function FormationsPage() {
 
   // Groupes pour les ancres footer
   const cisco     = filtered.filter(f => f.editeur === "Cisco Networking Academy")
-  const microsoft = filtered.filter(f => f.editeur === "Microsoft")
   const juniper   = filtered.filter(f => f.editeur === "Juniper Networks")
 
   const nbFamilles = useMemo(() => new Set(FORMATIONS.map(f => f.famille)).size, [])
@@ -244,7 +241,7 @@ function FormationsPage() {
                 // « 2 éditeurs officiels » était faux — le catalogue en compte trois — et
                 // « 3 » mettait en avant un éditeur qui ne pèse qu'une formation sur 49.
                 // On compte donc les éditeurs principaux : ceux qui portent plus de cinq
-                // formations. Cisco (31) et Microsoft (17) les franchissent, Juniper (1)
+                // formations. Cisco (31) les franchit, Juniper (1)
                 // non. Le chiffre suit le catalogue si l'offre évolue. 29 octobre 2026.
                 [String(Object.values(
                   FORMATIONS.reduce<Record<string, number>>((acc, f) => {
@@ -278,7 +275,7 @@ function FormationsPage() {
               </div>
               {editeurs.map(e => (
                 <button key={e} onClick={() => selectEditeur(e)}
-                  style={editeurFilter === e ? btnActive(e === "Microsoft" ? "#1D1D1B" : "#E41F26") : { ...btnBase, color: "#555" }}>
+                  style={editeurFilter === e ? btnActive("#E41F26") : { ...btnBase, color: "#555" }}>
                   {e}
                 </button>
               ))}
@@ -326,32 +323,6 @@ function FormationsPage() {
               <div className="g-rule" />
               <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: "1.25rem", marginTop: ".5rem" }}>
                 {cisco.map(f => <Card key={f.slug} f={f} />)}
-              </div>
-            </div>
-          </section>
-        )}
-
-        {/* ── Section Microsoft ── */}
-        {microsoft.length > 0 && (
-          <section id="microsoft" style={{ background: "var(--g-offwhite)", padding: "4rem 2rem" }}>
-            <div style={{ maxWidth: "1280px", margin: "0 auto" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: "1rem", marginBottom: ".5rem" }}>
-                <div style={{ width: "4px", height: "32px", background: "#1D1D1B" }} />
-                <div>
-                  <div style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".16em", textTransform: "uppercase", color: "#1D1D1B" }}>
-                    Partenaire n° 4653557
-                  </div>
-                  <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.2rem,2vw,1.6rem)", fontWeight: 700, textTransform: "uppercase", letterSpacing: ".04em", color: "var(--g-black)", margin: 0 }}>
-                    Microsoft Azure & M365
-                  </h2>
-                </div>
-                <span style={{ fontFamily: "var(--font-title)", fontSize: ".68rem", fontWeight: 700, letterSpacing: ".12em", textTransform: "uppercase", color: "#fff", background: "#1D1D1B", padding: ".2rem .7rem", marginLeft: "auto" }}>
-                  {microsoft.length} formation{microsoft.length > 1 ? "s" : ""}
-                </span>
-              </div>
-              <div className="g-rule" />
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill,minmax(300px,1fr))", gap: "1.25rem", marginTop: ".5rem" }}>
-                {microsoft.map(f => <Card key={f.slug} f={f} />)}
               </div>
             </div>
           </section>

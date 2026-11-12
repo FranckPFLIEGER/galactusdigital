@@ -24,7 +24,7 @@ Node 22 (`.nvmrc`). Il n'y a pas de script de test ni de lint.
 ```
 src/
   data/                   # SOURCE UNIQUE DE VÉRITÉ — à lire avant tout le reste
-    catalogue.ts          # 49 formations : tarifs, modalités, certifications, vouchers
+    catalogue.ts          # 32 formations : tarifs, modalités, certifications, vouchers
     parcours.ts           # Parcours métier par blocs, renvoient aux slugs du catalogue
     sessions.ts           # Sessions programmées au calendrier
     resultats.ts          # Indicateurs Qualiopi publiés (formés, réussite, satisfaction)
@@ -32,7 +32,7 @@ src/
   routes/                 # Routing par fichiers (TanStack Router)
     __root.tsx            # Shell HTML, meta SEO, JSON-LD
     index.tsx             # Accueil
-    formations/           # 49 fiches + index.tsx (catalogue)
+    formations/           # 32 fiches + index.tsx (catalogue)
     certifications-rs/    # Dossiers France Compétences déposés
     ...                   # Pages légales, modalités, qualité
   components/             # Header, Footer, et sections de l'accueil

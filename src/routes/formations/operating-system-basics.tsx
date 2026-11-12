@@ -117,7 +117,7 @@ const DATA = {
     organisme:  'Cisco Networking Academy',
     format:     '8 modules, 18 travaux pratiques, quiz et examen final',
     score:      'Selon barème Cisco Networking Academy',
-    note: 'Cours suivant recommandé : Notions de base sur les réseaux. Ce cours ouvre le Bloc 0 des parcours Réseaux, Cybersécurité, Cloud Azure, Modern Workplace et Sécurité Microsoft.',
+    note: 'Cours suivant recommandé : Notions de base sur les réseaux. Ce cours ouvre le Bloc 0 des parcours Réseaux & Infrastructure et Cybersécurité.',
   },
 
   // Méthodes pédagogiques

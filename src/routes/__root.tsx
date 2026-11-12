@@ -6,30 +6,30 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'GALACTUS Digital — Formation Cisco & Microsoft en Martinique, Guadeloupe, Guyane et Réunion' },
+      { title: 'GALACTUS Digital — Formation Cisco & Juniper en Martinique, Guadeloupe, Guyane et Réunion' },
       {
         name: 'description',
-        content: 'Organisme certifié Qualiopi. Formations et certifications IT officielles Cisco (CCNA, CCNP), Microsoft (Azure, Power BI, Copilot) et Juniper en Martinique, Guadeloupe, Guyane, Saint-Martin et La Réunion. 100 % de réussite parmi les candidats présentés à l\'examen. E-learning tutoré, FOAD et présentiel. NDA : 11 75 59933 75.',
+        content: 'Organisme certifié Qualiopi. Formations et certifications IT officielles Cisco (CCNA, CCNP) et Juniper (JNCIA-Junos) en Martinique, Guadeloupe, Guyane, Saint-Martin et La Réunion. 100 % de réussite parmi les candidats présentés à l\'examen. E-learning tutoré, FOAD et présentiel. NDA : 11 75 59933 75.',
       },
       { property: 'og:type',        content: 'website' },
       { property: 'og:url',         content: 'https://galactusdigital.com/' },
       { property: 'og:title',       content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         property: 'og:description',
-        content: 'Organisme de formation certifié Qualiopi. Certifications Cisco Networking Academy, Microsoft et Juniper. 100 % de réussite parmi les candidats présentés à l\'examen. 6 territoires ultramarins.',
+        content: 'Organisme de formation certifié Qualiopi. Certifications Cisco Networking Academy et Juniper Networks. 100 % de réussite parmi les candidats présentés à l\'examen. 6 territoires ultramarins.',
       },
       { property: 'og:image',       content: 'https://galactusdigital.com/og-image.png' },
       { property: 'og:image:width',  content: '1200' },
       { property: 'og:image:height', content: '630' },
       { property: 'og:image:type',   content: 'image/png' },
-      { property: 'og:image:alt',    content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins. Partenaire Cisco, Microsoft et Juniper Networks.' },
+      { property: 'og:image:alt',    content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins. Partenaire Cisco et Juniper Networks.' },
       { property: 'og:locale',      content: 'fr_FR' },
       { property: 'og:site_name',   content: 'GALACTUS Digital' },
       { name: 'twitter:card',        content: 'summary_large_image' },
       { name: 'twitter:title',       content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins' },
       {
         name: 'twitter:description',
-        content: 'Formations IT officielles aux Caraïbes et Océan Indien. Certifié Qualiopi. Cisco Networking Academy, Microsoft, Juniper.',
+        content: 'Formations IT officielles aux Caraïbes et Océan Indien. Certifié Qualiopi. Cisco Networking Academy, Juniper Networks.',
       },
       { name: 'twitter:image',       content: 'https://galactusdigital.com/og-image-twitter.png' },
       { name: 'twitter:image:alt',   content: 'GALACTUS Digital — Formation certifiante IT des territoires ultramarins.' },
@@ -40,7 +40,7 @@ export const Route = createRootRoute({
       { name: 'geo.placename',       content: 'Guadeloupe, Martinique, Caraïbes, Océan Indien, France' },
       {
         name: 'keywords',
-        content: 'formation IT territoires ultramarins, certification Cisco CCNA, formation Microsoft Azure, Juniper Junos, Guadeloupe, Martinique, Guyane, Réunion, Qualiopi, organisme de formation certifié, NDA 11 75 59933 75',
+        content: 'formation IT territoires ultramarins, certification Cisco CCNA, Juniper Junos, JNCIA, Guadeloupe, Martinique, Guyane, Réunion, Qualiopi, organisme de formation certifié, NDA 11 75 59933 75',
       },
     ],
     links: [
@@ -74,7 +74,7 @@ const jsonLd = {
     { '@type': 'PropertyValue', name: 'SIRET', value: '88043041800017' },
   ],
   areaServed: ['Guadeloupe', 'Martinique', 'Guyane', 'Saint-Martin', 'Saint-Barthélemy', 'Réunion', 'France Hexagonale'],
-  knowsAbout: ['Cisco CCNA', 'Cisco CCNP', 'Cisco Networking Academy', 'Cybersécurité', 'Microsoft Azure', 'Microsoft 365', 'Power BI', 'Microsoft Copilot', 'Python', 'Linux', 'IoT', 'Réseaux informatiques', 'Automatisation réseau', 'Juniper Junos', 'JNCIA-Junos'],
+  knowsAbout: ['Cisco CCNA', 'Cisco CCNP', 'Cisco Networking Academy', 'Cybersécurité', 'Python', 'Linux', 'IoT', 'Réseaux informatiques', 'Automatisation réseau', 'Juniper Junos', 'JNCIA-Junos'],
   hasCredential: {
     '@type': 'EducationalOccupationalCredential',
     name: 'Certification Qualiopi',

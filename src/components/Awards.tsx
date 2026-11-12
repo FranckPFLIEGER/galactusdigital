@@ -13,7 +13,7 @@ import { Award, Star, Trophy } from 'lucide-react'
 // Ce qu'on ne fait pas pour autant : présenter une distinction comme une
 // ACCRÉDITATION de l'organisme. Un auditeur ou un financeur vérifie les
 // habilitations au nom de la personne morale — Qualiopi, NDA n° 11 75 59933 75,
-// partenariats éditeurs n° 3018982 et n° 4653557 — et le certificat Advisory
+// partenariat éditeur n° 3018982 — et le certificat Advisory
 // Board, lui, porte un nom de personne. D'où la mention nominative sous le
 // titre : elle dit à qui le certificat est délivré, sans rien retirer.
 //

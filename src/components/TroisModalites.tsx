@@ -42,7 +42,7 @@ const MODALITES: { titre: string; href: ModaliteActive; items: string[] }[] = [
     titre: 'Présentiel',
     href: '/presentiel',
     items: [
-      'Catalogue Microsoft, CCNA v2.0 complet et CCNP Enterprise',
+      'CCNA v2.0 parcours complet et CCNP Enterprise',
       'Dans vos locaux ou en salle retenue pour la session',
       'Interaction directe avec le formateur',
       'Ateliers pratiques sur équipements réels',

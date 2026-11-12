@@ -100,7 +100,7 @@ const DATA = {
     organisme:  'Cisco Networking Academy',
     format:     '2 modules, 50 vidéos, 16 exercices de prompt, projet vidéo et examen final',
     score:      'Selon barème Cisco Networking Academy',
-    note: 'Cours suivant recommandé : AI-901 Azure AI Fundamentals pour la voie Microsoft, ou Introduction à la science des données pour la voie Data. Ce cours ouvre le Bloc 0 des parcours Automatisation & IA réseau et Data, IA & Copilot.',
+    note: 'Cours suivant recommandé : Introduction à la science des données pour la voie Data. Ce cours ouvre le Bloc 0 du parcours Automatisation & IA réseau.',
   },
 
   // Méthodes pédagogiques

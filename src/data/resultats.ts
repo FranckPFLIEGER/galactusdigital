@@ -48,7 +48,7 @@ export const SATISFACTION_METHODE =
 /** Périmètre couvert par les indicateurs globaux */
 export const RESULTATS_PERIMETRE =
   'Actions de formation certifiantes IT dispensées par PFLIEGER SASU — GALACTUS Digital ' +
-  '(Cisco Networking Academy, Microsoft, Juniper Networks), ' +
+  '(Cisco Networking Academy, Juniper Networks), ' +
   'toutes modalités (présentiel, FOAD, e-learning tutoré), ' +
   'tous territoires (Martinique, Guadeloupe, Guyane, Saint-Martin, Saint-Barthélemy, La Réunion, France hexagonale). ' +
   'NDA 11 75 59933 75 — SIRET 880 430 418 00017. ' +
@@ -74,7 +74,7 @@ export const METHODE_CALCUL: { libelle: string; formule: string; source: string 
       'effectivement présentés à l\'épreuve, sur la période. Les apprenants formés mais non ' +
       'présentés à l\'examen sont exclus du dénominateur — ce taux ne doit donc pas être lu ' +
       'comme un taux d\'obtention rapporté aux entrants.',
-    source: 'Attestations de réussite des éditeurs (Cisco Networking Academy, Microsoft, Juniper Networks)',
+    source: 'Attestations de réussite des éditeurs (Cisco Networking Academy, Juniper Networks)',
   },
   {
     libelle: 'Taux d\'abandon',

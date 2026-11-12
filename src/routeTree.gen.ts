@@ -32,21 +32,11 @@ import { Route as CertificationsRsIndexRouteImport } from './routes/certificatio
 import { Route as FormationsUtilisationOrdinateursMobilesRouteImport } from './routes/formations/utilisation-ordinateurs-mobiles'
 import { Route as FormationsSupportInformatiqueEssentielsRouteImport } from './routes/formations/support-informatique-essentiels'
 import { Route as FormationsSensibilisationNumeriqueRouteImport } from './routes/formations/sensibilisation-numerique'
-import { Route as FormationsSc900RouteImport } from './routes/formations/sc-900'
-import { Route as FormationsSc500RouteImport } from './routes/formations/sc-500'
-import { Route as FormationsSc401RouteImport } from './routes/formations/sc-401'
-import { Route as FormationsSc300RouteImport } from './routes/formations/sc-300'
 import { Route as FormationsPythonEssentials2RouteImport } from './routes/formations/python-essentials-2'
 import { Route as FormationsPythonEssentials1RouteImport } from './routes/formations/python-essentials-1'
-import { Route as FormationsPl7008RouteImport } from './routes/formations/pl-7008'
-import { Route as FormationsPl7002RouteImport } from './routes/formations/pl-7002'
-import { Route as FormationsPl300RouteImport } from './routes/formations/pl-300'
 import { Route as FormationsOperatingSystemBasicsRouteImport } from './routes/formations/operating-system-basics'
 import { Route as FormationsNotionsBaseReseauxRouteImport } from './routes/formations/notions-base-reseaux'
 import { Route as FormationsNetworkingEssentialsRouteImport } from './routes/formations/networking-essentials'
-import { Route as FormationsMs4017RouteImport } from './routes/formations/ms-4017'
-import { Route as FormationsMs4010RouteImport } from './routes/formations/ms-4010'
-import { Route as FormationsMd102RouteImport } from './routes/formations/md-102'
 import { Route as FormationsLinuxUnhatchedRouteImport } from './routes/formations/linux-unhatched'
 import { Route as FormationsLinuxEssentialsRouteImport } from './routes/formations/linux-essentials'
 import { Route as FormationsJnciaJunosRouteImport } from './routes/formations/jncia-junos'
@@ -71,13 +61,6 @@ import { Route as FormationsCcnaItnRouteImport } from './routes/formations/ccna-
 import { Route as FormationsCcnaEnsaRouteImport } from './routes/formations/ccna-ensa'
 import { Route as FormationsCcnaCiscoRouteImport } from './routes/formations/ccna-cisco'
 import { Route as FormationsBasesMaterielInformatiqueRouteImport } from './routes/formations/bases-materiel-informatique'
-import { Route as FormationsAz900RouteImport } from './routes/formations/az-900'
-import { Route as FormationsAz802RouteImport } from './routes/formations/az-802'
-import { Route as FormationsAz104RouteImport } from './routes/formations/az-104'
-import { Route as FormationsAz1008RouteImport } from './routes/formations/az-1008'
-import { Route as FormationsAi901RouteImport } from './routes/formations/ai-901'
-import { Route as FormationsAb900RouteImport } from './routes/formations/ab-900'
-import { Route as FormationsAb650RouteImport } from './routes/formations/ab-650'
 import { Route as CertificationsRsInfrastructureReseauRouteImport } from './routes/certifications-rs/infrastructure-reseau'
 import { Route as CertificationsRsIncidentsSecuriteRouteImport } from './routes/certifications-rs/incidents-securite'
 
@@ -199,26 +182,6 @@ const FormationsSensibilisationNumeriqueRoute =
     path: '/formations/sensibilisation-numerique',
     getParentRoute: () => rootRouteImport,
   } as any)
-const FormationsSc900Route = FormationsSc900RouteImport.update({
-  id: '/formations/sc-900',
-  path: '/formations/sc-900',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsSc500Route = FormationsSc500RouteImport.update({
-  id: '/formations/sc-500',
-  path: '/formations/sc-500',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsSc401Route = FormationsSc401RouteImport.update({
-  id: '/formations/sc-401',
-  path: '/formations/sc-401',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsSc300Route = FormationsSc300RouteImport.update({
-  id: '/formations/sc-300',
-  path: '/formations/sc-300',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const FormationsPythonEssentials2Route =
   FormationsPythonEssentials2RouteImport.update({
     id: '/formations/python-essentials-2',
@@ -231,21 +194,6 @@ const FormationsPythonEssentials1Route =
     path: '/formations/python-essentials-1',
     getParentRoute: () => rootRouteImport,
   } as any)
-const FormationsPl7008Route = FormationsPl7008RouteImport.update({
-  id: '/formations/pl-7008',
-  path: '/formations/pl-7008',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsPl7002Route = FormationsPl7002RouteImport.update({
-  id: '/formations/pl-7002',
-  path: '/formations/pl-7002',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsPl300Route = FormationsPl300RouteImport.update({
-  id: '/formations/pl-300',
-  path: '/formations/pl-300',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const FormationsOperatingSystemBasicsRoute =
   FormationsOperatingSystemBasicsRouteImport.update({
     id: '/formations/operating-system-basics',
@@ -264,21 +212,6 @@ const FormationsNetworkingEssentialsRoute =
     path: '/formations/networking-essentials',
     getParentRoute: () => rootRouteImport,
   } as any)
-const FormationsMs4017Route = FormationsMs4017RouteImport.update({
-  id: '/formations/ms-4017',
-  path: '/formations/ms-4017',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsMs4010Route = FormationsMs4010RouteImport.update({
-  id: '/formations/ms-4010',
-  path: '/formations/ms-4010',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsMd102Route = FormationsMd102RouteImport.update({
-  id: '/formations/md-102',
-  path: '/formations/md-102',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const FormationsLinuxUnhatchedRoute =
   FormationsLinuxUnhatchedRouteImport.update({
     id: '/formations/linux-unhatched',
@@ -411,41 +344,6 @@ const FormationsBasesMaterielInformatiqueRoute =
     path: '/formations/bases-materiel-informatique',
     getParentRoute: () => rootRouteImport,
   } as any)
-const FormationsAz900Route = FormationsAz900RouteImport.update({
-  id: '/formations/az-900',
-  path: '/formations/az-900',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsAz802Route = FormationsAz802RouteImport.update({
-  id: '/formations/az-802',
-  path: '/formations/az-802',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsAz104Route = FormationsAz104RouteImport.update({
-  id: '/formations/az-104',
-  path: '/formations/az-104',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsAz1008Route = FormationsAz1008RouteImport.update({
-  id: '/formations/az-1008',
-  path: '/formations/az-1008',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsAi901Route = FormationsAi901RouteImport.update({
-  id: '/formations/ai-901',
-  path: '/formations/ai-901',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsAb900Route = FormationsAb900RouteImport.update({
-  id: '/formations/ab-900',
-  path: '/formations/ab-900',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const FormationsAb650Route = FormationsAb650RouteImport.update({
-  id: '/formations/ab-650',
-  path: '/formations/ab-650',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CertificationsRsInfrastructureReseauRoute =
   CertificationsRsInfrastructureReseauRouteImport.update({
     id: '/certifications-rs/infrastructure-reseau',
@@ -480,13 +378,6 @@ export interface FileRoutesByFullPath {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/incidents-securite': typeof CertificationsRsIncidentsSecuriteRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
-  '/formations/ab-650': typeof FormationsAb650Route
-  '/formations/ab-900': typeof FormationsAb900Route
-  '/formations/ai-901': typeof FormationsAi901Route
-  '/formations/az-1008': typeof FormationsAz1008Route
-  '/formations/az-104': typeof FormationsAz104Route
-  '/formations/az-802': typeof FormationsAz802Route
-  '/formations/az-900': typeof FormationsAz900Route
   '/formations/bases-materiel-informatique': typeof FormationsBasesMaterielInformatiqueRoute
   '/formations/ccna-cisco': typeof FormationsCcnaCiscoRoute
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
@@ -511,21 +402,11 @@ export interface FileRoutesByFullPath {
   '/formations/jncia-junos': typeof FormationsJnciaJunosRoute
   '/formations/linux-essentials': typeof FormationsLinuxEssentialsRoute
   '/formations/linux-unhatched': typeof FormationsLinuxUnhatchedRoute
-  '/formations/md-102': typeof FormationsMd102Route
-  '/formations/ms-4010': typeof FormationsMs4010Route
-  '/formations/ms-4017': typeof FormationsMs4017Route
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
   '/formations/notions-base-reseaux': typeof FormationsNotionsBaseReseauxRoute
   '/formations/operating-system-basics': typeof FormationsOperatingSystemBasicsRoute
-  '/formations/pl-300': typeof FormationsPl300Route
-  '/formations/pl-7002': typeof FormationsPl7002Route
-  '/formations/pl-7008': typeof FormationsPl7008Route
   '/formations/python-essentials-1': typeof FormationsPythonEssentials1Route
   '/formations/python-essentials-2': typeof FormationsPythonEssentials2Route
-  '/formations/sc-300': typeof FormationsSc300Route
-  '/formations/sc-401': typeof FormationsSc401Route
-  '/formations/sc-500': typeof FormationsSc500Route
-  '/formations/sc-900': typeof FormationsSc900Route
   '/formations/sensibilisation-numerique': typeof FormationsSensibilisationNumeriqueRoute
   '/formations/support-informatique-essentiels': typeof FormationsSupportInformatiqueEssentielsRoute
   '/formations/utilisation-ordinateurs-mobiles': typeof FormationsUtilisationOrdinateursMobilesRoute
@@ -553,13 +434,6 @@ export interface FileRoutesByTo {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/incidents-securite': typeof CertificationsRsIncidentsSecuriteRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
-  '/formations/ab-650': typeof FormationsAb650Route
-  '/formations/ab-900': typeof FormationsAb900Route
-  '/formations/ai-901': typeof FormationsAi901Route
-  '/formations/az-1008': typeof FormationsAz1008Route
-  '/formations/az-104': typeof FormationsAz104Route
-  '/formations/az-802': typeof FormationsAz802Route
-  '/formations/az-900': typeof FormationsAz900Route
   '/formations/bases-materiel-informatique': typeof FormationsBasesMaterielInformatiqueRoute
   '/formations/ccna-cisco': typeof FormationsCcnaCiscoRoute
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
@@ -584,21 +458,11 @@ export interface FileRoutesByTo {
   '/formations/jncia-junos': typeof FormationsJnciaJunosRoute
   '/formations/linux-essentials': typeof FormationsLinuxEssentialsRoute
   '/formations/linux-unhatched': typeof FormationsLinuxUnhatchedRoute
-  '/formations/md-102': typeof FormationsMd102Route
-  '/formations/ms-4010': typeof FormationsMs4010Route
-  '/formations/ms-4017': typeof FormationsMs4017Route
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
   '/formations/notions-base-reseaux': typeof FormationsNotionsBaseReseauxRoute
   '/formations/operating-system-basics': typeof FormationsOperatingSystemBasicsRoute
-  '/formations/pl-300': typeof FormationsPl300Route
-  '/formations/pl-7002': typeof FormationsPl7002Route
-  '/formations/pl-7008': typeof FormationsPl7008Route
   '/formations/python-essentials-1': typeof FormationsPythonEssentials1Route
   '/formations/python-essentials-2': typeof FormationsPythonEssentials2Route
-  '/formations/sc-300': typeof FormationsSc300Route
-  '/formations/sc-401': typeof FormationsSc401Route
-  '/formations/sc-500': typeof FormationsSc500Route
-  '/formations/sc-900': typeof FormationsSc900Route
   '/formations/sensibilisation-numerique': typeof FormationsSensibilisationNumeriqueRoute
   '/formations/support-informatique-essentiels': typeof FormationsSupportInformatiqueEssentielsRoute
   '/formations/utilisation-ordinateurs-mobiles': typeof FormationsUtilisationOrdinateursMobilesRoute
@@ -627,13 +491,6 @@ export interface FileRoutesById {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/incidents-securite': typeof CertificationsRsIncidentsSecuriteRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
-  '/formations/ab-650': typeof FormationsAb650Route
-  '/formations/ab-900': typeof FormationsAb900Route
-  '/formations/ai-901': typeof FormationsAi901Route
-  '/formations/az-1008': typeof FormationsAz1008Route
-  '/formations/az-104': typeof FormationsAz104Route
-  '/formations/az-802': typeof FormationsAz802Route
-  '/formations/az-900': typeof FormationsAz900Route
   '/formations/bases-materiel-informatique': typeof FormationsBasesMaterielInformatiqueRoute
   '/formations/ccna-cisco': typeof FormationsCcnaCiscoRoute
   '/formations/ccna-ensa': typeof FormationsCcnaEnsaRoute
@@ -658,21 +515,11 @@ export interface FileRoutesById {
   '/formations/jncia-junos': typeof FormationsJnciaJunosRoute
   '/formations/linux-essentials': typeof FormationsLinuxEssentialsRoute
   '/formations/linux-unhatched': typeof FormationsLinuxUnhatchedRoute
-  '/formations/md-102': typeof FormationsMd102Route
-  '/formations/ms-4010': typeof FormationsMs4010Route
-  '/formations/ms-4017': typeof FormationsMs4017Route
   '/formations/networking-essentials': typeof FormationsNetworkingEssentialsRoute
   '/formations/notions-base-reseaux': typeof FormationsNotionsBaseReseauxRoute
   '/formations/operating-system-basics': typeof FormationsOperatingSystemBasicsRoute
-  '/formations/pl-300': typeof FormationsPl300Route
-  '/formations/pl-7002': typeof FormationsPl7002Route
-  '/formations/pl-7008': typeof FormationsPl7008Route
   '/formations/python-essentials-1': typeof FormationsPythonEssentials1Route
   '/formations/python-essentials-2': typeof FormationsPythonEssentials2Route
-  '/formations/sc-300': typeof FormationsSc300Route
-  '/formations/sc-401': typeof FormationsSc401Route
-  '/formations/sc-500': typeof FormationsSc500Route
-  '/formations/sc-900': typeof FormationsSc900Route
   '/formations/sensibilisation-numerique': typeof FormationsSensibilisationNumeriqueRoute
   '/formations/support-informatique-essentiels': typeof FormationsSupportInformatiqueEssentielsRoute
   '/formations/utilisation-ordinateurs-mobiles': typeof FormationsUtilisationOrdinateursMobilesRoute
@@ -702,13 +549,6 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/incidents-securite'
     | '/certifications-rs/infrastructure-reseau'
-    | '/formations/ab-650'
-    | '/formations/ab-900'
-    | '/formations/ai-901'
-    | '/formations/az-1008'
-    | '/formations/az-104'
-    | '/formations/az-802'
-    | '/formations/az-900'
     | '/formations/bases-materiel-informatique'
     | '/formations/ccna-cisco'
     | '/formations/ccna-ensa'
@@ -733,21 +573,11 @@ export interface FileRouteTypes {
     | '/formations/jncia-junos'
     | '/formations/linux-essentials'
     | '/formations/linux-unhatched'
-    | '/formations/md-102'
-    | '/formations/ms-4010'
-    | '/formations/ms-4017'
     | '/formations/networking-essentials'
     | '/formations/notions-base-reseaux'
     | '/formations/operating-system-basics'
-    | '/formations/pl-300'
-    | '/formations/pl-7002'
-    | '/formations/pl-7008'
     | '/formations/python-essentials-1'
     | '/formations/python-essentials-2'
-    | '/formations/sc-300'
-    | '/formations/sc-401'
-    | '/formations/sc-500'
-    | '/formations/sc-900'
     | '/formations/sensibilisation-numerique'
     | '/formations/support-informatique-essentiels'
     | '/formations/utilisation-ordinateurs-mobiles'
@@ -775,13 +605,6 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/incidents-securite'
     | '/certifications-rs/infrastructure-reseau'
-    | '/formations/ab-650'
-    | '/formations/ab-900'
-    | '/formations/ai-901'
-    | '/formations/az-1008'
-    | '/formations/az-104'
-    | '/formations/az-802'
-    | '/formations/az-900'
     | '/formations/bases-materiel-informatique'
     | '/formations/ccna-cisco'
     | '/formations/ccna-ensa'
@@ -806,21 +629,11 @@ export interface FileRouteTypes {
     | '/formations/jncia-junos'
     | '/formations/linux-essentials'
     | '/formations/linux-unhatched'
-    | '/formations/md-102'
-    | '/formations/ms-4010'
-    | '/formations/ms-4017'
     | '/formations/networking-essentials'
     | '/formations/notions-base-reseaux'
     | '/formations/operating-system-basics'
-    | '/formations/pl-300'
-    | '/formations/pl-7002'
-    | '/formations/pl-7008'
     | '/formations/python-essentials-1'
     | '/formations/python-essentials-2'
-    | '/formations/sc-300'
-    | '/formations/sc-401'
-    | '/formations/sc-500'
-    | '/formations/sc-900'
     | '/formations/sensibilisation-numerique'
     | '/formations/support-informatique-essentiels'
     | '/formations/utilisation-ordinateurs-mobiles'
@@ -848,13 +661,6 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/incidents-securite'
     | '/certifications-rs/infrastructure-reseau'
-    | '/formations/ab-650'
-    | '/formations/ab-900'
-    | '/formations/ai-901'
-    | '/formations/az-1008'
-    | '/formations/az-104'
-    | '/formations/az-802'
-    | '/formations/az-900'
     | '/formations/bases-materiel-informatique'
     | '/formations/ccna-cisco'
     | '/formations/ccna-ensa'
@@ -879,21 +685,11 @@ export interface FileRouteTypes {
     | '/formations/jncia-junos'
     | '/formations/linux-essentials'
     | '/formations/linux-unhatched'
-    | '/formations/md-102'
-    | '/formations/ms-4010'
-    | '/formations/ms-4017'
     | '/formations/networking-essentials'
     | '/formations/notions-base-reseaux'
     | '/formations/operating-system-basics'
-    | '/formations/pl-300'
-    | '/formations/pl-7002'
-    | '/formations/pl-7008'
     | '/formations/python-essentials-1'
     | '/formations/python-essentials-2'
-    | '/formations/sc-300'
-    | '/formations/sc-401'
-    | '/formations/sc-500'
-    | '/formations/sc-900'
     | '/formations/sensibilisation-numerique'
     | '/formations/support-informatique-essentiels'
     | '/formations/utilisation-ordinateurs-mobiles'
@@ -922,13 +718,6 @@ export interface RootRouteChildren {
   TemoignagesRoute: typeof TemoignagesRoute
   CertificationsRsIncidentsSecuriteRoute: typeof CertificationsRsIncidentsSecuriteRoute
   CertificationsRsInfrastructureReseauRoute: typeof CertificationsRsInfrastructureReseauRoute
-  FormationsAb650Route: typeof FormationsAb650Route
-  FormationsAb900Route: typeof FormationsAb900Route
-  FormationsAi901Route: typeof FormationsAi901Route
-  FormationsAz1008Route: typeof FormationsAz1008Route
-  FormationsAz104Route: typeof FormationsAz104Route
-  FormationsAz802Route: typeof FormationsAz802Route
-  FormationsAz900Route: typeof FormationsAz900Route
   FormationsBasesMaterielInformatiqueRoute: typeof FormationsBasesMaterielInformatiqueRoute
   FormationsCcnaCiscoRoute: typeof FormationsCcnaCiscoRoute
   FormationsCcnaEnsaRoute: typeof FormationsCcnaEnsaRoute
@@ -953,21 +742,11 @@ export interface RootRouteChildren {
   FormationsJnciaJunosRoute: typeof FormationsJnciaJunosRoute
   FormationsLinuxEssentialsRoute: typeof FormationsLinuxEssentialsRoute
   FormationsLinuxUnhatchedRoute: typeof FormationsLinuxUnhatchedRoute
-  FormationsMd102Route: typeof FormationsMd102Route
-  FormationsMs4010Route: typeof FormationsMs4010Route
-  FormationsMs4017Route: typeof FormationsMs4017Route
   FormationsNetworkingEssentialsRoute: typeof FormationsNetworkingEssentialsRoute
   FormationsNotionsBaseReseauxRoute: typeof FormationsNotionsBaseReseauxRoute
   FormationsOperatingSystemBasicsRoute: typeof FormationsOperatingSystemBasicsRoute
-  FormationsPl300Route: typeof FormationsPl300Route
-  FormationsPl7002Route: typeof FormationsPl7002Route
-  FormationsPl7008Route: typeof FormationsPl7008Route
   FormationsPythonEssentials1Route: typeof FormationsPythonEssentials1Route
   FormationsPythonEssentials2Route: typeof FormationsPythonEssentials2Route
-  FormationsSc300Route: typeof FormationsSc300Route
-  FormationsSc401Route: typeof FormationsSc401Route
-  FormationsSc500Route: typeof FormationsSc500Route
-  FormationsSc900Route: typeof FormationsSc900Route
   FormationsSensibilisationNumeriqueRoute: typeof FormationsSensibilisationNumeriqueRoute
   FormationsSupportInformatiqueEssentielsRoute: typeof FormationsSupportInformatiqueEssentielsRoute
   FormationsUtilisationOrdinateursMobilesRoute: typeof FormationsUtilisationOrdinateursMobilesRoute
@@ -1138,34 +917,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsSensibilisationNumeriqueRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/formations/sc-900': {
-      id: '/formations/sc-900'
-      path: '/formations/sc-900'
-      fullPath: '/formations/sc-900'
-      preLoaderRoute: typeof FormationsSc900RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/sc-500': {
-      id: '/formations/sc-500'
-      path: '/formations/sc-500'
-      fullPath: '/formations/sc-500'
-      preLoaderRoute: typeof FormationsSc500RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/sc-401': {
-      id: '/formations/sc-401'
-      path: '/formations/sc-401'
-      fullPath: '/formations/sc-401'
-      preLoaderRoute: typeof FormationsSc401RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/sc-300': {
-      id: '/formations/sc-300'
-      path: '/formations/sc-300'
-      fullPath: '/formations/sc-300'
-      preLoaderRoute: typeof FormationsSc300RouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/formations/python-essentials-2': {
       id: '/formations/python-essentials-2'
       path: '/formations/python-essentials-2'
@@ -1178,27 +929,6 @@ declare module '@tanstack/react-router' {
       path: '/formations/python-essentials-1'
       fullPath: '/formations/python-essentials-1'
       preLoaderRoute: typeof FormationsPythonEssentials1RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/pl-7008': {
-      id: '/formations/pl-7008'
-      path: '/formations/pl-7008'
-      fullPath: '/formations/pl-7008'
-      preLoaderRoute: typeof FormationsPl7008RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/pl-7002': {
-      id: '/formations/pl-7002'
-      path: '/formations/pl-7002'
-      fullPath: '/formations/pl-7002'
-      preLoaderRoute: typeof FormationsPl7002RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/pl-300': {
-      id: '/formations/pl-300'
-      path: '/formations/pl-300'
-      fullPath: '/formations/pl-300'
-      preLoaderRoute: typeof FormationsPl300RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/formations/operating-system-basics': {
@@ -1220,27 +950,6 @@ declare module '@tanstack/react-router' {
       path: '/formations/networking-essentials'
       fullPath: '/formations/networking-essentials'
       preLoaderRoute: typeof FormationsNetworkingEssentialsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/ms-4017': {
-      id: '/formations/ms-4017'
-      path: '/formations/ms-4017'
-      fullPath: '/formations/ms-4017'
-      preLoaderRoute: typeof FormationsMs4017RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/ms-4010': {
-      id: '/formations/ms-4010'
-      path: '/formations/ms-4010'
-      fullPath: '/formations/ms-4010'
-      preLoaderRoute: typeof FormationsMs4010RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/md-102': {
-      id: '/formations/md-102'
-      path: '/formations/md-102'
-      fullPath: '/formations/md-102'
-      preLoaderRoute: typeof FormationsMd102RouteImport
       parentRoute: typeof rootRouteImport
     }
     '/formations/linux-unhatched': {
@@ -1411,55 +1120,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsBasesMaterielInformatiqueRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/formations/az-900': {
-      id: '/formations/az-900'
-      path: '/formations/az-900'
-      fullPath: '/formations/az-900'
-      preLoaderRoute: typeof FormationsAz900RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/az-802': {
-      id: '/formations/az-802'
-      path: '/formations/az-802'
-      fullPath: '/formations/az-802'
-      preLoaderRoute: typeof FormationsAz802RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/az-104': {
-      id: '/formations/az-104'
-      path: '/formations/az-104'
-      fullPath: '/formations/az-104'
-      preLoaderRoute: typeof FormationsAz104RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/az-1008': {
-      id: '/formations/az-1008'
-      path: '/formations/az-1008'
-      fullPath: '/formations/az-1008'
-      preLoaderRoute: typeof FormationsAz1008RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/ai-901': {
-      id: '/formations/ai-901'
-      path: '/formations/ai-901'
-      fullPath: '/formations/ai-901'
-      preLoaderRoute: typeof FormationsAi901RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/ab-900': {
-      id: '/formations/ab-900'
-      path: '/formations/ab-900'
-      fullPath: '/formations/ab-900'
-      preLoaderRoute: typeof FormationsAb900RouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/formations/ab-650': {
-      id: '/formations/ab-650'
-      path: '/formations/ab-650'
-      fullPath: '/formations/ab-650'
-      preLoaderRoute: typeof FormationsAb650RouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/certifications-rs/infrastructure-reseau': {
       id: '/certifications-rs/infrastructure-reseau'
       path: '/certifications-rs/infrastructure-reseau'
@@ -1500,13 +1160,6 @@ const rootRouteChildren: RootRouteChildren = {
     CertificationsRsIncidentsSecuriteRoute,
   CertificationsRsInfrastructureReseauRoute:
     CertificationsRsInfrastructureReseauRoute,
-  FormationsAb650Route: FormationsAb650Route,
-  FormationsAb900Route: FormationsAb900Route,
-  FormationsAi901Route: FormationsAi901Route,
-  FormationsAz1008Route: FormationsAz1008Route,
-  FormationsAz104Route: FormationsAz104Route,
-  FormationsAz802Route: FormationsAz802Route,
-  FormationsAz900Route: FormationsAz900Route,
   FormationsBasesMaterielInformatiqueRoute:
     FormationsBasesMaterielInformatiqueRoute,
   FormationsCcnaCiscoRoute: FormationsCcnaCiscoRoute,
@@ -1536,21 +1189,11 @@ const rootRouteChildren: RootRouteChildren = {
   FormationsJnciaJunosRoute: FormationsJnciaJunosRoute,
   FormationsLinuxEssentialsRoute: FormationsLinuxEssentialsRoute,
   FormationsLinuxUnhatchedRoute: FormationsLinuxUnhatchedRoute,
-  FormationsMd102Route: FormationsMd102Route,
-  FormationsMs4010Route: FormationsMs4010Route,
-  FormationsMs4017Route: FormationsMs4017Route,
   FormationsNetworkingEssentialsRoute: FormationsNetworkingEssentialsRoute,
   FormationsNotionsBaseReseauxRoute: FormationsNotionsBaseReseauxRoute,
   FormationsOperatingSystemBasicsRoute: FormationsOperatingSystemBasicsRoute,
-  FormationsPl300Route: FormationsPl300Route,
-  FormationsPl7002Route: FormationsPl7002Route,
-  FormationsPl7008Route: FormationsPl7008Route,
   FormationsPythonEssentials1Route: FormationsPythonEssentials1Route,
   FormationsPythonEssentials2Route: FormationsPythonEssentials2Route,
-  FormationsSc300Route: FormationsSc300Route,
-  FormationsSc401Route: FormationsSc401Route,
-  FormationsSc500Route: FormationsSc500Route,
-  FormationsSc900Route: FormationsSc900Route,
   FormationsSensibilisationNumeriqueRoute:
     FormationsSensibilisationNumeriqueRoute,
   FormationsSupportInformatiqueEssentielsRoute:

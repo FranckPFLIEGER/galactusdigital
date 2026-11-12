@@ -37,14 +37,6 @@ const articles = [
   },
   {
     date: 'Août 2026',
-    title: "Microsoft : MS-102 remplacé par AB-650 — notre catalogue est déjà aligné",
-    desc: "Le référentiel officiel Microsoft (poster certifications, juillet 2026) confirme plusieurs évolutions majeures. MS-102 est retiré le 31 octobre 2026 et remplacé par AB-650 — Administering Microsoft 365 and AI Services : un seul examen, sans prérequis de certification, avec un périmètre élargi à Copilot et à la gouvernance des services IA. Autre point de vigilance, souvent mal appliqué : MS-102 était de niveau expert et exigeait une certification associate, l'ordre correct est donc AB-900 → MD-102 → AB-650. Nous avons également mis à jour AZ-802 (examen unique remplaçant AZ-800 et AZ-801, certification renommée Windows Server Administrator Associate) et intégré la nouvelle certification SC-500 — Cloud and AI Security Engineer.",
-    tag: 'Veille',
-    link: '/formations',
-    linkLabel: 'Voir le catalogue Microsoft',
-  },
-  {
-    date: 'Août 2026',
     title: "Décret 2026-728 : publication au Journal officiel du nouveau référentiel qualité",
     desc: "Le décret n° 2026-728 du 1er août 2026, publié au Journal officiel du 4 août 2026 (NOR TRSD2619632D), actualise le Référentiel National Qualité : 33 indicateurs, 7 critères inchangés, entrée en vigueur le 1er novembre 2026. Les critères les plus touchés sont les critères 1, 2 et 6. GALACTUS Digital avait anticipé ces exigences dès juillet 2026 — procédure violences, harcèlement et discriminations (FQ-0-12), procédure de prévention et de traitement des ruptures de parcours (FQ-0-11), évaluation des enseignements (FQ-10b) — et a figé ces documents en kit qualité V2026.3 après la parution. Les CGV ont été complétées d'un article 12 bis consacré à la transparence de l'information et aux modalités de financement.",
     tag: 'Qualité',

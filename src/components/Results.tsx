@@ -22,7 +22,7 @@ export function Results() {
         <div className={`results-notice reveal${isVisible ? ' visible' : ''} delay-2`}>
           <p>
             <strong>Tous nos candidats présentés à un examen de certification officielle éditeur
-            (Cisco, Microsoft) l'ont obtenu.</strong> Année après année, ceux qui font le choix de passer la
+            (Cisco, Juniper) l'ont obtenu.</strong> Année après année, ceux qui font le choix de passer la
             certification la réussissent — zéro échec.
           </p>
         </div>

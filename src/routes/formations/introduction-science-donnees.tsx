@@ -114,7 +114,7 @@ const DATA = {
     organisme:  'Cisco Networking Academy',
     format:     '4 modules, 5 travaux pratiques, quiz et examen final',
     score:      'Selon barème Cisco Networking Academy',
-    note: 'Cours suivant recommandé : Data Analytics Essentials (30 h), puis PL-300 Power BI Data Analyst. Ce cours ouvre le Bloc 0 du parcours Data, IA & Copilot Microsoft.',
+    note: 'Cours suivant recommandé : Data Analytics Essentials (30 h).',
   },
 
   // Méthodes pédagogiques

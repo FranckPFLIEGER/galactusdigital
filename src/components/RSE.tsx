@@ -42,8 +42,8 @@ const pillars = [
     fc: "Fiche 23 — Vadémécum France Compétences 2026",
     badge: `Cœur de métier — ${FORMATIONS.length} formations certifiantes`,
     items: [
-      "100 % de notre catalogue est dédié à la montée en compétences numériques : réseaux, cybersécurité, cloud, IoT, IA, Python, automatisation — certifications mondiales Cisco et Microsoft",
-      "Accompagnement des entreprises ultramarines dans leur transformation numérique : de l'infrastructure réseau (CCNA) à l'intelligence artificielle (Copilot, AI-901)",
+      "100 % de notre catalogue est dédié à la montée en compétences numériques : réseaux, cybersécurité, cloud, IoT, IA, Python, automatisation — certifications mondiales Cisco et Juniper",
+      "Accompagnement des entreprises ultramarines dans leur transformation numérique : de l'infrastructure réseau (CCNA) à l'intelligence artificielle et à l'automatisation (DevNet, Python)",
       "Formations IoT et Big Data directement connectées aux enjeux de la transition numérique des territoires — smart cities, capteurs, données massives",
       "Cybersécurité au premier plan : CCNA Cybersecurity, Ethical Hacker, SC-900 — former des professionnels capables de sécuriser la transition numérique",
       "CCNA Automation : former les ingénieurs de l'automatisation réseau et de l'IA appliquée, compétence clé de la transformation IT des organisations ultramarines",

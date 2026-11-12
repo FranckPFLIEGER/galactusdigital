@@ -34,13 +34,13 @@ const TEL = '+33 7 81 07 47 46'
 // tient ET ce qui se donne en présentiel, pour qu'un visiteur ne demande pas une
 // session présentielle sur un cours qui n'existe qu'en e-learning tutoré.
 const PERIMETRE_PRESENTIEL = 'Interventions dans vos locaux (intra-entreprise) ou en salle retenue '
-  + 'pour la session (inter-entreprise) — uniquement le catalogue Microsoft, le CCNA v2.0 parcours '
+  + 'pour la session (inter-entreprise) — le CCNA v2.0 parcours '
   + 'complet et les CCNP ENCOR et ENARSI en présentiel.'
 // Dans la rubrique inter-entreprise, la session se tient en salle retenue : parler
 // des locaux du client y mélangeait les deux formats. Phrase dédiée, sans adresse,
 // identique pour les quatre territoires. Demandé le 29 octobre 2026.
 const PERIMETRE_INTER = 'Les formations en présentiel inter-entreprise se tiennent dans une salle '
-  + 'retenue pour la session — uniquement le catalogue Microsoft, le CCNA v2.0 parcours complet '
+  + 'retenue pour la session — le CCNA v2.0 parcours complet '
   + 'et les CCNP ENCOR et ENARSI.'
 // « en inter comme en intra » laissait le lecteur deviner ce qui va avec quoi.
 // Chaque format est désormais collé à son lieu. Demandé le 29 octobre 2026.
@@ -140,7 +140,7 @@ function PresentielPage() {
               {[
                 { icon: <Users size={24} color="white" />, title: 'Immersion totale', desc: "La formation en présentiel favorise la concentration, l'interaction directe avec le formateur et les échanges entre participants. Idéale pour les formations techniques avec ateliers pratiques intensifs." },
                 { icon: <CheckCircle size={24} color="white" />, title: 'Accompagnement direct', desc: "Le formateur adapte son rythme en temps réel selon le niveau du groupe. Les questions trouvent une réponse immédiate, les difficultés sont levées sur le moment." },
-                { icon: <Clock size={24} color="white" />, title: 'Efficacité pédagogique', desc: "Les ateliers pratiques sur équipements réels (simulateur Packet Tracer, environnements Microsoft) sont facilités en présentiel. Le taux de certification est maximum." },
+                { icon: <Clock size={24} color="white" />, title: 'Efficacité pédagogique', desc: "Les ateliers pratiques sur équipements réels (simulateur Packet Tracer, maquette Junos) sont facilités en présentiel. Le taux de certification est maximum." },
               ].map(a => (
                 <div key={a.title} style={{ border: '1px solid rgba(187,187,187,0.4)', borderTop: '3px solid var(--g-red)', padding: '2rem' }}>
                   <div style={{ width: '44px', height: '44px', background: 'var(--g-red)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: '1.25rem' }}>{a.icon}</div>
@@ -220,7 +220,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions planifiées au calendrier, ouvertes à plusieurs entreprises','Supports de cours officiels inclus','Accès à Microsoft Learn — Cisco Networking Academy pour le CCNA v2.0 complet','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Inscription possible jusqu'à une semaine avant le démarrage (art. 14 des CGV)"].map((item, i) => (
+                  {['Groupes de 4 à 12 participants maximum','Formateur certifié officiel éditeur','Programme officiel certifiant éditeur','Sessions planifiées au calendrier, ouvertes à plusieurs entreprises','Supports de cours officiels inclus','Accès à la plateforme officielle de l\'éditeur','Passage de la certification intégré','Attestation de formation et de présence','Éligible OPCO, aides régionales DOM',"Inscription possible jusqu'à une semaine avant le démarrage (art. 14 des CGV)"].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -309,7 +309,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'rgba(255,255,255,0.5)', marginBottom: '1rem' }}>Caractéristiques</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.65rem' }}>
-                  {['Groupes de 4 à 15 participants','Formateur certifié dédié à votre groupe','Programme entièrement personnalisé','Formation dans vos locaux ou en salle retenue pour la session','Supports de cours officiels éditeurs inclus','Accès à Microsoft Learn — Cisco Networking Academy pour le CCNA v2.0 complet','Passage de la certification intégré au programme','Attestation de formation et de présence','Financement via OPCO ou plan de développement des compétences'].map((item, i) => (
+                  {['Groupes de 4 à 15 participants','Formateur certifié dédié à votre groupe','Programme entièrement personnalisé','Formation dans vos locaux ou en salle retenue pour la session','Supports de cours officiels éditeurs inclus','Accès à la plateforme officielle de l\'éditeur','Passage de la certification intégré au programme','Attestation de formation et de présence','Financement via OPCO ou plan de développement des compétences'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.88rem', color: 'rgba(255,255,255,0.70)' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>
@@ -359,7 +359,7 @@ function PresentielPage() {
               <div>
                 <h3 style={{ fontFamily: 'var(--font-title)', fontSize: '0.90rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.06em', color: 'var(--g-black)', marginBottom: '1rem' }}>Ce que nous apportons</h3>
                 <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                  {['Supports de cours officiels éditeurs','Accès à la plateforme officielle de l\'éditeur — Microsoft Learn, ou Cisco Networking Academy pour le CCNA v2.0 complet','Simulateurs et environnements de test','Matériel pédagogique inclus','Attestation de formation et de présence','Convocation avec règlement intérieur','Passage de la certification éditeur intégré','Accompagnement post-formation si nécessaire'].map((item, i) => (
+                  {['Supports de cours officiels éditeurs','Accès à la plateforme officielle de l\'éditeur — Cisco Networking Academy pour le CCNA v2.0 complet','Simulateurs et environnements de test','Matériel pédagogique inclus','Attestation de formation et de présence','Convocation avec règlement intérieur','Passage de la certification éditeur intégré','Accompagnement post-formation si nécessaire'].map((item, i) => (
                     <li key={i} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.6rem', fontSize: '0.87rem', color: '#4a4a48' }}>
                       <CheckCircle size={16} color="#E41F26" style={{ flexShrink: 0, marginTop: '2px' }} />{item}
                     </li>

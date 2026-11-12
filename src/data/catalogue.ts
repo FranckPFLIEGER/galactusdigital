@@ -10,9 +10,13 @@
 //
 // MAJ septembre 2026 — CCNP Security retiré. Les formations
 // Cisco Networking Academy, sauf le CCNA v2.0 complet, sont proposées en
-// e-learning tutoré, à un tarif public. Le catalogue Microsoft n'est PAS
-// proposé en e-learning : ces formations restent en présentiel, sur devis,
-// leur coût dépendant du territoire et de la taille du groupe.
+// e-learning tutoré, à un tarif public.
+//
+// MAJ 12/11/2026 — le catalogue Microsoft (17 formations) est retiré. Ces
+// formations relevaient d'un formateur MCT tiers, exerçant pour son propre
+// compte : les présenter ici revenait à commercialiser l'offre d'un autre
+// organisme sous notre certificat Qualiopi, nos tarifs et notre convention.
+// Le catalogue ne porte plus que ce que l'organisme assure lui-même.
 //
 // MAJ 18 octobre 2026 — Le CCNP Cybersecurity (examens CBRCOR 350-201 et
 // CBRFIR 300-215, anciennement CyberOps Professional) est retiré du catalogue :
@@ -59,11 +63,10 @@
 // ─────────────────────────────────────────────────────────────────────────────
 
 // ─────────────────────────────────────────────────────────────────────────────
-// POSITIONNEMENT COMMERCIAL (octobre 2026) — trois axes, une modalité chacun
+// POSITIONNEMENT COMMERCIAL (MAJ 12/11/2026) — deux axes, une modalité chacun
 //
 //   1. Cisco Networking Academy  → E-learning tutoré EXCLUSIVEMENT, tarif public
-//   2. Microsoft                                → PRÉSENTIEL EXCLUSIVEMENT, sur devis
-//   3. Juniper (JNCIA-Junos)                    → FOAD EXCLUSIVEMENT, sur devis
+//   2. Juniper (JNCIA-Junos)                    → FOAD EXCLUSIVEMENT, sur devis
 //
 // Une seule exception : le CCNA v2.0 parcours complet (ccna-cisco) déclare les
 // deux modalités. L'e-learning est l'offre standard — le pack des 3 modules
@@ -82,7 +85,7 @@ export interface Formation {
   slug: string                 // route → /formations/{slug}
   titre: string                // Titre court affiché en navigation et catalogue
   titreLong: string            // Titre complet de la fiche
-  editeur: string              // Cisco Networking Academy | Microsoft | ...
+  editeur: string              // Cisco Networking Academy | Juniper Networks
   famille: string              // Sous-catégorie pour regroupement
   niveau: Niveau
   duree: string                // Ex: "70 heures"
@@ -134,20 +137,17 @@ export const FAMILLES: Record<string, { label: string; icon: string }> = {
   'Programmation':         { label: 'Programmation',          icon: 'Code'     },
   'IoT':                   { label: 'IoT & Objets Connectés', icon: 'Wifi'     },
   'Data & Analytics':      { label: 'Data & Analytics',       icon: 'BarChart2'},
-  'Azure & Cloud':         { label: 'Azure & Cloud',          icon: 'Cloud'    },
-  'Microsoft 365':         { label: 'Microsoft 365',          icon: 'Grid'     },
   'Juniper Junos':         { label: 'Juniper Junos',          icon: 'Router'   },
 }
 
 // ─── Éditeurs ─────────────────────────────────────────────────────────────────
 export const EDITEURS: Record<string, { label: string; badge?: string }> = {
   'Cisco Networking Academy': { label: 'Cisco Networking Academy', badge: 'Partenaire n° 3018982' },
-  'Microsoft':     { label: 'Microsoft',     badge: 'Partenaire Microsoft n° 4653557' },
   'Juniper Networks': { label: 'Juniper Networks', badge: 'Formateur réseau CCNP / CCDP — parcours JNCIA' },
 }
 
 // ─────────────────────────────────────────────────────────────────────────────
-// CATALOGUE PRINCIPAL — 49 formations
+// CATALOGUE PRINCIPAL — 32 formations
 // Le commentaire annonçait 51 : il datait d'avant le retrait de deux entrées et
 // contredisait le décompte réel, celui que publient les pages du site. Corrigé
 // le 29 octobre 2026 — à mettre à jour en même temps que FORMATIONS[].
@@ -627,214 +627,7 @@ export const FORMATIONS: Formation[] = [
     voucher: 0,
   },
 
-  // ── MICROSOFT — Azure & Cloud ─────────────────────────────────────────────
-  {
-    slug: 'az-900',
-    titre: 'AZ-900 Azure Fundamentals',
-    titreLong: 'Azure Fundamentals (AZ-900)',
-    editeur: 'Microsoft', famille: 'Azure & Cloud',
-    niveau: 'Fondamental', duree: '20 heures', dureeJours: 3,
-    certification: 'Microsoft Azure Fundamentals',
-    examCode: 'AZ-900',
-    modalites: ['Présentiel'],
-    description: 'IaaS, PaaS, SaaS, services Azure principaux, sécurité et tarification cloud.',
-    prix: { presentiel: 990, foad: null, elearning: null },
-  },
-  {
-    slug: 'az-104',
-    titre: 'AZ-104 Azure Administrator',
-    titreLong: 'Azure Administrator Associate (AZ-104)',
-    editeur: 'Microsoft', famille: 'Azure & Cloud',
-    niveau: 'Intermédiaire', duree: '40 heures', dureeJours: 5,
-    certification: 'Microsoft Azure Administrator Associate',
-    examCode: 'AZ-104',
-    modalites: ['Présentiel'],
-    description: 'Entra ID, stockage, VM, VNet, supervision et gouvernance Azure.',
-    prix: { presentiel: 1690, foad: null, elearning: null },
-  },
-  {
-    slug: 'sc-900',
-    titre: 'SC-900 Security Fundamentals',
-    titreLong: 'Security, Compliance and Identity Fundamentals (SC-900)',
-    editeur: 'Microsoft', famille: 'Azure & Cloud',
-    niveau: 'Fondamental', duree: '15 heures', dureeJours: 2,
-    certification: 'Microsoft Security, Compliance & Identity Fundamentals',
-    examCode: 'SC-900',
-    modalites: ['Présentiel'],
-    description: 'Zero Trust, Entra ID, Defender, Purview et conformité réglementaire Microsoft.',
-    prix: { presentiel: 990, foad: null, elearning: null },
-  },
-  {
-    slug: 'ai-901',
-    titre: 'AI-901 Azure AI Fundamentals',
-    titreLong: 'Azure AI Fundamentals (AI-901)',
-    editeur: 'Microsoft', famille: 'Azure & Cloud',
-    niveau: 'Fondamental', duree: '15 heures', dureeJours: 2,
-    certification: 'Microsoft Azure AI Fundamentals',
-    examCode: 'AI-901',
-    modalites: ['Présentiel'],
-    description: 'ML, vision, NLP, IA générative et Azure OpenAI Service (AI-901, remplace AI-900).',
-    prix: { presentiel: 990, foad: null, elearning: null },
-  },
-  {
-    slug: 'ab-900',
-    titre: 'AB-900 Microsoft 365 Copilot',
-    titreLong: 'Microsoft 365 Copilot & Agent Administration Fundamentals (AB-900)',
-    editeur: 'Microsoft', famille: 'Microsoft 365',
-    niveau: 'Fondamental', duree: '18 heures', dureeJours: 2,
-    certification: 'Microsoft Certified: Copilot and Agent Administration Fundamentals',
-    examCode: 'AB-900',
-    modalites: ['Présentiel'],
-    description: 'Fondamentaux Microsoft 365, Copilot et administration d\'agents IA, sécurité, conformité et gouvernance (AB-900, remplace MS-900).',
-    prix: { presentiel: 990, foad: null, elearning: null },
-  },
-  {
-    slug: 'pl-300',
-    titre: 'PL-300 Power BI Data Analyst',
-    titreLong: 'Microsoft Power BI Data Analyst Associate (PL-300)',
-    editeur: 'Microsoft', famille: 'Data & Analytics',
-    niveau: 'Intermédiaire', duree: '35 heures', dureeJours: 5,
-    certification: 'Microsoft Certified: Power BI Data Analyst Associate',
-    examCode: 'PL-300',
-    modalites: ['Présentiel'],
-    description: 'Power Query, modélisation en étoile, DAX, visualisations et déploiement sécurisé de rapports Power BI.',
-    prix: { presentiel: 1690, foad: null, elearning: null },
-  },
-  {
-    slug: 'md-102',
-    titre: 'MD-102 Endpoint Administrator',
-    titreLong: 'Microsoft 365 Certified: Endpoint Administrator Associate (MD-102)',
-    editeur: 'Microsoft', famille: 'Microsoft 365',
-    niveau: 'Intermédiaire', duree: '35 heures', dureeJours: 5,
-    certification: 'Microsoft 365 Certified: Endpoint Administrator Associate',
-    examCode: 'MD-102',
-    modalites: ['Présentiel'],
-    description: 'Intune, Windows Autopilot, conformité, Conditional Access, Defender for Endpoint et gestion des appareils à grande échelle.',
-    prix: { presentiel: 1690, foad: null, elearning: null },
-    prixPublic: true,
-  },
-  {
-    slug: 'ms-4010',
-    titre: 'MS-4010 Copilot Specialist',
-    titreLong: 'Microsoft 365 Copilot Specialist (MS-4010)',
-    editeur: 'Microsoft', famille: 'Microsoft 365',
-    niveau: 'Intermédiaire', duree: '21 heures', dureeJours: 3,
-    certification: 'Microsoft 365 Copilot Specialist',
-    examCode: 'MS-4010',
-    modalites: ['Présentiel'],
-    description: 'Déploiement, configuration, sécurité et adoption de Microsoft 365 Copilot en entreprise (Teams, SharePoint, DLP, gouvernance).',
-    prix: { presentiel: 1690, foad: null, elearning: null },
-  },
-  {
-    slug: 'az-802',
-    titre: 'AZ-802 Administer Windows Server',
-    titreLong: 'Administering Windows Server (AZ-802) — examen unique, remplace AZ-800 et AZ-801',
-    editeur: 'Microsoft', famille: 'Azure & Cloud',
-    niveau: 'Intermédiaire', duree: '35 heures', dureeJours: 5,
-    certification: 'Microsoft Certified — Windows Server Administrator Associate',
-    examCode: 'AZ-802',
-    modalites: ['Présentiel'],
-    description: 'Administration Windows Server hybride : identité, stockage, calcul, haute disponibilité, migration et reprise d activité.',
-    prix: { presentiel: 1690, foad: null, elearning: null },
-  },
-  {
-    slug: 'ab-650',
-    titre: 'AB-650 Microsoft 365 & AI Services',
-    titreLong: 'Administering Microsoft 365 and AI Services (AB-650)',
-    editeur: 'Microsoft', famille: 'Microsoft 365',
-    niveau: 'Intermédiaire', duree: '35 heures', dureeJours: 5,
-    certification: 'Microsoft 365 Certified — AI Services Administrator Associate',
-    examCode: 'AB-650',
-    modalites: ['Présentiel'],
-    description: 'Administration d un tenant Microsoft 365 et des services IA : identité Entra ID, Defender, Purview, Copilot et gouvernance des agents (AB-650, remplace MS-102 retiré le 31/10/2026).',
-    prix: { presentiel: 1690, foad: null, elearning: null },
-  },
-  {
-    slug: 'sc-300',
-    titre: 'SC-300 Identity & Access Administrator',
-    titreLong: 'Microsoft Identity and Access Administrator (SC-300)',
-    editeur: 'Microsoft', famille: 'Microsoft 365',
-    niveau: 'Intermédiaire', duree: '28 heures', dureeJours: 4,
-    certification: 'Microsoft Certified — Identity and Access Administrator Associate',
-    examCode: 'SC-300',
-    modalites: ['Présentiel'],
-    description: 'Gestion des identités et des accès avec Microsoft Entra ID : authentification, gouvernance, accès conditionnel et identités externes.',
-    prix: { presentiel: 1690, foad: null, elearning: null },
-  },
-  {
-    slug: 'sc-401',
-    titre: 'SC-401 Information Security Administrator',
-    titreLong: 'Administer Information Security in Microsoft 365 (SC-401)',
-    editeur: 'Microsoft', famille: 'Microsoft 365',
-    niveau: 'Intermédiaire', duree: '28 heures', dureeJours: 4,
-    certification: 'Microsoft Certified — Information Security Administrator Associate',
-    examCode: 'SC-401',
-    modalites: ['Présentiel'],
-    description: 'Protection des informations sensibles avec Microsoft Purview à l ère de l IA : étiquettes, DLP, chiffrement et gestion des risques internes.',
-    prix: { presentiel: 1690, foad: null, elearning: null },
-  },
-  {
-    slug: 'sc-500',
-    titre: 'SC-500 Cloud & AI Security Engineer',
-    titreLong: 'Cloud and AI Security Engineer (SC-500)',
-    editeur: 'Microsoft', famille: 'Microsoft 365',
-    niveau: 'Avancé', duree: '28 heures', dureeJours: 4,
-    certification: 'Microsoft Certified — Cloud and AI Security Engineer Associate',
-    examCode: 'SC-500',
-    modalites: ['Présentiel'],
-    description: 'Sécurisation des charges cloud et des services IA : Defender for Cloud, protection des workloads, sécurité des agents et de Copilot, gouvernance des données IA (nouvelle certification 2026).',
-    prix: { presentiel: 1890, foad: null, elearning: null },
-  },
-
-  {
-    slug: 'pl-7002',
-    titre: 'PL-7002 Power Automate',
-    titreLong: 'Applied Skills — Automatiser des processus avec Power Automate (PL-7002)',
-    editeur: 'Microsoft', famille: 'Microsoft 365',
-    niveau: 'Fondamental', duree: '7 heures', dureeJours: 1,
-    certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
-    examCode: 'PL-7002',
-    modalites: ['Présentiel'],
-    description: 'Créer et gérer des processus automatisés avec Power Automate : flux cloud, connecteurs, approbations et intégration Microsoft 365.',
-    prix: { presentiel: 890, foad: null, elearning: null },
-  },
-  {
-    slug: 'pl-7008',
-    titre: 'PL-7008 Copilot Studio',
-    titreLong: 'Applied Skills — Créer des agents avec Copilot Studio (PL-7008)',
-    editeur: 'Microsoft', famille: 'Microsoft 365',
-    niveau: 'Intermédiaire', duree: '7 heures', dureeJours: 1,
-    certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
-    examCode: 'PL-7008',
-    modalites: ['Présentiel'],
-    description: 'Créer des agents dans Microsoft Copilot Studio : sujets, actions, connaissances, déploiement et gouvernance des agents IA.',
-    prix: { presentiel: 890, foad: null, elearning: null },
-  },
-  {
-    slug: 'ms-4017',
-    titre: 'MS-4017 Étendre Microsoft 365 Copilot',
-    titreLong: 'Applied Skills — Gérer et étendre Microsoft 365 Copilot (MS-4017)',
-    editeur: 'Microsoft', famille: 'Microsoft 365',
-    niveau: 'Intermédiaire', duree: '7 heures', dureeJours: 1,
-    certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
-    examCode: 'MS-4017',
-    modalites: ['Présentiel'],
-    description: 'Gérer et étendre Microsoft 365 Copilot : agents déclaratifs, connecteurs Graph, extensibilité et personnalisation.',
-    prix: { presentiel: 890, foad: null, elearning: null },
-  },
-  {
-    slug: 'az-1008',
-    titre: 'AZ-1008 Active Directory DS',
-    titreLong: 'Applied Skills — Administrer Active Directory Domain Services (AZ-1008)',
-    editeur: 'Microsoft', famille: 'Azure & Cloud',
-    niveau: 'Intermédiaire', duree: '7 heures', dureeJours: 1,
-    certification: 'Microsoft Applied Skills (évaluation en lab Microsoft Learn)',
-    examCode: 'AZ-1008',
-    modalites: ['Présentiel'],
-    description: 'Administrer Active Directory Domain Services : domaines, OU, GPO, réplication et sécurisation de l annuaire.',
-    prix: { presentiel: 890, foad: null, elearning: null },
-  },
-  // ── Juniper Networks ───────────────────────────────────────────────────────
+// ── Juniper Networks ───────────────────────────────────────────────────────
   // MAJ octobre 2026 — ouverture du catalogue Juniper. Certification éditeur,
   // non enregistrée au RNCP ni au Répertoire spécifique : non éligible au CPF.
   {
@@ -950,7 +743,7 @@ export function getTarifsModalites(f: Formation): TarifModalite[] {
  * certificat de fin de cours de l'éditeur (confirmé le 24/10/2026) : la règle
  * est uniforme, sans exception par niveau.
  *
- * Les cours Microsoft et Juniper ne délivrent aucune sanction d'éditeur du
+ * Les cours Juniper ne délivrent aucune sanction d'éditeur du
  * seul fait de les suivre : la certification s'obtient en passant l'examen.
  * Le cours est sanctionné par l'attestation de formation de l'organisme.
  */
@@ -969,7 +762,7 @@ export function getSanction(f: Formation): string {
 
 /**
  * Forme courte pour les listes denses (cartes du catalogue, méga-menu).
- * Le nom complet d'une certification Microsoft fait jusqu'à soixante
+ * Le nom complet d'une certification éditeur fait jusqu'à soixante
  * caractères : il déborde d'une pastille de carte. Comme le code d'examen est
  * déjà affiché juste à côté, la pastille porte l'information que l'acheteur
  * cherche vraiment — la certification est-elle comprise ou non.
@@ -1000,10 +793,9 @@ export function getMentionCertification(f: Formation): string {
   // « certification en option » alors que sa fiche annonce l'inverse.
   const aucunPrixPublie = !f.prix || (!f.prix.presentiel && !f.prix.foad && !f.prix.elearning)
   if (aucunPrixPublie) return 'Certification officielle comprise dans le devis'
-  // Microsoft : le voucher n'est PAS compris (décision du 28 octobre 2026). Les
-  // prix par niveau rémunèrent la formation seule ; le candidat acquiert son
-  // voucher Pearson VUE séparément. Les 10 fiches qui annonçaient l'inverse ont
-  // été corrigées le même jour — si l'une le réaffirme, c'est elle qui a tort.
+  // Le voucher n'est compris dans aucun tarif (décision du 31 octobre 2026) :
+  // les prix rémunèrent la formation seule et le candidat acquiert son voucher
+  // Pearson VUE séparément. Si une fiche affirme l'inverse, c'est elle qui a tort.
   return 'Certification officielle en option — examen Pearson VUE non compris'
 }
 

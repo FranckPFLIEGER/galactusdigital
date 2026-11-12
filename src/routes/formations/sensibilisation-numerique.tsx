@@ -129,7 +129,7 @@ const DATA = {
     organisme:  'Cisco Networking Academy',
     format:     'Quiz de module et examen final en ligne',
     score:      'Selon barème Cisco Networking Academy',
-    note: 'Cours suivant recommandé : Utilisation d\'ordinateurs et d\'équipements mobiles, puis Les bases du matériel informatique. Ce cours ouvre le Bloc 0 des parcours Réseaux, Automatisation, Cloud Azure, Modern Workplace et Data & IA.',
+    note: 'Cours suivant recommandé : Utilisation d\'ordinateurs et d\'équipements mobiles, puis Les bases du matériel informatique. Ce cours ouvre le Bloc 0 des parcours Réseaux & Infrastructure et Automatisation & IA réseau.',
   },
 
   // Méthodes pédagogiques

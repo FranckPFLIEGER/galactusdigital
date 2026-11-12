@@ -72,12 +72,6 @@ const DEBOUCHES_FAMILLE: Record<string, string[]> = {
   'Data & Analytics': [
     'Data analyst junior', 'Référent reporting et tableaux de bord',
   ],
-  'Azure & Cloud': [
-    'Administrateur cloud Azure', 'Administrateur systèmes', 'Ingénieur infrastructure',
-  ],
-  'Microsoft 365': [
-    'Administrateur Microsoft 365', 'Endpoint administrator', 'Référent collaboratif et Copilot',
-  ],
   'Juniper Junos': [
     'Technicien réseau opérateur', 'Administrateur réseau Junos', 'Ingénieur support opérateur',
   ],

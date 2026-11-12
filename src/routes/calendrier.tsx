@@ -151,7 +151,7 @@ function GanttView() {
           const formsFamille = FORMATIONS.filter(f => f.famille === famKey
             && (f.modalites.includes('Présentiel') || f.modalites.includes('FOAD')))
           const hasPlanned = formsFamille.some(f => prepBySlug[f.slug])
-          const editeurColor = formsFamille[0]?.editeur === 'Microsoft' ? '#1D1D1B' : '#E41F26'
+          const editeurColor = '#E41F26'
           return (
             <div key={famKey} style={{ display: 'grid', gridTemplateColumns: '180px 1fr', marginBottom: '3px', alignItems: 'center', minHeight: '32px' }}>
               {/* Label famille */}
@@ -219,7 +219,7 @@ function Pill({ label, actif, onClick }: { label: string; actif: boolean; onClic
 function SessionRow({ s, prep = false }: { s: Session; prep?: boolean }) {
   const mc = MC[s.modalite] || { bg: '#888', color: '#fff' }
   const nc = NC[s.formation.niveau] || '#888'
-  const editeurColor = s.formation.editeur === 'Microsoft' ? '#1D1D1B' : '#E41F26'
+  const editeurColor = '#E41F26'
   return (
     <div className="session-row"
       style={{ border: prep ? '1px solid rgba(239,159,39,0.35)' : '1px solid rgba(187,187,187,0.28)', borderLeft: `3px solid ${prep ? '#EF9F27' : nc}`, padding: '1.2rem 1.5rem', background: prep ? 'rgba(239,159,39,0.04)' : 'var(--g-white)', transition: 'box-shadow 0.15s' }}
@@ -362,7 +362,7 @@ function CalendrierPage() {
                 une session qui n'existera jamais. */}
             <p style={{ fontSize: '0.92rem', color: 'rgba(255,255,255,0.55)', maxWidth: '680px', lineHeight: 1.8, marginBottom: '1.75rem' }}>
               Le calendrier porte sur le <strong style={{ color: 'rgba(255,255,255,0.80)' }}>présentiel</strong> — catalogue
-              Microsoft, CCNA v2.0 parcours complet, CCNP Enterprise ENCOR et ENARSI, en inter
+              CCNA v2.0 parcours complet, CCNP Enterprise ENCOR et ENARSI, en inter
               comme en intra — et sur la <strong style={{ color: 'rgba(255,255,255,0.80)' }}>FOAD Juniper</strong>.
               L'<strong style={{ color: 'rgba(255,255,255,0.80)' }}>e-learning tutoré</strong> n'a pas de session :
               le parcours démarre 72 h après la validation administrative de votre inscription,
@@ -437,7 +437,7 @@ function CalendrierPage() {
                     {[
                       { label: 'Modalité',   vals: ['Toutes','Présentiel','FOAD'], state: fModalite, set: setFModalite },
                       { label: 'Territoire', vals: ['Tous','Martinique','Guadeloupe','Tous territoires'], state: fTerritoire, set: setFTerritoire, labels: {'Tous territoires':'FOAD / Partout'} },
-                      { label: 'Éditeur',    vals: ['Tous','Cisco Networking Academy','Microsoft','Juniper Networks'], state: fEditeur, set: setFEditeur },
+                      { label: 'Éditeur',    vals: ['Tous','Cisco Networking Academy','Juniper Networks'], state: fEditeur, set: setFEditeur },
                       { label: 'Famille',    vals: familles, state: fFamille, set: setFFamille },
                     ].map(row => (
                       <div key={row.label} style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
@@ -499,7 +499,7 @@ function CalendrierPage() {
             <h2 className="section-h2-light">Vous ne trouvez pas la session souhaitée ?</h2>
             <div className="g-rule" />
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill,minmax(260px,1fr))', gap: '1.5rem' }}>
-              {[ {titre:'Présentiel',desc:"Catalogue Microsoft — en inter-entreprises (sessions planifiées au calendrier) ou en intra sur mesure, dans vos locaux.",href:'/presentiel',cta:'En savoir plus'}, {titre:'FOAD — Juniper',desc:"Le parcours Juniper JNCIA-Junos en sessions live sur WEBEX, depuis n'importe quel territoire.",href:'/foad',cta:'En savoir plus'}, {titre:'E-learning tutoré',desc:'Catalogue Cisco Networking Academy — avancez à votre rythme avec un tuteur certifié, accès plateforme un an.',href:'/elearning',cta:'En savoir plus'} ].map(b => (
+              {[ {titre:'Présentiel',desc:"En inter-entreprises (sessions planifiées au calendrier) ou en intra sur mesure, dans vos locaux.",href:'/presentiel',cta:'En savoir plus'}, {titre:'FOAD — Juniper',desc:"Le parcours Juniper JNCIA-Junos en sessions live sur WEBEX, depuis n'importe quel territoire.",href:'/foad',cta:'En savoir plus'}, {titre:'E-learning tutoré',desc:'Catalogue Cisco Networking Academy — avancez à votre rythme avec un tuteur certifié, accès plateforme un an.',href:'/elearning',cta:'En savoir plus'} ].map(b => (
                 /* Les trois descriptions n'ont pas la même longueur : sans flex,
                    les boutons « En savoir plus » se décalaient d'une carte à l'autre. */
                 <div key={b.titre} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.06)', borderTop: '3px solid var(--g-red)', padding: '2rem', display: 'flex', flexDirection: 'column' }}>

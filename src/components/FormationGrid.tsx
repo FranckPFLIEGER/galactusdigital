@@ -11,8 +11,6 @@ const FC: Record<string, string> = {
   'Programmation':       '#E41F26',
   'IoT':                 '#E41F26',
   'Data & Analytics':    '#E41F26',
-  'Azure & Cloud':       '#E41F26',
-  'Microsoft 365':       '#E41F26',
 }
 const NC: Record<string, string> = {
   'Fondamental':   '#BBBBBB',

@@ -114,7 +114,7 @@ const DATA = {
     organisme:  'Cisco Networking Academy',
     format:     'Quiz de module, exercices interactifs et examen final',
     score:      'Selon barème Cisco Networking Academy',
-    note: 'Cours suivant recommandé : Les bases du matériel informatique, puis Operating System Basics. Ce cours ouvre le Bloc 0 des parcours Support & Helpdesk et Modern Workplace Microsoft 365.',
+    note: 'Cours suivant recommandé : Les bases du matériel informatique, puis Operating System Basics. Ce cours ouvre le Bloc 0 du parcours Support informatique & Helpdesk.',
   },
 
   // Méthodes pédagogiques

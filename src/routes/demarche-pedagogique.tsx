@@ -7,7 +7,7 @@ export const Route = createFileRoute('/demarche-pedagogique')({
   head: () => ({
     meta: [
       { title: 'Notre démarche pédagogique — GALACTUS Digital' },
-      { name: 'description', content: 'Ingénierie pédagogique basée sur les programmes officiels Cisco, Microsoft et Juniper. Objectifs opérationnels, suivi individualisé.' },
+      { name: 'description', content: 'Ingénierie pédagogique basée sur les programmes officiels Cisco et Juniper. Objectifs opérationnels, suivi individualisé.' },
       { property: 'og:title', content: 'Notre démarche pédagogique — GALACTUS Digital' },
       { property: 'og:url', content: 'https://galactusdigital.com/demarche-pedagogique' },
     ],
@@ -41,7 +41,7 @@ function DemarchePedagogiquePage() {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit,minmax(300px,1fr))', gap: '3rem', alignItems: 'start' }}>
               <div>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
-                  Notre ingénierie pédagogique s'appuie sur les programmes officiels des éditeurs IT (Cisco Networking Academy, Microsoft, Juniper Networks) et une approche par compétences, vérifiée à chaque étape du parcours.
+                  Notre ingénierie pédagogique s'appuie sur les programmes officiels des éditeurs IT (Cisco Networking Academy, Juniper Networks) et une approche par compétences, vérifiée à chaque étape du parcours.
                 </p>
                 <p style={{ fontSize: '0.95rem', lineHeight: 1.8, color: '#4a4a48', marginBottom: '1.5rem' }}>
                   Chaque formation est conçue sur mesure en fonction des besoins identifiés lors de l'analyse préalable, avec des objectifs pédagogiques définis sous forme de verbes d'action et une progression logique des acquis.
@@ -56,7 +56,7 @@ function DemarchePedagogiquePage() {
               <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
                 {[
                   { icon: <Target size={20} color="white" />, title: 'Objectifs opérationnels', desc: "Définis sous forme de verbes d'action, alignés sur les besoins de l'apprenant et vérifiés tout au long du parcours." },
-                  { icon: <BookOpen size={20} color="white" />, title: 'Contenus officiels éditeurs', desc: 'Programmes alignés sur les référentiels exacts des éditeurs, sans intermédiaire. Supports officiels Cisco Networking Academy, Microsoft et Juniper.' },
+                  { icon: <BookOpen size={20} color="white" />, title: 'Contenus officiels éditeurs', desc: 'Programmes alignés sur les référentiels exacts des éditeurs, sans intermédiaire. Supports officiels Cisco Networking Academy et Juniper Networks.' },
                   { icon: <CheckCircle size={20} color="white" />, title: 'Évaluation continue', desc: "QCM, ateliers pratiques et mises en situation à chaque module pour vérifier l'acquisition des compétences." },
                   { icon: <Award size={20} color="white" />, title: 'Certification officielle', desc: "Chaque cours délivre le badge et le certificat de l'éditeur. L'examen de certification de l'éditeur est proposé en option sur l'ensemble du catalogue : lorsqu'il existe un examen surveillé Pearson VUE — CCNA v2.0 parcours complet, les deux parcours CCNP Enterprise, CCNA Cybersecurity et CCNA Automation — le voucher est ajouté au devis sur demande. 100 % de réussite parmi les candidats présentés sur 2023-2025." },
                 ].map(item => (

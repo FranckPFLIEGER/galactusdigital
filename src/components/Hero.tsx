@@ -3,7 +3,7 @@ import { ArrowRight, Award, Cloud, Globe, Network, Terminal } from 'lucide-react
 const floatingBadges = [
   {
     cls: 'badge-a',
-    label: 'Microsoft Azure',
+    label: 'Cybersécurité',
     sub: 'AZ-900 · AZ-104 · PL-300 · MS-4010',
     Icon: Cloud,
   },
@@ -45,7 +45,7 @@ export function Hero() {
           <p className="hero-desc" style={{ animation: 'fadeUp 0.7s ease-out 0.24s both' }}>
             Grâce à notre réseau d'experts internationaux et notre maîtrise de l'ingénierie
             de formation certifiante, nous proposons les certifications officielles{' '}
-            <strong style={{ color: '#fff' }}>Cisco, Microsoft et Juniper</strong>
+            <strong style={{ color: '#fff' }}>Cisco et Juniper</strong>
             {' — en e-learning tutoré, en FOAD ou en présentiel —'}
             {' pour vous accompagner vers des certifications reconnues dans plus de 170 pays. Badge et certificat de l\'éditeur compris ; examen de certification en option, le voucher Pearson VUE étant ajouté au devis sur demande.'}
           </p>

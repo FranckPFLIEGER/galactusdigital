@@ -37,48 +37,6 @@
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://galactusdigital.com/formations/ab-650</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/ab-900</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/ai-901</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/az-1008</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/az-104</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/az-802</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/az-900</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://galactusdigital.com/formations/bases-materiel-informatique</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -223,24 +181,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://galactusdigital.com/formations/md-102</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/ms-4010</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/ms-4017</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://galactusdigital.com/formations/networking-essentials</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -259,24 +199,6 @@
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://galactusdigital.com/formations/pl-300</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/pl-7002</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/pl-7008</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://galactusdigital.com/formations/python-essentials-1</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
@@ -284,30 +206,6 @@
   </url>
   <url>
     <loc>https://galactusdigital.com/formations/python-essentials-2</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/sc-300</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/sc-401</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/sc-500</loc>
-    <lastmod>2026-11-07</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
-    <loc>https://galactusdigital.com/formations/sc-900</loc>
     <lastmod>2026-11-07</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>

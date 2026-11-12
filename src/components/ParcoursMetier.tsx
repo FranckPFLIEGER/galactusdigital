@@ -4,6 +4,11 @@ import { PARCOURS, heuresParcours, heuresSocle } from "../data/parcours"
 import type { Parcours, BlocParcours } from "../data/parcours"
 
 // ─────────────────────────────────────────────────────────────────────────────
+const NOMBRE_EN_LETTRES: Record<number, string> = {
+  1: 'Une', 2: 'Deux', 3: 'Trois', 4: 'Quatre', 5: 'Cinq',
+  6: 'Six', 7: 'Sept', 8: 'Huit', 9: 'Neuf', 10: 'Dix',
+}
+
 // ParcoursMetier — section « Huit trajectoires, une seule porte d'entrée »
 // Remplace le bloc « Sept trajectoires certifiantes » de routes/formations/index.tsx
 // ─────────────────────────────────────────────────────────────────────────────
@@ -100,8 +105,8 @@ function CarteParcours({ p }: { p: Parcours }) {
       <p style={{ fontSize: ".85rem", color: "#5a5a58", lineHeight: 1.6, margin: "0 0 .85rem" }}>{p.pitch}</p>
 
       <div style={{ display: "flex", gap: ".4rem", flexWrap: "wrap", marginBottom: "1rem" }}>
-        <span style={{ fontFamily: "var(--font-title)", fontSize: ".58rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: "#fff", background: "#E41F26", padding: ".18rem .5rem" }}>
-          Entrée sans prérequis
+        <span style={{ fontFamily: "var(--font-title)", fontSize: ".58rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: "#fff", background: p.accesLibre === false ? "var(--g-black)" : "#E41F26", padding: ".18rem .5rem" }}>
+          {p.accesLibre === false ? (p.conditionEntree ?? "Conditions d'entrée") : "Entrée sans prérequis"}
         </span>
         <span style={{ fontFamily: "var(--font-title)", fontSize: ".58rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: "#777", background: "#fff", border: "1px solid rgba(187,187,187,.45)", padding: ".18rem .5rem" }}>
           {socle} h de socle
@@ -149,7 +154,7 @@ export function ParcoursMetier() {
           Parcours métier
         </span>
         <h2 style={{ fontFamily: "var(--font-title)", fontSize: "clamp(1.4rem,2.2vw,2rem)", fontWeight: 700, color: "var(--g-black)", textTransform: "uppercase", letterSpacing: ".04em", marginBottom: ".75rem" }}>
-          Huit trajectoires, une seule porte d'entrée
+          {NOMBRE_EN_LETTRES[PARCOURS.length] ?? PARCOURS.length} trajectoires, une seule porte d'entrée
         </h2>
         <p style={{ fontSize: ".95rem", color: "#5a5a58", maxWidth: "820px", lineHeight: 1.75, marginBottom: "2.5rem" }}>
           Chaque parcours démarre par un <strong style={{ color: "var(--g-black)" }}>Bloc&nbsp;0 sans aucun prérequis</strong>. Vous n'avez jamais travaillé dans l'informatique&nbsp;? C'est exactement le point de départ prévu. Les personnes déjà techniques entrent directement au Bloc&nbsp;1 après un test de positionnement.

@@ -110,6 +110,8 @@ export interface Formation {
   prixPublic?: boolean
   /** true = le tarif e-learning tutoré est affiché publiquement */
   prixPublicElearning?: boolean
+  /** Vrai quand le tarif FOAD est un tarif catalogue, affichable tel quel */
+  prixPublicFoad?: boolean
   /** Coût du titre officiel compris dans le prix e-learning (€, 0 = certificat éditeur sans examen surveillé) */
   /** Montant indicatif de l'OPTION voucher d'examen surveillé Pearson VUE.
    *  RÈGLE depuis le 31/10/2026 : le voucher n'est compris dans aucun tarif.
@@ -717,6 +719,7 @@ export const FORMATIONS: Formation[] = [
     description: 'Le parcours technique complet de Cisco sur l\'IA générative appliquée au travail d\'ingénieur : écosystème et outillage, ingénierie de prompt pour la précision technique, sécurité et confidentialité, correction des sorties de modèle, recherche et synthèse assistées, ingénierie logicielle et données, personnalisation de modèles et agents. Prépare à l\'examen Cisco 810-110. Cours et examen dispensés en anglais.',
     prix: { presentiel: null, foad: 690, elearning: null },
     prixPublicElearning: false,
+    prixPublicFoad: true,
     voucher: 150,
     socle: false,
   },
@@ -815,6 +818,10 @@ export function getTarifsModalites(f: Formation): TarifModalite[] {
     let v: number | null | undefined
     if (m === 'E-learning')      v = f.prixPublicElearning ? f.prix?.elearning : undefined
     else if (m === 'Présentiel') v = f.prixPublic ? f.prix?.presentiel : undefined
+    // La FOAD était systématiquement « Sur devis ». C'est juste pour JNCIA-Junos,
+    // dont le tarif dépend du volume, mais faux pour une FOAD à tarif catalogue :
+    // l'indicateur 1 du RNQ impose alors d'afficher le prix. 12/11/2026.
+    else if (m === 'FOAD')       v = f.prixPublicFoad ? f.prix?.foad : undefined
     else                         v = undefined
     return {
       modalite: m,

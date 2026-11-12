@@ -54,6 +54,15 @@ export interface Parcours {
   entree: string
   blocs: BlocParcours[]
   debouche: string
+  /**
+   * Faux lorsque le parcours n'est PAS ouvert à tous : une compétence ou une
+   * expérience est exigée à l'entrée, et le bandeau « Entrée sans prérequis »
+   * serait alors un mensonge commercial. Dans ce cas, remplacer par la
+   * condition réelle, en un mot ou deux, dans `conditionEntree`. 12/11/2026.
+   */
+  accesLibre?: boolean
+  /** Condition affichée à la place du bandeau quand accesLibre vaut false */
+  conditionEntree?: string
 }
 
 export const PARCOURS: Parcours[] = [
@@ -285,6 +294,8 @@ export const PARCOURS: Parcours[] = [
   },
   {
     id: 'ai-technical-practitioner',
+    accesLibre: false,
+    conditionEntree: 'Anglais requis — professionnels en poste',
     titre: 'AI Technical Practitioner',
     couleur: '#1D1D1B',
     pitch: 'La voie certifiante de Cisco sur l\'IA générative appliquée au travail d\'ingénieur.',

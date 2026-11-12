@@ -3,10 +3,9 @@
 # Sans ce fichier, un build local fait apparaître environ 12 700 fichiers dans
 # GitHub Desktop et le moindre `git add -A` les embarque. Posé le 10/11/2026.
 #
-# ATTENTION : dist/ était versionné jusqu'ici. Après avoir ajouté ce fichier,
-# lancer une fois, à la racine du dépôt :
-#     git rm -r --cached dist
-# sans quoi dist/ reste suivi malgré l'exclusion.
+# Le dépôt est propre : ni dist/ ni node_modules/ n'y ont jamais été versionnés.
+# Ce fichier est donc purement préventif — rien n'est retiré du dépôt en
+# l'ajoutant, et aucune commande n'est à lancer après.
 
 # Dépendances
 node_modules/

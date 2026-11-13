@@ -54,13 +54,18 @@ export function SchemaCours({ slug }: { slug: string }) {
         ? f.prix.foad
         : null
 
+  // Langue réellement dispensée. Trois cours Cisco du catalogue IA n'existent
+  // qu'en anglais : annoncer « fr » contredirait leur propre fiche, qui le dit
+  // dans ses prérequis.
+  const langue = f.langue ?? 'fr'
+
   const schema: Record<string, unknown> = {
     '@context': 'https://schema.org',
     '@type': 'Course',
     name: f.titre,
     description: f.description,
     url: `https://galactusdigital.com/formations/${f.slug}`,
-    inLanguage: 'fr',
+    inLanguage: langue,
     provider: ORGANISME,
     educationalLevel: f.niveau,
     teaches: f.titreLong,
@@ -68,7 +73,7 @@ export function SchemaCours({ slug }: { slug: string }) {
       '@type': 'CourseInstance',
       courseMode: modeDeCours(f.modalites),
       courseWorkload: dureeIso(f.duree),
-      inLanguage: 'fr',
+      inLanguage: langue,
       location: {
         '@type': 'VirtualLocation',
         url: `https://galactusdigital.com/formations/${f.slug}`,

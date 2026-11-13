@@ -110,6 +110,18 @@ export interface Formation {
   prixPublic?: boolean
   /** true = le tarif e-learning tutoré est affiché publiquement */
   prixPublicElearning?: boolean
+  /**
+   * Langue dans laquelle l'éditeur dispense le cours sur sa plateforme.
+   * Absent = français. Relevé le 12/11/2026 dans la console instructeur
+   * NetAcad et sur netacad.com, cours par cours.
+   *
+   * Sert à deux choses, et les deux comptent : la fiche l'annonce dans ses
+   * prérequis, et `SchemaCours` le déclare aux moteurs. Une donnée structurée
+   * qui annoncerait « fr » sur un cours dispensé en anglais contredirait le
+   * contenu visible de la page — c'est précisément ce que les moteurs
+   * sanctionnent, et ce serait une information trompeuse pour un apprenant.
+   */
+  langue?: 'fr' | 'en'
   /** Vrai quand le tarif FOAD est un tarif catalogue, affichable tel quel */
   prixPublicFoad?: boolean
   /** Coût du titre officiel compris dans le prix e-learning (€, 0 = certificat éditeur sans examen surveillé) */
@@ -708,6 +720,7 @@ export const FORMATIONS: Formation[] = [
     prix: { presentiel: null, foad: null, elearning: 440 },
     prixPublicElearning: true,
     voucher: 0,
+    langue: 'en',
     socle: false,
   },
   {
@@ -726,6 +739,7 @@ export const FORMATIONS: Formation[] = [
     prixPublicElearning: false,
     prixPublicFoad: true,
     voucher: 150,
+    langue: 'en',
     socle: false,
   },
   {
@@ -743,6 +757,7 @@ export const FORMATIONS: Formation[] = [
     prix: { presentiel: null, foad: null, elearning: 180 },
     prixPublicElearning: true,
     voucher: 0,
+    langue: 'en',
     socle: false,
   },
 

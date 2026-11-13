@@ -121,6 +121,33 @@ function RgpdPage() {
                     + "pièces nécessaires à l'examen du litige sont transmises à CM2C.",
                 },
                 {
+                  // Ajouté le 13/11/2026. Ce traitement existait dans les faits
+                  // depuis la mise en ligne de /temoignages : une apprenante y
+                  // est nommée, avec son accord écrit du 24/10/2026. Il n'était
+                  // déclaré nulle part — ni ici, ni au registre. La publication
+                  // de la section d'aperçu sur l'accueil, le 13/11/2026, a rendu
+                  // l'omission intenable : la même parole est désormais lue sur
+                  // deux pages.
+                  //
+                  // Le consentement est la SEULE base possible ici. Pas
+                  // d'intérêt légitime : publier le nom d'une personne pour
+                  // promouvoir un organisme ne relève d'aucune nécessité, et
+                  // l'intéressée doit pouvoir retirer sa parole sans se
+                  // justifier. Les deux parcours non consentis ne portent ni
+                  // nom ni initiales, et c'est pour cette raison.
+                  titre: 'Publication de témoignages et de parcours de reconversion',
+                  base: 'Consentement (article 6.1.a du RGPD), recueilli par écrit, texte lu avant publication',
+                  donnees: "Prénom et initiale du nom, employeur, métier quitté et métier exercé, parcours de "
+                    + "formation, citation reprise mot pour mot. Pour les lettres de recommandation : initiales, "
+                    + "fonction, employeur et territoire du signataire. Aucune photographie.",
+                  duree: "Jusqu'au retrait du consentement. L'accord écrit et toute rectification demandée par "
+                    + "l'intéressée sont conservés au dossier pendant 5 ans après le retrait, à seule fin de "
+                    + "prouver que la publication était régulière.",
+                  dest: "Publication sur galactusdigital.com, donc accessible à tous. Un accord donné à un "
+                    + "éditeur pour ses propres supports ne vaut pas pour cette publication : finalité "
+                    + "différente, responsable de traitement différent, accord recueilli à part.",
+                },
+                {
                   titre: 'Données de satisfaction et d\'amélioration continue',
                   base: 'Intérêt légitime',
                   donnees: 'Appréciations de formation, notes de satisfaction, commentaires qualitatifs.',

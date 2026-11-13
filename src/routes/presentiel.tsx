@@ -33,15 +33,29 @@ const TEL = '+33 7 81 07 47 46'
 // La phrase de périmètre, dans les termes de Franck : elle dit où la formation se
 // tient ET ce qui se donne en présentiel, pour qu'un visiteur ne demande pas une
 // session présentielle sur un cours qui n'existe qu'en e-learning tutoré.
+//
+// MAJ 13/11/2026 — ces deux phrases étaient écrites en dur et citaient trois
+// formations. Le catalogue en compte désormais quatre en présentiel : AITECH
+// s'y est ajouté le 12/11, la grille plus bas l'affichait, et le texte au-dessus
+// l'ignorait. La page se contredisait. Même cause que le bandeau du Header, même
+// correction : la liste se calcule depuis le catalogue, elle ne s'écrit plus.
+const titresPresentiel = (): string =>
+  listeFrancaise(getFormationsParModalite('Présentiel').map(f => f.titre))
+
+/** « a, b et c » — énumération française, sans virgule devant le dernier terme. */
+function listeFrancaise(items: string[]): string {
+  if (items.length === 0) return ''
+  if (items.length === 1) return items[0]
+  return items.slice(0, -1).join(', ') + ' et ' + items[items.length - 1]
+}
+
 const PERIMETRE_PRESENTIEL = 'Interventions dans vos locaux (intra-entreprise) ou en salle retenue '
-  + 'pour la session (inter-entreprise) — le CCNA v2.0 parcours '
-  + 'complet et les CCNP ENCOR et ENARSI en présentiel.'
+  + 'pour la session (inter-entreprise) — ' + titresPresentiel() + ' en présentiel.'
 // Dans la rubrique inter-entreprise, la session se tient en salle retenue : parler
 // des locaux du client y mélangeait les deux formats. Phrase dédiée, sans adresse,
 // identique pour les quatre territoires. Demandé le 29 octobre 2026.
 const PERIMETRE_INTER = 'Les formations en présentiel inter-entreprise se tiennent dans une salle '
-  + 'retenue pour la session — le CCNA v2.0 parcours complet '
-  + 'et les CCNP ENCOR et ENARSI.'
+  + 'retenue pour la session — ' + titresPresentiel() + '.'
 // « en inter comme en intra » laissait le lecteur deviner ce qui va avec quoi.
 // Chaque format est désormais collé à son lieu. Demandé le 29 octobre 2026.
 const DESC_COMMUNE = 'Interventions dans vos locaux (intra-entreprise) ou en salle retenue pour la session (inter-entreprise).'

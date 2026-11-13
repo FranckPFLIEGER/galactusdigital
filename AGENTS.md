@@ -29,6 +29,7 @@ src/
     sessions.ts           # Sessions programmées au calendrier
     resultats.ts          # Indicateurs Qualiopi publiés (formés, réussite, satisfaction)
     infoCertifiante.ts    # Passerelles, équivalences, blocs de compétences par formation
+    temoignages.ts        # Paroles consenties — AUCUN verbatim ailleurs que dans ce fichier
   routes/                 # Routing par fichiers (TanStack Router)
     __root.tsx            # Shell HTML, meta SEO, JSON-LD
     index.tsx             # Accueil
@@ -37,6 +38,7 @@ src/
     ...                   # Pages légales, modalités, qualité
   components/             # Header, Footer, et sections de l'accueil
     SchemaCours.tsx       # JSON-LD schema.org/Course, lit le catalogue — ne rien y recopier
+    TemoignagesTeaser.tsx # Aperçu des paroles sur l'accueil, lit data/temoignages.ts
   hooks/useIntersection.ts  # Animations au scroll, one-shot
   styles.css              # Tokens CSS, polices, classes partagées
   routeTree.gen.ts        # GÉNÉRÉ — ne jamais éditer à la main
@@ -78,6 +80,20 @@ sanctionnent une donnée structurée qui ne correspond pas au contenu visible :
 ne jamais y écrire une valeur en dur, et ne jamais y déclarer un tarif qui
 n'est pas affiché au public. Une fiche ajoutée sans cette balise est invisible
 des résultats enrichis.
+
+**Les paroles consenties ne se recopient pas.** Les verbatim d'apprenantes et
+les lettres de recommandation vivent dans `src/data/temoignages.ts`, avec les
+conditions de consentement, la source et le marquage des coupures qui les
+accompagnent. Deux endroits les affichent — la page `/temoignages` et la
+section d'accueil — et les deux les importent. Une parole recopiée dans un
+composant survivrait à un retrait demandé par l'intéressée : c'est la seule
+raison de cette règle, et elle suffit.
+
+Corollaire : **une citation se publie entière.** Pas d'extrait calculé, pas de
+troncature « à la phrase ». La première version de l'aperçu coupait à 180
+caractères et transformait un aveu suivi d'une fierté en aveu seul. Un `[…]`
+dans une citation marque deux passages distincts d'un même entretien : le
+supprimer fabrique une phrase que personne n'a prononcée.
 
 **Accessibilité (RGAA).** Le lien d'évitement vit dans `__root.tsx` et vise
 l'ancre `#contenu` posée en fin de `Header`. Les champs de formulaire sont

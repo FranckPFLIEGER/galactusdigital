@@ -17,6 +17,7 @@ import { WhyUs }          from '@/components/WhyUs'
 import { Partners }       from '@/components/Partners'
 import { NewsTeaser }     from '@/components/NewsTeaser'
 import { AwardsSection }  from '@/components/Awards'
+import { TemoignagesTeaser } from '@/components/TemoignagesTeaser'
 import { RSETeaser }      from '@/components/RSETeaser'
 import { ContactCTA }     from '@/components/ContactCTA'
 import { Footer }         from '@/components/Footer'
@@ -48,6 +49,14 @@ function HomePage() {
         <Satisfaction />
         <Clients />
         <Results />
+        {/*
+          Posé juste après les indicateurs, et c'est voulu : les chiffres
+          disent que ça marche, ces trois paroles disent à qui. L'accueil
+          comptait vingt sections et aucune ne donnait la parole à une
+          apprenante. Les citations viennent de data/temoignages.ts, jamais
+          recopiées ici. 13/11/2026.
+        */}
+        <TemoignagesTeaser />
         <Partners />
         <WhyUs />
         <NewsTeaser />

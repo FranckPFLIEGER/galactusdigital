@@ -95,9 +95,16 @@ export function News() {
           Actualités &amp; Veille IT
         </span>
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
-        <h2 className={`section-h2 reveal${isVisible ? ' visible' : ''} delay-1`}>
+        {/*
+          Titre de premier niveau : ce composant n'est rendu que par sa page
+          dédiée, dont il porte le contenu principal. Avec un <h2> la page
+          n'avait aucun <h1> — hiérarchie non conforme au critère 9.1 du
+          RGAA. Corrigé le 13/11/2026. La classe de style est conservée :
+          seule la sémantique change, pas l'apparence.
+        */}
+        <h1 className={`section-h2 reveal${isVisible ? ' visible' : ''} delay-1`}>
           Veille réglementaire<br />&amp; technologique
-        </h2>
+        </h1>
         <p className={`section-body reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '3rem' }}>
           Deux fronts : le cadre réglementaire de la formation professionnelle, dont le Référentiel

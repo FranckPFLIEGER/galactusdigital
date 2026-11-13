@@ -9,8 +9,8 @@ const NOMBRE_EN_LETTRES: Record<number, string> = {
   6: 'Six', 7: 'Sept', 8: 'Huit', 9: 'Neuf', 10: 'Dix',
 }
 
-// ParcoursMetier — section « Huit trajectoires, une seule porte d'entrée »
-// Remplace le bloc « Sept trajectoires certifiantes » de routes/formations/index.tsx
+// ParcoursMetier — section des parcours métier. Le titre compte les parcours
+// publiés : ne jamais y réécrire un nombre en dur. 13/11/2026.
 // ─────────────────────────────────────────────────────────────────────────────
 
 function EtapeLigne({ titre, slug, heures, nouveau, maj, col }: { titre: string; slug: string; heures: number; nouveau?: boolean; maj?: string; col: string }) {
@@ -86,6 +86,19 @@ function BlocBloc({ bloc, col }: { bloc: BlocParcours; col: string }) {
       <ul style={{ listStyle: "none", margin: ".45rem 0 0", padding: 0 }}>
         {bloc.etapes.map(e => <EtapeLigne key={e.slug + e.titre} {...e} col={col} />)}
       </ul>
+
+      {/* Formation qui couvre le même contenu que le bloc, vendue d'un seul
+          tenant. Volontairement hors de la liste des étapes : elle ne s'ajoute
+          pas au parcours, elle le remplace sur ce bloc. L'inclure parmi les
+          étapes aurait compté ses heures deux fois dans le total affiché. */}
+      {bloc.alternative && (
+        <a
+          href={`/formations/${bloc.alternative.slug}`}
+          style={{ display: "block", marginTop: ".55rem", padding: ".5rem .65rem", background: "rgba(228,31,38,.05)", borderLeft: "2px solid #E41F26", fontSize: ".70rem", color: "#5a5a58", lineHeight: 1.5, textDecoration: "none" }}
+        >
+          {bloc.alternative.texte}
+        </a>
+      )}
     </div>
   )
 }
@@ -108,6 +121,15 @@ function CarteParcours({ p }: { p: Parcours }) {
         <span style={{ fontFamily: "var(--font-title)", fontSize: ".58rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: "#fff", background: p.accesLibre === false ? "var(--g-black)" : "#E41F26", padding: ".18rem .5rem" }}>
           {p.accesLibre === false ? (p.conditionEntree ?? "Conditions d'entrée") : "Entrée sans prérequis"}
         </span>
+        {/* Certification RS — ne s'affiche que si le parcours en déclare une.
+            Tant que France Compétences n'a pas notifié sa décision, aucun
+            parcours n'en déclare : voir le commentaire du champ dans
+            parcours.ts. */}
+        {p.certificationRS && (
+          <span style={{ fontFamily: "var(--font-title)", fontSize: ".58rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: "#fff", background: "var(--g-black)", padding: ".18rem .5rem" }}>
+            RS {p.certificationRS.numero} — {p.certificationRS.intitule}
+          </span>
+        )}
         <span style={{ fontFamily: "var(--font-title)", fontSize: ".58rem", fontWeight: 700, letterSpacing: ".08em", textTransform: "uppercase", color: "#777", background: "#fff", border: "1px solid rgba(187,187,187,.45)", padding: ".18rem .5rem" }}>
           {socle} h de socle
         </span>

@@ -229,40 +229,40 @@ function RetractationPage() {
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }} className="retr-two">
                   <div style={fld}>
-                    <label style={lbl}>Prénom *</label>
-                    <input style={inp} required value={form.prenom} onChange={set('prenom')} />
+                    <label style={lbl} htmlFor="retract-prenom">Prénom *</label>
+                    <input id="retract-prenom" style={inp} required value={form.prenom} onChange={set('prenom')} />
                   </div>
                   <div style={fld}>
-                    <label style={lbl}>Nom *</label>
-                    <input style={inp} required value={form.nom} onChange={set('nom')} />
+                    <label style={lbl} htmlFor="retract-nom">Nom *</label>
+                    <input id="retract-nom" style={inp} required value={form.nom} onChange={set('nom')} />
                   </div>
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }} className="retr-two">
                   <div style={fld}>
-                    <label style={lbl}>Email *</label>
-                    <input style={inp} type="email" required value={form.email} onChange={set('email')} />
+                    <label style={lbl} htmlFor="retract-email">Email *</label>
+                    <input id="retract-email" style={inp} type="email" required value={form.email} onChange={set('email')} />
                   </div>
                   <div style={fld}>
-                    <label style={lbl}>Téléphone *</label>
-                    <input style={inp} type="tel" required value={form.telephone} onChange={set('telephone')} />
+                    <label style={lbl} htmlFor="retract-telephone">Téléphone *</label>
+                    <input id="retract-telephone" style={inp} type="tel" required value={form.telephone} onChange={set('telephone')} />
                   </div>
                 </div>
 
                 <div style={fld}>
-                  <label style={lbl}>Formation concernée *</label>
-                  <input style={inp} required value={form.formation} onChange={set('formation')}
+                  <label style={lbl} htmlFor="retract-formation-concernee">Formation concernée *</label>
+                  <input id="retract-formation-concernee" style={inp} required value={form.formation} onChange={set('formation')}
                     placeholder="Intitulé figurant sur votre contrat" />
                 </div>
 
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }} className="retr-two">
                   <div style={fld}>
-                    <label style={lbl}>Date de signature du contrat *</label>
-                    <input style={inp} type="date" required value={form.dateSignature} onChange={set('dateSignature')} />
+                    <label style={lbl} htmlFor="retract-date-de-signature-du-contrat">Date de signature du contrat *</label>
+                    <input id="retract-date-de-signature-du-contrat" style={inp} type="date" required value={form.dateSignature} onChange={set('dateSignature')} />
                   </div>
                   <div style={fld}>
-                    <label style={lbl}>Référence devis / contrat</label>
-                    <input style={inp} value={form.reference} onChange={set('reference')}
+                    <label style={lbl} htmlFor="retract-reference-devis-contrat">Référence devis / contrat</label>
+                    <input id="retract-reference-devis-contrat" style={inp} value={form.reference} onChange={set('reference')}
                       placeholder="Si vous l'avez sous la main" />
                   </div>
                 </div>

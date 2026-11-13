@@ -25,7 +25,7 @@ export interface EtapeParcours {
 }
 
 export interface BlocParcours {
-  rang: 0 | 1 | 2 | 3
+  rang: 0 | 1 | 2 | 3 | 4
   titre: string
   intention: string
   /**
@@ -43,6 +43,15 @@ export interface BlocParcours {
    */
   modalite: string
   etapes: EtapeParcours[]
+  /**
+   * Formation du catalogue qui couvre le MÊME contenu que ce bloc, vendue
+   * d'un seul tenant. Posé le 13/11/2026 pour « CCNA v2.0 — Parcours complet »,
+   * qui n'est pas une étape de plus mais l'emballage des trois modules du
+   * bloc CCNA : l'ajouter aux étapes aurait compté 210 heures deux fois.
+   * Le visiteur voit ainsi la formation là où elle a du sens, et le total du
+   * parcours reste juste.
+   */
+  alternative?: { slug: string; texte: string }
 }
 
 export interface Parcours {
@@ -61,6 +70,23 @@ export interface Parcours {
    * condition réelle, en un mot ou deux, dans `conditionEntree`. 12/11/2026.
    */
   accesLibre?: boolean
+  /**
+   * Certification du Répertoire spécifique que ce parcours prépare.
+   *
+   * DORMANT AU 13/11/2026, ET IL DOIT LE RESTER. Les deux dossiers de
+   * GALACTUS Digital — n° 53224 et n° 53693 — sont déposés et en cours
+   * d'instruction : rien n'est enregistré. Afficher un numéro de RS dans un
+   * parcours avant la notification de France Compétences, même assorti d'un
+   * « en cours », laisserait croire à un enregistrement acquis et préjugerait
+   * de l'instruction. C'est la règle « aucune allégation de certificateur »
+   * d'AGENTS.md.
+   *
+   * Le champ existe pour que le raccordement soit immédiat LE JOUR de la
+   * notification, pas avant : renseigner `numero`, `intitule` et la date de
+   * décision, et le bloc s'affiche. Tant qu'il vaut undefined, rien ne change
+   * sur le site.
+   */
+  certificationRS?: { numero: string; intitule: string; dateDecision: string }
   /** Condition affichée à la place du bandeau quand accesLibre vaut false */
   conditionEntree?: string
 }
@@ -142,6 +168,10 @@ export const PARCOURS: Parcours[] = [
           { titre: 'CCNA v2.0 — SRWE (2/3)', slug: 'ccna-srwe', heures: 70 },
           { titre: 'CCNA v2.0 — ENSA (3/3)', slug: 'ccna-ensa', heures: 70 },
         ],
+        alternative: {
+          slug: 'ccna-cisco',
+          texte: "Ces trois modules existent aussi d'un seul tenant : CCNA v2.0 — Parcours complet, 210 h en e-learning tutoré ou 35 h en présentiel, voucher d'examen 200-301 compris.",
+        },
       },
       {
         rang: 3,
@@ -151,6 +181,15 @@ export const PARCOURS: Parcours[] = [
         etapes: [
           { titre: 'CCNP Enterprise — ENCOR', slug: 'ccnp-encor', heures: 70, maj: 'Blueprint v9' },
           { titre: 'CCNP Enterprise — ENARSI', slug: 'ccnp-enarsi', heures: 70, maj: 'Blueprint v9' },
+        ],
+      },
+      {
+        rang: 4,
+        modalite: "À distance avec un formateur — FOAD ; tarif établi au volume, sur devis",
+        titre: 'Bloc 4 — Ouvrir sur un second constructeur',
+        intention: "Un technicien qui ne connaît qu'un constructeur est un technicien à moitié employable. Junos après IOS.",
+        etapes: [
+          { titre: 'JNCIA-Junos', slug: 'jncia-junos', heures: 35 },
         ],
       },
     ],
@@ -330,6 +369,58 @@ export const PARCOURS: Parcours[] = [
       },
     ],
     debouche: 'Praticien IA en environnement technique, référent IA d\'équipe',
+  },
+
+  {
+    id: 'iot',
+    titre: 'Internet des objets',
+    couleur: '#1D1D1B',
+    pitch: "Du capteur au tableau de bord : concevoir, connecter et sécuriser une solution d'objets connectés.",
+    entree: "Ouvert sans prérequis via le Bloc 0. Aucune expérience de l'électronique ni du code n'est demandée.",
+    blocs: [
+      {
+        rang: 0,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
+        titre: 'Bloc 0 — Se remettre à niveau',
+        intention: "Le poste de travail, le réseau et la ligne de commande, avant de toucher au premier capteur.",
+        etapes: [
+          { titre: 'Sensibilisation au numérique', slug: 'sensibilisation-numerique', heures: 6 },
+          { titre: 'Notions de base sur les réseaux', slug: 'notions-base-reseaux', heures: 22 },
+          { titre: 'Linux Unhatched', slug: 'linux-unhatched', heures: 8 },
+        ],
+      },
+      {
+        rang: 1,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
+        titre: 'Bloc 1 — Comprendre et connecter',
+        intention: "Ce que recouvre l'Internet des objets, puis le montage réel : Arduino, Raspberry Pi, MQTT.",
+        etapes: [
+          { titre: 'IoT — Introduction', slug: 'iot-introduction', heures: 20 },
+          { titre: 'Linux Essentials', slug: 'linux-essentials', heures: 40 },
+          { titre: 'IoT — Connecting Things', slug: 'iot-connecting-things', heures: 70 },
+        ],
+      },
+      {
+        rang: 2,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
+        titre: 'Bloc 2 — Exploiter et sécuriser',
+        intention: "Les données que produisent les objets, et les menaces qui les visent.",
+        etapes: [
+          { titre: 'IoT — Big Data & Analytics', slug: 'iot-big-data-analytics', heures: 70 },
+          { titre: 'IoT — Security', slug: 'iot-security', heures: 60 },
+        ],
+      },
+      {
+        rang: 3,
+        modalite: "100 % à distance, à votre rythme — e-learning tutoré, un tuteur certifié vous suit module par module",
+        titre: 'Bloc 3 — Produire',
+        intention: "Un projet mené de bout en bout, du besoin au prototype présenté devant un jury.",
+        etapes: [
+          { titre: 'IoT — Hackathon', slug: 'iot-hackathon', heures: 40 },
+        ],
+      },
+    ],
+    debouche: "Technicien IoT, intégrateur objets connectés, chargé de projet capteurs et télémétrie",
   },
 
 ]

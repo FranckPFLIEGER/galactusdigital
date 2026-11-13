@@ -24,18 +24,19 @@ Node 22 (`.nvmrc`). Il n'y a pas de script de test ni de lint.
 ```
 src/
   data/                   # SOURCE UNIQUE DE VÉRITÉ — à lire avant tout le reste
-    catalogue.ts          # 32 formations : tarifs, modalités, certifications, vouchers
-    parcours.ts           # Parcours métier par blocs, renvoient aux slugs du catalogue
+    catalogue.ts          # 37 formations : tarifs, modalités, certifications, vouchers
+    parcours.ts           # 7 parcours métier par blocs, renvoient aux slugs du catalogue
     sessions.ts           # Sessions programmées au calendrier
     resultats.ts          # Indicateurs Qualiopi publiés (formés, réussite, satisfaction)
     infoCertifiante.ts    # Passerelles, équivalences, blocs de compétences par formation
   routes/                 # Routing par fichiers (TanStack Router)
     __root.tsx            # Shell HTML, meta SEO, JSON-LD
     index.tsx             # Accueil
-    formations/           # 32 fiches + index.tsx (catalogue)
+    formations/           # 37 fiches + index.tsx (catalogue)
     certifications-rs/    # Dossiers France Compétences déposés
     ...                   # Pages légales, modalités, qualité
   components/             # Header, Footer, et sections de l'accueil
+    SchemaCours.tsx       # JSON-LD schema.org/Course, lit le catalogue — ne rien y recopier
   hooks/useIntersection.ts  # Animations au scroll, one-shot
   styles.css              # Tokens CSS, polices, classes partagées
   routeTree.gen.ts        # GÉNÉRÉ — ne jamais éditer à la main
@@ -71,6 +72,18 @@ porte dans l'autre le même jour : c'est le texte du kit qui engage le Client.
 entrée catalogue est invisible dans la navigation, une entrée sans fiche produit un
 lien mort.
 
+**Données structurées.** Chaque fiche rend `<SchemaCours slug="…" />`, qui
+construit le JSON-LD `schema.org/Course` à partir du catalogue. Les moteurs
+sanctionnent une donnée structurée qui ne correspond pas au contenu visible :
+ne jamais y écrire une valeur en dur, et ne jamais y déclarer un tarif qui
+n'est pas affiché au public. Une fiche ajoutée sans cette balise est invisible
+des résultats enrichis.
+
+**Accessibilité (RGAA).** Le lien d'évitement vit dans `__root.tsx` et vise
+l'ancre `#contenu` posée en fin de `Header`. Les champs de formulaire sont
+associés à leur `<label>` par `htmlFor`/`id` : un champ ajouté sans cette paire
+casse le critère 11.1. Chaque page porte un `<h1>` et un seul.
+
 **Supprimer une formation :** retirer l'entrée du catalogue, supprimer la fiche,
 nettoyer `public/sitemap.xml`, puis vérifier les mentions dans `parcours.ts`,
 `infoCertifiante.ts` et les « cours suivant recommandé » des autres fiches.
@@ -85,7 +98,11 @@ un contenu :
   à l'avantage de l'organisme, ni reporter d'un périmètre à un autre.
 - **Tarif visible partout où une formation est présentée** — méga-menu, grille,
   fiche (indicateur 1 du Référentiel National Qualité).
-- **Aucune allégation de certificateur.** Les deux dossiers France Compétences sont
+- **Aucune allégation de certificateur.** Le champ `certificationRS` de
+  `parcours.ts` existe mais doit rester vide tant que France Compétences n'a
+  pas notifié sa décision : le renseigner fait apparaître le numéro de RS sur
+  la carte du parcours. C'est le seul geste à faire le jour de la notification,
+  et il ne se fait pas avant. Les deux dossiers France Compétences sont
   en cours d'instruction : rien n'est enregistré, et les pages le disent.
 - **L'organisme ne vend pas à des particuliers qui se financeraient eux-mêmes.**
   Toute entrée en formation est adossée à un employeur ou à un financeur tiers

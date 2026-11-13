@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { SchemaCours } from '../../components/SchemaCours'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { InfoCertifiante } from '../../components/InfoCertifiante'
@@ -69,6 +70,7 @@ function DelaisAcces() {
 function CyberOpsPage() {
   return (
     <>
+      <SchemaCours slug="cyberops" />
       <Header />
       <main style={{ paddingTop: '72px' }}>
         <section style={{ background: 'var(--g-black)', borderBottom: '3px solid var(--g-red)', padding: '4rem 2rem' }}>

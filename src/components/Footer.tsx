@@ -6,11 +6,9 @@ const FC: Record<string, string> = {
   'Cybersécurité':       '#E41F26',
   'Programmation':       '#E41F26',
   'IoT':                 '#E41F26',
-  'Data & Analytics':    '#E41F26',
 }
 
 const PAR_FAMILLE = getFormationsParFamille()
-const CISCO_FAMILLES     = ['Réseaux & CCNA', 'Cybersécurité', 'Programmation', 'IoT', 'Data & Analytics']
 
 function GalactusLogo() {
   return (

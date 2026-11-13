@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { SchemaCours } from '../../components/SchemaCours'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { InfoCertifiante } from '../../components/InfoCertifiante'
@@ -159,6 +160,7 @@ function DelaisAcces() {
 function FormationPage() {
   return (
     <>
+      <SchemaCours slug="ccna-cisco" />
       <Header />
       <main style={{ paddingTop: '72px' }}>
 

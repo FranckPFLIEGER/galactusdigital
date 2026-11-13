@@ -622,3 +622,30 @@ a { color: inherit; }
 }
 .gd-next-session { animation: gdNextPulse 1.5s ease-in-out infinite; border-radius: 2px; }
 @media (prefers-reduced-motion: reduce) { .gd-next-session { animation: none; } }
+
+/* ── Lien d'évitement — RGAA 12.7 ──────────────────────────────────────────
+   Hors écran par défaut, ramené dans la page dès qu'il reçoit le focus
+   clavier. On ne l'enlève pas du flux avec display:none : un lecteur d'écran
+   ne le restituerait plus. */
+.lien-evitement {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 10000;
+  background: var(--g-black);
+  color: #FFFFFF;
+  font-family: var(--font-title);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.85rem 1.4rem;
+  text-decoration: none;
+  border: 2px solid var(--g-red);
+}
+.lien-evitement:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+  outline: 3px solid var(--g-red);
+  outline-offset: 2px;
+}

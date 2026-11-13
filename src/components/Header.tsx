@@ -17,7 +17,6 @@ const FC: Record<string, string> = {
   'Cybersécurité':       '#E41F26',
   'Programmation':       '#E41F26',
   'IoT':                 '#E41F26',
-  'Data & Analytics':    '#E41F26',
   'Intelligence artificielle': '#E41F26',
 }
 // Niveaux — nuances chartées : gris (fondamental) → rouge atténué → rouge plein
@@ -372,6 +371,14 @@ export function Header() {
           Nous Contacter
         </a>
       </div>
+      {/*
+        Cible du lien d'évitement posé dans __root.tsx — RGAA 12.7. Placée ici
+        plutôt que dans chaque page : le Header est rendu par les 59 routes, le
+        point d'arrivée est donc garanti partout et reste juste après la
+        navigation. tabIndex={-1} rend l'ancre focusable par le script du
+        navigateur sans l'insérer dans l'ordre de tabulation.
+      */}
+      <div id="contenu" tabIndex={-1} />
     </header>
   )
 }

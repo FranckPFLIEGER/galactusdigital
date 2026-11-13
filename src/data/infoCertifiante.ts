@@ -69,8 +69,9 @@ const DEBOUCHES_FAMILLE: Record<string, string[]> = {
   'IoT': [
     'Technicien IoT', 'Chargé de déploiement objets connectés', 'Technicien réseaux industriels',
   ],
-  'Data & Analytics': [
+  'Intelligence artificielle': [
     'Data analyst junior', 'Référent reporting et tableaux de bord',
+    'Praticien IA en environnement technique', 'Référent IA d\'équipe',
   ],
   'Juniper Junos': [
     'Technicien réseau opérateur', 'Administrateur réseau Junos', 'Ingénieur support opérateur',

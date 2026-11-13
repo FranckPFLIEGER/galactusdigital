@@ -101,9 +101,16 @@ export function RSE() {
           Responsabilité Sociétale
         </span>
         <div className={`g-rule${isVisible ? ' g-rule-anim visible' : ' g-rule-anim'}`} />
-        <h2 className={`section-h2-light reveal${isVisible ? ' visible' : ''} delay-1`}>
+        {/*
+          Titre de premier niveau : ce composant n'est rendu que par sa page
+          dédiée, dont il porte le contenu principal. Avec un <h2> la page
+          n'avait aucun <h1> — hiérarchie non conforme au critère 9.1 du
+          RGAA. Corrigé le 13/11/2026. La classe de style est conservée :
+          seule la sémantique change, pas l'apparence.
+        */}
+        <h1 className={`section-h2-light reveal${isVisible ? ' visible' : ''} delay-1`}>
           Notre engagement RSE —<br />Un numérique responsable, inclusif et ancré dans les territoires ultramarins
-        </h2>
+        </h1>
         <p className={`section-body-light reveal${isVisible ? ' visible' : ''} delay-2`}
           style={{ marginBottom: '2.5rem' }}>
           Former aux métiers du numérique implique une responsabilité sociale, écologique et éthique.

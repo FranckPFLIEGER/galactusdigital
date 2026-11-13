@@ -94,6 +94,14 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         />
       </head>
       <body>
+        {/*
+          Lien d'évitement — critère 12.7 du RGAA. Invisible tant qu'il n'a pas
+          le focus, il apparaît au premier Tab et permet à une personne qui
+          navigue au clavier ou au lecteur d'écran de sauter le menu, répété à
+          l'identique sur les 59 pages. Posé le 13/11/2026.
+          La cible #contenu est posée par Header, sur l'élément <main>.
+        */}
+        <a href="#contenu" className="lien-evitement">Aller au contenu principal</a>
         {children}
         <Scripts />
       </body>

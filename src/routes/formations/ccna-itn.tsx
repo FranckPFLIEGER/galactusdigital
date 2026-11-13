@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { SchemaCours } from '../../components/SchemaCours'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { InfoCertifiante } from '../../components/InfoCertifiante'
@@ -162,6 +163,7 @@ const DATA = {
 function SectionTitle({ children, light = false }: { children: React.ReactNode; light?: boolean }) {
   return (
     <>
+      <SchemaCours slug="ccna-itn" />
       <h2 style={{
         fontFamily: 'var(--font-title)', fontSize: 'clamp(1.2rem,2vw,1.6rem)',
         fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.04em',

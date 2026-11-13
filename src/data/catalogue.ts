@@ -132,13 +132,18 @@ export interface Formation {
 }
 
 // ─── Familles pour l'affichage groupé ────────────────────────────────────────
+// La famille « Data & Analytics » a été supprimée le 13/11/2026. Elle ne
+// contenait plus qu'une formation, Data Analytics Essentials, ses deux voisines
+// étant parties l'une en Socle & Reconversion, l'autre en Intelligence
+// artificielle. Une famille à une seule entrée dans un filtre de catalogue
+// n'apporte rien au visiteur : la formation a rejoint Intelligence
+// artificielle, où elle sert déjà de Bloc 2 au parcours IA au quotidien.
 export const FAMILLES: Record<string, { label: string; icon: string }> = {
   'Socle & Reconversion':  { label: 'Socle & Reconversion',   icon: 'GraduationCap' },
   'CCNA et CCNP':          { label: 'CCNA & CCNP',        icon: 'Network'  },
   'Cybersécurité':         { label: 'Cybersécurité',          icon: 'Shield'   },
   'Programmation':         { label: 'Programmation',          icon: 'Code'     },
   'IoT':                   { label: 'IoT & Objets Connectés', icon: 'Wifi'     },
-  'Data & Analytics':      { label: 'Data & Analytics',       icon: 'BarChart2'},
   'Intelligence artificielle': { label: 'Intelligence artificielle', icon: 'Sparkles' },
   'Juniper Junos':         { label: 'Juniper Junos',          icon: 'Router'   },
 }
@@ -614,12 +619,12 @@ export const FORMATIONS: Formation[] = [
     voucher: 0,
   },
 
-  // ── CISCO — Data & Analytics ──────────────────────────────────────────────
+  // ── CISCO — Data & Analytics, rattaché à Intelligence artificielle le 13/11/2026 ───────────────────────────────────────────────
   {
     slug: 'data-analytics-essentials',
     titre: 'Data Analytics Essentials',
     titreLong: 'Data Analytics Essentials — Introduction à l\'analyse de données',
-    editeur: 'Cisco Networking Academy', famille: 'Data & Analytics',
+    editeur: 'Cisco Networking Academy', famille: 'Intelligence artificielle',
     niveau: 'Fondamental', duree: '30 heures', dureeJours: 4,
     certification: 'Cisco Data Analytics Essentials Certificat',
     examCode: '',

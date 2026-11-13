@@ -384,20 +384,20 @@ export function ContactCTA() {
                 {/* Nom / Prénom */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                   <div style={fld}>
-                    <label style={lbl}>Nom *</label>
-                    <input style={inp} required value={form.nom} onChange={set("nom")} placeholder="DUPONT" />
+                    <label style={lbl} htmlFor="contact-nom">Nom *</label>
+                    <input id="contact-nom" style={inp} required value={form.nom} onChange={set("nom")} placeholder="DUPONT" />
                   </div>
                   <div style={fld}>
-                    <label style={lbl}>Prénom *</label>
-                    <input style={inp} required value={form.prenom} onChange={set("prenom")} placeholder="Jean" />
+                    <label style={lbl} htmlFor="contact-prenom">Prénom *</label>
+                    <input id="contact-prenom" style={inp} required value={form.prenom} onChange={set("prenom")} placeholder="Jean" />
                   </div>
                 </div>
 
                 {/* Email / Téléphone */}
                 <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                   <div style={fld}>
-                    <label style={lbl}>Email *</label>
-                    <input style={emailKo ? inpKo : inp} type="email" required autoComplete="email"
+                    <label style={lbl} htmlFor="contact-email">Email *</label>
+                    <input id="contact-email" style={emailKo ? inpKo : inp} type="email" required autoComplete="email"
                       value={form.email} onChange={set("email")} onBlur={quitte("email")}
                       placeholder="jean.dupont@entreprise.com" />
                     {emailKo && (
@@ -407,8 +407,8 @@ export function ContactCTA() {
                     )}
                   </div>
                   <div style={fld}>
-                    <label style={lbl}>Téléphone *</label>
-                    <input style={telKo ? inpKo : inp} type="tel" inputMode="tel" required autoComplete="tel"
+                    <label style={lbl} htmlFor="contact-telephone">Téléphone *</label>
+                    <input id="contact-telephone" style={telKo ? inpKo : inp} type="tel" inputMode="tel" required autoComplete="tel"
                       value={form.telephone} onChange={set("telephone")} onBlur={quitte("telephone")}
                       placeholder="+596 6 96 ..." />
                     {telKo && (
@@ -421,8 +421,8 @@ export function ContactCTA() {
 
                 {/* Profil — commande l'entreprise, le format et le financement */}
                 <div style={fld}>
-                  <label style={lbl}>Vous êtes *</label>
-                  <select style={sel} required value={form.profil} onChange={set("profil")}>
+                  <label style={lbl} htmlFor="contact-vous-etes">Vous êtes *</label>
+                  <select id="contact-vous-etes" style={sel} required value={form.profil} onChange={set("profil")}>
                     <option value="" disabled>-- Particulier ou entreprise ? --</option>
                     {PROFILS.map(p => <option key={p} value={p}>{p}</option>)}
                   </select>
@@ -444,12 +444,12 @@ export function ContactCTA() {
                 {estEntreprise && (
                   <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "1rem" }}>
                     <div style={fld}>
-                      <label style={lbl}>Entreprise / Organisation *</label>
-                      <input style={inp} required value={form.entreprise} onChange={set("entreprise")} placeholder="Ma Société SAS" />
+                      <label style={lbl} htmlFor="contact-entreprise-organisation">Entreprise / Organisation *</label>
+                      <input id="contact-entreprise-organisation" style={inp} required value={form.entreprise} onChange={set("entreprise")} placeholder="Ma Société SAS" />
                     </div>
                     <div style={fld}>
-                      <label style={lbl}>Format *</label>
-                      <select style={sel} required value={form.format} onChange={set("format")}>
+                      <label style={lbl} htmlFor="contact-format">Format *</label>
+                      <select id="contact-format" style={sel} required value={form.format} onChange={set("format")}>
                         <option value="" disabled>-- Choisir le format --</option>
                         {FORMATS.map(f => <option key={f} value={f}>{f}</option>)}
                       </select>
@@ -459,8 +459,8 @@ export function ContactCTA() {
 
                 {/* Modalité — commande la liste des formations */}
                 <div style={fld}>
-                  <label style={lbl}>Modalité souhaitée *</label>
-                  <select style={sel} required value={form.modalite} onChange={set("modalite")}>
+                  <label style={lbl} htmlFor="contact-modalite-souhaitee">Modalité souhaitée *</label>
+                  <select id="contact-modalite-souhaitee" style={sel} required value={form.modalite} onChange={set("modalite")}>
                     <option value="" disabled>-- Choisir la modalité --</option>
                     {MODALITES.map(m => <option key={m} value={m}>{m}</option>)}
                   </select>
@@ -469,8 +469,8 @@ export function ContactCTA() {
                 {/* Session du calendrier — inter en présentiel ou FOAD */}
                 {surCalendrier && !alerte && !attendFormat && (
                   <div style={fld}>
-                    <label style={lbl}>Session *</label>
-                    <select style={sel} required value={form.session} onChange={set("session")}>
+                    <label style={lbl} htmlFor="contact-session">Session *</label>
+                    <select id="contact-session" style={sel} required value={form.session} onChange={set("session")}>
                       <option value="" disabled>-- Choisir une session programmée --</option>
                       {ouvertes.map(s => <option key={s.cle} value={s.cle}>{s.cle}</option>)}
                     </select>
@@ -517,8 +517,8 @@ export function ContactCTA() {
                 {/* Formation — libre en e-learning et en intra, informative en alerte */}
                 {(!surCalendrier || alerte) && (
                   <div style={fld}>
-                    <label style={lbl}>{alerte ? "Formation à suivre *" : "Formation souhaitée *"}</label>
-                    <select style={sel} required value={form.formation} onChange={set("formation")}
+                    <label style={lbl} htmlFor="contact-alerte-formation-a-suivre-formation-souh">{alerte ? "Formation à suivre *" : "Formation souhaitée *"}</label>
+                    <select id="contact-alerte-formation-a-suivre-formation-souh" style={sel} required value={form.formation} onChange={set("formation")}
                       disabled={form.modalite === "" || attendFormat}>
                       <option value="" disabled>
                         {form.modalite === "" ? "-- Choisissez d'abord la modalité --"
@@ -563,8 +563,8 @@ export function ContactCTA() {
 
                 {/* Territoire — imposé par la session choisie, libre sinon */}
                 <div style={fld}>
-                  <label style={lbl}>Territoire *</label>
-                  <select style={sel} required value={form.territoire} onChange={set("territoire")}
+                  <label style={lbl} htmlFor="contact-territoire">Territoire *</label>
+                  <select id="contact-territoire" style={sel} required value={form.territoire} onChange={set("territoire")}
                     disabled={form.session !== ""}>
                     <option value="" disabled>-- Choisir un territoire --</option>
                     {TERRITOIRES.map(t => <option key={t} value={t}>{t}</option>)}
@@ -579,8 +579,8 @@ export function ContactCTA() {
 
                 {/* Prise en charge — liste selon le profil */}
                 <div style={fld}>
-                  <label style={lbl}>Prise en charge envisagée *</label>
-                  <select style={sel} required value={form.financement} onChange={set("financement")}
+                  <label style={lbl} htmlFor="contact-prise-en-charge-envisagee">Prise en charge envisagée *</label>
+                  <select id="contact-prise-en-charge-envisagee" style={sel} required value={form.financement} onChange={set("financement")}
                     disabled={form.profil === ""}>
                     <option value="" disabled>
                       {form.profil === "" ? "-- Indiquez d'abord votre profil --" : "-- Choisir le mode de financement --"}
@@ -598,8 +598,8 @@ export function ContactCTA() {
                 {/* Identifiant France Travail — n'apparaît que sur une AIF */}
                 {aif && (
                   <div style={fld}>
-                    <label style={lbl}>Votre identifiant France Travail *</label>
-                    <input
+                    <label style={lbl} htmlFor="contact-votre-identifiant-france-travail">Votre identifiant France Travail *</label>
+                    <input id="contact-votre-identifiant-france-travail"
                       style={{ ...inp, ...(vu.identifiantFT && form.identifiantFT.trim() === "" ? inpKo : {}) }}
                       type="text"
                       required
@@ -621,8 +621,8 @@ export function ContactCTA() {
 
                 {/* Message */}
                 <div style={fld}>
-                  <label style={lbl}>Votre projet *</label>
-                  <textarea style={{ ...inp, resize: "vertical", minHeight: "110px" }}
+                  <label style={lbl} htmlFor="contact-votre-projet">Votre projet *</label>
+                  <textarea id="contact-votre-projet" style={{ ...inp, resize: "vertical", minHeight: "110px" }}
                     required value={form.message} onChange={set("message")}
                     placeholder="Nombre de stagiaires, niveau de départ, échéance souhaitée, contraintes…" />
                   <span style={aide}>

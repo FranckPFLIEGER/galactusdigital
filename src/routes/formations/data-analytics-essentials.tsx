@@ -1,4 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
+import { SchemaCours } from '../../components/SchemaCours'
 import { Header } from '../../components/Header'
 import { Footer } from '../../components/Footer'
 import { InfoCertifiante } from '../../components/InfoCertifiante'
@@ -19,7 +20,7 @@ export const Route = createFileRoute('/formations/data-analytics-essentials')({
 
 const DATA = {
   editeur: 'Cisco Networking Academy',
-  famille: 'Cisco Networking Academy — Data & Analytics',
+  famille: 'Cisco Networking Academy — Intelligence artificielle',
   titre: `Data Analytics Essentials — Introduction à l'analyse de données`,
   sousTitre: `Fondamentaux de l'analyse de données · Référence : DAE`,
   ref: 'DAE-001',
@@ -84,6 +85,7 @@ function DelaisAcces() {
 function FormationPage() {
   return (
     <>
+      <SchemaCours slug="data-analytics-essentials" />
       <Header />
       <main style={{ paddingTop: '72px' }}>
 

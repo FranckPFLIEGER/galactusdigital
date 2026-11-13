@@ -105,7 +105,7 @@ const DATA = {
     organisme:  'Cisco Networking Academy',
     format:     '7 leçons, 35 vidéos, plus de 4 heures de vidéo, examen final',
     score:      'Selon barème Cisco Networking Academy',
-    note: 'Cours dispensé en anglais, sans version française à ce jour. Cours suivant recommandé : Cisco AI Technical Practitioner (AITECH).',
+    note: 'Cours dispensé en anglais, sans version française à ce jour. Cours suivant recommandé : Data Science Essentials with Python, pour travailler la donnée elle-même.',
   },
 
   // Méthodes pédagogiques

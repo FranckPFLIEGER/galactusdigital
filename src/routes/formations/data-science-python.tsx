@@ -124,7 +124,7 @@ const DATA = {
     organisme:  'Cisco Networking Academy',
     format:     '6 chapitres, 15 projets guidés, 5 projets ouverts, assistant IA intégré, examen final',
     score:      'Selon barème Cisco Networking Academy',
-    note: 'Cours dispensé en anglais, sans version française à ce jour. Cours suivant recommandé : Cisco AI Technical Practitioner (AITECH).',
+    note: 'Cours dispensé en anglais, sans version française à ce jour. Cours suivant recommandé : Prompt Like an Engineer, pour structurer l\'usage de l\'IA sur ces données.',
   },
 
   // Méthodes pédagogiques

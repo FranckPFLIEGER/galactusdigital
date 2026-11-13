@@ -328,47 +328,17 @@ export const PARCOURS: Parcours[] = [
           { titre: 'Data Science Essentials with Python', slug: 'data-science-python', heures: 40 },
         ],
       },
-    ],
-    debouche: 'Usage professionnel autonome et encadré de l\'IA, premier pas vers les métiers de la donnée',
-  },
-  {
-    id: 'ai-technical-practitioner',
-    accesLibre: false,
-    conditionEntree: 'Anglais requis — professionnels en poste',
-    titre: 'AI Technical Practitioner',
-    couleur: '#1D1D1B',
-    pitch: 'La voie certifiante de Cisco sur l\'IA générative appliquée au travail d\'ingénieur.',
-    entree: 'Destiné aux professionnels de l\'informatique en poste. Lecture de l\'anglais indispensable : cours et examen ne sont proposés qu\'en anglais.',
-    blocs: [
       {
-        rang: 0,
-        modalite: "100 % à distance, à votre rythme — e-learning tutoré, en français",
-        titre: 'Bloc 0 — Se situer',
-        intention: 'Comprendre les usages avant d\'entrer dans la voie technique.',
-        etapes: [
-          { titre: 'Introduction à l\'IA moderne', slug: 'introduction-ia-moderne', heures: 6 },
-        ],
-      },
-      {
-        rang: 1,
+        rang: 3,
         modalite: "100 % à distance, à votre rythme — e-learning tutoré ; cours dispensé en anglais",
-        titre: 'Bloc 1 — Structurer sa pratique',
-        intention: 'La méthode avant l\'outil : concevoir, vérifier et réutiliser ses prompts.',
+        titre: 'Bloc 3 — Structurer sa pratique',
+        intention: "La méthode avant l'outil : concevoir, vérifier et réutiliser ses prompts comme un processus d'ingénieur.",
         etapes: [
           { titre: 'Prompt Like an Engineer', slug: 'prompt-like-an-engineer', heures: 9 },
         ],
       },
-      {
-        rang: 2,
-        modalite: "À distance avec un formateur — FOAD ; ce bloc n'est pas proposé en e-learning tutoré ni en présentiel, et il est dispensé en anglais",
-        titre: 'Bloc 2 — Certifier',
-        intention: 'Les trois cours techniques de Cisco, jusqu\'à l\'examen 810-110.',
-        etapes: [
-          { titre: 'Cisco AI Technical Practitioner (AITECH)', slug: 'aitech', heures: 16 },
-        ],
-      },
     ],
-    debouche: 'Praticien IA en environnement technique, référent IA d\'équipe',
+    debouche: 'Usage professionnel autonome et encadré de l\'IA, premier pas vers les métiers de la donnée',
   },
 
   {

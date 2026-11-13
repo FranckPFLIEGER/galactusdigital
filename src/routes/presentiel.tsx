@@ -35,10 +35,10 @@ const TEL = '+33 7 81 07 47 46'
 // session présentielle sur un cours qui n'existe qu'en e-learning tutoré.
 //
 // MAJ 13/11/2026 — ces deux phrases étaient écrites en dur et citaient trois
-// formations. Le catalogue en compte désormais quatre en présentiel : AITECH
-// s'y est ajouté le 12/11, la grille plus bas l'affichait, et le texte au-dessus
-// l'ignorait. La page se contredisait. Même cause que le bandeau du Header, même
-// correction : la liste se calcule depuis le catalogue, elle ne s'écrit plus.
+// formations nommées. Le jour où une quatrième est passée en présentiel, la
+// grille plus bas l'a affichée et le texte au-dessus l'a ignorée : la page se
+// contredisait. Même cause que le bandeau du Header, même correction : la liste
+// se calcule depuis le catalogue, elle ne s'écrit plus.
 const titresPresentiel = (): string =>
   listeFrancaise(getFormationsParModalite('Présentiel').map(f => f.titre))
 

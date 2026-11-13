@@ -65,7 +65,6 @@ import { Route as FormationsCcnaEnsaRouteImport } from './routes/formations/ccna
 import { Route as FormationsCcnaCiscoRouteImport } from './routes/formations/ccna-cisco'
 import { Route as FormationsBuildResumeAiRouteImport } from './routes/formations/build-resume-ai'
 import { Route as FormationsBasesMaterielInformatiqueRouteImport } from './routes/formations/bases-materiel-informatique'
-import { Route as FormationsAitechRouteImport } from './routes/formations/aitech'
 import { Route as CertificationsRsInfrastructureReseauRouteImport } from './routes/certifications-rs/infrastructure-reseau'
 import { Route as CertificationsRsIncidentsSecuriteRouteImport } from './routes/certifications-rs/incidents-securite'
 
@@ -372,11 +371,6 @@ const FormationsBasesMaterielInformatiqueRoute =
     path: '/formations/bases-materiel-informatique',
     getParentRoute: () => rootRouteImport,
   } as any)
-const FormationsAitechRoute = FormationsAitechRouteImport.update({
-  id: '/formations/aitech',
-  path: '/formations/aitech',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const CertificationsRsInfrastructureReseauRoute =
   CertificationsRsInfrastructureReseauRouteImport.update({
     id: '/certifications-rs/infrastructure-reseau',
@@ -411,7 +405,6 @@ export interface FileRoutesByFullPath {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/incidents-securite': typeof CertificationsRsIncidentsSecuriteRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
-  '/formations/aitech': typeof FormationsAitechRoute
   '/formations/bases-materiel-informatique': typeof FormationsBasesMaterielInformatiqueRoute
   '/formations/build-resume-ai': typeof FormationsBuildResumeAiRoute
   '/formations/ccna-cisco': typeof FormationsCcnaCiscoRoute
@@ -472,7 +465,6 @@ export interface FileRoutesByTo {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/incidents-securite': typeof CertificationsRsIncidentsSecuriteRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
-  '/formations/aitech': typeof FormationsAitechRoute
   '/formations/bases-materiel-informatique': typeof FormationsBasesMaterielInformatiqueRoute
   '/formations/build-resume-ai': typeof FormationsBuildResumeAiRoute
   '/formations/ccna-cisco': typeof FormationsCcnaCiscoRoute
@@ -534,7 +526,6 @@ export interface FileRoutesById {
   '/temoignages': typeof TemoignagesRoute
   '/certifications-rs/incidents-securite': typeof CertificationsRsIncidentsSecuriteRoute
   '/certifications-rs/infrastructure-reseau': typeof CertificationsRsInfrastructureReseauRoute
-  '/formations/aitech': typeof FormationsAitechRoute
   '/formations/bases-materiel-informatique': typeof FormationsBasesMaterielInformatiqueRoute
   '/formations/build-resume-ai': typeof FormationsBuildResumeAiRoute
   '/formations/ccna-cisco': typeof FormationsCcnaCiscoRoute
@@ -597,7 +588,6 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/incidents-securite'
     | '/certifications-rs/infrastructure-reseau'
-    | '/formations/aitech'
     | '/formations/bases-materiel-informatique'
     | '/formations/build-resume-ai'
     | '/formations/ccna-cisco'
@@ -658,7 +648,6 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/incidents-securite'
     | '/certifications-rs/infrastructure-reseau'
-    | '/formations/aitech'
     | '/formations/bases-materiel-informatique'
     | '/formations/build-resume-ai'
     | '/formations/ccna-cisco'
@@ -719,7 +708,6 @@ export interface FileRouteTypes {
     | '/temoignages'
     | '/certifications-rs/incidents-securite'
     | '/certifications-rs/infrastructure-reseau'
-    | '/formations/aitech'
     | '/formations/bases-materiel-informatique'
     | '/formations/build-resume-ai'
     | '/formations/ccna-cisco'
@@ -781,7 +769,6 @@ export interface RootRouteChildren {
   TemoignagesRoute: typeof TemoignagesRoute
   CertificationsRsIncidentsSecuriteRoute: typeof CertificationsRsIncidentsSecuriteRoute
   CertificationsRsInfrastructureReseauRoute: typeof CertificationsRsInfrastructureReseauRoute
-  FormationsAitechRoute: typeof FormationsAitechRoute
   FormationsBasesMaterielInformatiqueRoute: typeof FormationsBasesMaterielInformatiqueRoute
   FormationsBuildResumeAiRoute: typeof FormationsBuildResumeAiRoute
   FormationsCcnaCiscoRoute: typeof FormationsCcnaCiscoRoute
@@ -1216,13 +1203,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof FormationsBasesMaterielInformatiqueRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/formations/aitech': {
-      id: '/formations/aitech'
-      path: '/formations/aitech'
-      fullPath: '/formations/aitech'
-      preLoaderRoute: typeof FormationsAitechRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/certifications-rs/infrastructure-reseau': {
       id: '/certifications-rs/infrastructure-reseau'
       path: '/certifications-rs/infrastructure-reseau'
@@ -1263,7 +1243,6 @@ const rootRouteChildren: RootRouteChildren = {
     CertificationsRsIncidentsSecuriteRoute,
   CertificationsRsInfrastructureReseauRoute:
     CertificationsRsInfrastructureReseauRoute,
-  FormationsAitechRoute: FormationsAitechRoute,
   FormationsBasesMaterielInformatiqueRoute:
     FormationsBasesMaterielInformatiqueRoute,
   FormationsBuildResumeAiRoute: FormationsBuildResumeAiRoute,

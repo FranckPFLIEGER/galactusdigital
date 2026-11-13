@@ -668,6 +668,13 @@ export const FORMATIONS: Formation[] = [
   },
 
   // ── INTELLIGENCE ARTIFICIELLE — catalogue Cisco AI relevé le 12/11/2026
+  //
+  // RETRAIT DU 13/11/2026 — Cisco AI Technical Practitioner (AITECH) est sorti
+  // du catalogue. L'organisme dispose du cours sur la plateforme, mais pas de
+  // la certification 810-110 : présenter une préparation à un examen que le
+  // formateur n'a pas passé lui-même n'est pas tenable au regard de
+  // l'indicateur 21 du RNQ. Le jour où l'examen est passé, l'entrée se
+  // réintroduit avec sa fiche et le parcours qui allait avec.
   // dans la console instructeur NetAcad. Les cours IBM SkillsBuild (AI
   // Fundamentals) ne figurent pas dans l'offre de l'académie : ils ne sont
   // pas proposés. La langue de chaque cours est indiquée sur sa fiche.
@@ -720,30 +727,6 @@ export const FORMATIONS: Formation[] = [
     prix: { presentiel: null, foad: null, elearning: 440 },
     prixPublicElearning: true,
     voucher: 0,
-    langue: 'en',
-    socle: false,
-  },
-  {
-    slug: 'aitech',
-    titre: 'Cisco AI Technical Practitioner (AITECH)',
-    titreLong: 'Cisco AI Technical Practitioner (AITECH) — préparation à la certification Cisco 810-110',
-    editeur: 'Cisco Networking Academy', famille: 'Intelligence artificielle',
-    niveau: 'Avancé', duree: '16 heures', dureeJours: 3,
-    certification: 'Cisco AI Technical Practitioner (810-110 AITECH)',
-    examCode: '810-110',
-    // Décision du 13/11/2026 : AITECH n'est pas proposé en présentiel.
-    // Cisco ne publie ces trois cours qu'en animé, le présentiel était donc
-    // légitime — mais la pièce 4a du kit qualité n'existe pas pour cette
-    // formation, et on ne vend pas une session dont le dossier n'est pas
-    // constitué. La FOAD, elle, est couverte.
-    modalites: ['FOAD'],
-    // Langue de dispension du cours sur la plateforme Cisco Networking Academy,
-    // relevée le 12/11/2026 dans la console instructeur et sur netacad.com.
-    description: 'Le parcours technique complet de Cisco sur l\'IA générative appliquée au travail d\'ingénieur : écosystème et outillage, ingénierie de prompt pour la précision technique, sécurité et confidentialité, correction des sorties de modèle, recherche et synthèse assistées, ingénierie logicielle et données, personnalisation de modèles et agents. Prépare à l\'examen Cisco 810-110. Cours et examen dispensés en anglais.',
-    prix: { presentiel: null, foad: 690, elearning: null },
-    prixPublicElearning: false,
-    prixPublicFoad: true,
-    voucher: 150,
     langue: 'en',
     socle: false,
   },

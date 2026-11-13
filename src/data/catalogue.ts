@@ -731,7 +731,12 @@ export const FORMATIONS: Formation[] = [
     niveau: 'Avancé', duree: '16 heures', dureeJours: 3,
     certification: 'Cisco AI Technical Practitioner (810-110 AITECH)',
     examCode: '810-110',
-    modalites: ['Présentiel', 'FOAD'],
+    // Décision du 13/11/2026 : AITECH n'est pas proposé en présentiel.
+    // Cisco ne publie ces trois cours qu'en animé, le présentiel était donc
+    // légitime — mais la pièce 4a du kit qualité n'existe pas pour cette
+    // formation, et on ne vend pas une session dont le dossier n'est pas
+    // constitué. La FOAD, elle, est couverte.
+    modalites: ['FOAD'],
     // Langue de dispension du cours sur la plateforme Cisco Networking Academy,
     // relevée le 12/11/2026 dans la console instructeur et sur netacad.com.
     description: 'Le parcours technique complet de Cisco sur l\'IA générative appliquée au travail d\'ingénieur : écosystème et outillage, ingénierie de prompt pour la précision technique, sécurité et confidentialité, correction des sorties de modèle, recherche et synthèse assistées, ingénierie logicielle et données, personnalisation de modèles et agents. Prépare à l\'examen Cisco 810-110. Cours et examen dispensés en anglais.',

@@ -360,7 +360,7 @@ export const PARCOURS: Parcours[] = [
       },
       {
         rang: 2,
-        modalite: "En présentiel ou en FOAD, avec un formateur — ce bloc n'est pas proposé en e-learning tutoré, et il est dispensé en anglais",
+        modalite: "À distance avec un formateur — FOAD ; ce bloc n'est pas proposé en e-learning tutoré ni en présentiel, et il est dispensé en anglais",
         titre: 'Bloc 2 — Certifier',
         intention: 'Les trois cours techniques de Cisco, jusqu\'à l\'examen 810-110.',
         etapes: [

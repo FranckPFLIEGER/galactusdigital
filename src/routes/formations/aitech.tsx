@@ -15,7 +15,7 @@ export const Route = createFileRoute('/formations/aitech')({
     meta: [
       { property: 'og:url', content: 'https://galactusdigital.com/formations/aitech' },
       { title: "Cisco AI Technical Practitioner (AITECH) — Formation | GALACTUS Digital" },
-      { name: "description", content: "Formation Cisco AI Technical Practitioner (AITECH). 16 heures, présentiel ou FOAD. Cisco AI Technical Practitioner (810-110 AITECH). Territoires ultramarins. Qualiopi." },
+      { name: "description", content: "Formation Cisco AI Technical Practitioner (AITECH). 16 heures, FOAD. Cisco AI Technical Practitioner (810-110 AITECH). Territoires ultramarins. Qualiopi." },
     ],
     links: [{ rel: 'canonical', href: 'https://galactusdigital.com/formations/aitech' }],
   }),
@@ -38,7 +38,8 @@ const DATA = {
   duree:          '16 heures',
   groupeMin:      4,
   groupeMax:      14,
-  lieux:          ['Martinique', 'Guadeloupe', 'Paris', 'À distance — FOAD'],
+  // FOAD seule : la formation est animée à distance, il n'y a pas de lieu.
+  lieux:          ['À distance — FOAD'],
 
   // Description
   description: 'Le parcours technique complet de Cisco sur l\'IA générative appliquée au travail d\'ingénieur : écosystème et outillage, ingénierie de prompt pour la précision technique, sécurité et confidentialité, correction des sorties de modèle, recherche et synthèse assistées, ingénierie logicielle et données, personnalisation de modèles et agents. Prépare à l\'examen Cisco 810-110. Cours et examen dispensés en anglais.',

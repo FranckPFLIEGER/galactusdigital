@@ -69,9 +69,14 @@ const DEBOUCHES_FAMILLE: Record<string, string[]> = {
   'IoT': [
     'Technicien IoT', 'Chargé de déploiement objets connectés', 'Technicien réseaux industriels',
   ],
+  // Deux débouchés ont été retirés le 13/11/2026 avec le parcours AI Technical
+  // Practitioner : ils décrivaient le métier auquel menait la certification
+  // 810-110, qui n'est plus
+  // proposée. Les cours IA qui restent donnent un usage professionnel de l'IA,
+  // pas un métier d'ingénieur IA — annoncer l'un pour l'autre serait un
+  // débouché que la formation ne prépare pas.
   'Intelligence artificielle': [
     'Data analyst junior', 'Référent reporting et tableaux de bord',
-    'Praticien IA en environnement technique', 'Référent IA d\'équipe',
   ],
   'Juniper Junos': [
     'Technicien réseau opérateur', 'Administrateur réseau Junos', 'Ingénieur support opérateur',

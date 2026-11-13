@@ -311,8 +311,41 @@ export interface TauxObtentionAffichage {
   detail: string
 }
 
+/**
+ * Effectif minimal pour publier un taux par formation.
+ *
+ * Posé le 13/11/2026. Trois fiches affichaient « 100 % » sur une base de 2, 2
+ * et 1 candidat évalué : un taux calculé sur un seul apprenant n'est pas un
+ * taux, c'est une anecdote, et l'afficher en gros caractères au-dessus du
+ * détail induit le lecteur en erreur même quand le détail dit la vérité.
+ *
+ * Le seuil de trois est celui que la procédure FQ-0-07 du kit qualité énonce
+ * déjà pour les indicateurs publiés. Il s'applique désormais ici aussi : le
+ * site et le kit disent la même chose.
+ *
+ * En dessous du seuil, l'effectif reste publié — on ne cache rien, on refuse
+ * seulement d'en tirer un pourcentage.
+ */
+export const SEUIL_PUBLICATION_TAUX = 3
+
 export function getTauxObtention(slug: string): TauxObtentionAffichage {
   const t = TAUX_OBTENTION[slug]
+  if (t && t.presentes > 0 && t.presentes < SEUIL_PUBLICATION_TAUX) {
+    const quoi = t.libelle ?? 'la certification visée'
+    return {
+      disponible: false,
+      valeur: 'Effectif insuffisant',
+      detail:
+        `${t.obtenus} obtention(s) sur ${t.presentes} candidat(s) évalué(s) — période ${t.periode}. ` +
+        `Ce décompte porte sur : ${quoi}. ` +
+        `Aucun pourcentage n'est publié en deçà de ${SEUIL_PUBLICATION_TAUX} candidats évalués : ` +
+        'un taux calculé sur un ou deux apprenants ne signifie rien et donnerait une ' +
+        'impression de représentativité qu\'il n\'a pas. Le décompte brut, lui, est exact et ' +
+        'justifié sur pièces : relevés et attestations de l\'éditeur. ' +
+        `Résultats consolidés tous dispositifs confondus : ${RESULTATS_TOTAL_FORMES} candidats ` +
+        'formés sur 2023-2025, 100 % de réussite parmi les candidats présentés à l\'examen.',
+    }
+  }
   if (t && t.presentes > 0) {
     const pct = Math.round((t.obtenus / t.presentes) * 1000) / 10
     const quoi = t.libelle ?? 'la certification visée'

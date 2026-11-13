@@ -135,17 +135,20 @@ function RgpdPage() {
                   // l'intéressée doit pouvoir retirer sa parole sans se
                   // justifier. Les deux parcours non consentis ne portent ni
                   // nom ni initiales, et c'est pour cette raison.
-                  titre: 'Publication de témoignages et de parcours de reconversion',
+                  titre: 'Témoignages et paroles publiées',
                   base: 'Consentement (article 6.1.a du RGPD), recueilli par écrit, texte lu avant publication',
                   donnees: "Prénom et initiale du nom, employeur, métier quitté et métier exercé, parcours de "
                     + "formation, citation reprise mot pour mot. Pour les lettres de recommandation : initiales, "
-                    + "fonction, employeur et territoire du signataire. Aucune photographie.",
-                  duree: "Jusqu'au retrait du consentement. L'accord écrit et toute rectification demandée par "
-                    + "l'intéressée sont conservés au dossier pendant 5 ans après le retrait, à seule fin de "
-                    + "prouver que la publication était régulière.",
-                  dest: "Publication sur galactusdigital.com, donc accessible à tous. Un accord donné à un "
-                    + "éditeur pour ses propres supports ne vaut pas pour cette publication : finalité "
-                    + "différente, responsable de traitement différent, accord recueilli à part.",
+                    + "fonction, employeur et territoire du signataire. Aucune photographie. Rien n'est "
+                    + "publié sans que la personne ait lu au préalable le texte exact.",
+                  duree: "Jusqu'au retrait du consentement, qui peut intervenir à tout moment et sans "
+                    + "justification. L'accord écrit et toute rectification demandée sont conservés 5 ans "
+                    + "après le retrait, à seule fin de prouver que la publication était régulière.",
+                  dest: "Publication sur galactusdigital.com, donc accessible à tous. Certaines de ces "
+                    + "paroles ont par ailleurs été recueillies par Cisco Systems, Inc. (États-Unis) pour ses "
+                    + "propres supports, sur la base d'un accord distinct — un accord donné à un éditeur pour "
+                    + "SES publications ne vaut pas pour celle-ci : finalité différente, responsable de "
+                    + "traitement différent, accord recueilli à part.",
                 },
                 {
                   titre: 'Données de satisfaction et d\'amélioration continue',

@@ -39,6 +39,7 @@ src/
   components/             # Header, Footer, et sections de l'accueil
     SchemaCours.tsx       # JSON-LD schema.org/Course, lit le catalogue — ne rien y recopier
     TemoignagesTeaser.tsx # Aperçu des paroles sur l'accueil, lit data/temoignages.ts
+    PageIntrouvable.tsx   # Page 404, branchée par notFoundComponent dans __root.tsx
   hooks/useIntersection.ts  # Animations au scroll, one-shot
   styles.css              # Tokens CSS, polices, classes partagées
   routeTree.gen.ts        # GÉNÉRÉ — ne jamais éditer à la main
@@ -94,6 +95,13 @@ troncature « à la phrase ». La première version de l'aperçu coupait à 180
 caractères et transformait un aveu suivi d'une fierté en aveu seul. Un `[…]`
 dans une citation marque deux passages distincts d'un même entretien : le
 supprimer fabrique une phrase que personne n'a prononcée.
+
+**Une adresse morte répond 404, jamais 200.** `__root.tsx` branche
+`notFoundComponent` sur `PageIntrouvable`, qui rend l'en-tête, un `<h1>`, des
+liens vers le catalogue et le pied de page — et le serveur renvoie bien le code
+404. Un « soft 404 », c'est-à-dire une page d'erreur servie avec un code 200,
+est pénalisé par les moteurs et laisse l'adresse indexée : à vérifier avec
+`curl -o /dev/null -w "%{http_code}"` après toute modification du routage.
 
 **Accessibilité (RGAA).** Le lien d'évitement vit dans `__root.tsx` et vise
 l'ancre `#contenu` posée en fin de `Header`. Les champs de formulaire sont

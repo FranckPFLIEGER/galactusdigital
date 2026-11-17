@@ -1,4 +1,5 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
+import { PageIntrouvable } from '../components/PageIntrouvable'
 import '../styles.css'
 
 export const Route = createRootRoute({
@@ -51,6 +52,12 @@ export const Route = createRootRoute({
     ],
   }),
   shellComponent: RootDocument,
+  // Page affichée pour toute adresse inconnue. Posée le 17/11/2026 : le site
+  // n'en avait aucune, et une adresse morte renvoyait une erreur brute, sans
+  // en-tête ni navigation. Dix-huit fiches ont été retirées en novembre et
+  // Google les a encore en mémoire : les visiteurs qui arrivent par un vieux
+  // résultat de recherche doivent trouver une porte, pas un mur.
+  notFoundComponent: PageIntrouvable,
 })
 
 const jsonLd = {

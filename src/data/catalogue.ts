@@ -42,7 +42,15 @@
 //
 // Changement du 31 octobre 2026 : les tarifs des cinq cours ci-dessus ont été
 // revus à la baisse en conséquence, le voucher en sortant, puis alignés par
-// niveau — 1 290 € au niveau associate, 1 490 € au niveau professional. Ils sont par
+// niveau — 1 290 € au niveau associate, 1 490 € au niveau professional.
+//
+// Correction du 19 novembre 2026 : l'alignement par niveau ne vaut qu'à durée
+// comparable. Appliqué tel quel, il donnait 1 290 € à CCNA Automation (50 h)
+// comme au CCNA complet (210 h), et plaçait l'associate au-dessus du
+// professional au tarif horaire. Le niveau fixe désormais le tarif HORAIRE,
+// la durée fait le reste : 19,33 €/h pour l'associate certifiant, soit le
+// tarif de CCNA Cybersecurity. Tout tarif du catalogue doit pouvoir
+// s'expliquer en une phrase devant un financeur. Ils sont par
 // ailleurs alignés sur les deux offres CPF adossées aux certifications RS
 // n° 53224 et n° 53693, à déclarer après décision de France Compétences.
 //
@@ -533,7 +541,18 @@ export const FORMATIONS: Formation[] = [
     examCode: '200-901 CCNAAUTO',
     modalites: ['E-learning'],
     description: 'L\'automatisation du réseau telle qu\'elle se pratique aujourd\'hui : consommation d\'API REST et authentification, Python appliqué au réseau, modélisation des données avec YANG, NETCONF et RESTCONF, déploiement par Ansible et Terraform, conteneurs et chaînes d\'intégration continue, et les usages de l\'IA dans l\'exploitation réseau. Anciennement DevNet Associate, blueprint 2026, préparation à l\'examen 200-901.',
-    prix: { presentiel: null, foad: null, elearning: 1290 },
+    // 1 290 € jusqu'au 19/11/2026. Ce tarif venait de l'alignement « par
+    // niveau » décidé le 31/10 : 1 290 € pour tout l'associate. Sur 50 heures,
+    // il plaçait CCNA Automation à 25,80 € de l'heure — soit plus cher que le
+    // CCNP ENCOR (21,29 €), qui est d'un niveau au-dessus, et plus cher au
+    // total que CCNA Cybersecurity (1 160 €) alors que celui-ci dure 10 heures
+    // de plus. Un tarif qu'on ne sait pas justifier devant un financeur ne
+    // tient pas.
+    //
+    // Ramené au tarif horaire de CCNA Cybersecurity, l'autre associate
+    // certifiant : 1 160 / 60 x 50 = 967, arrondi à 970. L'alignement par
+    // niveau est conservé, mais rapporté à la durée.
+    prix: { presentiel: null, foad: null, elearning: 970 },
     prixPublicElearning: true,
     voucher: 350,
     examenSeul: true,

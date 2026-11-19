@@ -1,5 +1,6 @@
 import { HeadContent, Scripts, createRootRoute } from '@tanstack/react-router'
 import { PageIntrouvable } from '../components/PageIntrouvable'
+import { PageErreur } from '../components/PageErreur'
 import '../styles.css'
 
 export const Route = createRootRoute({
@@ -58,6 +59,14 @@ export const Route = createRootRoute({
   // Google les a encore en mémoire : les visiteurs qui arrivent par un vieux
   // résultat de recherche doivent trouver une porte, pas un mur.
   notFoundComponent: PageIntrouvable,
+  // Page affichée si une route échoue à se construire. Posée le 19/11/2026 :
+  // Google référençait la page d'accueil sous le titre « Something went wrong!
+  // Show Error », le message par défaut du routeur. Le site allait bien au
+  // moment du constat, mais un incident d'une minute avait suffi à salir la
+  // fiche de résultat. La page de remplacement porte la marque, donne une
+  // issue, et se déclare noindex pour qu'un moteur de passage pendant un
+  // incident n'enregistre plus jamais ce titre-là.
+  errorComponent: ({ error }: { error: Error }) => <PageErreur error={error} />,
 })
 
 const jsonLd = {

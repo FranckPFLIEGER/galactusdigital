@@ -40,6 +40,7 @@ src/
     SchemaCours.tsx       # JSON-LD schema.org/Course, lit le catalogue — ne rien y recopier
     TemoignagesTeaser.tsx # Aperçu des paroles sur l'accueil, lit data/temoignages.ts
     PageIntrouvable.tsx   # Page 404, branchée par notFoundComponent dans __root.tsx
+    PageErreur.tsx        # Page d'erreur, branchée par errorComponent — noindex obligatoire
   hooks/useIntersection.ts  # Animations au scroll, one-shot
   styles.css              # Tokens CSS, polices, classes partagées
   routeTree.gen.ts        # GÉNÉRÉ — ne jamais éditer à la main
@@ -102,6 +103,20 @@ liens vers le catalogue et le pied de page — et le serveur renvoie bien le cod
 404. Un « soft 404 », c'est-à-dire une page d'erreur servie avec un code 200,
 est pénalisé par les moteurs et laisse l'adresse indexée : à vérifier avec
 `curl -o /dev/null -w "%{http_code}"` après toute modification du routage.
+
+**Une page d'erreur ne s'indexe pas.** Le 19/11/2026, la page d'accueil
+figurait dans Google sous le titre « Something went wrong! Show Error » : le
+message par défaut du routeur, en anglais, capté lors d'un incident de
+quelques instants. `errorComponent` rend désormais `PageErreur`, qui porte la
+marque, donne une issue et déclare `<meta name="robots" content="noindex,
+nofollow">`. Ce noindex n'est pas décoratif : sans lui, un moteur qui repasse
+pendant un incident enregistre la page d'erreur à la place de la vraie page.
+
+Limite connue, à ne pas oublier : quand un composant échoue PENDANT le rendu
+serveur, la réponse reste un **200 avec une coquille vide** — titre et lien
+d'évitement, aucun contenu. `PageErreur` ne prend le relais qu'au navigateur.
+Vérifié le 19/11/2026 en provoquant une panne sur `/rgpd`. Corriger cela
+demanderait de traiter l'échec côté serveur, ce qui n'est pas fait.
 
 **Accessibilité (RGAA).** Le lien d'évitement vit dans `__root.tsx` et vise
 l'ancre `#contenu` posée en fin de `Header`. Les champs de formulaire sont

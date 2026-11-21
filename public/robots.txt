@@ -1,4 +1,7 @@
-User-agent: *
-Allow: /
+# Le bloc « User-agent: * » est fourni par Cloudflare (robots.txt managé :
+# signaux de contenu et blocage des robots d'entraînement IA). Il porte déjà
+# « Allow: / ». En ajouter un second ici créait deux groupes « User-agent: * »
+# dans le fichier servi, sans effet utile. Retiré le 21/11/2026.
+# Ce fichier ne porte plus que la déclaration du plan du site.
 
 Sitemap: https://galactusdigital.com/sitemap.xml
